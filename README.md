@@ -12,9 +12,10 @@ Zur Strukturierung nutzen wir nicht die Format- oder AHB-Versionen (z.B. UTILMD 
 Beispielsweise bezeichnet `FV2210` die Datenformate, die seit 2022-10-01 gültig sind oder `FV2304` die Datenformate, die seit 2023-04-01 gültig sind.
 
 Die Anwendungshandbücher sind als je eine Datei pro Prüfidentifikator in jeweils drei Serialisierungs-Formaten verfügbar:
-* CSV
-* Excel
-* JSON (mit [`FlatAnwendungshandbuch`](https://mig-ahb-utility-stack.readthedocs.io/en/stable/api/maus.models.html#maus.models.anwendungshandbuch.FlatAnwendungshandbuch) aus dem [MIG AHB Utility Stack](https://github.com/Hochfrequenz/mig_ahb_utility_stack/) (maus 🐭) als zugrunde liegendes Datenmodell)
+
+- CSV
+- Excel
+- JSON (mit [`FlatAnwendungshandbuch`](https://mig-ahb-utility-stack.readthedocs.io/en/stable/api/maus.models.html#maus.models.anwendungshandbuch.FlatAnwendungshandbuch) aus dem [MIG AHB Utility Stack](https://github.com/Hochfrequenz/mig_ahb_utility_stack/) (maus 🐭) als zugrunde liegendes Datenmodell)
 
 ## Motivation
 
