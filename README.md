@@ -1,7 +1,9 @@
 # machine-readable_anwendungshandbuecher
+
 Dieses Repository enthält Anwendungshandbücher (AHB) in einem maschinenlesbaren Format, das deutlich einfacher zu verarbeiten ist als `.docx` oder `.pdf`.
 
 ## Unter der Haube
+
 Zur Erstellung der hier veröffentlichten Daten nutzen wir [`kohlrahbi`](https://github.com/Hochfrequenz/kohlrahbi/), eine Open Source AHB Scraping Library.
 
 ## Struktur
@@ -20,6 +22,7 @@ Dieses Repository macht die Daten aus den AHBs lediglich leichter zugänglich.
 Hochfrequenz garantiert weder für die Korrektheit noch die Vollständigkeit der hier bereitgestellten Daten, stellt aber selbst auch keine Bedingungen an deren Nutzung.
 
 ## Rückmeldungen & Mitwirken
+
 Es ist sehr wahrscheinlich, dass die hier bereitgestellten Daten nicht fehlerfrei sind.
 Probleme oder Fehler können gerne als [Issue](https://github.com/Hochfrequenz/machine-readable_anwendungshandbuecher/issues/new) gemeldet werden.
 Weil die Daten in diesem Repository aber maschinell erstellt und ggf. überschrieben werden, sind manuelle Anpassungen bzw Pull Requests nicht langfristig hilfreich.
