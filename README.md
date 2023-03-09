@@ -17,6 +17,11 @@ Die Anwendungshandbücher sind als je eine Datei pro Prüfidentifikator in jewei
 - Excel
 - JSON (mit [`FlatAnwendungshandbuch`](https://mig-ahb-utility-stack.readthedocs.io/en/stable/api/maus.models.html#maus.models.anwendungshandbuch.FlatAnwendungshandbuch) aus dem [MIG AHB Utility Stack](https://github.com/Hochfrequenz/mig_ahb_utility_stack/) (maus 🐭) als zugrunde liegendes Datenmodell)
 
+Es macht wenig Sinn binäre Dateiformate wie bpsw. xlsx Dateien in git zu versionieren.
+Daher verwenden wir in diesem Repoository Git LFS (Large File Storage) um die Excel-Dateien zu versionieren.
+Was Git LFS ist und wie es funktioniert, ist [hier](https://git-lfs.github.com/) beschrieben.
+Gitkraken hat auch eine [eigene Anleitung](https://help.gitkraken.com/gitkraken-client/git-lfs/) für Git LFS.
+
 ## Motivation
 
 Wir freuen uns über jede durch dieses Repository ersparte Stunde Arbeit, in der wichtige Probleme gelöst werden können anstatt AHBs zu scrapen.
