@@ -30,7 +30,7 @@ Wir freuen uns über jede durch dieses Repository ersparte Stunde Arbeit, in der
 
 Das Urheberrecht der hier versionierten Daten liegt bei EDI@energy bzw. den Autor\*innen der Anwendungshandbücher selbst.
 Dieses Repository macht die Daten aus den AHBs lediglich leichter zugänglich.
-Hochfrequenz garantiert weder für die Korrektheit noch die Vollständigkeit der hier bereitgestellten Daten, stellt aber selbst auch keine Bedingungen an deren Nutzung.
+Hochfrequenz garantiert weder für die Korrektheit noch die Vollständigkeit der hier bereitgestellten Daten.
 
 ## Rückmeldungen & Mitwirken
 
