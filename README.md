@@ -5,6 +5,7 @@ Dieses Repository enthält Anwendungshandbücher (AHB) in einem maschinenlesbare
 ## Unter der Haube
 
 Zur Erstellung der hier veröffentlichten Daten nutzen wir [`kohlrahbi`](https://github.com/Hochfrequenz/kohlrahbi/), eine Open Source AHB Scraping Library.
+Änderungen auf edi-energy.de werden mehrmals täglich automatisiert über unseren [edi_energy_mirror](https://github.com/Hochfrequenz/edi_energy_mirror) in dieses Repository synchronisiert.
 
 ## Struktur & Datenformate
 
