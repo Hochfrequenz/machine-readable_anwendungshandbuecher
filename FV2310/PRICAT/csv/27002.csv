@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss [14],
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,PRICAT,,Preisliste/Katalog,X,Preisliste/Katalog
@@ -8,99 +8,125 @@
 6,Nachrichten-Kopfsegment,,UNH,0057,2.0c,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung
 7,Beginn der Nachricht,,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,Z04,,Ausgleichsenergiepreis,,Ausgleichsenergiepreis
-9,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
-10,Beginn der Nachricht,,BGM,1373,11,,Dokument nichtverfügbar,S [35],Dokument nichtverfügbar
-11,Betrachtungszeitintervall,,,,,,,,
-12,Betrachtungszeitintervall,,DTM,2005,492,,"Bilanzierungsdatum, -zeit, -periode",,"Bilanzierungsdatum, -zeit, -periode"
-13,Betrachtungszeitintervall,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-14,Betrachtungszeitintervall,,DTM,2379,610,,CCYYMM,,CCYYMM
-15,Nachrichtendatum,,,,,,,Muss,
-16,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-17,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-18,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-19,Gültigkeitsbeginn,,,,,,,Muss,
-20,Gültigkeitsbeginn,,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
-21,Gültigkeitsbeginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ ([514]⊻ [518] ⊻ [515]),
-22,Gültigkeitsbeginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-23,Vorgängerversion,SG1,,,,,,Soll [1],
-24,Vorgängerversion,SG1,,,,,,Soll [1],
-25,Vorgängerversion,SG1,RFF,,,,,Muss,
-26,Vorgängerversion,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
-27,Vorgängerversion,SG1,RFF,1154,,,"Referenz, Identifikation",X [504],
-28,Prüfidentifikator,SG1,,,,,,Muss,
-29,Prüfidentifikator,SG1,,,,,,Muss,
-30,Prüfidentifikator,SG1,RFF,,,,,Muss,
-31,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-32,Prüfidentifikator,SG1,RFF,1154,27001,,Übermittlung derAusgleichsenergiepreise,,Übermittlung derAusgleichsenergiepreise
-33,Empfänger-ID,SG2,,,,,,Muss,
-34,Empfänger-ID,SG2,,,,,,Muss,
-35,Empfänger-ID,SG2,NAD,,,,,Muss,
-36,Empfänger-ID,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-37,Empfänger-ID,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],
-38,Empfänger-ID,SG2,NAD,3055,9,,GS1,X,GS1
-39,Sender-ID,SG2,,,,,,Muss,
-40,Sender-ID,SG2,,,,,,Muss,
-41,Sender-ID,SG2,NAD,,,,,Muss,
-42,Sender-ID,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
-43,Sender-ID,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],
-44,Sender-ID,SG2,NAD,3055,9,,GS1,X,GS1
-45,Regelzone,SG2,,,,,,,
-46,Regelzone,SG2,,,,,,,
-47,Regelzone,SG2,LOC,,,,,,
-48,Regelzone,SG2,LOC,3227,231,,Regelzone,,Regelzone
-49,Regelzone,SG2,LOC,3225,,,"Ortsangabe, Nummer",,
-50,Ansprechpartner,SG4,,,,,,Kann,
-51,Ansprechpartner,SG4,,,,,,Kann,
-52,Ansprechpartner,SG4,CTA,,,,,Muss,
-53,Ansprechpartner,SG4,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-54,Ansprechpartner,SG4,CTA,3412,,,Kontakt,X,
-55,Kommunikationsverbindung,SG4,,,,,,,
-56,Kommunikationsverbindung,SG4,,,,,,Muss,
-57,Kommunikationsverbindung,SG4,COM,,,,,Muss,
-58,Kommunikationsverbindung,SG4,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-59,Kommunikationsverbindung,SG4,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
-60,Währungsangaben,SG6,,,,,,Muss [9],
-61,Währungsangaben,SG6,,,,,,Muss [9],
-62,Währungsangaben,SG6,CUX,,,,,Muss,
-63,Währungsangaben,SG6,CUX,6347,2,,Referenzwährung,X,Referenzwährung
-64,Währungsangaben,SG6,CUX,6345,EUR,,Euro,X,Euro
-65,Währungsangaben,SG6,CUX,6343,8,,Währung der Preisliste,X,Währung der Preisliste
-66,Produktgruppen- Information,SG17,,,,,,Muss [9],
-67,Produktgruppen- Information,SG17,,,,,,Muss [9],
-68,Produktgruppen- Information,SG17,PGI,,,,,Muss,
-69,Produktgruppen- Information,SG17,PGI,5379,9,,keine Gruppe genutzt,X,keine Gruppe genutzt
-70,Positionsdaten,SG36,,,,,,Muss,
-71,Positionsdaten,SG36,,,,,,Muss,
-72,Positionsdaten,SG36,LIN,,,,,Muss,
-73,Positionsdaten,SG36,LIN,1082,,,Positionsnummer,X [908] [505],
-74,Positionsdaten,SG36,LIN,7140,,,Produkt-/Leistungsnummer,X ([941] ([31] ∧[32] ∧ [508])) ⊻([942] ([31] ∧[33] ∧ [516])) ⊻([959] ([34] ∧[517])),
-75,Positionsdaten,SG36,LIN,7143,Z01,,Artikelnummer,X [31] ∧ [32],Artikelnummer
-76,Preisschlüsselstamm,SG36,,,,,,,
-77,Preisschlüsselstamm,SG36,,,,,,Muss [31] ∧ [32],
-78,Preisschlüsselstamm,SG36,PIA,,,,,Muss [31] ∧ [32],
-79,Preisschlüsselstamm,SG36,PIA,4347,1,,Zusätzliche Identifikation,X,Zusätzliche Identifikation
-80,Preisschlüsselstamm,SG36,PIA,7140,,,Code des Preisschlüsselstamms,X,
-81,Preisschlüsselstamm,SG36,PIA,7143,Z06,,Preisschlüsselstamm,X,Preisschlüsselstamm
-82,Produktbeschreibung,SG36,,,,,,,
-83,Produktbeschreibung,SG36,,,,,,Muss [31] ∧ [32],
-84,Produktbeschreibung,SG36,IMD,,,,,Muss [31] ∧ [32],
-85,Produktbeschreibung,SG36,IMD,7077,C,,Code (aus der Liste einercodepflegendenOrganisation),X [6],Code (aus der Liste einercodepflegendenOrganisation)
-86,Produktbeschreibung,SG36,IMD,7081,Z15,,POG bei verbrauchenderMarktlokation > 100.000kWh/a mit iMS,X [4],POG bei verbrauchenderMarktlokation > 100.000kWh/a mit iMS
-87,Produktbeschreibung,SG36,IMD,7009,,,"Produkt-/Leistungsbeschreibung,Code",Muss [2],
-88,Produktbeschreibung,SG36,IMD,7008,,,Produkt-/Leistungsbeschreibung,Muss [3],
-89,Preisangaben,SG40,,,,,,Muss,
-90,Preisangaben,SG40,,,,,,Muss,
-91,Preisangaben,SG40,PRI,,,,,Muss,
-92,Preisangaben,SG40,PRI,5125,CAL,,Berechnungspreis,X,Berechnungspreis
-93,Preisangaben,SG40,PRI,5118,,,"Preis, Betrag",X [912] [513],
-94,Preisangaben,SG40,PRI,5284,,,"Einzelpreisbasis, Menge",,
-95,Preisangaben,SG40,PRI,6411,ANN,,Jahr,X [31] ∧ [32],Jahr
-96,Datum/Uhrzeit/Zeitspanne,SG40,,,,,,,
-97,Datum/Uhrzeit/Zeitspanne,SG40,,,,,,,
-98,Datum/Uhrzeit/Zeitspanne,SG40,DTM,,,,,,
-99,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",,"Verarbeitung,Beginndatum/-zeit"
-100,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-101,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-102,Nachrichten-Endesegment,,,,,,,Muss,
-103,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-104,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+9,Beginn der Nachricht,,BGM,1001,Z32,,PreisblattMessstellenbetrieb,X [30],
+10,Beginn der Nachricht,,BGM,1001,Z77,,PreisblattKonfigurationen,X,[30] wenn MP-ID in SG2 NAD+MR in der Rolle LF
+11,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+12,Beginn der Nachricht,,BGM,1373,11,,Dokument nichtverfügbar,S [35],Dokument nichtverfügbar
+13,Betrachtungszeitintervall,,,,,,,,
+14,Betrachtungszeitintervall,,DTM,2005,492,,"Bilanzierungsdatum, -zeit, -periode",,"Bilanzierungsdatum, -zeit, -periode"
+15,Betrachtungszeitintervall,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+16,Betrachtungszeitintervall,,DTM,2379,610,,CCYYMM,,CCYYMM
+17,Nachrichtendatum,,,,,,,Muss,
+18,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
+19,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
+20,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+21,Gültigkeitsbeginn,,,,,,,Muss,
+22,Gültigkeitsbeginn,,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
+23,Gültigkeitsbeginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ ([514]⊻ [518] ⊻ [515]),
+24,Gültigkeitsbeginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+25,Vorgängerversion,SG1,,,,,,Soll [1],
+26,Vorgängerversion,SG1,,,,,,Soll [1],
+27,Vorgängerversion,SG1,RFF,,,,,Muss,
+28,Vorgängerversion,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
+29,Vorgängerversion,SG1,RFF,1154,,,"Referenz, Identifikation",X [504],
+30,Prüfidentifikator,SG1,,,,,,Muss,
+31,Prüfidentifikator,SG1,,,,,,Muss,
+32,Prüfidentifikator,SG1,RFF,,,,,Muss,
+33,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+34,Prüfidentifikator,SG1,RFF,1154,27001,,Übermittlung derAusgleichsenergiepreise,,Übermittlung derAusgleichsenergiepreise
+35,Prüfidentifikator,SG1,RFF,1154,27002,,Preisblatt MSB-Leistungen,X,
+36,Empfänger-ID,SG2,,,,,,Muss,
+37,Empfänger-ID,SG2,,,,,,Muss,
+38,Empfänger-ID,SG2,NAD,,,,,Muss,
+39,Empfänger-ID,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+40,Empfänger-ID,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],
+41,Empfänger-ID,SG2,NAD,3055,9,,GS1,X,GS1
+42,Empfänger-ID,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- und",X,
+43,Sender-ID,SG2,,,,,,Muss,
+44,Sender-ID,SG2,,,,,,Muss,
+45,Sender-ID,SG2,NAD,,,,,Muss,
+46,Sender-ID,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
+47,Sender-ID,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],
+48,Sender-ID,SG2,NAD,3055,9,,GS1,X,GS1
+49,Sender-ID,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+50,Regelzone,SG2,,,,,,,
+51,Regelzone,SG2,,,,,,,
+52,Regelzone,SG2,LOC,,,,,,
+53,Regelzone,SG2,LOC,3227,231,,Regelzone,,Regelzone
+54,Regelzone,SG2,LOC,3225,,,"Ortsangabe, Nummer",,
+55,Ansprechpartner,SG4,,,,,,Kann,
+56,Ansprechpartner,SG4,,,,,,Kann,
+57,Ansprechpartner,SG4,CTA,,,,,Muss,
+58,Ansprechpartner,SG4,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+59,Ansprechpartner,SG4,CTA,3412,,,Kontakt,X,
+60,Kommunikationsverbindung,SG4,,,,,,,
+61,Kommunikationsverbindung,SG4,,,,,,Muss,
+62,Kommunikationsverbindung,SG4,COM,,,,,Muss,
+63,Kommunikationsverbindung,SG4,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
+64,Kommunikationsverbindung,SG4,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
+65,Kommunikationsverbindung,SG4,COM,3155,FX,,Telefax,X [1P0..1],
+66,Kommunikationsverbindung,SG4,COM,3155,TE,,Telefon,X [1P0..1],
+67,Kommunikationsverbindung,SG4,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+68,Kommunikationsverbindung,SG4,COM,3155,AL,,Handy,X [1P0..1],
+69,Währungsangaben,SG6,,,,,,Muss [9],
+70,Währungsangaben,SG6,,,,,,Muss [9],
+71,Währungsangaben,SG6,CUX,,,,,Muss,
+72,Währungsangaben,SG6,CUX,6347,2,,Referenzwährung,X,Referenzwährung
+73,Währungsangaben,SG6,CUX,6345,EUR,,Euro,X,Euro
+74,Währungsangaben,SG6,CUX,6343,8,,Währung der Preisliste,X,Währung der Preisliste
+75,Produktgruppen- Information,SG17,,,,,,Muss [9],
+76,Produktgruppen- Information,SG17,,,,,,Muss [9],
+77,Produktgruppen- Information,SG17,PGI,,,,,Muss,
+78,Produktgruppen- Information,SG17,PGI,5379,9,,keine Gruppe genutzt,X,keine Gruppe genutzt
+79,Positionsdaten,SG36,,,,,,Muss,
+80,Positionsdaten,SG36,,,,,,Muss,
+81,Positionsdaten,SG36,LIN,,,,,Muss,
+82,Positionsdaten,SG36,LIN,1082,,,Positionsnummer,X [908] [505],
+83,Positionsdaten,SG36,LIN,7140,,,Produkt-/Leistungsnummer,X ([941] ([31] ∧[32] ∧ [508])) ⊻([942] ([31] ∧[33] ∧ [516])) ⊻([959] ([34] ∧[517])),
+84,Positionsdaten,SG36,LIN,7143,Z01,,Artikelnummer,X [31] ∧ [32],Artikelnummer
+85,Positionsdaten,SG36,LIN,7143,Z09,,Artikel-ID,X ([31] ∧ [33]) ⊻[34],"[31] wenn BGM DE1001 = Z32 
+[32] wenn der Zeitpunkt im DTM+157 DE2380 < 01.01. 2024 00:00 Uhr gesetzlicher deutscher Zeit 
+[33] wenn der Zeitpunkt im DTM+157 DE2380 ≥ 01.01. 2024 00:00 Uhr gesetzlicher"
+86,Preisschlüsselstamm,SG36,,,,,,,
+87,Preisschlüsselstamm,SG36,,,,,,Muss [31] ∧ [32],
+88,Preisschlüsselstamm,SG36,PIA,,,,,Muss [31] ∧ [32],
+89,Preisschlüsselstamm,SG36,PIA,4347,1,,Zusätzliche Identifikation,X,Zusätzliche Identifikation
+90,Preisschlüsselstamm,SG36,PIA,7140,,,Code des Preisschlüsselstamms,X,
+91,Preisschlüsselstamm,SG36,PIA,7143,Z06,,Preisschlüsselstamm,X,Preisschlüsselstamm
+92,Produktbeschreibung,SG36,,,,,,,
+93,Produktbeschreibung,SG36,,,,,,Muss [31] ∧ [32],
+94,Produktbeschreibung,SG36,IMD,,,,,Muss [31] ∧ [32],
+95,Produktbeschreibung,SG36,IMD,7077,C,,Code (aus der Liste einercodepflegendenOrganisation),X [6],Code (aus der Liste einercodepflegendenOrganisation)
+96,Produktbeschreibung,SG36,IMD,7077,X,,Teilstrukturiert (Codeund Text),X [7],"[6] Wenn in dieser SG36 LIN in DE7140 9990001000798 vorhanden 
+[7] Wenn in dieser SG36 LIN in DE7140 9990001000798 nicht vorhanden"
+97,Produktbeschreibung,SG36,IMD,7081,Z15,,POG bei verbrauchenderMarktlokation > 100.000kWh/a mit iMS,X [4],POG bei verbrauchenderMarktlokation > 100.000kWh/a mit iMS
+98,Produktbeschreibung,SG36,IMD,7081,Z16,,POG bei verbrauchenderMarktlokation ]50.000kWh/a; 100.000 kWh/a]mit iMS,X [4],
+99,Produktbeschreibung,SG36,IMD,7081,Z17,,POG bei verbrauchenderMarktlokation ]20.000kWh/a; 50.000 kWh/a]mit iMS,X [4],
+100,Produktbeschreibung,SG36,IMD,7081,Z18,,POG bei verbrauchenderMarktlokation ]10.000kWh/a; 20.000 kWh/a]mit iMS,X [4],
+101,Produktbeschreibung,SG36,IMD,7081,Z19,,POG bei verbrauchenderMarktlokation mitunterbrechbarenVerbrauchseinrichtungnach § 14a EnWG mitiMS,X [4],
+102,Produktbeschreibung,SG36,IMD,7081,Z20,,POG bei verbrauchenderMarktlokation ]6.000kWh/a; 10.000 kWh/a]mit iMS,X [4],
+103,Produktbeschreibung,SG36,IMD,7081,Z21,,POG bei erzeugenderMarktlokation ]7 kW; 15kW] mit iMS,X [4],"[4] Wenn SG36 IMD+C in diesem IMD vorhanden 
+[5] Wenn SG36 IMD+X in diesem IMD vorhanden"
+104,Produktbeschreibung,SG36,IMD,7009,,,"Produkt-/Leistungsbeschreibung,Code",Muss [2],
+105,Produktbeschreibung,SG36,IMD,7009,Z08,,Höchstspannung,X,
+106,Produktbeschreibung,SG36,IMD,7009,Z09,,Hochspannung,X,
+107,Produktbeschreibung,SG36,IMD,7009,Z10,,Mittelspannung,X,
+108,Produktbeschreibung,SG36,IMD,7009,Z11,,Niederspannung,X,[2] Wenn in dieser SG36 LIN in DE7140 9990001000813 vorhanden
+109,Produktbeschreibung,SG36,IMD,7008,,,Produkt-/Leistungsbeschreibung,Muss [3],
+110,Preisangaben,SG40,,,,,,Muss,
+111,Preisangaben,SG40,,,,,,Muss,
+112,Preisangaben,SG40,PRI,,,,,Muss,
+113,Preisangaben,SG40,PRI,5125,CAL,,Berechnungspreis,X,Berechnungspreis
+114,Preisangaben,SG40,PRI,5118,,,"Preis, Betrag",X [912] [513],
+115,Preisangaben,SG40,PRI,5284,,,"Einzelpreisbasis, Menge",,
+116,Preisangaben,SG40,PRI,6411,ANN,,Jahr,X [31] ∧ [32],Jahr
+117,Datum/Uhrzeit/Zeitspanne,SG40,,,,,,,
+118,Datum/Uhrzeit/Zeitspanne,SG40,,,,,,,
+119,Datum/Uhrzeit/Zeitspanne,SG40,DTM,,,,,,
+120,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",,"Verarbeitung,Beginndatum/-zeit"
+121,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",,
+122,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+123,Datum/Uhrzeit/Zeitspanne,SG40,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+124,Nachrichten-Endesegment,,,,,,,Muss,
+125,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+126,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,PARTIN,,Partnerstammdaten,X,Partnerstammdaten
@@ -19,336 +19,374 @@
 17,Prüfidentifikator,SG1,RFF,,,,,Muss,
 18,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
 19,Prüfidentifikator,SG1,RFF,1154,37000,,ÜbermittlungKommunikationsdatendes LF,,ÜbermittlungKommunikationsdatendes LF
-20,Versionsnummer,SG1,,,,,,Muss,
-21,Versionsnummer,SG1,,,,,,Muss,
-22,Versionsnummer,SG1,RFF,,,,,Muss,
-23,Versionsnummer,SG1,RFF,1153,AGK,,Anwendungsreferenznummer,X,Anwendungsreferenznummer
-24,Versionsnummer,SG1,RFF,1056,,,Versionsnummer,X [908][505],
-25,Gültig Ab,SG1,,,,,,,
-26,Gültig Ab,SG1,,,,,,Soll [4],
-27,Gültig Ab,SG1,DTM,,,,,Soll [4],
-28,Gültig Ab,SG1,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
-29,Gültig Ab,SG1,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
-30,Gültig Ab,SG1,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-31,Vorgängerversion,SG1,,,,,,Soll [4],
-32,Vorgängerversion,SG1,,,,,,Soll [4],
-33,Vorgängerversion,SG1,RFF,,,,,Muss,
-34,Vorgängerversion,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
-35,Vorgängerversion,SG1,RFF,1056,,,Versionsnummer,X [908],
-36,MP-ID Absender,SG2,,,,,,Muss,
-37,MP-ID Absender,SG2,,,,,,Muss,
-38,MP-ID Absender,SG2,NAD,,,,,Muss,
-39,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
-40,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [1],
-41,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-42,Ansprechpartner,SG3,,,,,,Kann,
-43,Ansprechpartner,SG3,,,,,,Kann,
-44,Ansprechpartner,SG3,CTA,,,,,Muss,
-45,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-46,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
-47,Kommunikationsverbindung,SG3,,,,,,,
-48,Kommunikationsverbindung,SG3,,,,,,Muss,
-49,Kommunikationsverbindung,SG3,COM,,,,,Muss,
-50,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][7]))∧ [502],
-51,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-52,MP-ID Empfänger,SG2,,,,,,Muss,
-53,MP-ID Empfänger,SG2,,,,,,Muss,
-54,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-55,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-56,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [1],
-57,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-58,Abschnitts-Kontrollsegment,,,,,,,Muss,
-59,Abschnitts-Kontrollsegment,,UNS,0081,D,,Trennung von Kopf- undPositionsteil,X,Trennung von Kopf- undPositionsteil
-60,Name und Adresse des Unternehmens,SG4,,,,,,Muss [10],
-61,Name und Adresse des Unternehmens,SG4,,,,,,Muss [10],
-62,Name und Adresse des Unternehmens,SG4,NAD,,,,,Muss,
-63,Name und Adresse des Unternehmens,SG4,NAD,3035,SU,,Lieferant,,Lieferant
-64,Name und Adresse des Unternehmens,SG4,NAD,3036,,,Name,X [506],
-65,Name und Adresse des Unternehmens,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-66,Name und Adresse des Unternehmens,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X [506],
-67,Name und Adresse des Unternehmens,SG4,NAD,3164,,,Ort,X [506],
-68,Name und Adresse des Unternehmens,SG4,NAD,3251,,,Postleitzahl,M [2] ∧[506]S [3] ∧ [506],
-69,Name und Adresse des Unternehmens,SG4,NAD,3207,,,"Ländername, Code",X [506],
-70,Bankverbindung,SG4,,,,,,,
-71,Bankverbindung,SG4,,,,,,Muss,
-72,Bankverbindung,SG4,FII,,,,,Muss,
-73,Bankverbindung,SG4,FII,3035,BK,,Kreditinstitut,X,Kreditinstitut
-74,Bankverbindung,SG4,FII,3194,IBAN,,,X,
-75,Bankverbindung,SG4,FII,3192,,,Name des Kontoinhabers,X,
-76,Bankverbindung,SG4,FII,3192,,,Name des Kontoinhabers,K,
-77,Bankverbindung,SG4,FII,3433,BIC,,,X,
-78,Bankverbindung,SG4,FII,3432,,,Name des Kredinstituts,X,
-79,Internetseite (URL),SG4,,,,,,,
-80,Internetseite (URL),SG4,,,,,,Muss,
-81,Internetseite (URL),SG4,FTX,,,,,Muss,
-82,Internetseite (URL),SG4,FTX,4451,Z13,,Internetseite,X,Internetseite
-83,Internetseite (URL),SG4,FTX,4440,,,Internetseite,X,
-84,Gericht und Handelsregister-Nummer,SG4,,,,,,,
-85,Gericht und Handelsregister-Nummer,SG4,,,,,,Soll [3],
-86,Gericht und Handelsregister-Nummer,SG4,FTX,,,,,Soll [3],
-87,Gericht und Handelsregister-Nummer,SG4,FTX,4451,Z15,,Gericht undHandelsregister-Nummer,X,Gericht undHandelsregister-Nummer
-88,Gericht und Handelsregister-Nummer,SG4,FTX,4440,,,Gericht,X,
-89,Gericht und Handelsregister-Nummer,SG4,FTX,4440,,,Handelsregister-Nummer,X,
-90,"Steuernummer, Umsatzsteuernummer",SG6,,,,,,Muss [504],
-91,"Steuernummer, Umsatzsteuernummer",SG6,,,,,,Muss [504],
-92,"Steuernummer, Umsatzsteuernummer",SG6,RFF,,,,,Muss,
-93,"Steuernummer, Umsatzsteuernummer",SG6,RFF,1153,VA,,Umsatzsteuernummer,X [2P0..1] ⊻[3P1..1],Umsatzsteuernummer
-94,"Steuernummer, Umsatzsteuernummer",SG6,RFF,1154,,,"Referenz, Identifikation",X,
-95,Faxnummer,SG6,,,,,,,
-96,Faxnummer,SG6,,,,,,Kann,
-97,Faxnummer,SG6,RFF,,,,,Kann,
-98,Faxnummer,SG6,RFF,1153,Z25,,Faxnummer,X,Faxnummer
-99,Faxnummer,SG6,RFF,1154,,,Faxnummer,X [940],
-100,Erreichbarkeit an Werktagen,SG12,,,,,,Muss,
-101,Erreichbarkeit an Werktagen,SG12,,,,,,Muss,
-102,Erreichbarkeit an Werktagen,SG12,CCI,,,,,Muss,
-103,Erreichbarkeit an Werktagen,SG12,CCI,7059,Z40,,Erreichbarkeit desUnternehmens,X,Erreichbarkeit desUnternehmens
-104,Erreichbarkeit,SG12,,,,,,,
-105,Erreichbarkeit,SG12,,,,,,Muss,
-106,Erreichbarkeit,SG12,DTM,,,,,Muss,
-107,Erreichbarkeit,SG12,DTM,2005,Z36,,Verfügbarkeit Montag,X [1P1..1],Verfügbarkeit Montag
-108,Erreichbarkeit,SG12,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [503],
-109,Erreichbarkeit,SG12,DTM,2379,501,,HHMMHHMM,X,HHMMHHMM
-110,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,,,,,,Muss [10],
-111,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,,,,,,Muss [10],
-112,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,,,,,Muss,
-113,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3035,Z10,,AnsprechpartnerÜbertragungsweg /Datenaustausch,X,AnsprechpartnerÜbertragungsweg /Datenaustausch
-114,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3036,,,Name,X [500],
-115,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-116,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-117,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3164,,,Ort,X,
-118,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-119,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3207,,,"Ländername, Code",X,
-120,Ansprechpartner,SG7,,,,,,Muss,
-121,Ansprechpartner,SG7,,,,,,Muss,
-122,Ansprechpartner,SG7,CTA,,,,,Muss,
-123,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-124,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-125,Kommunikationsverbindung,SG7,,,,,,,
-126,Kommunikationsverbindung,SG7,,,,,,Muss,
-127,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-128,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-129,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-130,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,,,,,,Muss [10] ∧[18],
-131,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,,,,,,Muss [10] ∧[18],
-132,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,,,,,Muss,
-133,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3035,Z11,,AnsprechpartnerRahmenverträge,X,AnsprechpartnerRahmenverträge
-134,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3036,,,Name,X [500],
-135,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-136,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-137,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3164,,,Ort,X,
-138,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-139,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3207,,,"Ländername, Code",X,
-140,Ansprechpartner,SG7,,,,,,Muss,
-141,Ansprechpartner,SG7,,,,,,Muss,
-142,Ansprechpartner,SG7,CTA,,,,,Muss,
-143,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-144,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-145,Kommunikationsverbindung,SG7,,,,,,,
-146,Kommunikationsverbindung,SG7,,,,,,Muss,
-147,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-148,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-149,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-150,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,,,,,,,
-151,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,,,,,,,
-152,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,,,,,,
-153,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3035,Z12,,AnsprechpartnerKündigungsprozesse,,AnsprechpartnerKündigungsprozesse
-154,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3036,,,Name,,
-155,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,,Struktur derFirmenbezeichnung
-156,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,,
-157,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3164,,,Ort,,
-158,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3251,,,Postleitzahl,,
-159,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3207,,,"Ländername, Code",,
-160,Ansprechpartner,SG7,,,,,,,
-161,Ansprechpartner,SG7,,,,,,,
-162,Ansprechpartner,SG7,CTA,,,,,,
-163,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,,Informationskontakt
-164,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,,
-165,Kommunikationsverbindung,SG7,,,,,,,
-166,Kommunikationsverbindung,SG7,,,,,,,
-167,Kommunikationsverbindung,SG7,COM,,,,,,
-168,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,,
-169,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,,Elektronische Post
-170,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,,,,,,Muss [10] ∧[17],
-171,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,,,,,,Muss [10] ∧[17],
-172,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,,,,,Muss,
-173,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3035,Z13,,AnsprechpartnerWechselprozesse,X,AnsprechpartnerWechselprozesse
-174,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3036,,,Name,X [500],
-175,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-176,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-177,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3164,,,Ort,X,
-178,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-179,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
-180,Ansprechpartner,SG7,,,,,,Muss,
-181,Ansprechpartner,SG7,,,,,,Muss,
-182,Ansprechpartner,SG7,CTA,,,,,Muss,
-183,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-184,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+20,Prüfidentifikator,SG1,RFF,1154,37001,,ÜbermittlungKommunikationsdatendes NB,X,
+21,Prüfidentifikator,SG1,RFF,1154,37002,,ÜbermittlungKommunikationsdatendes MSB,,
+22,Versionsnummer,SG1,,,,,,Muss,
+23,Versionsnummer,SG1,,,,,,Muss,
+24,Versionsnummer,SG1,RFF,,,,,Muss,
+25,Versionsnummer,SG1,RFF,1153,AGK,,Anwendungsreferenznummer,X,Anwendungsreferenznummer
+26,Versionsnummer,SG1,RFF,1056,,,Versionsnummer,X [908][505],
+27,Gültig Ab,SG1,,,,,,,
+28,Gültig Ab,SG1,,,,,,Soll [4],
+29,Gültig Ab,SG1,DTM,,,,,Soll [4],
+30,Gültig Ab,SG1,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
+31,Gültig Ab,SG1,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+32,Gültig Ab,SG1,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+33,Vorgängerversion,SG1,,,,,,Soll [4],
+34,Vorgängerversion,SG1,,,,,,Soll [4],
+35,Vorgängerversion,SG1,RFF,,,,,Muss,
+36,Vorgängerversion,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
+37,Vorgängerversion,SG1,RFF,1056,,,Versionsnummer,X [908],
+38,MP-ID Absender,SG2,,,,,,Muss,
+39,MP-ID Absender,SG2,,,,,,Muss,
+40,MP-ID Absender,SG2,NAD,,,,,Muss,
+41,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
+42,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [1],
+43,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
+44,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW",X,
+45,Ansprechpartner,SG3,,,,,,Kann,
+46,Ansprechpartner,SG3,,,,,,Kann,
+47,Ansprechpartner,SG3,CTA,,,,,Muss,
+48,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+49,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+50,Kommunikationsverbindung,SG3,,,,,,,
+51,Kommunikationsverbindung,SG3,,,,,,Muss,
+52,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+53,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][7]))∧ [502],
+54,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+55,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+56,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+57,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+58,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+59,MP-ID Empfänger,SG2,,,,,,Muss,
+60,MP-ID Empfänger,SG2,,,,,,Muss,
+61,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+62,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+63,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [1],
+64,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+65,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW",X,
+66,Abschnitts-Kontrollsegment,,,,,,,Muss,
+67,Abschnitts-Kontrollsegment,,UNS,0081,D,,Trennung von Kopf- undPositionsteil,X,Trennung von Kopf- undPositionsteil
+68,Name und Adresse des Unternehmens,SG4,,,,,,Muss [10],
+69,Name und Adresse des Unternehmens,SG4,,,,,,Muss [10],
+70,Name und Adresse des Unternehmens,SG4,NAD,,,,,Muss,
+71,Name und Adresse des Unternehmens,SG4,NAD,3035,SU,,Lieferant,,Lieferant
+72,Name und Adresse des Unternehmens,SG4,NAD,3035,DDM,,Netzbetreiber,X,
+73,Name und Adresse des Unternehmens,SG4,NAD,3035,DEB,,Messstellenbetreiber,,
+74,Name und Adresse des Unternehmens,SG4,NAD,3036,,,Name,X [506],
+75,Name und Adresse des Unternehmens,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+76,Name und Adresse des Unternehmens,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X [506],
+77,Name und Adresse des Unternehmens,SG4,NAD,3164,,,Ort,X [506],
+78,Name und Adresse des Unternehmens,SG4,NAD,3251,,,Postleitzahl,M [2] ∧[506]S [3] ∧ [506],
+79,Name und Adresse des Unternehmens,SG4,NAD,3207,,,"Ländername, Code",X [506],
+80,Bankverbindung,SG4,,,,,,,
+81,Bankverbindung,SG4,,,,,,Muss,
+82,Bankverbindung,SG4,FII,,,,,Muss,
+83,Bankverbindung,SG4,FII,3035,BK,,Kreditinstitut,X,Kreditinstitut
+84,Bankverbindung,SG4,FII,3194,IBAN,,,X,
+85,Bankverbindung,SG4,FII,3192,,,Name des Kontoinhabers,X,
+86,Bankverbindung,SG4,FII,3192,,,Name des Kontoinhabers,K,
+87,Bankverbindung,SG4,FII,3433,BIC,,,X,
+88,Bankverbindung,SG4,FII,3432,,,Name des Kredinstituts,X,
+89,Internetseite (URL),SG4,,,,,,,
+90,Internetseite (URL),SG4,,,,,,Muss,
+91,Internetseite (URL),SG4,FTX,,,,,Muss,
+92,Internetseite (URL),SG4,FTX,4451,Z13,,Internetseite,X,Internetseite
+93,Internetseite (URL),SG4,FTX,4440,,,Internetseite,X,
+94,Gericht und Handelsregister-Nummer,SG4,,,,,,,
+95,Gericht und Handelsregister-Nummer,SG4,,,,,,Soll [3],
+96,Gericht und Handelsregister-Nummer,SG4,FTX,,,,,Soll [3],
+97,Gericht und Handelsregister-Nummer,SG4,FTX,4451,Z15,,Gericht undHandelsregister-Nummer,X,Gericht undHandelsregister-Nummer
+98,Gericht und Handelsregister-Nummer,SG4,FTX,4440,,,Gericht,X,
+99,Gericht und Handelsregister-Nummer,SG4,FTX,4440,,,Handelsregister-Nummer,X,
+100,"Steuernummer, Umsatzsteuernummer",SG6,,,,,,Muss [504],
+101,"Steuernummer, Umsatzsteuernummer",SG6,,,,,,Muss [504],
+102,"Steuernummer, Umsatzsteuernummer",SG6,RFF,,,,,Muss,
+103,"Steuernummer, Umsatzsteuernummer",SG6,RFF,1153,VA,,Umsatzsteuernummer,X [2P0..1] ⊻[3P1..1],Umsatzsteuernummer
+104,"Steuernummer, Umsatzsteuernummer",SG6,RFF,1153,FC,,Steuernummer,X [2P0..1],
+105,"Steuernummer, Umsatzsteuernummer",SG6,RFF,1154,,,"Referenz, Identifikation",X,
+106,Faxnummer,SG6,,,,,,,
+107,Faxnummer,SG6,,,,,,Kann,
+108,Faxnummer,SG6,RFF,,,,,Kann,
+109,Faxnummer,SG6,RFF,1153,Z25,,Faxnummer,X,Faxnummer
+110,Faxnummer,SG6,RFF,1154,,,Faxnummer,X [940],
+111,Erreichbarkeit an Werktagen,SG12,,,,,,Muss,
+112,Erreichbarkeit an Werktagen,SG12,,,,,,Muss,
+113,Erreichbarkeit an Werktagen,SG12,CCI,,,,,Muss,
+114,Erreichbarkeit an Werktagen,SG12,CCI,7059,Z40,,Erreichbarkeit desUnternehmens,X,Erreichbarkeit desUnternehmens
+115,Erreichbarkeit,SG12,,,,,,,
+116,Erreichbarkeit,SG12,,,,,,Muss,
+117,Erreichbarkeit,SG12,DTM,,,,,Muss,
+118,Erreichbarkeit,SG12,DTM,2005,Z36,,Verfügbarkeit Montag,X [1P1..1],Verfügbarkeit Montag
+119,Erreichbarkeit,SG12,DTM,2005,Z37,,Verfügbarkeit Dienstag,X [1P1..1],
+120,Erreichbarkeit,SG12,DTM,2005,Z38,,Verfügbarkeit Mittwoch,X [1P1..1],
+121,Erreichbarkeit,SG12,DTM,2005,Z39,,VerfügbarkeitDonnerstag,X [1P1..1],
+122,Erreichbarkeit,SG12,DTM,2005,Z40,,Verfügbarkeit Freitag,X [1P1..1],
+123,Erreichbarkeit,SG12,DTM,2005,Z41,,Mittagspause (=Ausschluss derVerfügbarkeit),X [1P0..1],
+124,Erreichbarkeit,SG12,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [503],
+125,Erreichbarkeit,SG12,DTM,2379,501,,HHMMHHMM,X,HHMMHHMM
+126,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,,,,,,Muss [10],
+127,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,,,,,,Muss [10],
+128,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,,,,,Muss,
+129,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3035,Z10,,AnsprechpartnerÜbertragungsweg /Datenaustausch,X,AnsprechpartnerÜbertragungsweg /Datenaustausch
+130,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3036,,,Name,X [500],
+131,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+132,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+133,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3164,,,Ort,X,
+134,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+135,Name und Anschrift Ansprechpartner Übertragungsweg / Datenaustausch,SG4,NAD,3207,,,"Ländername, Code",X,
+136,Ansprechpartner,SG7,,,,,,Muss,
+137,Ansprechpartner,SG7,,,,,,Muss,
+138,Ansprechpartner,SG7,CTA,,,,,Muss,
+139,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+140,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+141,Kommunikationsverbindung,SG7,,,,,,,
+142,Kommunikationsverbindung,SG7,,,,,,Muss,
+143,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+144,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+145,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+146,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+147,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+148,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,,,,,,Muss [10] ∧[18],
+149,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,,,,,,Muss [10] ∧[18],
+150,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,,,,,Muss,
+151,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3035,Z11,,AnsprechpartnerRahmenverträge,X,AnsprechpartnerRahmenverträge
+152,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3036,,,Name,X [500],
+153,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+154,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+155,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3164,,,Ort,X,
+156,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+157,Name und Anschrift Ansprechpartner Rahmenverträge,SG4,NAD,3207,,,"Ländername, Code",X,
+158,Ansprechpartner,SG7,,,,,,Muss,
+159,Ansprechpartner,SG7,,,,,,Muss,
+160,Ansprechpartner,SG7,CTA,,,,,Muss,
+161,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+162,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+163,Kommunikationsverbindung,SG7,,,,,,,
+164,Kommunikationsverbindung,SG7,,,,,,Muss,
+165,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+166,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+167,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+168,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+169,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+170,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,,,,,,,
+171,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,,,,,,,
+172,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,,,,,,
+173,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3035,Z12,,AnsprechpartnerKündigungsprozesse,,AnsprechpartnerKündigungsprozesse
+174,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3036,,,Name,,
+175,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,,Struktur derFirmenbezeichnung
+176,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,,
+177,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3164,,,Ort,,
+178,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3251,,,Postleitzahl,,
+179,Name und Anschrift Ansprechpartner Kündigungsprozess,SG4,NAD,3207,,,"Ländername, Code",,
+180,Ansprechpartner,SG7,,,,,,,
+181,Ansprechpartner,SG7,,,,,,,
+182,Ansprechpartner,SG7,CTA,,,,,,
+183,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,,Informationskontakt
+184,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,,
 185,Kommunikationsverbindung,SG7,,,,,,,
-186,Kommunikationsverbindung,SG7,,,,,,Muss,
-187,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-188,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-189,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-190,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,,,,,,Muss [10] ∧[19],
-191,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,,,,,,Muss [10] ∧[19],
-192,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,,,,,Muss,
-193,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3035,Z14,,AnsprechpartnerStammdatenprozesse,X,AnsprechpartnerStammdatenprozesse
-194,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3036,,,Name,X [500],
-195,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-196,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-197,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3164,,,Ort,X,
-198,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-199,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
-200,Ansprechpartner,SG7,,,,,,Muss,
+186,Kommunikationsverbindung,SG7,,,,,,,
+187,Kommunikationsverbindung,SG7,COM,,,,,,
+188,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,,
+189,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,,Elektronische Post
+190,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,,
+191,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,,,,,,Muss [10] ∧[17],
+192,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,,,,,,Muss [10] ∧[17],
+193,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,,,,,Muss,
+194,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3035,Z13,,AnsprechpartnerWechselprozesse,X,AnsprechpartnerWechselprozesse
+195,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3036,,,Name,X [500],
+196,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+197,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+198,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3164,,,Ort,X,
+199,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+200,Name und Anschrift Ansprechpartner Wechselprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
 201,Ansprechpartner,SG7,,,,,,Muss,
-202,Ansprechpartner,SG7,CTA,,,,,Muss,
-203,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-204,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-205,Kommunikationsverbindung,SG7,,,,,,,
-206,Kommunikationsverbindung,SG7,,,,,,Muss,
-207,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-208,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-209,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-210,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,,,,,,Muss [10] ∧[18],
-211,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,,,,,,Muss [10] ∧[18],
-212,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,,,,,Muss,
-213,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3035,Z16,,AnsprechpartnerEinspeiseprozesse,X,AnsprechpartnerEinspeiseprozesse
-214,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3036,,,Name,X [500],
-215,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-216,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-217,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3164,,,Ort,X,
-218,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-219,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
-220,Ansprechpartner,SG7,,,,,,Muss,
-221,Ansprechpartner,SG7,,,,,,Muss,
-222,Ansprechpartner,SG7,CTA,,,,,Muss,
-223,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-224,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-225,Kommunikationsverbindung,SG7,,,,,,,
-226,Kommunikationsverbindung,SG7,,,,,,Muss,
-227,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-228,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-229,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-230,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,,,,,,Muss [10] ∧[18],
-231,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,,,,,,Muss [10] ∧[18],
-232,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,,,,,Muss,
-233,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3035,Z17,,AnsprechpartnerAbrechnungsprozesse,X,AnsprechpartnerAbrechnungsprozesse
-234,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3036,,,Name,X [500],
-235,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-236,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-237,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3164,,,Ort,X,
-238,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-239,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
-240,Ansprechpartner,SG7,,,,,,Muss,
-241,Ansprechpartner,SG7,,,,,,Muss,
-242,Ansprechpartner,SG7,CTA,,,,,Muss,
-243,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-244,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-245,Kommunikationsverbindung,SG7,,,,,,,
-246,Kommunikationsverbindung,SG7,,,,,,Muss,
-247,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-248,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-249,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-250,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,,,,,,Muss [10] ∧[20],
-251,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,,,,,,Muss [10] ∧[20],
-252,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,,,,,Muss,
-253,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3035,Z18,,AnsprechpartnerMMMA-Prozesse,X,AnsprechpartnerMMMA-Prozesse
-254,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3036,,,Name,X [500],
-255,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-256,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-257,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3164,,,Ort,X,
-258,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-259,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3207,,,"Ländername, Code",X,
-260,Ansprechpartner,SG7,,,,,,Muss,
-261,Ansprechpartner,SG7,,,,,,Muss,
-262,Ansprechpartner,SG7,CTA,,,,,Muss,
-263,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-264,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-265,Kommunikationsverbindung,SG7,,,,,,,
-266,Kommunikationsverbindung,SG7,,,,,,Muss,
-267,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-268,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-269,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-270,Name und Anschrift Bewegungsdaten,SG4,,,,,,Muss [10] ∧[19],
-271,Name und Anschrift Bewegungsdaten,SG4,,,,,,Muss [10] ∧[19],
-272,Name und Anschrift Bewegungsdaten,SG4,NAD,,,,,Muss,
-273,Name und Anschrift Bewegungsdaten,SG4,NAD,3035,Z19,,AnsprechpartnerBewegungsdaten,X,AnsprechpartnerBewegungsdaten
-274,Name und Anschrift Bewegungsdaten,SG4,NAD,3036,,,Name,X [500],
-275,Name und Anschrift Bewegungsdaten,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-276,Name und Anschrift Bewegungsdaten,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-277,Name und Anschrift Bewegungsdaten,SG4,NAD,3164,,,Ort,X,
-278,Name und Anschrift Bewegungsdaten,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-279,Name und Anschrift Bewegungsdaten,SG4,NAD,3207,,,"Ländername, Code",X,
-280,Ansprechpartner,SG7,,,,,,Muss,
-281,Ansprechpartner,SG7,,,,,,Muss,
-282,Ansprechpartner,SG7,CTA,,,,,Muss,
-283,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-284,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-285,Kommunikationsverbindung,SG7,,,,,,,
-286,Kommunikationsverbindung,SG7,,,,,,Muss,
-287,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-288,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-289,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-290,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,,,,,,Muss [10] ∧[20],
-291,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,,,,,,Muss [10] ∧[20],
-292,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,,,,,Muss,
-293,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3035,Z20,,AnsprechpartnerSperr-/Entsperrprozesse,X,AnsprechpartnerSperr-/Entsperrprozesse
-294,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3036,,,Name,X [500],
-295,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-296,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-297,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3164,,,Ort,X,
-298,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-299,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3207,,,"Ländername, Code",X,
-300,Ansprechpartner,SG7,,,,,,Muss,
-301,Ansprechpartner,SG7,,,,,,Muss,
-302,Ansprechpartner,SG7,CTA,,,,,Muss,
-303,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-304,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-305,Kommunikationsverbindung,SG7,,,,,,,
-306,Kommunikationsverbindung,SG7,,,,,,Muss,
-307,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-308,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-309,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-310,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,,,,,,Muss [10],
-311,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,,,,,,Muss [10],
-312,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,,,,,Muss,
-313,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3035,Z21,,AnsprechpartnerBilanzierungsprozesse /Bilanzkreismanagement,X,AnsprechpartnerBilanzierungsprozesse /Bilanzkreismanagement
-314,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3036,,,Name,X [500],
-315,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-316,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-317,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3164,,,Ort,X,
-318,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-319,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3207,,,"Ländername, Code",X,
-320,Ansprechpartner,SG7,,,,,,Muss,
-321,Ansprechpartner,SG7,,,,,,Muss,
-322,Ansprechpartner,SG7,CTA,,,,,Muss,
-323,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-324,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-325,Kommunikationsverbindung,SG7,,,,,,,
-326,Kommunikationsverbindung,SG7,,,,,,Muss,
-327,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-328,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-329,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-330,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,,,,,,Muss [10] ∧ [18],
-331,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,,,,,,Muss [10] ∧ [18],
-332,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,,,,,Muss,
-333,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3035,Z33,,AnsprechpartnertechnischerNetzanschluss fürNeuanlagen undAnlagenumbau,X,AnsprechpartnertechnischerNetzanschluss fürNeuanlagen undAnlagenumbau
-334,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3036,,,Name,X [500],
-335,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
-336,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-337,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3164,,,Ort,X,
-338,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
-339,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3207,,,"Ländername, Code",X,
-340,Ansprechpartner,SG7,,,,,,Muss,
-341,Ansprechpartner,SG7,,,,,,Muss,
-342,Ansprechpartner,SG7,CTA,,,,,Muss,
-343,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-344,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
-345,Kommunikationsverbindung,SG7,,,,,,,
-346,Kommunikationsverbindung,SG7,,,,,,Muss,
-347,Kommunikationsverbindung,SG7,COM,,,,,Muss,
-348,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
-349,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
-350,Nachrichten-Endesegment,,,,,,,Muss,
-351,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-352,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+202,Ansprechpartner,SG7,,,,,,Muss,
+203,Ansprechpartner,SG7,CTA,,,,,Muss,
+204,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+205,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+206,Kommunikationsverbindung,SG7,,,,,,,
+207,Kommunikationsverbindung,SG7,,,,,,Muss,
+208,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+209,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+210,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+211,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+212,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+213,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,,,,,,Muss [10] ∧[19],
+214,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,,,,,,Muss [10] ∧[19],
+215,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,,,,,Muss,
+216,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3035,Z14,,AnsprechpartnerStammdatenprozesse,X,AnsprechpartnerStammdatenprozesse
+217,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3036,,,Name,X [500],
+218,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+219,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+220,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3164,,,Ort,X,
+221,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+222,Name und Anschrift Ansprechpartner Stammdatenprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
+223,Ansprechpartner,SG7,,,,,,Muss,
+224,Ansprechpartner,SG7,,,,,,Muss,
+225,Ansprechpartner,SG7,CTA,,,,,Muss,
+226,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+227,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+228,Kommunikationsverbindung,SG7,,,,,,,
+229,Kommunikationsverbindung,SG7,,,,,,Muss,
+230,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+231,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+232,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+233,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+234,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+235,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,,,,,,Muss [10] ∧[18],
+236,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,,,,,,Muss [10] ∧[18],
+237,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,,,,,Muss,
+238,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3035,Z16,,AnsprechpartnerEinspeiseprozesse,X,AnsprechpartnerEinspeiseprozesse
+239,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3036,,,Name,X [500],
+240,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+241,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+242,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3164,,,Ort,X,
+243,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+244,Name und Anschrift Ansprechpartner Einspeiseprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
+245,Ansprechpartner,SG7,,,,,,Muss,
+246,Ansprechpartner,SG7,,,,,,Muss,
+247,Ansprechpartner,SG7,CTA,,,,,Muss,
+248,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+249,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+250,Kommunikationsverbindung,SG7,,,,,,,
+251,Kommunikationsverbindung,SG7,,,,,,Muss,
+252,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+253,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+254,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+255,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+256,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+257,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,,,,,,Muss [10] ∧[18],
+258,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,,,,,,Muss [10] ∧[18],
+259,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,,,,,Muss,
+260,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3035,Z17,,AnsprechpartnerAbrechnungsprozesse,X,AnsprechpartnerAbrechnungsprozesse
+261,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3036,,,Name,X [500],
+262,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+263,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+264,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3164,,,Ort,X,
+265,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+266,Name und Anschrift Ansprechpartner Abrechnungsprozesse,SG4,NAD,3207,,,"Ländername, Code",X,
+267,Ansprechpartner,SG7,,,,,,Muss,
+268,Ansprechpartner,SG7,,,,,,Muss,
+269,Ansprechpartner,SG7,CTA,,,,,Muss,
+270,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+271,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+272,Kommunikationsverbindung,SG7,,,,,,,
+273,Kommunikationsverbindung,SG7,,,,,,Muss,
+274,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+275,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+276,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+277,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+278,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,,,,,,Muss [10] ∧[20],
+279,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,,,,,,Muss [10] ∧[20],
+280,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,,,,,Muss,
+281,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3035,Z18,,AnsprechpartnerMMMA-Prozesse,X,AnsprechpartnerMMMA-Prozesse
+282,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3036,,,Name,X [500],
+283,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+284,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+285,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3164,,,Ort,X,
+286,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+287,Name und Anschrift Ansprechpartner MMMA- Prozesse,SG4,NAD,3207,,,"Ländername, Code",X,
+288,Ansprechpartner,SG7,,,,,,Muss,
+289,Ansprechpartner,SG7,,,,,,Muss,
+290,Ansprechpartner,SG7,CTA,,,,,Muss,
+291,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+292,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+293,Kommunikationsverbindung,SG7,,,,,,,
+294,Kommunikationsverbindung,SG7,,,,,,Muss,
+295,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+296,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+297,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+298,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+299,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+300,Name und Anschrift Bewegungsdaten,SG4,,,,,,Muss [10] ∧[19],
+301,Name und Anschrift Bewegungsdaten,SG4,,,,,,Muss [10] ∧[19],
+302,Name und Anschrift Bewegungsdaten,SG4,NAD,,,,,Muss,
+303,Name und Anschrift Bewegungsdaten,SG4,NAD,3035,Z19,,AnsprechpartnerBewegungsdaten,X,AnsprechpartnerBewegungsdaten
+304,Name und Anschrift Bewegungsdaten,SG4,NAD,3036,,,Name,X [500],
+305,Name und Anschrift Bewegungsdaten,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+306,Name und Anschrift Bewegungsdaten,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+307,Name und Anschrift Bewegungsdaten,SG4,NAD,3164,,,Ort,X,
+308,Name und Anschrift Bewegungsdaten,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+309,Name und Anschrift Bewegungsdaten,SG4,NAD,3207,,,"Ländername, Code",X,
+310,Ansprechpartner,SG7,,,,,,Muss,
+311,Ansprechpartner,SG7,,,,,,Muss,
+312,Ansprechpartner,SG7,CTA,,,,,Muss,
+313,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+314,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+315,Kommunikationsverbindung,SG7,,,,,,,
+316,Kommunikationsverbindung,SG7,,,,,,Muss,
+317,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+318,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+319,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+320,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+321,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+322,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,,,,,,Muss [10] ∧[20],
+323,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,,,,,,Muss [10] ∧[20],
+324,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,,,,,Muss,
+325,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3035,Z20,,AnsprechpartnerSperr-/Entsperrprozesse,X,AnsprechpartnerSperr-/Entsperrprozesse
+326,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3036,,,Name,X [500],
+327,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+328,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+329,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3164,,,Ort,X,
+330,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+331,Name und Anschrift Ansprechpartner Prozesse zur Unterbrechung und Wiederherstellung der Anschlussnutzung,SG4,NAD,3207,,,"Ländername, Code",X,
+332,Ansprechpartner,SG7,,,,,,Muss,
+333,Ansprechpartner,SG7,,,,,,Muss,
+334,Ansprechpartner,SG7,CTA,,,,,Muss,
+335,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+336,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+337,Kommunikationsverbindung,SG7,,,,,,,
+338,Kommunikationsverbindung,SG7,,,,,,Muss,
+339,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+340,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+341,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+342,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+343,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+344,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,,,,,,Muss [10],
+345,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,,,,,,Muss [10],
+346,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,,,,,Muss,
+347,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3035,Z21,,AnsprechpartnerBilanzierungsprozesse /Bilanzkreismanagement,X,AnsprechpartnerBilanzierungsprozesse /Bilanzkreismanagement
+348,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3036,,,Name,X [500],
+349,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+350,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+351,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3164,,,Ort,X,
+352,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+353,Name und Anschrift Ansprechpartner Bilanzierungsprozesse / Bilanzkreismanagement,SG4,NAD,3207,,,"Ländername, Code",X,
+354,Ansprechpartner,SG7,,,,,,Muss,
+355,Ansprechpartner,SG7,,,,,,Muss,
+356,Ansprechpartner,SG7,CTA,,,,,Muss,
+357,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+358,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+359,Kommunikationsverbindung,SG7,,,,,,,
+360,Kommunikationsverbindung,SG7,,,,,,Muss,
+361,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+362,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+363,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+364,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+365,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+366,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,,,,,,Muss [10] ∧ [18],
+367,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,,,,,,Muss [10] ∧ [18],
+368,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,,,,,Muss,
+369,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3035,Z33,,AnsprechpartnertechnischerNetzanschluss fürNeuanlagen undAnlagenumbau,X,AnsprechpartnertechnischerNetzanschluss fürNeuanlagen undAnlagenumbau
+370,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3036,,,Name,X [500],
+371,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,Struktur derFirmenbezeichnung
+372,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+373,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3164,,,Ort,X,
+374,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3251,,,Postleitzahl,M [2]S [3],
+375,Name und Anschrift Ansprechpartner Technischer Netzanschluss für Neuanlagen und Anlagenumbau,SG4,NAD,3207,,,"Ländername, Code",X,
+376,Ansprechpartner,SG7,,,,,,Muss,
+377,Ansprechpartner,SG7,,,,,,Muss,
+378,Ansprechpartner,SG7,CTA,,,,,Muss,
+379,Ansprechpartner,SG7,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+380,Ansprechpartner,SG7,CTA,3412,,,Name der organisatorischenEinheit,X [501],
+381,Kommunikationsverbindung,SG7,,,,,,,
+382,Kommunikationsverbindung,SG7,,,,,,Muss,
+383,Kommunikationsverbindung,SG7,COM,,,,,Muss,
+384,Kommunikationsverbindung,SG7,COM,3148,,,Nummer / Adresse,X (([939][6])∨ ([940][8]))∧ [502],
+385,Kommunikationsverbindung,SG7,COM,3155,EM,,Elektronische Post,X [1P1..1],Elektronische Post
+386,Kommunikationsverbindung,SG7,COM,3155,TE,,Telefon,X [1P1..1],
+387,Kommunikationsverbindung,SG7,COM,3155,FX,,Telefax,X [1P0..1],
+388,Nachrichten-Endesegment,,,,,,,Muss,
+389,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+390,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

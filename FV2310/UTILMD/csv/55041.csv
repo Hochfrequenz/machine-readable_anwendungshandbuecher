@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,Netzanschluss-Stammdaten
@@ -19,131 +19,142 @@
 17,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
 18,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
 19,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-20,Ansprechpartner,SG3,,,,,,Kann,
+20,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 21,Ansprechpartner,SG3,,,,,,Kann,
-22,Ansprechpartner,SG3,CTA,,,,,Muss,
-23,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-24,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
-25,Kommunikationsverbindung,SG3,,,,,,,
-26,Kommunikationsverbindung,SG3,,,,,,Muss,
-27,Kommunikationsverbindung,SG3,COM,,,,,Muss,
-28,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
-29,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-30,MP-ID Empfänger,SG2,,,,,,Muss,
-31,MP-ID Empfänger,SG2,,,,,,Muss,
-32,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-33,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-34,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
-35,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-36,Vorgang,SG4,,,,,,Muss,
-37,Vorgang,SG4,,,,,,Muss,
-38,Vorgang,SG4,IDE,,,,,Muss,
-39,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
-40,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
-41,Ende zum,SG4,,,,,,,
-42,Ende zum,SG4,,,,,,,
-43,Ende zum,SG4,DTM,,,,,,
-44,Ende zum,SG4,DTM,2005,93,,Datum Vertragsende,,Datum Vertragsende
-45,Ende zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-46,Ende zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-47,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,,
-48,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,Muss [16] ∧[581],
-49,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,Muss [16] ∧[581],
-50,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
-51,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
-52,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-53,Ende zum (nächstmöglichem Termin),SG4,,,,,,,
-54,Ende zum (nächstmöglichem Termin),SG4,,,,,,,
-55,Ende zum (nächstmöglichem Termin),SG4,DTM,,,,,,
-56,Ende zum (nächstmöglichem Termin),SG4,DTM,2005,471,,Ende zum(nächstmöglichemTermin),,Ende zum(nächstmöglichemTermin)
-57,Ende zum (nächstmöglichem Termin),SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-58,Ende zum (nächstmöglichem Termin),SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-59,Kündigungsfrist des Vertrags,SG4,,,,,,,
-60,Kündigungsfrist des Vertrags,SG4,,,,,,Muss,
-61,Kündigungsfrist des Vertrags,SG4,DTM,,,,,Muss,
-62,Kündigungsfrist des Vertrags,SG4,DTM,2005,Z01,,Kündigungsfrist,X,Kündigungsfrist
-63,Kündigungsfrist des Vertrags,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-64,Kündigungsfrist des Vertrags,SG4,DTM,2379,Z01,,ZZRB,X,ZZRB
-65,Kündigungstermin des Vertrags,SG4,,,,,,,
-66,Kündigungstermin des Vertrags,SG4,,,,,,Muss [35],
-67,Kündigungstermin des Vertrags,SG4,DTM,,,,,Muss [35],
-68,Kündigungstermin des Vertrags,SG4,DTM,2005,Z10,,Kündigungstermin,X,Kündigungstermin
-69,Kündigungstermin des Vertrags,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧[209],
-70,Kündigungstermin des Vertrags,SG4,DTM,2379,106,,MMDD,X,MMDD
-71,Transaktionsgrund,SG4,,,,,,,
-72,Transaktionsgrund,SG4,,,,,,Muss [2061],
-73,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
-74,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
-75,Transaktionsgrund,SG4,STS,9013,E03,,Wechsel,X,Wechsel
-76,Status der Antwort,SG4,,,,,,,
-77,Status der Antwort,SG4,,,,,,Muss [249],
-78,Status der Antwort,SG4,STS,,,,,Muss [249],
-79,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,X,Status der Antwort
-80,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,X,
-81,Status der Antwort,SG4,STS,1131,Codeliste Strom Nr.S_0054Codeliste Strom Nr.S_0090,,S_0054S_0090,X,Codeliste Strom Nr.S_0054Codeliste Strom Nr.S_0090
-82,NEU Marktlokation,SG5,,,,,,,
-83,NEU Marktlokation,SG5,,,,,,,
-84,NEU Marktlokation,SG5,LOC,,,,,,
-85,NEU Marktlokation,SG5,LOC,3227,Z16,,Marktlokation,,Marktlokation
-86,NEU Marktlokation,SG5,LOC,3225,,,ID der Marktlokation,,
-87,NEU Messlokation,SG5,,,,,,Muss [2061],
-88,NEU Messlokation,SG5,,,,,,Muss [2061],
-89,NEU Messlokation,SG5,LOC,,,,,Muss,
-90,NEU Messlokation,SG5,LOC,3227,Z17,,Messlokation,X,Messlokation
-91,NEU Messlokation,SG5,LOC,3225,,,ID der Messlokation,X [951],
-92,Prüfidentifikator,SG6,,,,,,Muss,
-93,Prüfidentifikator,SG6,,,,,,Muss,
-94,Prüfidentifikator,SG6,RFF,,,,,Muss,
-95,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-96,Prüfidentifikator,SG6,RFF,1154,55039,,WiM Strom / KündigungMSB,,WiM Strom / KündigungMSB
-97,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
-98,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
-99,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,Muss,
-100,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
-101,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
-102,Zähleinrichtungsdaten,SG8,,,,,,,
-103,Zähleinrichtungsdaten,SG8,,,,,,,
-104,Zähleinrichtungsdaten,SG8,SEQ,,,,,,
-105,Zähleinrichtungsdaten,SG8,SEQ,1229,Z03,,Zähleinrichtungsdaten,,Zähleinrichtungsdaten
-106,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-107,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-108,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,
-109,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,,Messlokation
-110,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,,
-111,Zählertyp,SG10,,,,,,,
-112,Zählertyp,SG10,,,,,,,
-113,Zählertyp,SG10,CCI,,,,,,
-114,Zählertyp,SG10,CCI,7037,E13,,Zählertyp,,Zählertyp
-115,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-116,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-117,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,
-118,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,,Gerätenummer
-119,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,,
-120,Kunde des Messstellenbetreibers,SG12,,,,,,,
-121,Kunde des Messstellenbetreibers,SG12,,,,,,,
-122,Kunde des Messstellenbetreibers,SG12,NAD,,,,,,
-123,Kunde des Messstellenbetreibers,SG12,NAD,3035,Z07,,Kunde des MSB,,Kunde des MSB
-124,Kunde des Messstellenbetreibers,SG12,NAD,3036,,,Name,,
-125,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,,Struktur vonPersonennamen
-126,Referenz auf die ID der Messlokation,SG12,,,,,,,
-127,Referenz auf die ID der Messlokation,SG12,,,,,,,
-128,Referenz auf die ID der Messlokation,SG12,RFF,,,,,,
-129,Referenz auf die ID der Messlokation,SG12,RFF,1153,Z19,,Messlokation,,Messlokation
-130,Referenz auf die ID der Messlokation,SG12,RFF,1154,,,ID der Messlokation,,
-131,Messlokationsadresse,SG12,,,,,,,
-132,Messlokationsadresse,SG12,,,,,,,
-133,Messlokationsadresse,SG12,NAD,,,,,,
-134,Messlokationsadresse,SG12,NAD,3035,Z03,,Messlokationsadresse,,Messlokationsadresse
-135,Messlokationsadresse,SG12,NAD,3124,,,Zusatzinformation zurIdentifizierung,,
-136,Messlokationsadresse,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,,
-137,Messlokationsadresse,SG12,NAD,3164,,,Ort,,
-138,Messlokationsadresse,SG12,NAD,3251,,,Postleitzahl,,
-139,Messlokationsadresse,SG12,NAD,3207,,,"Ländername, Code",,
-140,Referenz auf die ID einer Messlokation,SG12,,,,,,,
-141,Referenz auf die ID einer Messlokation,SG12,,,,,,,
-142,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,,
-143,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,,Messlokation
-144,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,,
-145,Nachrichten-Endesegment,,,,,,,Muss,
-146,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-147,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+22,Ansprechpartner,SG3,,,,,,Kann,
+23,Ansprechpartner,SG3,CTA,,,,,Muss,
+24,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+25,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+26,Kommunikationsverbindung,SG3,,,,,,,
+27,Kommunikationsverbindung,SG3,,,,,,Muss,
+28,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+29,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
+30,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+31,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+32,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+33,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+34,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+35,MP-ID Empfänger,SG2,,,,,,Muss,
+36,MP-ID Empfänger,SG2,,,,,,Muss,
+37,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+38,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+39,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
+40,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+41,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+42,Vorgang,SG4,,,,,,Muss,
+43,Vorgang,SG4,,,,,,Muss,
+44,Vorgang,SG4,IDE,,,,,Muss,
+45,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
+46,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
+47,Ende zum,SG4,,,,,,,
+48,Ende zum,SG4,,,,,,,
+49,Ende zum,SG4,DTM,,,,,,
+50,Ende zum,SG4,DTM,2005,93,,Datum Vertragsende,,Datum Vertragsende
+51,Ende zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+52,Ende zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+53,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,,
+54,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,Muss [16] ∧[581],
+55,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,Muss [16] ∧[581],
+56,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
+57,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+58,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+59,Ende zum (nächstmöglichem Termin),SG4,,,,,,,
+60,Ende zum (nächstmöglichem Termin),SG4,,,,,,,
+61,Ende zum (nächstmöglichem Termin),SG4,DTM,,,,,,
+62,Ende zum (nächstmöglichem Termin),SG4,DTM,2005,471,,Ende zum(nächstmöglichemTermin),,Ende zum(nächstmöglichemTermin)
+63,Ende zum (nächstmöglichem Termin),SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+64,Ende zum (nächstmöglichem Termin),SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+65,Kündigungsfrist des Vertrags,SG4,,,,,,,
+66,Kündigungsfrist des Vertrags,SG4,,,,,,Muss,
+67,Kündigungsfrist des Vertrags,SG4,DTM,,,,,Muss,
+68,Kündigungsfrist des Vertrags,SG4,DTM,2005,Z01,,Kündigungsfrist,X,Kündigungsfrist
+69,Kündigungsfrist des Vertrags,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+70,Kündigungsfrist des Vertrags,SG4,DTM,2379,Z01,,ZZRB,X,ZZRB
+71,Kündigungstermin des Vertrags,SG4,,,,,,,
+72,Kündigungstermin des Vertrags,SG4,,,,,,Muss [35],
+73,Kündigungstermin des Vertrags,SG4,DTM,,,,,Muss [35],
+74,Kündigungstermin des Vertrags,SG4,DTM,2005,Z10,,Kündigungstermin,X,Kündigungstermin
+75,Kündigungstermin des Vertrags,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧[209],
+76,Kündigungstermin des Vertrags,SG4,DTM,2379,106,,MMDD,X,MMDD
+77,Kündigungstermin des Vertrags,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+78,Transaktionsgrund,SG4,,,,,,,
+79,Transaktionsgrund,SG4,,,,,,Muss [2061],
+80,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
+81,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
+82,Transaktionsgrund,SG4,STS,9013,E03,,Wechsel,X,Wechsel
+83,Transaktionsgrund,SG4,STS,9013,ZR9,,Kündigung aufgrundVertrag mitAnschlussnehmer,X,
+84,Status der Antwort,SG4,,,,,,,
+85,Status der Antwort,SG4,,,,,,Muss [249],
+86,Status der Antwort,SG4,STS,,,,,Muss [249],
+87,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,X,Status der Antwort
+88,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,X,
+89,Status der Antwort,SG4,STS,1131,Codeliste Strom Nr.S_0054Codeliste Strom Nr.S_0090,,S_0054S_0090,X,Codeliste Strom Nr.S_0054Codeliste Strom Nr.S_0090
+90,Marktlokation,SG5,,,,,,,
+91,Marktlokation,SG5,,,,,,,
+92,Marktlokation,SG5,LOC,,,,,,
+93,Marktlokation,SG5,LOC,3227,Z16,,Marktlokation,,Marktlokation
+94,Marktlokation,SG5,LOC,3225,,,ID der Marktlokation,,
+95,Messlokation,SG5,,,,,,Muss [2061],
+96,Messlokation,SG5,,,,,,Muss [2061],
+97,Messlokation,SG5,LOC,,,,,Muss,
+98,Messlokation,SG5,LOC,3227,Z17,,Messlokation,X,Messlokation
+99,Messlokation,SG5,LOC,3225,,,ID der Messlokation,X [951],
+100,Prüfidentifikator,SG6,,,,,,Muss,
+101,Prüfidentifikator,SG6,,,,,,Muss,
+102,Prüfidentifikator,SG6,RFF,,,,,Muss,
+103,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+104,Prüfidentifikator,SG6,RFF,1154,55039,,WiM Strom / KündigungMSB,,WiM Strom / KündigungMSB
+105,Prüfidentifikator,SG6,RFF,1154,55040,,WiM Strom / BestätigungKündigung MSB,,
+106,Prüfidentifikator,SG6,RFF,1154,55041,,WiM Strom / AblehnungKündigung MSB,X,
+107,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
+108,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
+109,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,Muss,
+110,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
+111,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
+112,Zähleinrichtungsdaten,SG8,,,,,,,
+113,Zähleinrichtungsdaten,SG8,,,,,,,
+114,Zähleinrichtungsdaten,SG8,SEQ,,,,,,
+115,Zähleinrichtungsdaten,SG8,SEQ,1229,Z03,,Zähleinrichtungsdaten,,Zähleinrichtungsdaten
+116,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+117,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+118,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,
+119,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,,Messlokation
+120,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,,
+121,Zählertyp,SG10,,,,,,,
+122,Zählertyp,SG10,,,,,,,
+123,Zählertyp,SG10,CCI,,,,,,
+124,Zählertyp,SG10,CCI,7037,E13,,Zählertyp,,Zählertyp
+125,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+126,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+127,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,
+128,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,,Gerätenummer
+129,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,,
+130,Kunde des Messstellenbetreibers,SG12,,,,,,,
+131,Kunde des Messstellenbetreibers,SG12,,,,,,,
+132,Kunde des Messstellenbetreibers,SG12,NAD,,,,,,
+133,Kunde des Messstellenbetreibers,SG12,NAD,3035,Z07,,Kunde des MSB,,Kunde des MSB
+134,Kunde des Messstellenbetreibers,SG12,NAD,3036,,,Name,,
+135,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,,Struktur vonPersonennamen
+136,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,,
+137,Referenz auf die ID der Messlokation,SG12,,,,,,,
+138,Referenz auf die ID der Messlokation,SG12,,,,,,,
+139,Referenz auf die ID der Messlokation,SG12,RFF,,,,,,
+140,Referenz auf die ID der Messlokation,SG12,RFF,1153,Z19,,Messlokation,,Messlokation
+141,Referenz auf die ID der Messlokation,SG12,RFF,1154,,,ID der Messlokation,,
+142,Messlokationsadresse,SG12,,,,,,,
+143,Messlokationsadresse,SG12,,,,,,,
+144,Messlokationsadresse,SG12,NAD,,,,,,
+145,Messlokationsadresse,SG12,NAD,3035,Z03,,Messlokationsadresse,,Messlokationsadresse
+146,Messlokationsadresse,SG12,NAD,3124,,,Zusatzinformation zurIdentifizierung,,
+147,Messlokationsadresse,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,,
+148,Messlokationsadresse,SG12,NAD,3164,,,Ort,,
+149,Messlokationsadresse,SG12,NAD,3251,,,Postleitzahl,,
+150,Messlokationsadresse,SG12,NAD,3207,,,"Ländername, Code",,
+151,Referenz auf die ID einer Messlokation,SG12,,,,,,,
+152,Referenz auf die ID einer Messlokation,SG12,,,,,,,
+153,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,,
+154,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,,Messlokation
+155,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,,
+156,Nachrichten-Endesegment,,,,,,,Muss,
+157,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+158,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
