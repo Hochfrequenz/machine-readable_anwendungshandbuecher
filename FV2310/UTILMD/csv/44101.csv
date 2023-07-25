@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,Netzanschluss-Stammdaten
@@ -9,98 +9,92 @@
 7,Nachrichten-Kopfsegment,,UNH,0068,,,Allgemeine Zuordnungs-Referenz,S [1],
 8,Nachrichten-Kopfsegment,,UNH,0070,,,Übermittlungsfolgenummer,X [252],
 9,Nachrichten-Kopfsegment,,UNH,0073,C,,Beginn,M [2],Beginn
-10,Beginn der Nachricht,,,,,,,Muss,
-11,Beginn der Nachricht,,BGM,1001,Z22,,Netzbetreiberwechsel,X,Netzbetreiberwechsel
-12,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
-13,Nachrichtendatum,,,,,,,Muss,
-14,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-15,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-16,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-17,MP-ID Absender,SG2,,,,,,Muss,
+10,Nachrichten-Kopfsegment,,UNH,0073,F,,Ende,S [3],"[2] Wenn UNH DE 0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
+[3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenummer"
+11,Beginn der Nachricht,,,,,,,Muss,
+12,Beginn der Nachricht,,BGM,1001,Z22,,Netzbetreiberwechsel,X,Netzbetreiberwechsel
+13,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+14,Nachrichtendatum,,,,,,,Muss,
+15,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
+16,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
+17,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
 18,MP-ID Absender,SG2,,,,,,Muss,
-19,MP-ID Absender,SG2,NAD,,,,,Muss,
-20,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
-21,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
-22,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-23,Ansprechpartner,SG3,,,,,,Kann,
-24,Ansprechpartner,SG3,,,,,,Kann,
-25,Ansprechpartner,SG3,CTA,,,,,Muss,
-26,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-27,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
-28,Kommunikationsverbindung,SG3,,,,,,,
-29,Kommunikationsverbindung,SG3,,,,,,Muss,
-30,Kommunikationsverbindung,SG3,COM,,,,,Muss,
-31,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
-32,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-33,MP-ID Empfänger,SG2,,,,,,Muss,
-34,MP-ID Empfänger,SG2,,,,,,Muss,
-35,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-36,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-37,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
-38,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-39,Vorgang,SG4,,,,,,Muss,
-40,Vorgang,SG4,,,,,,Muss,
-41,Vorgang,SG4,IDE,,,,,Muss,
-42,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
-43,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
-44,Beginn zum,SG4,,,,,,,
-45,Beginn zum,SG4,,,,,,Muss [508],
-46,Beginn zum,SG4,DTM,,,,,Muss [508],
-47,Beginn zum,SG4,DTM,2005,92,,Datum Vertragsbeginn,X,Datum Vertragsbeginn
-48,Beginn zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
-49,Beginn zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-50,Ende zum,SG4,,,,,,,
-51,Ende zum,SG4,,,,,,Soll [14],
-52,Ende zum,SG4,DTM,,,,,Soll [14],
-53,Ende zum,SG4,DTM,2005,93,,Datum Vertragsende,X,Datum Vertragsende
-54,Ende zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
-55,Ende zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-56,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,,
-57,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,Muss,
-58,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,Muss,
-59,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
-60,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
-61,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-62,Transaktionsgrund,SG4,,,,,,,
-63,Transaktionsgrund,SG4,,,,,,Muss [2061],
-64,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
-65,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
-66,Transaktionsgrund,SG4,STS,9013,Z15,,Zusätzlicher Datensatz,,Zusätzlicher Datensatz
-67,Meldepunkt,SG5,,,,,,Muss [2061] ∧[584],
-68,Meldepunkt,SG5,,,,,,Muss [2061] ∧[584],
-69,Meldepunkt,SG5,LOC,,,,,Muss,
-70,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-71,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [951],
-72,Prüfidentifikator,SG6,,,,,,Muss,
-73,Prüfidentifikator,SG6,,,,,,Muss,
-74,Prüfidentifikator,SG6,RFF,,,,,Muss,
-75,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-76,Prüfidentifikator,SG6,RFF,1154,44101,,NBW Gas / Stammdatenzur Messlokation,X,NBW Gas / Stammdatenzur Messlokation
-77,Daten der Marktlokation,SG8,,,,,,,
-78,Daten der Marktlokation,SG8,,,,,,Muss,
-79,Daten der Marktlokation,SG8,SEQ,,,,,Muss,
-80,Daten der Marktlokation,SG8,SEQ,1229,Z01,,Daten der Marktlokation,X,Daten der Marktlokation
-81,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
-82,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
-83,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,Muss,
-84,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,31,,VeranschlagteJahresmenge Gesamt,X,VeranschlagteJahresmenge Gesamt
-85,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,Mengenangabe,X [902] ∧ [937],
-86,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
-87,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
-88,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
-89,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,Muss,
-90,Prognosegrundlage der Marktlokation,SG10,CCI,7037,ZC0,,Prognose auf Basis vonWerten,X ,Prognose auf Basis vonWerten
-91,Beteiligter Marktpartner MP-ID,SG12,,,,,,Muss [570],
-92,Beteiligter Marktpartner MP-ID,SG12,,,,,,Muss [570],
-93,Beteiligter Marktpartner MP-ID,SG12,NAD,,,,,Muss,
-94,Beteiligter Marktpartner MP-ID,SG12,NAD,3035,VY,,andere zugehörige Partei,X,andere zugehörige Partei
-95,Beteiligter Marktpartner MP-ID,SG12,NAD,3039,,,MP-ID,X,
-96,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,9,,GS1,X,GS1
-97,Referenz auf die ID einer Marktlokation / Messlokation,SG12,,,,,,,
-98,Referenz auf die ID einer Marktlokation / Messlokation,SG12,,,,,,Muss,
-99,Referenz auf die ID einer Marktlokation / Messlokation,SG12,RFF,,,,,Muss,
-100,Referenz auf die ID einer Marktlokation / Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
-101,Referenz auf die ID einer Marktlokation / Messlokation,SG12,RFF,1154,,,ID des Identifikators,X [951],
-102,Nachrichten-Endesegment,,,,,,,Muss,
-103,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-104,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+19,MP-ID Absender,SG2,,,,,,Muss,
+20,MP-ID Absender,SG2,NAD,,,,,Muss,
+21,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
+22,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
+23,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
+24,MP-ID Absender,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+25,Ansprechpartner,SG3,,,,,,Kann,
+26,Ansprechpartner,SG3,,,,,,Kann,
+27,Ansprechpartner,SG3,CTA,,,,,Muss,
+28,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+29,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+30,Kommunikationsverbindung,SG3,,,,,,,
+31,Kommunikationsverbindung,SG3,,,,,,Muss,
+32,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+33,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
+34,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+35,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+36,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+37,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+38,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+39,MP-ID Empfänger,SG2,,,,,,Muss,
+40,MP-ID Empfänger,SG2,,,,,,Muss,
+41,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+42,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+43,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
+44,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+45,MP-ID Empfänger,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+46,Vorgang,SG4,,,,,,Muss,
+47,Vorgang,SG4,,,,,,Muss,
+48,Vorgang,SG4,IDE,,,,,Muss,
+49,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
+50,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
+51,Beginn zum,SG4,,,,,,,
+52,Beginn zum,SG4,,,,,,Muss [508],
+53,Beginn zum,SG4,DTM,,,,,Muss [508],
+54,Beginn zum,SG4,DTM,2005,92,,Datum Vertragsbeginn,X,Datum Vertragsbeginn
+55,Beginn zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
+56,Beginn zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+57,Ende zum,SG4,,,,,,,
+58,Ende zum,SG4,,,,,,Soll [14],
+59,Ende zum,SG4,DTM,,,,,Soll [14],
+60,Ende zum,SG4,DTM,2005,93,,Datum Vertragsende,X,Datum Vertragsende
+61,Ende zum,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
+62,Ende zum,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+63,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,,
+64,"Änderung zum, Gültigkeit, Beginndatum",SG4,,,,,,Muss,
+65,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,Muss,
+66,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
+67,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2],
+68,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+69,Transaktionsgrund,SG4,,,,,,,
+70,Transaktionsgrund,SG4,,,,,,Muss [2061],
+71,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
+72,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
+73,Transaktionsgrund,SG4,STS,9013,Z15,,Zusätzlicher Datensatz,,Zusätzlicher Datensatz
+74,Transaktionsgrund,SG4,STS,9013,ZE3,,Stammdatenänderung,,
+75,Transaktionsgrund,SG4,STS,9013,ZE4,,Weggefallene Markt-bzw. Messlokation,,
+76,Transaktionsgrund,SG4,STS,9013,ZE5,,Initialmeldung,X,
+77,Meldepunkt,SG5,,,,,,Muss [2061] ∧[584],
+78,Meldepunkt,SG5,,,,,,Muss [2061] ∧[584],
+79,Meldepunkt,SG5,LOC,,,,,Muss,
+80,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
+81,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [951],
+82,Prüfidentifikator,SG6,,,,,,Muss,
+83,Prüfidentifikator,SG6,,,,,,Muss,
+84,Prüfidentifikator,SG6,RFF,,,,,Muss,
+85,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+86,Prüfidentifikator,SG6,RFF,1154,44101,,NBW Gas / Stammdatenzur Messlokation,X,NBW Gas / Stammdatenzur Messlokation
+87,Prüfidentifikator,SG6,RFF,1154,44102,,NBW Gas / AktualisierteStammdaten zurMesslokation,,
+88,Beteiligter Marktpartner MP-ID,SG12,,,,,,Muss [570],
+89,Beteiligter Marktpartner MP-ID,SG12,,,,,,Muss [570],
+90,Beteiligter Marktpartner MP-ID,SG12,NAD,,,,,Muss,
+91,Beteiligter Marktpartner MP-ID,SG12,NAD,3035,VY,,andere zugehörige Partei,X,andere zugehörige Partei
+92,Beteiligter Marktpartner MP-ID,SG12,NAD,3039,,,MP-ID,X,
+93,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,9,,GS1,X,GS1
+94,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+95,Nachrichten-Endesegment,,,,,,,Muss,
+96,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+97,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
