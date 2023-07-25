@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,ORDERS,,Bestellung,X,Bestellung
@@ -19,78 +19,88 @@
 17,Ausführungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
 18,Bestellung Zählzeiten,,,,,,,Muss,
 19,Bestellung Zählzeiten,,IMD,7081,Z55,,Änderung Zählzeitdefinition,X,Änderung Zählzeitdefinition
-20,Prüfidentifikator,SG1,,,,,,Muss,
+20,Bestellung Zählzeiten,,IMD,7081,Z57,,Abbestellung Zählzeiten,X [27],[27] Wenn MP-ID in SG2 NAD+MR mit Rolle MSB vorhanden
 21,Prüfidentifikator,SG1,,,,,,Muss,
-22,Prüfidentifikator,SG1,RFF,,,,,Muss,
-23,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-24,Prüfidentifikator,SG1,RFF,1154,17123,,Bestellung ÄnderungZählzeitdefinition,X,Bestellung ÄnderungZählzeitdefinition
-25,MP-ID Absender,SG2,,,,,,Muss,
+22,Prüfidentifikator,SG1,,,,,,Muss,
+23,Prüfidentifikator,SG1,RFF,,,,,Muss,
+24,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+25,Prüfidentifikator,SG1,RFF,1154,17123,,Bestellung ÄnderungZählzeitdefinition,X,Bestellung ÄnderungZählzeitdefinition
 26,MP-ID Absender,SG2,,,,,,Muss,
-27,MP-ID Absender,SG2,NAD,,,,,Muss,
-28,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
-29,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [61],
-30,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-31,Ansprechpartner,SG5,,,,,,Kann,
-32,Ansprechpartner,SG5,,,,,,Kann,
-33,Ansprechpartner,SG5,CTA,,,,,Muss,
-34,Ansprechpartner,SG5,CTA,3139,,,,IC,
-35,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
-36,Kommunikationsverbindung,SG5,,,,,,,
-37,Kommunikationsverbindung,SG5,,,,,,Muss,
-38,Kommunikationsverbindung,SG5,COM,,,,,Muss,
-39,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-40,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-41,MP-ID Empfänger,SG2,,,,,,Muss,
-42,MP-ID Empfänger,SG2,,,,,,Muss,
-43,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-44,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
-45,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [61],
-46,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-47,Meldepunkt,SG2,,,,,,Muss,
-48,Meldepunkt,SG2,,,,,,Muss,
-49,Meldepunkt,SG2,NAD,,,,,Muss,
-50,Meldepunkt,SG2,NAD,3035,,,,DP,
-51,Meldepunkt,SG2,,,,,,,
-52,Meldepunkt,SG2,,,,,,Muss,
-53,Meldepunkt,SG2,LOC,,,,,Muss,
-54,Meldepunkt,SG2,LOC,3227,,,,172,
-55,Meldepunkt,SG2,LOC,3225,,,Identifikator,X [950] [521],
-56,Positionsdaten,SG29,,,,,,Muss [2050] ∧ [23],
-57,Positionsdaten,SG29,,,,,,Muss [2050] ∧ [23],
-58,Positionsdaten,SG29,LIN,,,,,Muss,
-59,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],
-60,Positionsdaten,SG29,LIN,1229,,,,Z42,
-61,Zugeordnete Zählzeit,SG30,,,,,,Muss,
-62,Zugeordnete Zählzeit,SG30,,,,,,Muss,
-63,Zugeordnete Zählzeit,SG30,CCI,,,,,Muss,
-64,Zugeordnete Zählzeit,SG30,CCI,7059,Messprodukt erforderlich,,,Z39Z41,Messprodukt erforderlich
-65,Zugeordnete Zählzeit,SG30,CCI,7037,,,Code der Zählzeit,X [77] ∧ [539] ,
-66,Wertegranularität,SG30,,,,,,Muss,
-67,Wertegranularität,SG30,,,,,,Muss,
-68,Wertegranularität,SG30,CCI,,,,,Muss,
-69,Wertegranularität,SG30,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
-70,Wertegranularität,SG30,,,,,,,
-71,Wertegranularität,SG30,,,,,,Muss,
-72,Wertegranularität,SG30,CAV,,,,,Muss,
-73,Wertegranularität,SG30,CAV,7111,ZD9,,Jährlich,X,Jährlich
-74,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss [2050] ∧ [27] ∧[107],
-75,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss [2050] ∧ [27] ∧[107],
-76,Erforderliches Messprodukt der Marktlokation,SG29,LIN,,,,,Muss,
-77,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1082,,,Positionsnummer,X [903],
-78,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1229,Marktlokation,,,Z27,Marktlokation
-79,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,
-80,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss,
-81,Erforderliches Messprodukt der Marktlokation,SG29,PIA,,,,,Muss,
-82,Erforderliches Messprodukt der Marktlokation,SG29,PIA,4347,,,,5,
-83,Erforderliches Messprodukt der Marktlokation,SG29,PIA,7140,,,Messprodukt-Code,X [95],
-84,Erforderliches Messprodukt der Marktlokation,SG29,PIA,7143,Z11,,Messprodukt,X,Messprodukt
-85,Zugeordnete Zählzeit,SG30,,,,,,Muss,
-86,Zugeordnete Zählzeit,SG30,,,,,,Muss,
-87,Zugeordnete Zählzeit,SG30,CCI,,,,,Muss,
-88,Zugeordnete Zählzeit,SG30,CCI,7059,Messprodukt erforderlich,,,Z39Z41,Messprodukt erforderlich
-89,Zugeordnete Zählzeit,SG30,CCI,7037,,,Code der Zählzeit,X [77] ∧ [540] ,
-90,Abschnitts-Kontrollsegment,,,,,,,Muss,
-91,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
-92,Nachrichten-Endesegment,,,,,,,Muss,
-93,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-94,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+27,MP-ID Absender,SG2,,,,,,Muss,
+28,MP-ID Absender,SG2,NAD,,,,,Muss,
+29,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
+30,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [61],
+31,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
+32,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+33,Ansprechpartner,SG5,,,,,,Kann,
+34,Ansprechpartner,SG5,,,,,,Kann,
+35,Ansprechpartner,SG5,CTA,,,,,Muss,
+36,Ansprechpartner,SG5,CTA,3139,,,,IC,
+37,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
+38,Kommunikationsverbindung,SG5,,,,,,,
+39,Kommunikationsverbindung,SG5,,,,,,Muss,
+40,Kommunikationsverbindung,SG5,COM,,,,,Muss,
+41,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
+42,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+43,Kommunikationsverbindung,SG5,COM,3155,FX,,Telefax,X [1P0..1],
+44,Kommunikationsverbindung,SG5,COM,3155,TE,,Telefon,X [1P0..1],
+45,Kommunikationsverbindung,SG5,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+46,Kommunikationsverbindung,SG5,COM,3155,AL,,Handy,X [1P0..1],
+47,MP-ID Empfänger,SG2,,,,,,Muss,
+48,MP-ID Empfänger,SG2,,,,,,Muss,
+49,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+50,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
+51,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [61],
+52,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+53,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+54,Meldepunkt,SG2,,,,,,Muss,
+55,Meldepunkt,SG2,,,,,,Muss,
+56,Meldepunkt,SG2,NAD,,,,,Muss,
+57,Meldepunkt,SG2,NAD,3035,,,,DP,
+58,Meldepunkt,SG2,,,,,,,
+59,Meldepunkt,SG2,,,,,,Muss,
+60,Meldepunkt,SG2,LOC,,,,,Muss,
+61,Meldepunkt,SG2,LOC,3227,,,,172,
+62,Meldepunkt,SG2,LOC,3225,,,Identifikator,X [950] [521],
+63,Positionsdaten,SG29,,,,,,Muss [2050] ∧ [23],
+64,Positionsdaten,SG29,,,,,,Muss [2050] ∧ [23],
+65,Positionsdaten,SG29,LIN,,,,,Muss,
+66,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],
+67,Positionsdaten,SG29,LIN,1229,,,,Z42,
+68,Zugeordnete Zählzeit,SG30,,,,,,Muss,
+69,Zugeordnete Zählzeit,SG30,,,,,,Muss,
+70,Zugeordnete Zählzeit,SG30,CCI,,,,,Muss,
+71,Zugeordnete Zählzeit,SG30,CCI,7059,Messprodukt erforderlich,,,Z39Z41,Messprodukt erforderlich
+72,Zugeordnete Zählzeit,SG30,CCI,7037,,,Code der Zählzeit,X [77] ∧ [539] ,
+73,Wertegranularität,SG30,,,,,,Muss,
+74,Wertegranularität,SG30,,,,,,Muss,
+75,Wertegranularität,SG30,CCI,,,,,Muss,
+76,Wertegranularität,SG30,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
+77,Wertegranularität,SG30,,,,,,,
+78,Wertegranularität,SG30,,,,,,Muss,
+79,Wertegranularität,SG30,CAV,,,,,Muss,
+80,Wertegranularität,SG30,CAV,7111,ZD9,,Jährlich,X,Jährlich
+81,Wertegranularität,SG30,CAV,7111,ZE8,,Halbjährlich,X,
+82,Wertegranularität,SG30,CAV,7111,ZE9,,Quartalsweise,X,
+83,Wertegranularität,SG30,CAV,7111,ZB7,,Monatlich,X,
+84,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss [2050] ∧ [27] ∧[107],
+85,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss [2050] ∧ [27] ∧[107],
+86,Erforderliches Messprodukt der Marktlokation,SG29,LIN,,,,,Muss,
+87,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1082,,,Positionsnummer,X [903],
+88,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1229,Marktlokation,,,Z27,Marktlokation
+89,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,
+90,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,Muss,
+91,Erforderliches Messprodukt der Marktlokation,SG29,PIA,,,,,Muss,
+92,Erforderliches Messprodukt der Marktlokation,SG29,PIA,4347,,,,5,
+93,Erforderliches Messprodukt der Marktlokation,SG29,PIA,7140,,,Messprodukt-Code,X [95],
+94,Erforderliches Messprodukt der Marktlokation,SG29,PIA,7143,Z11,,Messprodukt,X,Messprodukt
+95,Zugeordnete Zählzeit,SG30,,,,,,Muss,
+96,Zugeordnete Zählzeit,SG30,,,,,,Muss,
+97,Zugeordnete Zählzeit,SG30,CCI,,,,,Muss,
+98,Zugeordnete Zählzeit,SG30,CCI,7059,Messprodukt erforderlich,,,Z39Z41,Messprodukt erforderlich
+99,Zugeordnete Zählzeit,SG30,CCI,7037,,,Code der Zählzeit,X [77] ∧ [540] ,
+100,Abschnitts-Kontrollsegment,,,,,,,Muss,
+101,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
+102,Nachrichten-Endesegment,,,,,,,Muss,
+103,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+104,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,IFTSTA,,Multimodaler Statusbericht,X,Multimodaler Statusbericht
@@ -19,71 +19,90 @@
 17,MP-ID Empfänger,SG1,NAD,3035,,,,MR,
 18,MP-ID Empfänger,SG1,NAD,3039,,,MP-ID,X [27],
 19,MP-ID Empfänger,SG1,NAD,3055,9,,GS1,X,GS1
-20,MP-ID Absender,SG1,,,,,,Muss,
+20,MP-ID Empfänger,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 21,MP-ID Absender,SG1,,,,,,Muss,
-22,MP-ID Absender,SG1,NAD,,,,,Muss,
-23,MP-ID Absender,SG1,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
-24,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
-25,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
-26,Ansprechpartner,SG2,,,,,,Kann,
-27,Ansprechpartner,SG2,,,,,,Kann,
-28,Ansprechpartner,SG2,CTA,,,,,Muss,
-29,Ansprechpartner,SG2,CTA,3139,,,,IC,
-30,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
-31,Kommunikationsverbindung,SG2,,,,,,,
-32,Kommunikationsverbindung,SG2,,,,,,Muss,
-33,Kommunikationsverbindung,SG2,COM,,,,,Muss,
-34,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
-35,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
-36,Sendungsdaten,SG14,,,,,,Muss,
-37,Sendungsdaten,SG14,,,,,,Muss,
-38,Sendungsdaten,SG14,CNI,,,,,Muss,
-39,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],
-40,Status des Lieferscheins,SG15,,,,,,Muss,
-41,Status des Lieferscheins,SG15,,,,,,Muss,
-42,Status des Lieferscheins,SG15,STS,,,,,Muss,
-43,Status des Lieferscheins,SG15,STS,9015,Z25,,Status des Lieferscheins,X,Status des Lieferscheins
-44,Status des Lieferscheins,SG15,STS,4405,Z30,,zugestimmt,X,zugestimmt
-45,Status des Lieferscheins,SG15,STS,9013,,,Code des Prüfschritts,X [49] ∨ [50],
-46,Status des Lieferscheins,SG15,STS,1131,E_0456,,EBD Nr. E_0456,X,EBD Nr. E_0456
-47,Prüfidentifikator,SG15,,,,,,,
-48,Prüfidentifikator,SG15,,,,,,Muss,
-49,Prüfidentifikator,SG15,RFF,,,,,Muss,
-50,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-51,Prüfidentifikator,SG15,RFF,1154,21035,,GPKE / Rückmeldung aufLieferschein,X,GPKE / Rückmeldung aufLieferschein
-52,Lieferschein,SG15,,,,,,,
-53,Lieferschein,SG15,,,,,,Muss,
-54,Lieferschein,SG15,RFF,,,,,Muss,
-55,Lieferschein,SG15,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
-56,Lieferschein,SG15,RFF,1154,,,Referenznummer,X [512],
-57,Weitere Information,SG16,,,,,,Muss [23],
-58,Weitere Information,SG16,,,,,,Muss [23],
-59,Weitere Information,SG16,EFI,,,,,Muss,
-60,Weitere Information,SG16,EFI,7008,Z01,,Ansicht des Senders,X,Ansicht des Senders
-61,Beginn Messperiode,SG16,,,,,,,
-62,Beginn Messperiode,SG16,,,,,,Muss [31],
-63,Beginn Messperiode,SG16,DTM,,,,,Muss [31],
-64,Beginn Messperiode,SG16,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",X,"Verarbeitung,Beginndatum/-zeit"
-65,Beginn Messperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ [495],
-66,Beginn Messperiode,SG16,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-67,Ende Messperiode,SG16,,,,,,,
-68,Ende Messperiode,SG16,,,,,,Muss [33],
-69,Ende Messperiode,SG16,DTM,,,,,Muss [33],
-70,Ende Messperiode,SG16,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",X,"Verarbeitung,Endedatum/-zeit"
-71,Ende Messperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ [495],
-72,Ende Messperiode,SG16,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-73,Leistungsperiode,SG16,,,,,,,
-74,Leistungsperiode,SG16,,,,,,Muss [32],
-75,Leistungsperiode,SG16,DTM,,,,,Muss [32],
-76,Leistungsperiode,SG16,DTM,2005,306,,Leistungsperiode,X,Leistungsperiode
-77,Leistungsperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-78,Leistungsperiode,SG16,DTM,2379,610,,CCYYMM,X,CCYYMM
-79,Menge,SG16,,,,,,,
-80,Menge,SG16,,,,,,Muss,
-81,Menge,SG16,QTY,,,,,Muss,
-82,Menge,SG16,QTY,6063,Z20,,Tarifstufe 0,X,Tarifstufe 0
-83,Menge,SG16,QTY,6060,,,Menge,X [902],
-84,Menge,SG16,QTY,6411,KWH,,kilowatt hour,X,kilowatt hour
-85,Nachrichten-Endesegment,,,,,,,Muss,
-86,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-87,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+22,MP-ID Absender,SG1,,,,,,Muss,
+23,MP-ID Absender,SG1,NAD,,,,,Muss,
+24,MP-ID Absender,SG1,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
+25,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
+26,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
+27,MP-ID Absender,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+28,Ansprechpartner,SG2,,,,,,Kann,
+29,Ansprechpartner,SG2,,,,,,Kann,
+30,Ansprechpartner,SG2,CTA,,,,,Muss,
+31,Ansprechpartner,SG2,CTA,3139,,,,IC,
+32,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
+33,Kommunikationsverbindung,SG2,,,,,,,
+34,Kommunikationsverbindung,SG2,,,,,,Muss,
+35,Kommunikationsverbindung,SG2,COM,,,,,Muss,
+36,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
+37,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
+38,Kommunikationsverbindung,SG2,COM,3155,FX,,Telefax,X [1P0..1],
+39,Kommunikationsverbindung,SG2,COM,3155,TE,,Telefon,X [1P0..1],
+40,Kommunikationsverbindung,SG2,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG2,COM,3155,AL,,Handy,X [1P0..1],
+42,Sendungsdaten,SG14,,,,,,Muss,
+43,Sendungsdaten,SG14,,,,,,Muss,
+44,Sendungsdaten,SG14,CNI,,,,,Muss,
+45,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],
+46,Status des Lieferscheins,SG15,,,,,,Muss,
+47,Status des Lieferscheins,SG15,,,,,,Muss,
+48,Status des Lieferscheins,SG15,STS,,,,,Muss,
+49,Status des Lieferscheins,SG15,STS,9015,Z25,,Status des Lieferscheins,X,Status des Lieferscheins
+50,Status des Lieferscheins,SG15,STS,4405,Z30,,zugestimmt,X,zugestimmt
+51,Status des Lieferscheins,SG15,STS,4405,Z31,,widersprochen,X,
+52,Status des Lieferscheins,SG15,STS,9013,,,Code des Prüfschritts,X [49] ∨ [50],
+53,Status des Lieferscheins,SG15,STS,1131,E_0456,,EBD Nr. E_0456,X,EBD Nr. E_0456
+54,Prüfidentifikator,SG15,,,,,,,
+55,Prüfidentifikator,SG15,,,,,,Muss,
+56,Prüfidentifikator,SG15,RFF,,,,,Muss,
+57,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+58,Prüfidentifikator,SG15,RFF,1154,21035,,GPKE / Rückmeldung aufLieferschein,X,GPKE / Rückmeldung aufLieferschein
+59,Lieferschein,SG15,,,,,,,
+60,Lieferschein,SG15,,,,,,Muss,
+61,Lieferschein,SG15,RFF,,,,,Muss,
+62,Lieferschein,SG15,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
+63,Lieferschein,SG15,RFF,1154,,,Referenznummer,X [512],
+64,Weitere Information,SG16,,,,,,Muss [23],
+65,Weitere Information,SG16,,,,,,Muss [23],
+66,Weitere Information,SG16,EFI,,,,,Muss,
+67,Weitere Information,SG16,EFI,7008,Z01,,Ansicht des Senders,X,Ansicht des Senders
+68,Beginn Messperiode,SG16,,,,,,,
+69,Beginn Messperiode,SG16,,,,,,Muss [31],
+70,Beginn Messperiode,SG16,DTM,,,,,Muss [31],
+71,Beginn Messperiode,SG16,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",X,"Verarbeitung,Beginndatum/-zeit"
+72,Beginn Messperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ [495],
+73,Beginn Messperiode,SG16,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+74,Ende Messperiode,SG16,,,,,,,
+75,Ende Messperiode,SG16,,,,,,Muss [33],
+76,Ende Messperiode,SG16,DTM,,,,,Muss [33],
+77,Ende Messperiode,SG16,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",X,"Verarbeitung,Endedatum/-zeit"
+78,Ende Messperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧ [495],
+79,Ende Messperiode,SG16,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+80,Leistungsperiode,SG16,,,,,,,
+81,Leistungsperiode,SG16,,,,,,Muss [32],
+82,Leistungsperiode,SG16,DTM,,,,,Muss [32],
+83,Leistungsperiode,SG16,DTM,2005,306,,Leistungsperiode,X,Leistungsperiode
+84,Leistungsperiode,SG16,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+85,Leistungsperiode,SG16,DTM,2379,610,,CCYYMM,X,CCYYMM
+86,Menge,SG16,,,,,,,
+87,Menge,SG16,,,,,,Muss,
+88,Menge,SG16,QTY,,,,,Muss,
+89,Menge,SG16,QTY,6063,Z20,,Tarifstufe 0,X,Tarifstufe 0
+90,Menge,SG16,QTY,6063,Z21,,Tarifstufe 1,X,
+91,Menge,SG16,QTY,6063,Z22,,Tarifstufe 2,X,
+92,Menge,SG16,QTY,6063,Z23,,Tarifstufe 3,X,
+93,Menge,SG16,QTY,6063,Z24,,Tarifstufe 4,X,
+94,Menge,SG16,QTY,6063,Z25,,Tarifstufe 5,X,
+95,Menge,SG16,QTY,6063,Z26,,Tarifstufe 6,X,
+96,Menge,SG16,QTY,6063,Z27,,Tarifstufe 7,X,
+97,Menge,SG16,QTY,6063,Z28,,Tarifstufe 8,X,
+98,Menge,SG16,QTY,6063,Z29,,Tarifstufe 9,X,
+99,Menge,SG16,QTY,6060,,,Menge,X [902],
+100,Menge,SG16,QTY,6411,KWH,,kilowatt hour,X,kilowatt hour
+101,Menge,SG16,QTY,6411,KWT,,kilowatt,X,
+102,Menge,SG16,QTY,6411,K3,,kilovolt ampere reactivehour,X,
+103,Menge,SG16,QTY,6411,K5,,kilovolt ampere (reactive),X,
+104,Nachrichten-Endesegment,,,,,,,Muss,
+105,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+106,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
