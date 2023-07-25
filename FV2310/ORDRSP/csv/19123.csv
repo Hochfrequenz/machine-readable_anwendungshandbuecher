@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,ORDRSP,,Bestellantwort,X,Bestellantwort
@@ -18,45 +18,61 @@
 16,Referenz Nachrichtennummer,SG1,RFF,,,,,Muss,
 17,Referenz Nachrichtennummer,SG1,RFF,1153,ON,,Auftragsnummer (Einkauf),X,Auftragsnummer (Einkauf)
 18,Referenz Nachrichtennummer,SG1,RFF,1154,,,Referenz Nachrichtennummer,X [529],
-19,Prüfidentifikator,SG1,,,,,,Muss,
-20,Prüfidentifikator,SG1,,,,,,Muss,
-21,Prüfidentifikator,SG1,RFF,,,,,Muss,
-22,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-23,Prüfidentifikator,SG1,RFF,1154,19123,,Ablehnung derReklamation einerDefinition,X,Ablehnung derReklamation einerDefinition
-24,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
-25,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
-26,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,,,,Muss,
-27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,Code des Prüfschritts,X,
-28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,,,E_0544E_0545E_0546E_0547E_0548E_0549E_0550E_0551,
-29,Allgemeine Information (Feld für allgemeine Hinweise),SG2,,,,,,,
-30,Allgemeine Information (Feld für allgemeine Hinweise),SG2,,,,,,Muss [28],
-31,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,,,,Muss [28],
-32,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4451,,,,AAP,
-33,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4440,,,Freier Text,X,
-34,MP-ID Absender,SG3,,,,,,Muss,
-35,MP-ID Absender,SG3,,,,,,Muss,
-36,MP-ID Absender,SG3,NAD,,,,,Muss,
-37,MP-ID Absender,SG3,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
-38,MP-ID Absender,SG3,NAD,3039,,,MP-ID,X [30],
-39,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,GS1
-40,Ansprechpartner,SG6,,,,,,Kann,
-41,Ansprechpartner,SG6,,,,,,Kann,
-42,Ansprechpartner,SG6,CTA,,,,,Muss,
-43,Ansprechpartner,SG6,CTA,3139,,,,IC,
-44,Ansprechpartner,SG6,CTA,3412,,,Kontakt,X,
-45,Kommunikationsverbindung,SG6,,,,,,,
-46,Kommunikationsverbindung,SG6,,,,,,Muss,
-47,Kommunikationsverbindung,SG6,COM,,,,,Muss,
-48,Kommunikationsverbindung,SG6,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-49,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-50,MP-ID Empfänger,SG3,,,,,,Muss,
-51,MP-ID Empfänger,SG3,,,,,,Muss,
-52,MP-ID Empfänger,SG3,NAD,,,,,Muss,
-53,MP-ID Empfänger,SG3,NAD,3035,,,,MR,
-54,MP-ID Empfänger,SG3,NAD,3039,,,MP-ID,X [30],
-55,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,GS1
-56,Abschnitts-Kontrollsegment,,,,,,,Muss,
-57,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
-58,Nachrichten-Endesegment,,,,,,,Muss,
-59,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-60,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+19,Referenz einer vorangegangenen Nachricht,SG1,,,,,,Muss [66] ⊻ [67] ⊻ [68] ⊻[69],
+20,Referenz einer vorangegangenen Nachricht,SG1,,,,,,Muss [66] ⊻ [67] ⊻ [68] ⊻[69],
+21,Referenz einer vorangegangenen Nachricht,SG1,RFF,,,,,Muss,
+22,Referenz einer vorangegangenen Nachricht,SG1,RFF,1153,ACW,,Referenznummer einer,X,Referenznummer einer
+23,Referenz einer vorangegangenen Nachricht,SG1,RFF,1154,,,Referenz einer vorangegangenenNachricht,X ([60] ∧ [63]) ⊻ ([61] ∧[64]) ⊻ ([62] ∧ [65]),
+24,Referenz Vorgangsnummer,SG1,,,,,,Muss [56] ⊻ [57] ⊻ [58] ⊻[59],
+25,Referenz Vorgangsnummer,SG1,,,,,,Muss [56] ⊻ [57] ⊻ [58] ⊻[59],
+26,Referenz Vorgangsnummer,SG1,RFF,,,,,Muss,
+27,Referenz Vorgangsnummer,SG1,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
+28,Referenz Vorgangsnummer,SG1,RFF,1154,,,Referenz Vorgangsnummer,X ([70] ∧ [53]) ⊻ ([71] ∧[54]) ⊻ ([52] ∧ [55]) ,
+29,Prüfidentifikator,SG1,,,,,,Muss,
+30,Prüfidentifikator,SG1,,,,,,Muss,
+31,Prüfidentifikator,SG1,RFF,,,,,Muss,
+32,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+33,Prüfidentifikator,SG1,RFF,1154,19123,,Ablehnung derReklamation einerDefinition,X,Ablehnung derReklamation einerDefinition
+34,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
+35,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
+36,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,,,,Muss,
+37,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,Code des Prüfschritts,X,
+38,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,,,E_0544E_0545E_0546E_0547E_0548E_0549E_0550E_0551,
+39,Allgemeine Information (Feld für allgemeine Hinweise),SG2,,,,,,,
+40,Allgemeine Information (Feld für allgemeine Hinweise),SG2,,,,,,Muss [28],
+41,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,,,,Muss [28],
+42,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4451,,,,AAP,
+43,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4440,,,Freier Text,X,
+44,MP-ID Absender,SG3,,,,,,Muss,
+45,MP-ID Absender,SG3,,,,,,Muss,
+46,MP-ID Absender,SG3,NAD,,,,,Muss,
+47,MP-ID Absender,SG3,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
+48,MP-ID Absender,SG3,NAD,3039,,,MP-ID,X [30],
+49,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,GS1
+50,MP-ID Absender,SG3,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+51,Ansprechpartner,SG6,,,,,,Kann,
+52,Ansprechpartner,SG6,,,,,,Kann,
+53,Ansprechpartner,SG6,CTA,,,,,Muss,
+54,Ansprechpartner,SG6,CTA,3139,,,,IC,
+55,Ansprechpartner,SG6,CTA,3412,,,Kontakt,X,
+56,Kommunikationsverbindung,SG6,,,,,,,
+57,Kommunikationsverbindung,SG6,,,,,,Muss,
+58,Kommunikationsverbindung,SG6,COM,,,,,Muss,
+59,Kommunikationsverbindung,SG6,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
+60,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+61,Kommunikationsverbindung,SG6,COM,3155,FX,,Telefax,X [1P0..1],
+62,Kommunikationsverbindung,SG6,COM,3155,TE,,Telefon,X [1P0..1],
+63,Kommunikationsverbindung,SG6,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+64,Kommunikationsverbindung,SG6,COM,3155,AL,,Handy,X [1P0..1],
+65,MP-ID Empfänger,SG3,,,,,,Muss,
+66,MP-ID Empfänger,SG3,,,,,,Muss,
+67,MP-ID Empfänger,SG3,NAD,,,,,Muss,
+68,MP-ID Empfänger,SG3,NAD,3035,,,,MR,
+69,MP-ID Empfänger,SG3,NAD,3039,,,MP-ID,X [30],
+70,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,GS1
+71,MP-ID Empfänger,SG3,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+72,Abschnitts-Kontrollsegment,,,,,,,Muss,
+73,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
+74,Nachrichten-Endesegment,,,,,,,Muss,
+75,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+76,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
