@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,ORDERS,,Bestellung,X,Bestellung
@@ -26,49 +26,55 @@
 24,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
 25,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [60],
 26,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-27,Ansprechpartner,SG5,,,,,,Kann,
+27,MP-ID Absender,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
 28,Ansprechpartner,SG5,,,,,,Kann,
-29,Ansprechpartner,SG5,CTA,,,,,Muss,
-30,Ansprechpartner,SG5,CTA,3139,,,,IC,
-31,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
-32,Kommunikationsverbindung,SG5,,,,,,,
-33,Kommunikationsverbindung,SG5,,,,,,Muss,
-34,Kommunikationsverbindung,SG5,COM,,,,,Muss,
-35,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-36,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-37,MP-ID Empfänger,SG2,,,,,,Muss,
-38,MP-ID Empfänger,SG2,,,,,,Muss,
-39,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-40,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
-41,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [60],
-42,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-43,Meldepunkt,SG2,,,,,,Muss,
-44,Meldepunkt,SG2,,,,,,Muss,
-45,Meldepunkt,SG2,NAD,,,,,Muss,
-46,Meldepunkt,SG2,NAD,3035,,,,DP,
-47,Meldepunkt,SG2,,,,,,,
-48,Meldepunkt,SG2,,,,,,Muss,
-49,Meldepunkt,SG2,LOC,,,,,Muss,
-50,Meldepunkt,SG2,LOC,3227,,,,172,
-51,Meldepunkt,SG2,LOC,3225,,,Identifikator,X [951] [522],
-52,Positionsdaten,SG29,,,,,,Muss [2050],
-53,Positionsdaten,SG29,,,,,,Muss [2050],
-54,Positionsdaten,SG29,LIN,,,,,Muss,
-55,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],
-56,Beginn Zeitraum für Wertanfrage,SG29,,,,,,,
-57,Beginn Zeitraum für Wertanfrage,SG29,,,,,,Muss,
-58,Beginn Zeitraum für Wertanfrage,SG29,DTM,,,,,Muss,
-59,Beginn Zeitraum für Wertanfrage,SG29,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",X,"Verarbeitung,Beginndatum/-zeit"
-60,Beginn Zeitraum für Wertanfrage,SG29,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2] ∧ [495],
-61,Beginn Zeitraum für Wertanfrage,SG29,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-62,Ende Zeitraum für Wertanfrage,SG29,,,,,,,
-63,Ende Zeitraum für Wertanfrage,SG29,,,,,,Muss,
-64,Ende Zeitraum für Wertanfrage,SG29,DTM,,,,,Muss,
-65,Ende Zeitraum für Wertanfrage,SG29,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",X,"Verarbeitung,Endedatum/-zeit"
-66,Ende Zeitraum für Wertanfrage,SG29,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2] ∧ [495],
-67,Ende Zeitraum für Wertanfrage,SG29,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-68,Abschnitts-Kontrollsegment,,,,,,,Muss,
-69,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
-70,Nachrichten-Endesegment,,,,,,,Muss,
-71,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-72,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+29,Ansprechpartner,SG5,,,,,,Kann,
+30,Ansprechpartner,SG5,CTA,,,,,Muss,
+31,Ansprechpartner,SG5,CTA,3139,,,,IC,
+32,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
+33,Kommunikationsverbindung,SG5,,,,,,,
+34,Kommunikationsverbindung,SG5,,,,,,Muss,
+35,Kommunikationsverbindung,SG5,COM,,,,,Muss,
+36,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
+37,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+38,Kommunikationsverbindung,SG5,COM,3155,FX,,Telefax,X [1P0..1],
+39,Kommunikationsverbindung,SG5,COM,3155,TE,,Telefon,X [1P0..1],
+40,Kommunikationsverbindung,SG5,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG5,COM,3155,AL,,Handy,X [1P0..1],
+42,MP-ID Empfänger,SG2,,,,,,Muss,
+43,MP-ID Empfänger,SG2,,,,,,Muss,
+44,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+45,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
+46,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [60],
+47,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+48,MP-ID Empfänger,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+49,Meldepunkt,SG2,,,,,,Muss,
+50,Meldepunkt,SG2,,,,,,Muss,
+51,Meldepunkt,SG2,NAD,,,,,Muss,
+52,Meldepunkt,SG2,NAD,3035,,,,DP,
+53,Meldepunkt,SG2,,,,,,,
+54,Meldepunkt,SG2,,,,,,Muss,
+55,Meldepunkt,SG2,LOC,,,,,Muss,
+56,Meldepunkt,SG2,LOC,3227,,,,172,
+57,Meldepunkt,SG2,LOC,3225,,,Identifikator,X [951] [522],
+58,Positionsdaten,SG29,,,,,,Muss [2050],
+59,Positionsdaten,SG29,,,,,,Muss [2050],
+60,Positionsdaten,SG29,LIN,,,,,Muss,
+61,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],
+62,Beginn Zeitraum für Wertanfrage,SG29,,,,,,,
+63,Beginn Zeitraum für Wertanfrage,SG29,,,,,,Muss,
+64,Beginn Zeitraum für Wertanfrage,SG29,DTM,,,,,Muss,
+65,Beginn Zeitraum für Wertanfrage,SG29,DTM,2005,163,,"Verarbeitung,Beginndatum/-zeit",X,"Verarbeitung,Beginndatum/-zeit"
+66,Beginn Zeitraum für Wertanfrage,SG29,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2] ∧ [495],
+67,Beginn Zeitraum für Wertanfrage,SG29,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+68,Ende Zeitraum für Wertanfrage,SG29,,,,,,,
+69,Ende Zeitraum für Wertanfrage,SG29,,,,,,Muss,
+70,Ende Zeitraum für Wertanfrage,SG29,DTM,,,,,Muss,
+71,Ende Zeitraum für Wertanfrage,SG29,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",X,"Verarbeitung,Endedatum/-zeit"
+72,Ende Zeitraum für Wertanfrage,SG29,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB2] ∧ [495],
+73,Ende Zeitraum für Wertanfrage,SG29,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+74,Abschnitts-Kontrollsegment,,,,,,,Muss,
+75,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
+76,Nachrichten-Endesegment,,,,,,,Muss,
+77,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+78,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

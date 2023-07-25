@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,IFTSTA,,MultimodalerStatusbericht,X,MultimodalerStatusbericht
@@ -19,79 +19,121 @@
 17,MP-ID Empfänger,SG1,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
 18,MP-ID Empfänger,SG1,NAD,3039,,,MP-ID,X [27],
 19,MP-ID Empfänger,SG1,NAD,3055,9,,GS1,X,GS1
-20,MP-ID Absender,SG1,,,,,,Muss,
+20,MP-ID Empfänger,SG1,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 21,MP-ID Absender,SG1,,,,,,Muss,
-22,MP-ID Absender,SG1,NAD,,,,,Muss,
-23,MP-ID Absender,SG1,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
-24,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
-25,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
-26,Ansprechpartner,SG2,,,,,,Kann,
-27,Ansprechpartner,SG2,,,,,,Kann,
-28,Ansprechpartner,SG2,CTA,,,,,Muss,
-29,Ansprechpartner,SG2,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-30,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
-31,Kommunikationsverbindung,SG2,,,,,,,
-32,Kommunikationsverbindung,SG2,,,,,,Muss,
-33,Kommunikationsverbindung,SG2,COM,,,,,Muss,
-34,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
-35,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
-36,Einzelheiten zu Equipment,SG4,,,,,,Muss,
-37,Einzelheiten zu Equipment,SG4,,,,,,Muss,
-38,Einzelheiten zu Equipment,SG4,EQD,,,,,Muss,
-39,Einzelheiten zu Equipment,SG4,EQD,8053,Z01,,Laufende Nummer,X,Laufende Nummer
-40,Einzelheiten zu Equipment,SG4,EQD,8260,,,Vorgangsnummer,X [911] ,
-41,Prüfidentifikator,SG4,,,,,,,
-42,Prüfidentifikator,SG4,,,,,,Muss,
-43,Prüfidentifikator,SG4,RFF,,,,,Muss,
-44,Prüfidentifikator,SG4,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-45,Prüfidentifikator,SG4,RFF,1154,21003,,MaBiS / Statusmeldungvom BIKO an NB/ÜNB,,MaBiS / Statusmeldungvom BIKO an NB/ÜNB
-46,Versionsangabe der betrachteten Summenzeitreihe,SG4,,,,,,,
-47,Versionsangabe der betrachteten Summenzeitreihe,SG4,,,,,,Muss,
-48,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,,,,,Muss,
-49,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,1153,AUU,,Referenz auf eineZeitreihe,X,Referenz auf eineZeitreihe
-50,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,1154,,,Version der Summenzeitreihe,X,
-51,Meldepunkt,SG6,,,,,,Muss,
-52,Meldepunkt,SG6,,,,,,Muss,
-53,Meldepunkt,SG6,LOC,,,,,Muss,
-54,Meldepunkt,SG6,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-55,Meldepunkt,SG6,LOC,3225,,,Identifikator,X [951][504],
-56,Betrachtungszeitintervall,SG6,,,,,,,
-57,Betrachtungszeitintervall,SG6,,,,,,Muss,
-58,Betrachtungszeitintervall,SG6,DTM,,,,,Muss,
-59,Betrachtungszeitintervall,SG6,DTM,2005,492,,"Bilanzierungsdatum, -zeit, -periode",X,"Bilanzierungsdatum, -zeit, -periode"
-60,Betrachtungszeitintervall,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-61,Betrachtungszeitintervall,SG6,DTM,2379,610,,CCYYMM,X,CCYYMM
-62,Zeitpunkt der Statusvergabe,SG6,,,,,,,
-63,Zeitpunkt der Statusvergabe,SG6,,,,,,Muss,
-64,Zeitpunkt der Statusvergabe,SG6,DTM,,,,,Muss,
-65,Zeitpunkt der Statusvergabe,SG6,DTM,2005,334,,"Statusveränderung,Datum/Zeit",X,"Statusveränderung,Datum/Zeit"
-66,Zeitpunkt der Statusvergabe,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931][495],
-67,Zeitpunkt der Statusvergabe,SG6,DTM,2379,304,,CCYYMMDDHHMMSSZZZ,X,CCYYMMDDHHMMSSZZZ
-68,Abweisung der Summenzeitreihe,SG7,,,,,,,
-69,Abweisung der Summenzeitreihe,SG7,,,,,,,
-70,Abweisung der Summenzeitreihe,SG7,STS,,,,,,
-71,Abweisung der Summenzeitreihe,SG7,STS,9015,Z02,,Abweisung derSummenzeitreihe,,Abweisung derSummenzeitreihe
-72,Abweisung der Summenzeitreihe,SG7,STS,9013,,,Code des Prüfschritts,,
-73,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0062,,EBD Nr. E_0062,,EBD Nr. E_0062
-74,Prüfstatus zur Summenzeitreihe,SG7,,,,,,,
-75,Prüfstatus zur Summenzeitreihe,SG7,,,,,,,
-76,Prüfstatus zur Summenzeitreihe,SG7,STS,,,,,,
-77,Prüfstatus zur Summenzeitreihe,SG7,STS,9015,Z03,,Prüfstatus zurSummenzeitreihe,,Prüfstatus zurSummenzeitreihe
-78,Prüfstatus zur Summenzeitreihe,SG7,STS,4405,Z07,,Zeitreihe akzeptiert,,Zeitreihe akzeptiert
-79,Prüfstatus zur Summenzeitreihe,SG7,STS,9013,,,Code des Prüfschritts,,
-80,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0062,,EBD Nr. E_0062,,EBD Nr. E_0062
-81,Datenstatus zur Summenzeitreihe,SG7,,,,,,Muss,
-82,Datenstatus zur Summenzeitreihe,SG7,,,,,,Muss,
-83,Datenstatus zur Summenzeitreihe,SG7,STS,,,,,Muss,
-84,Datenstatus zur Summenzeitreihe,SG7,STS,9015,Z04,,Datenstatus zurSummenzeitreihe,X,Datenstatus zurSummenzeitreihe
-85,Datenstatus zur Summenzeitreihe,SG7,STS,4405,,,Code des Prüfschritts,X,
-86,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0026,,EBD Nr. E_0026,X [16],EBD Nr. E_0026
-87,Abweisung Statusmeldung/-änderung,SG7,,,,,,Soll ([10] ∨[17]) ∧[510],
-88,Abweisung Statusmeldung/-änderung,SG7,,,,,,Soll ([10] ∨[17]) ∧[510],
-89,Abweisung Statusmeldung/-änderung,SG7,STS,,,,,Muss ,
-90,Abweisung Statusmeldung/-änderung,SG7,STS,9015,Z13,,AbweisungStatusmeldung/-änderung,X,AbweisungStatusmeldung/-änderung
-91,Abweisung Statusmeldung/-änderung,SG7,STS,9013,,,Code des Prüfschritts,X,
-92,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0019,,EBD Nr. E_0019,X,EBD Nr. E_0019
-93,Nachrichten-Endesegment,,,,,,,Muss,
-94,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-95,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+22,MP-ID Absender,SG1,,,,,,Muss,
+23,MP-ID Absender,SG1,NAD,,,,,Muss,
+24,MP-ID Absender,SG1,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
+25,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
+26,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
+27,MP-ID Absender,SG1,NAD,3055,293,,"DE, BDEW",X,
+28,Ansprechpartner,SG2,,,,,,Kann,
+29,Ansprechpartner,SG2,,,,,,Kann,
+30,Ansprechpartner,SG2,CTA,,,,,Muss,
+31,Ansprechpartner,SG2,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+32,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
+33,Kommunikationsverbindung,SG2,,,,,,,
+34,Kommunikationsverbindung,SG2,,,,,,Muss,
+35,Kommunikationsverbindung,SG2,COM,,,,,Muss,
+36,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
+37,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
+38,Kommunikationsverbindung,SG2,COM,3155,FX,,Telefax,X [1P0..1],
+39,Kommunikationsverbindung,SG2,COM,3155,TE,,Telefon,X [1P0..1],
+40,Kommunikationsverbindung,SG2,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG2,COM,3155,AL,,Handy,X [1P0..1],
+42,Einzelheiten zu Equipment,SG4,,,,,,Muss,
+43,Einzelheiten zu Equipment,SG4,,,,,,Muss,
+44,Einzelheiten zu Equipment,SG4,EQD,,,,,Muss,
+45,Einzelheiten zu Equipment,SG4,EQD,8053,Z01,,Laufende Nummer,X,Laufende Nummer
+46,Einzelheiten zu Equipment,SG4,EQD,8260,,,Vorgangsnummer,X [911] ,
+47,Prüfidentifikator,SG4,,,,,,,
+48,Prüfidentifikator,SG4,,,,,,Muss,
+49,Prüfidentifikator,SG4,RFF,,,,,Muss,
+50,Prüfidentifikator,SG4,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+51,Prüfidentifikator,SG4,RFF,1154,21003,,MaBiS / Statusmeldungvom BIKO an NB/ÜNB,,MaBiS / Statusmeldungvom BIKO an NB/ÜNB
+52,Prüfidentifikator,SG4,RFF,1154,21004,,MaBiS / Statusmeldungvom BIKO an BKV/NB,X,
+53,Prüfidentifikator,SG4,RFF,1154,21005,,MaBiS / Statusmeldungvom BKV/NB an BIKO,,
+54,Versionsangabe der betrachteten Summenzeitreihe,SG4,,,,,,,
+55,Versionsangabe der betrachteten Summenzeitreihe,SG4,,,,,,Muss,
+56,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,,,,,Muss,
+57,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,1153,AUU,,Referenz auf eineZeitreihe,X,Referenz auf eineZeitreihe
+58,Versionsangabe der betrachteten Summenzeitreihe,SG4,RFF,1154,,,Version der Summenzeitreihe,X,
+59,Meldepunkt,SG6,,,,,,Muss,
+60,Meldepunkt,SG6,,,,,,Muss,
+61,Meldepunkt,SG6,LOC,,,,,Muss,
+62,Meldepunkt,SG6,LOC,3227,172,,Meldepunkt,X,Meldepunkt
+63,Meldepunkt,SG6,LOC,3225,,,Identifikator,X [951][504],
+64,Betrachtungszeitintervall,SG6,,,,,,,
+65,Betrachtungszeitintervall,SG6,,,,,,Muss,
+66,Betrachtungszeitintervall,SG6,DTM,,,,,Muss,
+67,Betrachtungszeitintervall,SG6,DTM,2005,492,,"Bilanzierungsdatum, -zeit, -periode",X,"Bilanzierungsdatum, -zeit, -periode"
+68,Betrachtungszeitintervall,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+69,Betrachtungszeitintervall,SG6,DTM,2379,610,,CCYYMM,X,CCYYMM
+70,Zeitpunkt der Statusvergabe,SG6,,,,,,,
+71,Zeitpunkt der Statusvergabe,SG6,,,,,,Muss,
+72,Zeitpunkt der Statusvergabe,SG6,DTM,,,,,Muss,
+73,Zeitpunkt der Statusvergabe,SG6,DTM,2005,334,,"Statusveränderung,Datum/Zeit",X,"Statusveränderung,Datum/Zeit"
+74,Zeitpunkt der Statusvergabe,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931][495],
+75,Zeitpunkt der Statusvergabe,SG6,DTM,2379,304,,CCYYMMDDHHMMSSZZZ,X,CCYYMMDDHHMMSSZZZ
+76,Abweisung der Summenzeitreihe,SG7,,,,,,,
+77,Abweisung der Summenzeitreihe,SG7,,,,,,,
+78,Abweisung der Summenzeitreihe,SG7,STS,,,,,,
+79,Abweisung der Summenzeitreihe,SG7,STS,9015,Z02,,Abweisung derSummenzeitreihe,,Abweisung derSummenzeitreihe
+80,Abweisung der Summenzeitreihe,SG7,STS,9013,,,Code des Prüfschritts,,
+81,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0062,,EBD Nr. E_0062,,EBD Nr. E_0062
+82,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0063,,EBD Nr. E_0063,,
+83,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0064,,EBD Nr. E_0064,,
+84,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0065,,EBD Nr. E_0065,,
+85,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0098,,EBD Nr. E_0098,,
+86,Abweisung der Summenzeitreihe,SG7,STS,1131,E_0099,,EBD Nr. E_0099,,
+87,Prüfstatus zur Summenzeitreihe,SG7,,,,,,,
+88,Prüfstatus zur Summenzeitreihe,SG7,,,,,,,
+89,Prüfstatus zur Summenzeitreihe,SG7,STS,,,,,,
+90,Prüfstatus zur Summenzeitreihe,SG7,STS,9015,Z03,,Prüfstatus zurSummenzeitreihe,,Prüfstatus zurSummenzeitreihe
+91,Prüfstatus zur Summenzeitreihe,SG7,STS,4405,Z07,,Zeitreihe akzeptiert,,Zeitreihe akzeptiert
+92,Prüfstatus zur Summenzeitreihe,SG7,STS,4405,Z08,,Zeitreihe nicht akzeptiert,,
+93,Prüfstatus zur Summenzeitreihe,SG7,STS,9013,,,Code des Prüfschritts,,
+94,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0062,,EBD Nr. E_0062,,EBD Nr. E_0062
+95,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0063,,EBD Nr. E_0063,,
+96,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0064,,EBD Nr. E_0064,,
+97,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0065,,EBD Nr. E_0065,,
+98,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0098,,EBD Nr. E_0098,,
+99,Prüfstatus zur Summenzeitreihe,SG7,STS,1131,E_0099,,EBD Nr. E_0099,,
+100,Datenstatus zur Summenzeitreihe,SG7,,,,,,Muss,
+101,Datenstatus zur Summenzeitreihe,SG7,,,,,,Muss,
+102,Datenstatus zur Summenzeitreihe,SG7,STS,,,,,Muss,
+103,Datenstatus zur Summenzeitreihe,SG7,STS,9015,Z04,,Datenstatus zurSummenzeitreihe,X,Datenstatus zurSummenzeitreihe
+104,Datenstatus zur Summenzeitreihe,SG7,STS,4405,,,Code des Prüfschritts,X,
+105,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0026,,EBD Nr. E_0026,X [16],EBD Nr. E_0026
+106,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0042,,EBD Nr. E_0042,X [16],
+107,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0043,,EBD Nr. E_0043,X [16],
+108,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0053,,EBD Nr. E_0053,X [26],
+109,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0054,,EBD Nr. E_0054,X [26],
+110,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0055,,EBD Nr. E_0055,X [26],
+111,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0056,,EBD Nr. E_0056,X [16],
+112,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0057,,EBD Nr. E_0057,X [16],
+113,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0058,,EBD Nr. E_0058,X [16],
+114,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0059,,EBD Nr. E_0059,X [26],
+115,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0060,,EBD Nr. E_0060,X [26],
+116,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0061,,EBD Nr. E_0061,X [26],
+117,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0066,,EBD Nr. E_0066,X [26],
+118,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0067,,EBD Nr. E_0067,X [26],
+119,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0075,,EBD Nr. E_0075,X [16],
+120,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0076,,EBD Nr. E_0076,X [16],
+121,Datenstatus zur Summenzeitreihe,SG7,STS,1131,E_0077,,EBD Nr. E_0077,X [16],"[16] Wenn MP-ID in SG1 NAD+MR in der Rolle BKV 
+[26] Wenn MP-ID in SG1 NAD+MR in der Rolle NB 
+[29] Wenn MP-ID in SG1 NAD+MR in der Rolle ÜNB"
+122,Abweisung Statusmeldung/-änderung,SG7,,,,,,Soll ([10] ∨[17]) ∧[510],
+123,Abweisung Statusmeldung/-änderung,SG7,,,,,,Soll ([10] ∨[17]) ∧[510],
+124,Abweisung Statusmeldung/-änderung,SG7,STS,,,,,Muss ,
+125,Abweisung Statusmeldung/-änderung,SG7,STS,9015,Z13,,AbweisungStatusmeldung/-änderung,X,AbweisungStatusmeldung/-änderung
+126,Abweisung Statusmeldung/-änderung,SG7,STS,9013,,,Code des Prüfschritts,X,
+127,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0019,,EBD Nr. E_0019,X,EBD Nr. E_0019
+128,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0021,,EBD Nr. E_0021,X,
+129,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0025,,EBD Nr. E_0025,X,
+130,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0030,,EBD Nr. E_0030,X,
+131,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0074,,EBD Nr. E_0074,X,
+132,Abweisung Statusmeldung/-änderung,SG7,STS,1131,E_0081,,EBD Nr. E_0081,X,
+133,Nachrichten-Endesegment,,,,,,,Muss,
+134,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+135,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

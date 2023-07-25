@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichtenanfang,,,,,,,Muss,
 1,Nachrichtenanfang,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichtenanfang,,UNH,0065,INVOIC,,Rechnung,X,Rechnung
@@ -10,286 +10,329 @@
 8,Rechnungsnummer,,BGM,1001,380,,Handelsrechnung,X,Handelsrechnung
 9,Rechnungsnummer,,BGM,1004,,,Dokumentennummer,X,
 10,Rechnungsnummer,,BGM,1225,7,,Duplikat,X,Duplikat
-11,Nachrichtendatum,,,,,,,Muss,
-12,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-13,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931],
-14,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-15,Bearbeitungs-/ Verarbeitungsdatum,,,,,,,Muss,
-16,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2005,9,,Bearbeitungs-/Verarbeitungsdatum/-zeit,X,Bearbeitungs-/Verarbeitungsdatum/-zeit
-17,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931],
-18,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-19,Abrechnungszeitraum Beginn,,,,,,,Muss,
-20,Abrechnungszeitraum Beginn,,DTM,2005,155,,"Rechnungsperiode,Beginndatum",X,"Rechnungsperiode,Beginndatum"
-21,Abrechnungszeitraum Beginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
-22,Abrechnungszeitraum Beginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-23,Abrechnungszeitraum Ende,,,,,,,Muss,
-24,Abrechnungszeitraum Ende,,DTM,2005,156,,"Rechnungsperiode,Endedatum",X,"Rechnungsperiode,Endedatum"
-25,Abrechnungszeitraum Ende,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
-26,Abrechnungszeitraum Ende,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-27,vorläufiger Abrechnungszeitraum Beginn,,,,,,,,
-28,vorläufiger Abrechnungszeitraum Beginn,,DTM,2005,Z42,,vorläufigerAbrechnungszeitraum Beginn,,vorläufigerAbrechnungszeitraum Beginn
-29,vorläufiger Abrechnungszeitraum Beginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-30,vorläufiger Abrechnungszeitraum Beginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-31,vorläufiger Abrechnungszeitraum Ende,,,,,,,,
-32,vorläufiger Abrechnungszeitraum Ende,,DTM,2005,Z43,,vorläufigerAbrechnungszeitraum Ende,,vorläufigerAbrechnungszeitraum Ende
-33,vorläufiger Abrechnungszeitraum Ende,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-34,vorläufiger Abrechnungszeitraum Ende,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-35,Ausführungsdatum,,,,,,,,
-36,Ausführungsdatum,,DTM,2005,203,,Ausführungsdatum/-zeit,,Ausführungsdatum/-zeit
-37,Ausführungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-38,Ausführungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-39,Rechnungstyp,,,,,,,Muss,
-40,Rechnungstyp,,IMD,7081,ABR,,Abschlussrechnung,X,Abschlussrechnung
-41,Meldeinformationen,,,,,,,Soll [4],
-42,Meldeinformationen,,FTX,4451,REG,,Meldeinformationen,X,Meldeinformationen
-43,Meldeinformationen,,FTX,4441,RCH,,Reverse Chargegemäß §13b UStG /Steuerschuldnerschaft desLeistungsempfängers,X,Reverse Chargegemäß §13b UStG /Steuerschuldnerschaft desLeistungsempfängers
-44,Spezifikation der Sonderrechnung,,,,,,,Muss [41]∧ [2000],
-45,Spezifikation der Sonderrechnung,,GEI,9649,Z01,,Art derSonderrechnung,X,Art derSonderrechnung
-46,Spezifikation der Sonderrechnung,,GEI,7365,Z01,,Konzessionsabgabe(Testat),X [4P0..1],Konzessionsabgabe(Testat)
-47,Prüfidentifikator,SG1,,,,,,,
-48,Prüfidentifikator,SG1,,,,,,,
-49,Prüfidentifikator,SG1,RFF,,,,,Muss,
-50,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-51,Prüfidentifikator,SG1,RFF,1154,31001,,Abschlagsrechnung,,Abschlagsrechnung
-52,Referenz auf Ursprungsrechnungsnum mer,SG1,,,,,,,
-53,Referenz auf Ursprungsrechnungsnum mer,SG1,,,,,,,
-54,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,,,,,Muss,
-55,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,1153,OI,,Ursprungsrechnungsnummer,X,Ursprungsrechnungsnummer
-56,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,1154,,,"Referenz, Identifikation",X,
-57,Referenzdatum,SG1,,,,,,,
-58,Referenzdatum,SG1,,,,,,Muss,
-59,Referenzdatum,SG1,DTM,,,,,Muss,
-60,Referenzdatum,SG1,DTM,2005,171,,Referenzdatum/-zeit,X,Referenzdatum/-zeit
-61,Referenzdatum,SG1,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-62,Referenzdatum,SG1,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-63,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,
-64,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,
-65,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,,,,Muss,
-66,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,ACE,,Nummer deszugehörigenDokuments,X,Nummer deszugehörigenDokuments
-67,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,,,"Referenz, Identifikation",X [514],
-68,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,
-69,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,
-70,Name und Anschrift des Nachrichtensenders,SG2,NAD,,,,,Muss,
-71,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenaussteller bzw. -absender,X,Dokumenten-/Nachrichtenaussteller bzw. -absender
-72,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,,,MP-ID,X,
-73,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,9,,GS1,X,GS1
-74,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,,,Beteiligter,X,
-75,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-76,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [7],
-77,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,,,Ort,M,
-78,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,,,"Postleitzahl, Code",X,
-79,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,,,"Ländername, Code",X,
-80,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
-81,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
-82,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,Muss,
-83,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,VA,,Umsatzsteuernummer,X,Umsatzsteuernummer
-84,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,,,"Referenz, Identifikation",X,
-85,Ansprechpartner,SG5,,,,,,,
-86,Ansprechpartner,SG5,,,,,,,
-87,Ansprechpartner,SG5,CTA,,,,,Muss,
-88,Ansprechpartner,SG5,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-89,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
-90,Kommunikationsverbindu ng,SG5,,,,,,,
-91,Kommunikationsverbindu ng,SG5,,,,,,Muss,
-92,Kommunikationsverbindu ng,SG5,COM,,,,,Muss,
-93,Kommunikationsverbindu ng,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-94,Kommunikationsverbindu ng,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-95,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,
-96,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,
-97,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,,,,Muss,
-98,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-99,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,,,MP-ID,X,
-100,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,9,,GS1,X,GS1
-101,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,,,Beteiligter,X,
-102,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-103,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [7],
-104,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,Ort,M,
-105,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,"Postleitzahl, Code",X,
-106,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,"Ländername, Code",X,
-107,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
-108,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
-109,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,Muss,
-110,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,VA,,Umsatzsteuernummer,X,Umsatzsteuernummer
-111,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,,,"Referenz, Identifikation",X,
-112,Adresse der Markt- oder Messlokation,SG2,,,,,,,
-113,Adresse der Markt- oder Messlokation,SG2,,,,,,,
-114,Adresse der Markt- oder Messlokation,SG2,NAD,,,,,Muss,
-115,Adresse der Markt- oder Messlokation,SG2,NAD,3035,DP,,Lieferanschrift,X,Lieferanschrift
-116,Adresse der Markt- oder Messlokation,SG2,NAD,3124,,,Zusatzinformation zurIdentifizierung,K,
-117,Adresse der Markt- oder Messlokation,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [22]M [23],
-118,Adresse der Markt- oder Messlokation,SG2,NAD,3164,,,Ort,M,
-119,Adresse der Markt- oder Messlokation,SG2,NAD,3251,,,"Postleitzahl, Code",X,
-120,Adresse der Markt- oder Messlokation,SG2,NAD,3207,,,"Ländername, Code",X,
-121,Meldepunkt,SG2,,,,,,,
-122,Meldepunkt,SG2,,,,,,Muss,
-123,Meldepunkt,SG2,LOC,,,,,Muss,
-124,Meldepunkt,SG2,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-125,Meldepunkt,SG2,LOC,3225,,,"Ortsangabe, Nummer",X [950][509],
-126,Währungsangaben,SG7,,,,,,,
-127,Währungsangaben,SG7,,,,,,,
-128,Währungsangaben,SG7,CUX,,,,,Muss,
-129,Währungsangaben,SG7,CUX,6347,2,,Referenzwährung,X,Referenzwährung
-130,Währungsangaben,SG7,CUX,6345,EUR,,Euro,X,Euro
-131,Währungsangaben,SG7,CUX,6343,4,,Währung derRechnung,X,Währung derRechnung
-132,Zahlungsbedingungen,SG8,,,,,,,
-133,Zahlungsbedingungen,SG8,,,,,,,
-134,Zahlungsbedingungen,SG8,PYT,,,,,Muss,
-135,Zahlungsbedingungen,SG8,PYT,4279,3,,Fixdatum,X,Fixdatum
-136,Fälligkeitsdatum,SG8,,,,,,,
-137,Fälligkeitsdatum,SG8,,,,,,Muss,
-138,Fälligkeitsdatum,SG8,DTM,,,,,Muss,
-139,Fälligkeitsdatum,SG8,DTM,2005,265,,Fälligkeitsdatum,X,Fälligkeitsdatum
-140,Fälligkeitsdatum,SG8,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧(([493] ∧[20] ∧ [24])⊻ ([493] ∧[21] ∧ [25])⊻ [492]),
-141,Fälligkeitsdatum,SG8,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-142,Positionsdaten,SG26,,,,,,,
-143,Positionsdaten,SG26,,,,,,,
-144,Positionsdaten,SG26,LIN,,,,,Muss,
-145,Positionsdaten,SG26,LIN,1082,,,Positionsnummer,X [911],
-146,Positionsdaten,SG26,LIN,7140,,,Produkt-/Leistungsnummer,X [40],
-147,Positionsdaten,SG26,LIN,7143,Z01,,Artikelnummer,X [493] ∨([492] ∧[51]),Artikelnummer
-148,energetische Mengenangaben,SG26,,,,,,,
-149,energetische Mengenangaben,SG26,,,,,,Muss,
-150,energetische Mengenangaben,SG26,QTY,,,,,Muss,
-151,energetische Mengenangaben,SG26,QTY,6063,47,,Berechnete(fakturierte) Menge,X,Berechnete(fakturierte) Menge
-152,energetische Mengenangaben,SG26,QTY,6060,,,Menge,X [910] ∧[906],
-153,energetische Mengenangaben,SG26,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
-154,zeitliche Mengenangaben,SG26,,,,,,,
-155,zeitliche Mengenangaben,SG26,,,,,,Soll [8],
-156,zeitliche Mengenangaben,SG26,QTY,,,,,Soll [8],
-157,zeitliche Mengenangaben,SG26,QTY,6063,136,,Erreichte Menge indem Zeitintervall,X,Erreichte Menge indem Zeitintervall
-158,zeitliche Mengenangaben,SG26,QTY,6060,,,Menge,X [908],
-159,zeitliche Mengenangaben,SG26,QTY,6411,DAY,,Tag,X,Tag
-160,Positionsbezogener Abrechnungszeitraum Beginn,SG26,,,,,,,
-161,Positionsbezogener Abrechnungszeitraum Beginn,SG26,,,,,,Muss,
-162,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,,,,,Muss,
-163,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2005,155,,"Rechnungsperiode,Beginndatum",X,"Rechnungsperiode,Beginndatum"
-164,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
-165,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-166,Positionsbezogener Abrechnungszeitraum Ende,SG26,,,,,,,
-167,Positionsbezogener Abrechnungszeitraum Ende,SG26,,,,,,Muss,
-168,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,,,,,Muss,
-169,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2005,156,,"Rechnungsperiode,Endedatum",X,"Rechnungsperiode,Endedatum"
-170,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
-171,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-172,Ausführungsdatum,SG26,,,,,,,
-173,Ausführungsdatum,SG26,,,,,,,
-174,Ausführungsdatum,SG26,DTM,,,,,,
-175,Ausführungsdatum,SG26,DTM,2005,203,,Ausführungsdatum/-zeit,,Ausführungsdatum/-zeit
-176,Ausführungsdatum,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-177,Ausführungsdatum,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
-178,Positionsnettobetrag,SG27,,,,,,,
-179,Positionsnettobetrag,SG27,,,,,,,
-180,Positionsnettobetrag,SG27,MOA,,,,,Muss,
-181,Positionsnettobetrag,SG27,MOA,5025,203,,Positionsbetrag(ohne USt.),X,Positionsbetrag(ohne USt.)
-182,Positionsnettobetrag,SG27,MOA,5004,,,Geldbetrag,X [930],
-183,Gesamtzu- oder abschlagsbetrag,SG27,,,,,,,
-184,Gesamtzu- oder abschlagsbetrag,SG27,,,,,,,
-185,Gesamtzu- oder abschlagsbetrag,SG27,MOA,,,,,Muss,
-186,Gesamtzu- oder abschlagsbetrag,SG27,MOA,5025,131,,Gesamtzu- oderabschlagsbetrag,X,Gesamtzu- oderabschlagsbetrag
-187,Gesamtzu- oder abschlagsbetrag,SG27,MOA,5004,,,Geldbetrag,X [930],
-188,Preis,SG29,,,,,,,
-189,Preis,SG29,,,,,,,
-190,Preis,SG29,PRI,,,,,Muss,
-191,Preis,SG29,PRI,5125,CAL,,Berechnungspreis,X,Berechnungspreis
-192,Preis,SG29,PRI,5118,,,"Preis, Betrag",X [946],
-193,Preis,SG29,PRI,6411,DAY,,Tag,X [12],Tag
-194,Umsatzsteuer der Position,SG34,,,,,,,
-195,Umsatzsteuer der Position,SG34,,,,,,,
-196,Umsatzsteuer der Position,SG34,TAX,,,,,Muss,
-197,Umsatzsteuer der Position,SG34,TAX,5283,7,,Steuer,X,Steuer
-198,Umsatzsteuer der Position,SG34,TAX,5153,VAT,,Umsatzsteuer,X,Umsatzsteuer
-199,Umsatzsteuer der Position,SG34,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],
-200,Umsatzsteuer der Position,SG34,TAX,5305,S,,Einheitssatz(Standard),X,Einheitssatz(Standard)
-201,Abschlag,SG39,,,,,,,
-202,Abschlag,SG39,,,,,,,
-203,Abschlag,SG39,ALC,,,,,Muss,
-204,Abschlag,SG39,ALC,5463,A,,Abschlag,X,Abschlag
-205,Abschlag,SG39,ALC,5189,Z01,,GemeinderabattnachKonzessionsabgabenverordnung,X,GemeinderabattnachKonzessionsabgabenverordnung
-206,Prozentangabe des Abschlags,SG41,,,,,,,
-207,Prozentangabe des Abschlags,SG41,,,,,,Muss,
-208,Prozentangabe des Abschlags,SG41,PCD,,,,,Muss,
-209,Prozentangabe des Abschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,X,Zu- oder Abschlag
-210,Prozentangabe des Abschlags,SG41,PCD,5482,,,Prozentsatz,X [914] ∧[930],
-211,Bemessungsgrundlage des Gemeinderabatts,SG42,,,,,,,
-212,Bemessungsgrundlage des Gemeinderabatts,SG42,,,,,,,
-213,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,,,,,Muss,
-214,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,5025,25,,Zu-/Abschlagsbasis,X,Zu-/Abschlagsbasis
-215,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,5004,,,Geldbetrag,X [930][512],
-216,Gemeinderabatt der Position,SG42,,,,,,,
-217,Gemeinderabatt der Position,SG42,,,,,,,
-218,Gemeinderabatt der Position,SG42,MOA,,,,,Muss,
-219,Gemeinderabatt der Position,SG42,MOA,5025,Z01,,Gemeinderabatt,X,Gemeinderabatt
-220,Gemeinderabatt der Position,SG42,MOA,5004,,,Geldbetrag,X [930][513],
-221,Zuschlag,SG39,,,,,,,
-222,Zuschlag,SG39,,,,,,,
-223,Zuschlag,SG39,ALC,,,,,Muss,
-224,Zuschlag,SG39,ALC,5463,C,,Zuschlag,X,Zuschlag
-225,Zuschlag,SG39,ALC,5189,Z02,,Umspannungszuschlag,X [29],Umspannungszuschlag
-226,Prozentangabe des Zuschlags,SG41,,,,,,,
-227,Prozentangabe des Zuschlags,SG41,,,,,,Muss,
-228,Prozentangabe des Zuschlags,SG41,PCD,,,,,Muss,
-229,Prozentangabe des Zuschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,X,Zu- oder Abschlag
-230,Prozentangabe des Zuschlags,SG41,PCD,5482,,,Prozentsatz,X [914] ∧[930],
-231,Abschnitts- Kontrollsegment,,,,,,,Muss,
-232,Abschnitts- Kontrollsegment,,UNS,0081,S,,Trennung vonPositions- undSummenteil,X,Trennung vonPositions- undSummenteil
-233,Rechnungsbetrag,SG50,,,,,,,
-234,Rechnungsbetrag,SG50,,,,,,,
-235,Rechnungsbetrag,SG50,MOA,,,,,Muss,
-236,Rechnungsbetrag,SG50,MOA,5025,77,,Rechnungsbetrag,X,Rechnungsbetrag
-237,Rechnungsbetrag,SG50,MOA,5004,,,Geldbetrag,X [930],
-238,Vorausbezahlter Betrag,SG50,,,,,,,
-239,Vorausbezahlter Betrag,SG50,,,,,,,
-240,Vorausbezahlter Betrag,SG50,MOA,,,,,Muss,
-241,Vorausbezahlter Betrag,SG50,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),X,VorausbezahlterBetrag (inkl. USt.)
-242,Vorausbezahlter Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],
-243,Referenz auf Vorgängerrechnung,SG51,,,,,,,
-244,Referenz auf Vorgängerrechnung,SG51,,,,,,,
-245,Referenz auf Vorgängerrechnung,SG51,RFF,,,,,Muss,
-246,Referenz auf Vorgängerrechnung,SG51,RFF,1153,AFL,,ZugehörigeRechnungen,X,ZugehörigeRechnungen
-247,Referenz auf Vorgängerrechnung,SG51,RFF,1154,,,"Referenz, Identifikation",X,
-248,Datum der Vorgängerrechnung,SG51,,,,,,,
-249,Datum der Vorgängerrechnung,SG51,,,,,,Muss,
-250,Datum der Vorgängerrechnung,SG51,DTM,,,,,Muss,
-251,Datum der Vorgängerrechnung,SG51,DTM,2005,3,,Rechnungsdatum/-zeit,X,Rechnungsdatum/-zeit
-252,Datum der Vorgängerrechnung,SG51,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-253,Datum der Vorgängerrechnung,SG51,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-254,Gemeinderabatt,SG50,,,,,,,
-255,Gemeinderabatt,SG50,,,,,,,
-256,Gemeinderabatt,SG50,MOA,,,,,Muss,
-257,Gemeinderabatt,SG50,MOA,5025,Z01,,Gemeinderabatt,X,Gemeinderabatt
-258,Gemeinderabatt,SG50,MOA,5004,,,Geldbetrag,X [930],
-259,Fälliger Betrag,SG50,,,,,,,
-260,Fälliger Betrag,SG50,,,,,,,
-261,Fälliger Betrag,SG50,MOA,,,,,Muss,
-262,Fälliger Betrag,SG50,MOA,5025,9,,Fälliger Betrag (inkl.USt.),X,Fälliger Betrag (inkl.USt.)
-263,Fälliger Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],
-264,Umsatzsteuer der Rechnung,SG52,,,,,,,
-265,Umsatzsteuer der Rechnung,SG52,,,,,,,
-266,Umsatzsteuer der Rechnung,SG52,TAX,,,,,Muss,
-267,Umsatzsteuer der Rechnung,SG52,TAX,5283,7,,Steuer,X,Steuer
-268,Umsatzsteuer der Rechnung,SG52,TAX,5153,VAT,,Umsatzsteuer,X,Umsatzsteuer
-269,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],
-270,Umsatzsteuer der Rechnung,SG52,TAX,5305,S,,Einheitssatz(Standard),X,Einheitssatz(Standard)
-271,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,,
-272,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,Soll [13],
-273,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,Soll [13],
-274,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),X,VorausbezahlterBetrag (inkl. USt.)
-275,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
-276,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,,
-277,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,Muss [58],
-278,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,Muss [58],
-279,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,115,,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages),X,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages)
-280,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
-281,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,,
-282,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,Muss,
-283,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,Muss,
-284,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,125,,Besteuerungsgrundlage,X,Besteuerungsgrundlage
-285,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
-286,Steuerbetrag (steuersatzbezogen),SG52,,,,,,,
-287,Steuerbetrag (steuersatzbezogen),SG52,,,,,,Muss,
-288,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,Muss,
-289,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,161,,Steuer-/Gebühren-/Abgabebetrag,X,Steuer-/Gebühren-/Abgabebetrag
-290,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
-291,Nachrichtenende,,,,,,,Muss,
-292,Nachrichtenende,,UNT,0074,,,Anzahl der Segmente ineiner Nachricht,X,
-293,Nachrichtenende,,UNT,0062,,,Nachrichten-Referenznummer,X,
+11,Rechnungsnummer,,BGM,1225,9,,Original,X,
+12,Nachrichtendatum,,,,,,,Muss,
+13,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
+14,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931],
+15,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+16,Bearbeitungs-/ Verarbeitungsdatum,,,,,,,Muss,
+17,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2005,9,,Bearbeitungs-/Verarbeitungsdatum/-zeit,X,Bearbeitungs-/Verarbeitungsdatum/-zeit
+18,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931],
+19,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+20,Abrechnungszeitraum Beginn,,,,,,,Muss,
+21,Abrechnungszeitraum Beginn,,DTM,2005,155,,"Rechnungsperiode,Beginndatum",X,"Rechnungsperiode,Beginndatum"
+22,Abrechnungszeitraum Beginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
+23,Abrechnungszeitraum Beginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+24,Abrechnungszeitraum Ende,,,,,,,Muss,
+25,Abrechnungszeitraum Ende,,DTM,2005,156,,"Rechnungsperiode,Endedatum",X,"Rechnungsperiode,Endedatum"
+26,Abrechnungszeitraum Ende,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
+27,Abrechnungszeitraum Ende,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+28,vorläufiger Abrechnungszeitraum Beginn,,,,,,,,
+29,vorläufiger Abrechnungszeitraum Beginn,,DTM,2005,Z42,,vorläufigerAbrechnungszeitraum Beginn,,vorläufigerAbrechnungszeitraum Beginn
+30,vorläufiger Abrechnungszeitraum Beginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+31,vorläufiger Abrechnungszeitraum Beginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+32,vorläufiger Abrechnungszeitraum Ende,,,,,,,,
+33,vorläufiger Abrechnungszeitraum Ende,,DTM,2005,Z43,,vorläufigerAbrechnungszeitraum Ende,,vorläufigerAbrechnungszeitraum Ende
+34,vorläufiger Abrechnungszeitraum Ende,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+35,vorläufiger Abrechnungszeitraum Ende,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+36,Ausführungsdatum,,,,,,,,
+37,Ausführungsdatum,,DTM,2005,203,,Ausführungsdatum/-zeit,,Ausführungsdatum/-zeit
+38,Ausführungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+39,Ausführungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+40,Rechnungstyp,,,,,,,Muss,
+41,Rechnungstyp,,IMD,7081,ABR,,Abschlussrechnung,X,Abschlussrechnung
+42,Rechnungstyp,,IMD,7081,ABS,,Abschlagsrechnung,,[56] Wenn DTM+137 (Nachrichtendatum ≥
+43,Meldeinformationen,,,,,,,Soll [4],
+44,Meldeinformationen,,FTX,4451,REG,,Meldeinformationen,X,Meldeinformationen
+45,Meldeinformationen,,FTX,4441,RCH,,Reverse Chargegemäß §13b UStG /Steuerschuldnerschaft desLeistungsempfängers,X,Reverse Chargegemäß §13b UStG /Steuerschuldnerschaft desLeistungsempfängers
+46,Spezifikation der Sonderrechnung,,,,,,,Muss [41]∧ [2000],
+47,Spezifikation der Sonderrechnung,,GEI,9649,Z01,,Art derSonderrechnung,X,Art derSonderrechnung
+48,Spezifikation der Sonderrechnung,,GEI,7365,Z01,,Konzessionsabgabe(Testat),X [4P0..1],Konzessionsabgabe(Testat)
+49,Spezifikation der Sonderrechnung,,GEI,7365,Z02,,IndividuelleVereinbarung füratypische undenergieintensiveNetznutzung,X [4P0..1],
+50,Spezifikation der Sonderrechnung,,GEI,7365,Z03,,IndividuelleVereinbarung fürsinguläreNetznutzung,X [4P0..1],
+51,Spezifikation der Sonderrechnung,,GEI,7365,Z04,,KWKG-Umlage,X [4P0..1],
+52,Spezifikation der Sonderrechnung,,GEI,7365,Z05,,Offshore-,X [4P0..1],
+53,Prüfidentifikator,SG1,,,,,,,
+54,Prüfidentifikator,SG1,,,,,,,
+55,Prüfidentifikator,SG1,RFF,,,,,Muss,
+56,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+57,Prüfidentifikator,SG1,RFF,1154,31001,,Abschlagsrechnung,,Abschlagsrechnung
+58,Prüfidentifikator,SG1,RFF,1154,31002,,NN-Rechnung,X,
+59,Prüfidentifikator,SG1,RFF,1154,31003,,WiM-Rechnung,,
+60,Prüfidentifikator,SG1,RFF,1154,31009,,MSB-Rechnung,,
+61,Referenz auf Ursprungsrechnungsnum mer,SG1,,,,,,,
+62,Referenz auf Ursprungsrechnungsnum mer,SG1,,,,,,,
+63,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,,,,,Muss,
+64,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,1153,OI,,Ursprungsrechnungsnummer,X,Ursprungsrechnungsnummer
+65,Referenz auf Ursprungsrechnungsnum mer,SG1,RFF,1154,,,"Referenz, Identifikation",X,
+66,Referenzdatum,SG1,,,,,,,
+67,Referenzdatum,SG1,,,,,,Muss,
+68,Referenzdatum,SG1,DTM,,,,,Muss,
+69,Referenzdatum,SG1,DTM,2005,171,,Referenzdatum/-zeit,X,Referenzdatum/-zeit
+70,Referenzdatum,SG1,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+71,Referenzdatum,SG1,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+72,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,
+73,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,
+74,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,,,,Muss,
+75,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,ACE,,Nummer deszugehörigenDokuments,X,Nummer deszugehörigenDokuments
+76,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,,,"Referenz, Identifikation",X [514],
+77,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,
+78,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,
+79,Name und Anschrift des Nachrichtensenders,SG2,NAD,,,,,Muss,
+80,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenaussteller bzw. -absender,X,Dokumenten-/Nachrichtenaussteller bzw. -absender
+81,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,,,MP-ID,X,
+82,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,9,,GS1,X,GS1
+83,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschafte.V.)",X,
+84,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+85,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,,,Beteiligter,X,
+86,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+87,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+88,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [7],
+89,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,,,Ort,M,
+90,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,,,"Postleitzahl, Code",X,
+91,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,,,"Ländername, Code",X,
+92,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
+93,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
+94,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,Muss,
+95,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,VA,,Umsatzsteuernummer,X,Umsatzsteuernummer
+96,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
+97,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,,,"Referenz, Identifikation",X,
+98,Ansprechpartner,SG5,,,,,,,
+99,Ansprechpartner,SG5,,,,,,,
+100,Ansprechpartner,SG5,CTA,,,,,Muss,
+101,Ansprechpartner,SG5,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+102,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
+103,Kommunikationsverbindu ng,SG5,,,,,,,
+104,Kommunikationsverbindu ng,SG5,,,,,,Muss,
+105,Kommunikationsverbindu ng,SG5,COM,,,,,Muss,
+106,Kommunikationsverbindu ng,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
+107,Kommunikationsverbindu ng,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+108,Kommunikationsverbindu ng,SG5,COM,3155,FX,,Telefax,X [1P0..1],
+109,Kommunikationsverbindu ng,SG5,COM,3155,TE,,Telefon,X [1P0..1],
+110,Kommunikationsverbindu ng,SG5,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+111,Kommunikationsverbindu ng,SG5,COM,3155,AL,,Handy,X [1P0..1],
+112,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,
+113,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,
+114,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,,,,Muss,
+115,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+116,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,,,MP-ID,X,
+117,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,9,,GS1,X,GS1
+118,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschafte.V.)",X,
+119,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+120,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,,,Beteiligter,X,
+121,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+122,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+123,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [7],
+124,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,Ort,M,
+125,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,"Postleitzahl, Code",X,
+126,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,"Ländername, Code",X,
+127,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
+128,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,
+129,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,Muss,
+130,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,VA,,Umsatzsteuernummer,X,Umsatzsteuernummer
+131,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
+132,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,,,"Referenz, Identifikation",X,
+133,Adresse der Markt- oder Messlokation,SG2,,,,,,,
+134,Adresse der Markt- oder Messlokation,SG2,,,,,,,
+135,Adresse der Markt- oder Messlokation,SG2,NAD,,,,,Muss,
+136,Adresse der Markt- oder Messlokation,SG2,NAD,3035,DP,,Lieferanschrift,X,Lieferanschrift
+137,Adresse der Markt- oder Messlokation,SG2,NAD,3124,,,Zusatzinformation zurIdentifizierung,K,
+138,Adresse der Markt- oder Messlokation,SG2,NAD,3042,,,Straße und Hausnummeroder Postfach,S [22]M [23],
+139,Adresse der Markt- oder Messlokation,SG2,NAD,3164,,,Ort,M,
+140,Adresse der Markt- oder Messlokation,SG2,NAD,3251,,,"Postleitzahl, Code",X,
+141,Adresse der Markt- oder Messlokation,SG2,NAD,3207,,,"Ländername, Code",X,
+142,Meldepunkt,SG2,,,,,,,
+143,Meldepunkt,SG2,,,,,,Muss,
+144,Meldepunkt,SG2,LOC,,,,,Muss,
+145,Meldepunkt,SG2,LOC,3227,172,,Meldepunkt,X,Meldepunkt
+146,Meldepunkt,SG2,LOC,3225,,,"Ortsangabe, Nummer",X [950][509],
+147,Währungsangaben,SG7,,,,,,,
+148,Währungsangaben,SG7,,,,,,,
+149,Währungsangaben,SG7,CUX,,,,,Muss,
+150,Währungsangaben,SG7,CUX,6347,2,,Referenzwährung,X,Referenzwährung
+151,Währungsangaben,SG7,CUX,6345,EUR,,Euro,X,Euro
+152,Währungsangaben,SG7,CUX,6343,4,,Währung derRechnung,X,Währung derRechnung
+153,Zahlungsbedingungen,SG8,,,,,,,
+154,Zahlungsbedingungen,SG8,,,,,,,
+155,Zahlungsbedingungen,SG8,PYT,,,,,Muss,
+156,Zahlungsbedingungen,SG8,PYT,4279,3,,Fixdatum,X,Fixdatum
+157,Fälligkeitsdatum,SG8,,,,,,,
+158,Fälligkeitsdatum,SG8,,,,,,Muss,
+159,Fälligkeitsdatum,SG8,DTM,,,,,Muss,
+160,Fälligkeitsdatum,SG8,DTM,2005,265,,Fälligkeitsdatum,X,Fälligkeitsdatum
+161,Fälligkeitsdatum,SG8,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1] ∧(([493] ∧[20] ∧ [24])⊻ ([493] ∧[21] ∧ [25])⊻ [492]),
+162,Fälligkeitsdatum,SG8,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+163,Positionsdaten,SG26,,,,,,,
+164,Positionsdaten,SG26,,,,,,,
+165,Positionsdaten,SG26,LIN,,,,,Muss,
+166,Positionsdaten,SG26,LIN,1082,,,Positionsnummer,X [911],
+167,Positionsdaten,SG26,LIN,7140,,,Produkt-/Leistungsnummer,X [40],
+168,Positionsdaten,SG26,LIN,7143,Z01,,Artikelnummer,X [493] ∨([492] ∧[51]),Artikelnummer
+169,Positionsdaten,SG26,LIN,7143,Z09,,Artikel-ID,X [492] ∧[59],"[51] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤ 1.1. 2023 0:00 gesetzlicher deutscher Zeit 
+[59] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2023 0: 00 gesetzlicher deutscher Zeit 
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom 
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+170,energetische Mengenangaben,SG26,,,,,,,
+171,energetische Mengenangaben,SG26,,,,,,Muss,
+172,energetische Mengenangaben,SG26,QTY,,,,,Muss,
+173,energetische Mengenangaben,SG26,QTY,6063,47,,Berechnete(fakturierte) Menge,X,Berechnete(fakturierte) Menge
+174,energetische Mengenangaben,SG26,QTY,6060,,,Menge,X [910] ∧[906],
+175,energetische Mengenangaben,SG26,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
+176,energetische Mengenangaben,SG26,QTY,6411,KWT,,Kilowatt,X,
+177,energetische Mengenangaben,SG26,QTY,6411,KVR,,kilovar,X [492] ∧[51],
+178,energetische Mengenangaben,SG26,QTY,6411,K3,,kilovolt ampere,X [492] ∧reactive hour,
+179,energetische Mengenangaben,SG26,QTY,6411,H87,,Stück,X,"[51] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤ 1.1. 2023 0:00 gesetzlicher deutscher Zeit 
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom"
+180,zeitliche Mengenangaben,SG26,,,,,,,
+181,zeitliche Mengenangaben,SG26,,,,,,Soll [8],
+182,zeitliche Mengenangaben,SG26,QTY,,,,,Soll [8],
+183,zeitliche Mengenangaben,SG26,QTY,6063,136,,Erreichte Menge indem Zeitintervall,X,Erreichte Menge indem Zeitintervall
+184,zeitliche Mengenangaben,SG26,QTY,6060,,,Menge,X [908],
+185,zeitliche Mengenangaben,SG26,QTY,6411,DAY,,Tag,X,Tag
+186,zeitliche Mengenangaben,SG26,QTY,6411,MON,,Monat,X [51] ∨[493],
+187,zeitliche Mengenangaben,SG26,QTY,6411,ANN,,Jahr,X [51] ∨[493],"[51] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤ 1.1. 2023 0:00 gesetzlicher deutscher Zeit 
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+188,Positionsbezogener Abrechnungszeitraum Beginn,SG26,,,,,,,
+189,Positionsbezogener Abrechnungszeitraum Beginn,SG26,,,,,,Muss,
+190,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,,,,,Muss,
+191,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2005,155,,"Rechnungsperiode,Beginndatum",X,"Rechnungsperiode,Beginndatum"
+192,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
+193,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+194,Positionsbezogener Abrechnungszeitraum Ende,SG26,,,,,,,
+195,Positionsbezogener Abrechnungszeitraum Ende,SG26,,,,,,Muss,
+196,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,,,,,Muss,
+197,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2005,156,,"Rechnungsperiode,Endedatum",X,"Rechnungsperiode,Endedatum"
+198,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
+199,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+200,Ausführungsdatum,SG26,,,,,,,
+201,Ausführungsdatum,SG26,,,,,,,
+202,Ausführungsdatum,SG26,DTM,,,,,,
+203,Ausführungsdatum,SG26,DTM,2005,203,,Ausführungsdatum/-zeit,,Ausführungsdatum/-zeit
+204,Ausführungsdatum,SG26,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+205,Ausführungsdatum,SG26,DTM,2379,303,,CCYYMMDDHHMMZZZ,,CCYYMMDDHHMMZZZ
+206,Positionsnettobetrag,SG27,,,,,,,
+207,Positionsnettobetrag,SG27,,,,,,,
+208,Positionsnettobetrag,SG27,MOA,,,,,Muss,
+209,Positionsnettobetrag,SG27,MOA,5025,203,,Positionsbetrag(ohne USt.),X,Positionsbetrag(ohne USt.)
+210,Positionsnettobetrag,SG27,MOA,5004,,,Geldbetrag,X [930],
+211,Gesamtzu- oder abschlagsbetrag,SG27,,,,,,,
+212,Gesamtzu- oder abschlagsbetrag,SG27,,,,,,,
+213,Gesamtzu- oder abschlagsbetrag,SG27,MOA,,,,,Muss,
+214,Gesamtzu- oder abschlagsbetrag,SG27,MOA,5025,131,,Gesamtzu- oderabschlagsbetrag,X,Gesamtzu- oderabschlagsbetrag
+215,Gesamtzu- oder abschlagsbetrag,SG27,MOA,5004,,,Geldbetrag,X [930],
+216,Preis,SG29,,,,,,,
+217,Preis,SG29,,,,,,,
+218,Preis,SG29,PRI,,,,,Muss,
+219,Preis,SG29,PRI,5125,CAL,,Berechnungspreis,X,Berechnungspreis
+220,Preis,SG29,PRI,5118,,,"Preis, Betrag",X [946],
+221,Preis,SG29,PRI,6411,DAY,,Tag,X [12],Tag
+222,Preis,SG29,PRI,6411,MON,,Monat, X [12] ∧([51] ∨[493]),
+223,Preis,SG29,PRI,6411,ANN,,Jahr, X [12] ∧([51] ∨[493]),"[12] Wenn SG26 QTY+136 vorhanden 
+[51] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤ 1.1. 2023 0:00 gesetzlicher deutscher Zeit 
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+224,Umsatzsteuer der Position,SG34,,,,,,,
+225,Umsatzsteuer der Position,SG34,,,,,,,
+226,Umsatzsteuer der Position,SG34,TAX,,,,,Muss,
+227,Umsatzsteuer der Position,SG34,TAX,5283,7,,Steuer,X,Steuer
+228,Umsatzsteuer der Position,SG34,TAX,5153,VAT,,Umsatzsteuer,X,Umsatzsteuer
+229,Umsatzsteuer der Position,SG34,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],
+230,Umsatzsteuer der Position,SG34,TAX,5305,S,,Einheitssatz(Standard),X,Einheitssatz(Standard)
+231,Umsatzsteuer der Position,SG34,TAX,5305,O,,nicht steuerbar,X,
+232,Abschlag,SG39,,,,,,,
+233,Abschlag,SG39,,,,,,,
+234,Abschlag,SG39,ALC,,,,,Muss,
+235,Abschlag,SG39,ALC,5463,A,,Abschlag,X,Abschlag
+236,Abschlag,SG39,ALC,5189,Z01,,GemeinderabattnachKonzessionsabgabenverordnung,X,GemeinderabattnachKonzessionsabgabenverordnung
+237,Abschlag,SG39,ALC,5189,Z04,,"Anpassung nach §19, Absatz 2Stromnetzentgeltverordnung",X,
+238,Prozentangabe des Abschlags,SG41,,,,,,,
+239,Prozentangabe des Abschlags,SG41,,,,,,Muss,
+240,Prozentangabe des Abschlags,SG41,PCD,,,,,Muss,
+241,Prozentangabe des Abschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,X,Zu- oder Abschlag
+242,Prozentangabe des Abschlags,SG41,PCD,5482,,,Prozentsatz,X [914] ∧[930],
+243,Bemessungsgrundlage des Gemeinderabatts,SG42,,,,,,,
+244,Bemessungsgrundlage des Gemeinderabatts,SG42,,,,,,,
+245,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,,,,,Muss,
+246,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,5025,25,,Zu-/Abschlagsbasis,X,Zu-/Abschlagsbasis
+247,Bemessungsgrundlage des Gemeinderabatts,SG42,MOA,5004,,,Geldbetrag,X [930][512],
+248,Gemeinderabatt der Position,SG42,,,,,,,
+249,Gemeinderabatt der Position,SG42,,,,,,,
+250,Gemeinderabatt der Position,SG42,MOA,,,,,Muss,
+251,Gemeinderabatt der Position,SG42,MOA,5025,Z01,,Gemeinderabatt,X,Gemeinderabatt
+252,Gemeinderabatt der Position,SG42,MOA,5004,,,Geldbetrag,X [930][513],
+253,Zuschlag,SG39,,,,,,,
+254,Zuschlag,SG39,,,,,,,
+255,Zuschlag,SG39,ALC,,,,,Muss,
+256,Zuschlag,SG39,ALC,5463,C,,Zuschlag,X,Zuschlag
+257,Zuschlag,SG39,ALC,5189,Z02,,Umspannungszuschlag,X [29],Umspannungszuschlag
+258,Zuschlag,SG39,ALC,5189,Z03,,"allein genutzteBetriebsmittel nach§ 19, Absatz 3Stromnetzentgeltverordnung",X,
+259,Zuschlag,SG39,ALC,5189,Z04,,"Anpassung nach §19, Absatz 2Stromnetzentgeltverordnung",X,[29] Wenn DTM+155 (Rechnungsperiode Beginndatum) nicht größer 31.12.2015
+260,Prozentangabe des Zuschlags,SG41,,,,,,,
+261,Prozentangabe des Zuschlags,SG41,,,,,,Muss,
+262,Prozentangabe des Zuschlags,SG41,PCD,,,,,Muss,
+263,Prozentangabe des Zuschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,X,Zu- oder Abschlag
+264,Prozentangabe des Zuschlags,SG41,PCD,5482,,,Prozentsatz,X [914] ∧[930],
+265,Abschnitts- Kontrollsegment,,,,,,,Muss,
+266,Abschnitts- Kontrollsegment,,UNS,0081,S,,Trennung vonPositions- undSummenteil,X,Trennung vonPositions- undSummenteil
+267,Rechnungsbetrag,SG50,,,,,,,
+268,Rechnungsbetrag,SG50,,,,,,,
+269,Rechnungsbetrag,SG50,MOA,,,,,Muss,
+270,Rechnungsbetrag,SG50,MOA,5025,77,,Rechnungsbetrag,X,Rechnungsbetrag
+271,Rechnungsbetrag,SG50,MOA,5004,,,Geldbetrag,X [930],
+272,Vorausbezahlter Betrag,SG50,,,,,,,
+273,Vorausbezahlter Betrag,SG50,,,,,,,
+274,Vorausbezahlter Betrag,SG50,MOA,,,,,Muss,
+275,Vorausbezahlter Betrag,SG50,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),X,VorausbezahlterBetrag (inkl. USt.)
+276,Vorausbezahlter Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],
+277,Referenz auf Vorgängerrechnung,SG51,,,,,,,
+278,Referenz auf Vorgängerrechnung,SG51,,,,,,,
+279,Referenz auf Vorgängerrechnung,SG51,RFF,,,,,Muss,
+280,Referenz auf Vorgängerrechnung,SG51,RFF,1153,AFL,,ZugehörigeRechnungen,X,ZugehörigeRechnungen
+281,Referenz auf Vorgängerrechnung,SG51,RFF,1154,,,"Referenz, Identifikation",X,
+282,Datum der Vorgängerrechnung,SG51,,,,,,,
+283,Datum der Vorgängerrechnung,SG51,,,,,,Muss,
+284,Datum der Vorgängerrechnung,SG51,DTM,,,,,Muss,
+285,Datum der Vorgängerrechnung,SG51,DTM,2005,3,,Rechnungsdatum/-zeit,X,Rechnungsdatum/-zeit
+286,Datum der Vorgängerrechnung,SG51,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+287,Datum der Vorgängerrechnung,SG51,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+288,Gemeinderabatt,SG50,,,,,,,
+289,Gemeinderabatt,SG50,,,,,,,
+290,Gemeinderabatt,SG50,MOA,,,,,Muss,
+291,Gemeinderabatt,SG50,MOA,5025,Z01,,Gemeinderabatt,X,Gemeinderabatt
+292,Gemeinderabatt,SG50,MOA,5004,,,Geldbetrag,X [930],
+293,Fälliger Betrag,SG50,,,,,,,
+294,Fälliger Betrag,SG50,,,,,,,
+295,Fälliger Betrag,SG50,MOA,,,,,Muss,
+296,Fälliger Betrag,SG50,MOA,5025,9,,Fälliger Betrag (inkl.USt.),X,Fälliger Betrag (inkl.USt.)
+297,Fälliger Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],
+298,Umsatzsteuer der Rechnung,SG52,,,,,,,
+299,Umsatzsteuer der Rechnung,SG52,,,,,,,
+300,Umsatzsteuer der Rechnung,SG52,TAX,,,,,Muss,
+301,Umsatzsteuer der Rechnung,SG52,TAX,5283,7,,Steuer,X,Steuer
+302,Umsatzsteuer der Rechnung,SG52,TAX,5153,VAT,,Umsatzsteuer,X,Umsatzsteuer
+303,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],
+304,Umsatzsteuer der Rechnung,SG52,TAX,5305,S,,Einheitssatz(Standard),X,Einheitssatz(Standard)
+305,Umsatzsteuer der Rechnung,SG52,TAX,5305,O,,nicht steuerbar,X,
+306,Umsatzsteuer der Rechnung,SG52,TAX,5305,AE,,Reverse Charge /Steuerschuldnerschaft desLeistungsempfängers,X,
+307,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,,
+308,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,Soll [13],
+309,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,Soll [13],
+310,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),X,VorausbezahlterBetrag (inkl. USt.)
+311,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
+312,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,,
+313,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,Muss [58],
+314,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,Muss [58],
+315,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,115,,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages),X,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages)
+316,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
+317,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,,
+318,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,Muss,
+319,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,Muss,
+320,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,125,,Besteuerungsgrundlage,X,Besteuerungsgrundlage
+321,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
+322,Steuerbetrag (steuersatzbezogen),SG52,,,,,,,
+323,Steuerbetrag (steuersatzbezogen),SG52,,,,,,Muss,
+324,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,Muss,
+325,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,161,,Steuer-/Gebühren-/Abgabebetrag,X,Steuer-/Gebühren-/Abgabebetrag
+326,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],
+327,Nachrichtenende,,,,,,,Muss,
+328,Nachrichtenende,,UNT,0074,,,Anzahl der Segmente ineiner Nachricht,X,
+329,Nachrichtenende,,UNT,0062,,,Nachrichten-Referenznummer,X,

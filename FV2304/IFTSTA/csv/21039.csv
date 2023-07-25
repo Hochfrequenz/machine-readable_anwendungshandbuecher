@@ -1,4 +1,4 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedinung
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,IFTSTA,,Multimodaler Statusbericht,X,Multimodaler Statusbericht
@@ -19,85 +19,99 @@
 17,MP-ID Empfänger,SG1,NAD,3035,,,,MR,
 18,MP-ID Empfänger,SG1,NAD,3039,,,MP-ID,X [27],
 19,MP-ID Empfänger,SG1,NAD,3055,9,,GS1,X,GS1
-20,MP-ID Absender,SG1,,,,,,Muss,
+20,MP-ID Empfänger,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 21,MP-ID Absender,SG1,,,,,,Muss,
-22,MP-ID Absender,SG1,NAD,,,,,Muss,
-23,MP-ID Absender,SG1,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
-24,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
-25,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
-26,Ansprechpartner,SG2,,,,,,Kann,
-27,Ansprechpartner,SG2,,,,,,Kann,
-28,Ansprechpartner,SG2,CTA,,,,,Muss,
-29,Ansprechpartner,SG2,CTA,3139,,,,IC,
-30,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
-31,Kommunikationsverbindung,SG2,,,,,,,
-32,Kommunikationsverbindung,SG2,,,,,,Muss,
-33,Kommunikationsverbindung,SG2,COM,,,,,Muss,
-34,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
-35,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
-36,Sendungsdaten,SG14,,,,,,Muss,
-37,Sendungsdaten,SG14,,,,,,Muss,
-38,Sendungsdaten,SG14,CNI,,,,,Muss,
-39,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],
-40,Meldepunkt,SG14,,,,,,,
-41,Meldepunkt,SG14,,,,,,Muss,
-42,Meldepunkt,SG14,LOC,,,,,Muss,
-43,Meldepunkt,SG14,LOC,3227,,,,172,
-44,Meldepunkt,SG14,LOC,3225,,,Identifikator,X [950] [506],
-45,Auftragstatus Sperren,SG15,,,,,,Muss [78],
-46,Auftragstatus Sperren,SG15,,,,,,Muss [78],
-47,Auftragstatus Sperren,SG15,STS,,,,,Muss,
-48,Auftragstatus Sperren,SG15,STS,9015,Z37,,Auftragsstatus Sperren,X,Auftragsstatus Sperren
-49,Auftragstatus Sperren,SG15,STS,4405,Z13,,gescheitert,X [91] ∧ [20],gescheitert
-50,Auftragstatus Sperren,SG15,STS,9013,,,Code des Prüfschritts,X ([93] ⊻ [94] ⊻ [107]),
-51,Auftragstatus Sperren,SG15,STS,1131,E_0472,,EBD Nr. E_0472,X,EBD Nr. E_0472
-52,Prüfidentifikator,SG15,,,,,,,
-53,Prüfidentifikator,SG15,,,,,,Muss,
-54,Prüfidentifikator,SG15,RFF,,,,,Muss,
-55,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-56,Prüfidentifikator,SG15,RFF,1154,21039,,"GPKE, Awh Sperrp. Gas /Auftragsstatus (Sperren)",X,"GPKE, Awh Sperrp. Gas /Auftragsstatus (Sperren)"
-57,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,,
-58,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,Muss [77],
-59,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,,,,Muss [77],
-60,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,293,,Fertigstellungsdatum/-zeit,X,Fertigstellungsdatum/-zeit
-61,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [495],
-62,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-63,Sendungspositionseinzelhei ten,SG25,,,,,,Muss ([83] ⊻ [85]),
-64,Sendungspositionseinzelhei ten,SG25,,,,,,Muss ([83] ⊻ [85]),
-65,Sendungspositionseinzelhei ten,SG25,GID,,,,,Muss,
-66,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,X [903],
-67,Freier Text,SG25,,,,,,,
-68,Freier Text,SG25,,,,,,Muss,
-69,Freier Text,SG25,FTX,,,,,Muss,
-70,Freier Text,SG25,FTX,4451,(für allgemeine Hinweise),,,ACB,(für allgemeine Hinweise)
-71,Freier Text,SG25,FTX,4440,,,Freier Text,X,
-72,Auftragstatus Entsperren,SG15,,,,,,Muss [79],
-73,Auftragstatus Entsperren,SG15,,,,,,Muss [79],
-74,Auftragstatus Entsperren,SG15,STS,,,,,Muss,
-75,Auftragstatus Entsperren,SG15,STS,9015,Z38,,Auftragsstatus Entsperren,X,Auftragsstatus Entsperren
-76,Auftragstatus Entsperren,SG15,STS,4405,Z13,,gescheitert,X [95],gescheitert
-77,Auftragstatus Entsperren,SG15,STS,9013,,,Code des Prüfschritts,X ((([97] ⊻ [98]) ∧ [95]) ⊻[99]) ,
-78,Auftragstatus Entsperren,SG15,STS,1131,E_0487,,EBD Nr. E_0487,X,EBD Nr. E_0487
-79,Prüfidentifikator,SG15,,,,,,,
-80,Prüfidentifikator,SG15,,,,,,Muss,
-81,Prüfidentifikator,SG15,RFF,,,,,Muss,
-82,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-83,Prüfidentifikator,SG15,RFF,1154,21039,,"GPKE, Awh Sperrp. Gas /",X,"GPKE, Awh Sperrp. Gas /"
-84,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,,
-85,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,Muss [80],
-86,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,,,,Muss [80],
-87,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,293,,Fertigstellungsdatum/-zeit,X,Fertigstellungsdatum/-zeit
-88,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [495],
-89,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-90,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [84],
-91,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [84],
-92,Sendungspositionseinzelhei ten,SG25,GID,,,,,Muss,
-93,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,X [903],
-94,Freier Text,SG25,,,,,,,
-95,Freier Text,SG25,,,,,,Muss,
-96,Freier Text,SG25,FTX,,,,,Muss,
-97,Freier Text,SG25,FTX,4451,(für allgemeine Hinweise),,,ACB,(für allgemeine Hinweise)
-98,Freier Text,SG25,FTX,4440,,,Freier Text,X,
-99,Nachrichten-Endesegment,,,,,,,Muss,
-100,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-101,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+22,MP-ID Absender,SG1,,,,,,Muss,
+23,MP-ID Absender,SG1,NAD,,,,,Muss,
+24,MP-ID Absender,SG1,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
+25,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],
+26,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,GS1
+27,MP-ID Absender,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+28,Ansprechpartner,SG2,,,,,,Kann,
+29,Ansprechpartner,SG2,,,,,,Kann,
+30,Ansprechpartner,SG2,CTA,,,,,Muss,
+31,Ansprechpartner,SG2,CTA,3139,,,,IC,
+32,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
+33,Kommunikationsverbindung,SG2,,,,,,,
+34,Kommunikationsverbindung,SG2,,,,,,Muss,
+35,Kommunikationsverbindung,SG2,COM,,,,,Muss,
+36,Kommunikationsverbindung,SG2,COM,3148,,,Nummer / E-Mail Adresse,X,
+37,Kommunikationsverbindung,SG2,COM,3155,EM,,E-Mail,X [1P0..1],E-Mail
+38,Kommunikationsverbindung,SG2,COM,3155,FX,,Telefax,X [1P0..1],
+39,Kommunikationsverbindung,SG2,COM,3155,TE,,Telefon,X [1P0..1],
+40,Kommunikationsverbindung,SG2,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG2,COM,3155,AL,,Handy,X [1P0..1],
+42,Sendungsdaten,SG14,,,,,,Muss,
+43,Sendungsdaten,SG14,,,,,,Muss,
+44,Sendungsdaten,SG14,CNI,,,,,Muss,
+45,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],
+46,Meldepunkt,SG14,,,,,,,
+47,Meldepunkt,SG14,,,,,,Muss,
+48,Meldepunkt,SG14,LOC,,,,,Muss,
+49,Meldepunkt,SG14,LOC,3227,,,,172,
+50,Meldepunkt,SG14,LOC,3225,,,Identifikator,X [950] [506],
+51,Auftragstatus Sperren,SG15,,,,,,Muss [78],
+52,Auftragstatus Sperren,SG15,,,,,,Muss [78],
+53,Auftragstatus Sperren,SG15,STS,,,,,Muss,
+54,Auftragstatus Sperren,SG15,STS,9015,Z37,,Auftragsstatus Sperren,X,Auftragsstatus Sperren
+55,Auftragstatus Sperren,SG15,STS,4405,Z13,,gescheitert,X [91] ∧ [20],gescheitert
+56,Auftragstatus Sperren,SG15,STS,4405,Z14,,erfolgreich,X [91],
+57,Auftragstatus Sperren,SG15,STS,4405,Z32,,abgelehnt,X [92],"[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF 
+[91] Wenn in diesem STS DE1131 = E_0472 
+[92] Wenn in diesem STS DE1131 = E_0501"
+58,Auftragstatus Sperren,SG15,STS,9013,,,Code des Prüfschritts,X ([93] ⊻ [94] ⊻ [107]),
+59,Auftragstatus Sperren,SG15,STS,1131,E_0472,,EBD Nr. E_0472,X,EBD Nr. E_0472
+60,Auftragstatus Sperren,SG15,STS,1131,E_0501,,EBD Nr. E_0501,X [20],[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF
+61,Prüfidentifikator,SG15,,,,,,,
+62,Prüfidentifikator,SG15,,,,,,Muss,
+63,Prüfidentifikator,SG15,RFF,,,,,Muss,
+64,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+65,Prüfidentifikator,SG15,RFF,1154,21039,,"GPKE, Awh Sperrp. Gas /Auftragsstatus (Sperren)",X,"GPKE, Awh Sperrp. Gas /Auftragsstatus (Sperren)"
+66,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,,
+67,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,Muss [77],
+68,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,,,,Muss [77],
+69,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,293,,Fertigstellungsdatum/-zeit,X,Fertigstellungsdatum/-zeit
+70,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [495],
+71,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+72,Sendungspositionseinzelhei ten,SG25,,,,,,Muss ([83] ⊻ [85]),
+73,Sendungspositionseinzelhei ten,SG25,,,,,,Muss ([83] ⊻ [85]),
+74,Sendungspositionseinzelhei ten,SG25,GID,,,,,Muss,
+75,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,X [903],
+76,Freier Text,SG25,,,,,,,
+77,Freier Text,SG25,,,,,,Muss,
+78,Freier Text,SG25,FTX,,,,,Muss,
+79,Freier Text,SG25,FTX,4451,(für allgemeine Hinweise),,,ACB,(für allgemeine Hinweise)
+80,Freier Text,SG25,FTX,4440,,,Freier Text,X,
+81,Auftragstatus Entsperren,SG15,,,,,,Muss [79],
+82,Auftragstatus Entsperren,SG15,,,,,,Muss [79],
+83,Auftragstatus Entsperren,SG15,STS,,,,,Muss,
+84,Auftragstatus Entsperren,SG15,STS,9015,Z38,,Auftragsstatus Entsperren,X,Auftragsstatus Entsperren
+85,Auftragstatus Entsperren,SG15,STS,4405,Z13,,gescheitert,X [95],gescheitert
+86,Auftragstatus Entsperren,SG15,STS,4405,Z14,,erfolgreich,X ([95] ∨ [96]),"[95] Wenn in diesem STS DE1131 = E_0499 
+[96] Wenn in diesem STS DE1131 = E_0487"
+87,Auftragstatus Entsperren,SG15,STS,9013,,,Code des Prüfschritts,X ((([97] ⊻ [98]) ∧ [95]) ⊻[99]) ,
+88,Auftragstatus Entsperren,SG15,STS,1131,E_0487,,EBD Nr. E_0487,X,EBD Nr. E_0487
+89,Auftragstatus Entsperren,SG15,STS,1131,E_0499,,EBD Nr. E_0499,X,
+90,Prüfidentifikator,SG15,,,,,,,
+91,Prüfidentifikator,SG15,,,,,,Muss,
+92,Prüfidentifikator,SG15,RFF,,,,,Muss,
+93,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+94,Prüfidentifikator,SG15,RFF,1154,21039,,"GPKE, Awh Sperrp. Gas /",X,"GPKE, Awh Sperrp. Gas /"
+95,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,,
+96,Datum/Uhrzeit/Zeitspanne,SG15,,,,,,Muss [80],
+97,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,,,,Muss [80],
+98,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,293,,Fertigstellungsdatum/-zeit,X,Fertigstellungsdatum/-zeit
+99,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [495],
+100,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+101,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [84],
+102,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [84],
+103,Sendungspositionseinzelhei ten,SG25,GID,,,,,Muss,
+104,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,X [903],
+105,Freier Text,SG25,,,,,,,
+106,Freier Text,SG25,,,,,,Muss,
+107,Freier Text,SG25,FTX,,,,,Muss,
+108,Freier Text,SG25,FTX,4451,(für allgemeine Hinweise),,,ACB,(für allgemeine Hinweise)
+109,Freier Text,SG25,FTX,4440,,,Freier Text,X,
+110,Nachrichten-Endesegment,,,,,,,Muss,
+111,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+112,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

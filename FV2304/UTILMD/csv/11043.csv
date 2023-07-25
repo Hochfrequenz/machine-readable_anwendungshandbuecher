@@ -19,856 +19,995 @@
 17,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
 18,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
 19,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
-20,Ansprechpartner,SG3,,,,,,Kann,
-21,Ansprechpartner,SG3,,,,,,Kann,
-22,Ansprechpartner,SG3,CTA,,,,,Muss,
-23,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
-24,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
-25,Kommunikationsverbindung,SG3,,,,,,,
-26,Kommunikationsverbindung,SG3,,,,,,Muss,
-27,Kommunikationsverbindung,SG3,COM,,,,,Muss,
-28,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
-29,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
-30,MP-ID Empfänger,SG2,,,,,,Muss,
-31,MP-ID Empfänger,SG2,,,,,,Muss,
-32,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-33,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-34,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
-35,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
-36,Vorgang,SG4,,,,,,Muss,
-37,Vorgang,SG4,,,,,,Muss,
-38,Vorgang,SG4,IDE,,,,,Muss,
-39,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
-40,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
-41,Datum zum geplanten Leistungsbeginn,SG4,,,,,,,
-42,Datum zum geplanten Leistungsbeginn,SG4,,,,,,Muss,
-43,Datum zum geplanten Leistungsbeginn,SG4,DTM,,,,,Muss,
-44,Datum zum geplanten Leistungsbeginn,SG4,DTM,2005,76,,"Lieferdatum/-zeit,geplant",X,"Lieferdatum/-zeit,geplant"
-45,Datum zum geplanten Leistungsbeginn,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
-46,Datum zum geplanten Leistungsbeginn,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
-47,Transaktionsgrund,SG4,,,,,,,
-48,Transaktionsgrund,SG4,,,,,,Muss [2061],
-49,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
-50,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
-51,Transaktionsgrund,SG4,STS,9013,E01,,Ein-/Auszug (Umzug),X,Ein-/Auszug (Umzug)
-52,Status der Antwort,SG4,,,,,,,
-53,Status der Antwort,SG4,,,,,,Muss [249],
-54,Status der Antwort,SG4,STS,,,,,Muss [249],
-55,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,X,Status der Antwort
-56,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,X,
-57,Status der Antwort,SG4,STS,1131,G_0053,,Codeliste Gas Nr.G_0053,,Codeliste Gas Nr.G_0053
-58,Beauftragung oder Beendigung liegt vor,SG4,,,,,,,
-59,Beauftragung oder Beendigung liegt vor,SG4,,,,,,,
-60,Beauftragung oder Beendigung liegt vor,SG4,AGR,,,,,,
-61,Beauftragung oder Beendigung liegt vor,SG4,AGR,7431,9,,Vertrag,,Vertrag
-62,Beauftragung oder Beendigung liegt vor,SG4,AGR,7433,Z04,,Vertrag zwischen AN undMSB,,Vertrag zwischen AN undMSB
-63,Meldepunkt,SG5,,,,,,Muss ([492]∧ [580]) ∨([493] ∧[2061]),
-64,Meldepunkt,SG5,,,,,,Muss ([492]∧ [580]) ∨([493] ∧[2061]),
-65,Meldepunkt,SG5,LOC,,,,,Muss,
-66,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-67,Meldepunkt,SG5,LOC,3225,,,Identifikator,X ([950][492]) ⊻[951],
-68,Prüfidentifikator,SG6,,,,,,Muss,
-69,Prüfidentifikator,SG6,,,,,,Muss,
-70,Prüfidentifikator,SG6,RFF,,,,,Muss,
-71,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-72,Prüfidentifikator,SG6,RFF,1154,11042,,WiM / Anmeldung MSB,,WiM / Anmeldung MSB
-73,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
-74,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
-75,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,Muss,
-76,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
-77,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
-78,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,Muss [492],
-79,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,Muss [492],
-80,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,,,,,Muss [636],
-81,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-82,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1154,,,ID der Marktlokation,X [950],
-83,Geplante Turnusablesung des MSB (Strom),SG6,,,,,,,
-84,Geplante Turnusablesung des MSB (Strom),SG6,,,,,,Muss [86] ∧[78] ∧ [234]∧ [618],
-85,Geplante Turnusablesung des MSB (Strom),SG6,DTM,,,,,Muss [86] ∧[78] ∧ [234]∧ [618],
-86,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2005,752,,GeplanteTurnusablesung,X,GeplanteTurnusablesung
-87,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-88,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2379,104,,MMWW-MMWW,X,MMWW-MMWW
-89,Abrechnungsintervall des LF,SG6,,,,,,,
-90,Abrechnungsintervall des LF,SG6,,,,,,Muss [493],
-91,Abrechnungsintervall des LF,SG6,DTM,,,,,Muss [493],
-92,Abrechnungsintervall des LF,SG6,DTM,2005,Z20,,Abrechnungsintervall desLF,X,Abrechnungsintervall desLF
-93,Abrechnungsintervall des LF,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-94,Abrechnungsintervall des LF,SG6,DTM,2379,802,,Monat,X,Monat
-95,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,Muss [493],
-96,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,Muss [493],
-97,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,,,,,Muss [636],
-98,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1153,Z19,,Messlokation,X,Messlokation
-99,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1154,,,ID der Messlokation,X [951],
-100,Geplante Turnusablesung des NB (Gas),SG6,,,,,,,
-101,Geplante Turnusablesung des NB (Gas),SG6,,,,,,Muss,
-102,Geplante Turnusablesung des NB (Gas),SG6,DTM,,,,,Muss,
-103,Geplante Turnusablesung des NB (Gas),SG6,DTM,2005,752,,GeplanteTurnusablesung,X,GeplanteTurnusablesung
-104,Geplante Turnusablesung des NB (Gas),SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-105,Geplante Turnusablesung des NB (Gas),SG6,DTM,2379,104,,MMWW-MMWW,X,MMWW-MMWW
-106,Daten der Marktlokation,SG8,,,,,,Muss [492]∧ [2310],
-107,Daten der Marktlokation,SG8,,,,,,Muss [492]∧ [2310],
-108,Daten der Marktlokation,SG8,SEQ,,,,,Muss,
-109,Daten der Marktlokation,SG8,SEQ,1229,Z01,,Daten der Marktlokation,X,Daten der Marktlokation
-110,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-111,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-112,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-113,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-114,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID der Marktlokation,X [950],
-115,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [101],
-116,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [101],
-117,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,,,,Muss,
-118,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,265,,VeranschlagteJahresmenge Gesamt/Jahresverbrauchsprognose für spezifische Arbeitfürtagesparameterabhängige Marktlokation,X,VeranschlagteJahresmenge Gesamt/Jahresverbrauchsprognose für spezifische Arbeitfürtagesparameterabhängige Marktlokation
-119,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,Menge,X [902],
-120,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,Z16,,kWh/K (Kilowatt-Stunde/Kelvin),X [103],kWh/K (Kilowatt-Stunde/Kelvin)
-121,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
-122,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
-123,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,Muss,
-124,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,31,,VeranschlagteJahresmenge Gesamt,X,VeranschlagteJahresmenge Gesamt
-125,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,Mengenangabe,X [902] ∧[937],
-126,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
-127,Lieferrichtung,SG10,,,,,,Muss,
-128,Lieferrichtung,SG10,,,,,,Muss,
-129,Lieferrichtung,SG10,CCI,,,,,Muss,
-130,Lieferrichtung,SG10,CCI,7059,Z30,,Lieferrichtung,X,Lieferrichtung
-131,Lieferrichtung,SG10,CCI,7037,Z06,,Erzeugung,X,Erzeugung
-132,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-133,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-134,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss,
-135,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
-136,Lieferant,SG10,,,,,,,
-137,Lieferant,SG10,,,,,,Muss [78] ∧[221],
-138,Lieferant,SG10,CAV,,,,,Muss [78] ∧[221],
-139,Lieferant,SG10,CAV,7111,Z89,,LF,X,LF
-140,Lieferant,SG10,CAV,1131,,,MP-ID,X [611],
-141,Übertragungsnetzbetreiber,SG10,,,,,,,
-142,Übertragungsnetzbetreiber,SG10,,,,,,Muss,
-143,Übertragungsnetzbetreiber,SG10,CAV,,,,,Muss,
-144,Übertragungsnetzbetreiber,SG10,CAV,7111,Z90,,ÜNB,X,ÜNB
-145,Übertragungsnetzbetreiber,SG10,CAV,1131,,,MP-ID,X,
-146,Messstellenbetreiber,SG10,,,,,,,
-147,Messstellenbetreiber,SG10,,,,,,Muss,
-148,Messstellenbetreiber,SG10,CAV,,,,,Muss,
-149,Messstellenbetreiber,SG10,CAV,7111,Z91,,MSB,X,MSB
-150,Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X [621],
-151,Messstellenbetreiber,SG10,CAV,7110,Z19,,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer,X,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer
-152,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
-153,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
-154,Spannungsebene der Marktlokation,SG10,CCI,,,,,Muss,
-155,Spannungsebene der Marktlokation,SG10,CCI,7037,E03,,Spannungsebene derMarktlokation,X,Spannungsebene derMarktlokation
-156,Spannungsebene der Marktlokation,SG10,,,,,,,
-157,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
-158,Spannungsebene der Marktlokation,SG10,CAV,,,,,Muss,
-159,Spannungsebene der Marktlokation,SG10,CAV,7111,E03,,Höchstspannung,X,Höchstspannung
-160,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
-161,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
-162,Messtechnische Einordnung der Marktlokation,SG10,CCI,,,,,Muss,
-163,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,Z83,,MesstechnischeEinordnung derMarktlokation,X,MesstechnischeEinordnung derMarktlokation
-164,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,
-165,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
-166,Messtechnische Einordnung der Marktlokation,SG10,CAV,,,,,Muss,
-167,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,Z52,,iMS,X,iMS
-168,Aggregationsverantwortung in MaBiS,SG10,,,,,,Muss [492],
-169,Aggregationsverantwortung in MaBiS,SG10,,,,,,Muss [492],
-170,Aggregationsverantwortung in MaBiS,SG10,CCI,,,,,Muss,
-171,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,6,,Verantwortlicher,X,Verantwortlicher
-172,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,ZA8,,NB,X,NB
-173,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
-174,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
-175,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,Muss,
-176,Prognosegrundlage der Marktlokation,SG10,CCI,7037,ZC0,,Prognose auf Basis vonWerten,X,Prognose auf Basis vonWerten
-177,Details der Prognosegrundlage,SG10,,,,,,,
-178,Details der Prognosegrundlage,SG10,,,,,,Muss [210]∧ ([2182] ⊻([90] ∧[2183])),
-179,Details der Prognosegrundlage,SG10,CAV,,,,,Muss [210]∧ ([2182] ⊻([90] ∧[2183])),
-180,Details der Prognosegrundlage,SG10,CAV,7111,E02,,SLP/SEP,X [1P0..1],SLP/SEP
-181,Art der erzeugenden Marktlokation,SG10,,,,,,Muss [220],
-182,Art der erzeugenden Marktlokation,SG10,,,,,,Muss [220],
-183,Art der erzeugenden Marktlokation,SG10,CCI,,,,,Muss,
-184,Art der erzeugenden Marktlokation,SG10,CCI,7037,Z34,,Art der erzeugendenMarktlokation,X,Art der erzeugendenMarktlokation
-185,Art der erzeugenden Marktlokation ,SG10,,,,,,,
-186,Art der erzeugenden Marktlokation ,SG10,,,,,,Muss,
-187,Art der erzeugenden Marktlokation ,SG10,CAV,,,,,Muss,
-188,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z33,,EEG-Marktlokation ohneDV-Pflicht,X,EEG-Marktlokation ohneDV-Pflicht
-189,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss [2311]∧ [492],
-190,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss [2311]∧ [492],
-191,Erforderliches Messprodukt der Marktlokation,SG8,SEQ,,,,,Muss,
-192,Erforderliches Messprodukt der Marktlokation,SG8,SEQ,1229,Z27,,ErforderlichesMessprodukt derMarktlokation,X,ErforderlichesMessprodukt derMarktlokation
-193,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-194,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-195,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-196,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-197,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-198,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,,
-199,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss,
-200,Erforderliches Messprodukt der Marktlokation,SG8,PIA,,,,,Muss,
-201,Erforderliches Messprodukt der Marktlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
-202,Erforderliches Messprodukt der Marktlokation,SG8,PIA,7140,,,Messprodukt-Code,X [425],
-203,Erforderliches Messprodukt der Marktlokation,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
-204,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166]Muss [335]∧ [428],
-205,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166]Muss [335]∧ [428],
-206,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
-207,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
-208,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [438],
-209,Messprodukt für Netzbetreiber relevant,SG10,,,,,,Muss,
-210,Messprodukt für Netzbetreiber relevant,SG10,,,,,,Muss,
-211,Messprodukt für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
-212,Messprodukt für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
-213,Verwendungszweck des Wertes,SG10,,,,,,,
-214,Verwendungszweck des Wertes,SG10,,,,,,Muss,
-215,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
-216,Verwendungszweck des Wertes,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [19P1..1] ⊻g[22P1..1] ⊻[26P1..1],Netznutzungsabrechnun
-217,Messprodukt für Lieferant relevant,SG10,,,,,,Muss,
-218,Messprodukt für Lieferant relevant,SG10,,,,,,Muss,
-219,Messprodukt für Lieferant relevant,SG10,CCI,,,,,Muss,
-220,Messprodukt für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
-221,Verwendungszweck des Wertes,SG10,,,,,,,
-222,Verwendungszweck des Wertes,SG10,,,,,,Muss,
-223,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
-224,Verwendungszweck des Wertes,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [19P0..1] ⊻g[22P0..1] ⊻[26P0..1],Netznutzungsabrechnun
-225,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [432],
-226,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [432],
-227,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
-228,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
-229,Verwendungszweck des Wertes,SG10,,,,,,,
-230,Verwendungszweck des Wertes,SG10,,,,,,Muss,
-231,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
-232,Verwendungszweck des Wertes,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
-233,OBIS-Daten der Marktlokation,SG8,,,,,,Muss [2311]∧ [404] ∧[492],
-234,OBIS-Daten der Marktlokation,SG8,,,,,,Muss [2311]∧ [404] ∧[492],
-235,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,Muss,
-236,OBIS-Daten der Marktlokation,SG8,SEQ,1229,Z02,,OBIS-Daten derMarktlokation,X,OBIS-Daten derMarktlokation
-237,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-238,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-239,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-240,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-241,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-242,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,
-243,OBIS-Kennzahl der Marktlokation,SG8,,,,,,Muss,
-244,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,Muss,
-245,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
-246,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,OBIS-Kennzahl der Marktlokation,X ([493] ∧[315]) ⊻([492] ∧[314]),
-247,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,OBIS-Kennzahl
-248,Wertegranularität,SG10,,,,,,Muss [257]⊻ [288],
-249,Wertegranularität,SG10,,,,,,Muss [257]⊻ [288],
-250,Wertegranularität,SG10,CCI,,,,,Muss,
-251,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
-252,Wertegranularität,SG10,,,,,,,
-253,Wertegranularität,SG10,,,,,,Muss,
-254,Wertegranularität,SG10,CAV,,,,,Muss,
-255,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,Jährlich
-256,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[335] ∧[492]Muss [386]∧ [387] ∧[335] ∧[492],
-257,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[335] ∧[492]Muss [386]∧ [387] ∧[335] ∧[492],
-258,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
-259,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
-260,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [421],
-261,Zugeordnete Zählzeitregister ,SG10,,,,,,Muss [421],
-262,Zugeordnete Zählzeitregister ,SG10,,,,,,Muss [421],
-263,Zugeordnete Zählzeitregister ,SG10,CCI,,,,,Muss,
-264,Zugeordnete Zählzeitregister ,SG10,CCI,7059,Z38,,Code desZählzeitregisters,X,Code desZählzeitregisters
-265,Zugeordnete Zählzeitregister ,SG10,CCI,7037,,,Code des Zählzeitregisters,X,
-266,OBIS Daten für Netzbetreiber relevant,SG10,,,,,,Muss,
-267,OBIS Daten für Netzbetreiber relevant,SG10,,,,,,Muss,
-268,OBIS Daten für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
-269,OBIS Daten für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
-270,Verwendungszweck der Werte,SG10,,,,,,,
-271,Verwendungszweck der Werte,SG10,,,,,,Muss,
-272,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-273,Verwendungszweck der Werte,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [29P1..1] ⊻g[32P1..1] ⊻[36P1..1],Netznutzungsabrechnun
-274,OBIS Daten für Lieferant relevant,SG10,,,,,,Muss,
-275,OBIS Daten für Lieferant relevant,SG10,,,,,,Muss,
-276,OBIS Daten für Lieferant relevant,SG10,CCI,,,,,Muss,
-277,OBIS Daten für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
-278,Verwendungszweck der Werte,SG10,,,,,,,
-279,Verwendungszweck der Werte,SG10,,,,,,Muss,
-280,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-281,Verwendungszweck der Werte,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [29P0..1] ⊻g[32P0..1] ⊻[36P0..1],Netznutzungsabrechnun
-282,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [396],
-283,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [396],
-284,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
-285,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
-286,Verwendungszweck der Werte,SG10,,,,,,,
-287,Verwendungszweck der Werte,SG10,,,,,,Muss,
-288,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-289,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
-290,Daten der Tranche,SG8,,,,,,Muss [492]∧ [2307],
-291,Daten der Tranche,SG8,,,,,,Muss [492]∧ [2307],
-292,Daten der Tranche,SG8,SEQ,,,,,Muss,
-293,Daten der Tranche,SG8,SEQ,1229,Z15,,Daten der Tranche,X,Daten der Tranche
-294,Referenz auf die ID der Tranche,SG8,,,,,,,
-295,Referenz auf die ID der Tranche,SG8,,,,,,Muss,
-296,Referenz auf die ID der Tranche,SG8,RFF,,,,,Muss,
-297,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,Tranche
-298,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID der Tranche,X [950],
-299,Referenz auf die Marktlokation der Tranche ,SG8,,,,,,,
-300,Referenz auf die Marktlokation der Tranche ,SG8,,,,,,Muss,
-301,Referenz auf die Marktlokation der Tranche ,SG8,RFF,,,,,Muss,
-302,Referenz auf die Marktlokation der Tranche ,SG8,RFF,1153,Z16,,zugeordneteMarktlokation,X,zugeordneteMarktlokation
-303,Referenz auf die Marktlokation der Tranche ,SG8,RFF,1154,,,ID der Marktlokation,X [950],
-304,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,,,,,,Muss [384],
-305,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,,,,,,Muss [384],
-306,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,,,,,Muss,
-307,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6063,11,,Aufteilungsmenge,X,Aufteilungsmenge
-308,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6060,,,Mengenangabe in %,X [914] ∧[930] ∧[955],
-309,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6411,P1,,Prozent,X,Prozent
-310,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-311,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-312,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss,
-313,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
-314,Lieferant,SG10,,,,,,,
-315,Lieferant,SG10,,,,,,Muss,
-316,Lieferant,SG10,CAV,,,,,Muss,
-317,Lieferant,SG10,CAV,7111,Z89,,LF,X,LF
-318,Lieferant,SG10,CAV,1131,,,MP-ID,X,
-319,Basis zur Bildung der Tranchengröße,SG10,,,,,,Muss,
-320,Basis zur Bildung der Tranchengröße,SG10,,,,,,Muss,
-321,Basis zur Bildung der Tranchengröße,SG10,CCI,,,,,Muss,
-322,Basis zur Bildung der Tranchengröße,SG10,CCI,7059,Z37,,Basis zur Bildung derTranchengröße,X,Basis zur Bildung derTranchengröße
-323,Basis zur Bildung der Tranchengröße,SG10,CCI,7037,ZD1,,Prozentual,X,Prozentual 
-324,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss [492]∧ [2308],
-325,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss [492]∧ [2308],
-326,Erforderliches Messprodukt der Tranche,SG8,SEQ,,,,,Muss,
-327,Erforderliches Messprodukt der Tranche,SG8,SEQ,1229,Z16,,ErforderlichesMessprodukt derTranche,X,ErforderlichesMessprodukt derTranche
-328,Referenz auf die ID der Tranche,SG8,,,,,,,
-329,Referenz auf die ID der Tranche,SG8,,,,,,Muss,
-330,Referenz auf die ID der Tranche,SG8,RFF,,,,,Muss,
-331,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,Tranche
-332,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID einer Tranche,X [950],
-333,Erforderliches Messprodukt der Tranche,SG8,,,,,,,
-334,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss,
-335,Erforderliches Messprodukt der Tranche,SG8,PIA,,,,,Muss,
-336,Erforderliches Messprodukt der Tranche,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
-337,Erforderliches Messprodukt der Tranche,SG8,PIA,7140,,,Messprodukt-Code,X [426],
-338,Erforderliches Messprodukt der Tranche,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
-339,Werte für Netzbetreiber relevant,SG10,,,,,,Muss,
-340,Werte für Netzbetreiber relevant,SG10,,,,,,Muss,
-341,Werte für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
-342,Werte für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
-343,Verwendungszweck der Werte,SG10,,,,,,,
-344,Verwendungszweck der Werte,SG10,,,,,,Muss,
-345,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-346,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
-347,Werte für Lieferant relevant,SG10,,,,,,Muss,
-348,Werte für Lieferant relevant,SG10,,,,,,Muss,
-349,Werte für Lieferant relevant,SG10,CCI,,,,,Muss,
-350,Werte für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
-351,Verwendungszweck der Werte,SG10,,,,,,,
-352,Verwendungszweck der Werte,SG10,,,,,,Muss,
-353,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-354,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P1..1],Bilanzkreisabrechnung
-355,Werte für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss,
-356,Werte für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss,
-357,Werte für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
-358,Werte für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
-359,Verwendungszweck der Werte,SG10,,,,,,,
-360,Verwendungszweck der Werte,SG10,,,,,,Muss,
-361,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
-362,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
-363,Daten der Messlokation,SG8,,,,,,Muss [2284],
-364,Daten der Messlokation,SG8,,,,,,Muss [2284],
-365,Daten der Messlokation,SG8,SEQ,,,,,Muss,
-366,Daten der Messlokation,SG8,SEQ,1229,Z18,,Daten der Messlokation,X,Daten der Messlokation
-367,Referenz auf die ID der Messlokation,SG8,,,,,,,
-368,Referenz auf die ID der Messlokation,SG8,,,,,,Muss,
-369,Referenz auf die ID der Messlokation,SG8,RFF,,,,,Muss,
-370,Referenz auf die ID der Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
-371,Referenz auf die ID der Messlokation,SG8,RFF,1154,,,ID der Messlokation,X [951],
-372,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,,,,,,,
-373,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,,,,,,Muss [492],
-374,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,,,,,Muss [492],
-375,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,1153,Z16,,zugeordneteMarktlokation,X,zugeordneteMarktlokation
-376,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,1154,,,ID der Marktlokation,X [950],
-377,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-378,Zugeordnete Marktpartner,SG10,,,,,,Muss,
-379,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss ,
-380,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
-381,Messstellenbetreiber,SG10,,,,,,,
-382,Messstellenbetreiber,SG10,,,,,,Muss [492],
-383,Messstellenbetreiber,SG10,CAV,,,,,Muss [492],
-384,Messstellenbetreiber,SG10,CAV,7111,Z91,,MSB,X,MSB
-385,Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X [621],
-386,Messstellenbetreiber,SG10,CAV,7110,Z19,,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer,X,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer
-387,Grundzuständiger Messstellenbetreiber,SG10,,,,,,,
-388,Grundzuständiger Messstellenbetreiber,SG10,,,,,,Muss [492],
-389,Grundzuständiger Messstellenbetreiber,SG10,CAV,,,,,Muss [492],
-390,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,ZF0,,gMSB,X,gMSB
-391,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X,
-392,Messstellenbetreiber Alt,SG10,,,,,,,
-393,Messstellenbetreiber Alt,SG10,,,,,,Muss [78] ∧(([184] ∧[492]) ⊻[493]),
-394,Messstellenbetreiber Alt,SG10,CAV,,,,,Muss [78] ∧(([184] ∧[492]) ⊻[493]),
-395,Messstellenbetreiber Alt,SG10,CAV,7111,ZB4,,MSBA,X,MSBA
-396,Messstellenbetreiber Alt,SG10,CAV,1131,,,MP-ID,X,
-397,Spannungsebene der Messlokation,SG10,,,,,,Muss [492],
-398,Spannungsebene der Messlokation,SG10,,,,,,Muss [492],
-399,Spannungsebene der Messlokation,SG10,CCI,,,,,Muss,
-400,Spannungsebene der Messlokation,SG10,CCI,7037,E04,,Spannungsebene derMesslokation,X,Spannungsebene derMesslokation
-401,Spannungsebene der Messlokation,SG10,,,,,,,
-402,Spannungsebene der Messlokation,SG10,,,,,,Muss,
-403,Spannungsebene der Messlokation,SG10,CAV,,,,,Muss,
-404,Spannungsebene der Messlokation,SG10,CAV,7111,E03,,Höchstspannung,X,Höchstspannung
-405,Gasqualität,SG10,,,,,,Muss [493],
-406,Gasqualität,SG10,,,,,,Muss [493],
-407,Gasqualität,SG10,CCI,,,,,Muss,
-408,Gasqualität,SG10,CCI,7037,Y02,,Gasqualität,X,Gasqualität
-409,Gasqualität,SG10,,,,,,,
-410,Gasqualität,SG10,,,,,,Muss,
-411,Gasqualität,SG10,CAV,,,,,Muss,
-412,Gasqualität,SG10,CAV,7111,Y04,,H-Gas,X,H-Gas
-413,Verwendungsumfang,SG10,,,,,,Muss [492],
-414,Verwendungsumfang,SG10,,,,,,Muss [492],
-415,Verwendungsumfang,SG10,CCI,,,,,Muss,
-416,Verwendungsumfang,SG10,CCI,7059,Z01,,Verwendungsumfang,X,Verwendungsumfang
-417,Verwendungsumfang,SG10,CCI,7037,Z82,,ID der prozessualbehandeltenMesslokation,X [2236],ID der prozessualbehandeltenMesslokation
-418,Betriebszustand der Messlokation,SG10,,,,,,Muss [45],
-419,Betriebszustand der Messlokation,SG10,,,,,,Muss [45],
-420,Betriebszustand der Messlokation,SG10,CCI,,,,,Muss,
-421,Betriebszustand der Messlokation,SG10,CCI,7059,Z32,,Betriebszustand derMesslokation,X,Betriebszustand derMesslokation
-422,Betriebszustand der Messlokation,SG10,CCI,7037,ZC1,,Messlokation gesperrtund darf nicht entsperrtwerden,X,Messlokation gesperrtund darf nicht entsperrtwerden
-423,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss [2309],
-424,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss [2309],
-425,Erforderliches Messprodukt der Messlokation,SG8,SEQ,,,,,Muss,
-426,Erforderliches Messprodukt der Messlokation,SG8,SEQ,1229,Z19,,ErforderlichesMessprodukt derMesslokation,X,ErforderlichesMessprodukt derMesslokation
-427,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-428,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
-429,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
-430,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
-431,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
-432,Referenz auf die ID einer Marktlokation,SG8,,,,,,,
-433,Referenz auf die ID einer Marktlokation,SG8,,,,,,Muss [429]∧ [492],
-434,Referenz auf die ID einer Marktlokation,SG8,RFF,,,,,Muss [429]∧ [492],
-435,Referenz auf die ID einer Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-436,Referenz auf die ID einer Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-437,Erforderliches Messprodukt der Messlokation,SG8,,,,,,,
-438,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss,
-439,Erforderliches Messprodukt der Messlokation,SG8,PIA,,,,,Muss,
-440,Erforderliches Messprodukt der Messlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
-441,Erforderliches Messprodukt der Messlokation,SG8,PIA,7140,,,Messprodukt-Code,X [427] ⊻[443],
-442,Erforderliches Messprodukt der Messlokation,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
-443,Weitere Beschreibung erforderliches Messprodukt,SG10,,,,,,Muss,
-444,Weitere Beschreibung erforderliches Messprodukt,SG10,,,,,,Muss,
-445,Weitere Beschreibung erforderliches Messprodukt,SG10,CCI,,,,,Muss,
-446,Weitere Beschreibung erforderliches Messprodukt,SG10,CCI,7059,Z35,,Beschreibungerforderlicher Wert,X,Beschreibungerforderlicher Wert
-447,Notwendigkeit einer zweiten Messung,SG10,,,,,,,
-448,Notwendigkeit einer zweiten Messung,SG10,,,,,,Muss,
-449,Notwendigkeit einer zweiten Messung,SG10,CAV,,,,,Muss,
-450,Notwendigkeit einer zweiten Messung,SG10,CAV,7111,ZC9,,Zweite Messung fürVergleichsmessungerforderlich,X,Zweite Messung fürVergleichsmessungerforderlich
-451,Notwendigkeit einer zweiten Messung,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
-452,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,,,,,,,
-453,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,,,,,,Muss,
-454,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,,,,,Muss,
-455,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,7111,Z88,,NB,X,NB
-456,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
-457,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[492]Muss [335]∧ [429] ∧[492],
-458,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[492]Muss [335]∧ [429] ∧[492],
-459,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
-460,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
-461,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [438],
-462,Zähleinrichtungsdaten,SG8,,,,,,Muss [78],
-463,Zähleinrichtungsdaten,SG8,,,,,,Muss [78],
-464,Zähleinrichtungsdaten,SG8,SEQ,,,,,Muss,
-465,Zähleinrichtungsdaten,SG8,SEQ,1229,Z03,,Zähleinrichtungsdaten,X,Zähleinrichtungsdaten
-466,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-467,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
-468,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
-469,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
-470,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
-471,Referenz auf das Smartmeter-Gateway,SG8,,,,,,,
-472,Referenz auf das Smartmeter-Gateway,SG8,,,,,,Soll [166] ∧[215],
-473,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,Soll [166] ∧[215],
-474,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,Smartmeter-Gateway
-475,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,Identifikation / Nummer desSmartmeter-Gateways,X,
-476,Zählertyp,SG10,,,,,,Muss,
-477,Zählertyp,SG10,,,,,,Muss,
-478,Zählertyp,SG10,CCI,,,,,Muss,
-479,Zählertyp,SG10,CCI,7037,E13,,Zählertyp,X,Zählertyp
-480,Zählertyp,SG10,,,,,,,
-481,Zählertyp,SG10,,,,,,Muss,
-482,Zählertyp,SG10,CAV,,,,,Muss,
-483,Zählertyp,SG10,CAV,7111,AHZ,,analoger Haushaltszähler(Drehstrom),X [492],analoger Haushaltszähler(Drehstrom)
-484,Zählertyp,SG10,CAV,7110,Z01,,EDL40,X [136],EDL40
-485,Zählergröße (Gas),SG10,,,,,,,
-486,Zählergröße (Gas),SG10,,,,,,Muss [493],
-487,Zählergröße (Gas),SG10,CAV,,,,,Muss [493],
-488,Zählergröße (Gas),SG10,CAV,7110,G10,,Gaszähler G10,X,Gaszähler G10
-489,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-490,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-491,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-492,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-493,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-494,Registeranzahl,SG10,,,,,,,
-495,Registeranzahl,SG10,,,,,,Muss [492]∧ [139],
-496,Registeranzahl,SG10,CAV,,,,,Muss [492]∧ [139],
-497,Registeranzahl,SG10,CAV,7111,ETZ,,Eintarif,X,Eintarif
-498,Energierichtung,SG10,,,,,,,
-499,Energierichtung,SG10,,,,,,Muss [492],
-500,Energierichtung,SG10,CAV,,,,,Muss [492],
-501,Energierichtung,SG10,CAV,7111,ERZ,,Einrichtungszähler,X,Einrichtungszähler
-502,Fernschaltung der Zähleinrichtung,SG10,,,,,,,
-503,Fernschaltung der Zähleinrichtung,SG10,,,,,,Muss [492],
-504,Fernschaltung der Zähleinrichtung,SG10,CAV,,,,,Muss [492],
-505,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,Z58,,Fernschaltung derZähleinrichtung,X,Fernschaltung derZähleinrichtung
-506,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
-507,Art der Volumenerfassung (Gas),SG10,,,,,,,
-508,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [493] ∧[166],
-509,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [493] ∧[166],
-510,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
-511,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z16,,Hochfrequenzsonde,X,Hochfrequenzsonde
-512,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
-513,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
-514,Befestigungsart Zähleinrichtung,SG10,CCI,,,,,Muss,
-515,Befestigungsart Zähleinrichtung,SG10,CCI,7037,Z28,,BefestigungsartZähleinrichtung,X,BefestigungsartZähleinrichtung
-516,Befestigungsart Zähleinrichtung,SG10,,,,,,,
-517,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
-518,Befestigungsart Zähleinrichtung,SG10,CAV,,,,,Muss,
-519,Befestigungsart Zähleinrichtung,SG10,CAV,7111,BKE,,Stecktechnik(Befestigungs- undKontaktierungseinrichtung),X [2P0..1],Stecktechnik(Befestigungs- undKontaktierungseinrichtung)
-520,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss [316],
-521,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss [316],
-522,Messwerterfassung an der Zähleinrichtung,SG10,CCI,,,,,Muss,
-523,Messwerterfassung an der Zähleinrichtung,SG10,CCI,7037,E12,,Messwerterfassung ander Zähleinrichtung,X,Messwerterfassung ander Zähleinrichtung
-524,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,
-525,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss,
-526,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,,,,Muss,
-527,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,AMR,,fernauslesbare Zähler,X,fernauslesbare Zähler
-528,Messdatenregistriergeräted aten,SG8,,,,,,Soll [493] ∧[130],
-529,Messdatenregistriergeräted aten,SG8,,,,,,Soll [493] ∧[130],
-530,Messdatenregistriergeräted aten,SG8,SEQ,,,,,Muss,
-531,Messdatenregistriergeräted aten,SG8,SEQ,1229,Z50,,Messdatenregistriergerätedaten,X,Messdatenregistriergerätedaten
-532,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-533,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
-534,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
-535,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
-536,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
-537,Messdatenregistriergerät,SG10,,,,,,Muss,
-538,Messdatenregistriergerät,SG10,,,,,,Muss,
-539,Messdatenregistriergerät,SG10,CCI,,,,,Muss,
-540,Messdatenregistriergerät,SG10,CCI,7037,E13,,Zählertyp,X,Zählertyp
-541,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-542,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-543,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-544,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-545,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-546,Art der Volumenerfassung (Gas),SG10,,,,,,,
-547,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [493] ∧[166],
-548,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [493] ∧[166],
-549,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
-550,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z16,,Hochfrequenzsonde,X,Hochfrequenzsonde
-551,Mengenumwerterdaten,SG8,,,,,,Soll [493] ∧[130],
-552,Mengenumwerterdaten,SG8,,,,,,Soll [493] ∧[130],
-553,Mengenumwerterdaten,SG8,SEQ,,,,,Muss,
-554,Mengenumwerterdaten,SG8,SEQ,1229,Z09,,Mengenumwerter-Daten,X,Mengenumwerter-Daten
-555,Referenz auf die Gerätenummer,SG8,,,,,,,
-556,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
-557,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
-558,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
-559,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
-560,Mengenumwerter,SG10,,,,,,Muss,
-561,Mengenumwerter,SG10,,,,,,Muss,
-562,Mengenumwerter,SG10,CCI,,,,,Muss,
-563,Mengenumwerter,SG10,CCI,7037,Z64,,Mengenumwerter,X,Mengenumwerter
-564,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-565,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-566,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-567,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-568,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-569,Mengenumwertertyp,SG10,,,,,,,
-570,Mengenumwertertyp,SG10,,,,,,Muss,
-571,Mengenumwertertyp,SG10,CAV,,,,,Muss,
-572,Mengenumwertertyp,SG10,CAV,7111,DMU,,Dichtemengenumwerter,X,Dichtemengenumwerter
-573,Art der Volumenerfassung (Gas),SG10,,,,,,,
-574,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [166],
-575,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [166],
-576,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
-577,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z17,,Kennlinienkorrektur,X,Kennlinienkorrektur
-578,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss([2287] ∧[121]) ∨[2350] ∨[2353],
-579,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss([2287] ∧[121]) ∨[2350] ∨[2353],
-580,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
-581,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,1229,Z20,,OBIS-Daten derZähleinrichtung,X,OBIS-Daten derZähleinrichtung
-582,Referenz auf die Gerätenummer,SG8,,,,,,,
-583,Referenz auf die Gerätenummer,SG8,,,,,,Muss [78] ∧[665],
-584,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss [78] ∧[665],
-585,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer des,X [441] ∧Zählers,Gerätenummer des
-586,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
-587,Referenz auf die ID einer Messlokation,SG8,,,,,,,
-588,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss [78],
-589,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss [78],
-590,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
-591,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
-592,Referenz auf die ID einer Marktlokation,SG8,,,,,,,
-593,Referenz auf die ID einer Marktlokation,SG8,,,,,,Muss [78] ∧[402] ∧[420],
-594,Referenz auf die ID einer Marktlokation,SG8,RFF,,,,,Muss [78] ∧[402] ∧[420],
-595,Referenz auf die ID einer Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-596,Referenz auf die ID einer Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-597,Konfigurations-ID,SG8,,,,,,,
-598,Konfigurations-ID,SG8,,,,,,Muss [402]∧ [420],
-599,Konfigurations-ID,SG8,RFF,,,,,Muss [402]∧ [420],
-600,Konfigurations-ID,SG8,RFF,1153,AGK,,Anwendungsreferenznummer,X,Anwendungsreferenznummer
-601,Konfigurations-ID,SG8,RFF,1154,,,"Referenz, Identifikation",X,
-602,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,,
-603,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss,
-604,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,,,,,Muss,
-605,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
-606,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7140,,,OBIS-Kennzahl derZähleinrichtung,X ([493] ∧[324]) ⊻([492] ∧[323]),
-607,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,OBIS-Kennzahl
-608,Wertegranularität,SG10,,,,,,Muss ([256]∧ [492]) ⊻([274] ∧,
-609,Wertegranularität,SG10,,,,,,Muss ([256]∧ [492]) ⊻([274] ∧,
-610,Wertegranularität,SG10,CCI,,,,,Muss,
-611,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
-612,Wertegranularität,SG10,,,,,,,
-613,Wertegranularität,SG10,,,,,,Muss,
-614,Wertegranularität,SG10,CAV,,,,,Muss,
-615,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,Jährlich
-616,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss ([492]∧ [273]) ⊻([493] ∧[274]),
-617,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss ([492]∧ [273]) ⊻([493] ∧[274]),
-618,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,,,,Muss,
-619,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,11,,Produkt,X,Produkt
-620,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,Z33,,Vor- undNachkommastellen desZählwerkes,X,Vor- undNachkommastellen desZählwerkes
-621,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,
-622,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss,
-623,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,,,,Muss,
-624,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Vorkommastelle,X,
-625,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Nachkommastelle,X,
-626,Schwachlastfähigkeit,SG10,,,,,,Muss [256]∧ [388] ∧[492],
-627,Schwachlastfähigkeit,SG10,,,,,,Muss [256]∧ [388] ∧[492],
-628,Schwachlastfähigkeit,SG10,CCI,,,,,Muss,
-629,Schwachlastfähigkeit,SG10,CCI,7059,Z10,,Schwachlastfähigkeit,X,Schwachlastfähigkeit
-630,Schwachlastfähigkeit,SG10,CCI,7037,Z59,,Nicht-Schwachlast fähig,X,Nicht-Schwachlast fähig
-631,Wandlerdaten,SG8,,,,,,Soll [492] ∧[130],
-632,Wandlerdaten,SG8,,,,,,Soll [492] ∧[130],
-633,Wandlerdaten,SG8,SEQ,,,,,Muss,
-634,Wandlerdaten,SG8,SEQ,1229,Z04,,Wandler-Daten,X,Wandler-Daten
-635,Referenz auf die Gerätenummer,SG8,,,,,,,
-636,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
-637,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
-638,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
-639,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
-640,Wandler,SG10,,,,,,Muss,
-641,Wandler,SG10,,,,,,Muss,
-642,Wandler,SG10,CCI,,,,,Muss,
-643,Wandler,SG10,CCI,7037,Z25,,Wandler,X,Wandler
-644,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-645,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss [2317]⊻ [2318],
-646,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss [2317]⊻ [2318],
-647,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-648,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-649,Wandlertyp und Faktor,SG10,,,,,,,
-650,Wandlertyp und Faktor,SG10,,,,,,Muss,
-651,Wandlertyp und Faktor,SG10,CAV,,,,,Muss,
-652,Wandlertyp und Faktor,SG10,CAV,7111,MIW,,Messwandlersatz Strom,X,Messwandlersatz Strom
-653,Wandlertyp und Faktor,SG10,CAV,7110,,,Wandlerfaktor,X [902][141],
-654,Kommunikationseinrichtun gsdaten,SG8,,,,,,Muss [2119]Soll [130] ,
-655,Kommunikationseinrichtun gsdaten,SG8,,,,,,Muss [2119]Soll [130] ,
-656,Kommunikationseinrichtun gsdaten,SG8,SEQ,,,,,Muss,
-657,Kommunikationseinrichtun gsdaten,SG8,SEQ,1229,Z05,,Kommunikationseinrichtungsdaten,X,Kommunikationseinrichtungsdaten
-658,Referenz auf die Gerätenummer,SG8,,,,,,,
-659,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
-660,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
-661,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
-662,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
-663,Kommunikationseinrichtun g,SG10,,,,,,Muss,
-664,Kommunikationseinrichtun g,SG10,,,,,,Muss,
-665,Kommunikationseinrichtun g,SG10,CCI,,,,,Muss,
-666,Kommunikationseinrichtun g,SG10,CCI,7037,Z26,,Kommunikationseinrichtung,X,Kommunikationseinrichtung
-667,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-668,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-669,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-670,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-671,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-672,Kommunikationseinrichtun gstyp,SG10,,,,,,,
-673,Kommunikationseinrichtun gstyp,SG10,,,,,,Muss,
-674,Kommunikationseinrichtun gstyp,SG10,CAV,,,,,Muss,
-675,Kommunikationseinrichtun gstyp,SG10,CAV,7111,GSM,,GSM/GPRS/UMTS-Kom.-Einr.,X,GSM/GPRS/UMTS-Kom.-Einr.
-676,Daten der technischen Steuereinrichtung,SG8,,,,,,Soll [130],
-677,Daten der technischen Steuereinrichtung,SG8,,,,,,Soll [130],
-678,Daten der technischen Steuereinrichtung,SG8,SEQ,,,,,Muss,
-679,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,Z06,,Daten der technischenSteuereinrichtung,X,Daten der technischenSteuereinrichtung
-680,Referenz auf die Gerätenummer,SG8,,,,,,,
-681,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
-682,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
-683,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
-684,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
-685,Technische Steuereinrichtung,SG10,,,,,,Muss,
-686,Technische Steuereinrichtung,SG10,,,,,,Muss,
-687,Technische Steuereinrichtung,SG10,CCI,,,,,Muss,
-688,Technische Steuereinrichtung,SG10,CCI,7037,Z27,,TechnischeSteuereinrichtung,X,TechnischeSteuereinrichtung
-689,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-690,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-691,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-692,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-693,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
-694,Technische Steuereinrichtungstyp,SG10,,,,,,,
-695,Technische Steuereinrichtungstyp,SG10,,,,,,Muss,
-696,Technische Steuereinrichtungstyp,SG10,CAV,,,,,Muss,
-697,Technische Steuereinrichtungstyp,SG10,CAV,7111,RSU,,Rundsteuerempfänger,X,Rundsteuerempfänger
-698,Smartmeter-Gateway,SG8,,,,,,Soll [130],
-699,Smartmeter-Gateway,SG8,,,,,,Soll [130],
-700,Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
-701,Smartmeter-Gateway,SG8,SEQ,1229,Z13,,Smartmeter-Gateway,X,Smartmeter-Gateway
-702,Smartmeter-Gateway,SG10,,,,,,Muss,
-703,Smartmeter-Gateway,SG10,,,,,,Muss,
-704,Smartmeter-Gateway,SG10,CCI,,,,,Muss,
-705,Smartmeter-Gateway,SG10,CCI,7037,Z75,,Smartmeter-Gateway,X,Smartmeter-Gateway
-706,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-707,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-708,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-709,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-710,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X [952],
-711,Daten der Steuerbox,SG8,,,,,,Soll [492] ∧[133],
-712,Daten der Steuerbox,SG8,,,,,,Soll [492] ∧[133],
-713,Daten der Steuerbox,SG8,SEQ,,,,,Muss,
-714,Daten der Steuerbox,SG8,SEQ,1229,Z14,,Steuerbox,X,Steuerbox
-715,Referenz auf das Smartmeter-Gateway,SG8,,,,,,,
-716,Referenz auf das Smartmeter-Gateway,SG8,,,,,,Muss,
-717,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,Muss,
-718,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,Smartmeter-Gateway
-719,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,Identifikation / Nummer desSmartmeter-Gateways,X,
-720,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-721,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-722,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-723,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-724,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-725,Steuerbox,SG10,,,,,,Muss,
-726,Steuerbox,SG10,,,,,,Muss,
-727,Steuerbox,SG10,CCI,,,,,Muss,
-728,Steuerbox,SG10,CCI,7037,Z76,,Steuerbox,X,Steuerbox
-729,Identifikation / Nummer des Gerätes,SG10,,,,,,,
-730,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
-731,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
-732,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
-733,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X [952],
-734,Profildaten (Strom),SG8,,,,,,Muss [492]∧ [197] ∧[2311],
-735,Profildaten (Strom),SG8,,,,,,Muss [492]∧ [197] ∧[2311],
-736,Profildaten (Strom),SG8,SEQ,,,,,Muss,
-737,Profildaten (Strom),SG8,SEQ,1229,Z21,,Profildaten,X,Profildaten
-738,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-739,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-740,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-741,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-742,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-743,Normiertes Profil (Strom),SG10,,,,,,Muss,
-744,Normiertes Profil (Strom),SG10,,,,,,Muss,
-745,Normiertes Profil (Strom),SG10,CCI,,,,,Muss,
-746,Normiertes Profil (Strom),SG10,CCI,7059,Z02,,Standardlastprofil,X,Standardlastprofil
-747,Normiertes Profil (Strom),SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
-748,Normiertes Profil (Strom),SG10,,,,,,,
-749,Normiertes Profil (Strom),SG10,,,,,,Muss,
-750,Normiertes Profil (Strom),SG10,CAV,,,,,Muss,
-751,Normiertes Profil (Strom),SG10,CAV,7111,,,Code des Normierten Profils,X,
-752,Profilschardaten,SG8,,,,,,Muss [492]∧ [89] ∧[2311],
-753,Profilschardaten,SG8,,,,,,Muss [492]∧ [89] ∧[2311],
-754,Profilschardaten,SG8,SEQ,,,,,Muss,
-755,Profilschardaten,SG8,SEQ,1229,Z08,,Profilschardaten,X,Profilschardaten
-756,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-757,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-758,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-759,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-760,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-761,Normiertes Profil,SG10,,,,,,Muss,
-762,Normiertes Profil,SG10,,,,,,Muss,
-763,Normiertes Profil,SG10,CCI,,,,,Muss,
-764,Normiertes Profil,SG10,CCI,7059,Z03,,tagesparameterabhängiges Lastprofil,X,tagesparameterabhängiges Lastprofil
-765,Normiertes Profil,SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
-766,Normiertes Profil,SG10,,,,,,,
-767,Normiertes Profil,SG10,,,,,,Muss,
-768,Normiertes Profil,SG10,CAV,,,,,Muss,
-769,Normiertes Profil,SG10,CAV,7111,,,Code des Normierten Profils(Strom),X,
-770,Klimazone / Temperaturmessstelle,SG10,,,,,,Muss,
-771,Klimazone / Temperaturmessstelle,SG10,,,,,,Muss,
-772,Klimazone / Temperaturmessstelle,SG10,CCI,,,,,Muss,
-773,Klimazone / Temperaturmessstelle,SG10,CCI,7059,Z99,,Messstelle desTagesparameters(derzeit ist nur dieTemperatur ein erlaubterTagesparameter),X,Messstelle desTagesparameters(derzeit ist nur dieTemperatur ein erlaubterTagesparameter)
-774,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,ID Klimazone /Temperaturmessstelle,X,
-775,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,Dienstanbieter,X [58],
-776,Klimazone / Temperaturmessstelle,SG10,CCI,3055,89,,Vergeben vom Händler(hier Netzbetreiber),X,Vergeben vom Händler(hier Netzbetreiber)
-777,Referenzprofildaten,SG8,,,,,,Muss [492]∧ [223] ∧[265],
-778,Referenzprofildaten,SG8,,,,,,Muss [492]∧ [223] ∧[265],
-779,Referenzprofildaten,SG8,SEQ,,,,,Muss,
-780,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,Referenzprofildaten
-781,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-782,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-783,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-784,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-785,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
-786,Referenzprofil,SG10,,,,,,Muss,
-787,Referenzprofil,SG10,,,,,,Muss,
-788,Referenzprofil,SG10,CCI,,,,,Muss,
-789,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,tagesparameterabhängiges Einspeiseprofil
-790,Referenzprofil,SG10,,,,,,,
-791,Referenzprofil,SG10,,,,,,Muss,
-792,Referenzprofil,SG10,CAV,,,,,Muss,
-793,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
-794,Kunde des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
-795,Kunde des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
-796,Kunde des Lieferanten,SG12,NAD,,,,,Muss,
-797,Kunde des Lieferanten,SG12,NAD,3035,Z09,,Kunde des LF,X,Kunde des LF
-798,Kunde des Lieferanten,SG12,NAD,3036,,,Name,X,
-799,Kunde des Lieferanten,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-800,Referenz auf die ID der Marktlokation,SG12,,,,,,,
-801,Referenz auf die ID der Marktlokation,SG12,,,,,,Muss,
-802,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,Muss,
-803,Referenz auf die ID der Marktlokation,SG12,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-804,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,ID der Marktlokation,X [950],
-805,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
-806,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
-807,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,,,,Muss,
-808,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,Z04,,Korrespondenzanschriftdes Kunden des LF,X,Korrespondenzanschriftdes Kunden des LF
-809,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,,,Name,X,
-810,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-811,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-812,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,,,Ort,X,
-813,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
-814,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,,,"Ländername, Code",X,
-815,Referenz auf die ID der Marktlokation,SG12,,,,,,,
-816,Referenz auf die ID der Marktlokation,SG12,,,,,,Muss,
-817,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,Muss,
-818,Referenz auf die ID der Marktlokation,SG12,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-819,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,ID der Marktlokation,X [950],
-820,Kunde des Messstellenbetreibers,SG12,,,,,,Muss,
-821,Kunde des Messstellenbetreibers,SG12,,,,,,Muss,
-822,Kunde des Messstellenbetreibers,SG12,NAD,,,,,Muss,
-823,Kunde des Messstellenbetreibers,SG12,NAD,3035,Z07,,Kunde des MSB,X,Kunde des MSB
-824,Kunde des Messstellenbetreibers,SG12,NAD,3036,,,Name,X,
-825,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-826,Referenz auf die ID der Messlokation,SG12,,,,,,,
-827,Referenz auf die ID der Messlokation,SG12,,,,,,Muss,
-828,Referenz auf die ID der Messlokation,SG12,RFF,,,,,Muss,
-829,Referenz auf die ID der Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
-830,Referenz auf die ID der Messlokation,SG12,RFF,1154,,,ID der Messlokation,X [951],
-831,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,,,,,,Muss,
-832,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,,,,,,Muss,
-833,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,,,,,Muss,
-834,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3035,Z08,,Korrespondenzanschriftdes Kunden des MSB,X,Korrespondenzanschriftdes Kunden des MSB
-835,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3036,,,Name,X,
-836,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-837,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-838,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3164,,,Ort,X,
-839,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
-840,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3207,,,"Ländername, Code",X,
-841,Messlokationsadresse,SG12,,,,,,Muss [586],
-842,Messlokationsadresse,SG12,,,,,,Muss [586],
-843,Messlokationsadresse,SG12,NAD,,,,,Muss,
-844,Messlokationsadresse,SG12,NAD,3035,Z03,,Messlokationsadresse,X,Messlokationsadresse
-845,Messlokationsadresse,SG12,NAD,3124,,,Zusatzinformation zurIdentifizierung,K,
-846,Messlokationsadresse,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,S [166]M [212],
-847,Messlokationsadresse,SG12,NAD,3164,,,Ort,X,
-848,Messlokationsadresse,SG12,NAD,3251,,,Postleitzahl,X,
-849,Messlokationsadresse,SG12,NAD,3207,,,"Ländername, Code",X,
-850,Referenz auf die ID einer Messlokation,SG12,,,,,,,
-851,Referenz auf die ID einer Messlokation,SG12,,,,,,Muss,
-852,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,Muss,
-853,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
-854,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,X [951],
-855,Name und Adresse für die Ablesekarte,SG12,,,,,,Muss [599],
-856,Name und Adresse für die Ablesekarte,SG12,,,,,,Muss [599],
-857,Name und Adresse für die Ablesekarte,SG12,NAD,,,,,Muss,
-858,Name und Adresse für die Ablesekarte,SG12,NAD,3035,Z05,,Name und Adresse fürdie Ablesekarte,X,Name und Adresse fürdie Ablesekarte
-859,Name und Adresse für die Ablesekarte,SG12,NAD,3036,,,Name,X,
-860,Name und Adresse für die Ablesekarte,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
-861,Name und Adresse für die Ablesekarte,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
-862,Name und Adresse für die Ablesekarte,SG12,NAD,3164,,,Ort,X,
-863,Name und Adresse für die Ablesekarte,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
-864,Name und Adresse für die Ablesekarte,SG12,NAD,3207,,,"Ländername, Code",X,
-865,Referenz auf die ID einer Messlokation,SG12,,,,,,,
-866,Referenz auf die ID einer Messlokation,SG12,,,,,,Muss,
-867,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,Muss,
-868,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
-869,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,X [951],
-870,Nachrichten-Endesegment,,,,,,,Muss,
-871,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-872,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+20,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+21,MP-ID Absender,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+22,Ansprechpartner,SG3,,,,,,Kann,
+23,Ansprechpartner,SG3,,,,,,Kann,
+24,Ansprechpartner,SG3,CTA,,,,,Muss,
+25,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+26,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+27,Kommunikationsverbindung,SG3,,,,,,,
+28,Kommunikationsverbindung,SG3,,,,,,Muss,
+29,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+30,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
+31,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+32,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+33,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+34,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+35,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+36,MP-ID Empfänger,SG2,,,,,,Muss,
+37,MP-ID Empfänger,SG2,,,,,,Muss,
+38,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+39,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+40,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
+41,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+42,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+43,MP-ID Empfänger,SG2,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
+44,Vorgang,SG4,,,,,,Muss,
+45,Vorgang,SG4,,,,,,Muss,
+46,Vorgang,SG4,IDE,,,,,Muss,
+47,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
+48,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
+49,Datum zum geplanten Leistungsbeginn,SG4,,,,,,,
+50,Datum zum geplanten Leistungsbeginn,SG4,,,,,,Muss,
+51,Datum zum geplanten Leistungsbeginn,SG4,DTM,,,,,Muss,
+52,Datum zum geplanten Leistungsbeginn,SG4,DTM,2005,76,,"Lieferdatum/-zeit,geplant",X,"Lieferdatum/-zeit,geplant"
+53,Datum zum geplanten Leistungsbeginn,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB3],
+54,Datum zum geplanten Leistungsbeginn,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+55,Transaktionsgrund,SG4,,,,,,,
+56,Transaktionsgrund,SG4,,,,,,Muss [2061],
+57,Transaktionsgrund,SG4,STS,,,,,Muss [2061],
+58,Transaktionsgrund,SG4,STS,9015,7,,Transaktionsgrund,X,Transaktionsgrund
+59,Transaktionsgrund,SG4,STS,9013,E01,,Ein-/Auszug (Umzug),X,Ein-/Auszug (Umzug)
+60,Transaktionsgrund,SG4,STS,9013,E02,,Einzug in Neuanlage,X,
+61,Transaktionsgrund,SG4,STS,9013,E03,,Wechsel,X,
+62,Transaktionsgrund,SG4,STS,9013,ZJ4,,Übernahme aufgrundnicht erfolgtem iMS-Einbau,X,
+63,Status der Antwort,SG4,,,,,,,
+64,Status der Antwort,SG4,,,,,,Muss [249],
+65,Status der Antwort,SG4,STS,,,,,Muss [249],
+66,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,X,Status der Antwort
+67,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,X,
+68,Status der Antwort,SG4,STS,1131,G_0053,,Codeliste Gas Nr.G_0053,,Codeliste Gas Nr.G_0053
+69,Status der Antwort,SG4,STS,1131,G_0054S_0055S_0056,,Codeliste Gas Nr.G_0054Codeliste Strom Nr.S_0055Codeliste Strom Nr.S_0056,X [493]X [492],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom  
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
+70,Beauftragung oder Beendigung liegt vor,SG4,,,,,,,
+71,Beauftragung oder Beendigung liegt vor,SG4,,,,,,,
+72,Beauftragung oder Beendigung liegt vor,SG4,AGR,,,,,,
+73,Beauftragung oder Beendigung liegt vor,SG4,AGR,7431,9,,Vertrag,,Vertrag
+74,Beauftragung oder Beendigung liegt vor,SG4,AGR,7433,Z04,,Vertrag zwischen AN undMSB,,Vertrag zwischen AN undMSB
+75,Beauftragung oder Beendigung liegt vor,SG4,AGR,7433,Z06,,Vertragsbeendigung liegtvor,,
+76,Meldepunkt,SG5,,,,,,Muss ([492]∧ [580]) ∨([493] ∧[2061]),
+77,Meldepunkt,SG5,,,,,,Muss ([492]∧ [580]) ∨([493] ∧[2061]),
+78,Meldepunkt,SG5,LOC,,,,,Muss,
+79,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
+80,Meldepunkt,SG5,LOC,3225,,,Identifikator,X ([950][492]) ⊻[951],
+81,Prüfidentifikator,SG6,,,,,,Muss,
+82,Prüfidentifikator,SG6,,,,,,Muss,
+83,Prüfidentifikator,SG6,RFF,,,,,Muss,
+84,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
+85,Prüfidentifikator,SG6,RFF,1154,11042,,WiM / Anmeldung MSB,,WiM / Anmeldung MSB
+86,Prüfidentifikator,SG6,RFF,1154,11043,,WiM / BestätigungAnmeldung MSB,X,
+87,Prüfidentifikator,SG6,RFF,1154,11044,,WiM / AblehnungAnmeldung MSB,,
+88,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
+89,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss,
+90,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,Muss,
+91,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
+92,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
+93,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,Muss [492],
+94,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,Muss [492],
+95,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,,,,,Muss [636],
+96,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+97,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1154,,,ID der Marktlokation,X [950],
+98,Geplante Turnusablesung des MSB (Strom),SG6,,,,,,,
+99,Geplante Turnusablesung des MSB (Strom),SG6,,,,,,Muss [86] ∧[78] ∧ [234]∧ [618],
+100,Geplante Turnusablesung des MSB (Strom),SG6,DTM,,,,,Muss [86] ∧[78] ∧ [234]∧ [618],
+101,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2005,752,,GeplanteTurnusablesung,X,GeplanteTurnusablesung
+102,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+103,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2379,104,,MMWW-MMWW,X,MMWW-MMWW
+104,Geplante Turnusablesung des MSB (Strom),SG6,DTM,2379,106,,MMDD,X,
+105,Abrechnungsintervall des LF,SG6,,,,,,,
+106,Abrechnungsintervall des LF,SG6,,,,,,Muss [493],
+107,Abrechnungsintervall des LF,SG6,DTM,,,,,Muss [493],
+108,Abrechnungsintervall des LF,SG6,DTM,2005,Z20,,Abrechnungsintervall desLF,X,Abrechnungsintervall desLF
+109,Abrechnungsintervall des LF,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+110,Abrechnungsintervall des LF,SG6,DTM,2379,802,,Monat,X,Monat
+111,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,Muss [493],
+112,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,Muss [493],
+113,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,,,,,Muss [636],
+114,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1153,Z19,,Messlokation,X,Messlokation
+115,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1154,,,ID der Messlokation,X [951],
+116,Geplante Turnusablesung des NB (Gas),SG6,,,,,,,
+117,Geplante Turnusablesung des NB (Gas),SG6,,,,,,Muss,
+118,Geplante Turnusablesung des NB (Gas),SG6,DTM,,,,,Muss,
+119,Geplante Turnusablesung des NB (Gas),SG6,DTM,2005,752,,GeplanteTurnusablesung,X,GeplanteTurnusablesung
+120,Geplante Turnusablesung des NB (Gas),SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+121,Geplante Turnusablesung des NB (Gas),SG6,DTM,2379,104,,MMWW-MMWW,X,MMWW-MMWW
+122,Geplante Turnusablesung des NB (Gas),SG6,DTM,2379,106,,MMDD,X,
+123,Daten der Marktlokation,SG8,,,,,,Muss [492]∧ [2310],
+124,Daten der Marktlokation,SG8,,,,,,Muss [492]∧ [2310],
+125,Daten der Marktlokation,SG8,SEQ,,,,,Muss,
+126,Daten der Marktlokation,SG8,SEQ,1229,Z01,,Daten der Marktlokation,X,Daten der Marktlokation
+127,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+128,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+129,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+130,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+131,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID der Marktlokation,X [950],
+132,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [101],
+133,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [101],
+134,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,,,,Muss,
+135,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,265,,VeranschlagteJahresmenge Gesamt/Jahresverbrauchsprognose für spezifische Arbeitfürtagesparameterabhängige Marktlokation,X,VeranschlagteJahresmenge Gesamt/Jahresverbrauchsprognose für spezifische Arbeitfürtagesparameterabhängige Marktlokation
+136,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,Z08,,"Angepasste elektrischeArbeit nach Anhang Dder VDN-Richtlinie""Lastprofile fürunterbrechbareVerbrauchseinrichtungen""",X,
+137,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,Menge,X [902],
+138,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,Z16,,kWh/K (Kilowatt-Stunde/Kelvin),X [103],kWh/K (Kilowatt-Stunde/Kelvin)
+139,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,KWH,,Kilowattstunde,X [104],[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in
+140,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
+141,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [106],
+142,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,Muss,
+143,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,31,,VeranschlagteJahresmenge Gesamt,X,VeranschlagteJahresmenge Gesamt
+144,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,Mengenangabe,X [902] ∧[937],
+145,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
+146,Lieferrichtung,SG10,,,,,,Muss,
+147,Lieferrichtung,SG10,,,,,,Muss,
+148,Lieferrichtung,SG10,CCI,,,,,Muss,
+149,Lieferrichtung,SG10,CCI,7059,Z30,,Lieferrichtung,X,Lieferrichtung
+150,Lieferrichtung,SG10,CCI,7037,Z06,,Erzeugung,X,Erzeugung
+151,Lieferrichtung,SG10,CCI,7037,Z07,,Verbrauch,X,
+152,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+153,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+154,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss,
+155,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
+156,Lieferant,SG10,,,,,,,
+157,Lieferant,SG10,,,,,,Muss [78] ∧[221],
+158,Lieferant,SG10,CAV,,,,,Muss [78] ∧[221],
+159,Lieferant,SG10,CAV,7111,Z89,,LF,X,LF
+160,Lieferant,SG10,CAV,1131,,,MP-ID,X [611],
+161,Übertragungsnetzbetreiber,SG10,,,,,,,
+162,Übertragungsnetzbetreiber,SG10,,,,,,Muss,
+163,Übertragungsnetzbetreiber,SG10,CAV,,,,,Muss,
+164,Übertragungsnetzbetreiber,SG10,CAV,7111,Z90,,ÜNB,X,ÜNB
+165,Übertragungsnetzbetreiber,SG10,CAV,1131,,,MP-ID,X,
+166,Messstellenbetreiber,SG10,,,,,,,
+167,Messstellenbetreiber,SG10,,,,,,Muss,
+168,Messstellenbetreiber,SG10,CAV,,,,,Muss,
+169,Messstellenbetreiber,SG10,CAV,7111,Z91,,MSB,X,MSB
+170,Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X [621],
+171,Messstellenbetreiber,SG10,CAV,7110,Z19,,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer,X,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer
+172,Messstellenbetreiber,SG10,CAV,7110,Z20,,In der Ausübung derWeiterverpflichtungdurch den gMSB,X,
+173,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
+174,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
+175,Spannungsebene der Marktlokation,SG10,CCI,,,,,Muss,
+176,Spannungsebene der Marktlokation,SG10,CCI,7037,E03,,Spannungsebene derMarktlokation,X,Spannungsebene derMarktlokation
+177,Spannungsebene der Marktlokation,SG10,,,,,,,
+178,Spannungsebene der Marktlokation,SG10,,,,,,Muss,
+179,Spannungsebene der Marktlokation,SG10,CAV,,,,,Muss,
+180,Spannungsebene der Marktlokation,SG10,CAV,7111,E03,,Höchstspannung,X,Höchstspannung
+181,Spannungsebene der Marktlokation,SG10,CAV,7111,E04,,Hochspannung,X,
+182,Spannungsebene der Marktlokation,SG10,CAV,7111,E05,,Mittelspannung,X,
+183,Spannungsebene der Marktlokation,SG10,CAV,7111,E06,,Niederspannung,X,
+184,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
+185,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
+186,Messtechnische Einordnung der Marktlokation,SG10,CCI,,,,,Muss,
+187,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,Z83,,MesstechnischeEinordnung derMarktlokation,X,MesstechnischeEinordnung derMarktlokation
+188,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,
+189,Messtechnische Einordnung der Marktlokation,SG10,,,,,,Muss,
+190,Messtechnische Einordnung der Marktlokation,SG10,CAV,,,,,Muss,
+191,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,Z52,,iMS,X,iMS
+192,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,Z53,,kME / mME,X,
+193,Aggregationsverantwortung in MaBiS,SG10,,,,,,Muss [492],
+194,Aggregationsverantwortung in MaBiS,SG10,,,,,,Muss [492],
+195,Aggregationsverantwortung in MaBiS,SG10,CCI,,,,,Muss,
+196,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,6,,Verantwortlicher,X,Verantwortlicher
+197,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,ZA8,,NB,X,NB
+198,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,ZA9,,ÜNB,X,
+199,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
+200,Prognosegrundlage der Marktlokation,SG10,,,,,,Muss,
+201,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,Muss,
+202,Prognosegrundlage der Marktlokation,SG10,CCI,7037,ZC0,,Prognose auf Basis vonWerten,X,Prognose auf Basis vonWerten
+203,Prognosegrundlage der Marktlokation,SG10,CCI,7037,ZA6,,Prognose auf Basis vonProfilen,X,
+204,Details der Prognosegrundlage,SG10,,,,,,,
+205,Details der Prognosegrundlage,SG10,,,,,,Muss [210]∧ ([2182] ⊻([90] ∧[2183])),
+206,Details der Prognosegrundlage,SG10,CAV,,,,,Muss [210]∧ ([2182] ⊻([90] ∧[2183])),
+207,Details der Prognosegrundlage,SG10,CAV,7111,E02,,SLP/SEP,X [1P0..1],SLP/SEP
+208,Details der Prognosegrundlage,SG10,CAV,7111,E14,,TLP/TEP,X [1P0..1],
+209,Details der Prognosegrundlage,SG10,CAV,7111,Z36,,TEP mitReferenzmessung,X [1P0..1],
+210,Art der erzeugenden Marktlokation,SG10,,,,,,Muss [220],
+211,Art der erzeugenden Marktlokation,SG10,,,,,,Muss [220],
+212,Art der erzeugenden Marktlokation,SG10,CCI,,,,,Muss,
+213,Art der erzeugenden Marktlokation,SG10,CCI,7037,Z34,,Art der erzeugendenMarktlokation,X,Art der erzeugendenMarktlokation
+214,Art der erzeugenden Marktlokation ,SG10,,,,,,,
+215,Art der erzeugenden Marktlokation ,SG10,,,,,,Muss,
+216,Art der erzeugenden Marktlokation ,SG10,CAV,,,,,Muss,
+217,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z33,,EEG-Marktlokation ohneDV-Pflicht,X,EEG-Marktlokation ohneDV-Pflicht
+218,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z34,,KWKG-Marktlokationohne DV-Pflicht,X,
+219,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z35,,sonstige Marktlokation,X,
+220,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z37,,EEG-Marktlokation mitDV-Pflicht,X,
+221,Art der erzeugenden Marktlokation ,SG10,CAV,7111,Z46,,KWKG-Marktlokation mitDV-Pflicht,X,
+222,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss [2311]∧ [492],
+223,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss [2311]∧ [492],
+224,Erforderliches Messprodukt der Marktlokation,SG8,SEQ,,,,,Muss,
+225,Erforderliches Messprodukt der Marktlokation,SG8,SEQ,1229,Z27,,ErforderlichesMessprodukt derMarktlokation,X,ErforderlichesMessprodukt derMarktlokation
+226,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+227,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+228,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+229,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+230,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+231,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,,
+232,Erforderliches Messprodukt der Marktlokation,SG8,,,,,,Muss,
+233,Erforderliches Messprodukt der Marktlokation,SG8,PIA,,,,,Muss,
+234,Erforderliches Messprodukt der Marktlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
+235,Erforderliches Messprodukt der Marktlokation,SG8,PIA,7140,,,Messprodukt-Code,X [425],
+236,Erforderliches Messprodukt der Marktlokation,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
+237,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166]Muss [335]∧ [428],
+238,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166]Muss [335]∧ [428],
+239,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
+240,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
+241,Zugeordnete Zählzeit,SG10,CCI,7059,Z41,,Keine Zählzeit fürMessprodukt,X [417],[417] Wenn für den erforderlichen Wert keine Zählzeit benötigt
+242,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [438],
+243,Messprodukt für Netzbetreiber relevant,SG10,,,,,,Muss,
+244,Messprodukt für Netzbetreiber relevant,SG10,,,,,,Muss,
+245,Messprodukt für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
+246,Messprodukt für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
+247,Verwendungszweck des Wertes,SG10,,,,,,,
+248,Verwendungszweck des Wertes,SG10,,,,,,Muss,
+249,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
+250,Verwendungszweck des Wertes,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [19P1..1] ⊻g[22P1..1] ⊻[26P1..1],Netznutzungsabrechnun
+251,Verwendungszweck des Wertes,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [21P0..1] ⊻[22P0..1] ⊻[23P0..1] ⊻[24P0..1],
+252,Verwendungszweck des Wertes,SG10,CAV,7111,Z86,,Mehrmindermengenabre,X [20P1..1] ⊻chnung,
+253,Verwendungszweck des Wertes,SG10,CAV,7111,Z92,,Übermittlung an das,X [23P1..1] ⊻HKNR,
+254,Verwendungszweck des Wertes,SG10,CAV,7111,ZD1,,Blindarbeitabrechnung /Betriebsführung,X [18P1..1],
+255,Verwendungszweck des Wertes,SG10,CAV,7111,ZE1,,Es liegt keinVerwendungszweck vor,X [38P1..1],
+256,Messprodukt für Lieferant relevant,SG10,,,,,,Muss,
+257,Messprodukt für Lieferant relevant,SG10,,,,,,Muss,
+258,Messprodukt für Lieferant relevant,SG10,CCI,,,,,Muss,
+259,Messprodukt für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
+260,Verwendungszweck des Wertes,SG10,,,,,,,
+261,Verwendungszweck des Wertes,SG10,,,,,,Muss,
+262,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
+263,Verwendungszweck des Wertes,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [19P0..1] ⊻g[22P0..1] ⊻[26P0..1],Netznutzungsabrechnun
+264,Verwendungszweck des Wertes,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [21P1..1] ⊻[22P1..1] ⊻[23P1..1] ⊻[24P1..1],
+265,Verwendungszweck des Wertes,SG10,CAV,7111,Z86,,Mehrmindermengenabre,X [20P1..1] ⊻chnung,
+266,Verwendungszweck des Wertes,SG10,CAV,7111,Z47,,Endkundenabrechnung,X [18P0..1] ⊻[19P1..1] ⊻[20P0..1] ⊻,
+267,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [432],
+268,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [432],
+269,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
+270,Messprodukt für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
+271,Verwendungszweck des Wertes,SG10,,,,,,,
+272,Verwendungszweck des Wertes,SG10,,,,,,Muss,
+273,Verwendungszweck des Wertes,SG10,CAV,,,,,Muss,
+274,Verwendungszweck des Wertes,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
+275,Verwendungszweck des Wertes,SG10,CAV,7111,ZB5,,Zur Ermittlung derAusgeglichenheit vonBilanzkreisen,X [1P1..1],
+276,OBIS-Daten der Marktlokation,SG8,,,,,,Muss [2311]∧ [404] ∧[492],
+277,OBIS-Daten der Marktlokation,SG8,,,,,,Muss [2311]∧ [404] ∧[492],
+278,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,Muss,
+279,OBIS-Daten der Marktlokation,SG8,SEQ,1229,Z02,,OBIS-Daten derMarktlokation,X,OBIS-Daten derMarktlokation
+280,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+281,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+282,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+283,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+284,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+285,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,
+286,OBIS-Kennzahl der Marktlokation,SG8,,,,,,Muss,
+287,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,Muss,
+288,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
+289,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,OBIS-Kennzahl der Marktlokation,X ([493] ∧[315]) ⊻([492] ∧[314]),
+290,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,OBIS-Kennzahl
+291,Wertegranularität,SG10,,,,,,Muss [257]⊻ [288],
+292,Wertegranularität,SG10,,,,,,Muss [257]⊻ [288],
+293,Wertegranularität,SG10,CCI,,,,,Muss,
+294,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
+295,Wertegranularität,SG10,,,,,,,
+296,Wertegranularität,SG10,,,,,,Muss,
+297,Wertegranularität,SG10,CAV,,,,,Muss,
+298,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,Jährlich
+299,Wertegranularität,SG10,CAV,7111,ZE8,,Halbjährlich,X,
+300,Wertegranularität,SG10,CAV,7111,ZE9,,Quartalsweise,X,
+301,Wertegranularität,SG10,CAV,7111,ZB7,,Monatlich,X,
+302,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[335] ∧[492]Muss [386]∧ [387] ∧[335] ∧[492],
+303,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[335] ∧[492]Muss [386]∧ [387] ∧[335] ∧[492],
+304,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
+305,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
+306,Zugeordnete Zählzeit,SG10,CCI,7059,Z47,,Zugeordnete Zählzeitnicht ermittelbar,X [418],[418] Wenn DTM+137 (Nachrichtendatum) im DE2380 < 202303312200?+00 ist die Nutzung des Codes möglich
+307,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [421],
+308,Zugeordnete Zählzeitregister ,SG10,,,,,,Muss [421],
+309,Zugeordnete Zählzeitregister ,SG10,,,,,,Muss [421],
+310,Zugeordnete Zählzeitregister ,SG10,CCI,,,,,Muss,
+311,Zugeordnete Zählzeitregister ,SG10,CCI,7059,Z38,,Code desZählzeitregisters,X,Code desZählzeitregisters
+312,Zugeordnete Zählzeitregister ,SG10,CCI,7037,,,Code des Zählzeitregisters,X,
+313,OBIS Daten für Netzbetreiber relevant,SG10,,,,,,Muss,
+314,OBIS Daten für Netzbetreiber relevant,SG10,,,,,,Muss,
+315,OBIS Daten für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
+316,OBIS Daten für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
+317,Verwendungszweck der Werte,SG10,,,,,,,
+318,Verwendungszweck der Werte,SG10,,,,,,Muss,
+319,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+320,Verwendungszweck der Werte,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [29P1..1] ⊻g[32P1..1] ⊻[36P1..1],Netznutzungsabrechnun
+321,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [31P0..1] ⊻[32P0..1] ⊻[33P0..1] ⊻[34P0..1],
+322,Verwendungszweck der Werte,SG10,CAV,7111,Z86,,Mehrmindermengenabre,X [30P1..1] ⊻chnung,
+323,Verwendungszweck der Werte,SG10,CAV,7111,Z92,,Übermittlung an das,X [33P1..1] ⊻HKNR,
+324,Verwendungszweck der Werte,SG10,CAV,7111,ZD1,,Blindarbeitabrechnung /Betriebsführung,X [28P1..1],
+325,OBIS Daten für Lieferant relevant,SG10,,,,,,Muss,
+326,OBIS Daten für Lieferant relevant,SG10,,,,,,Muss,
+327,OBIS Daten für Lieferant relevant,SG10,CCI,,,,,Muss,
+328,OBIS Daten für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
+329,Verwendungszweck der Werte,SG10,,,,,,,
+330,Verwendungszweck der Werte,SG10,,,,,,Muss,
+331,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+332,Verwendungszweck der Werte,SG10,CAV,7111,Z84,,Netznutzungsabrechnun,X [29P0..1] ⊻g[32P0..1] ⊻[36P0..1],Netznutzungsabrechnun
+333,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [31P1..1] ⊻[32P1..1] ⊻[33P1..1] ⊻[34P1..1],
+334,Verwendungszweck der Werte,SG10,CAV,7111,Z86,,Mehrmindermengenabre,X [30P1..1] ⊻chnung,
+335,Verwendungszweck der Werte,SG10,CAV,7111,Z47,,Endkundenabrechnung,X [28P0..1] ⊻[29P1..1] ⊻[30P0..1] ⊻ [32P1..1] ⊻[34P1..1] ⊻[35P1..1] ⊻[36P0..1] ⊻[37P1..1],
+336,Verwendungszweck der Werte,SG10,CAV,7111,ZD1,,Blindarbeitabrechnung /Betriebsführung,X [28P0..1],
+337,Verwendungszweck der Werte,SG10,CAV,7111,ZE1,,Es liegt keinVerwendungszweck vor,X [38P1..1],
+338,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [396],
+339,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss [396],
+340,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
+341,OBIS Daten für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
+342,Verwendungszweck der Werte,SG10,,,,,,,
+343,Verwendungszweck der Werte,SG10,,,,,,Muss,
+344,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+345,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
+346,Verwendungszweck der Werte,SG10,CAV,7111,ZB5,,Zur Ermittlung der,X [1P1..1],
+347,Daten der Tranche,SG8,,,,,,Muss [492]∧ [2307],
+348,Daten der Tranche,SG8,,,,,,Muss [492]∧ [2307],
+349,Daten der Tranche,SG8,SEQ,,,,,Muss,
+350,Daten der Tranche,SG8,SEQ,1229,Z15,,Daten der Tranche,X,Daten der Tranche
+351,Referenz auf die ID der Tranche,SG8,,,,,,,
+352,Referenz auf die ID der Tranche,SG8,,,,,,Muss,
+353,Referenz auf die ID der Tranche,SG8,RFF,,,,,Muss,
+354,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,Tranche
+355,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID der Tranche,X [950],
+356,Referenz auf die Marktlokation der Tranche ,SG8,,,,,,,
+357,Referenz auf die Marktlokation der Tranche ,SG8,,,,,,Muss,
+358,Referenz auf die Marktlokation der Tranche ,SG8,RFF,,,,,Muss,
+359,Referenz auf die Marktlokation der Tranche ,SG8,RFF,1153,Z16,,zugeordneteMarktlokation,X,zugeordneteMarktlokation
+360,Referenz auf die Marktlokation der Tranche ,SG8,RFF,1154,,,ID der Marktlokation,X [950],
+361,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,,,,,,Muss [384],
+362,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,,,,,,Muss [384],
+363,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,,,,,Muss,
+364,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6063,11,,Aufteilungsmenge,X,Aufteilungsmenge
+365,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6060,,,Mengenangabe in %,X [914] ∧[930] ∧[955],
+366,Prozentualer Anteil der Tranche an der erzeugenden Marktlokation,SG9,QTY,6411,P1,,Prozent,X,Prozent
+367,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+368,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+369,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss,
+370,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
+371,Lieferant,SG10,,,,,,,
+372,Lieferant,SG10,,,,,,Muss,
+373,Lieferant,SG10,CAV,,,,,Muss,
+374,Lieferant,SG10,CAV,7111,Z89,,LF,X,LF
+375,Lieferant,SG10,CAV,1131,,,MP-ID,X,
+376,Basis zur Bildung der Tranchengröße,SG10,,,,,,Muss,
+377,Basis zur Bildung der Tranchengröße,SG10,,,,,,Muss,
+378,Basis zur Bildung der Tranchengröße,SG10,CCI,,,,,Muss,
+379,Basis zur Bildung der Tranchengröße,SG10,CCI,7059,Z37,,Basis zur Bildung derTranchengröße,X,Basis zur Bildung derTranchengröße
+380,Basis zur Bildung der Tranchengröße,SG10,CCI,7037,ZD1,,Prozentual,X,Prozentual 
+381,Basis zur Bildung der Tranchengröße,SG10,CCI,7037,ZD2,,Aufteilungsfaktor aufBasis vonReferenzenträger/installierter Leistung,X,
+382,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss [492]∧ [2308],
+383,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss [492]∧ [2308],
+384,Erforderliches Messprodukt der Tranche,SG8,SEQ,,,,,Muss,
+385,Erforderliches Messprodukt der Tranche,SG8,SEQ,1229,Z16,,ErforderlichesMessprodukt derTranche,X,ErforderlichesMessprodukt derTranche
+386,Referenz auf die ID der Tranche,SG8,,,,,,,
+387,Referenz auf die ID der Tranche,SG8,,,,,,Muss,
+388,Referenz auf die ID der Tranche,SG8,RFF,,,,,Muss,
+389,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,Tranche
+390,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID einer Tranche,X [950],
+391,Erforderliches Messprodukt der Tranche,SG8,,,,,,,
+392,Erforderliches Messprodukt der Tranche,SG8,,,,,,Muss,
+393,Erforderliches Messprodukt der Tranche,SG8,PIA,,,,,Muss,
+394,Erforderliches Messprodukt der Tranche,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
+395,Erforderliches Messprodukt der Tranche,SG8,PIA,7140,,,Messprodukt-Code,X [426],
+396,Erforderliches Messprodukt der Tranche,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
+397,Werte für Netzbetreiber relevant,SG10,,,,,,Muss,
+398,Werte für Netzbetreiber relevant,SG10,,,,,,Muss,
+399,Werte für Netzbetreiber relevant,SG10,CCI,,,,,Muss,
+400,Werte für Netzbetreiber relevant,SG10,CCI,7037,ZA8,,NB,X,NB
+401,Verwendungszweck der Werte,SG10,,,,,,,
+402,Verwendungszweck der Werte,SG10,,,,,,Muss,
+403,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+404,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
+405,Verwendungszweck der Werte,SG10,CAV,7111,Z92,,Übermittlung an dasHKNR,X [1P1..1],
+406,Werte für Lieferant relevant,SG10,,,,,,Muss,
+407,Werte für Lieferant relevant,SG10,,,,,,Muss,
+408,Werte für Lieferant relevant,SG10,CCI,,,,,Muss,
+409,Werte für Lieferant relevant,SG10,CCI,7037,ZA7,,LF,X,LF
+410,Verwendungszweck der Werte,SG10,,,,,,,
+411,Verwendungszweck der Werte,SG10,,,,,,Muss,
+412,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+413,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P1..1],Bilanzkreisabrechnung
+414,Verwendungszweck der Werte,SG10,CAV,7111,Z47,,Endkundenabrechnung,X [1P1..1],
+415,Werte für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss,
+416,Werte für Übertragungsnetzbetreiber relevant,SG10,,,,,,Muss,
+417,Werte für Übertragungsnetzbetreiber relevant,SG10,CCI,,,,,Muss,
+418,Werte für Übertragungsnetzbetreiber relevant,SG10,CCI,7037,ZA9,,ÜNB,X,ÜNB
+419,Verwendungszweck der Werte,SG10,,,,,,,
+420,Verwendungszweck der Werte,SG10,,,,,,Muss,
+421,Verwendungszweck der Werte,SG10,CAV,,,,,Muss,
+422,Verwendungszweck der Werte,SG10,CAV,7111,Z85,,Bilanzkreisabrechnung,X [1P0..1],Bilanzkreisabrechnung
+423,Verwendungszweck der Werte,SG10,CAV,7111,ZB5,,Zur Ermittlung derAusgeglichenheit vonBilanzkreisen,X [1P1..1],
+424,Daten der Messlokation,SG8,,,,,,Muss [2284],
+425,Daten der Messlokation,SG8,,,,,,Muss [2284],
+426,Daten der Messlokation,SG8,SEQ,,,,,Muss,
+427,Daten der Messlokation,SG8,SEQ,1229,Z18,,Daten der Messlokation,X,Daten der Messlokation
+428,Referenz auf die ID der Messlokation,SG8,,,,,,,
+429,Referenz auf die ID der Messlokation,SG8,,,,,,Muss,
+430,Referenz auf die ID der Messlokation,SG8,RFF,,,,,Muss,
+431,Referenz auf die ID der Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
+432,Referenz auf die ID der Messlokation,SG8,RFF,1154,,,ID der Messlokation,X [951],
+433,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,,,,,,,
+434,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,,,,,,Muss [492],
+435,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,,,,,Muss [492],
+436,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,1153,Z16,,zugeordneteMarktlokation,X,zugeordneteMarktlokation
+437,Referenz auf die der Messlokation zugeordneten Marktlokation ,SG8,RFF,1154,,,ID der Marktlokation,X [950],
+438,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+439,Zugeordnete Marktpartner,SG10,,,,,,Muss,
+440,Zugeordnete Marktpartner,SG10,CCI,,,,,Muss ,
+441,Zugeordnete Marktpartner,SG10,CCI,7037,ZB3,,ZugeordneterMarktpartner,X,ZugeordneterMarktpartner
+442,Messstellenbetreiber,SG10,,,,,,,
+443,Messstellenbetreiber,SG10,,,,,,Muss [492],
+444,Messstellenbetreiber,SG10,CAV,,,,,Muss [492],
+445,Messstellenbetreiber,SG10,CAV,7111,Z91,,MSB,X,MSB
+446,Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X [621],
+447,Messstellenbetreiber,SG10,CAV,7110,Z19,,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer,X,Auf vertraglicherGrundlage gegenüberAnschlussnutzer /Anschlussnehmer
+448,Messstellenbetreiber,SG10,CAV,7110,Z20,,In der Ausübung derWeiterverpflichtung,X,
+449,Grundzuständiger Messstellenbetreiber,SG10,,,,,,,
+450,Grundzuständiger Messstellenbetreiber,SG10,,,,,,Muss [492],
+451,Grundzuständiger Messstellenbetreiber,SG10,CAV,,,,,Muss [492],
+452,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,ZF0,,gMSB,X,gMSB
+453,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,,,MP-ID,X,
+454,Messstellenbetreiber Alt,SG10,,,,,,,
+455,Messstellenbetreiber Alt,SG10,,,,,,Muss [78] ∧(([184] ∧[492]) ⊻[493]),
+456,Messstellenbetreiber Alt,SG10,CAV,,,,,Muss [78] ∧(([184] ∧[492]) ⊻[493]),
+457,Messstellenbetreiber Alt,SG10,CAV,7111,ZB4,,MSBA,X,MSBA
+458,Messstellenbetreiber Alt,SG10,CAV,1131,,,MP-ID,X,
+459,Spannungsebene der Messlokation,SG10,,,,,,Muss [492],
+460,Spannungsebene der Messlokation,SG10,,,,,,Muss [492],
+461,Spannungsebene der Messlokation,SG10,CCI,,,,,Muss,
+462,Spannungsebene der Messlokation,SG10,CCI,7037,E04,,Spannungsebene derMesslokation,X,Spannungsebene derMesslokation
+463,Spannungsebene der Messlokation,SG10,,,,,,,
+464,Spannungsebene der Messlokation,SG10,,,,,,Muss,
+465,Spannungsebene der Messlokation,SG10,CAV,,,,,Muss,
+466,Spannungsebene der Messlokation,SG10,CAV,7111,E03,,Höchstspannung,X,Höchstspannung
+467,Spannungsebene der Messlokation,SG10,CAV,7111,E04,,Hochspannung,X,
+468,Spannungsebene der Messlokation,SG10,CAV,7111,E05,,Mittelspannung,X,
+469,Spannungsebene der Messlokation,SG10,CAV,7111,E06,,Niederspannung,X,
+470,Gasqualität,SG10,,,,,,Muss [493],
+471,Gasqualität,SG10,,,,,,Muss [493],
+472,Gasqualität,SG10,CCI,,,,,Muss,
+473,Gasqualität,SG10,CCI,7037,Y02,,Gasqualität,X,Gasqualität
+474,Gasqualität,SG10,,,,,,,
+475,Gasqualität,SG10,,,,,,Muss,
+476,Gasqualität,SG10,CAV,,,,,Muss,
+477,Gasqualität,SG10,CAV,7111,Y04,,H-Gas,X,H-Gas
+478,Gasqualität,SG10,CAV,7111,Y05,,L-Gas,X,
+479,Verwendungsumfang,SG10,,,,,,Muss [492],
+480,Verwendungsumfang,SG10,,,,,,Muss [492],
+481,Verwendungsumfang,SG10,CCI,,,,,Muss,
+482,Verwendungsumfang,SG10,CCI,7059,Z01,,Verwendungsumfang,X,Verwendungsumfang
+483,Verwendungsumfang,SG10,CCI,7037,Z82,,ID der prozessualbehandeltenMesslokation,X [2236],ID der prozessualbehandeltenMesslokation
+484,Verwendungsumfang,SG10,CCI,7037,Z81,,ID der Messlokation imLokationsbündel,X,[2236] Code einmal je SG4 IDE+24 (Identifikation einer Liste)
+485,Betriebszustand der Messlokation,SG10,,,,,,Muss [45],
+486,Betriebszustand der Messlokation,SG10,,,,,,Muss [45],
+487,Betriebszustand der Messlokation,SG10,CCI,,,,,Muss,
+488,Betriebszustand der Messlokation,SG10,CCI,7059,Z32,,Betriebszustand derMesslokation,X,Betriebszustand derMesslokation
+489,Betriebszustand der Messlokation,SG10,CCI,7037,ZC1,,Messlokation gesperrtund darf nicht entsperrtwerden,X,Messlokation gesperrtund darf nicht entsperrtwerden
+490,Betriebszustand der Messlokation,SG10,CCI,7037,ZC2,,Messlokation gesperrtund darf entsperrtwerden,X,
+491,Betriebszustand der Messlokation,SG10,CCI,7037,ZC3,,Messlokation imRegelbetrieb,X,
+492,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss [2309],
+493,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss [2309],
+494,Erforderliches Messprodukt der Messlokation,SG8,SEQ,,,,,Muss,
+495,Erforderliches Messprodukt der Messlokation,SG8,SEQ,1229,Z19,,ErforderlichesMessprodukt derMesslokation,X,ErforderlichesMessprodukt derMesslokation
+496,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+497,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
+498,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
+499,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
+500,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
+501,Referenz auf die ID einer Marktlokation,SG8,,,,,,,
+502,Referenz auf die ID einer Marktlokation,SG8,,,,,,Muss [429]∧ [492],
+503,Referenz auf die ID einer Marktlokation,SG8,RFF,,,,,Muss [429]∧ [492],
+504,Referenz auf die ID einer Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+505,Referenz auf die ID einer Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+506,Erforderliches Messprodukt der Messlokation,SG8,,,,,,,
+507,Erforderliches Messprodukt der Messlokation,SG8,,,,,,Muss,
+508,Erforderliches Messprodukt der Messlokation,SG8,PIA,,,,,Muss,
+509,Erforderliches Messprodukt der Messlokation,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
+510,Erforderliches Messprodukt der Messlokation,SG8,PIA,7140,,,Messprodukt-Code,X [427] ⊻[443],
+511,Erforderliches Messprodukt der Messlokation,SG8,PIA,7143,Z11,,Messprodukt,X,Messprodukt
+512,Weitere Beschreibung erforderliches Messprodukt,SG10,,,,,,Muss,
+513,Weitere Beschreibung erforderliches Messprodukt,SG10,,,,,,Muss,
+514,Weitere Beschreibung erforderliches Messprodukt,SG10,CCI,,,,,Muss,
+515,Weitere Beschreibung erforderliches Messprodukt,SG10,CCI,7059,Z35,,Beschreibungerforderlicher Wert,X,Beschreibungerforderlicher Wert
+516,Notwendigkeit einer zweiten Messung,SG10,,,,,,,
+517,Notwendigkeit einer zweiten Messung,SG10,,,,,,Muss,
+518,Notwendigkeit einer zweiten Messung,SG10,CAV,,,,,Muss,
+519,Notwendigkeit einer zweiten Messung,SG10,CAV,7111,ZC9,,Zweite Messung fürVergleichsmessungerforderlich,X,Zweite Messung fürVergleichsmessungerforderlich
+520,Notwendigkeit einer zweiten Messung,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
+521,Notwendigkeit einer zweiten Messung,SG10,CAV,7110,Z07,,nicht vorhanden,X,
+522,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,,,,,,,
+523,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,,,,,,Muss,
+524,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,,,,,Muss,
+525,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,7111,Z88,,NB,X,NB
+526,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
+527,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG10,CAV,7110,Z07,,nicht vorhanden,X,
+528,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[492]Muss [335]∧ [429] ∧[492],
+529,Zugeordnete Zählzeit,SG10,,,,,,Soll [165] ∧[166] ∧[492]Muss [335]∧ [429] ∧[492],
+530,Zugeordnete Zählzeit,SG10,CCI,,,,,Muss,
+531,Zugeordnete Zählzeit,SG10,CCI,7059,Z39,,Code der Zählzeit,X,Code der Zählzeit
+532,Zugeordnete Zählzeit,SG10,CCI,7059,Z41,,Keine Zählzeit fürMessprodukterforderlich,X [417],[417] Wenn für den erforderlichen Wert keine Zählzeit benötigt wird
+533,Zugeordnete Zählzeit,SG10,CCI,7037,,,Code der Zählzeit,X [438],
+534,Zähleinrichtungsdaten,SG8,,,,,,Muss [78],
+535,Zähleinrichtungsdaten,SG8,,,,,,Muss [78],
+536,Zähleinrichtungsdaten,SG8,SEQ,,,,,Muss,
+537,Zähleinrichtungsdaten,SG8,SEQ,1229,Z03,,Zähleinrichtungsdaten,X,Zähleinrichtungsdaten
+538,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+539,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
+540,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
+541,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
+542,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
+543,Referenz auf das Smartmeter-Gateway,SG8,,,,,,,
+544,Referenz auf das Smartmeter-Gateway,SG8,,,,,,Soll [166] ∧[215],
+545,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,Soll [166] ∧[215],
+546,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,Smartmeter-Gateway
+547,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,Identifikation / Nummer desSmartmeter-Gateways,X,
+548,Zählertyp,SG10,,,,,,Muss,
+549,Zählertyp,SG10,,,,,,Muss,
+550,Zählertyp,SG10,CCI,,,,,Muss,
+551,Zählertyp,SG10,CCI,7037,E13,,Zählertyp,X,Zählertyp
+552,Zählertyp,SG10,,,,,,,
+553,Zählertyp,SG10,,,,,,Muss,
+554,Zählertyp,SG10,CAV,,,,,Muss,
+555,Zählertyp,SG10,CAV,7111,AHZ,,analoger Haushaltszähler(Drehstrom),X [492],analoger Haushaltszähler(Drehstrom)
+556,Zählertyp,SG10,CAV,7111,WSZ,,analogerWechselstromzähler,X [492],
+557,Zählertyp,SG10,CAV,7111,LAZ,,Lastgangzähler,X [492],
+558,Zählertyp,SG10,CAV,7111,MAZ,,Maximumzähler,X [492],
+559,Zählertyp,SG10,CAV,7111,MME,,moderneMesseinrichtung nachMsbG,X [492],
+560,Zählertyp,SG10,CAV,7111,NMG,,neue MesseinrichtungGas nach MsbG,X [493],
+561,Zählertyp,SG10,CAV,7111,DKZ,,Drehkolbengaszähler,X [493],
+562,Zählertyp,SG10,CAV,7111,BGZ,,Balgengaszähler,X [493],
+563,Zählertyp,SG10,CAV,7111,TRZ,,Turbinenradgaszähler,X [493],
+564,Zählertyp,SG10,CAV,7111,UGZ,,Ultraschallgaszähler,X [493],
+565,Zählertyp,SG10,CAV,7111,WGZ,,Wirbelgaszähler,X [493],
+566,Zählertyp,SG10,CAV,7111,EHZ,,elektronischerHaushaltszähler,X,
+567,Zählertyp,SG10,CAV,7111,IVA,,Individuelle Abstimmung(Sonderausstattung),X,"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom  
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
+568,Zählertyp,SG10,CAV,7110,Z01,,EDL40,X [136],EDL40
+569,Zählertyp,SG10,CAV,7110,Z02,,EDL21,X [136],
+570,Zählertyp,SG10,CAV,7110,Z03,,sonstiger EHZ,X [136],
+571,Zählertyp,SG10,CAV,7110,Z04,,Standard,X [346],
+572,Zählertyp,SG10,CAV,7110,Z05,,MeDa-Zähler,X [346],"[136] Wenn SG10 CCI+++E13 (Zählertyp) CAV+EHZ (elektronischer Haushaltszähler) vorhanden  
+[346] Wenn SG10 CCI+++E13 (Zählertyp) CAV+MME (mME) vorhanden"
+573,Zählergröße (Gas),SG10,,,,,,,
+574,Zählergröße (Gas),SG10,,,,,,Muss [493],
+575,Zählergröße (Gas),SG10,CAV,,,,,Muss [493],
+576,Zählergröße (Gas),SG10,CAV,7110,G10,,Gaszähler G10,X,Gaszähler G10
+577,Zählergröße (Gas),SG10,CAV,7110,G100,,Gaszähler G100,X,
+578,Zählergröße (Gas),SG10,CAV,7110,G1000,,Gaszähler G1000,X,
+579,Zählergröße (Gas),SG10,CAV,7110,G10000,,Gaszähler G10000,X,
+580,Zählergröße (Gas),SG10,CAV,7110,G12500,,Gaszähler G12500,X,
+581,Zählergröße (Gas),SG10,CAV,7110,G16,,Gaszähler G16,X,
+582,Zählergröße (Gas),SG10,CAV,7110,G160,,Gaszähler G160,X,
+583,Zählergröße (Gas),SG10,CAV,7110,G1600,,Gaszähler G1600,X,
+584,Zählergröße (Gas),SG10,CAV,7110,G16000G2.5,,Gaszähler G16000Gaszähler G2.5,XX,
+585,Zählergröße (Gas),SG10,CAV,7110,G25,,Gaszähler G25,X,
+586,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+587,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+588,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+589,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+590,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+591,Registeranzahl,SG10,,,,,,,
+592,Registeranzahl,SG10,,,,,,Muss [492]∧ [139],
+593,Registeranzahl,SG10,CAV,,,,,Muss [492]∧ [139],
+594,Registeranzahl,SG10,CAV,7111,ETZ,,Eintarif,X,Eintarif
+595,Registeranzahl,SG10,CAV,7111,ZTZ,,Zweitarif,X,
+596,Registeranzahl,SG10,CAV,7111,NTZ,,Mehrtarif,X,
+597,Energierichtung,SG10,,,,,,,
+598,Energierichtung,SG10,,,,,,Muss [492],
+599,Energierichtung,SG10,CAV,,,,,Muss [492],
+600,Energierichtung,SG10,CAV,7111,ERZ,,Einrichtungszähler,X,Einrichtungszähler
+601,Energierichtung,SG10,CAV,7111,ZRZ,,Zweirichtungszähler,X,
+602,Fernschaltung der Zähleinrichtung,SG10,,,,,,,
+603,Fernschaltung der Zähleinrichtung,SG10,,,,,,Muss [492],
+604,Fernschaltung der Zähleinrichtung,SG10,CAV,,,,,Muss [492],
+605,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,Z58,,Fernschaltung derZähleinrichtung,X,Fernschaltung derZähleinrichtung
+606,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,Z06,,vorhanden,X,vorhanden
+607,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,Z07,,nicht vorhanden,X,
+608,Art der Volumenerfassung (Gas),SG10,,,,,,,
+609,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [493] ∧[166],
+610,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [493] ∧[166],
+611,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
+612,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z16,,Hochfrequenzsonde,X,Hochfrequenzsonde
+613,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
+614,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
+615,Befestigungsart Zähleinrichtung,SG10,CCI,,,,,Muss,
+616,Befestigungsart Zähleinrichtung,SG10,CCI,7037,Z28,,BefestigungsartZähleinrichtung,X,BefestigungsartZähleinrichtung
+617,Befestigungsart Zähleinrichtung,SG10,,,,,,,
+618,Befestigungsart Zähleinrichtung,SG10,,,,,,Muss,
+619,Befestigungsart Zähleinrichtung,SG10,CAV,,,,,Muss,
+620,Befestigungsart Zähleinrichtung,SG10,CAV,7111,BKE,,Stecktechnik(Befestigungs- undKontaktierungseinrichtung),X [2P0..1],Stecktechnik(Befestigungs- undKontaktierungseinrichtung)
+621,Befestigungsart Zähleinrichtung,SG10,CAV,7111,DPA,,3-Dreipunktaufhängung,X [2P0..1],
+622,Befestigungsart Zähleinrichtung,SG10,CAV,7111,HUT,,Hutschiene,X [2P0..1],
+623,Befestigungsart Zähleinrichtung,SG10,CAV,7111,Z31,,Einstutzen-Zähler,X [3P0..1],
+624,Befestigungsart Zähleinrichtung,SG10,CAV,7111,Z32,,Zweistutzen-Zähler,X [3P0..1],
+625,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss [316],
+626,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss [316],
+627,Messwerterfassung an der Zähleinrichtung,SG10,CCI,,,,,Muss,
+628,Messwerterfassung an der Zähleinrichtung,SG10,CCI,7037,E12,,Messwerterfassung ander Zähleinrichtung,X,Messwerterfassung ander Zähleinrichtung
+629,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,
+630,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,Muss,
+631,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,,,,Muss,
+632,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,AMR,,fernauslesbare Zähler,X,fernauslesbare Zähler
+633,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,MMR,,manuell ausgeleseneZähler,X,
+634,Messdatenregistriergeräted aten,SG8,,,,,,Soll [493] ∧[130],
+635,Messdatenregistriergeräted aten,SG8,,,,,,Soll [493] ∧[130],
+636,Messdatenregistriergeräted aten,SG8,SEQ,,,,,Muss,
+637,Messdatenregistriergeräted aten,SG8,SEQ,1229,Z50,,Messdatenregistriergerätedaten,X,Messdatenregistriergerätedaten
+638,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+639,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
+640,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss,
+641,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
+642,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
+643,Messdatenregistriergerät,SG10,,,,,,Muss,
+644,Messdatenregistriergerät,SG10,,,,,,Muss,
+645,Messdatenregistriergerät,SG10,CCI,,,,,Muss,
+646,Messdatenregistriergerät,SG10,CCI,7037,E13,,Zählertyp,X,Zählertyp
+647,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+648,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+649,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+650,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+651,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+652,Art der Volumenerfassung (Gas),SG10,,,,,,,
+653,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [493] ∧[166],
+654,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [493] ∧[166],
+655,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
+656,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z16,,Hochfrequenzsonde,X,Hochfrequenzsonde
+657,Mengenumwerterdaten,SG8,,,,,,Soll [493] ∧[130],
+658,Mengenumwerterdaten,SG8,,,,,,Soll [493] ∧[130],
+659,Mengenumwerterdaten,SG8,SEQ,,,,,Muss,
+660,Mengenumwerterdaten,SG8,SEQ,1229,Z09,,Mengenumwerter-Daten,X,Mengenumwerter-Daten
+661,Referenz auf die Gerätenummer,SG8,,,,,,,
+662,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
+663,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
+664,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
+665,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
+666,Mengenumwerter,SG10,,,,,,Muss,
+667,Mengenumwerter,SG10,,,,,,Muss,
+668,Mengenumwerter,SG10,CCI,,,,,Muss,
+669,Mengenumwerter,SG10,CCI,7037,Z64,,Mengenumwerter,X,Mengenumwerter
+670,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+671,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+672,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+673,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+674,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+675,Mengenumwertertyp,SG10,,,,,,,
+676,Mengenumwertertyp,SG10,,,,,,Muss,
+677,Mengenumwertertyp,SG10,CAV,,,,,Muss,
+678,Mengenumwertertyp,SG10,CAV,7111,DMU,,Dichtemengenumwerter,X,Dichtemengenumwerter
+679,Mengenumwertertyp,SG10,CAV,7111,TMU,,Temperaturmengenumwerter,X,
+680,Mengenumwertertyp,SG10,CAV,7111,ZMU,,Zustandsmengenumwerter,X,
+681,Art der Volumenerfassung (Gas),SG10,,,,,,,
+682,Art der Volumenerfassung (Gas),SG10,,,,,,Soll [166],
+683,Art der Volumenerfassung (Gas),SG10,CAV,,,,,Soll [166],
+684,Art der Volumenerfassung (Gas),SG10,CAV,7111,ZC0,,Art derVolumenerfassung,X,Art derVolumenerfassung
+685,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z17,,Kennlinienkorrektur,X,Kennlinienkorrektur
+686,Art der Volumenerfassung (Gas),SG10,CAV,7110,Z18,,Schleichmengenunterdrückung,X,
+687,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss([2287] ∧[121]) ∨[2350] ∨[2353],
+688,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss([2287] ∧[121]) ∨[2350] ∨[2353],
+689,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
+690,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,1229,Z20,,OBIS-Daten derZähleinrichtung,X,OBIS-Daten derZähleinrichtung
+691,Referenz auf die Gerätenummer,SG8,,,,,,,
+692,Referenz auf die Gerätenummer,SG8,,,,,,Muss [78] ∧[665],
+693,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss [78] ∧[665],
+694,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer des,X [441] ∧Zählers,Gerätenummer des
+695,Referenz auf die Gerätenummer,SG8,RFF,1153,Z11,,Gerätenummer desMengenumwerters,X,
+696,Referenz auf die Gerätenummer,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,"[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden ist  
+[442] Wenn in keinem SG8+SEQ+Z09 Mengenumwerterdaten das RFF+MG (Referenz"
+697,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
+698,Referenz auf die ID einer Messlokation,SG8,,,,,,,
+699,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss [78],
+700,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,Muss [78],
+701,Referenz auf die ID einer Messlokation,SG8,RFF,1153,Z19,,Messlokation,X,Messlokation
+702,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,ID einer Messlokation,X [951],
+703,Referenz auf die ID einer Marktlokation,SG8,,,,,,,
+704,Referenz auf die ID einer Marktlokation,SG8,,,,,,Muss [78] ∧[402] ∧[420],
+705,Referenz auf die ID einer Marktlokation,SG8,RFF,,,,,Muss [78] ∧[402] ∧[420],
+706,Referenz auf die ID einer Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+707,Referenz auf die ID einer Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+708,Konfigurations-ID,SG8,,,,,,,
+709,Konfigurations-ID,SG8,,,,,,Muss [402]∧ [420],
+710,Konfigurations-ID,SG8,RFF,,,,,Muss [402]∧ [420],
+711,Konfigurations-ID,SG8,RFF,1153,AGK,,Anwendungsreferenznummer,X,Anwendungsreferenznummer
+712,Konfigurations-ID,SG8,RFF,1154,,,"Referenz, Identifikation",X,
+713,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,,
+714,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,,,,,,Muss,
+715,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,,,,,Muss,
+716,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,4347,5,,Produktidentifikation,X,Produktidentifikation
+717,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7140,,,OBIS-Kennzahl derZähleinrichtung,X ([493] ∧[324]) ⊻([492] ∧[323]),
+718,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,OBIS-Kennzahl
+719,Wertegranularität,SG10,,,,,,Muss ([256]∧ [492]) ⊻([274] ∧,
+720,Wertegranularität,SG10,,,,,,Muss ([256]∧ [492]) ⊻([274] ∧,
+721,Wertegranularität,SG10,CCI,,,,,Muss,
+722,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,Wertegranularität
+723,Wertegranularität,SG10,,,,,,,
+724,Wertegranularität,SG10,,,,,,Muss,
+725,Wertegranularität,SG10,CAV,,,,,Muss,
+726,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,Jährlich
+727,Wertegranularität,SG10,CAV,7111,ZE8,,Halbjährlich,X,
+728,Wertegranularität,SG10,CAV,7111,ZE9,,Quartalsweise,X,
+729,Wertegranularität,SG10,CAV,7111,ZB7,,Monatlich,X,
+730,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss ([492]∧ [273]) ⊻([493] ∧[274]),
+731,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss ([492]∧ [273]) ⊻([493] ∧[274]),
+732,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,,,,Muss,
+733,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,11,,Produkt,X,Produkt
+734,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,Z33,,Vor- undNachkommastellen desZählwerkes,X,Vor- undNachkommastellen desZählwerkes
+735,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,
+736,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss,
+737,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,,,,Muss,
+738,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Vorkommastelle,X,
+739,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Nachkommastelle,X,
+740,Schwachlastfähigkeit,SG10,,,,,,Muss [256]∧ [388] ∧[492],
+741,Schwachlastfähigkeit,SG10,,,,,,Muss [256]∧ [388] ∧[492],
+742,Schwachlastfähigkeit,SG10,CCI,,,,,Muss,
+743,Schwachlastfähigkeit,SG10,CCI,7059,Z10,,Schwachlastfähigkeit,X,Schwachlastfähigkeit
+744,Schwachlastfähigkeit,SG10,CCI,7037,Z59,,Nicht-Schwachlast fähig,X,Nicht-Schwachlast fähig
+745,Schwachlastfähigkeit,SG10,CCI,7037,Z60,,Schwachlast fähig,X,
+746,Wandlerdaten,SG8,,,,,,Soll [492] ∧[130],
+747,Wandlerdaten,SG8,,,,,,Soll [492] ∧[130],
+748,Wandlerdaten,SG8,SEQ,,,,,Muss,
+749,Wandlerdaten,SG8,SEQ,1229,Z04,,Wandler-Daten,X,Wandler-Daten
+750,Referenz auf die Gerätenummer,SG8,,,,,,,
+751,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
+752,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
+753,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
+754,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
+755,Wandler,SG10,,,,,,Muss,
+756,Wandler,SG10,,,,,,Muss,
+757,Wandler,SG10,CCI,,,,,Muss,
+758,Wandler,SG10,CCI,7037,Z25,,Wandler,X,Wandler
+759,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+760,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss [2317]⊻ [2318],
+761,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss [2317]⊻ [2318],
+762,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+763,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+764,Wandlertyp und Faktor,SG10,,,,,,,
+765,Wandlertyp und Faktor,SG10,,,,,,Muss,
+766,Wandlertyp und Faktor,SG10,CAV,,,,,Muss,
+767,Wandlertyp und Faktor,SG10,CAV,7111,MIW,,Messwandlersatz Strom,X,Messwandlersatz Strom
+768,Wandlertyp und Faktor,SG10,CAV,7111,MPW,,Kombimesswandlersatz(Strom und Spannung),X,
+769,Wandlertyp und Faktor,SG10,CAV,7111,MBW,,Blockstromwandler,X,
+770,Wandlertyp und Faktor,SG10,CAV,7111,MUW,,MesswandlersatzSpannung,X,
+771,Wandlertyp und Faktor,SG10,CAV,7110,,,Wandlerfaktor,X [902][141],
+772,Kommunikationseinrichtun gsdaten,SG8,,,,,,Muss [2119]Soll [130] ,
+773,Kommunikationseinrichtun gsdaten,SG8,,,,,,Muss [2119]Soll [130] ,
+774,Kommunikationseinrichtun gsdaten,SG8,SEQ,,,,,Muss,
+775,Kommunikationseinrichtun gsdaten,SG8,SEQ,1229,Z05,,Kommunikationseinrichtungsdaten,X,Kommunikationseinrichtungsdaten
+776,Referenz auf die Gerätenummer,SG8,,,,,,,
+777,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
+778,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
+779,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
+780,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
+781,Kommunikationseinrichtun g,SG10,,,,,,Muss,
+782,Kommunikationseinrichtun g,SG10,,,,,,Muss,
+783,Kommunikationseinrichtun g,SG10,CCI,,,,,Muss,
+784,Kommunikationseinrichtun g,SG10,CCI,7037,Z26,,Kommunikationseinrichtung,X,Kommunikationseinrichtung
+785,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+786,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+787,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+788,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+789,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+790,Kommunikationseinrichtun gstyp,SG10,,,,,,,
+791,Kommunikationseinrichtun gstyp,SG10,,,,,,Muss,
+792,Kommunikationseinrichtun gstyp,SG10,CAV,,,,,Muss,
+793,Kommunikationseinrichtun gstyp,SG10,CAV,7111,GSM,,GSM/GPRS/UMTS-Kom.-Einr.,X,GSM/GPRS/UMTS-Kom.-Einr.
+794,Kommunikationseinrichtun gstyp,SG10,CAV,7111,ETH,,Ethernet-Kom.-Einricht.LAN/WLAN,X,
+795,Kommunikationseinrichtun gstyp,SG10,CAV,7111,PLC,,PLC-Kom.-Einrichtung,X,
+796,Kommunikationseinrichtun gstyp,SG10,CAV,7111,PST,,Festnetz-Kom.-Einricht.TAE,X,
+797,Kommunikationseinrichtun gstyp,SG10,CAV,7111,DSL,,DSL-Kom.Einr.,X,
+798,Kommunikationseinrichtun gstyp,SG10,CAV,7111,LTE,,LTE-Kom.-Einr.,X,
+799,Daten der technischen Steuereinrichtung,SG8,,,,,,Soll [130],
+800,Daten der technischen Steuereinrichtung,SG8,,,,,,Soll [130],
+801,Daten der technischen Steuereinrichtung,SG8,SEQ,,,,,Muss,
+802,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,Z06,,Daten der technischenSteuereinrichtung,X,Daten der technischenSteuereinrichtung
+803,Referenz auf die Gerätenummer,SG8,,,,,,,
+804,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
+805,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
+806,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer desZählers,X,Gerätenummer desZählers
+807,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
+808,Technische Steuereinrichtung,SG10,,,,,,Muss,
+809,Technische Steuereinrichtung,SG10,,,,,,Muss,
+810,Technische Steuereinrichtung,SG10,CCI,,,,,Muss,
+811,Technische Steuereinrichtung,SG10,CCI,7037,Z27,,TechnischeSteuereinrichtung,X,TechnischeSteuereinrichtung
+812,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+813,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+814,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+815,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+816,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+817,Technische Steuereinrichtungstyp,SG10,,,,,,,
+818,Technische Steuereinrichtungstyp,SG10,,,,,,Muss,
+819,Technische Steuereinrichtungstyp,SG10,CAV,,,,,Muss,
+820,Technische Steuereinrichtungstyp,SG10,CAV,7111,RSU,,Rundsteuerempfänger,X,Rundsteuerempfänger
+821,Technische Steuereinrichtungstyp,SG10,CAV,7111,TSU,,Tarifschaltuhr,X,
+822,Smartmeter-Gateway,SG8,,,,,,Soll [130],
+823,Smartmeter-Gateway,SG8,,,,,,Soll [130],
+824,Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
+825,Smartmeter-Gateway,SG8,SEQ,1229,Z13,,Smartmeter-Gateway,X,Smartmeter-Gateway
+826,Smartmeter-Gateway,SG10,,,,,,Muss,
+827,Smartmeter-Gateway,SG10,,,,,,Muss,
+828,Smartmeter-Gateway,SG10,CCI,,,,,Muss,
+829,Smartmeter-Gateway,SG10,CCI,7037,Z75,,Smartmeter-Gateway,X,Smartmeter-Gateway
+830,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+831,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+832,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+833,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+834,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X [952],
+835,Daten der Steuerbox,SG8,,,,,,Soll [492] ∧[133],
+836,Daten der Steuerbox,SG8,,,,,,Soll [492] ∧[133],
+837,Daten der Steuerbox,SG8,SEQ,,,,,Muss,
+838,Daten der Steuerbox,SG8,SEQ,1229,Z14,,Steuerbox,X,Steuerbox
+839,Referenz auf das Smartmeter-Gateway,SG8,,,,,,,
+840,Referenz auf das Smartmeter-Gateway,SG8,,,,,,Muss,
+841,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,Muss,
+842,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,Smartmeter-Gateway
+843,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,Identifikation / Nummer desSmartmeter-Gateways,X,
+844,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+845,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+846,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+847,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+848,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+849,Steuerbox,SG10,,,,,,Muss,
+850,Steuerbox,SG10,,,,,,Muss,
+851,Steuerbox,SG10,CCI,,,,,Muss,
+852,Steuerbox,SG10,CCI,7037,Z76,,Steuerbox,X,Steuerbox
+853,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+854,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+855,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+856,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,Gerätenummer
+857,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X [952],
+858,Profildaten (Strom),SG8,,,,,,Muss [492]∧ [197] ∧[2311],
+859,Profildaten (Strom),SG8,,,,,,Muss [492]∧ [197] ∧[2311],
+860,Profildaten (Strom),SG8,SEQ,,,,,Muss,
+861,Profildaten (Strom),SG8,SEQ,1229,Z21,,Profildaten,X,Profildaten
+862,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+863,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+864,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+865,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+866,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+867,Normiertes Profil (Strom),SG10,,,,,,Muss,
+868,Normiertes Profil (Strom),SG10,,,,,,Muss,
+869,Normiertes Profil (Strom),SG10,CCI,,,,,Muss,
+870,Normiertes Profil (Strom),SG10,CCI,7059,Z02,,Standardlastprofil,X,Standardlastprofil
+871,Normiertes Profil (Strom),SG10,CCI,7059,Z04,,Standardeinspeiseprofil,X,
+872,Normiertes Profil (Strom),SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
+873,Normiertes Profil (Strom),SG10,CCI,7037,Z10,,analytisches Verfahren,X,
+874,Normiertes Profil (Strom),SG10,,,,,,,
+875,Normiertes Profil (Strom),SG10,,,,,,Muss,
+876,Normiertes Profil (Strom),SG10,CAV,,,,,Muss,
+877,Normiertes Profil (Strom),SG10,CAV,7111,,,Code des Normierten Profils,X,
+878,Profilschardaten,SG8,,,,,,Muss [492]∧ [89] ∧[2311],
+879,Profilschardaten,SG8,,,,,,Muss [492]∧ [89] ∧[2311],
+880,Profilschardaten,SG8,SEQ,,,,,Muss,
+881,Profilschardaten,SG8,SEQ,1229,Z08,,Profilschardaten,X,Profilschardaten
+882,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+883,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+884,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+885,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+886,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+887,Normiertes Profil,SG10,,,,,,Muss,
+888,Normiertes Profil,SG10,,,,,,Muss,
+889,Normiertes Profil,SG10,CCI,,,,,Muss,
+890,Normiertes Profil,SG10,CCI,7059,Z03,,tagesparameterabhängiges Lastprofil,X,tagesparameterabhängiges Lastprofil
+891,Normiertes Profil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
+892,Normiertes Profil,SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
+893,Normiertes Profil,SG10,CCI,7037,Z10,,analytisches Verfahren,X,
+894,Normiertes Profil,SG10,,,,,,,
+895,Normiertes Profil,SG10,,,,,,Muss,
+896,Normiertes Profil,SG10,CAV,,,,,Muss,
+897,Normiertes Profil,SG10,CAV,7111,,,Code des Normierten Profils(Strom),X,
+898,Klimazone / Temperaturmessstelle,SG10,,,,,,Muss,
+899,Klimazone / Temperaturmessstelle,SG10,,,,,,Muss,
+900,Klimazone / Temperaturmessstelle,SG10,CCI,,,,,Muss,
+901,Klimazone / Temperaturmessstelle,SG10,CCI,7059,Z99,,Messstelle desTagesparameters(derzeit ist nur dieTemperatur ein erlaubterTagesparameter),X,Messstelle desTagesparameters(derzeit ist nur dieTemperatur ein erlaubterTagesparameter)
+902,Klimazone / Temperaturmessstelle,SG10,CCI,7059,ZA0,,Klimazone desTagesparameters(derzeit istTagesparameter),X,
+903,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,ID Klimazone /Temperaturmessstelle,X,
+904,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,Dienstanbieter,X [58],
+905,Klimazone / Temperaturmessstelle,SG10,CCI,3055,89,,Vergeben vom Händler(hier Netzbetreiber),X,Vergeben vom Händler(hier Netzbetreiber)
+906,Klimazone / Temperaturmessstelle,SG10,CCI,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+907,Referenzprofildaten,SG8,,,,,,Muss [492]∧ [223] ∧[265],
+908,Referenzprofildaten,SG8,,,,,,Muss [492]∧ [223] ∧[265],
+909,Referenzprofildaten,SG8,SEQ,,,,,Muss,
+910,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,Referenzprofildaten
+911,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+912,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+913,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+914,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+915,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+916,Referenzprofil,SG10,,,,,,Muss,
+917,Referenzprofil,SG10,,,,,,Muss,
+918,Referenzprofil,SG10,CCI,,,,,Muss,
+919,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,tagesparameterabhängiges Einspeiseprofil
+920,Referenzprofil,SG10,,,,,,,
+921,Referenzprofil,SG10,,,,,,Muss,
+922,Referenzprofil,SG10,CAV,,,,,Muss,
+923,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
+924,Kunde des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
+925,Kunde des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
+926,Kunde des Lieferanten,SG12,NAD,,,,,Muss,
+927,Kunde des Lieferanten,SG12,NAD,3035,Z09,,Kunde des LF,X,Kunde des LF
+928,Kunde des Lieferanten,SG12,NAD,3036,,,Name,X,
+929,Kunde des Lieferanten,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+930,Kunde des Lieferanten,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+931,Referenz auf die ID der Marktlokation,SG12,,,,,,,
+932,Referenz auf die ID der Marktlokation,SG12,,,,,,Muss,
+933,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,Muss,
+934,Referenz auf die ID der Marktlokation,SG12,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+935,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,ID der Marktlokation,X [950],
+936,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
+937,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,Soll [492] ∧[165] ∧[506],
+938,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,,,,Muss,
+939,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,Z04,,Korrespondenzanschriftdes Kunden des LF,X,Korrespondenzanschriftdes Kunden des LF
+940,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,,,Name,X,
+941,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+942,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+943,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+944,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,,,Ort,X,
+945,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
+946,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,,,"Ländername, Code",X,
+947,Referenz auf die ID der Marktlokation,SG12,,,,,,,
+948,Referenz auf die ID der Marktlokation,SG12,,,,,,Muss,
+949,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,Muss,
+950,Referenz auf die ID der Marktlokation,SG12,RFF,1153,Z18,,Marktlokation,X,Marktlokation
+951,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,ID der Marktlokation,X [950],
+952,Kunde des Messstellenbetreibers,SG12,,,,,,Muss,
+953,Kunde des Messstellenbetreibers,SG12,,,,,,Muss,
+954,Kunde des Messstellenbetreibers,SG12,NAD,,,,,Muss,
+955,Kunde des Messstellenbetreibers,SG12,NAD,3035,Z07,,Kunde des MSB,X,Kunde des MSB
+956,Kunde des Messstellenbetreibers,SG12,NAD,3036,,,Name,X,
+957,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+958,Kunde des Messstellenbetreibers,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+959,Referenz auf die ID der Messlokation,SG12,,,,,,,
+960,Referenz auf die ID der Messlokation,SG12,,,,,,Muss,
+961,Referenz auf die ID der Messlokation,SG12,RFF,,,,,Muss,
+962,Referenz auf die ID der Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
+963,Referenz auf die ID der Messlokation,SG12,RFF,1154,,,ID der Messlokation,X [951],
+964,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,,,,,,Muss,
+965,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,,,,,,Muss,
+966,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,,,,,Muss,
+967,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3035,Z08,,Korrespondenzanschriftdes Kunden des MSB,X,Korrespondenzanschriftdes Kunden des MSB
+968,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3036,,,Name,X,
+969,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+970,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+971,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+972,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3164,,,Ort,X,
+973,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
+974,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,NAD,3207,,,"Ländername, Code",X,
+975,Messlokationsadresse,SG12,,,,,,Muss [586],
+976,Messlokationsadresse,SG12,,,,,,Muss [586],
+977,Messlokationsadresse,SG12,NAD,,,,,Muss,
+978,Messlokationsadresse,SG12,NAD,3035,Z03,,Messlokationsadresse,X,Messlokationsadresse
+979,Messlokationsadresse,SG12,NAD,3124,,,Zusatzinformation zurIdentifizierung,K,
+980,Messlokationsadresse,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,S [166]M [212],
+981,Messlokationsadresse,SG12,NAD,3164,,,Ort,X,
+982,Messlokationsadresse,SG12,NAD,3251,,,Postleitzahl,X,
+983,Messlokationsadresse,SG12,NAD,3207,,,"Ländername, Code",X,
+984,Referenz auf die ID einer Messlokation,SG12,,,,,,,
+985,Referenz auf die ID einer Messlokation,SG12,,,,,,Muss,
+986,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,Muss,
+987,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
+988,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,X [951],
+989,Name und Adresse für die Ablesekarte,SG12,,,,,,Muss [599],
+990,Name und Adresse für die Ablesekarte,SG12,,,,,,Muss [599],
+991,Name und Adresse für die Ablesekarte,SG12,NAD,,,,,Muss,
+992,Name und Adresse für die Ablesekarte,SG12,NAD,3035,Z05,,Name und Adresse fürdie Ablesekarte,X,Name und Adresse fürdie Ablesekarte
+993,Name und Adresse für die Ablesekarte,SG12,NAD,3036,,,Name,X,
+994,Name und Adresse für die Ablesekarte,SG12,NAD,3045,Z01,,Struktur vonPersonennamen,X,Struktur vonPersonennamen
+995,Name und Adresse für die Ablesekarte,SG12,NAD,3045,Z02,,Struktur derFirmenbezeichnung,X,
+996,Name und Adresse für die Ablesekarte,SG12,NAD,3042,,,Straße und Hausnummer oderPostfach,X,
+997,Name und Adresse für die Ablesekarte,SG12,NAD,3164,,,Ort,X,
+998,Name und Adresse für die Ablesekarte,SG12,NAD,3251,,,Postleitzahl,M [268]S [166],
+999,Name und Adresse für die Ablesekarte,SG12,NAD,3207,,,"Ländername, Code",X,
+1000,Referenz auf die ID einer Messlokation,SG12,,,,,,,
+1001,Referenz auf die ID einer Messlokation,SG12,,,,,,Muss,
+1002,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,Muss,
+1003,Referenz auf die ID einer Messlokation,SG12,RFF,1153,Z19,,Messlokation,X,Messlokation
+1004,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,ID einer Messlokation,X [951],
+1005,Nachrichten-Endesegment,,,,,,,Muss,
+1006,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+1007,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
