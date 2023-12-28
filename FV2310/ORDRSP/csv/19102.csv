@@ -1,45 +1,52 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,ORDRSP,,Bestellantwort,X,Bestellantwort
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,Entwurfs-Version
-4,Nachrichten-Kopfsegment,,UNH,0054,10A,,Ausgabe 2010 - A,X,Ausgabe 2010 - A
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,UN/CEFACT
-6,Nachrichten-Kopfsegment,,UNH,0057,1.3,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung
+2,Nachrichten-Kopfsegment,,UNH,0065,ORDRSP,,Bestellantwort,X,
+3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+4,Nachrichten-Kopfsegment,,UNH,0054,10A,,Ausgabe 2010 - A,X,
+5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,1.3,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,,,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,7,,Prozessdatenbericht,X,Prozessdatenbericht
+8,Beginn der Nachricht,,BGM,1001,7,,Prozessdatenbericht,X,
 9,Beginn der Nachricht,,BGM,1001,Z28,,Energiemenge undLeistungsmaximum,X,
 10,Beginn der Nachricht,,BGM,1001,Z48,,"Lastgang Marktlokation,Tranche",X,
 11,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
 12,Nachrichtendatum,,,,,,,Muss,
-13,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-14,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-15,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+13,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+14,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+[931] Format: ZZZ = +00"
+15,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 16,Produkt-/ Leistungsbeschreibung,,,,,,,Muss [1],
-17,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z11,,Lastgangdaten,X,Lastgangdaten
+17,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z11,,Lastgangdaten,X,
 18,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z12,,Zählerstände,X,
 19,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z35,,Energiemenge Einzelwert,X,
 20,Referenz Nachrichtennummer,SG1,,,,,,Muss,
 21,Referenz Nachrichtennummer,SG1,,,,,,Muss,
 22,Referenz Nachrichtennummer,SG1,RFF,,,,,Muss,
-23,Referenz Nachrichtennummer,SG1,RFF,1153,ON,,Auftragsnummer (Einkauf),X,Auftragsnummer (Einkauf)
-24,Referenz Nachrichtennummer,SG1,RFF,1154,,,Referenz Nachrichtennummer,X [522],
+23,Referenz Nachrichtennummer,SG1,RFF,1153,ON,,Auftragsnummer (Einkauf),X,
+24,Referenz Nachrichtennummer,SG1,RFF,1154,,,Referenz Nachrichtennummer,X [522],"[522] Hinweis: Wert aus BGM+7/ Z28/Z48 DE1004 der ORDERS, mit der die Anforderung von Werten erfolgt ist."
 25,Prüfidentifikator,SG1,,,,,,Muss,
 26,Prüfidentifikator,SG1,,,,,,Muss,
 27,Prüfidentifikator,SG1,RFF,,,,,Muss,
-28,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-29,Prüfidentifikator,SG1,RFF,1154,19102,,Ablehnung Anfrage Werte,X,Ablehnung Anfrage Werte
+28,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
+29,Prüfidentifikator,SG1,RFF,1154,19102,,Ablehnung Anfrage Werte,X,
 30,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
 31,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,Muss,
 32,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,,,,Muss,
 33,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,Code des Prüfschritts,X,
-34,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,,,E_0442E_0444G_0050G_0082S_0043,
+34,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,,,E_0442E_0444G_0050G_0082S_0043,"[1] Wenn BGM+7 vorhanden 
+[4] Wenn MP-ID in SG3 NAD+MR mit Rolle LF vorhanden 
+[10] Wenn MP-ID in SG3 NAD+MS mit Rolle MSB vorhanden 
+[15] Wenn MP-ID in SG3 NAD+MR mit Rolle NB vorhanden 
+[16] Wenn MP-ID in SG3 NAD+MR mit Rolle ÜNB vorhanden 
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 35,MP-ID Absender,SG3,,,,,,Muss,
 36,MP-ID Absender,SG3,,,,,,Muss,
 37,MP-ID Absender,SG3,NAD,,,,,Muss,
-38,MP-ID Absender,SG3,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
+38,MP-ID Absender,SG3,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
 39,MP-ID Absender,SG3,NAD,3039,,,MP-ID,X,
-40,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,GS1
+40,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,
 41,MP-ID Absender,SG3,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 42,Ansprechpartner,SG6,,,,,,Kann,
 43,Ansprechpartner,SG6,,,,,,Kann,
@@ -50,7 +57,7 @@
 48,Kommunikationsverbindung,SG6,,,,,,Muss,
 49,Kommunikationsverbindung,SG6,COM,,,,,Muss,
 50,Kommunikationsverbindung,SG6,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-51,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+51,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],
 52,Kommunikationsverbindung,SG6,COM,3155,FX,,Telefax,X [1P0..1],
 53,Kommunikationsverbindung,SG6,COM,3155,TE,,Telefon,X [1P0..1],
 54,Kommunikationsverbindung,SG6,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
@@ -60,11 +67,11 @@
 58,MP-ID Empfänger,SG3,NAD,,,,,Muss,
 59,MP-ID Empfänger,SG3,NAD,3035,,,,MR,
 60,MP-ID Empfänger,SG3,NAD,3039,,,MP-ID,X,
-61,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,GS1
+61,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,
 62,MP-ID Empfänger,SG3,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 63,MP-ID Empfänger,SG3,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
 64,Abschnitts-Kontrollsegment,,,,,,,Muss,
-65,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
+65,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,
 66,Nachrichten-Endesegment,,,,,,,Muss,
 67,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
 68,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
