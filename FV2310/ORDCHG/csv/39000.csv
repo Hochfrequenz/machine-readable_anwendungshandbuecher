@@ -1,54 +1,58 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,ORDCHG,,Bestelländerung,X,Bestelländerung
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,Entwurfs-Version
-4,Nachrichten-Kopfsegment,,UNH,0054,20B,,Ausgabe 2020 - B,X,Ausgabe 2020 - B
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,UN/CEFACT
-6,Nachrichten-Kopfsegment,,UNH,0057,1.1,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung
+2,Nachrichten-Kopfsegment,,UNH,0065,ORDCHG,,Bestelländerung,X,
+3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+4,Nachrichten-Kopfsegment,,UNH,0054,20B,,Ausgabe 2020 - B,X,
+5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,1.1,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,,,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,Z51,,Sperrung,X,Sperrung
+8,Beginn der Nachricht,,BGM,1001,Z51,,Sperrung,X,
 9,Beginn der Nachricht,,BGM,1001,Z52,,Entsperrung,X,
 10,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
-11,Beginn der Nachricht,,BGM,1225,1,,Aufhebung/Stornierung,X,Aufhebung/Stornierung
+11,Beginn der Nachricht,,BGM,1225,1,,Aufhebung/Stornierung,X,
 12,Nachrichtendatum,,,,,,,Muss,
-13,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-14,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-15,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+13,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+14,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+[931] Format: ZZZ = +00"
+15,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 16,Nachrichtennummer der Anfrage/Bestellung,SG1,,,,,,Muss,
 17,Nachrichtennummer der Anfrage/Bestellung,SG1,,,,,,Muss,
 18,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,,,,,Muss,
-19,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1153,ON,,Auftragsnummer(Einkauf),X,Auftragsnummer(Einkauf)
-20,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1154,,,Nachrichtennummer,X [500],
+19,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1153,ON,,Auftragsnummer(Einkauf),X,
+20,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1154,,,Nachrichtennummer,X [500],"[2] Wenn BGM+Z51 (Sperrung) vorhanden 
+[3] Wenn BGM+Z52 (Entsperrung) vorhanden 
+[500] Hinweis: Dokumentennummer aus BGM DE1004 der ORDERS 
+[501] Hinweis: Wert aus BGM+Z33 DE1004 der IFTSTA mit der die Information über den Entsperrauftrag übermittelt wurde"
 21,Vorgangsnummer der Anfrage/Bestellung,SG1,,,,,,,
 22,Vorgangsnummer der Anfrage/Bestellung,SG1,,,,,,,
-23,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,,,,,,
-24,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,1153,TN,,Transaktions-Referenznummer,,Transaktions-Referenznummer
-25,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,1154,,,Vorgangsnummer,,
+23,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,,,,,,[3] Wenn BGM+Z52 (Entsperrung) vorhanden
+24,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,1153,TN,,Transaktions-Referenznummer,,
+25,Vorgangsnummer der Anfrage/Bestellung,SG1,RFF,1154,,,Vorgangsnummer,,[502] Hinweis: Vorgangsnummer aus CNI DE1490 der IFTSTA mit BGM+Z33 mit der die Information über den Entsperrauftrag übermittelt wurde
 26,Prüfidentifikator,SG1,,,,,,Muss,
 27,Prüfidentifikator,SG1,,,,,,Muss,
 28,Prüfidentifikator,SG1,RFF,,,,,Muss,
-29,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-30,Prüfidentifikator,SG1,RFF,1154,39000,,Stornierung Sperr-/Entsperrauftrag,X,Stornierung Sperr-/Entsperrauftrag
+29,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
+30,Prüfidentifikator,SG1,RFF,1154,39000,,Stornierung Sperr-/Entsperrauftrag,X,
 31,Prüfidentifikator,SG1,RFF,1154,39001,,Weiterleitung derStornierung,,
 32,MP-ID Absender,SG3,,,,,,Muss,
 33,MP-ID Absender,SG3,,,,,,Muss,
 34,MP-ID Absender,SG3,NAD,,,,,Muss,
-35,MP-ID Absender,SG3,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
+35,MP-ID Absender,SG3,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
 36,MP-ID Absender,SG3,NAD,3039,,,MP-ID,X,
-37,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,GS1
+37,MP-ID Absender,SG3,NAD,3055,9,,GS1,X,
 38,MP-ID Absender,SG3,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 39,MP-ID Absender,SG3,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
 40,Ansprechpartner,SG6,,,,,,Kann,
 41,Ansprechpartner,SG6,,,,,,Kann,
 42,Ansprechpartner,SG6,CTA,,,,,Muss,
-43,Ansprechpartner,SG6,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+43,Ansprechpartner,SG6,CTA,3139,IC,,Informationskontakt,X,
 44,Ansprechpartner,SG6,CTA,3412,,,Kontakt,X,
 45,Kommunikationsverbindung,SG6,,,,,,,
 46,Kommunikationsverbindung,SG6,,,,,,Muss,
 47,Kommunikationsverbindung,SG6,COM,,,,,Muss,
 48,Kommunikationsverbindung,SG6,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-49,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+49,Kommunikationsverbindung,SG6,COM,3155,EM,,Elektronische Post,X [1P0..1],
 50,Kommunikationsverbindung,SG6,COM,3155,FX,,Telefax,X [1P0..1],
 51,Kommunikationsverbindung,SG6,COM,3155,TE,,Telefon,X [1P0..1],
 52,Kommunikationsverbindung,SG6,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
@@ -56,13 +60,13 @@
 54,MP-ID Empfänger,SG3,,,,,,Muss,
 55,MP-ID Empfänger,SG3,,,,,,Muss,
 56,MP-ID Empfänger,SG3,NAD,,,,,Muss,
-57,MP-ID Empfänger,SG3,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
+57,MP-ID Empfänger,SG3,NAD,3035,MR,,Nachrichtenempfänger,X,
 58,MP-ID Empfänger,SG3,NAD,3039,,,MP-ID,X,
-59,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,GS1
+59,MP-ID Empfänger,SG3,NAD,3055,9,,GS1,X,
 60,MP-ID Empfänger,SG3,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 61,MP-ID Empfänger,SG3,NAD,3055,332,,"DE, DVGW Service &Consult GmbH",X,
 62,Abschnitts-Kontrollsegment,,,,,,,Muss,
-63,Abschnitts-Kontrollsegment,,UNS,0081,S,,Trennung von Positions-und Summenteil,X,Trennung von Positions-und Summenteil
+63,Abschnitts-Kontrollsegment,,UNS,0081,S,,Trennung von Positions-und Summenteil,X,
 64,Nachrichten-Endesegment,,,,,,,Muss,
 65,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
 66,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
