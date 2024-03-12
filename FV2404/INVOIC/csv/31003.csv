@@ -199,7 +199,7 @@
 [59] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2023 0: 00 gesetzlicher deutscher Zeit 
 [65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit 
 [66] Wenn IMD++KON vorhanden 
-[77]  Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit 
+[77] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit 
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng"
 166,energetische Mengenangaben,SG26,,,,,,,
 167,energetische Mengenangaben,SG26,,,,,,Muss,
@@ -264,7 +264,7 @@
 219,Preis,SG29,PRI,6411,ANN,,Jahr,X [12],"[12] Wenn SG26 QTY+136 vorhanden 
 [51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit 
 [65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit 
-[77]  Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit 
+[77] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit 
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
 220,Umsatzsteuer der Position,SG34,,,,,,Muss,
 221,Umsatzsteuer der Position,SG34,,,,,,Muss,
@@ -305,80 +305,82 @@
 252,Zuschlag,SG39,ALC,5463,C,,Zuschlag,,
 253,Zuschlag,SG39,ALC,5189,Z02,,Umspannungszuschlag,,
 254,Zuschlag,SG39,ALC,5189,Z03,,"allein genutzteBetriebsmittel nach§ 19, Absatz 3Stromnetzentgeltverordnung",,
-255,Zuschlag,SG39,ALC,5189,Z04,,"Anpassung nach §19, Absatz 2Stromnetzentgeltverordnung",,[29] [Wenn DTM+155 (Abrechnungszeitraum Beginn) nicht größer 31.12.2015
-256,Prozentangabe des Zuschlags,SG41,,,,,,,
+255,Zuschlag,SG39,ALC,5189,Z04,,"Anpassung nach §19, Absatz 2Stromnetzentgeltverordnung",,
+256,Zuschlag,SG39,ALC,5189,Z05,,AnpassungPauschaleNetzentgeltreduzierung nach § 14aEnWG auf Höhe derNNE,,"[29] [Wenn DTM+155 (Abrechnungszeitraum Beginn) nicht größer 31.12.2015 
+[525] Hinweis: Verwendung, sofern Netzentgelte geringer als die Pauschale Netzentgeltreduzierun g "
 257,Prozentangabe des Zuschlags,SG41,,,,,,,
-258,Prozentangabe des Zuschlags,SG41,PCD,,,,,,
-259,Prozentangabe des Zuschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,,
-260,Prozentangabe des Zuschlags,SG41,PCD,5482,,,Prozentsatz,,"[914] Format: Möglicher Wert: > 0 
+258,Prozentangabe des Zuschlags,SG41,,,,,,,[84] Wenn in dieser SG39 ALC+C+:Z02 / Z03 / Z04 vorhanden
+259,Prozentangabe des Zuschlags,SG41,PCD,,,,,,
+260,Prozentangabe des Zuschlags,SG41,PCD,5245,3,,Zu- oder Abschlag,,
+261,Prozentangabe des Zuschlags,SG41,PCD,5482,,,Prozentsatz,,"[914] Format: Möglicher Wert: > 0 
 [930] Format: max. 2 Nachkommastellen"
-261,Abschnitts- Kontrollsegment,,,,,,,Muss,
-262,Abschnitts- Kontrollsegment,,UNS,0081,S,,Trennung vonPositions- undSummenteil,X,
-263,Rechnungsbetrag,SG50,,,,,,Muss,
+262,Abschnitts- Kontrollsegment,,,,,,,Muss,
+263,Abschnitts- Kontrollsegment,,UNS,0081,S,,Trennung vonPositions- undSummenteil,X,
 264,Rechnungsbetrag,SG50,,,,,,Muss,
-265,Rechnungsbetrag,SG50,MOA,,,,,Muss,
-266,Rechnungsbetrag,SG50,MOA,5025,77,,Rechnungsbetrag,X,
-267,Rechnungsbetrag,SG50,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-268,Vorausbezahlter Betrag,SG50,,,,,,,
-269,Vorausbezahlter Betrag,SG50,,,,,,,"[13] Wenn vorausbezahlter Betrag vorliegt 
-[519] Hinweis: Stornierte Abschlagsrechnungen"
-270,Vorausbezahlter Betrag,SG50,MOA,,,,,,
-271,Vorausbezahlter Betrag,SG50,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),,
-272,Vorausbezahlter Betrag,SG50,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
-273,Referenz auf Vorgängerrechnung,SG51,,,,,,,
-274,Referenz auf Vorgängerrechnung,SG51,,,,,,,"[22] Wenn vorhanden 
+265,Rechnungsbetrag,SG50,,,,,,Muss,
+266,Rechnungsbetrag,SG50,MOA,,,,,Muss,
+267,Rechnungsbetrag,SG50,MOA,5025,77,,Rechnungsbetrag,X,
+268,Rechnungsbetrag,SG50,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+269,Vorausbezahlter Betrag,SG50,,,,,,,
+270,Vorausbezahlter Betrag,SG50,,,,,,,"[13] Wenn vorausbezahlter Betrag vorliegt 
+[519] Hinweis: Stornierte Abschlagsrechnungen sind nicht aufzuführen"
+271,Vorausbezahlter Betrag,SG50,MOA,,,,,,
+272,Vorausbezahlter Betrag,SG50,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),,
+273,Vorausbezahlter Betrag,SG50,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
+274,Referenz auf Vorgängerrechnung,SG51,,,,,,,
+275,Referenz auf Vorgängerrechnung,SG51,,,,,,,"[22] Wenn vorhanden 
 [42] Wenn DTM+155 (Abrechnungszeitraum Beginn) ≥ 1.1.2023 0: 00 gesetzlicher deutscher Zeit 
 [54] Wenn IMD++ABR/JVR/ZVR vorhanden 
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom"
-275,Referenz auf Vorgängerrechnung,SG51,RFF,,,,,,
-276,Referenz auf Vorgängerrechnung,SG51,RFF,1153,AFL,,ZugehörigeRechnungen,,
-277,Referenz auf Vorgängerrechnung,SG51,RFF,1154,,,"Referenz, Identifikation",,
-278,Datum der Vorgängerrechnung,SG51,,,,,,,
+276,Referenz auf Vorgängerrechnung,SG51,RFF,,,,,,
+277,Referenz auf Vorgängerrechnung,SG51,RFF,1153,AFL,,ZugehörigeRechnungen,,
+278,Referenz auf Vorgängerrechnung,SG51,RFF,1154,,,"Referenz, Identifikation",,
 279,Datum der Vorgängerrechnung,SG51,,,,,,,
-280,Datum der Vorgängerrechnung,SG51,DTM,,,,,,
-281,Datum der Vorgängerrechnung,SG51,DTM,2005,3,,Rechnungsdatum/-zeit,,
-282,Datum der Vorgängerrechnung,SG51,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-283,Datum der Vorgängerrechnung,SG51,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
-284,Gemeinderabatt,SG50,,,,,,,
-285,Gemeinderabatt,SG50,,,,,,,[32] Wenn SG39 ALC+A+:Z01 (Gemeinderabatt) vorhanden
-286,Gemeinderabatt,SG50,MOA,,,,,,
-287,Gemeinderabatt,SG50,MOA,5025,Z01,,Gemeinderabatt,,
-288,Gemeinderabatt,SG50,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
-289,Fälliger Betrag,SG50,,,,,,Muss,
+280,Datum der Vorgängerrechnung,SG51,,,,,,,
+281,Datum der Vorgängerrechnung,SG51,DTM,,,,,,
+282,Datum der Vorgängerrechnung,SG51,DTM,2005,3,,Rechnungsdatum/-zeit,,
+283,Datum der Vorgängerrechnung,SG51,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+284,Datum der Vorgängerrechnung,SG51,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
+285,Gemeinderabatt,SG50,,,,,,,
+286,Gemeinderabatt,SG50,,,,,,,[32] Wenn SG39 ALC+A+:Z01 (Gemeinderabatt) vorhanden
+287,Gemeinderabatt,SG50,MOA,,,,,,
+288,Gemeinderabatt,SG50,MOA,5025,Z01,,Gemeinderabatt,,
+289,Gemeinderabatt,SG50,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
 290,Fälliger Betrag,SG50,,,,,,Muss,
-291,Fälliger Betrag,SG50,MOA,,,,,Muss,
-292,Fälliger Betrag,SG50,MOA,5025,9,,Fälliger Betrag (inkl.USt.),X,
-293,Fälliger Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-294,Umsatzsteuer der Rechnung,SG52,,,,,,Muss,
+291,Fälliger Betrag,SG50,,,,,,Muss,
+292,Fälliger Betrag,SG50,MOA,,,,,Muss,
+293,Fälliger Betrag,SG50,MOA,5025,9,,Fälliger Betrag (inkl.USt.),X,
+294,Fälliger Betrag,SG50,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
 295,Umsatzsteuer der Rechnung,SG52,,,,,,Muss,
-296,Umsatzsteuer der Rechnung,SG52,TAX,,,,,Muss,
-297,Umsatzsteuer der Rechnung,SG52,TAX,5283,7,,Steuer,X,
-298,Umsatzsteuer der Rechnung,SG52,TAX,5153,VAT,,Umsatzsteuer,X,
-299,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],"[902] Format: Möglicher Wert: ≥ 0 
+296,Umsatzsteuer der Rechnung,SG52,,,,,,Muss,
+297,Umsatzsteuer der Rechnung,SG52,TAX,,,,,Muss,
+298,Umsatzsteuer der Rechnung,SG52,TAX,5283,7,,Steuer,X,
+299,Umsatzsteuer der Rechnung,SG52,TAX,5153,VAT,,Umsatzsteuer,X,
+300,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧[930],"[902] Format: Möglicher Wert: ≥ 0 
 [930] Format: max. 2 Nachkommastellen"
-300,Umsatzsteuer der Rechnung,SG52,TAX,5305,S,,Einheitssatz(Standard),X,
-301,Umsatzsteuer der Rechnung,SG52,TAX,5305,O,,nicht steuerbar,X,
-302,Umsatzsteuer der Rechnung,SG52,TAX,5305,AE,,Reverse Charge /Steuerschuldnerschaft desLeistungsempfängers,X,
-303,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,,
+301,Umsatzsteuer der Rechnung,SG52,TAX,5305,S,,Einheitssatz(Standard),X,
+302,Umsatzsteuer der Rechnung,SG52,TAX,5305,O,,nicht steuerbar,X,
+303,Umsatzsteuer der Rechnung,SG52,TAX,5305,AE,,Reverse Charge /Steuerschuldnerschaft desLeistungsempfängers,X,
 304,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,,
-305,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,,[13] Wenn vorausbezahlter Betrag vorliegt
-306,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),,
-307,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
-308,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,,
+305,Vorausbezahlter Betrag (steuersatzbezogen),SG52,,,,,,,
+306,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,,[13] Wenn vorausbezahlter Betrag vorliegt
+307,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,113,,VorausbezahlterBetrag (inkl. USt.),,
+308,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
 309,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,,
-310,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,,[58] Wenn in dieser SG52 MOA+113 vorhanden
-311,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,115,,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages),,
-312,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
-313,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,,
-314,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,Muss,
-315,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,Muss,
-316,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,125,,Besteuerungsgrundlage,X,
-317,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-318,Steuerbetrag (steuersatzbezogen),SG52,,,,,,,
-319,Steuerbetrag (steuersatzbezogen),SG52,,,,,,Muss,
-320,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,Muss,
-321,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,161,,Steuer-/Gebühren-/Abgabebetrag,X,
-322,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-323,Nachrichtenende,,,,,,,Muss,
-324,Nachrichtenende,,UNT,0074,,,Anzahl der Segmente ineiner Nachricht,X,
-325,Nachrichtenende,,UNT,0062,,,Nachrichten-Referenznummer,X,
+310,Vorausbezahlte Steuern (steuersatzbezogen),SG52,,,,,,,
+311,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,,[58] Wenn in dieser SG52 MOA+113 vorhanden
+312,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,115,,VorausbezahlteSteuern (USt.-Anteildes vorausbezahltenBetrages),,
+313,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,,[930] Format: max. 2 Nachkommastellen
+314,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,,
+315,Besteuerungsgrundlage (steuersatzbezogen),SG52,,,,,,Muss,
+316,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,Muss,
+317,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,125,,Besteuerungsgrundl,X,
+318,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+319,Steuerbetrag (steuersatzbezogen),SG52,,,,,,,
+320,Steuerbetrag (steuersatzbezogen),SG52,,,,,,Muss,
+321,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,Muss,
+322,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,161,,Steuer-/Gebühren-/Abgabebetrag,X,
+323,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+324,Nachrichtenende,,,,,,,Muss,
+325,Nachrichtenende,,UNT,0074,,,Anzahl der Segmente ineiner Nachricht,X,
+326,Nachrichtenende,,UNT,0062,,,Nachrichten-Referenznummer,X,
