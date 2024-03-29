@@ -1,39 +1,40 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,ORDERS,,Bestellung,X,Bestellung
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,Entwurfs-Version
-4,Nachrichten-Kopfsegment,,UNH,0054,09B,,Ausgabe 2009 - B,X,Ausgabe 2009 - B
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,UN/CEFACT
-6,Nachrichten-Kopfsegment,,UNH,0057,1.2b,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung
+2,Nachrichten-Kopfsegment,,UNH,0065,ORDERS,,Bestellung,X,
+3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+4,Nachrichten-Kopfsegment,,UNH,0054,09B,,Ausgabe 2009 - B,X,
+5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,1.2b,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,,,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,Z55,,Reklamation Übersichtoder einer ausgerolltenZählzeitdefinition,X,Reklamation Übersichtoder einer ausgerolltenZählzeitdefinition
+8,Beginn der Nachricht,,BGM,1001,Z55,,Reklamation Übersichtoder einer ausgerolltenZählzeitdefinition,X,
 9,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,,,,,,Muss,
-11,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-12,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-13,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+11,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+12,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+[931] Format: ZZZ = +00"
+13,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 14,Referenz Nachrichtennummer,SG1,,,,,,Muss [65],
-15,Referenz Nachrichtennummer,SG1,,,,,,Muss [65],
+15,Referenz Nachrichtennummer,SG1,,,,,,Muss [65],[65] Wenn FTX+Z08 vorhanden
 16,Referenz Nachrichtennummer,SG1,RFF,,,,,Muss,
-17,Referenz Nachrichtennummer,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,Referenznummer einervorangegangenenNachricht
-18,Referenz Nachrichtennummer,SG1,RFF,1154,,,Nachrichtennummer,X [547],
+17,Referenz Nachrichtennummer,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,
+18,Referenz Nachrichtennummer,SG1,RFF,1154,,,Nachrichtennummer,X [547],[547] Hinweis: Dokumentennummer aus BGM+Z60 DE1004 der UTILTS)
 19,Referenz Vorgangsnummer,SG1,,,,,,Muss [97],
-20,Referenz Vorgangsnummer,SG1,,,,,,Muss [97],
+20,Referenz Vorgangsnummer,SG1,,,,,,Muss [97],[97] Wenn FTX+Z10 vorhanden
 21,Referenz Vorgangsnummer,SG1,RFF,,,,,Muss,
-22,Referenz Vorgangsnummer,SG1,RFF,1153,TN,,Transaktions-Referenznummer,X,Transaktions-Referenznummer
-23,Referenz Vorgangsnummer,SG1,RFF,1154,,,Vorgangsnummer,X [536],
+22,Referenz Vorgangsnummer,SG1,RFF,1153,TN,,Transaktions-Referenznummer,X,
+23,Referenz Vorgangsnummer,SG1,RFF,1154,,,Vorgangsnummer,X [536],[536] Hinweis: Vorgangsnummer aus IDE DE7402 der UTILTS mit BGM+Z59
 24,Prüfidentifikator,SG1,,,,,,Muss,
 25,Prüfidentifikator,SG1,,,,,,Muss,
 26,Prüfidentifikator,SG1,RFF,,,,,Muss,
-27,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-28,Prüfidentifikator,SG1,RFF,1154,17122,,Reklamation einerZählzeitdefinition,X,Reklamation einerZählzeitdefinition
+27,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
+28,Prüfidentifikator,SG1,RFF,1154,17122,,Reklamation einerZählzeitdefinition,X,
 29,MP-ID Absender,SG2,,,,,,Muss,
 30,MP-ID Absender,SG2,,,,,,Muss,
 31,MP-ID Absender,SG2,NAD,,,,,Muss,
-32,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,Nachrichtenaussteller bzw.-absender
-33,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [61],
-34,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
+32,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
+33,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+34,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
 35,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 36,Ansprechpartner,SG5,,,,,,Kann,
 37,Ansprechpartner,SG5,,,,,,Kann,
@@ -44,7 +45,7 @@
 42,Kommunikationsverbindung,SG5,,,,,,Muss,
 43,Kommunikationsverbindung,SG5,COM,,,,,Muss,
 44,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-45,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+45,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],
 46,Kommunikationsverbindung,SG5,COM,3155,FX,,Telefax,X [1P0..1],
 47,Kommunikationsverbindung,SG5,COM,3155,TE,,Telefon,X [1P0..1],
 48,Kommunikationsverbindung,SG5,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
@@ -53,26 +54,26 @@
 51,MP-ID Empfänger,SG2,,,,,,Muss,
 52,MP-ID Empfänger,SG2,NAD,,,,,Muss,
 53,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
-54,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [61],
-55,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+54,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+55,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
 56,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
 57,Positionsdaten,SG29,,,,,,Muss [2050],
-58,Positionsdaten,SG29,,,,,,Muss [2050],
+58,Positionsdaten,SG29,,,,,,Muss [2050],[2050] Pro Nachricht ist die SG29 genau einmal anzugeben
 59,Positionsdaten,SG29,LIN,,,,,Muss,
-60,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],
+60,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
 61,Positionsdaten,SG29,LIN,1229,,,,Z42,
 62,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,,,,,,,
 63,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,,,,,,Muss,
 64,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,FTX,,,,,Muss,
-65,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,FTX,4451,Zählzeitdefinition fehltZählzeitdefinition istunplausibelZählzeitdefinition fehltZählzeitdefinition istunplausibel,,,Z07Z08Z09Z10,Zählzeitdefinition fehltZählzeitdefinition istunplausibelZählzeitdefinition fehltZählzeitdefinition istunplausibel
-66,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,FTX,4440,,,Freier Text,M [99],
+65,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,FTX,4451,Zählzeitdefinition fehltZählzeitdefinition istunplausibelZählzeitdefinition fehltZählzeitdefinition istunplausibel,,,Z07Z08Z09Z10,
+66,Beschreibung der Reklamation von Werten und Zählzeitdefinitionen,SG29,FTX,4440,,,Freier Text,M [99],[99] Wenn FTX+Z08/Z10 vorhanden
 67,Zugeordnete Zählzeit,SG30,,,,,,Muss [87],
-68,Zugeordnete Zählzeit,SG30,,,,,,Muss [87],
+68,Zugeordnete Zählzeit,SG30,,,,,,Muss [87],[87] Wenn FTX+Z09/Z10 vorhanden
 69,Zugeordnete Zählzeit,SG30,CCI,,,,,Muss,
 70,Zugeordnete Zählzeit,SG30,CCI,7059,,,,Z39,
 71,Zugeordnete Zählzeit,SG30,CCI,7037,,,Code der Zählzeit,X,
 72,Abschnitts-Kontrollsegment,,,,,,,Muss,
-73,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,und Summenteil
+73,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,
 74,Nachrichten-Endesegment,,,,,,,Muss,
 75,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
 76,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

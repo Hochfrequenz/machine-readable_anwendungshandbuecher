@@ -1,49 +1,50 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,Netzanschluss-Stammdaten
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,Entwurfs-Version
-4,Nachrichten-Kopfsegment,,UNH,0054,11A,,Ausgabe 2011 - A,X,Ausgabe 2011 - A
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,UN/CEFACT
-6,Nachrichten-Kopfsegment,,UNH,0057,5.2e,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung
-7,Nachrichten-Kopfsegment,,UNH,0068,,,Allgemeine Zuordnungs-Referenz,S [1],
-8,Nachrichten-Kopfsegment,,UNH,0070,,,Übermittlungsfolgenummer,M [252],
-9,Nachrichten-Kopfsegment,,UNH,0073,C,,Beginn,M [2],Beginn
+2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
+3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+4,Nachrichten-Kopfsegment,,UNH,0054,11A,,Ausgabe 2011 - A,X,
+5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,5.2e,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+7,Nachrichten-Kopfsegment,,UNH,0068,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
+8,Nachrichten-Kopfsegment,,UNH,0070,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
+9,Nachrichten-Kopfsegment,,UNH,0073,C,,Beginn,M [2],
 10,Nachrichten-Kopfsegment,,UNH,0073,F,,Ende,S [3],"[2] Wenn UNH DE 0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
 [3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenummer"
 11,Beginn der Nachricht,,,,,,,Muss,
-12,Beginn der Nachricht,,BGM,1001,Z05,,Clearingliste,X,Clearingliste
+12,Beginn der Nachricht,,BGM,1001,Z05,,Clearingliste,X,
 13,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
 14,Nachrichtendatum,,,,,,,Muss,
-15,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,Dokumenten-/Nachrichtendatum/-zeit
-16,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],
-17,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+15,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+16,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+[931] Format: ZZZ = +00"
+17,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 18,"Gültigkeit, Beginndatum",,,,,,,Muss,
-19,"Gültigkeit, Beginndatum",,DTM,2005,157,,"Gültigkeit, Beginndatum",X,"Gültigkeit, Beginndatum"
+19,"Gültigkeit, Beginndatum",,DTM,2005,157,,"Gültigkeit, Beginndatum",X,
 20,"Gültigkeit, Beginndatum",,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-21,"Gültigkeit, Beginndatum",,DTM,2379,610,,CCYYMM,X,CCYYMM
+21,"Gültigkeit, Beginndatum",,DTM,2379,610,,CCYYMM,X,
 22,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,Muss,
 23,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,Muss,
 24,Referenz auf eine vorangegangene Anfrage,SG1,RFF,,,,,Muss,
-25,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1153,AAV,,Nummer der Anfrage,X,Nummer der Anfrage
-26,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1154,,,"Referenz, Identifikation",X [503],
+25,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1153,AAV,,Nummer der Anfrage,X,
+26,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1154,,,"Referenz, Identifikation",X [503],[503] Hinweis: Angabe des BGM DE1004 aus der ORDERS
 27,MP-ID Absender,SG2,,,,,,Muss,
 28,MP-ID Absender,SG2,,,,,,Muss,
 29,MP-ID Absender,SG2,NAD,,,,,Muss,
-30,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,Dokumenten-/Nachrichtenausstellerbzw. -absender
-31,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [280],
-32,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,GS1
+30,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+31,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [280],[280] Nur MP-ID aus Sparte Strom
+32,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
 33,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 34,Ansprechpartner,SG3,,,,,,Kann,
 35,Ansprechpartner,SG3,,,,,,Kann,
 36,Ansprechpartner,SG3,CTA,,,,,Muss,
-37,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,Informationskontakt
+37,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,
 38,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
 39,Kommunikationsverbindung,SG3,,,,,,,
 40,Kommunikationsverbindung,SG3,,,,,,Muss,
 41,Kommunikationsverbindung,SG3,COM,,,,,Muss,
 42,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X,
-43,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],Elektronische Post
+43,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],
 44,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
 45,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
 46,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
@@ -51,21 +52,22 @@
 48,MP-ID Empfänger,SG2,,,,,,Muss,
 49,MP-ID Empfänger,SG2,,,,,,Muss,
 50,MP-ID Empfänger,SG2,NAD,,,,,Muss,
-51,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,Nachrichtenempfänger
-52,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [280],
-53,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,GS1
+51,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,
+52,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [280],[280] Nur MP-ID aus Sparte Strom
+53,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
 54,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
 55,Identifikation einer Liste,SG4,,,,,,Muss,
 56,Identifikation einer Liste,SG4,,,,,,Muss,
 57,Identifikation einer Liste,SG4,IDE,,,,,Muss,
-58,Identifikation einer Liste,SG4,IDE,7495,Z01,,Liste,X,Liste
+58,Identifikation einer Liste,SG4,IDE,7495,Z01,,Liste,X,
 59,Identifikation einer Liste,SG4,IDE,7402,,,Listennummer,X,
 60,Status der Antwort,SG4,,,,,,,
 61,Status der Antwort,SG4,,,,,,,
-62,Status der Antwort,SG4,STS,,,,,,
-63,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,,Status der Antwort
+62,Status der Antwort,SG4,STS,,,,,,"[238] Wenn SG4 IDE+24 (Vorgang) nicht vorhanden  
+[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten "
+63,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,,
 64,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,,
-65,Status der Antwort,SG4,STS,1131,E_0004,,EBD Nr. E_0004,,EBD Nr. E_0004
+65,Status der Antwort,SG4,STS,1131,E_0004,,EBD Nr. E_0004,,
 66,Status der Antwort,SG4,STS,1131,E_0014,,EBD Nr. E_0014,,
 67,Status der Antwort,SG4,STS,1131,E_0047,,EBD Nr. E_0047,,
 68,Status der Antwort,SG4,STS,1131,E_0049,,EBD Nr. E_0049,,"[6] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle ÜNB  
@@ -73,53 +75,56 @@
 [641] Hinweis: Wenn Einzelanforderung vorliegt  
 [642] Hinweis: Wenn Abo vorliegt"
 69,Meldepunkt,SG5,,,,,,Muss [2140],
-70,Meldepunkt,SG5,,,,,,Muss [2140],
+70,Meldepunkt,SG5,,,,,,Muss [2140],[2140] Für die ID der LieferantensummenZR einmal je SG4 IDE+Z01 (Liste)
 71,Meldepunkt,SG5,LOC,,,,,Muss,
-72,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-73,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [951],
+72,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,
+73,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [951],[951] Format: Zählpunktbezeichnung
 74,Prüfidentifikator,SG6,,,,,,Muss,
 75,Prüfidentifikator,SG6,,,,,,Muss,
 76,Prüfidentifikator,SG6,RFF,,,,,Muss,
-77,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,Prüfidentifikator
-78,Prüfidentifikator,SG6,RFF,1154,11065,,MaBiS /Lieferantenclearingliste,X,MaBiS /Lieferantenclearingliste
+77,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,
+78,Prüfidentifikator,SG6,RFF,1154,11065,,MaBiS /Lieferantenclearingliste,X,
 79,Prüfidentifikator,SG6,RFF,1154,11066,,MaBiS / Korrekturliste zuLieferantenclearingliste,,
 80,Referenzangaben,SG6,,,,,,,
 81,Referenzangaben,SG6,,,,,,,
 82,Referenzangaben,SG6,RFF,,,,,,
-83,Referenzangaben,SG6,RFF,1153,TN,,Transaktions-Referenznummer,,Transaktions-Referenznummer
-84,Referenzangaben,SG6,RFF,1154,,,"Referenz, Identifikation",,
+83,Referenzangaben,SG6,RFF,1153,TN,,Transaktions-Referenznummer,,
+84,Referenzangaben,SG6,RFF,1154,,,"Referenz, Identifikation",,[631] Hinweis: Es ist die Listennummer aus der
 85,Daten der Summenzeitreihe,SG8,,,,,,Muss,
 86,Daten der Summenzeitreihe,SG8,,,,,,Muss,
 87,Daten der Summenzeitreihe,SG8,SEQ,,,,,Muss,
-88,Daten der Summenzeitreihe,SG8,SEQ,1229,Z22,,Daten derSummenzeitreihe,X,Daten derSummenzeitreihe
+88,Daten der Summenzeitreihe,SG8,SEQ,1229,Z22,,Daten derSummenzeitreihe,X,
 89,Versionsangabe der Summenzeitreihe,SG8,,,,,,,
 90,Versionsangabe der Summenzeitreihe,SG8,,,,,,Muss,
 91,Versionsangabe der Summenzeitreihe,SG8,RFF,,,,,Muss,
-92,Versionsangabe der Summenzeitreihe,SG8,RFF,1153,AUU,,Referenz auf eineZeitreihe,X,Referenz auf eineZeitreihe
+92,Versionsangabe der Summenzeitreihe,SG8,RFF,1153,AUU,,Referenz auf eineZeitreihe,X,
 93,Versionsangabe der Summenzeitreihe,SG8,RFF,1154,,,Version der Zeitreihe,X,
 94,Vorgang,SG4,,,,,,Soll [2344],
-95,Vorgang,SG4,,,,,,Soll [2344],
+95,Vorgang,SG4,,,,,,Soll [2344],"[191] Wenn im SG4 IDE+Z01 (Identifikation einer Liste)  STS+E01 (Status der Antwort der Liste) nicht vorhanden  
+[630] Hinweis: Wenn die Liste abgelehnt wird, ist kein Vorgang enthalten  
+[2056] Einmal für jede Marktlokation bzw. Tranche, für die der LF nicht die gemeldete Ansicht des NB teilt  
+[2344] Einmal für jede Marktlokation bzw. Tranche, die in der DZÜ / BG-CL / LF- SZR berücksichtigt wurde"
 96,Vorgang,SG4,IDE,,,,,Muss,
-97,Vorgang,SG4,IDE,7495,24,,Transaktion,X,Transaktion
+97,Vorgang,SG4,IDE,7495,24,,Transaktion,X,
 98,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
 99,Bilanzierungsbeginn,SG4,,,,,,,
 100,Bilanzierungsbeginn,SG4,,,,,,Muss,
-101,Bilanzierungsbeginn,SG4,DTM,,,,,Muss,
-102,Bilanzierungsbeginn,SG4,DTM,2005,158,,Bilanzierungsbeginn,X,Bilanzierungsbeginn
+101,Bilanzierungsbeginn,SG4,DTM,,,,,Muss,[31] Wenn eine Korrektur erfolgt
+102,Bilanzierungsbeginn,SG4,DTM,2005,158,,Bilanzierungsbeginn,X,
 103,Bilanzierungsbeginn,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
-104,Bilanzierungsbeginn,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+104,Bilanzierungsbeginn,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 105,Bilanzierungsende,SG4,,,,,,,
 106,Bilanzierungsende,SG4,,,,,,Soll [14],
-107,Bilanzierungsende,SG4,DTM,,,,,Soll [14],
-108,Bilanzierungsende,SG4,DTM,2005,159,,Bilanzierungsende,X,Bilanzierungsende
+107,Bilanzierungsende,SG4,DTM,,,,,Soll [14],[14] Wenn Datum bekannt 
+108,Bilanzierungsende,SG4,DTM,2005,159,,Bilanzierungsende,X,
 109,Bilanzierungsende,SG4,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
-110,Bilanzierungsende,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,CCYYMMDDHHMMZZZ
+110,Bilanzierungsende,SG4,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 111,Status der Antwort,SG4,,,,,,,
 112,Status der Antwort,SG4,,,,,,,
-113,Status der Antwort,SG4,STS,,,,,,
-114,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,,Status der Antwort
+113,Status der Antwort,SG4,STS,,,,,,[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
+114,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,,
 115,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,,
-116,Status der Antwort,SG4,STS,1131,E_0004,,EBD Nr. E_0004,,EBD Nr. E_0004
+116,Status der Antwort,SG4,STS,1131,E_0004,,EBD Nr. E_0004,,
 117,Status der Antwort,SG4,STS,1131,E_0014,,EBD Nr. E_0014,,
 118,Status der Antwort,SG4,STS,1131,E_0047,,EBD Nr. E_0047,,
 119,Status der Antwort,SG4,STS,1131,E_0049,,EBD Nr. E_0049,,"[6] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle ÜNB  
@@ -127,152 +132,166 @@
 [641] Hinweis: Wenn Einzelanforderung vorliegt  
 [642] Hinweis: Wenn Abo vorliegt"
 120,Meldepunkt,SG5,,,,,,Muss [2072] ⊻([2072] ∧[2259]),
-121,Meldepunkt,SG5,,,,,,Muss [2072] ⊻([2072] ∧[2259]),
+121,Meldepunkt,SG5,,,,,,Muss [2072] ⊻([2072] ∧[2259]),"[2072] Für die ID der Marktlokation einmal je SG4 IDE+24 (Vorgang)  
+[2259] Für die ID der Tranche einmal je SG4 IDE+24 (Vorgang)"
 122,Meldepunkt,SG5,LOC,,,,,Muss,
-123,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,Meldepunkt
-124,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [950],
+123,Meldepunkt,SG5,LOC,3227,172,,Meldepunkt,X,
+124,Meldepunkt,SG5,LOC,3225,,,Identifikator,X [950],[950] Format: Marktlokations-ID
 125,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,
-126,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,
+126,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,[365] Wenn in dieser SG4 IDE+24 das STS+E01++A04: E_0047/E_0014 bzw. A03: E_0049/E_0004 nicht vorhanden
 127,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,,
-128,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-,,Transaktions-
+128,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-,,
 129,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,,
 130,Daten der Marktlokation,SG8,,,,,,Muss [2061],
-131,Daten der Marktlokation,SG8,,,,,,Muss [2061],
+131,Daten der Marktlokation,SG8,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 132,Daten der Marktlokation,SG8,SEQ,,,,,Muss,
-133,Daten der Marktlokation,SG8,SEQ,1229,Z01,,Daten der Marktlokation,X,Daten der Marktlokation
+133,Daten der Marktlokation,SG8,SEQ,1229,Z01,,Daten der Marktlokation,X,
 134,Referenz auf die ID der Marktlokation,SG8,,,,,,,
 135,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
 136,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-137,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-138,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID der Marktlokation,X [950],
+137,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
+138,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
 139,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [100] ∧[300],
-140,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [100] ∧[300],
+140,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,Muss [100] ∧[300],"[31] Wenn eine Korrektur erfolgt  
+[100] Wenn SG10 CAV+TLS/ TES/ BIT/ GET/ GAT/ SOT/ WNT/ WFT/ WAT vorhanden  
+[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden"
 141,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,,,,Muss,
-142,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,Z10,,Leistung derMarktlokation,X,Leistung derMarktlokation
+142,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,Z10,,Leistung derMarktlokation,X,
 143,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,265,,VeranschlagteJahresmenge Gesamt/Jahresverbrauchsprognose für spezifische Arbeitfürtagesparameterabhängige Marktlokation,X,
 144,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,Z08,,"Angepasste elektrischeArbeit nach Anhang Dder VDN-Richtlinie""Lastprofile fürunterbrechbareVerbrauchseinrichtungen""",X,
-145,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,Menge,X [902],
-146,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,Z16,,kWh/K (Kilowatt-Stunde/Kelvin),X [103],kWh/K (Kilowatt-Stunde/Kelvin)
+145,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
+146,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,Z16,,kWh/K (Kilowatt-Stunde/Kelvin),X [103],
 147,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,KWH,,Kilowattstunde,X [104],[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e
 148,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [107] ∧[300],
-149,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [107] ∧[300],
+149,Veranschlagte Jahresmenge gesamt,SG9,,,,,,Muss [107] ∧[300],"[31] Wenn eine Korrektur erfolgt  
+[107] Wenn SG10 CAV+SLS/ SES/ BIP/ GEP/ GAP/ SOP/ WNP/ WFP/ WAP vorhanden  
+[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden"
 150,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,Muss,
-151,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,31,,VeranschlagteJahresmenge Gesamt,X,VeranschlagteJahresmenge Gesamt
-152,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,Mengenangabe,X [902] ∧ [937],
-153,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
+151,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,31,,VeranschlagteJahresmenge Gesamt,X,
+152,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+[937] Format: keine Nachkommastelle"
+153,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,KWH,,Kilowattstunde,X,
 154,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110] ∧[300],
-155,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110] ∧[300],
+155,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110] ∧[300],"[31] Wenn eine Korrektur erfolgt  
+[110] Wenn SG10 CAV+LGS/ EGS/ BIL/ GEL/ GAL/ SOL/ WNL/ WFL / WAL vorhanden  
+[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden"
 156,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,,,,Muss,
-157,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,Z07,,Tatsächlich bilanzierteEnergiemenge,X,Tatsächlich bilanzierteEnergiemenge
-158,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,,,Mengenangabe,X [902],
-159,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
+157,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,Z07,,Tatsächlich bilanzierteEnergiemenge,X,
+158,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,,,Mengenangabe,X [902],[902] Format: Möglicher Wert: ≥ 0
+159,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,KWH,,Kilowattstunde,X,
 160,Regelzone,SG10,,,,,,Muss,
-161,Regelzone,SG10,,,,,,Muss,
+161,Regelzone,SG10,,,,,,Muss,[31] Wenn eine Korrektur erfolgt
 162,Regelzone,SG10,CCI,,,,,Muss,
-163,Regelzone,SG10,CCI,7059,Z18,,Regelzone,X,Regelzone
+163,Regelzone,SG10,CCI,7059,Z18,,Regelzone,X,
 164,Regelzone,SG10,CCI,7037,,,Regelzone,X,
 165,Bilanzkreis,SG10,,,,,,Muss,
-166,Bilanzkreis,SG10,,,,,,Muss,
+166,Bilanzkreis,SG10,,,,,,Muss,[31] Wenn eine Korrektur erfolgt
 167,Bilanzkreis,SG10,CCI,,,,,Muss,
-168,Bilanzkreis,SG10,CCI,7059,Z19,,Bilanzkreis,X,Bilanzkreis
+168,Bilanzkreis,SG10,CCI,7059,Z19,,Bilanzkreis,X,
 169,Bilanzkreis,SG10,CCI,7037,,,Bilanzkreis,X,
 170,Bilanzierungsgebiet,SG10,,,,,,Muss,
-171,Bilanzierungsgebiet,SG10,,,,,,Muss,
+171,Bilanzierungsgebiet,SG10,,,,,,Muss,[31] Wenn eine Korrektur erfolgt
 172,Bilanzierungsgebiet,SG10,CCI,,,,,Muss,
-173,Bilanzierungsgebiet,SG10,CCI,7059,Z20,,Bilanzierungsgebiet,X,Bilanzierungsgebiet
+173,Bilanzierungsgebiet,SG10,CCI,7059,Z20,,Bilanzierungsgebiet,X,
 174,Bilanzierungsgebiet,SG10,CCI,7037,,,Bilanzierungsgebiet,X,
 175,Zeitreihentyp,SG10,,,,,,Muss,
-176,Zeitreihentyp,SG10,,,,,,Muss,
+176,Zeitreihentyp,SG10,,,,,,Muss,[31] Wenn eine Korrektur erfolgt
 177,Zeitreihentyp,SG10,CCI,,,,,Muss,
-178,Zeitreihentyp,SG10,CCI,7059,15,,Struktur,X,Struktur
-179,Zeitreihentyp,SG10,CCI,7037,Z21,,Summenzeitreihentyp,X,Summenzeitreihentyp
+178,Zeitreihentyp,SG10,CCI,7059,15,,Struktur,X,
+179,Zeitreihentyp,SG10,CCI,7037,Z21,,Summenzeitreihentyp,X,
 180,Zeitreihentyp,SG10,,,,,,,
 181,Zeitreihentyp,SG10,,,,,,Muss,
 182,Zeitreihentyp,SG10,CAV,,,,,Muss,
 183,Zeitreihentyp,SG10,CAV,7111,,,Code des Zeitreihentyps,X,
 184,Daten der Tranche,SG8,,,,,,Muss [301],
-185,Daten der Tranche,SG8,,,,,,Muss [301],
+185,Daten der Tranche,SG8,,,,,,Muss [301],[301] Wenn im SG4 IDE+24 (Vorgang) das SG5 LOC+172 (Meldepunkt) zweimal vorhanden
 186,Daten der Tranche,SG8,SEQ,,,,,Muss,
-187,Daten der Tranche,SG8,SEQ,1229,Z15,,Daten der Tranche,X,Daten der Tranche
+187,Daten der Tranche,SG8,SEQ,1229,Z15,,Daten der Tranche,X,
 188,Referenz auf die ID der Tranche,SG8,,,,,,,
 189,Referenz auf die ID der Tranche,SG8,,,,,,Muss,
 190,Referenz auf die ID der Tranche,SG8,RFF,,,,,Muss,
-191,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,Tranche
-192,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID der Tranche,X [950],
+191,Referenz auf die ID der Tranche,SG8,RFF,1153,Z20,,Tranche,X,
+192,Referenz auf die ID der Tranche,SG8,RFF,1154,,,ID der Tranche,X [950],[950] Format:
 193,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110],
-194,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110],
+194,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,Muss [110],"[31] Wenn eine Korrektur erfolgt  
+[110] Wenn SG10 CAV+LGS/ EGS/ BIL/ GEL/ GAL/ SOL/ WNL/ WFL / WAL vorhanden"
 195,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,,,,Muss,
-196,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,Z07,,Tatsächlich bilanzierteEnergiemenge,X,Tatsächlich bilanzierteEnergiemenge
-197,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,,,Mengenangabe,X [902],
-198,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,KWH,,Kilowattstunde,X,Kilowattstunde
+196,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,Z07,,Tatsächlich bilanzierteEnergiemenge,X,
+197,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,,,Mengenangabe,X [902],[902] Format: Möglicher Wert: ≥ 0
+198,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,KWH,,Kilowattstunde,X,
 199,Profildaten (Strom),SG8,,,,,,Muss [107],
-200,Profildaten (Strom),SG8,,,,,,Muss [107],
+200,Profildaten (Strom),SG8,,,,,,Muss [107],"[31] Wenn eine Korrektur erfolgt  
+[107] Wenn SG10 CAV+SLS/ SES/ BIP/ GEP/ GAP/ SOP/ WNP/ WFP/ WAP vorhanden"
 201,Profildaten (Strom),SG8,SEQ,,,,,Muss,
-202,Profildaten (Strom),SG8,SEQ,1229,Z21,,Profildaten,X,Profildaten
+202,Profildaten (Strom),SG8,SEQ,1229,Z21,,Profildaten,X,
 203,Versionsangabe des Profils,SG8,,,,,,,
 204,Versionsangabe des Profils,SG8,,,,,,Muss,
 205,Versionsangabe des Profils,SG8,RFF,,,,,Muss,
-206,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,Referenz auf ein Profil
+206,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,
 207,Versionsangabe des Profils,SG8,RFF,1154,,,Version des Profils,X,
 208,Referenz auf die ID der Marktlokation,SG8,,,,,,,
 209,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
 210,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-211,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-212,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+211,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
+212,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
 213,Normiertes Profil (Strom),SG10,,,,,,Muss,
 214,Normiertes Profil (Strom),SG10,,,,,,Muss,
 215,Normiertes Profil (Strom),SG10,CCI,,,,,Muss,
-216,Normiertes Profil (Strom),SG10,CCI,7059,Z02,,Standardlastprofil,X,Standardlastprofil
+216,Normiertes Profil (Strom),SG10,CCI,7059,Z02,,Standardlastprofil,X,
 217,Normiertes Profil (Strom),SG10,CCI,7059,Z04,,Standardeinspeiseprofil,X,
-218,Normiertes Profil (Strom),SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
+218,Normiertes Profil (Strom),SG10,CCI,7037,E01,,synthetisches Verfahren,X,
 219,Normiertes Profil (Strom),SG10,CCI,7037,Z10,,analytisches Verfahren,X,
 220,Normiertes Profil (Strom),SG10,,,,,,,
 221,Normiertes Profil (Strom),SG10,,,,,,Muss,
 222,Normiertes Profil (Strom),SG10,CAV,,,,,Muss,
 223,Normiertes Profil (Strom),SG10,CAV,7111,,,Code des Normierten Profils,X,
 224,Profilschardaten,SG8,,,,,,Muss [370] ∧[371],
-225,Profilschardaten,SG8,,,,,,Muss [370] ∧[371],
+225,Profilschardaten,SG8,,,,,,Muss [370] ∧[371],"[31] Wenn eine Korrektur erfolgt  
+[370] Wenn SG10 CAV+TLS/ TES/BIT/GET/GAT/SOT/ WNT/WFT/WAT  
+[371] Wenn SG8 SEQ+Z38 (Referenzprofildaten) nicht vorhanden"
 226,Profilschardaten,SG8,SEQ,,,,,Muss,
-227,Profilschardaten,SG8,SEQ,1229,Z08,,Profilschardaten,X,Profilschardaten
+227,Profilschardaten,SG8,SEQ,1229,Z08,,Profilschardaten,X,
 228,Versionsangabe des Profils,SG8,,,,,,,
 229,Versionsangabe des Profils,SG8,,,,,,Muss,
 230,Versionsangabe des Profils,SG8,RFF,,,,,Muss,
-231,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,Referenz auf ein Profil
+231,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,
 232,Versionsangabe des Profils,SG8,RFF,1154,,,Version des Profils,X,
 233,Referenz auf die ID der Marktlokation,SG8,,,,,,,
 234,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
 235,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-236,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-237,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+236,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
+237,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
 238,Normiertes Profil,SG10,,,,,,Muss,
 239,Normiertes Profil,SG10,,,,,,Muss,
 240,Normiertes Profil,SG10,CCI,,,,,Muss,
-241,Normiertes Profil,SG10,CCI,7059,Z03,,tagesparameterabhängiges Lastprofil,X,tagesparameterabhängiges Lastprofil
+241,Normiertes Profil,SG10,CCI,7059,Z03,,tagesparameterabhängiges Lastprofil,X,
 242,Normiertes Profil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
-243,Normiertes Profil,SG10,CCI,7037,E01,,synthetisches Verfahren,X,synthetisches Verfahren
+243,Normiertes Profil,SG10,CCI,7037,E01,,synthetisches Verfahren,X,
 244,Normiertes Profil,SG10,CCI,7037,Z10,,analytisches Verfahren,X,
 245,Normiertes Profil,SG10,,,,,,,
 246,Normiertes Profil,SG10,,,,,,Muss,
 247,Normiertes Profil,SG10,CAV,,,,,Muss,
 248,Normiertes Profil,SG10,CAV,7111,,,Code des Normierten Profils(Strom),X,
 249,Referenzprofildaten,SG8,,,,,,Soll [372] ∧[373],
-250,Referenzprofildaten,SG8,,,,,,Soll [372] ∧[373],
+250,Referenzprofildaten,SG8,,,,,,Soll [372] ∧[373],"[31] Wenn eine Korrektur erfolgt  
+[372] Wenn SG10 CAV+TES/ BIT/GET/GAT/SOT/WNT/ WFT/WAT vorhanden   
+[373] Wenn ein Referenzprofil an der Marktlokation"
 251,Referenzprofildaten,SG8,SEQ,,,,,Muss,
-252,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,Referenzprofildaten
+252,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,
 253,Versionsangabe des Profils,SG8,,,,,,,
 254,Versionsangabe des Profils,SG8,,,,,,Muss,
 255,Versionsangabe des Profils,SG8,RFF,,,,,Muss,
-256,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,Referenz auf ein Profil
+256,Versionsangabe des Profils,SG8,RFF,1153,Z12,,Referenz auf ein Profil,X,
 257,Versionsangabe des Profils,SG8,RFF,1154,,,Version des Profils,X,
 258,Referenz auf die ID der Marktlokation,SG8,,,,,,,
 259,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
 260,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-261,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,Marktlokation
-262,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],
+261,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
+262,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
 263,Referenzprofil,SG10,,,,,,Muss,
 264,Referenzprofil,SG10,,,,,,Muss,
 265,Referenzprofil,SG10,CCI,,,,,Muss,
-266,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,tagesparameterabhängiges Einspeiseprofil
+266,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
 267,Referenzprofil,SG10,,,,,,,
 268,Referenzprofil,SG10,,,,,,Muss,
 269,Referenzprofil,SG10,CAV,,,,,Muss,
