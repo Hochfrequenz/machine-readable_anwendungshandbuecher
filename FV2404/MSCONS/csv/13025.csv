@@ -19,7 +19,7 @@
 17,Nachrichtenkopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
 18,Nachrichtenkopfsegment,,UNH,0054,04B,,Ausgabe 2004 - B,X,
 19,Nachrichtenkopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
-20,Nachrichtenkopfsegment,,UNH,0057,2.4c,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+20,Nachrichtenkopfsegment,,UNH,0057,2.4b,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
 21,Beginn der Nachricht,,,,,,,Muss,
 22,Beginn der Nachricht,,BGM,1001,7,,Prozessdatenbericht,,
 23,Beginn der Nachricht,,BGM,1001,Z48,,"Lastgang Marktlokation,Tranche",X,
@@ -58,11 +58,7 @@
 53,Kommunikationsverbindung,SG4,,,,,,,
 54,Kommunikationsverbindung,SG4,,,,,,Muss,
 55,Kommunikationsverbindung,SG4,COM,,,,,Muss,
-56,Kommunikationsverbindung,SG4,COM,3148,,,"Kommunikationsadresse,Identifikation",X (([939] [142])∨ ([940] [143]))∧ [576],"[142] wenn im DE3155 im demselben COM der Code EM vorhanden ist 
-[143]  wenn im DE3155 im demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[576] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
-[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+56,Kommunikationsverbindung,SG4,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
 57,Kommunikationsverbindung,SG4,COM,3155,TE,,Telefon,X [1P0..1],
 58,Kommunikationsverbindung,SG4,COM,3155,EM,,E-Mail,X [1P0..1],
 59,Kommunikationsverbindung,SG4,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
@@ -92,13 +88,7 @@
 [77] Wenn MP-ID in SG2 NAD+MR der RB HKN-R 
 [80] Wenn MP-ID in SG2 NAD+MR in der Rolle ÜNB 
 [510] Hinweis: Verwendung der ID der Messlokation 
-[514] Hinweis: Verwendung der ID der Marktlokation 
-[518] Hinweis: Verwendung der ID der Tranche 
-[535] Hinweis: Verwendung der ID des Netzkoppelpunktes Strom/Gas 
-[575] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
-[960] Format: Netzlokations- ID"
+[514] Hinweis: Verwendung"
 80,Beginn Messperiode Übertragungszeitraum,SG6,,,,,,,
 81,Beginn Messperiode Übertragungszeitraum,SG6,,,,,,Muss,
 82,Beginn Messperiode Übertragungszeitraum,SG6,DTM,,,,,Muss,
@@ -120,7 +110,7 @@
 98,Produktidentifikation,SG9,PIA,,,,,Muss,
 99,Produktidentifikation,SG9,PIA,4347,5,,Produktidentifikation,X,
 100,Produktidentifikation,SG9,PIA,7140,,,Medium / OBIS-Kennzahl,X [501] ∧ [566],"[501] Hinweis: Es sind nur die Werte erlaubt, die in der EDI@Energy Codeliste der OBIS-Kennzahlen und Medien mit dem entsprechenden Prüfidentifikator versehen sind. 
-[566] Hinweis: Es sind nur die Werte erlaubt, die im vorherigen Stammdatenaustausch zu diesem Meldepunkt vom MSB zum Zeitpunkt übermittelt wurden."
+[566] Hinweis: Es sind nur die Werte erlaubt, die im vorherigen Stammdatenaustausch zu"
 101,Produktidentifikation,SG9,PIA,7143,SRW,,OBIS-Kennzahl,X,
 102,Mengenangaben,SG10,,,,,,Muss,
 103,Mengenangaben,SG10,,,,,,Muss,
@@ -145,7 +135,8 @@
 116,Ende Messperiode,SG10,,,,,,Muss,
 117,Ende Messperiode,SG10,DTM,,,,,Muss,
 118,Ende Messperiode,SG10,DTM,2005,164,,"Verarbeitung,Endedatum/-zeit",X,
-119,Ende Messperiode,SG10,DTM,2380,,,Datum oder Uhrzeit oder,X [931] [495],[495] Der Zeitpunkt muss ≤
+119,Ende Messperiode,SG10,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [495],"[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein 
+[931] Format: ZZZ = +00"
 120,Ende Messperiode,SG10,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 121,Plausibilisierungshinweis,SG10,,,,,,,
 122,Plausibilisierungshinweis,SG10,,,,,,Soll ([92] ⊻ [93])∧ [126],
@@ -164,7 +155,7 @@
 133,Ersatzwertbildungsverfahre n,SG10,STS,,,,,Muss [92],[92] Wenn SG10 QTY DE6063 mit Wert 67 vorhanden
 134,Ersatzwertbildungsverfahre n,SG10,STS,9015,Z32,,Ersatzwertbildungsverfahren,X,
 135,Ersatzwertbildungsverfahre n,SG10,STS,9013,Z88,,Vergleichsmessung(geeicht),X [4P0..1],
-136,Ersatzwertbildungsverfahre n,SG10,STS,9013,Z89,,Vergleichsmessung(nicht geeicht),X [4P0..1],
+136,Ersatzwertbildungsverfahre n,SG10,STS,9013,Z89,,Vergleichsmessung (nichtgeeicht),X [4P0..1],
 137,Ersatzwertbildungsverfahre n,SG10,STS,9013,Z92,,Interpolation,X [4P0..1],
 138,Ersatzwertbildungsverfahre n,SG10,STS,9013,ZJ2,,Statistische Methode,X [4P0..1],
 139,Ersatzwertbildungsverfahre n,SG10,STS,9013,ZS0,,Ersatzwertbildungsverfahren gemäß Angaben aufEbene der Messlokation,X [46] ∧ [568],"[46] Wenn Wert in SG6 LOC+172 DE3225 genau 11 Stellen 
@@ -172,7 +163,7 @@
 140,Korrekturgrund,SG10,,,,,,,
 141,Korrekturgrund,SG10,,,,,,Soll [127] ∧[551],
 142,Korrekturgrund,SG10,STS,,,,,Soll [127] ∧[551],"[127] wenn ein Korrekturgrund anzugeben ist 
-[551] Hinweis: Ein Korrekturgrund ist anzugeben, wenn: 1. ein bereits an den MP übermittelter vorläufiger Wert"
+[551] Hinweis: Ein Korrekturgrund ist anzugeben, wenn: 1. ein bereits an den MP übermittelter vorläufiger Wert durch einen Ersatzwert ersetzt wird, oder  2. ein bereits an den MP übermittelter Ersatzwert durch einen Ersatzwert ersetzt wird, oder  3. ein bereits an den MP übermittelter wahrer Wert durch einen Ersatzwert ersetzt wird, oder 4. ein bereits an den MP übermittelter wahrer Wert durch einen wahren Wert ersetzt wird."
 143,Korrekturgrund,SG10,STS,9015,Z34,,Korrekturgrund,X,
 144,Korrekturgrund,SG10,STS,9013,Z74,,kein Zugang,X [4P0..1],
 145,Korrekturgrund,SG10,STS,9013,Z75,,Kommunikationsstörung,X [4P0..1],
@@ -208,23 +199,11 @@
 175,Grund der Ersatzwertbildung,SG10,STS,9013,Z79,,Kalibrierung,X [4P0..1],
 176,Grund der Ersatzwertbildung,SG10,STS,9013,Z80,,Gerät arbeitet außerhalbder Betriebsbedingungen,X [4P0..1],
 177,Grund der Ersatzwertbildung,SG10,STS,9013,Z81,,Messeinrichtunggestört/defekt,X [4P0..1],
-178,Grund der Ersatzwertbildung,SG10,STS,9013,Z82,,Unsicherheit Messung,X [4P0..1],
-179,Grund der Ersatzwertbildung,SG10,STS,9013,ZA0,,Uhrzeit gestellt /Synchronisation,X [4P0..1],
-180,Grund der Ersatzwertbildung,SG10,STS,9013,ZA1,,Messwert unplausibel,X [4P0..1],
-181,Grund der Ersatzwertbildung,SG10,STS,9013,ZA3,,Falscher Wandlerfaktor,X [4P0..1],
-182,Grund der Ersatzwertbildung,SG10,STS,9013,ZA4,,Fehlerhafte Ablesung,X [4P0..1],
-183,Grund der Ersatzwertbildung,SG10,STS,9013,ZA5,,Änderung derBerechnung,X [4P0..1],
-184,Grund der Ersatzwertbildung,SG10,STS,9013,ZA6,,Umbau der Messlokation,X [4P0..1],
-185,Grund der Ersatzwertbildung,SG10,STS,9013,ZA7,,Datenbearbeitungsfehler,X [4P0..1],
-186,Grund der Ersatzwertbildung,SG10,STS,9013,ZB0,,Störung / DefektMesseinrichtung,X [4P0..1],
-187,Grund der Ersatzwertbildung,SG10,STS,9013,ZB9,,ÄnderungTarifschaltzeiten,X [4P0..1],
-188,Grund der Ersatzwertbildung,SG10,STS,9013,ZC2,,Tarifschaltgerät defekt,X [4P0..1],
-189,Grund der Ersatzwertbildung,SG10,STS,9013,ZC4,,Impulswertigkeit nichtausreichend,X [4P0..1],
-190,Grund der Ersatzwertbildung,SG10,STS,9013,ZS9,,Grund derErsatzwertbildunggemäß Angaben aufEbene der Messlokation,X [46] ∧ [570],"[46] Wenn Wert in SG6 LOC+172 DE3225 genau 11 Stellen 
-[570] Hinweis: Verwendung ist nur zulässig, wenn es sich um 1:n Beziehung zwischen Markt- und Messlokation handelt und auf Ebene der Messlokation unterschiedliche Gründe für die Ersatzwertbildung vorliegen und kommuniziert wurden."
-191,Nachrichten-Endesegment,,,,,,,Muss,
-192,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-193,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
-194,Nutzdaten-Endesegment,,,,,,,Muss,
-195,Nutzdaten-Endesegment,,UNZ,0036,,,Datenaustauschzähler,X,
-196,Nutzdaten-Endesegment,,UNZ,0020,,,Datenaustauschreferenz,X,
+178,Grund der Ersatzwertbildung,SG10,STS,9013,Z82,,Unsicherheit Messung,X [4P0..1],"[46] Wenn Wert in SG6 LOC+172 DE3225 genau 11 Stellen 
+[570] Hinweis: Verwendung ist nur zulässig, wenn es sich um 1:n Beziehung zwischen Markt- und Messlokation handelt und auf Ebene der Messlokation unterschiedliche Gründe für die Ersatzwertbildung vorliegen"
+179,Nachrichten-Endesegment,,,,,,,Muss,
+180,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+181,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+182,Nutzdaten-Endesegment,,,,,,,Muss,
+183,Nutzdaten-Endesegment,,UNZ,0036,,,Datenaustauschzähler,X,
+184,Nutzdaten-Endesegment,,UNZ,0020,,,Datenaustauschreferenz,X,
