@@ -558,10 +558,10 @@
 488,Normiertes Profil,SG10,,,,,,Muss,
 489,Normiertes Profil,SG10,CAV,,,,,Muss,[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 490,Normiertes Profil,SG10,CAV,7111,,,Code des Normierten Profils,X,
-491,Profilschardaten,SG8,,,,,,Muss [89] ∧[226],
-492,Profilschardaten,SG8,,,,,,Muss [89] ∧[226],"[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden  
+491,Profilschardaten,SG8,,,,,,Muss [89] ∧[243],
+492,Profilschardaten,SG8,,,,,,Muss [89] ∧[243],"[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden  
 [147] Wenn in Anfrage vorhanden  
-[226] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+6++ZA8 (Aggreg. verantw. NB) vorhanden"
+[243] Wenn SG10 CCI+6++ZA8 (Aggreg. verantw. NB) in dieser SG8 vorhanden"
 493,Profilschardaten,SG8,SEQ,,,,,Muss,
 494,Profilschardaten,SG8,SEQ,1229,Z08,,Profilschardaten,X,
 495,Referenz auf die ID der Marktlokation,SG8,,,,,,,
@@ -581,7 +581,7 @@
 509,Normiertes Profil,SG10,,,,,,Muss,[147] Wenn in Anfrage vorhanden
 510,Normiertes Profil,SG10,CCI,,,,,Muss [528],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 511,Normiertes Profil,SG10,CCI,7059,Z03,,tagesparameterabhängiges Lastprofil,X [20],
-512,Normiertes Profil,SG10,CCI,7059,Z05,,tagesparameterabhängig,X [54],[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10
+512,Normiertes Profil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X [54],[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07
 513,Normiertes Profil,SG10,CCI,7037,E01,,synthetisches Verfahren,X,
 514,Normiertes Profil,SG10,CCI,7037,Z10,,analytisches Verfahren,X,
 515,Normiertes Profil,SG10,,,,,,,
@@ -601,7 +601,7 @@
 529,Profilschardaten der beteiligten Marktrolle,SG8,,,,,,Soll [166],"[147] Wenn in Anfrage vorhanden  
 [166] Wenn vorhanden"
 530,Profilschardaten der beteiligten Marktrolle,SG8,SEQ,,,,,Muss,
-531,Profilschardaten der beteiligten Marktrolle,SG8,SEQ,1229,Z34,,Profilschardaten derbeteiligten Marktrolle,X,
+531,Profilschardaten der beteiligten Marktrolle,SG8,SEQ,1229,Z34,,Profilschardaten der,X,
 532,Profilschar,SG10,,,,,,Muss,
 533,Profilschar,SG10,,,,,,Muss,
 534,Profilschar,SG10,CCI,,,,,Muss,
@@ -626,43 +626,44 @@
 552,Klimazone / Temperaturmessstelle,SG10,,,,,,Muss,
 553,Klimazone / Temperaturmessstelle,SG10,CCI,,,,,Muss,[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 554,Klimazone / Temperaturmessstelle,SG10,CCI,7059,Z99,,Messstelle desTagesparameters(derzeit ist nur dieTemperatur ein erlaubterTagesparameter),X,
-555,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,ID Klimazone/Temperaturmessstelle,X,
-556,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,Dienstanbieter,X [58],[58] Wenn in diesem CCI das DE3055 mit dem Code 293 vorhanden
-557,Klimazone / Temperaturmessstelle,SG10,CCI,3055,89,,Vergeben vom Händler(hier Netzbetreiber),X,
-558,Klimazone / Temperaturmessstelle,SG10,CCI,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
-559,Referenzprofildaten,SG8,,,,,,Muss [54] ∧[226] ∧[265],
-560,Referenzprofildaten,SG8,,,,,,Muss [54] ∧[226] ∧[265],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
+555,Klimazone / Temperaturmessstelle,SG10,CCI,7059,ZA0,,Klimazone des,X,
+556,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,ID Klimazone/Temperaturmessstelle,X,
+557,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,Dienstanbieter,X [58],[58] Wenn in diesem CCI das DE3055 mit dem Code 293 vorhanden
+558,Klimazone / Temperaturmessstelle,SG10,CCI,3055,89,,Vergeben vom Händler(hier Netzbetreiber),X,
+559,Klimazone / Temperaturmessstelle,SG10,CCI,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+560,Referenzprofildaten,SG8,,,,,,Muss [54] ∧[243] ∧[265],
+561,Referenzprofildaten,SG8,,,,,,Muss [54] ∧[243] ∧[265],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
 [147] Wenn in Anfrage vorhanden  
-[226] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+6++ZA8 (Aggreg. verantw. NB) vorhanden  
+[243] Wenn SG10 CCI+6++ZA8 (Aggreg. verantw. NB) in dieser SG8 vorhanden  
 [265] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+Z36 (TEP m. Referenzmessung) vorhanden"
-561,Referenzprofildaten,SG8,SEQ,,,,,Muss,
-562,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,
-563,Referenz auf die ID der Marktlokation,SG8,,,,,,,
-564,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
-565,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
-566,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
-567,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-568,Referenzprofil,SG10,,,,,,Muss,
-569,Referenzprofil,SG10,,,,,,Muss,[147] Wenn in Anfrage vorhanden
-570,Referenzprofil,SG10,CCI,,,,,Muss [528],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
-571,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
-572,Referenzprofil,SG10,,,,,,,
-573,Referenzprofil,SG10,,,,,,Muss [528],
-574,Referenzprofil,SG10,CAV,,,,,Muss [528],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
-575,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
-576,Referenzprofildaten der beteiligten Marktrolle,SG8,,,,,,Soll [166],
-577,Referenzprofildaten der beteiligten Marktrolle,SG8,,,,,,Soll [166],"[147] Wenn in Anfrage vorhanden  
+562,Referenzprofildaten,SG8,SEQ,,,,,Muss,
+563,Referenzprofildaten,SG8,SEQ,1229,Z38,,Referenzprofildaten,X,
+564,Referenz auf die ID der Marktlokation,SG8,,,,,,,
+565,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
+566,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
+567,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
+568,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+569,Referenzprofil,SG10,,,,,,Muss,
+570,Referenzprofil,SG10,,,,,,Muss,[147] Wenn in Anfrage
+571,Referenzprofil,SG10,CCI,,,,,Muss [528],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+572,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
+573,Referenzprofil,SG10,,,,,,,
+574,Referenzprofil,SG10,,,,,,Muss [528],
+575,Referenzprofil,SG10,CAV,,,,,Muss [528],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+576,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
+577,Referenzprofildaten der beteiligten Marktrolle,SG8,,,,,,Soll [166],
+578,Referenzprofildaten der beteiligten Marktrolle,SG8,,,,,,Soll [166],"[147] Wenn in Anfrage vorhanden  
 [166] Wenn vorhanden"
-578,Referenzprofildaten der beteiligten Marktrolle,SG8,SEQ,,,,,Muss,
-579,Referenzprofildaten der beteiligten Marktrolle,SG8,SEQ,1229,Z39,,Referenzprofildaten derbeteiligten Marktrolle,X,
-580,Referenzprofil,SG10,,,,,,Muss,
+579,Referenzprofildaten der beteiligten Marktrolle,SG8,SEQ,,,,,Muss,
+580,Referenzprofildaten der beteiligten Marktrolle,SG8,SEQ,1229,Z39,,Referenzprofildaten derbeteiligten Marktrolle,X,
 581,Referenzprofil,SG10,,,,,,Muss,
-582,Referenzprofil,SG10,CCI,,,,,Muss,
-583,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
-584,Referenzprofil,SG10,,,,,,,
-585,Referenzprofil,SG10,,,,,,Muss,
-586,Referenzprofil,SG10,CAV,,,,,Muss,[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
-587,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
-588,Nachrichten-Endesegment,,,,,,,Muss,
-589,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-590,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+582,Referenzprofil,SG10,,,,,,Muss,
+583,Referenzprofil,SG10,CCI,,,,,Muss,
+584,Referenzprofil,SG10,CCI,7059,Z05,,tagesparameterabhängiges Einspeiseprofil,X,
+585,Referenzprofil,SG10,,,,,,,
+586,Referenzprofil,SG10,,,,,,Muss,
+587,Referenzprofil,SG10,CAV,,,,,Muss,[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+588,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
+589,Nachrichten-Endesegment,,,,,,,Muss,
+590,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+591,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
