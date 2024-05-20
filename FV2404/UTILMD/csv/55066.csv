@@ -1,28 +1,28 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
-1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
-4,Nachrichten-Kopfsegment,,UNH,0054,11A,,Ausgabe 2011 - A,X,
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
-7,Nachrichten-Kopfsegment,,UNH,0068,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
-8,Nachrichten-Kopfsegment,,UNH,0070,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
-9,Nachrichten-Kopfsegment,,UNH,0073,C,,Beginn,M [2],
-10,Nachrichten-Kopfsegment,,UNH,0073,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
+1,UNH,,UNH,0062,,,Nachrichten-Referenznummer,X,
+2,UNH,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
+3,UNH,,UNH,0052,D,,Entwurfs-Version,X,
+4,UNH,,UNH,0054,11A,,Ausgabe 2011 - A,X,
+5,UNH,,UNH,0051,UN,,UN/CEFACT,X,
+6,UNH,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
+7,UNH,,UNH,0068,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
+8,UNH,,UNH,0070,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
+9,UNH,,UNH,0073,C,,Beginn,M [2],
+10,UNH,,UNH,0073,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
 [3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenummer"
 11,Beginn der Nachricht,,,,,,,Muss,
-12,Beginn der Nachricht,,BGM,1001,Z05,,Clearingliste,X,
-13,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+12,BGM,,BGM,1001,Z05,,Clearingliste,X,
+13,BGM,,BGM,1004,,,Dokumentennummer,X,
 14,Nachrichtendatum,,,,,,,Muss,
-15,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
-16,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+15,DTM,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+16,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
 [931] Format: ZZZ = +00"
-17,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+17,DTM,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 18,"Gültigkeit, Beginndatum",,,,,,,Muss,
-19,"Gültigkeit, Beginndatum",,DTM,2005,157,,"Gültigkeit, Beginndatum",X,
-20,"Gültigkeit, Beginndatum",,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-21,"Gültigkeit, Beginndatum",,DTM,2379,610,,CCYYMM,X,
+19,DTM,,DTM,2005,157,,"Gültigkeit, Beginndatum",X,
+20,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+21,DTM,,DTM,2379,610,,CCYYMM,X,
 22,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,,
 23,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,,
 24,Referenz auf eine vorangegangene Anfrage,SG1,RFF,,,,,,
@@ -199,7 +199,7 @@
 174,Bilanzkreis,SG10,CCI,7059,Z19,,Bilanzkreis,X,
 175,Bilanzkreis,SG10,CCI,7037,,,Bilanzkreis,X,
 176,Bilanzierungsgebiet,SG10,,,,,,Soll [31],
-177,Bilanzierungsgebiet,SG10,,,,,,Soll [31],[31] Wenn eine Korrektur erfolgt
+177,Bilanzierungsgebiet,SG10,,,,,,Soll [31],[31] Wenn eine Korrektur
 178,Bilanzierungsgebiet,SG10,CCI,,,,,Muss,
 179,Bilanzierungsgebiet,SG10,CCI,7059,Z20,,Bilanzierungsgebiet,X,
 180,Bilanzierungsgebiet,SG10,CCI,7037,,,Bilanzierungsgebiet,X,
@@ -230,7 +230,7 @@
 204,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,KWH,,Kilowattstunde,X,
 205,Profildaten,SG8,,,,,,Soll [31],
 206,Profildaten,SG8,,,,,,Soll [31],"[31] Wenn eine Korrektur erfolgt  
-[107] Wenn SG10 CAV+SLS/ SES/ BIP/ GEP/ GAP/ SOP/ WNP/ WFP/ WAP vorhanden"
+[107] Wenn in derselben SG8 das SG10 CAV+SLS/ SES/ BIP/ GEP/ GAP/ SOP/ WNP/ WFP/ WAP vorhanden"
 207,Profildaten,SG8,SEQ,,,,,Muss,
 208,Profildaten,SG8,SEQ,1229,Z21,,Profildaten,X,
 209,Versionsangabe des Profils,SG8,,,,,,,
@@ -269,7 +269,7 @@
 240,Referenz auf die ID der Marktlokation,SG8,,,,,,Muss,
 241,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,Muss,
 242,Referenz auf die ID der Marktlokation,SG8,RFF,1153,Z18,,Marktlokation,X,
-243,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format:
+243,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
 244,Normiertes Profil,SG10,,,,,,Muss,
 245,Normiertes Profil,SG10,,,,,,Muss,
 246,Normiertes Profil,SG10,CCI,,,,,Muss,
@@ -306,5 +306,5 @@
 275,Referenzprofil,SG10,CAV,,,,,Muss,
 276,Referenzprofil,SG10,CAV,7111,,,Code des Referenzprofils,X,
 277,Nachrichten-Endesegment,,,,,,,Muss,
-278,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-279,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+278,UNT,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+279,UNT,,UNT,0062,,,Nachrichten-Referenznummer,X,
