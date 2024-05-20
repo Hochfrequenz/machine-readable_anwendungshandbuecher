@@ -1,19 +1,19 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,,,,,,Muss,
-1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
-4,Nachrichten-Kopfsegment,,UNH,0054,11A,,Ausgabe 2011 - A,X,
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
+1,UNH,,UNH,0062,,,Nachrichten-Referenznummer,X,
+2,UNH,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
+3,UNH,,UNH,0052,D,,Entwurfs-Version,X,
+4,UNH,,UNH,0054,11A,,Ausgabe 2011 - A,X,
+5,UNH,,UNH,0051,UN,,UN/CEFACT,X,
+6,UNH,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,,,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,E03,,Änderungsmeldungen,X,
-9,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+8,BGM,,BGM,1001,E03,,Änderungsmeldungen,X,
+9,BGM,,BGM,1004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,,,,,,Muss,
-11,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+11,DTM,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+12,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
 [931] Format: ZZZ = +00"
-13,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+13,DTM,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,Muss,
 15,MP-ID Absender,SG2,,,,,,Muss,
 16,MP-ID Absender,SG2,NAD,,,,,Muss,
@@ -114,8 +114,8 @@
 101,Tranche,SG5,LOC,,,,,Muss,
 102,Tranche,SG5,LOC,3227,Z21,,Tranche,X,
 103,Tranche,SG5,LOC,3225,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
-104,Messlokation,SG5,,,,,,Muss [687],
-105,Messlokation,SG5,,,,,,Muss [687],"[687] Hinweis: Es sind alle Messlokationen zu nennen, die für die"
+104,Messlokation,SG5,,,,,,Muss [309] ∧[399] ∧ [687],
+105,Messlokation,SG5,,,,,,Muss [309] ∧[399] ∧ [687],[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00
 106,Messlokation,SG5,LOC,,,,,Muss,
 107,Messlokation,SG5,LOC,3227,Z17,,Messlokation,X,
 108,Messlokation,SG5,LOC,3225,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
@@ -135,7 +135,8 @@
 122,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,,
 123,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,Muss [309] ∧[513] ∧ [2061],
 124,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,Muss [309] ∧[513] ∧ [2061],"[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00  
-[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlermeldu ng mit Fehlercode Z39 (Code"
+[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlermeldu ng mit Fehlercode Z39 (Code nicht aus erlaubtem Wertebereich“) abgelehnt werden  
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 125,Referenz auf die Lokationsbündelstruktur,SG8,SEQ,,,,,Muss,
 126,Referenz auf die Lokationsbündelstruktur,SG8,SEQ,1229,Z78,,Referenz auf dieLokationsbündelstruktur,X,
 127,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,,
@@ -147,9 +148,8 @@
 133,Referenz auf die Lokationsbündelstruktur,SG8,RFF,1156,,,Fortlaufende Nummer einesLokationsbündels imGeschäftsvorfall,M [914] ∧ [937][32],"[32] Wenn mehr als ein SG8 SEQ+Z78 (Referenz auf die Lokationsbündelstruktur) vorhanden  
 [914] Format: Möglicher Wert: > 0  
 [937] Format: keine Nachkommastelle"
-134,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,Muss [2354] ∧[335] ∧ [513],
-135,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,Muss [2354] ∧[335] ∧ [513],"[335] Wenn im SG8 SEQ+Z78 RFF+Z31 ""Referenz auf die Lokationsbündelstruktur"" im DE1153 der Code Z31 ""Lokationsbündelstruktur"" vorhanden ist  
-[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlermeldu ng mit Fehlercode Z39 (Code"
+134,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,Muss [2354] ∧,
+135,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,Muss [2354] ∧,[335] Wenn im SG8 SEQ+Z78
 136,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,,,,,Muss,
 137,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,1229,Z58,,Zuordnung Lokation zumObjektcode desLokationsbündels,X,
 138,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,,,,,,,
@@ -162,11 +162,7 @@
 145,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1154,,,ID einer Lokation,X ([451] ∧ [950])⊻ ([452] ∧[951]) ⊻ ([450]∧ [960]) ⊻([456] ∧ [922]),"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden  
 [451] Wenn in demselben RFF der Code Z18 (Marktlokation) im DE1153 vorhanden  
 [452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden  
-[456] Wenn in demselben RFF der Code Z37 (Technische Ressource) im DE1153 vorhanden  
-[922] Format: TR-ID 
-[950] Format: Marktlokations-ID  
-[951] Format: Zählpunktbezeichnung  
-[960] Format: Netzlokations- ID"
+[456] Wenn in demselben RFF der Code Z37 (Technische"
 146,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,,,,,,,
 147,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,,,,,,Muss [2313],
 148,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,,,,,Muss [2313],[2313] Je SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) genau einmal anzugeben
@@ -191,5 +187,5 @@
 161,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1153,Z16,,zugeordneteMarktlokation,X,
 162,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1154,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
 163,Nachrichten-Endesegment,,,,,,,Muss,
-164,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-165,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+164,UNT,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+165,UNT,,UNT,0062,,,Nachrichten-Referenznummer,X,
