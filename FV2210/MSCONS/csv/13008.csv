@@ -78,11 +78,12 @@
 74,Identifikationsangabe,SG6,,,,,,Muss,
 75,Identifikationsangabe,SG6,LOC,,,,,Muss,
 76,Identifikationsangabe,SG6,LOC,3227,,,,172,
-77,Identifikationsangabe,SG6,LOC,3225,,,Bezeichnung,X ([951] (([35] ∧ [36]) ∨([32] ∧ [42]) ∧ [510]) ∨([32] ∧ [36] ∧ [535]) ∨([32] ∧ [33] ∧ [519])) ⊻ ([950] ([32] ∧ [33]) ∧([514] ∧ [520])),"[32] wenn MP-ID in SG2 NAD+MS in der Rolle NB 
+77,Identifikationsangabe,SG6,LOC,3225,,,Bezeichnung,X ([951] (([35] ∧ [36]) ∨([32] ∧ [42]) ∧ [510]) ∨([32] ∧ [36] ∧ [535]) ∨([32] ∧ [33] ∧ [519])) ⊻ ([950] ([32] ∧ [33]) ∧([514] ∧ [520])) ⊻ ([950][32] ∧ [141] ∧ [514]),"[32] wenn MP-ID in SG2 NAD+MS in der Rolle NB 
 [33] wenn MP-ID in SG2 NAD+MR in der Rolle LF 
 [35] wenn MP-ID in SG2 NAD+MS in der Rolle MSB 
 [36] wenn MP-ID in SG2 NAD+MR in der Rolle NB  
 [42] Wenn MP-ID in SG2 NAD+MR in der Rolle MSB 
+[141] Wenn MP-ID in SG2 NAD+MR in der Rolle MGV 
 [510] Hinweis: Verwendung der ID der Messlokation 
 [514] Hinweis: Verwendung der ID der Marktlokation 
 [519] Hinweis: Nur wenn der gemessene Lastgang der Messlokation nicht dem Lastgang der Marktlokation 1:1 entspricht. 
@@ -118,19 +119,19 @@
 101,Mengenangaben,SG10,,,,,,Muss,
 102,Mengenangaben,SG10,QTY,,,,,Muss ,
 103,Mengenangaben,SG10,QTY,6063,220,,Wahrer Wert,X,
-104,Mengenangaben,SG10,QTY,6063,67,,Ersatzwert,X ([32] ∧ ([33] ∨ [36] ∨[42])),
+104,Mengenangaben,SG10,QTY,6063,67,,Ersatzwert,X ([32] ∧ ([33] ∨ [36] ∨[42] ∨ [141])),
 105,Mengenangaben,SG10,QTY,6063,201,,Vorschlagswert,X ([35] ∧ [36]) ,
 106,Mengenangaben,SG10,QTY,6063,20,,Nicht verwendbarer Wert,X ([35] ∧ [36]) X ([32] ∧ [33] ∧ [506]),
-107,Mengenangaben,SG10,QTY,6063,187,,Prognosewert,X [32] ∧ ([33] ∨ [36]) ∧[11],
-108,Mengenangaben,SG10,QTY,6063,Z18,,Vorläufiger Wert,X [32] ∧ [33],"[11] Wenn SG9 PIA+5+7-0?:52.0. 22/7-0?:54.0.16/7-0?:54.0.20/7- 0?:54.0.22 
+107,Mengenangaben,SG10,QTY,6063,187,,Prognosewert,X [32] ∧ ([33] ∨ [36] ∨[141]) ∧ [11],
+108,Mengenangaben,SG10,QTY,6063,Z18,,Vorläufiger Wert,X [32] ∧ ([33] ∨ [141]),"[11] Wenn SG9 PIA+5+7-0?:52.0. 22/7-0?:54.0.16/7-0?:54.0.20/7- 0?:54.0.22 
 [32] wenn MP-ID in SG2 NAD+MS in der Rolle NB 
 [33] wenn MP-ID in SG2 NAD+MR in der Rolle LF 
 [35] wenn MP-ID in SG2 NAD+MS in der Rolle MSB 
 [36] wenn MP-ID in SG2 NAD+MR in der Rolle NB  
 [42] Wenn MP-ID in SG2 NAD+MR in der Rolle MSB 
+[141] Wenn MP-ID in SG2 NAD+MR in der Rolle MGV 
 [506] Hinweis: Nur bei Einspeisemengen und bei Gas zur stündlichen Energiedatenübermittlung"
-109,Mengenangaben,SG10,QTY,6060,,,Menge,X ([902] ∧ [906]) ∨ ([902]∧ [907] [125]) ∨ ([910] ∧[907] [45]),"[45] Wenn SG9 PIA+5+7-b:99.41. 16 (b=Kanal: Wert gemäß Codeliste der OBIS-Kennzahlen und Medien) vorhanden 
-[125] wenn SG9 PIA+5+7-0?:52. 0.22/7-b?:53.0.16/7-b?:55.0.16/"
+109,Mengenangaben,SG10,QTY,6060,,,Menge,X ([902] ∧ [906]) ∨ ([902]∧ [907] [125]) ∨ ([910] ∧,[45] Wenn SG9 PIA+5+7-b:99.41. 16 (b=Kanal: Wert gemäß
 110,Beginn Messperiode,SG10,,,,,,,
 111,Beginn Messperiode,SG10,,,,,,Muss,
 112,Beginn Messperiode,SG10,DTM,,,,,Muss,
@@ -183,21 +184,45 @@
 [560] Hinweis: Ein Korrekturgrund ist anzugeben, wenn: 1. ein bereits an den MP übermittelter vorläufiger Wert durch einen Ersatzwert ersetzt wird, oder  2. ein bereits an den MP übermittelter Ersatzwert durch einen Ersatzwert ersetzt wird, oder  3. ein bereits an den MP übermittelter wahrer Wert durch einen Ersatzwert ersetzt wird, oder 4. ein bereits an den MP übermittelter wahrer Wert durch einen wahren Wert ersetzt wird."
 151,Korrekturgrund,SG10,STS,9015,Z34,,Korrekturgrund,X,
 152,Korrekturgrund,SG10,STS,9013,Z74,,kein Zugang,X [4P0..1] ⊻ [6P0..1] ⊻[7P0..1] ⊻ [8P0..1],
-153,Korrekturgrund,SG10,STS,9013,Z75,,Kommunikationsstörung,X [4P0..1] ⊻ [6P0..1] ⊻[7P0..1] ⊻ [8P0..1],
-154,Korrekturgrund,SG10,STS,9013,Z76,,Netzausfall,X [4P0..1] ⊻ [6P0..1] ⊻[7P0..1] ⊻ [8P0..1],
-155,Grund der Ersatzwertbildung,SG10,,,,,,,
-156,Grund der Ersatzwertbildung,SG10,,,,,,Muss [92],
-157,Grund der Ersatzwertbildung,SG10,STS,,,,,Muss [92],[92] Wenn SG10 QTY DE6063 mit Wert 67 vorhanden
-158,Grund der Ersatzwertbildung,SG10,STS,9015,Z40,,Grund derErsatzwertbildung,X,
-159,Grund der Ersatzwertbildung,SG10,STS,9013,Z74,,kein Zugang,X [4P0..1],[32] wenn MP-ID in SG2 NAD+MS
-160,Gasqualität,SG10,,,,,,,
-161,Gasqualität,SG10,,,,,,Soll [97],
-162,Gasqualität,SG10,STS,,,,,Soll [97],[97] Wenn es sich um die Übermittlung eines Wertes aufgrund der Umstellung der Gasqualität handelt
-163,Gasqualität,SG10,STS,9015,Z31,,Gasqualität,X,
-164,Gasqualität,SG10,STS,9013,ZG3,,Umstellung Gasqualität,X,
-165,Nachrichten-Endesegment,,,,,,,Muss,
-166,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-167,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
-168,Nutzdaten-Endesegment,,,,,,,Muss,
-169,Nutzdaten-Endesegment,,UNZ,0036,,,Datenaustauschzähler,X,
-170,Nutzdaten-Endesegment,,UNZ,0020,,,Datenaustauschreferenz,X,
+153,Korrekturgrund,SG10,STS,9013,Z75,,Kommunikationsstörung,X [4P0..1] ⊻ [6P0..1] ⊻,
+154,Grund der Ersatzwertbildung,SG10,,,,,,,
+155,Grund der Ersatzwertbildung,SG10,,,,,,Muss [92],
+156,Grund der Ersatzwertbildung,SG10,STS,,,,,Muss [92],[92] Wenn SG10 QTY DE6063 mit Wert 67 vorhanden
+157,Grund der Ersatzwertbildung,SG10,STS,9015,Z40,,Grund derErsatzwertbildung,X,
+158,Grund der Ersatzwertbildung,SG10,STS,9013,Z74,,kein Zugang,X [4P0..1],
+159,Grund der Ersatzwertbildung,SG10,STS,9013,Z75,,Kommunikationsstörung,X [4P0..1],
+160,Grund der Ersatzwertbildung,SG10,STS,9013,Z76,,Netzausfall,X [4P0..1],
+161,Grund der Ersatzwertbildung,SG10,STS,9013,Z78,,Gerätewechsel,X [4P0..1],
+162,Grund der Ersatzwertbildung,SG10,STS,9013,Z80,,Gerät arbeitet außerhalbder Betriebsbedingungen,X [4P0..1],
+163,Grund der Ersatzwertbildung,SG10,STS,9013,Z81,,Messeinrichtung gestört/defekt,X [4P0..1],
+164,Grund der Ersatzwertbildung,SG10,STS,9013,Z82,,Unsicherheit Messung,X [4P0..1],
+165,Grund der Ersatzwertbildung,SG10,STS,9013,Z98,,BerücksichtigungStörmengenzählwerk,X [4P0..1],
+166,Grund der Ersatzwertbildung,SG10,STS,9013,Z99,,Mengenumwertungunvollständig,X [4P0..1],
+167,Grund der Ersatzwertbildung,SG10,STS,9013,ZA0,,Uhrzeit gestellt /Synchronisation,X [4P0..1],
+168,Grund der Ersatzwertbildung,SG10,STS,9013,ZA1,,Messwert unplausibel,X [4P0..1],
+169,Grund der Ersatzwertbildung,SG10,STS,9013,ZA4,,Fehlerhafte Ablesung,X [4P0..1],
+170,Grund der Ersatzwertbildung,SG10,STS,9013,ZA5,,Änderung der Berechnung,X [4P0..1],
+171,Grund der Ersatzwertbildung,SG10,STS,9013,ZA6,,Umbau der Messlokation,X [4P0..1],
+172,Grund der Ersatzwertbildung,SG10,STS,9013,ZA7,,Datenbearbeitungsfehler,X [4P0..1],
+173,Grund der Ersatzwertbildung,SG10,STS,9013,ZB0,,Störung / DefektMesseinrichtung,X [4P0..1],
+174,Grund der Ersatzwertbildung,SG10,STS,9013,ZC4,,Impulswertigkeit nichtausreichend,X [4P0..1],
+175,Grund der Ersatzwertbildung,SG10,STS,9013,ZR1,,Wartungsarbeiten angeeichtem Messgerät,X [4P0..1],
+176,Grund der Ersatzwertbildung,SG10,STS,9013,ZR2,,gestörte Werte,X [4P0..1],
+177,Grund der Ersatzwertbildung,SG10,STS,9013,ZR3,,Wartungsarbeiten aneichrechtskonformenMessgeräten,X [4P0..1],
+178,Grund der Ersatzwertbildung,SG10,STS,9013,ZR4,,Konsistenz- undSynchronprüfung,X [4P0..1],
+179,Grund der Ersatzwertbildung,SG10,STS,9013,ZS9,,Grund derAngaben auf Ebene derMesslokation,X ([46] ∧ [570]) ⊻ ([32] ∧Ersatzwertbildung gemäß,"[32] wenn MP-ID in SG2 NAD+MS in der Rolle NB 
+[36] wenn MP-ID in SG2 NAD+MR in der Rolle NB  
+[46] Wenn Wert in SG6 LOC+172 DE3225 genau 11 Stellen 
+[570] Hinweis: Verwendung ist nur zulässig, wenn es sich um 1:n Beziehung zwischen Markt- und Messlokation handelt und auf Ebene der Messlokation unterschiedliche Gründe für die Ersatzwertbildung vorliegen und kommuniziert wurden. 
+[571] Hinweis: Verwendung ist nur zulässig, wenn es sich um 1:n Beziehung handelt und auf Ebene der Netzkopplungspunkte unterschiedliche Gründe für die Ersatzwertbildung vorliegen und kommuniziert wurden."
+180,Gasqualität,SG10,,,,,,,
+181,Gasqualität,SG10,,,,,,Soll [97],
+182,Gasqualität,SG10,STS,,,,,Soll [97],[97] Wenn es sich um die Übermittlung eines Wertes aufgrund der Umstellung der Gasqualität handelt
+183,Gasqualität,SG10,STS,9015,Z31,,Gasqualität,X,
+184,Gasqualität,SG10,STS,9013,ZG3,,Umstellung Gasqualität,X,
+185,Nachrichten-Endesegment,,,,,,,Muss,
+186,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+187,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+188,Nutzdaten-Endesegment,,,,,,,Muss,
+189,Nutzdaten-Endesegment,,UNZ,0036,,,Datenaustauschzähler,X,
+190,Nutzdaten-Endesegment,,UNZ,0020,,,Datenaustauschreferenz,X,
