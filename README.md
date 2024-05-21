@@ -1,6 +1,11 @@
 # machine-readable_anwendungshandbuecher
 
 Dieses Repository enthält Anwendungshandbücher (AHB) in einem maschinenlesbaren Format, das deutlich einfacher zu verarbeiten ist als `.docx` oder `.pdf`.
+Wir pflegen analog zu den hier abgelegten Daten auch:
+
+- [`edi_energy_ahb_conditions_and_packages`](https://github.com/Hochfrequenz/edi_energy_ahb_conditions_and_packages) für Bedingungen und Paket-Definitionen aus den AHBs
+- [`machine-readable_message-implementation-guide`](https://github.com/Hochfrequenz/machine-readable_message-implementation-guide) für MIGs
+- [`machine-readable_entscheidungsbaumdiagramme`](https://github.com/Hochfrequenz/machine-readable_entscheidungsbaumdiagramme/) für EBDs
 
 ## Unter der Haube
 
@@ -43,4 +48,3 @@ Besser ist es, das Scraping in [`kohlrahbi`](https://github.com/Hochfrequenz/koh
 ## Weiterführendes Tooling
 
 Dieses Repository ist Teil der [Hochfrequenz Libraries und Tool für eine echte Digitalisierung der Marktkommunikation](https://github.com/Hochfrequenz/digital_market_communication/).
-Insbesondere die Daten aus unserem [Bedingungen- und Pakete-Repository](https://github.com/Hochfrequenz/edi_energy_ahb_conditions_and_packages) könnten ebenfalls relevant sein.
