@@ -403,10 +403,11 @@
 384,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
 385,OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,SEQ,1229,Zähleinrichtung,,,Z20,
 386,Referenz auf die Gerätenummer,SG8,,,,,,,
-387,Referenz auf die Gerätenummer,SG8,,,,,,Muss,
-388,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss,
-389,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer des Zählers,X,
-390,Referenz auf die Gerätenummer,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,
+387,Referenz auf die Gerätenummer,SG8,,,,,,Muss [665],
+388,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss [665],[665] Hinweis: Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist oder an einen Mengenumwerter angeschlossen ist werden an dem Zähler keine OBIS-Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW oder Mengenumwerter   
+389,Referenz auf die Gerätenummer,SG8,RFF,1153,MG,,Gerätenummer des Zählers,X [441] ∧ [442],
+390,Referenz auf die Gerätenummer,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,"[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden ist  
+[442] Wenn in keinem SG8+SEQ+Z09 Mengenumwerterdaten das RFF+MG (Referenz auf die Gerätenummer) der in diesem RFF DE1154 genannte Gerätenummer des Zählers vorhanden ist"
 391,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X,
 392,Referenz auf die ID einer Messlokation,SG8,,,,,,,
 393,Referenz auf die ID einer Messlokation,SG8,,,,,,Muss,
@@ -426,7 +427,7 @@
 406,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7140,,,OBIS-Kennzahl der Zähleinrichtung,X [323],"[323] Es sind alle OBIS-Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3. anzugeben welche an der Zähleinrichtung genutzt werden, dabei muss der Mindestumfang aus Kap. 3.4 eingehalten werden "
 407,OBIS-Kennzahl der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,
 408,Wertegranularität,SG10,,,,,,Muss [256],
-409,Wertegranularität,SG10,,,,,,Muss [256],[256] Wenn in derselben SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway) das
+409,Wertegranularität,SG10,,,,,,Muss [256],[256] Wenn in derselben SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e vorhanden
 410,Wertegranularität,SG10,CCI,,,,,Muss,
 411,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,
 412,Wertegranularität,SG10,,,,,,,
@@ -448,7 +449,7 @@
 428,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Nachkommastelle,X,
 429,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,Muss [123] ∧ [273],
 430,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,Muss [123] ∧ [273],"[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway) mit dem SG8 RFF+MG / Z11 (Gerätenummer des Zählers / Mengenumwerters) auf die gleiche Identifikation/Nummer des Gerätes referenziert  
-[273] Wenn in derselben SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Mengenumwerter /"
+[273] Wenn in derselben SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Mengenumwerter / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e / 1- b?:3.8.e / 1-b?:4.8.e / 1-b?:5.8.e / 1-b?:6.8.e / 1-b?:7.8.e / 1-b?:8.8.e /  1-65?:1.8.e / 1-65?:2.8.0 / 1- 65?:1.8.63 vorhanden"
 431,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,,,,,Muss,
 432,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7037,Z63,,Lokale Kennzeichnung zuKontrollzwecken,X,
 433,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7036,,,Bezeichnung des Zählwerks aufdem Gerät,X,
@@ -467,8 +468,7 @@
 446,Wandler,SG10,CCI,7037,Z25,,Wandler,X,
 447,Identifikation / Nummer des Gerätes,SG10,,,,,,,
 448,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss [2317] ⊻ [2318],
-449,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss [2317] ⊻ [2318],"[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MIW/MPW/MUW vorhanden, ist das Segment mindestens zweimal anzugeben  
-[2318] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MBW (Blockstromwandler) vorhanden, ist das Segment genau einmal anzugeben"
+449,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss [2317] ⊻ [2318],[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler)
 450,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,
 451,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
 452,Wandlertyp und Faktor,SG10,,,,,,,
