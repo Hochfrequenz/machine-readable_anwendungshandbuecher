@@ -1,0 +1,144 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,UNH,,UNH,0062,,,Nachrichten-Referenznummer,X,
+2,UNH,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
+3,UNH,,UNH,0052,D,,Entwurfs-Version,X,
+4,UNH,,UNH,0054,11A,,Ausgabe 2011 - A,X,
+5,UNH,,UNH,0051,UN,,UN/CEFACT,X,
+6,UNH,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S2.0,X,
+7,Beginn der Nachricht,,,,,,,Muss,
+8,BGM,,BGM,1001,E03,,Änderungsmeldungen,X [705],
+9,BGM,,BGM,1001,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird  
+[706] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Bestellung einer Änderung von Stammdaten..."" durchgeführt wird, mit dem Ziel ein Datenclearing durchzuführen "
+10,BGM,,BGM,1004,,,Dokumentennummer,X,
+11,Nachrichtendatum,,,,,,,Muss,
+12,DTM,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+13,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+[931] Format: ZZZ = +00"
+14,DTM,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+15,MP-ID Absender,SG2,,,,,,Muss,
+16,MP-ID Absender,SG2,,,,,,Muss,
+17,MP-ID Absender,SG2,NAD,,,,,Muss,
+18,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+19,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
+20,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
+21,Ansprechpartner,SG3,,,,,,Kann,
+22,Ansprechpartner,SG3,,,,,,Kann,
+23,Ansprechpartner,SG3,CTA,,,,,Muss,
+24,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,
+25,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+26,Kommunikationsverbindung,SG3,,,,,,,
+27,Kommunikationsverbindung,SG3,,,,,,Muss,
+28,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+29,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X (([939] [321])∨ ([940] [322]))∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+30,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],
+31,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+32,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+33,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+34,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+35,MP-ID Empfänger,SG2,,,,,,Muss,
+36,MP-ID Empfänger,SG2,,,,,,Muss,
+37,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+38,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,
+39,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
+40,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
+41,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+42,Vorgang,SG4,,,,,,Muss,
+43,Vorgang,SG4,,,,,,Muss,
+44,Vorgang,SG4,IDE,,,,,Muss,
+45,Vorgang,SG4,IDE,7495,24,,Transaktion,X,
+46,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
+47,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,,,,,,,
+48,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,,,,,,Muss,
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,ZX5,,ÄnderungBlindabrechnungsdatender NeLo,X,
+52,Status der Antwort,SG4,,,,,,,
+53,Status der Antwort,SG4,,,,,,Muss [301] ∧[2011],
+54,Status der Antwort,SG4,STS,,,,,Muss [301] ∧[2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
+[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"" / ""Keine Daten"") anzugeben"
+55,Status der Antwort,SG4,STS,9015,E01,,Status der Antwort,X,
+56,Status der Antwort,SG4,STS,9013,,,Code des Prüfschritts,X,
+57,Status der Antwort,SG4,STS,1131,E_0408,,EBD Nr. E_0408,X,
+58,Status der Antwort,SG4,STS,9012,,,Zeitraum-ID aus derÄnderungsmeldung desVerantwortlichen,X [914] ∧ [937]∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen  
+[914] Format: Möglicher Wert: > 0  
+[937] Format: keine Nachkommastelle"
+59,Netzlokation,SG5,,,,,,Muss [2061],
+60,Netzlokation,SG5,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+61,Netzlokation,SG5,LOC,,,,,Muss,
+62,Netzlokation,SG5,LOC,3227,Z18,,Netzlokation,X,
+63,Netzlokation,SG5,LOC,3225,,,ID der Netzlokation,X [960],[960] Format: Netzlokations- ID
+64,Prüfidentifikator,SG6,,,,,,Muss,
+65,Prüfidentifikator,SG6,,,,,,Muss,
+66,Prüfidentifikator,SG6,RFF,,,,,Muss,
+67,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,
+68,Prüfidentifikator,SG6,RFF,1154,55225,,GPKE / ÄnderungAbrechnung Blindarbeitvom NB,,
+69,Prüfidentifikator,SG6,RFF,1154,55227,,GPKE / Rückmeldung /Anfrage AbrechnungBlindarbeit an NB,X,
+70,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss [301],
+71,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+72,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,Muss,
+73,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,
+74,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
+75,Verwendungszeitraum der Daten,SG6,,,,,,Muss [315] ∧[707]Soll [8] ∧ [301]∧ [707],
+76,Verwendungszeitraum der Daten,SG6,,,,,,Muss [315] ∧[707]Soll [8] ∧ [301]∧ [707],"[8] Wenn für Datenclearing erforderlich  
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden  
+[707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
+77,Verwendungszeitraum der Daten,SG6,RFF,,,,,Muss,
+78,Verwendungszeitraum der Daten,SG6,RFF,1153,Z47,,Im System vorhandeneDaten,X [5P0..n],
+79,Verwendungszeitraum der Daten,SG6,RFF,1153,Z48,,Erwartete Daten,X [2P0..n],
+80,Verwendungszeitraum der Daten,SG6,RFF,1153,Z49,,Gültige Daten,,
+81,Verwendungszeitraum der Daten,SG6,RFF,1153,Z53,,Keine Daten,,
+82,Verwendungszeitraum der Daten,SG6,RFF,1153,Z54,,Im System keine Datenvorhanden,X [4P0..n],
+83,Verwendungszeitraum der Daten,SG6,RFF,1153,Z55,,Keine Daten erwartet,X [2P0..n],
+84,Verwendungszeitraum der Daten,SG6,RFF,1156,,,Zeitraum-ID,X [914] ∧ [937][127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine"
+85,Verwendung der Daten ab,SG6,,,,,,,
+86,Verwendung der Daten ab,SG6,,,,,,Muss [131] ⊻[134] ⊻ [135],
+87,Verwendung der Daten ab,SG6,DTM,,,,,Muss [131] ⊻[134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem älterer Tag 0:00 Uhr deutscher Zeit vom DTM+137 DE2380 (Nachrichtendatum) sein  
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der nächst niedrigeren Zeitraum"
+88,Verwendung der Daten ab,SG6,DTM,2005,Z25,,Verwendung der Datenab,X,
+89,Verwendung der Daten ab,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+90,Verwendung der Daten ab,SG6,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+91,Verwendung der Daten bis,SG6,,,,,,,
+92,Verwendung der Daten bis,SG6,,,,,,Muss [472] ⊻[473],
+93,Verwendung der Daten bis,SG6,DTM,,,,,Muss [472] ⊻[473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID) "
+94,Verwendung der Daten bis,SG6,DTM,2005,Z26,,Verwendung der Datenbis,X,
+95,Verwendung der Daten bis,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+96,Verwendung der Daten bis,SG6,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+97,Abrechnungsdaten der Netzlokation,SG8,,,,,,Soll [8],
+98,Abrechnungsdaten der Netzlokation,SG8,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+99,Abrechnungsdaten der Netzlokation,SG8,SEQ,,,,,Muss,
+100,Abrechnungsdaten der Netzlokation,SG8,SEQ,1229,Z71,,Abrechnungsdaten derNetzlokation,,
+101,Abrechnungsdaten der Netzlokation,SG8,SEQ,1229,ZH1,,ErwarteteAbrechnungsdaten derNetzlokation,X,
+102,Abrechnungsdaten der Netzlokation,SG8,SEQ,1229,ZH2,,Im System vorhandeneAbrechnungsdaten der,X,
+103,Abrechnungsdaten der Netzlokation,SG8,SEQ,1050,,,Referenz auf Zeitraum-ID,X [914] ∧ [937][22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
+[914] Format: Möglicher Wert: > 0  
+[937] Format: keine Nachkommastelle"
+104,Artikel-ID,SG8,,,,,,,
+105,Artikel-ID,SG8,,,,,,Muss,
+106,Artikel-ID,SG8,PIA,,,,,Muss,
+107,Artikel-ID,SG8,PIA,4347,Z02,,Gruppenartikel-ID /Artikel-ID,X,
+108,Artikel-ID,SG8,PIA,7140,,,Produkt-/Leistungsnummer,X,
+109,Artikel-ID,SG8,PIA,7143,Z09,,Artikel-ID,X,
+110,Artikel-ID,SG8,PIA,7143,Z10,,Gruppenartikel-ID,X,
+111,Abrechnung Blindarbeit,SG10,,,,,,Muss,
+112,Abrechnung Blindarbeit,SG10,,,,,,Muss,
+113,Abrechnung Blindarbeit,SG10,CCI,,,,,Muss,
+114,Abrechnung Blindarbeit,SG10,CCI,7059,Z45,,Abrechnung derBlindarbeit,X,
+115,Abrechnung Blindarbeit,SG10,CCI,7037,ZD9,,Abrechnung findet statt,X,
+116,Abrechnung Blindarbeit,SG10,CCI,7037,ZE0,,Abrechnung findet nichtstatt,X,
+117,Zahler der Blindarbeit,SG10,,,,,,,
+118,Zahler der Blindarbeit,SG10,,,,,,Muss [57],
+119,Zahler der Blindarbeit,SG10,CAV,,,,,Muss [57],[57] Wenn in derselben SG8 das CCI+Z45++ZD9 (Abrechnung findet statt) vorhanden ist 
+120,Zahler der Blindarbeit,SG10,CAV,7111,ZE4,,Zahler der Blindarbeit,X,
+121,Zahler der Blindarbeit,SG10,CAV,7110,Z36,,Anschlussnutzer,X,
+122,Zahler der Blindarbeit,SG10,CAV,7110,Z37,,Lieferant,X,
+123,Zahler der Blindarbeit,SG10,CAV,7110,Z38,,Zahler der Blindarbeitnoch nicht festgelegt,X,
+124,Nachrichten-Endesegment,,,,,,,Muss,
+125,UNT,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+126,UNT,,UNT,0062,,,Nachrichten-Referenznummer,X,

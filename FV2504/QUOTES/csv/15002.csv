@@ -1,0 +1,134 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,Nachrichten-Kopfsegment,,UNH,,,,,Muss,
+2,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
+3,Nachrichten-Kopfsegment,,UNH,0065,QUOTES,,Angebot,X,
+4,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+5,Nachrichten-Kopfsegment,,UNH,0054,10A,,Ausgabe 2010 - A,X,
+6,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+7,Nachrichten-Kopfsegment,,UNH,0057,1.3a,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+8,Beginn der Nachricht,,,,,,,Muss,
+9,Beginn der Nachricht,,BGM,,,,,Muss,
+10,Beginn der Nachricht,,BGM,1001,Z29,,Abrechnung desMessstellenbetriebs vomMSB an den LF,X,
+11,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+12,Nachrichtendatum,,,,,,,Muss,
+13,Nachrichtendatum,,DTM,,,,,Muss,
+14,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+15,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+[931] Format: ZZZ = +00"
+16,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+17,Ausführungsdatum,,,,,,,Muss [27],
+18,Ausführungsdatum,,DTM,,,,,Muss [27],[27] Wenn DTM+469 nicht vorhanden
+19,Ausführungsdatum,,DTM,2005,203,,Ausführungsdatum/-zeit,X,
+20,Ausführungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+21,Ausführungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+22,Beginn zum (nächstmöglichen Termin),,,,,,,Soll [26] ∧ [28] ∧ [29],
+23,Beginn zum (nächstmöglichen Termin),,DTM,,,,,Soll [26] ∧ [28] ∧ [29],"[26] Wenn DTM+203 nicht vorhanden 
+[28] Wenn RFF+AAV vorhanden 
+[29] Wenn DTM+469 in Anfrage (REQOTE) vorhanden war"
+24,Beginn zum (nächstmöglichen Termin),,DTM,2005,469,,"Startdatum oder -zeitpunkt, frühestes/r",X,
+25,Beginn zum (nächstmöglichen Termin),,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+26,Beginn zum (nächstmöglichen Termin),,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+27,Produkt-/ Leistungsbeschreibung,,,,,,,Muss,
+28,Produkt-/ Leistungsbeschreibung,,IMD,,,,,Muss,
+29,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z33,,Angebot auf BasisPreisblatt,X,
+30,Produkt-/ Leistungsbeschreibung,,IMD,7081,Z34,,Individuelles Angebot,X,
+31,Nachrichtennummer der Anfrage,SG1,,,,,,Soll [17],
+32,Nachrichtennummer der Anfrage,SG1,,,,,,Soll [17],[17] Wenn das Angebot per REQOTE angefragt wurde
+33,Nachrichtennummer der Anfrage,SG1,RFF,,,,,Muss,
+34,Nachrichtennummer der Anfrage,SG1,RFF,1153,AAV,,Nummer der Anfrage,X,
+35,Nachrichtennummer der Anfrage,SG1,RFF,1154,,,Nachrichtennummer,X [505],"[505] Hinweis: Wert aus BGM+Z29 DE1004 der REQOTE, mit der die Anfrage Rechnungsabwicklung erfolgt ist."
+36,Prüfidentifikator,SG1,,,,,,Muss,
+37,Prüfidentifikator,SG1,,,,,,Muss,
+38,Prüfidentifikator,SG1,RFF,,,,,Muss,
+39,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
+40,Prüfidentifikator,SG1,RFF,1154,15002,,AngebotRechnungsabwicklung MSBüber LF,X,
+41,Währungsangaben,SG4,,,,,,Muss [21],
+42,Währungsangaben,SG4,,,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
+43,Währungsangaben,SG4,CUX,,,,,Muss,
+44,Währungsangaben,SG4,CUX,6347,2,,Referenzwährung,X,
+45,Währungsangaben,SG4,CUX,6345,EUR,,Euro,X,
+46,Währungsangaben,SG4,CUX,6343,4,,Währung der Rechnung,X,
+47,MP-ID Absender,SG11,,,,,,Muss,
+48,MP-ID Absender,SG11,,,,,,Muss,
+49,MP-ID Absender,SG11,NAD,,,,,Muss,
+50,MP-ID Absender,SG11,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
+51,MP-ID Absender,SG11,NAD,3039,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
+52,MP-ID Absender,SG11,NAD,3055,9,,GS1,X,
+53,MP-ID Absender,SG11,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+54,Ansprechpartner,SG14,,,,,,Muss,
+55,Ansprechpartner,SG14,,,,,,Muss,
+56,Ansprechpartner,SG14,CTA,,,,,Muss,
+57,Ansprechpartner,SG14,CTA,3139,,,,IC,
+58,Ansprechpartner,SG14,CTA,3412,,,Kontakt,X,
+59,Kommunikationsverbindung,SG14,,,,,,,
+60,Kommunikationsverbindung,SG14,,,,,,Muss,
+61,Kommunikationsverbindung,SG14,COM,,,,,Muss,
+62,Kommunikationsverbindung,SG14,COM,3148,,,"Kommunikationsadresse,Identifikation",X (([939] [72]) ∨ ([940][73])) ∧ [516],"[72] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
+[73] wenn im DE3155 in demselben COM der Code TE / FX"
+63,Kommunikationsverbindung,SG14,COM,3155,EM,,Elektronische Post,X [1P0..1],
+64,Kommunikationsverbindung,SG14,COM,3155,FX,,Telefax,X [1P0..1],
+65,Kommunikationsverbindung,SG14,COM,3155,TE,,Telefon,X [1P0..1],
+66,Kommunikationsverbindung,SG14,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+67,Kommunikationsverbindung,SG14,COM,3155,AL,,Handy,X [1P0..1],
+68,MP-ID Empfänger,SG11,,,,,,Muss,
+69,MP-ID Empfänger,SG11,,,,,,Muss,
+70,MP-ID Empfänger,SG11,NAD,,,,,Muss,
+71,MP-ID Empfänger,SG11,NAD,3035,,,,MR,
+72,MP-ID Empfänger,SG11,NAD,3039,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
+73,MP-ID Empfänger,SG11,NAD,3055,9,,GS1,X,
+74,MP-ID Empfänger,SG11,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+75,"Liefer-, bzw. Bezugsort",SG11,,,,,,Muss,
+76,"Liefer-, bzw. Bezugsort",SG11,,,,,,Muss,
+77,"Liefer-, bzw. Bezugsort",SG11,NAD,,,,,Muss,
+78,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,,,,DP,
+79,Meldepunkt,SG11,,,,,,,
+80,Meldepunkt,SG11,,,,,,Muss,
+81,Meldepunkt,SG11,LOC,,,,,Muss,
+82,Meldepunkt,SG11,LOC,3227,,,,172,
+83,Meldepunkt,SG11,LOC,3225,,,Identifikator,X [950] [501],"[501] Hinweis: Verwendung der ID der Marktlokation 
+[950] Format: Marktlokations-ID"
+84,Positionsdaten,SG27,,,,,,Muss,
+85,Positionsdaten,SG27,,,,,,Muss,
+86,Positionsdaten,SG27,LIN,,,,,Muss,
+87,Positionsdaten,SG27,LIN,1082,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+88,Positionsdaten,SG27,LIN,7140,,,Produkt-/Leistungsnummer,X ([31] ∧ ([65] ⊻ [66])) ⊻([942] [69] ∧ ([67] ⊻ [68])),"[31] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind. 
+[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
+[66] Wenn DTM+469 (Beginn zum"
+89,Positionsdaten,SG27,LIN,7143,Z01,,Artikelnummer,X [65] ⊻ [66],
+90,Positionsdaten,SG27,LIN,7143,Z09,,Artikel-ID,X [67] ⊻ [68],"[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
+[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00 
+[67] Wenn DTM+203 (Ausführungsdatum) im DE2380 ≥ 202312312300?+00 
+[68] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 ≥ 202312312300?+00"
+91,Zusätzliche Produktidentifikation,SG27,,,,,,,
+92,Zusätzliche Produktidentifikation,SG27,,,,,,Muss [20] ∧ ([65] ⊻ [66]),
+93,Zusätzliche Produktidentifikation,SG27,PIA,,,,,Muss [20] ∧ ([65] ⊻ [66]),"[20] Wenn IMD++Z33 vorhanden 
+[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
+[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00"
+94,Zusätzliche Produktidentifikation,SG27,PIA,4347,,,,1,
+95,Zusätzliche Produktidentifikation,SG27,PIA,7140,,,Preisschlüsselstamm,X,
+96,Zusätzliche Produktidentifikation,SG27,PIA,7143,Z06,,Preisschlüsselstamm,X,
+97,Preisangaben,SG31,,,,,,Muss ([81] ∧ [2069]) ⊻([82] ∧ [2070]),
+98,Preisangaben,SG31,,,,,,Muss ([81] ∧ [2069]) ⊻([82] ∧ [2070]),"[81] Wenn IMD DE7081 (Produkt-/Leistungsbeschreibung) mit Wert Z33 (Angebot auf Basis Preisblatt) vorhanden. 
+[82] Wenn IMD DE7081 (Produkt-/Leistungsbeschreibung) mit Wert Z34 (Individuelles Angebot) vorhanden. 
+[2069] Pro SG27 LIN ist die SG31 PRI genau einmal anzugeben. Dabei muss in der SG31 PRI im DE6411 eine Preisangabe mit dem Code H87 (Stück) angeben sein. "
+99,Preisangaben,SG31,PRI,,,,,Muss,
+100,Preisangaben,SG31,PRI,5125,CAL,,Berechnungspreis,X,
+101,Preisangaben,SG31,PRI,5118,,,"Preis, Betrag",M [21] ∧ [912],"[21] Wenn IMD++Z34 vorhanden 
+[912] Format: max. 6 Nachkommastellen"
+102,Preisangaben,SG31,PRI,5284,,,"Einzelpreisbasis, Menge",X [908],[908] Format: Mögliche Werte: 1 bis n
+103,Preisangaben,SG31,PRI,6411,H87,,Stück,X ,
+104,Preisangaben,SG31,PRI,6411,DAY,,Tag,X [21],[21] Wenn IMD++Z34 vorhanden
+105,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,Soll [18] ∧ [20],
+106,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,Soll [18] ∧ [20],"[18] Wenn Angebot mehrere Marktlokationen abdeckt, an welchen der identische Anschlussnutzer vorhanden ist und deren messtechnische Einordnung iMS ist (Marktlokation aus SG11 LOC+172 und alle Marktlokationen, die in einem SG29 RFF+Z18 aufgeführt sind). 
+[20] Wenn IMD++Z33 vorhanden"
+107,Referenz auf ID weiterer Marktlokationen,SG32,RFF,,,,,Muss,
+108,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1153,Z18,,Marktlokation,X,
+109,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1154,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+110,Abschnitts-Kontrollsegment,,,,,,,Muss,
+111,Abschnitts-Kontrollsegment,,UNS,,,,,Muss,
+112,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,
+113,Nachrichten-Endesegment,,,,,,,Muss,
+114,Nachrichten-Endesegment,,UNT,,,,,Muss,
+115,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+116,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

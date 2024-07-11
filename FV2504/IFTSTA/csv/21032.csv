@@ -1,0 +1,106 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,UNH,,UNH,0062,,,Nachrichten-Referenznummer,X,
+2,UNH,,UNH,0065,IFTSTA,,MultimodalerStatusbericht,X,
+3,UNH,,UNH,0052,D,,Entwurfs-Version,X,
+4,UNH,,UNH,0054,18A,,Ausgabe 2018 - A,X,
+5,UNH,,UNH,0051,UN,,UN/CEFACT,X,
+6,UNH,,UNH,0057,2.0f,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+7,Beginn der Nachricht,,,,,,,Muss,
+8,BGM,,BGM,1001,Z09,,WiM Meldung(en),X,
+9,BGM,,BGM,1004,,,Dokumentennummer,X,
+10,Dokumentendatum,,,,,,,Muss,
+11,DTM,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+12,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+[931] Format: ZZZ = +00"
+13,DTM,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+14,MP-ID Empfänger,SG1,,,,,,Muss,
+15,MP-ID Empfänger,SG1,,,,,,Muss,
+16,MP-ID Empfänger,SG1,NAD,,,,,Muss,
+17,MP-ID Empfänger,SG1,NAD,3035,MR,,Nachrichtenempfänger,X,
+18,MP-ID Empfänger,SG1,NAD,3039,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
+19,MP-ID Empfänger,SG1,NAD,3055,9,,GS1,X,
+20,MP-ID Empfänger,SG1,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+21,MP-ID Absender,SG1,,,,,,Muss,
+22,MP-ID Absender,SG1,,,,,,Muss,
+23,MP-ID Absender,SG1,NAD,,,,,Muss,
+24,MP-ID Absender,SG1,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+25,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
+26,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,
+27,MP-ID Absender,SG1,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+28,Ansprechpartner,SG2,,,,,,Kann,
+29,Ansprechpartner,SG2,,,,,,Kann,
+30,Ansprechpartner,SG2,CTA,,,,,Muss,
+31,Ansprechpartner,SG2,CTA,3139,IC,,Informationskontakt,X,
+32,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
+33,Kommunikationsverbindun g,SG2,,,,,,,
+34,Kommunikationsverbindun g,SG2,,,,,,Muss,
+35,Kommunikationsverbindun g,SG2,COM,,,,,Muss,
+36,Kommunikationsverbindun g,SG2,COM,3148,,,Nummer / E-Mail Adresse,X (([939][146])∨ ([940][147]))∧ [534],"[146] Wenn im DE3155 in demselben COM der Code EM vorhanden ist 
+[147] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
+[534] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+37,Kommunikationsverbindun g,SG2,COM,3155,EM,,E-Mail,X [1P0..1],
+38,Kommunikationsverbindun g,SG2,COM,3155,FX,,Telefax,X [1P0..1],
+39,Kommunikationsverbindun g,SG2,COM,3155,TE,,Telefon,X [1P0..1],
+40,Kommunikationsverbindun g,SG2,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+41,Kommunikationsverbindun g,SG2,COM,3155,AL,,Handy,X [1P0..1],
+42,Sendungsdaten,SG14,,,,,,Muss,
+43,Sendungsdaten,SG14,,,,,,Muss,
+44,Sendungsdaten,SG14,CNI,,,,,Muss,
+45,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht bei 1 beginnend und fortlaufend aufsteigend"
+46,Meldepunkt,SG14,,,,,,,
+47,Meldepunkt,SG14,,,,,,Muss,
+48,Meldepunkt,SG14,LOC,,,,,Muss,
+49,Meldepunkt,SG14,LOC,3227,172,,Meldepunkt,X,
+50,Meldepunkt,SG14,LOC,3225,,,Identifikator,X [950] [506],"[505] Hinweis: Verwendung der ID der Messlokation 
+[506] Hinweis: Verwendung der ID der Marktlokation 
+[532] Hinweis: Verwendung der ID der Netzlokation 
+[533] Hinweis: Verwendung der ID der Steuerbaren Ressource 
+[950] Format: Marktlokations-ID"
+51,Status zum Angebot oder Anfrage,SG15,,,,,,Muss,
+52,Status zum Angebot oder Anfrage,SG15,,,,,,Muss,
+53,Status zum Angebot oder Anfrage,SG15,STS,,,,,Muss,
+54,Status zum Angebot oder Anfrage,SG15,STS,9015,Z20,,Status des referenziertenDokuments,X,
+55,Status zum Angebot oder Anfrage,SG15,STS,4405,Z32,,abgelehnt,X,
+56,Status zum Angebot oder Anfrage,SG15,STS,9013,,,Code des Prüfschritts,X,
+57,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0205,,EBD Nr. E_0205,X,
+58,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0207,,EBD Nr. E_0207,,
+59,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0208,,EBD Nr. E_0208,X,
+60,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0252,,EBD Nr. E_0252,,
+61,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0524,,EBD Nr. E_0524,,
+62,Status zum Angebot oder Anfrage,SG15,STS,1131,E_0531,,EBD Nr. E_0531,,"[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF 
+[26] Wenn MP-ID in SG1 NAD+MR in der Rolle NB 
+[76] Wenn MP-ID in SG1 NAD+MR in der Rolle ESA"
+63,Prüfidentifikator,SG15,,,,,,,
+64,Prüfidentifikator,SG15,,,,,,Muss,
+65,Prüfidentifikator,SG15,RFF,,,,,Muss,
+66,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,
+67,Prüfidentifikator,SG15,RFF,1154,21032,,WiM /Angebotsablehnung (LFan MSB),X,
+68,Prüfidentifikator,SG15,RFF,1154,21033,,"WiM, GPKE /Anfrageablehnung (MSBan ESA / LF / NB)",,
+69,Referenziertes Angebot / Anfrage,SG15,,,,,,,
+70,Referenziertes Angebot / Anfrage,SG15,,,,,,Muss,
+71,Referenziertes Angebot / Anfrage,SG15,RFF,,,,,Muss,
+72,Referenziertes Angebot / Anfrage,SG15,RFF,1153,AAG,,Angebotsnummer,X,
+73,Referenziertes Angebot / Anfrage,SG15,RFF,1153,AAV,,Nummer der Anfrage,,
+74,Referenziertes Angebot / Anfrage,SG15,RFF,1154,,,Dokumenten-/Vorgangsnummerder Bezugsnachricht,X [501],"[501] Hinweis: Aus QUOTES BGM DE1004 
+[502] Hinweis: Aus REQOTE BGM DE1004"
+75,Frühester Zeitpunkt,SG15,,,,,,,
+76,Frühester Zeitpunkt,SG15,,,,,,,
+77,Frühester Zeitpunkt,SG15,DTM,,,,,,[30] Wenn in dieser SG15 STS+Z20+Z32+A07:E_0207 vorhanden.
+78,Frühester Zeitpunkt,SG15,DTM,2005,469,,"Startdatum oder -zeitpunkt, frühestes/r",,
+79,Frühester Zeitpunkt,SG15,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+80,Frühester Zeitpunkt,SG15,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
+81,Sendungspositionseinzelhei ten,SG25,,,,,,,
+82,Sendungspositionseinzelhei ten,SG25,,,,,,,[129] Wenn
+83,Sendungspositionseinzelhei ten,SG25,GID,,,,,,
+84,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,,
+85,Freier Text,SG25,,,,,,,
+86,Freier Text,SG25,,,,,,,
+87,Freier Text,SG25,FTX,,,,,,
+88,Freier Text,SG25,FTX,4451,ACB,,ZusätzlicheInformationen (fürallgemeine Hinweise),,
+89,Freier Text,SG25,FTX,4440,,,Freier Text,,
+90,Nachrichten-Endesegment,,,,,,,Muss,
+91,UNT,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+92,UNT,,UNT,0062,,,Nachrichten-Referenznummer,X,

@@ -1,0 +1,176 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,Nachrichten-Kopfsegment,,UNH,,,,,Muss,
+2,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
+3,Nachrichten-Kopfsegment,,UNH,0065,UTILTS,,Netznutzungszeiten-Nachricht,X,
+4,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+5,Nachrichten-Kopfsegment,,UNH,0054,18A,,Ausgabe 2018 - A,X,
+6,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+7,Nachrichten-Kopfsegment,,UNH,0057,1.1d,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+8,Beginn der Nachricht,,,,,,,Muss,
+9,Beginn der Nachricht,,BGM,,,,,Muss,
+10,Beginn der Nachricht,,BGM,1001,Z59,,AusgerollteZählzeitdefinition,,
+11,Beginn der Nachricht,,BGM,1001,Z80,,AusgerollteSchaltzeitdefinition,,
+12,Beginn der Nachricht,,BGM,1001,Z81,,AusgerollteLeistungskurvendefinition,X,
+13,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+14,Nachrichtendatum,,,,,,,Muss,
+15,Nachrichtendatum,,DTM,,,,,Muss,
+16,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+17,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931][494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.  
+[931] Format: ZZZ = +00"
+18,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+19,MP-ID Absender,SG2,,,,,,Muss,
+20,MP-ID Absender,SG2,,,,,,Muss,
+21,MP-ID Absender,SG2,NAD,,,,,Muss,
+22,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+23,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [1],[1] Nur MP-ID aus Sparte Strom
+24,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
+25,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW",X,
+26,Ansprechpartner,SG3,,,,,,Kann,
+27,Ansprechpartner,SG3,,,,,,Kann,
+28,Ansprechpartner,SG3,CTA,,,,,Muss,
+29,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,
+30,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+31,Kommunikationsverbindung,SG3,,,,,,,
+32,Kommunikationsverbindung,SG3,,,,,,Muss,
+33,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+34,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X (([939][53]) ∨([940][54]))∧ [530],"[53] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
+[54] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
+[530] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+35,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],
+36,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+37,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+38,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+39,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+40,MP-ID Empfänger,SG2,,,,,,Muss,
+41,MP-ID Empfänger,SG2,,,,,,Muss,
+42,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+43,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,
+44,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [1],[1] Nur MP-ID aus Sparte Strom
+45,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
+46,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW",X,
+47,Vorgang,SG5,,,,,,Muss [523],
+48,Vorgang,SG5,,,,,,Muss [523],"[505] Hinweis: Jede ausgerollte Zählzeitdefinition ist in einem eigenen IDE anzugeben  
+[522] Hinweis: Jede ausgerollte Schaltzeitdefinition ist in einem eigenen IDE anzugeben  
+[523] Hinweis: Jede ausgerollte Leistungskurvendefinitio n ist in einem eigenen IDE anzugeben"
+49,Vorgang,SG5,IDE,,,,,Muss,
+50,Vorgang,SG5,IDE,7495,24,,Transaktion,X,
+51,Vorgang,SG5,IDE,7402,,,Vorgangsnummer,X,
+52,Code der Definition,SG5,,,,,,,
+53,Code der Definition,SG5,,,,,,Muss,
+54,Code der Definition,SG5,LOC,,,,,Muss,
+55,Code der Definition,SG5,LOC,3227,Z09,,Code der Definition,X,
+56,Code der Definition,SG5,LOC,3225,,,Code der Definition,X [526],"[524] Hinweis: Es ist der Code einer Zählzeitdefinition anzugeben  
+[525] Hinweis: Es ist der Code einer Schaltzeitdefinition anzugeben  
+[526] Hinweis: Es ist der Code einer Leistungskurvendefinitio n anzugeben"
+57,Gültigkeitsbeginn der ausgerollten Definition,SG5,,,,,,,
+58,Gültigkeitsbeginn der ausgerollten Definition,SG5,,,,,,Muss,
+59,Gültigkeitsbeginn der ausgerollten Definition,SG5,DTM,,,,,Muss,
+60,Gültigkeitsbeginn der ausgerollten Definition,SG5,DTM,2005,Z34,,Gültigkeitsbeginn,X,
+61,Gültigkeitsbeginn der ausgerollten Definition,SG5,DTM,2380,,,Datum oder Uhrzeit oder,X [931] ∧,[931] Format: ZZZ = +00
+62,Gültigkeitsbeginn der ausgerollten Definition,SG5,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+63,Gültigkeitsende der ausgerollten Definition,SG5,,,,,,,
+64,Gültigkeitsende der ausgerollten Definition,SG5,,,,,,Muss [48]Soll [49] ∧[37],
+65,Gültigkeitsende der ausgerollten Definition,SG5,DTM,,,,,Muss [48]Soll [49] ∧[37],"[29] Wenn in SG8 SEQ+Z43 DTM+Z33 (Zählzeitänderungszeitpu nkt) im DE2379 der Code 303 vorhanden  
+[36] Wenn in SG8 SEQ+Z43 DTM+Z33 (Zählzeitänderungszeitpu nkt) im DE2379 der Code 401 vorhanden  
+[37] Wenn ein Gültigkeitsende bereits angegeben werden kann.  
+[46] Wenn in SG8 SEQ+Z73 DTM+Z44 (Schaltzeitänderungszeit punkt) im DE2379 der Code 303 vorhanden  
+[47] Wenn in SG8 SEQ+Z73 DTM+Z44 (Schaltzeitänderungszeit punkt) im DE2379 der Code 401 vorhanden  
+[48] Wenn in SG8 SEQ+Z74 DTM+Z45 (Leistungskurvenänderun gszeitpunkt) im DE2379 der Code 303 vorhanden  
+[49] Wenn in SG8 SEQ+Z74 DTM+Z45 (Leistungskurvenänderun gszeitpunkt) im DE2379 der Code 401 vorhanden"
+66,Gültigkeitsende der ausgerollten Definition,SG5,DTM,2005,Z35,,Gültigkeitsende,X,
+67,Gültigkeitsende der ausgerollten Definition,SG5,DTM,2380,,,Datum oder Uhrzeit oder,X [931] ∧,[30] Der Wert von CCYY
+68,Gültigkeitsende der ausgerollten Definition,SG5,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+69,Versionsangabe,SG5,,,,,,,
+70,Versionsangabe,SG5,,,,,,Muss,
+71,Versionsangabe,SG5,DTM,,,,,Muss,
+72,Versionsangabe,SG5,DTM,2005,293,,Fertigstellungsdatum/-zeit,X,
+73,Versionsangabe,SG5,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931],[931] Format: ZZZ = +00
+74,Versionsangabe,SG5,DTM,2379,304,,CCYYMMDDHHMMSSZZZ,X,
+75,Prüfidentifikator,SG6,,,,,,Muss,
+76,Prüfidentifikator,SG6,,,,,,Muss,
+77,Prüfidentifikator,SG6,RFF,,,,,Muss,
+78,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,
+79,Prüfidentifikator,SG6,RFF,1154,25005,,AusgerollteZählzeitdefinition,,
+80,Prüfidentifikator,SG6,RFF,1154,25008,,AusgerollteSchaltzeitdefinition,,
+81,Prüfidentifikator,SG6,RFF,1154,25009,,AusgerollteLeistungskurvendefinition,X,
+82,Referenz auf Reklamation,SG6,,,,,,Soll [26],
+83,Referenz auf Reklamation,SG6,,,,,,Soll [26],[26] sofern per ORDERS reklamiert
+84,Referenz auf Reklamation,SG6,RFF,,,,,Muss,
+85,Referenz auf Reklamation,SG6,RFF,1153,AGI,,Beantragungsnummer,X,
+86,Referenz auf Reklamation,SG6,RFF,1154,,,"Referenz, Identifikation",X [504],[504] Hinweis: Wert aus BGM+Z55 DE1004 der ORDERS mit der die Reklamation einer Definition erfolgt ist
+87,Zählzeitdefinition,SG8,,,,,,,
+88,Zählzeitdefinition,SG8,,,,,,,[510] Hinweis: Für jeden Zählzeitänderungszeitpu nkt (SG8 DTM+Z33) ist diese Sementgruppe einmal anzugeben
+89,Zählzeitdefinition,SG8,SEQ,,,,,,
+90,Zählzeitdefinition,SG8,SEQ,1229,Z43,,AusgerollteZählzeitdefinition,,
+91,Zählzeitänderungszeitpunkt,SG8,,,,,,,
+92,Zählzeitänderungszeitpunkt,SG8,,,,,,,
+93,Zählzeitänderungszeitpunkt,SG8,DTM,,,,,,
+94,Zählzeitänderungszeitpunkt,SG8,DTM,2005,Z33,,Zählzeitänderungszeitpunkt,,
+95,Zählzeitänderungszeitpunkt,SG8,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,"[31] Wenn im DE2379 dieses Segments der Code 303 vorhanden  
+[32] Der Zeitpunkt in diesem DE muss ≥ dem Zeitpunkt aus dem DE2380 des Gültigkeitsbeginn der"
+96,Zählzeitänderungszeitpunkt,SG8,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
+97,Zählzeitänderungszeitpunkt,SG8,DTM,2379,401,,HHMM,,"[50] In jedem DE2379 dieses DTM-Segments innerhalb eines IDE+24 (Vorgangs) muss der gleiche Code angegeben werden  
+[527] Hinweis: Dieser Code ist anzugeben, wenn es sich um eine einmalig zu übermittelnde Definition handelt  
+[528] Hinweis: Dieser Code ist anzugeben, wenn es sich um eine jährlich zu übermittelnde Definition handelt"
+98,Zählendes Register,SG8,,,,,,,
+99,Zählendes Register,SG8,,,,,,,
+100,Zählendes Register,SG8,RFF,,,,,,
+101,Zählendes Register,SG8,RFF,1153,Z28,,Code des zählenden,,
+102,Zählendes Register,SG8,RFF,1154,,,Code des zählenden Registers,,
+103,Schaltzeitdefinition,SG8,,,,,,,
+104,Schaltzeitdefinition,SG8,,,,,,,"[514] Hinweis: Für jeden Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) ist diese Sementgruppe einmal anzugeben  
+[515] Hinweis: Kein Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) darf mehrfach vorkommen  
+[516] Hinweis: Wenn der Code 303 im DE2379 des Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) genutzt wird, muss genau ein Wert im DE2380 des Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) identisch mit dem Wert aus DE2380 des Gültigkeitsbeginn der ausgerollten Definition (SG5 DTM+Z34) sein  
+[517] Hinweis: Wenn der Code 401 im DE2379 des Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) genutzt wird, muss genau ein Wert = 0000 im DE2380 des Schaltzeitänderungszeitp unkt (SG8 DTM+Z44) sein"
+105,Schaltzeitdefinition,SG8,SEQ,,,,,,
+106,Schaltzeitdefinition,SG8,SEQ,1229,Z73,,AusgerollteSchaltzeitdefinition,,
+107,Schaltzeitänderungszeitpun kt,SG8,,,,,,,
+108,Schaltzeitänderungszeitpun kt,SG8,,,,,,,
+109,Schaltzeitänderungszeitpun kt,SG8,DTM,,,,,,
+110,Schaltzeitänderungszeitpun kt,SG8,DTM,2005,Z44,,Schaltzeitänderungszeitpunkt,,
+111,Schaltzeitänderungszeitpun kt,SG8,DTM,2380,,,Datum oder Uhrzeit oder,,[31] Wenn im DE2379
+112,Schaltzeitänderungszeitpun kt,SG8,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
+113,Schaltzeitänderungszeitpun kt,SG8,DTM,2379,401,,HHMM,,"[50] In jedem DE2379 dieses DTM-Segments innerhalb eines IDE+24 (Vorgangs) muss der gleiche Code angegeben werden  
+[527] Hinweis: Dieser Code ist anzugeben, wenn es sich um eine einmalig zu übermittelnde Definition handelt  
+[528] Hinweis: Dieser"
+114,Schalthandlung an der Lokation,SG9,,,,,,,
+115,Schalthandlung an der Lokation,SG9,,,,,,,
+116,Schalthandlung an der Lokation,SG9,CCI,,,,,,
+117,Schalthandlung an der Lokation,SG9,CCI,7059,Z58,,Schalthandlung,,
+118,Schalthandlung an der Lokation,SG9,CCI,7037,ZF4,,Leistung an der Lokationan,,
+119,Schalthandlung an der Lokation,SG9,CCI,7037,ZF5,,Leistung an der Lokationaus,,
+120,Leistungskurvendefinition,SG8,,,,,,Muss [518]∧ [519] ∧([520] ⊻[521]),
+121,Leistungskurvendefinition,SG8,,,,,,Muss [518]∧ [519] ∧([520] ⊻[521]),"[518] Hinweis: Für jeden Leistungskurvenänderun gszeitpunkt (SG8 DTM+Z45) ist diese Sementgruppe einmal anzugeben  
+[519] Hinweis: Kein Leistungskurvenänderun gszeitpunkt (SG8 DTM+Z45) darf mehrfach vorkommen  
+[520] Hinweis: Wenn der Code 303 im DE2379 des Leistungskurvenänderun gszeitpunkt (SG8 DTM+Z45) genutzt wird, muss genau ein Wert im DE2380 des Leistungskurvenänderun gszeitpunkt (SG8 DTM+Z45) identisch mit dem Wert aus DE2380 des Gültigkeitsbeginn der ausgerollten Definition (SG5 DTM+Z34) sein  
+[521] Hinweis: Wenn der Code 401 im DE2379 des Leistungskurvenänderun gszeitpunkt (SG8 DTM+Z45)"
+122,Leistungskurvendefinition,SG8,SEQ,,,,,Muss,
+123,Leistungskurvendefinition,SG8,SEQ,1229,Z74,,Ausgerollte,X,
+124,Leistungskurvenänderungsz eitpunkt,SG8,,,,,,,
+125,Leistungskurvenänderungsz eitpunkt,SG8,,,,,,Muss,
+126,Leistungskurvenänderungsz eitpunkt,SG8,DTM,,,,,Muss,
+127,Leistungskurvenänderungsz eitpunkt,SG8,DTM,2005,Z45,,Leistungskurvenänderungszeitpunkt,X,
+128,Leistungskurvenänderungsz eitpunkt,SG8,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X ([931] [31]∧ [32] ∧[33]) ⊻(([964] ∧[965] [34])∧ [507]),"[31] Wenn im DE2379 dieses Segments der Code 303 vorhanden  
+[32] Der Zeitpunkt in diesem DE muss ≥ dem Zeitpunkt aus dem DE2380 des Gültigkeitsbeginn der ausgerollten Definition (SG5 DTM+Z34) sein  
+[33] Der Zeitpunkt in diesem DE muss ≤ dem Zeitpunkt aus dem DE2380 des Gültigkeitsende der ausgerollten Definition (SG5 DTM+Z35) sein  
+[34] Wenn im DE2379 dieses Segments der Code 401 vorhanden  
+[507] Hinweis: Es ist die Zeit nach der deutschen gesetzlichen Zeit anzugeben  
+[931] Format: ZZZ = +00  
+[964] Format: HHMM ≥ 0000  
+[965] Format: HHMM ≤ 2359"
+129,Leistungskurvenänderungsz eitpunkt,SG8,DTM,2379,303,,CCYYMMDDHHMMZZZ,X [50] ∧[528],
+130,Leistungskurvenänderungsz eitpunkt,SG8,DTM,2379,401,,HHMM,X [50] ∧[527],[50] In jedem DE2379 dieses DTM-Segments innerhalb eines IDE+24 (Vorgangs) muss der gleiche Code angegeben
+131,oberer Schwellwert,SG11,,,,,,Muss,
+132,oberer Schwellwert,SG11,,,,,,Muss,
+133,oberer Schwellwert,SG11,QTY,,,,,Muss,
+134,oberer Schwellwert,SG11,QTY,6063,Z40,,oberer Schwellwert,X,
+135,oberer Schwellwert,SG11,QTY,6060,,,Mengenangabe in %,X [930] ∧[963],"[930] Format: max. 2 Nachkommastellen  
+[963] Format: Möglicher Wert: ≤ 100"
+136,oberer Schwellwert,SG11,QTY,6411,P1,,Prozent,X,
+137,Nachrichten-Endesegment,,,,,,,Muss,
+138,Nachrichten-Endesegment,,UNT,,,,,Muss,
+139,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+140,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,

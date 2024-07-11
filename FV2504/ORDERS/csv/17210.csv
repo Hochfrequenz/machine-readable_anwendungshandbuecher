@@ -1,0 +1,93 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,Nachrichten-Kopfsegment,,UNH,,,,,Muss,
+2,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
+3,Nachrichten-Kopfsegment,,UNH,0065,ORDERS,,Bestellung,X,
+4,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+5,Nachrichten-Kopfsegment,,UNH,0054,09B,,Ausgabe 2009 - B,X,
+6,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+7,Nachrichten-Kopfsegment,,UNH,0057,1.4,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+8,Beginn der Nachricht,,,,,,,Muss,
+9,Beginn der Nachricht,,BGM,,,,,Muss,
+10,Beginn der Nachricht,,BGM,1001,Z05,,Clearingliste,X,
+11,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+12,Nachrichtendatum,,,,,,,Muss,
+13,Nachrichtendatum,,DTM,,,,,Muss,
+14,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+15,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+[931] Format: ZZZ = +00"
+16,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+17,Ausführungsdatum,,,,,,,Muss [33] ⊻ [34],
+18,Ausführungsdatum,,DTM,,,,,Muss [33] ⊻ [34],"[33] Wenn IMD+Z01 vorhanden 
+[34] Wenn IMD+Z02 vorhanden"
+19,Ausführungsdatum,,DTM,2005,203,,Ausführungsdatum/-zeit,X,
+20,Ausführungsdatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+21,Ausführungsdatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+22,Betrachtungszeitintervall,,,,,,,Muss [1],
+23,Betrachtungszeitintervall,,DTM,,,,,Muss [1],[1] Wenn IMD+Z03 vorhanden
+24,Betrachtungszeitintervall,,DTM,2005,273,,Gültigkeitszeitspanne,X,
+25,Betrachtungszeitintervall,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+26,Betrachtungszeitintervall,,DTM,2379,610,,CCYYMM,X,
+27,Abonnement,,,,,,,Muss,
+28,Abonnement,,IMD,,,,,Muss,
+29,Abonnement,,IMD,7081,Z01,,Start Abo,X,
+30,Abonnement,,IMD,7081,Z02,,Ende Abo,X,
+31,Abonnement,,IMD,7081,Z03,,ohne Abo,X,
+32,Prüfidentifikator,SG1,,,,,,Muss,
+33,Prüfidentifikator,SG1,,,,,,Muss,
+34,Prüfidentifikator,SG1,RFF,,,,,Muss,
+35,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
+36,Prüfidentifikator,SG1,RFF,1154,17210,,AnforderungLieferantenausfallarbeitsclearingliste,X,
+37,MP-ID Absender,SG2,,,,,,Muss,
+38,MP-ID Absender,SG2,,,,,,Muss,
+39,MP-ID Absender,SG2,NAD,,,,,Muss,
+40,MP-ID Absender,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
+41,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+42,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
+43,MP-ID Absender,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+44,Ansprechpartner,SG5,,,,,,Kann,
+45,Ansprechpartner,SG5,,,,,,Kann,
+46,Ansprechpartner,SG5,CTA,,,,,Muss,
+47,Ansprechpartner,SG5,CTA,3139,,,,IC,
+48,Ansprechpartner,SG5,CTA,3412,,,Kontakt,X,
+49,Kommunikationsverbindung,SG5,,,,,,,
+50,Kommunikationsverbindung,SG5,,,,,,Muss,
+51,Kommunikationsverbindung,SG5,COM,,,,,Muss,
+52,Kommunikationsverbindung,SG5,COM,3148,,,"Kommunikationsadresse,Identifikation",X (([939] [147]) ∨ ([940][148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
+[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
+[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+53,Kommunikationsverbindung,SG5,COM,3155,EM,,Elektronische Post,X [1P0..1],
+54,Kommunikationsverbindung,SG5,COM,3155,FX,,Telefax,X [1P0..1],
+55,Kommunikationsverbindung,SG5,COM,3155,TE,,Telefon,X [1P0..1],
+56,Kommunikationsverbindung,SG5,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+57,Kommunikationsverbindung,SG5,COM,3155,AL,,Handy,X [1P0..1],
+58,MP-ID Empfänger,SG2,,,,,,Muss,
+59,MP-ID Empfänger,SG2,,,,,,Muss,
+60,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+61,MP-ID Empfänger,SG2,NAD,3035,,,,MR,
+62,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+63,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
+64,Positionsdaten,SG29,,,,,,Muss [2050],
+65,Positionsdaten,SG29,,,,,,Muss [2050],[2050] Pro Nachricht ist die SG29 genau einmal anzugeben
+66,Positionsdaten,SG29,LIN,,,,,Muss,
+67,Positionsdaten,SG29,LIN,1082,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+68,Versionsangabe der Summenzeitreihe,SG34,,,,,,Muss [1],
+69,Versionsangabe der Summenzeitreihe,SG34,,,,,,Muss [1],[1] Wenn IMD+Z03 vorhanden
+70,Versionsangabe der Summenzeitreihe,SG34,RFF,,,,,Muss,
+71,Versionsangabe der Summenzeitreihe,SG34,RFF,1153,AUU,,Referenz auf eine Zeitreihe,X,
+72,Versionsangabe der Summenzeitreihe,SG34,RFF,1154,,,Version,X,
+73,Meldepunkt,SG38,,,,,,Muss,
+74,Meldepunkt,SG38,,,,,,Muss,
+75,Meldepunkt,SG38,LOC,,,,,Muss,
+76,Meldepunkt,SG38,LOC,3227,,,,172,
+77,Meldepunkt,SG38,LOC,3225,,,Meldepunkt,X [951] [517],"[517] Hinweis: Zählpunkt der LF- AASZR 
+[951] Format: Zählpunktbezeichnung"
+78,Abschnitts-Kontrollsegment,,,,,,,Muss,
+79,Abschnitts-Kontrollsegment,,UNS,,,,,Muss,
+80,Abschnitts-Kontrollsegment,,UNS,0081,und Summenteil,,,S,
+81,Nachrichten-Endesegment,,,,,,,Muss,
+82,Nachrichten-Endesegment,,UNT,,,,,Muss,
+83,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+84,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
