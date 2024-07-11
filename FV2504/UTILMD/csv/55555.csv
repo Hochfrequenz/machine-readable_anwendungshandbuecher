@@ -1,0 +1,289 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,UNH,,UNH,0062,,,Nachrichten-Referenznummer,X,
+2,UNH,,UNH,0065,UTILMD,,Netzanschluss-Stammdaten,X,
+3,UNH,,UNH,0052,D,,Entwurfs-Version,X,
+4,UNH,,UNH,0054,11A,,Ausgabe 2011 - A,X,
+5,UNH,,UNH,0051,UN,,UN/CEFACT,X,
+6,UNH,,UNH,0057,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S2.0,X,
+7,Beginn der Nachricht,,,,,,,Muss,
+8,BGM,,BGM,1001,E03,,Änderungsmeldungen,X [705],
+9,BGM,,BGM,1001,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird  
+[706] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Bestellung einer Änderung von Stammdaten..."" durchgeführt wird, mit dem Ziel ein Datenclearing durchzuführen "
+10,BGM,,BGM,1004,,,Dokumentennummer,X,
+11,Nachrichtendatum,,,,,,,Muss,
+12,DTM,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+13,DTM,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+[931] Format: ZZZ = +00"
+14,DTM,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+15,MP-ID Absender,SG2,,,,,,Muss,
+16,MP-ID Absender,SG2,,,,,,Muss,
+17,MP-ID Absender,SG2,NAD,,,,,Muss,
+18,MP-ID Absender,SG2,NAD,3035,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+19,MP-ID Absender,SG2,NAD,3039,,,MP-ID,X,
+20,MP-ID Absender,SG2,NAD,3055,9,,GS1,X,
+21,Ansprechpartner,SG3,,,,,,Kann,
+22,Ansprechpartner,SG3,,,,,,Kann,
+23,Ansprechpartner,SG3,CTA,,,,,Muss,
+24,Ansprechpartner,SG3,CTA,3139,IC,,Informationskontakt,X,
+25,Ansprechpartner,SG3,CTA,3412,,,Name vom Ansprechpartner,X,
+26,Kommunikationsverbindung,SG3,,,,,,,
+27,Kommunikationsverbindung,SG3,,,,,,Muss,
+28,Kommunikationsverbindung,SG3,COM,,,,,Muss,
+29,Kommunikationsverbindung,SG3,COM,3148,,,Nummer / Adresse,X (([939] [321])∨ ([940] [322]))∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+30,Kommunikationsverbindung,SG3,COM,3155,EM,,Elektronische Post,X [1P0..1],
+31,Kommunikationsverbindung,SG3,COM,3155,FX,,Telefax,X [1P0..1],
+32,Kommunikationsverbindung,SG3,COM,3155,TE,,Telefon,X [1P0..1],
+33,Kommunikationsverbindung,SG3,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+34,Kommunikationsverbindung,SG3,COM,3155,AL,,Handy,X [1P0..1],
+35,MP-ID Empfänger,SG2,,,,,,Muss,
+36,MP-ID Empfänger,SG2,,,,,,Muss,
+37,MP-ID Empfänger,SG2,NAD,,,,,Muss,
+38,MP-ID Empfänger,SG2,NAD,3035,MR,,Nachrichtenempfänger,X,
+39,MP-ID Empfänger,SG2,NAD,3039,,,MP-ID,X,
+40,MP-ID Empfänger,SG2,NAD,3055,9,,GS1,X,
+41,MP-ID Empfänger,SG2,NAD,3055,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+42,Vorgang,SG4,,,,,,Muss,
+43,Vorgang,SG4,,,,,,Muss,
+44,Vorgang,SG4,IDE,,,,,Muss,
+45,Vorgang,SG4,IDE,7495,24,,Transaktion,X,
+46,Vorgang,SG4,IDE,7402,,,Vorgangsnummer,X,
+47,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,,,,,,,
+48,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,,,,,,Muss,
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,ZY9,,Daten auf individuelleBestellung,X,
+52,Zieladresse URI,SG4,,,,,,,
+53,Zieladresse URI,SG4,,,,,,Soll [8],
+54,Zieladresse URI,SG4,FTX,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
+[453] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Auslöser „Bei Schwellwertunter-/ - überschreitung“ mit selbständiger Änderungsmöglichkeit bestellt wurde   
+[458] Wenn bei der Bestellung das Konfigurationsprodukte 9991 00000 073 9 bestellt wurde  
+[590] Hinweis: Für den Empfang des Steuerbefehls  
+[619] Hinweis: Für die selbständige Änderungsmöglichkeit der Schwellwertunter- / -über- schreitung"
+55,Zieladresse URI,SG4,FTX,4451,Z17,,Zieladresse URI,X,
+56,Zieladresse URI,SG4,FTX,4440,,,Zieladresse URI,X,
+57,IP-Adresse des Absenders,SG4,,,,,,,
+58,IP-Adresse des Absenders,SG4,,,,,,Soll [8],
+59,IP-Adresse des Absenders,SG4,FTX,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[151] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Ü̈bertragungsweg ""aus dem SMGW"" bestellt wurde. Der Empfänger der Werte kann dadurch seine Firewall genau Konfigurieren  
+[152] Wenn FTX+Z28 (IP- Range des Absenders) nicht vorhanden  
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB"
+60,IP-Adresse des Absenders,SG4,FTX,4451,Z27,,IP-Adresse desAbsenders,X,
+61,IP-Adresse des Absenders,SG4,FTX,4440,,,Zieladresse URI,X,
+62,IP-Range des Absenders,SG4,,,,,,,
+63,IP-Range des Absenders,SG4,,,,,,Soll [8],
+64,IP-Range des Absenders,SG4,FTX,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[151] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Ü̈bertragungsweg ""aus dem SMGW"" bestellt wurde. Der Empfänger der Werte kann dadurch seine Firewall genau Konfigurieren  
+[153] Wenn FTX+Z27 (IP- Adresse des Absenders) nicht vorhanden  "
+65,IP-Range des Absenders,SG4,FTX,4451,Z28,,IP-Range des Absenders,X,
+66,IP-Range des Absenders,SG4,FTX,4440,,,untere Grenze der IP-Range desAbsenders,X,
+67,IP-Range des Absenders,SG4,FTX,4440,,,obere Grenze der IP-Range desAbsenders,X,
+68,Zertifikatsaussteller (Issuer),SG4,,,,,,,
+69,Zertifikatsaussteller (Issuer),SG4,,,,,,Soll [8],
+70,Zertifikatsaussteller (Issuer),SG4,FTX,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+[156] Wenn SG4 FTX+Z17 (Zieladresse URI) vorhanden"
+71,Zertifikatsaussteller (Issuer),SG4,FTX,4451,Z24,,Aussteller (Issuer),X,
+72,Zertifikatsaussteller (Issuer),SG4,FTX,4440,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+73,Zertifikatsnutzer (Subject),SG4,,,,,,,
+74,Zertifikatsnutzer (Subject),SG4,,,,,,Soll [8],
+75,Zertifikatsnutzer (Subject),SG4,FTX,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+[156] Wenn SG4 FTX+Z17 (Zieladresse URI) vorhanden"
+76,Zertifikatsnutzer (Subject),SG4,FTX,4451,Z23,,Zertifikatsnutzer(Subject),X,
+77,Zertifikatsnutzer (Subject),SG4,FTX,4440,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+78,IP-Adresse für das CLS- Device,SG4,,,,,,,
+79,IP-Adresse für das CLS- Device,SG4,,,,,,Soll [8],
+80,IP-Adresse für das CLS- Device,SG4,FTX,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
+[459] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem"
+81,IP-Adresse für das CLS- Device,SG4,FTX,4451,Z18,,IP-Adresse für das CLS-Device,X,
+82,IP-Adresse für das CLS- Device,SG4,FTX,4440,,,Freier Text,X,
+83,Prüfidentifikator,SG6,,,,,,Muss,
+84,Prüfidentifikator,SG6,,,,,,Muss,
+85,Prüfidentifikator,SG6,RFF,,,,,Muss,
+86,Prüfidentifikator,SG6,RFF,1153,Z13,,Prüfidentifikator,X,
+87,Prüfidentifikator,SG6,RFF,1154,55553,,GPKE / Stammdaten aufindividuelle Bestellung,,
+88,Prüfidentifikator,SG6,RFF,1154,55555,,GPKE / AnfrageStammdaten aufindividuelle Bestellung,X,
+89,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG6,,,,,,Muss,
+90,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG6,,,,,,Muss,
+91,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG6,RFF,,,,,Muss,
+92,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG6,RFF,1153,Z42,,Referenznummer derNachricht derbetroffenen Antwort aufBestellung(Bestellbestätigung),X,
+93,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG6,RFF,1154,,,"Referenz, Identifikation",X,
+94,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,,,,,,Muss,
+95,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,,,,,,Muss,
+96,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,,,,,Muss,
+97,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,1153,Z43,,Referenznummer desVorgangs derbetroffenen Antwort aufBestellung(Bestellbestätigung),X,
+98,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,1154,,,"Referenz, Identifikation",X,
+99,Verwendungszeitraum der Daten,SG6,,,,,,Muss [315] ∧[707]Soll [8] ∧ [301]∧ [707],
+100,Verwendungszeitraum der Daten,SG6,,,,,,Muss [315] ∧[707]Soll [8] ∧ [301]∧ [707],"[8] Wenn für Datenclearing erforderlich  
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden  
+[707] Hinweis: für weitere Details siehe Kapitel 5.3.3"
+101,Verwendungszeitraum der Daten,SG6,RFF,,,,,Muss,
+102,Verwendungszeitraum der Daten,SG6,RFF,1153,Z47,,Im System vorhandeneDaten,X [5P0..n],
+103,Verwendungszeitraum der Daten,SG6,RFF,1153,Z48,,Erwartete Daten,X [2P0..n],
+104,Verwendungszeitraum der Daten,SG6,RFF,1153,Z49,,Gültige Daten,,
+105,Verwendungszeitraum der Daten,SG6,RFF,1153,Z53,,Keine Daten,,
+106,Verwendungszeitraum der Daten,SG6,RFF,1153,Z54,,Im System keine Datenvorhanden,X [4P0..n],
+107,Verwendungszeitraum der Daten,SG6,RFF,1153,Z55,,Keine Daten erwartet,X [2P0..n],
+108,Verwendungszeitraum der Daten,SG6,RFF,1156,,,Zeitraum-ID,X [914] ∧ [937][127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.   
+[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt  
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt  
+[914] Format: Möglicher Wert: > 0  
+[937] Format: keine Nachkommastelle"
+109,Verwendung der Daten ab,SG6,,,,,,,
+110,Verwendung der Daten ab,SG6,,,,,,Muss [131] ⊻[134] ⊻ [135],
+111,Verwendung der Daten ab,SG6,DTM,,,,,Muss [131] ⊻[134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem"
+112,Verwendung der Daten ab,SG6,DTM,2005,Z25,,Verwendung der Datenab,X,
+113,Verwendung der Daten ab,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+114,Verwendung der Daten ab,SG6,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+115,Verwendung der Daten bis,SG6,,,,,,,
+116,Verwendung der Daten bis,SG6,,,,,,Muss [472] ⊻[473],
+117,Verwendung der Daten bis,SG6,DTM,,,,,Muss [472] ⊻[473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)  
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)  
+[473] Wenn im selben SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) DE1156 (Zeitraum-ID)"
+118,Verwendung der Daten bis,SG6,DTM,2005,Z26,,Verwendung der Datenbis,X,
+119,Verwendung der Daten bis,SG6,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+120,Verwendung der Daten bis,SG6,DTM,2379,303,,CCYYMMDDHHMMZZZ,,
+121,OBIS-Daten der Marktlokation,SG8,,,,,,Soll [8],
+122,OBIS-Daten der Marktlokation,SG8,,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde"
+123,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,Muss,
+124,OBIS-Daten der Marktlokation,SG8,SEQ,1229,Z02,,OBIS-Daten derMarktlokation,,
+125,OBIS-Daten der Marktlokation,SG8,SEQ,1229,ZA1,,Erwartete OBIS-Datender Marktlokation,X [2P0..n],
+126,OBIS-Daten der Marktlokation,SG8,SEQ,1229,ZA2,,Im System vorhandeneOBIS-Daten derMarktlokation,X [3P0..n],
+127,OBIS-Daten der Marktlokation,SG8,SEQ,1050,,,Referenz auf Zeitraum-ID,X [914] ∧ [937],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
+[914] Format: Möglicher Wert: > 0  
+[937] Format: keine Nachkommastelle"
+128,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,
+129,OBIS-Kennzahl der Marktlokation,SG8,,,,,,Muss,
+130,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,Muss,
+131,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,5,,Produktidentifikation,X,
+132,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,OBIS-Kennzahl der Marktlokation,X,
+133,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,
+134,Wertegranularität,SG10,,,,,,Muss [257],
+135,Wertegranularität,SG10,,,,,,Muss [257],[257] Wenn in derselben SG8 SEQ (OBIS-Daten der Marktlokation) das PIA+5+1- b?:1.9.e vorhanden
+136,Wertegranularität,SG10,CCI,,,,,Muss,
+137,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,
+138,Wertegranularität,SG10,,,,,,,
+139,Wertegranularität,SG10,,,,,,Muss,
+140,Wertegranularität,SG10,CAV,,,,,Muss,
+141,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,
+142,Wertegranularität,SG10,CAV,7111,ZE8,,Halbjährlich,X,
+143,Wertegranularität,SG10,CAV,7111,ZE9,,Quartalsweise,X,
+144,Wertegranularität,SG10,CAV,7111,ZB7,,Monatlich,X,
+145,Zugeordnete Zählzeitdefinition,SG10,,,,,,Soll [8],
+146,Zugeordnete Zählzeitdefinition,SG10,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+[113] Wenn es sich um eine Antwort auf die Bestellung einer Zählzeit handelt"
+147,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,Muss,
+148,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,Z39,,Code derZählzeitdefinition,X,
+149,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,Code der Zählzeitdefinition,X,
+150,Zugeordnetes Zählzeitregister ,SG10,,,,,,Muss [421],
+151,Zugeordnetes Zählzeitregister ,SG10,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
+152,Zugeordnetes Zählzeitregister ,SG10,CCI,,,,,Muss,
+153,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,Z38,,Code desZählzeitregisters,X,
+154,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,,,Code des Zählzeitregisters,X,
+155,Zähleinrichtungsdaten,SG8,,,,,,Soll [8],
+156,Zähleinrichtungsdaten,SG8,,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB  
+[457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde"
+157,Zähleinrichtungsdaten,SG8,SEQ,,,,,Muss,
+158,Zähleinrichtungsdaten,SG8,SEQ,1229,Z03,,Zähleinrichtungsdaten,,
+159,Zähleinrichtungsdaten,SG8,SEQ,1229,ZA3,,ErwarteteZähleinrichtungsdaten,X [2P0..n],
+160,Zähleinrichtungsdaten,SG8,SEQ,1229,ZA4,,Im System vorhandeneZähleinrichtungsdaten,X [3P0..n],
+161,Zähleinrichtungsdaten,SG8,SEQ,1050,,,Referenz auf Zeitraum-ID,X [914] ∧ [937][22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
+[914] Format: Möglicher Wert:"
+162,Referenz auf das Smartmeter-Gateway,SG8,,,,,,,
+163,Referenz auf das Smartmeter-Gateway,SG8,,,,,,Muss,
+164,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,Muss,
+165,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,
+166,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,Identifikation / Nummer desSmartmeter-Gateways,X,
+167,Zählertyp,SG10,,,,,,Muss,
+168,Zählertyp,SG10,,,,,,Muss,
+169,Zählertyp,SG10,CCI,,,,,Muss,
+170,Zählertyp,SG10,CCI,7037,E13,,Zählertyp,X,
+171,Identifikation / Nummer des Gerätes,SG10,,,,,,,
+172,Identifikation / Nummer des Gerätes,SG10,,,,,,Muss,
+173,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,Muss,
+174,Identifikation / Nummer des Gerätes,SG10,CAV,7111,Z30,,Gerätenummer,X,
+175,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,Gerätenummer,X,
+176,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,Soll [8],
+177,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,Soll [8],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+[8] Wenn für Datenclearing erforderlich  
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
+[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB  
+[457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde  
+[460] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Übertragungsweg ""aus dem"
+178,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,,,,Muss,
+179,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,Z20,,OBIS-Daten derZähleinrichtung,,
+180,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,ZA5,,Erwartete OBIS-Datender Zähleinrichtung,X [2P0..n],
+181,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,ZA6,,Im System vorhandeneOBIS-Daten derZähleinrichtung,X [3P0..n],
+182,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1050,,,Referenz auf Zeitraum-ID,X [914] ∧ [937][22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
+[914] Format: Möglicher Wert: > 0  
+[937] Format: keine Nachkommastelle"
+183,Referenz auf die Gerätenummer,SG8,,,,,,,
+184,Referenz auf die Gerätenummer,SG8,,,,,,Muss [665],
+185,Referenz auf die Gerätenummer,SG8,RFF,,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS- Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW
+186,Referenz auf die Gerätenummer,SG8,RFF,1153,Z14,,Smartmeter-Gateway,X,
+187,Referenz auf die Gerätenummer,SG8,RFF,1154,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
+188,Konfigurations-ID,SG8,,,,,,,
+189,Konfigurations-ID,SG8,,,,,,Muss,
+190,Konfigurations-ID,SG8,RFF,,,,,Muss,
+191,Konfigurations-ID,SG8,RFF,1153,AGK,,Anwendungsreferenznummer,X,
+192,Konfigurations-ID,SG8,RFF,1154,,,"Referenz, Identifikation",X,
+193,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,
+194,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,Muss,
+195,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,,,,,Muss,
+196,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,4347,5,,Produktidentifikation,X,
+197,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7140,,,OBIS-Kennzahl derZähleinrichtung,X,
+198,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7143,SRW,,OBIS-Kennzahl,X,
+199,Wertegranularität,SG10,,,,,,Muss [256],
+200,Wertegranularität,SG10,,,,,,Muss [256],[256] Wenn in derselben SG8 SEQ (OBIS-Daten der
+201,Wertegranularität,SG10,CCI,,,,,Muss,
+202,Wertegranularität,SG10,CCI,7037,ZE4,,Wertegranularität,X,
+203,Wertegranularität,SG10,,,,,,,
+204,Wertegranularität,SG10,,,,,,Muss,
+205,Wertegranularität,SG10,CAV,,,,,Muss,
+206,Wertegranularität,SG10,CAV,7111,ZD9,,Jährlich,X,
+207,Wertegranularität,SG10,CAV,7111,ZE8,,Halbjährlich,X,
+208,Wertegranularität,SG10,CAV,7111,ZE9,,Quartalsweise,X,
+209,Wertegranularität,SG10,CAV,7111,ZB7,,Monatlich,X,
+210,Zugeordnete Zählzeitdefinition,SG10,,,,,,Soll [8],
+211,Zugeordnete Zählzeitdefinition,SG10,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+[113] Wenn es sich um eine Antwort auf die Bestellung einer Zählzeit handelt"
+212,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,Muss,
+213,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,Z39,,Code derZählzeitdefinition,X,
+214,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,Code der Zählzeitdefinition,X,
+215,Zugeordnetes Zählzeitregister ,SG10,,,,,,Muss [421],
+216,Zugeordnetes Zählzeitregister ,SG10,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
+217,Zugeordnetes Zählzeitregister ,SG10,CCI,,,,,Muss,
+218,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,Z38,,Code desZählzeitregisters,X,
+219,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,,,Code des Zählzeitregisters,X,
+220,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss,
+221,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss,
+222,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,,,,Muss,
+223,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,11,,Produkt,X,
+224,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,Z33,,Vor- undNachkommastellen desZählwerkes,X,
+225,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,
+226,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,Muss,
+227,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,,,,Muss,
+228,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Vorkommastelle,X,
+229,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,Angabe der Nachkommastelle,X,
+230,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,Muss,
+231,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,Muss,
+232,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,,,,,Muss,
+233,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7037,Z63,,Lokale Kennzeichnung zuKontrollzwecken,X,
+234,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7036,,,Bezeichnung des Zählwerks aufdem Gerät,X,
+235,Nachrichten-Endesegment,,,,,,,Muss,
+236,UNT,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+237,UNT,,UNT,0062,,,Nachrichten-Referenznummer,X,

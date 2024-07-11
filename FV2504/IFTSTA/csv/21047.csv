@@ -1,0 +1,92 @@
+,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,Muss,
+1,Nachrichten-Kopfsegment,,UNH,,,,,Muss,
+2,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
+3,Nachrichten-Kopfsegment,,UNH,0065,IFTSTA,,Multimodaler Statusbericht,X,
+4,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
+5,Nachrichten-Kopfsegment,,UNH,0054,18A,,Ausgabe 2018 - A,X,
+6,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
+7,Nachrichten-Kopfsegment,,UNH,0057,2.0f,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+8,Beginn der Nachricht,,,,,,,Muss,
+9,Beginn der Nachricht,,BGM,,,,,Muss,
+10,Beginn der Nachricht,,BGM,1001,Z33,,GPKE Meldung(en),X,
+11,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
+12,Dokumentendatum,,,,,,,Muss,
+13,Dokumentendatum,,DTM,,,,,Muss,
+14,Dokumentendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+15,Dokumentendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+[931] Format: ZZZ = +00"
+16,Dokumentendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
+17,MP-ID Empfänger,SG1,,,,,,Muss,
+18,MP-ID Empfänger,SG1,,,,,,Muss,
+19,MP-ID Empfänger,SG1,NAD,,,,,Muss,
+20,MP-ID Empfänger,SG1,NAD,3035,,,,MR,
+21,MP-ID Empfänger,SG1,NAD,3039,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
+22,MP-ID Empfänger,SG1,NAD,3055,9,,GS1,X,
+23,MP-ID Empfänger,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+24,MP-ID Absender,SG1,,,,,,Muss,
+25,MP-ID Absender,SG1,,,,,,Muss,
+26,MP-ID Absender,SG1,NAD,,,,,Muss,
+27,MP-ID Absender,SG1,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
+28,MP-ID Absender,SG1,NAD,3039,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
+29,MP-ID Absender,SG1,NAD,3055,9,,GS1,X,
+30,MP-ID Absender,SG1,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+31,Ansprechpartner,SG2,,,,,,Kann,
+32,Ansprechpartner,SG2,,,,,,Kann,
+33,Ansprechpartner,SG2,CTA,,,,,Muss,
+34,Ansprechpartner,SG2,CTA,3139,,,,IC,
+35,Ansprechpartner,SG2,CTA,3412,,,Kontakt,X,
+36,Kommunikationsverbindun g,SG2,,,,,,,
+37,Kommunikationsverbindun g,SG2,,,,,,Muss,
+38,Kommunikationsverbindun g,SG2,COM,,,,,Muss,
+39,Kommunikationsverbindun g,SG2,COM,3148,,,Nummer / E-Mail Adresse,X (([939][146]) ∨ ([940][147])) ∧ [534],"[146] Wenn im DE3155 in demselben COM der Code EM vorhanden ist 
+[147] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
+[534] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+40,Kommunikationsverbindun g,SG2,COM,3155,EM,,E-Mail,X [1P0..1],
+41,Kommunikationsverbindun g,SG2,COM,3155,FX,,Telefax,X [1P0..1],
+42,Kommunikationsverbindun g,SG2,COM,3155,TE,,Telefon,X [1P0..1],
+43,Kommunikationsverbindun g,SG2,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
+44,Kommunikationsverbindun g,SG2,COM,3155,AL,,Handy,X [1P0..1],
+45,Sendungsdaten,SG14,,,,,,Muss,
+46,Sendungsdaten,SG14,,,,,,Muss,
+47,Sendungsdaten,SG14,CNI,,,,,Muss,
+48,Sendungsdaten,SG14,CNI,1490,,,Vorgangsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht bei 1 beginnend und fortlaufend aufsteigend"
+49,Bearbeitungsstatus,SG15,,,,,,Muss,
+50,Bearbeitungsstatus,SG15,,,,,,Muss,
+51,Bearbeitungsstatus,SG15,STS,,,,,Muss,
+52,Bearbeitungsstatus,SG15,STS,9015,Z43,,Veränderungsstatus derDaten,X,
+53,Bearbeitungsstatus,SG15,STS,4405,Z47,,Änderung der Daten,X,
+54,Bearbeitungsstatus,SG15,STS,4405,Z48,,keine Änderung der Daten,X,
+55,Bearbeitungsstatus,SG15,STS,9013,,,Code des Prüfschritts,X [100] ⊻ [101],"[100] Wenn STS+Z43+Z47 vorhanden, dann sind nur Codes aus dem EBD-Cluster ""Änderung der Daten"" möglich. 
+[101] Wenn STS+Z43+Z48 vorhanden, dann sind nur Codes aus dem EBD-Cluster ""keine Änderung der Daten"" möglich."
+56,Bearbeitungsstatus,SG15,STS,1131,E_0573,,EBD Nr. E_0573,X [115] ∧ [20],
+57,Bearbeitungsstatus,SG15,STS,1131,E_0576,,EBD Nr. E_0576,X [115] ∧ [117],
+58,Bearbeitungsstatus,SG15,STS,1131,E_0577,,EBD Nr. E_0577, X [115] ∧ [29],
+59,Bearbeitungsstatus,SG15,STS,1131,E_0584,,EBD Nr. E_0584,X [114] ∧ [117],"[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF 
+[26] Wenn MP-ID in SG1 NAD+MR in der Rolle NB"
+60,Prüfidentifikator,SG15,,,,,,,
+61,Prüfidentifikator,SG15,,,,,,Muss,
+62,Prüfidentifikator,SG15,RFF,,,,,Muss,
+63,Prüfidentifikator,SG15,RFF,1153,Z13,,Prüfidentifikator,X,
+64,Prüfidentifikator,SG15,RFF,1154,21047,,GPKE /Bearbeitungsstandsmeldung,X,
+65,Referenzangaben,SG15,,,,,,,
+66,Referenzangaben,SG15,,,,,,Muss,
+67,Referenzangaben,SG15,RFF,,,,,Muss,
+68,Referenzangaben,SG15,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,
+69,Referenzangaben,SG15,RFF,1154,,,"Referenz, Identifikation",X [519] ⊻ [535] ,"[519] Hinweis: Aus ORDERS BGM DE1004 
+[535] Hinweis: Aus UTILMD IDE DE7402"
+70,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [148],
+71,Sendungspositionseinzelhei ten,SG25,,,,,,Muss [148],[148] Wenn in dieser SG15 STS+Z43+Z48+A99:E_0595 vorhanden
+72,Sendungspositionseinzelhei ten,SG25,GID,,,,,Muss,
+73,Sendungspositionseinzelhei ten,SG25,GID,1496,,,Sendungsposition,X [903],[903] Format: Möglicher Wert: 1
+74,Freier Text,SG25,,,,,,,
+75,Freier Text,SG25,,,,,,Muss,
+76,Freier Text,SG25,FTX,,,,,Muss,
+77,Freier Text,SG25,FTX,4451,(für allgemeine Hinweise),,,ACB,
+78,Freier Text,SG25,FTX,4440,,,Freier Text,X,
+79,Nachrichten-Endesegment,,,,,,,Muss,
+80,Nachrichten-Endesegment,,UNT,,,,,Muss,
+81,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
+82,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
