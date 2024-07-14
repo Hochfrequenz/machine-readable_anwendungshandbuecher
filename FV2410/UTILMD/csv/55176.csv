@@ -115,7 +115,7 @@
 102,Tranche,SG5,LOC,3227,Z21,,Tranche,,
 103,Tranche,SG5,LOC,3225,,,ID der Tranche,,[950] Format: Marktlokations-ID
 104,Messlokation,SG5,,,,,,,
-105,Messlokation,SG5,,,,,,,[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00
+105,Messlokation,SG5,,,,,,,[399] Wenn im SG8 SEQ+Z78 RFF+Z31 (Referenz auf die Lokationsbündelstruktur) im
 106,Messlokation,SG5,LOC,,,,,,
 107,Messlokation,SG5,LOC,3227,Z17,,Messlokation,,
 108,Messlokation,SG5,LOC,3225,,,ID der Messlokation,,[951] Format: Zählpunktbezeichnung
@@ -134,9 +134,7 @@
 121,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,TN,,Transaktions-Referenznummer,X,
 122,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,Vorgangsnummer,X,
 123,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,,
-124,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,,"[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00  
-[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlermeldu ng mit Fehlercode Z39 (Code nicht aus erlaubtem Wertebereich“) abgelehnt werden  
-[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+124,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,,[309] Wenn DTM+137
 125,Referenz auf die Lokationsbündelstruktur,SG8,SEQ,,,,,,
 126,Referenz auf die Lokationsbündelstruktur,SG8,SEQ,1229,Z78,,Referenz auf dieLokationsbündelstruktur,,
 127,Referenz auf die Lokationsbündelstruktur,SG8,,,,,,,
@@ -149,7 +147,7 @@
 [914] Format: Möglicher Wert: > 0  
 [937] Format: keine Nachkommastelle"
 134,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,
-135,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,[335] Wenn im SG8 SEQ+Z78
+135,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,"[335] Wenn im SG8 SEQ+Z78 RFF+Z31 ""Referenz auf die Lokationsbündelstruktur"" im DE1153 der Code Z31"
 136,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,,,,,,
 137,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,1229,Z58,,Zuordnung Lokation zumObjektcode desLokationsbündels,,
 138,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,,,,,,,
@@ -162,7 +160,7 @@
 145,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1154,,,ID einer Lokation,,"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden  
 [451] Wenn in demselben RFF der Code Z18 (Marktlokation) im DE1153 vorhanden  
 [452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden  
-[456] Wenn in demselben RFF der Code Z37 (Technische"
+[456] Wenn in demselben RFF der Code Z37 (Technische Ressource) im DE1153 vorhanden "
 146,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,,,,,,,
 147,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,,,,,,,
 148,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,,,,,,[2313] Je SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) genau einmal anzugeben
@@ -176,10 +174,7 @@
 154,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,,,,,,[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist
 155,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,Z34,,vorgelagerteMesslokation,,
 156,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,Z35,,vorgelagerteNetzlokation,,
-157,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1154,,,ID einer Lokation,,"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden  
-[452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden  
-[951] Format: Zählpunktbezeichnung  
-[960] Format: Netzlokations- ID"
+157,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1154,,,ID einer Lokation,,[471] Wenn in demselben RFF der Code Z35 (vorgelagerte Netzlokation) im DE1153
 158,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,,,,,,,
 159,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,,,,,,,
 160,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,,,,,,"[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist  
