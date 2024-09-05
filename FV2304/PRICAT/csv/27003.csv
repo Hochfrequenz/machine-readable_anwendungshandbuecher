@@ -1,122 +1,127 @@
-,Segmentname,Segmentgruppe,Segment,Datenelement,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,,,,,,Muss [14],
-1,Nachrichten-Kopfsegment,,UNH,0062,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,PRICAT,,Preisliste/Katalog,X,
-3,Nachrichten-Kopfsegment,,UNH,0052,D,,Entwurfs-Version,X,
-4,Nachrichten-Kopfsegment,,UNH,0054,20B,,Ausgabe 2020 - B,X,
-5,Nachrichten-Kopfsegment,,UNH,0051,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,2.0b,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
-7,Beginn der Nachricht,,,,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,Z54,,Preisblatt Sperren /Entsperren undVerzugskosten,X,
-9,Beginn der Nachricht,,BGM,1001,Z64,,Preisblatt Netznutzungohne gemeindespezifischeKonzessionsabgaben,X,
-10,Beginn der Nachricht,,BGM,1001,Z67,,Preisblatt Blindarbeit,X,
-11,Beginn der Nachricht,,BGM,1001,Z70,,Preisblatt Netznutzung:GemeindespezifischeKonzessionsabgaben,X,
-12,Beginn der Nachricht,,BGM,1004,,,Dokumentennummer,X,
-13,Beginn der Nachricht,,BGM,1373,,,,11,[8] Wenn das in DE1001 angegebene Preisblatt vom NB nicht genutzt wird.
-14,Nachrichtendatum,,,,,,,Muss,
-15,Nachrichtendatum,,DTM,2005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
-16,Nachrichtendatum,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
+0,Nachrichten-Kopfsegment,,,,,,,,Muss [14],
+1,Nachrichten-Kopfsegment,,UNH,,,,,,Muss [14],[14] je UNB ist maximal je Code aus DE1001 eine Nachricht in der Übertragungsdatei erlaubt
+2,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
+3,Nachrichten-Kopfsegment,,UNH,0065,,PRICAT,,Preisliste/Katalog,X,
+4,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
+5,Nachrichten-Kopfsegment,,UNH,0054,,20B,,Ausgabe 2020 - B,X,
+6,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
+7,Nachrichten-Kopfsegment,,UNH,0057,,2.0b,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+8,Beginn der Nachricht,,,,,,,,Muss,
+9,Beginn der Nachricht,,BGM,,,,,,Muss,
+10,Beginn der Nachricht,,BGM,1001,,Z54,,Preisblatt Sperren /Entsperren undVerzugskosten,X,
+11,Beginn der Nachricht,,BGM,1001,,Z64,,Preisblatt Netznutzungohne gemeindespezifischeKonzessionsabgaben,X,
+12,Beginn der Nachricht,,BGM,1001,,Z67,,Preisblatt Blindarbeit,X,
+13,Beginn der Nachricht,,BGM,1001,,Z70,,Preisblatt Netznutzung:GemeindespezifischeKonzessionsabgaben,X,
+14,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
+15,Beginn der Nachricht,,BGM,1373,,,,,11,[8] Wenn das in DE1001 angegebene Preisblatt vom NB nicht genutzt wird.
+16,Nachrichtendatum,,,,,,,,Muss,
+17,Nachrichtendatum,,DTM,,,,,,Muss,
+18,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+19,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
 [931] Format: ZZZ = +00"
-17,Nachrichtendatum,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
-18,Gültigkeitsbeginn,,,,,,,Muss,
-19,Gültigkeitsbeginn,,DTM,2005,157,,"Gültigkeit, Beginndatum",X,
-20,Gültigkeitsbeginn,,DTM,2380,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
-21,Gültigkeitsbeginn,,DTM,2379,303,,CCYYMMDDHHMMZZZ,X,
-22,Vorgängerversion,SG1,,,,,,Soll [1],
-23,Vorgängerversion,SG1,,,,,,Soll [1],[1] Wenn Vorgängerversion vorhanden 
-24,Vorgängerversion,SG1,RFF,,,,,Muss,
-25,Vorgängerversion,SG1,RFF,1153,ACW,,Referenznummer einervorangegangenenNachricht,X,
-26,Vorgängerversion,SG1,RFF,1154,,,"Referenz, Identifikation",X [504],[504] Hinweis: Dokumentennummer der PRICAT
-27,Prüfidentifikator,SG1,,,,,,Muss,
-28,Prüfidentifikator,SG1,,,,,,Muss,
-29,Prüfidentifikator,SG1,RFF,,,,,Muss,
-30,Prüfidentifikator,SG1,RFF,1153,Z13,,Prüfidentifikator,X,
-31,Prüfidentifikator,SG1,RFF,1154,27003,,Preisblatt GPKE,X,
-32,Name und Anschrift,SG2,,,,,,Muss,
-33,Name und Anschrift,SG2,,,,,,Muss,
-34,Name und Anschrift,SG2,NAD,,,,,Muss,
-35,Name und Anschrift,SG2,NAD,3035,,,,MR,
-36,Name und Anschrift,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],[19] Nur MP-ID aus Sparte Strom
-37,Name und Anschrift,SG2,NAD,3055,9,,GS1,X,
-38,Name und Anschrift,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
-39,Name und Anschrift,SG2,,,,,,Muss,
-40,Name und Anschrift,SG2,,,,,,Muss,
-41,Name und Anschrift,SG2,NAD,,,,,Muss,
-42,Name und Anschrift,SG2,NAD,3035,Nachrichtenaussteller bzw.-absender,,,MS,
-43,Name und Anschrift,SG2,NAD,3039,,,"Beteiligter, Identifikation",X [19],[19] Nur MP-ID aus Sparte Strom
-44,Name und Anschrift,SG2,NAD,3055,9,,GS1,X,
-45,Name und Anschrift,SG2,NAD,3055,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
-46,Ansprechpartner,SG4,,,,,,Kann,
-47,Ansprechpartner,SG4,,,,,,Kann,
-48,Ansprechpartner,SG4,CTA,,,,,Muss,
-49,Ansprechpartner,SG4,CTA,3139,,,,IC,
-50,Ansprechpartner,SG4,CTA,3412,,,Kontakt,X,
-51,Kommunikationsverbindung,SG4,,,,,,,
-52,Kommunikationsverbindung,SG4,,,,,,Muss,
-53,Kommunikationsverbindung,SG4,COM,,,,,Muss,
-54,Kommunikationsverbindung,SG4,COM,3148,,,"Kommunikationsadresse,Identifikation",X,
-55,Kommunikationsverbindung,SG4,COM,3155,EM,,E-Mail,X [1P0..1],
-56,Kommunikationsverbindung,SG4,COM,3155,FX,,Telefax,X [1P0..1],
-57,Kommunikationsverbindung,SG4,COM,3155,TE,,Telefon,X [1P0..1],
-58,Kommunikationsverbindung,SG4,COM,3155,AJ,,weiteres Telefon,X [1P0..1],
-59,Kommunikationsverbindung,SG4,COM,3155,AL,,Handy,X [1P0..1],
-60,Währungsangaben,SG6,,,,,,Muss [9],
-61,Währungsangaben,SG6,,,,,,Muss [9],[9] Wenn BGM DE1373 =11 nicht vorhanden
-62,Währungsangaben,SG6,CUX,,,,,Muss,
-63,Währungsangaben,SG6,CUX,6347,2,,Referenzwährung,X,
-64,Währungsangaben,SG6,CUX,6345,EUR,,Euro,X,
-65,Währungsangaben,SG6,CUX,6343,8,,Währung der Preisliste,X,
-66,Produktgruppen- Information,SG17,,,,,,Muss [9] ∧ [27],
-67,Produktgruppen- Information,SG17,,,,,,Muss [9] ∧ [27],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
+20,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
+21,Gültigkeitsbeginn,,,,,,,,Muss,
+22,Gültigkeitsbeginn,,DTM,,,,,,Muss,
+23,Gültigkeitsbeginn,,DTM,2005,,157,,"Gültigkeit, Beginndatum",X,
+24,Gültigkeitsbeginn,,DTM,2380,,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
+25,Gültigkeitsbeginn,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
+26,Vorgängerversion,SG1,,,,,,,Soll [1],
+27,Vorgängerversion,SG1,,,,,,,Soll [1],[1] Wenn Vorgängerversion vorhanden 
+28,Vorgängerversion,SG1,RFF,,,,,,Muss,
+29,Vorgängerversion,SG1,RFF,1153,,ACW,,Referenznummer einervorangegangenenNachricht,X,
+30,Vorgängerversion,SG1,RFF,1154,,,,"Referenz, Identifikation",X [504],[504] Hinweis: Dokumentennummer der PRICAT
+31,Prüfidentifikator,SG1,,,,,,,Muss,
+32,Prüfidentifikator,SG1,,,,,,,Muss,
+33,Prüfidentifikator,SG1,RFF,,,,,,Muss,
+34,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
+35,Prüfidentifikator,SG1,RFF,1154,,27003,,Preisblatt GPKE,X,
+36,Name und Anschrift,SG2,,,,,,,Muss,
+37,Name und Anschrift,SG2,,,,,,,Muss,
+38,Name und Anschrift,SG2,NAD,,,,,,Muss,
+39,Name und Anschrift,SG2,NAD,3035,,,,,MR,
+40,Name und Anschrift,SG2,NAD,3039,,,,"Beteiligter, Identifikation",X [19],[19] Nur MP-ID aus Sparte Strom
+41,Name und Anschrift,SG2,NAD,3055,,9,,GS1,X,
+42,Name und Anschrift,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+43,Name und Anschrift,SG2,,,,,,,Muss,
+44,Name und Anschrift,SG2,,,,,,,Muss,
+45,Name und Anschrift,SG2,NAD,,,,,,Muss,
+46,Name und Anschrift,SG2,NAD,3035,,Nachrichtenaussteller bzw.-absender,,,MS,
+47,Name und Anschrift,SG2,NAD,3039,,,,"Beteiligter, Identifikation",X [19],[19] Nur MP-ID aus Sparte Strom
+48,Name und Anschrift,SG2,NAD,3055,,9,,GS1,X,
+49,Name und Anschrift,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverbandder Energie- undWasserwirtschaft e.V.)",X,
+50,Ansprechpartner,SG4,,,,,,,Kann,
+51,Ansprechpartner,SG4,,,,,,,Kann,
+52,Ansprechpartner,SG4,CTA,,,,,,Muss,
+53,Ansprechpartner,SG4,CTA,3139,,,,,IC,
+54,Ansprechpartner,SG4,CTA,3412,,,,Kontakt,X,
+55,Kommunikationsverbindung,SG4,,,,,,,,
+56,Kommunikationsverbindung,SG4,,,,,,,Muss,
+57,Kommunikationsverbindung,SG4,COM,,,,,,Muss,
+58,Kommunikationsverbindung,SG4,COM,3148,,,,"Kommunikationsadresse,Identifikation",X,
+59,Kommunikationsverbindung,SG4,COM,3155,,EM,,E-Mail,X [1P0..1],
+60,Kommunikationsverbindung,SG4,COM,3155,,FX,,Telefax,X [1P0..1],
+61,Kommunikationsverbindung,SG4,COM,3155,,TE,,Telefon,X [1P0..1],
+62,Kommunikationsverbindung,SG4,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+63,Kommunikationsverbindung,SG4,COM,3155,,AL,,Handy,X [1P0..1],
+64,Währungsangaben,SG6,,,,,,,Muss [9],
+65,Währungsangaben,SG6,,,,,,,Muss [9],[9] Wenn BGM DE1373 =11 nicht vorhanden
+66,Währungsangaben,SG6,CUX,,,,,,Muss,
+67,Währungsangaben,SG6,CUX,6347,,2,,Referenzwährung,X,
+68,Währungsangaben,SG6,CUX,6345,,EUR,,Euro,X,
+69,Währungsangaben,SG6,CUX,6343,,8,,Währung der Preisliste,X,
+70,Produktgruppen- Information,SG17,,,,,,,Muss [9] ∧ [27],
+71,Produktgruppen- Information,SG17,,,,,,,Muss [9] ∧ [27],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
 [27] Wenn BGM DE1001 = Z70 nicht vorhanden"
-68,Produktgruppen- Information,SG17,PGI,,,,,Muss,
-69,Produktgruppen- Information,SG17,PGI,5379,,,,9,
-70,Positionsdaten,SG36,,,,,,Muss,
-71,Positionsdaten,SG36,,,,,,Muss,
-72,Positionsdaten,SG36,LIN,,,,,Muss,
-73,Positionsdaten,SG36,LIN,1082,,,Positionsnummer,X [908] [505],"[505] Hinweis: Vom Programm vergebene Positionsnummer innerhalb der Nachricht, mit 1 beginnend 
+72,Produktgruppen- Information,SG17,PGI,,,,,,Muss,
+73,Produktgruppen- Information,SG17,PGI,5379,,,,,9,
+74,Positionsdaten,SG36,,,,,,,Muss,
+75,Positionsdaten,SG36,,,,,,,Muss,
+76,Positionsdaten,SG36,LIN,,,,,,Muss,
+77,Positionsdaten,SG36,LIN,1082,,,,Positionsnummer,X [908] [505],"[505] Hinweis: Vom Programm vergebene Positionsnummer innerhalb der Nachricht, mit 1 beginnend 
 [908] Format: Mögliche Werte: 1 bis n"
-74,Positionsdaten,SG36,LIN,7140,,,Produkt-/Leistungsnummer,X [942][509],"[509] Hinweis: Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
+78,Positionsdaten,SG36,LIN,7140,,,,Produkt-/Leistungsnummer,X [942][509],"[509] Hinweis: Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
 [942] Format: n1-n2-n1-n3"
-75,Positionsdaten,SG36,LIN,7143,Z09,,Artikel-ID,X,
-76,Preisangaben,SG40,,,,,,Muss [22],
-77,Preisangaben,SG40,,,,,,Muss [22],"[22] Wenn die Artikel-ID aus dieser SG36 LIN DE7140 in der EDI@Energy Codeliste der Artikelnummern und Artikel-ID in der Spalte ""PRICAT Preisangabe"" ein X hat"
-78,Preisangaben,SG40,PRI,,,,,Muss,
-79,Preisangaben,SG40,PRI,5125,CAL,,Berechnungspreis,X,
-80,Preisangaben,SG40,PRI,5118,,,"Preis, Betrag",X [946] [513],"[513] Hinweis: Die anzugebende Einheit ist in der Codeliste definiert 
+79,Positionsdaten,SG36,LIN,7143,,Z09,,Artikel-ID,X,
+80,Preisangaben,SG40,,,,,,,Muss [22],
+81,Preisangaben,SG40,,,,,,,Muss [22],"[22] Wenn die Artikel-ID aus dieser SG36 LIN DE7140 in der EDI@Energy Codeliste der Artikelnummern und Artikel-ID in der Spalte ""PRICAT Preisangabe"" ein X hat"
+82,Preisangaben,SG40,PRI,,,,,,Muss,
+83,Preisangaben,SG40,PRI,5125,,CAL,,Berechnungspreis,X,
+84,Preisangaben,SG40,PRI,5118,,,,"Preis, Betrag",X [946] [513],"[513] Hinweis: Die anzugebende Einheit ist in der Codeliste definiert 
 [946] Format: max. 11 Nachkommastellen"
-81,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,Muss [9] ∧ [26],
-82,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,Muss [9] ∧ [26],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
+85,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,,Muss [9] ∧ [26],
+86,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,,Muss [9] ∧ [26],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
 [26] Wenn BGM DE1001 = Z70 vorhanden"
-83,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,,,,,Muss,
-84,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,5379,Artikel-ID,,,Z01,
-85,Positionsdaten,SG36,,,,,,Muss,
-86,Positionsdaten,SG36,,,,,,Muss,
-87,Positionsdaten,SG36,LIN,,,,,Muss,
-88,Positionsdaten,SG36,LIN,1082,,,Positionsnummer,X [908] [505],"[505] Hinweis: Vom Programm vergebene Positionsnummer innerhalb der Nachricht, mit 1 beginnend 
+87,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,,,,,,Muss,
+88,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,5379,,Artikel-ID,,,Z01,
+89,Positionsdaten,SG36,,,,,,,Muss,
+90,Positionsdaten,SG36,,,,,,,Muss,
+91,Positionsdaten,SG36,LIN,,,,,,Muss,
+92,Positionsdaten,SG36,LIN,1082,,,,Positionsnummer,X [908] [505],"[505] Hinweis: Vom Programm vergebene Positionsnummer innerhalb der Nachricht, mit 1 beginnend 
 [908] Format: Mögliche Werte: 1"
-89,Positionsdaten,SG36,LIN,7140,,,Produkt-/Leistungsnummer,X ([948] ⊻ [949] ⊻ [957])[510],"[510] Hinweis: Es sind nur Werte erlaubt, die die Bildungsvorschrift der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erfüllen, und die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
+93,Positionsdaten,SG36,LIN,7140,,,,Produkt-/Leistungsnummer,X ([948] ⊻ [949] ⊻ [957])[510],"[510] Hinweis: Es sind nur Werte erlaubt, die die Bildungsvorschrift der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erfüllen, und die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
 [948] Format: n1-n2-n1-n8-n2 
 [949] Format: n1-n2-n1-n8-n2-n1 
 [957] Format: n1-n2-n1-n8"
-90,Positionsdaten,SG36,LIN,7143,Z09,,Artikel-ID,X,
-91,Preisangaben,SG40,,,,,,Muss,
-92,Preisangaben,SG40,,,,,,Muss,
-93,Preisangaben,SG40,PRI,,,,,Muss,
-94,Preisangaben,SG40,PRI,5125,CAL,,Berechnungspreis,X,
-95,Preisangaben,SG40,PRI,5118,,,"Preis, Betrag",X [946],[946] Format: max. 11 Nachkommastellen
-96,Zonenintervallgrenzen,SG40,,,,,,,
-97,Zonenintervallgrenzen,SG40,,,,,,Muss [24],
-98,Zonenintervallgrenzen,SG40,RNG,,,,,Muss [24],[24] Wenn in dieser SG36 Wert von LIN DE7140 im Format n1- n2-n1-n8-n2-n1
-99,Zonenintervallgrenzen,SG40,RNG,6167,,,,10,
-100,Zonenintervallgrenzen,SG40,RNG,6411,KWH,,kilowatt hour,X,
-101,Zonenintervallgrenzen,SG40,RNG,6162,,,"Wertebereichsgrenze, untere",X ([926] [28] ⊻ [908] [29])∧ [511],"[28] Wenn die zugehörige Artikel- ID in der letzten Stelle eine 1 ist 
+94,Positionsdaten,SG36,LIN,7143,,Z09,,Artikel-ID,X,
+95,Preisangaben,SG40,,,,,,,Muss,
+96,Preisangaben,SG40,,,,,,,Muss,
+97,Preisangaben,SG40,PRI,,,,,,Muss,
+98,Preisangaben,SG40,PRI,5125,,CAL,,Berechnungspreis,X,
+99,Preisangaben,SG40,PRI,5118,,,,"Preis, Betrag",X [946],[946] Format: max. 11 Nachkommastellen
+100,Zonenintervallgrenzen,SG40,,,,,,,,
+101,Zonenintervallgrenzen,SG40,,,,,,,Muss [24],
+102,Zonenintervallgrenzen,SG40,RNG,,,,,,Muss [24],[24] Wenn in dieser SG36 Wert von LIN DE7140 im Format n1- n2-n1-n8-n2-n1
+103,Zonenintervallgrenzen,SG40,RNG,6167,,,,,10,
+104,Zonenintervallgrenzen,SG40,RNG,6411,,KWH,,kilowatt hour,X,
+105,Zonenintervallgrenzen,SG40,RNG,6162,,,,"Wertebereichsgrenze, untere",X ([926] [28] ⊻ [908] [29])∧ [511],"[28] Wenn die zugehörige Artikel- ID in der letzten Stelle eine 1 ist 
 [29] Wenn die zugehörige Artikel- ID in der letzten Stelle > 1 ist 
 [511] Hinweis: 1. Der genannte Wert gehört nicht zum Intervall.  2. Wenn in dieser SG36 die letzte Ziffer von LIN DE7140 >1, dann ist der Wert identisch mit dem Wert des DE6152 im RNG-Segment, in der SG36, in der die letzte Ziffer von LIN DE7140 um 1 kleiner ist, als die letzte Ziffer von LIN DE7140 in dieser SG36. 3. Die untere Wertegrenze zu der Artikel-ID, deren Zahl an der letzten Stelle den Wert n hat, muss kleiner sein, als die untere Wertegrenze zu der Artikel-ID, deren Zahl an der letzten Stelle den Wert n+1 hat. 
 [908] Format: Mögliche Werte: 1 bis n 
 [926] Format: Möglicher Wert: 0"
-102,Zonenintervallgrenzen,SG40,RNG,6152,,,"Wertebereichsgrenze, obere",S [10] ∧ [512] ,"[10] Wenn eine weitere Zone für diese Gruppenartikel-ID vorhanden 
+106,Zonenintervallgrenzen,SG40,RNG,6152,,,,"Wertebereichsgrenze, obere",S [10] ∧ [512] ,"[10] Wenn eine weitere Zone für diese Gruppenartikel-ID vorhanden 
 [512] Hinweis: Der genannte Wert gehört zum Intervall"
-103,Nachrichten-Endesegment,,,,,,,Muss,
-104,Nachrichten-Endesegment,,UNT,0074,,,Anzahl der Segmente in einerNachricht,X,
-105,Nachrichten-Endesegment,,UNT,0062,,,Nachrichten-Referenznummer,X,
+107,Nachrichten-Endesegment,,,,,,,,Muss,
+108,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+109,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einerNachricht,X,
+110,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
