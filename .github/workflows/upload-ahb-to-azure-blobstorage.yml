@@ -1,0 +1,18 @@
+name: Upload To Azure Blob Storage
+on:
+  push:
+    branches:
+      - main
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bacongobbler/azure-blob-storage-upload@main
+        with:
+          source_dir: .  # This is the root directory of the repository
+          container_name: ahb-tables
+          connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
+          extra_args: '--pattern *.csv --pattern *.json --pattern *.xlsx'
+          # WARNING: this will overwrite existing blobs in your blob storage
+          overwrite: 'true'
