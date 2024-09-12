@@ -10,32 +10,38 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Set folder name from commit message
+        id: set-folder
+        run: |
+          FOLDER_NAME=$(echo "${{ github.event.head_commit.message }}" | grep -o 'FV[0-9]\{4\}')
+          echo "FOLDER_NAME=${FOLDER_NAME}" >> $GITHUB_ENV
+
       - name: Upload JSON files to Azure Blob Storage
+        if: env.FOLDER_NAME != ''
         uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: .  # This is the root directory of the repository
+          source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
           extra_args: '--pattern *.json'
-          # WARNING: this will overwrite existing blobs in your blob storage
           overwrite: 'true'
 
       - name: Upload XLSX files to Azure Blob Storage
+        if: env.FOLDER_NAME != ''
         uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: .  # This is the root directory of the repository
+          source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
           extra_args: '--pattern *.xlsx'
-          # WARNING: this will overwrite existing blobs in your blob storage
           overwrite: 'true'
 
       - name: Upload CSV files to Azure Blob Storage
+        if: env.FOLDER_NAME != ''
         uses: bacongobbler/azure-blob-storage-upload@main
         with:
-          source_dir: .  # This is the root directory of the repository
+          source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
           extra_args: '--pattern *.csv'
-          # WARNING: this will overwrite existing blobs in your blob storage
           overwrite: 'true'
