@@ -1,445 +1,337 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,,,,,,,Muss,
-1,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
-2,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten-Referenznummer,X,
-3,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILMD,,Netzanschluss-Stammdaten,X,
-4,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
-5,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
-6,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-7,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
-8,Nachrichten-Kopfsegment,,UNH,0068,00003,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
-9,Nachrichten-Kopfsegment,,UNH,0070,00003,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
-10,Nachrichten-Kopfsegment,,UNH,0073,00003,C,,Beginn,M [2],
-11,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
+0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
+1,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten-Referenznummer,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILMD,,Netzanschluss-Stammdaten,X,
+3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
+4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
+5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,,S1.1a,X,
+7,Nachrichten-Kopfsegment,,UNH,0068,00003,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
+8,Nachrichten-Kopfsegment,,UNH,0070,00003,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
+9,Nachrichten-Kopfsegment,,UNH,0073,00003,C,,Beginn,M [2],
+10,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
 [3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenummer"
-12,Beginn der Nachricht,,,,,,,,Muss,
-13,Beginn der Nachricht,,BGM,,00004,,,,Muss,
-14,Beginn der Nachricht,,BGM,1001,00004,Z05,,Clearingliste,X,
-15,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
-16,Nachrichtendatum,,,,,,,,Muss,
-17,Nachrichtendatum,,DTM,,00005,,,,Muss,
-18,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
-19,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+11,Beginn der Nachricht,,BGM,,00004,,,,Muss,
+12,Beginn der Nachricht,,BGM,1001,00004,Z05,,Clearingliste,X,
+13,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
+14,Nachrichtendatum,,DTM,,00005,,,,Muss,
+15,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
+16,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
 [931] Format: ZZZ = +00"
-20,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
-21,"Gültigkeit, Beginndatum",,,,,,,,Muss,
-22,"Gültigkeit, Beginndatum",,DTM,,00006,,,,Muss,
-23,"Gültigkeit, Beginndatum",,DTM,2005,00006,157,,"Gültigkeit, Beginndatum",X,
-24,"Gültigkeit, Beginndatum",,DTM,2380,00006,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
-25,"Gültigkeit, Beginndatum",,DTM,2379,00006,610,,CCYYMM,X,
-26,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,,Muss,
-27,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,,Muss,
-28,Referenz auf eine vorangegangene Anfrage,SG1,RFF,,00007,,,,Muss,
-29,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1153,00007,AAV,,Nummer der Anfrage,X,
-30,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1154,00007,,,"Referenz, Identifikation",X [503],[503] Hinweis: Angabe des BGM DE1004 aus der ORDERS
-31,MP-ID Absender,SG2,,,,,,,Muss,
-32,MP-ID Absender,SG2,,,,,,,Muss,
-33,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
-34,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
-35,MP-ID Absender,SG2,NAD,3039,00008,,,MP-ID,X,
-36,MP-ID Absender,SG2,NAD,3055,00008,9,,GS1,X,
-37,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
-38,Ansprechpartner,SG3,,,,,,,Kann,
-39,Ansprechpartner,SG3,,,,,,,Kann,
-40,Ansprechpartner,SG3,CTA,,00009,,,,Muss,
-41,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
-42,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
-43,Kommunikationsverbindung,SG3,,,,,,,,
-44,Kommunikationsverbindung,SG3,,,,,,,Muss,
-45,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-46,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321])∨ ([940] [322]))∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
+17,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
+18,"Gültigkeit, Beginndatum",,DTM,,00006,,,,Muss,
+19,"Gültigkeit, Beginndatum",,DTM,2005,00006,157,,"Gültigkeit, Beginndatum",X,
+20,"Gültigkeit, Beginndatum",,DTM,2380,00006,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X,
+21,"Gültigkeit, Beginndatum",,DTM,2379,00006,610,,CCYYMM,X,
+22,Referenz auf eine vorangegangene Anfrage,SG1,,,,,,,Muss,
+23,Referenz auf eine vorangegangene Anfrage,SG1,RFF,,00007,,,,Muss,
+24,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1153,00007,AAV,,Nummer der Anfrage,X,
+25,Referenz auf eine vorangegangene Anfrage,SG1,RFF,1154,00007,,,"Referenz, Identifikation",X [503],[503] Hinweis: Angabe des BGM DE1004 aus der ORDERS
+26,MP-ID Absender,SG2,,,,,,,Muss,
+27,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
+28,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+29,MP-ID Absender,SG2,NAD,3039,00008,,,MP-ID,X,
+30,MP-ID Absender,SG2,NAD,3055,00008,9,,GS1,X,
+31,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+32,Ansprechpartner,SG3,,,,,,,Kann,
+33,Ansprechpartner,SG3,CTA,,00009,,,,Muss,
+34,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
+35,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
+36,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
+37,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321])∨ ([940] [322]))∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
 [322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
 [514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
 [939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
-47,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
-48,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
-49,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
-50,Kommunikationsverbindung,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-51,Kommunikationsverbindung,SG3,COM,3155,,AL,,Handy,X [1P0..1],
-52,MP-ID Empfänger,SG2,,,,,,,Muss,
-53,MP-ID Empfänger,SG2,,,,,,,Muss,
-54,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
-55,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
-56,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X [280],[280] Nur MP-ID aus Sparte Strom
-57,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
-58,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
-59,Identifikation einer Liste,SG4,,,,,,,Muss,
-60,Identifikation einer Liste,SG4,,,,,,,Muss,
-61,Identifikation einer Liste,SG4,IDE,,00012,,,,Muss,
-62,Identifikation einer Liste,SG4,IDE,7495,00012,Z01,,Liste,X,
-63,Identifikation einer Liste,SG4,IDE,7402,00012,,,Listennummer,X,
-64,Status der Antwort,SG4,,,,,,,,
-65,Status der Antwort,SG4,,,,,,,,
-66,Status der Antwort,SG4,STS,,00013,,,,,[238] Wenn SG4 IDE+24 (Vorgang) nicht vorhanden
-67,Status der Antwort,SG4,STS,9015,00013,E01,,Status der Antwort,,
-68,Status der Antwort,SG4,STS,9013,00013,,,Code des Prüfschritts,,
-69,Status der Antwort,SG4,STS,1131,00013,E_0017,,EBD Nr. E_0017,,
-70,Status der Antwort,SG4,STS,1131,,E_0052,,EBD Nr. E_0052,,
-71,MaBiS-Zählpunkt,SG5,,,,,,,Muss,
-72,MaBiS-Zählpunkt,SG5,,,,,,,Muss,
-73,MaBiS-Zählpunkt,SG5,LOC,,00014,,,,Muss,
-74,MaBiS-Zählpunkt,SG5,LOC,3227,00014,Z15,,MaBiS-Zählpunkt,X,
-75,MaBiS-Zählpunkt,SG5,LOC,3225,00014,,,Identifikator,X [951],[951] Format: Zählpunktbezeichnung
-76,Prüfidentifikator,SG6,,,,,,,Muss,
-77,Prüfidentifikator,SG6,,,,,,,Muss,
-78,Prüfidentifikator,SG6,RFF,,00015,,,,Muss,
-79,Prüfidentifikator,SG6,RFF,1153,00015,Z13,,Prüfidentifikator,X,
-80,Prüfidentifikator,SG6,RFF,1154,00015,55195,,MaBiS /Bilanzierungsgebietsclearingliste,X,
-81,Prüfidentifikator,SG6,RFF,1154,,55196,,MaBiS / Antwort auf dieBilanzierungsgebietsclearingliste,,
-82,Referenzangaben,SG6,,,,,,,,
-83,Referenzangaben,SG6,,,,,,,,
-84,Referenzangaben,SG6,RFF,,00016,,,,,
-85,Referenzangaben,SG6,RFF,1153,00016,TN,,Transaktions-Referenznummer,,
-86,Referenzangaben,SG6,RFF,1154,00016,,,"Referenz, Identifikation",,[631] Hinweis: Es ist die Listennummer aus der Lieferanten- bzw. Bilanzierungsgebietsclearinglis te zu verwenden
-87,Daten der Summenzeitreihe,SG8,,,,,,,Muss,
-88,Daten der Summenzeitreihe,SG8,,,,,,,Muss,
-89,Daten der Summenzeitreihe,SG8,SEQ,,00017,,,,Muss,
-90,Daten der Summenzeitreihe,SG8,SEQ,1229,00017,Z22,,Daten derSummenzeitreihe,X,
-91,Versionsangabe der Summenzeitreihe,SG8,,,,,,,,
-92,Versionsangabe der Summenzeitreihe,SG8,,,,,,,Muss,
-93,Versionsangabe der Summenzeitreihe,SG8,RFF,,00018,,,,Muss,
-94,Versionsangabe der Summenzeitreihe,SG8,RFF,1153,00018,AUU,,Referenz auf eineZeitreihe,X,
-95,Versionsangabe der Summenzeitreihe,SG8,RFF,1154,00018,,,Version der Zeitreihe,X,
-96,Vorgang,SG4,,,,,,,Soll [2344] ∧[617],
-97,Vorgang,SG4,,,,,,,Soll [2344] ∧[617],"[617] Hinweis: Mehrere Vorgänge für eine Marktlokation bei Wechsel bilanzierungsrelevanter Stammdaten innerhalb des Bilanzierungsmonats  
+38,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
+39,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
+40,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+42,Kommunikationsverbindung,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+43,MP-ID Empfänger,SG2,,,,,,,Muss,
+44,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
+45,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
+46,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X [280],[280] Nur MP-ID aus Sparte Strom
+47,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+48,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+49,Identifikation einer Liste,SG4,,,,,,,Muss,
+50,Identifikation einer Liste,SG4,IDE,,00012,,,,Muss,
+51,Identifikation einer Liste,SG4,IDE,7495,00012,Z01,,Liste,X,
+52,Identifikation einer Liste,SG4,IDE,7402,00012,,,Listennummer,X,
+53,Status der Antwort,SG4,STS,,00013,,,,,[238] Wenn SG4 IDE+24 (Vorgang) nicht vorhanden
+54,Status der Antwort,SG4,STS,9015,00013,E01,,Status der Antwort,,
+55,Status der Antwort,SG4,STS,9013,00013,,,Code des Prüfschritts,,
+56,Status der Antwort,SG4,STS,1131,00013,E_0017,,EBD Nr. E_0017,,
+57,Status der Antwort,SG4,STS,1131,,E_0052,,EBD Nr. E_0052,,
+58,MaBiS-Zählpunkt,SG5,,,,,,,Muss,
+59,MaBiS-Zählpunkt,SG5,LOC,,00014,,,,Muss,
+60,MaBiS-Zählpunkt,SG5,LOC,3227,00014,Z15,,MaBiS-Zählpunkt,X,
+61,MaBiS-Zählpunkt,SG5,LOC,3225,00014,,,Identifikator,X [951],[951] Format: Zählpunktbezeichnung
+62,Prüfidentifikator,SG6,,,,,,,Muss,
+63,Prüfidentifikator,SG6,RFF,,00015,,,,Muss,
+64,Prüfidentifikator,SG6,RFF,1153,00015,Z13,,Prüfidentifikator,X,
+65,Prüfidentifikator,SG6,RFF,1154,00015,55195,,MaBiS /Bilanzierungsgebietsclearingliste,X,
+66,Prüfidentifikator,SG6,RFF,1154,,55196,,MaBiS / Antwort auf dieBilanzierungsgebietsclearingliste,,
+67,Referenzangaben,SG6,,,,,,,,
+68,Referenzangaben,SG6,RFF,,00016,,,,,
+69,Referenzangaben,SG6,RFF,1153,00016,TN,,Transaktions-Referenznummer,,
+70,Referenzangaben,SG6,RFF,1154,00016,,,"Referenz, Identifikation",,[631] Hinweis: Es ist die Listennummer aus der Lieferanten- bzw. Bilanzierungsgebietsclearinglis te zu verwenden
+71,Daten der Summenzeitreihe,SG8,,,,,,,Muss,
+72,Daten der Summenzeitreihe,SG8,SEQ,,00017,,,,Muss,
+73,Daten der Summenzeitreihe,SG8,SEQ,1229,00017,Z22,,Daten derSummenzeitreihe,X,
+74,Versionsangabe der Summenzeitreihe,SG8,RFF,,00018,,,,Muss,
+75,Versionsangabe der Summenzeitreihe,SG8,RFF,1153,00018,AUU,,Referenz auf eineZeitreihe,X,
+76,Versionsangabe der Summenzeitreihe,SG8,RFF,1154,00018,,,Version der Zeitreihe,X,
+77,Vorgang,SG4,,,,,,,Soll [2344] ∧[617],"[617] Hinweis: Mehrere Vorgänge für eine Marktlokation bei Wechsel bilanzierungsrelevanter Stammdaten innerhalb des Bilanzierungsmonats  
 [2344] Einmal für jede Marktlokation bzw. Tranche, die in der DZÜ / BG-CL / LF- SZR berücksichtigt wurde"
-98,Vorgang,SG4,IDE,,00020,,,,Muss,
-99,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
-100,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-101,Bilanzierungsbeginn,SG4,,,,,,,,
-102,Bilanzierungsbeginn,SG4,,,,,,,Muss [609],
-103,Bilanzierungsbeginn,SG4,DTM,,00029,,,,Muss [609],"[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
-104,Bilanzierungsbeginn,SG4,DTM,2005,00029,158,,Bilanzierungsbeginn,X,
-105,Bilanzierungsbeginn,SG4,DTM,2380,00029,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
-106,Bilanzierungsbeginn,SG4,DTM,2379,00029,303,,CCYYMMDDHHMMZZZ,X,
-107,Bilanzierungsende,SG4,,,,,,,,
-108,Bilanzierungsende,SG4,,,,,,,Soll [201] ∧[609],
-109,Bilanzierungsende,SG4,DTM,,00030,,,,Soll [201] ∧[609],"[147] Wenn in Anfrage vorhanden  
+78,Vorgang,SG4,IDE,,00020,,,,Muss,
+79,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
+80,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
+81,Bilanzierungsbeginn,SG4,DTM,,00029,,,,Muss [609],"[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
+82,Bilanzierungsbeginn,SG4,DTM,2005,00029,158,,Bilanzierungsbeginn,X,
+83,Bilanzierungsbeginn,SG4,DTM,2380,00029,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+84,Bilanzierungsbeginn,SG4,DTM,2379,00029,303,,CCYYMMDDHHMMZZZ,X,
+85,Bilanzierungsende,SG4,DTM,,00030,,,,Soll [201] ∧[609],"[147] Wenn in Anfrage vorhanden  
 [201] Wenn die Marktlokation / Tranche nicht den ganzen Bilanzierungsmonat dem gleichen Tupel aus Bilanzkreis, Zeitreihentyp,"
-110,Bilanzierungsende,SG4,DTM,2005,00030,159,,Bilanzierungsende,X,
-111,Bilanzierungsende,SG4,DTM,2380,00030,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
-112,Bilanzierungsende,SG4,DTM,2379,00030,303,,CCYYMMDDHHMMZZZ,X,
-113,Status der Antwort,SG4,,,,,,,,
-114,Status der Antwort,SG4,,,,,,,,
-115,Status der Antwort,SG4,STS,,00039,,,,,[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
-116,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,,
-117,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,,
-118,Status der Antwort,SG4,STS,1131,00039,E_0017,,EBD Nr. E_0017,,
-119,Status der Antwort,SG4,STS,1131,,E_0052,,EBD Nr. E_0052,,
-120,Marktlokation,SG5,,,,,,,Muss [2061],
-121,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-122,Marktlokation,SG5,LOC,,00051,,,,Muss,
-123,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
-124,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-125,Tranche,SG5,,,,,,,Soll [54] ∧ [166]∧ [2061],
-126,Tranche,SG5,,,,,,,Soll [54] ∧ [166]∧ [2061],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
+86,Bilanzierungsende,SG4,DTM,2005,00030,159,,Bilanzierungsende,X,
+87,Bilanzierungsende,SG4,DTM,2380,00030,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+88,Bilanzierungsende,SG4,DTM,2379,00030,303,,CCYYMMDDHHMMZZZ,X,
+89,Status der Antwort,SG4,STS,,00039,,,,,[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
+90,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,,
+91,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,,
+92,Status der Antwort,SG4,STS,1131,00039,E_0017,,EBD Nr. E_0017,,
+93,Status der Antwort,SG4,STS,1131,,E_0052,,EBD Nr. E_0052,,
+94,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+95,Marktlokation,SG5,LOC,,00051,,,,Muss,
+96,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
+97,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+98,Tranche,SG5,,,,,,,Soll [54] ∧ [166]∧ [2061],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
 [166] Wenn vorhanden  
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-127,Tranche,SG5,LOC,,00054,,,,Muss,
-128,Tranche,SG5,LOC,3227,00054,Z21,,Tranche,X,
-129,Tranche,SG5,LOC,3225,00054,,,ID der Tranche,X [950],[950] Format:
-130,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,,
-131,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,,
-132,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,,
-133,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions-Referenznummer,,
-134,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,,
-135,Referenz auf die Marktlokation / Tranche,SG6,,,,,,,,
-136,Referenz auf die Marktlokation / Tranche,SG6,,,,,,,,[606] Hinweis: In diesem Segment bzw. SG sind die Daten aus der Sicht des NB anzugeben
-137,Referenz auf die Marktlokation / Tranche,SG6,RFF,,00063,,,,,
-138,Referenz auf die Marktlokation / Tranche,SG6,RFF,1153,00063,Z22,,Beteiligte Marktrolle,,
-139,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,,,,,,,,
-140,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,,,,,,,,
-141,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,,00064,,,,,
-142,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2005,00064,Z15,,"""Bilanzierungsbeginn""aus Daten der beteiligtenMarktrolle",,
-143,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2380,00064,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-144,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2379,00064,303,,CCYYMMDDHHMMZZZ,,
-145,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,,,,,,,,
-146,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,,,,,,,,
-147,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,,00065,,,,,[37] Wenn Anmeldung/ Änderung befristet
-148,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2005,00065,Z16,,"""Bilanzierungsende"" ausDaten der beteiligtenMarktrolle",,
-149,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2380,00065,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
-150,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2379,00065,303,,CCYYMMDDHHMMZZZ,,
-151,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧[609],
-152,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧[609],"[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
+99,Tranche,SG5,LOC,,00054,,,,Muss,
+100,Tranche,SG5,LOC,3227,00054,Z21,,Tranche,X,
+101,Tranche,SG5,LOC,3225,00054,,,ID der Tranche,X [950],[950] Format:
+102,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,,
+103,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,,
+104,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions-Referenznummer,,
+105,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,,
+106,Referenz auf die Marktlokation / Tranche,SG6,,,,,,,,[606] Hinweis: In diesem Segment bzw. SG sind die Daten aus der Sicht des NB anzugeben
+107,Referenz auf die Marktlokation / Tranche,SG6,RFF,,00063,,,,,
+108,Referenz auf die Marktlokation / Tranche,SG6,RFF,1153,00063,Z22,,Beteiligte Marktrolle,,
+109,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,,00064,,,,,
+110,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2005,00064,Z15,,"""Bilanzierungsbeginn""aus Daten der beteiligtenMarktrolle",,
+111,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2380,00064,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+112,Bilanzierungsbeginn aus Daten der beteiligten Marktrolle,SG6,DTM,2379,00064,303,,CCYYMMDDHHMMZZZ,,
+113,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,,00065,,,,,[37] Wenn Anmeldung/ Änderung befristet
+114,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2005,00065,Z16,,"""Bilanzierungsende"" ausDaten der beteiligtenMarktrolle",,
+115,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2380,00065,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,
+116,Bilanzierungsende aus Daten der beteiligten Marktrolle,SG6,DTM,2379,00065,303,,CCYYMMDDHHMMZZZ,,
+117,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧[609],"[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der"
-153,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
-154,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
-155,Referenz auf die ID der Marktlokation,SG8,,,,,,,,
-156,Referenz auf die ID der Marktlokation,SG8,,,,,,,Muss,
-157,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss,
-158,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
-159,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-160,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [20] ∧[106],
-161,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [20] ∧[106],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
+118,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
+119,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
+120,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss,
+121,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
+122,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+123,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [20] ∧[106],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
 [106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden"
-162,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00106,,,,Muss,
-163,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00106,31,,VeranschlagteJahresmenge Gesamt,X,
-164,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00106,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+124,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00106,,,,Muss,
+125,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00106,31,,VeranschlagteJahresmenge Gesamt,X,
+126,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00106,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
 [937] Format: keine Nachkommastelle"
-165,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00106,KWH,,Kilowattstunde,X,
-166,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,Muss,
-167,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,Muss,
-168,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,00107,,,,Muss,
-169,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,00107,Z07,,Tatsächlich bilanzierteEnergiemenge,X,
-170,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,00107,,,Mengenangabe,X [902],[902] Format: Möglicher Wert: ≥ 0
-171,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,00107,KWH,,Kilowattstunde,X,
-172,Lieferrichtung,SG10,,,,,,,Muss,
-173,Lieferrichtung,SG10,,,,,,,Muss,
-174,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
-175,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
-176,Lieferrichtung,SG10,CCI,7037,00110,Z06,,Erzeugung,X,
-177,Lieferrichtung,SG10,CCI,7037,,Z07,,Verbrauch,X,
-178,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-179,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-180,Zugeordnete Marktpartner,SG10,CCI,,00111,,,,Muss,
-181,Zugeordnete Marktpartner,SG10,CCI,7037,00111,ZB3,,ZugeordneterMarktpartner,X,
-182,Lieferant,SG10,,,,,,,,
-183,Lieferant,SG10,,,,,,,Muss [300],
-184,Lieferant,SG10,CAV,,00113,,,,Muss [300],[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden
-185,Lieferant,SG10,CAV,7111,00113,Z89,,LF,X,
-186,Lieferant,SG10,CAV,1131,00113,,,MP-ID,X [611],"[611] Hinweis: Wenn das Unternehmen NB die Aufgaben der Marktrolle LF wahrnimmt, ist die MP-ID des Unternehmens NB in der Marktrolle LF anzugeben"
-187,Übertragungsnetzbetreiber,SG10,,,,,,,,
-188,Übertragungsnetzbetreiber,SG10,,,,,,,Muss,
-189,Übertragungsnetzbetreiber,SG10,CAV,,00114,,,,Muss,
-190,Übertragungsnetzbetreiber,SG10,CAV,7111,00114,Z90,,ÜNB,X,
-191,Übertragungsnetzbetreiber,SG10,CAV,1131,00114,,,MP-ID,X,
-192,Regelzone,SG10,,,,,,,Muss,
-193,Regelzone,SG10,,,,,,,Muss,
-194,Regelzone,SG10,CCI,,00116,,,,Muss,
-195,Regelzone,SG10,CCI,7059,00116,Z18,,Regelzone,X,
-196,Regelzone,SG10,CCI,7037,00116,,,Regelzone,X,
-197,Bilanzkreis,SG10,,,,,,,Soll [2061] ∧[300] ∧ [166],
-198,Bilanzkreis,SG10,,,,,,,Soll [2061] ∧[300] ∧ [166],"[166] Wenn vorhanden  
+127,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00106,KWH,,Kilowattstunde,X,
+128,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,Muss,
+129,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,00107,,,,Muss,
+130,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,00107,Z07,,Tatsächlich bilanzierteEnergiemenge,X,
+131,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,00107,,,Mengenangabe,X [902],[902] Format: Möglicher Wert: ≥ 0
+132,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,00107,KWH,,Kilowattstunde,X,
+133,Lieferrichtung,SG10,,,,,,,Muss,
+134,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
+135,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
+136,Lieferrichtung,SG10,CCI,7037,00110,Z06,,Erzeugung,X,
+137,Lieferrichtung,SG10,CCI,7037,,Z07,,Verbrauch,X,
+138,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+139,Zugeordnete Marktpartner,SG10,CCI,,00111,,,,Muss,
+140,Zugeordnete Marktpartner,SG10,CCI,7037,00111,ZB3,,ZugeordneterMarktpartner,X,
+141,Lieferant,SG10,CAV,,00113,,,,Muss [300],[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden
+142,Lieferant,SG10,CAV,7111,00113,Z89,,LF,X,
+143,Lieferant,SG10,CAV,1131,00113,,,MP-ID,X [611],"[611] Hinweis: Wenn das Unternehmen NB die Aufgaben der Marktrolle LF wahrnimmt, ist die MP-ID des Unternehmens NB in der Marktrolle LF anzugeben"
+144,Übertragungsnetzbetreiber,SG10,CAV,,00114,,,,Muss,
+145,Übertragungsnetzbetreiber,SG10,CAV,7111,00114,Z90,,ÜNB,X,
+146,Übertragungsnetzbetreiber,SG10,CAV,1131,00114,,,MP-ID,X,
+147,Regelzone,SG10,,,,,,,Muss,
+148,Regelzone,SG10,CCI,,00116,,,,Muss,
+149,Regelzone,SG10,CCI,7059,00116,Z18,,Regelzone,X,
+150,Regelzone,SG10,CCI,7037,00116,,,Regelzone,X,
+151,Bilanzkreis,SG10,,,,,,,Soll [2061] ∧[300] ∧ [166],"[166] Wenn vorhanden  
 [300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden  
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-199,Bilanzkreis,SG10,CCI,,00117,,,,Muss,
-200,Bilanzkreis,SG10,CCI,7059,00117,Z19,,Bilanzkreis,X,
-201,Bilanzkreis,SG10,CCI,7037,00117,,,Bilanzkreis,X,
-202,Bilanzierungsgebiet,SG10,,,,,,,Muss,
-203,Bilanzierungsgebiet,SG10,,,,,,,Muss,
-204,Bilanzierungsgebiet,SG10,CCI,,00118,,,,Muss,
-205,Bilanzierungsgebiet,SG10,CCI,7059,00118,Z20,,Bilanzierungsgebiet,X,
-206,Bilanzierungsgebiet,SG10,CCI,7037,00118,,,Bilanzierungsgebiet,X,
-207,Zeitreihentyp,SG10,,,,,,,Muss [2061],
-208,Zeitreihentyp,SG10,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-209,Zeitreihentyp,SG10,CCI,,00121,,,,Muss,
-210,Zeitreihentyp,SG10,CCI,7059,00121,15,,Struktur,X,
-211,Zeitreihentyp,SG10,CCI,7037,00121,Z21,,Summenzeitreihentyp,X,
-212,Zeitreihentyp,SG10,,,,,,,,
-213,Zeitreihentyp,SG10,,,,,,,Muss,
-214,Zeitreihentyp,SG10,CAV,,00122,,,,Muss,
-215,Zeitreihentyp,SG10,CAV,7111,00122,,,Code des Zeitreihentyps,X,
-216,Aggregationsverantwortung in MaBiS,SG10,,,,,,,Muss,
-217,Aggregationsverantwortung in MaBiS,SG10,,,,,,,Muss,
-218,Aggregationsverantwortung in MaBiS,SG10,CCI,,00128,,,,Muss,
-219,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,00128,6,,Verantwortlicher,X,
-220,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,00128,ZA9,,ÜNB,X,
-221,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
-222,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
-223,Prognosegrundlage der Marktlokation,SG10,CCI,,00130,,,,Muss,
-224,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00130,ZC0,,Prognose auf Basis vonWerten,X,
-225,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis vonProfilen,X,
-226,Details der Prognosegrundlage,SG10,,,,,,,,
-227,Details der Prognosegrundlage,SG10,,,,,,,Muss [20] ∧ [21]∧ [2182],
-228,Details der Prognosegrundlage,SG10,CAV,,00131,,,,Muss [20] ∧ [21]∧ [2182],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
+152,Bilanzkreis,SG10,CCI,,00117,,,,Muss,
+153,Bilanzkreis,SG10,CCI,7059,00117,Z19,,Bilanzkreis,X,
+154,Bilanzkreis,SG10,CCI,7037,00117,,,Bilanzkreis,X,
+155,Bilanzierungsgebiet,SG10,,,,,,,Muss,
+156,Bilanzierungsgebiet,SG10,CCI,,00118,,,,Muss,
+157,Bilanzierungsgebiet,SG10,CCI,7059,00118,Z20,,Bilanzierungsgebiet,X,
+158,Bilanzierungsgebiet,SG10,CCI,7037,00118,,,Bilanzierungsgebiet,X,
+159,Zeitreihentyp,SG10,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+160,Zeitreihentyp,SG10,CCI,,00121,,,,Muss,
+161,Zeitreihentyp,SG10,CCI,7059,00121,15,,Struktur,X,
+162,Zeitreihentyp,SG10,CCI,7037,00121,Z21,,Summenzeitreihentyp,X,
+163,Zeitreihentyp,SG10,CAV,,00122,,,,Muss,
+164,Zeitreihentyp,SG10,CAV,7111,00122,,,Code des Zeitreihentyps,X,
+165,Aggregationsverantwortung in MaBiS,SG10,,,,,,,Muss,
+166,Aggregationsverantwortung in MaBiS,SG10,CCI,,00128,,,,Muss,
+167,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,00128,6,,Verantwortlicher,X,
+168,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,00128,ZA9,,ÜNB,X,
+169,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
+170,Prognosegrundlage der Marktlokation,SG10,CCI,,00130,,,,Muss,
+171,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00130,ZC0,,Prognose auf Basis vonWerten,X,
+172,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis vonProfilen,X,
+173,Details der Prognosegrundlage,SG10,CAV,,00131,,,,Muss [20] ∧ [21]∧ [2182],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
 [21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
 [2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben"
-229,Details der Prognosegrundlage,SG10,CAV,7111,00131,E02,,SLP/SEP,X,
-230,Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,
-231,Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,[606] Hinweis: In diesem Segment bzw. SG sind die Daten aus der Sicht des NB anzugeben
-232,Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,,00154,,,,,
-233,Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,1229,00154,Z29,,Daten der Marktlokationder beteiligtenMarktrolle,,
-234,Referenz auf die ID der Marktlokation,SG8,,,,,,,,
-235,Referenz auf die ID der Marktlokation,SG8,,,,,,,,
-236,Referenz auf die ID der Marktlokation,SG8,RFF,,00155,,,,,
-237,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00155,Z18,,Marktlokation,,
-238,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00155,,,ID einer Marktlokation,,[950] Format: Marktlokations-ID
-239,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,,
-240,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,,[31] Wenn eine Korrektur erfolgt
-241,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00157,,,,,
-242,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00157,31,,VeranschlagteJahresmenge Gesamt,,
-243,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00157,,,Mengenangabe,,"[902] Format: Möglicher Wert: ≥ 0  
+174,Details der Prognosegrundlage,SG10,CAV,7111,00131,E02,,SLP/SEP,X,
+175,Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,[606] Hinweis: In diesem Segment bzw. SG sind die Daten aus der Sicht des NB anzugeben
+176,Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,,00154,,,,,
+177,Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,1229,00154,Z29,,Daten der Marktlokationder beteiligtenMarktrolle,,
+178,Referenz auf die ID der Marktlokation,SG8,RFF,,00155,,,,,
+179,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00155,Z18,,Marktlokation,,
+180,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00155,,,ID einer Marktlokation,,[950] Format: Marktlokations-ID
+181,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,,[31] Wenn eine Korrektur erfolgt
+182,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00157,,,,,
+183,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00157,31,,VeranschlagteJahresmenge Gesamt,,
+184,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00157,,,Mengenangabe,,"[902] Format: Möglicher Wert: ≥ 0  
 [937] Format: keine Nachkommastelle"
-244,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00157,KWH,,Kilowattstunde,,
-245,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,,
-246,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,,[31] Wenn eine Korrektur erfolgt
-247,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,00158,,,,,
-248,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,00158,Z07,,Tatsächlich bilanzierteEnergiemenge,,
-249,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,00158,,,Mengenangabe,,[902] Format: Möglicher Wert: ≥ 0
-250,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,00158,KWH,,Kilowattstunde,,
-251,Regelzone,SG10,,,,,,,,
-252,Regelzone,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-253,Regelzone,SG10,CCI,,00159,,,,,
-254,Regelzone,SG10,CCI,7059,00159,Z18,,Regelzone,,
-255,Regelzone,SG10,CCI,7037,00159,,,Regelzone,,
-256,Bilanzkreis,SG10,,,,,,,,
-257,Bilanzkreis,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-258,Bilanzkreis,SG10,CCI,,00160,,,,,
-259,Bilanzkreis,SG10,CCI,7059,00160,Z19,,Bilanzkreis,,
-260,Bilanzkreis,SG10,CCI,7037,00160,,,Bilanzkreis,,
-261,Bilanzierungsgebiet,SG10,,,,,,,,
-262,Bilanzierungsgebiet,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-263,Bilanzierungsgebiet,SG10,CCI,,00161,,,,,
-264,Bilanzierungsgebiet,SG10,CCI,7059,00161,Z20,,Bilanzierungsgebiet,,
-265,Bilanzierungsgebiet,SG10,CCI,7037,00161,,,Bilanzierungsgebiet,,
-266,Zeitreihentyp,SG10,,,,,,,,
-267,Zeitreihentyp,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-268,Zeitreihentyp,SG10,CCI,,00162,,,,,
-269,Zeitreihentyp,SG10,CCI,7059,00162,15,,Struktur,,
-270,Zeitreihentyp,SG10,CCI,7037,00162,Z21,,Summenzeitreihentyp,,
-271,Zeitreihentyp,SG10,,,,,,,,
-272,Zeitreihentyp,SG10,,,,,,,,
-273,Zeitreihentyp,SG10,CAV,,00163,,,,,
-274,Zeitreihentyp,SG10,CAV,7111,00163,,,Code des Zeitreihentyps,,
-275,Aggregationsverantwortung in MaBiS,SG10,,,,,,,,
-276,Aggregationsverantwortung in MaBiS,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-277,Aggregationsverantwortung in MaBiS,SG10,CCI,,00167,,,,,
-278,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,00167,6,,Verantwortlicher,,
-279,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,00167,ZA8,,NB,,
-280,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA9,,ÜNB,,
-281,Prognosegrundlage der Marktlokation,SG10,,,,,,,,
-282,Prognosegrundlage der Marktlokation,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
-283,Prognosegrundlage der Marktlokation,SG10,CCI,,00168,,,,,
-284,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00168,ZC0,,Prognose auf Basis vonWerten,,
-285,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis vonProfilen,,
-286,Details der Prognosegrundlage,SG10,,,,,,,,
-287,Details der Prognosegrundlage,SG10,,,,,,,,
-288,Details der Prognosegrundlage,SG10,CAV,,00169,,,,,"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
+185,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00157,KWH,,Kilowattstunde,,
+186,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,,[31] Wenn eine Korrektur erfolgt
+187,Tatsächlich bilanzierte Energiemenge,SG9,QTY,,00158,,,,,
+188,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6063,00158,Z07,,Tatsächlich bilanzierteEnergiemenge,,
+189,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6060,00158,,,Mengenangabe,,[902] Format: Möglicher Wert: ≥ 0
+190,Tatsächlich bilanzierte Energiemenge,SG9,QTY,6411,00158,KWH,,Kilowattstunde,,
+191,Regelzone,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+192,Regelzone,SG10,CCI,,00159,,,,,
+193,Regelzone,SG10,CCI,7059,00159,Z18,,Regelzone,,
+194,Regelzone,SG10,CCI,7037,00159,,,Regelzone,,
+195,Bilanzkreis,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+196,Bilanzkreis,SG10,CCI,,00160,,,,,
+197,Bilanzkreis,SG10,CCI,7059,00160,Z19,,Bilanzkreis,,
+198,Bilanzkreis,SG10,CCI,7037,00160,,,Bilanzkreis,,
+199,Bilanzierungsgebiet,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+200,Bilanzierungsgebiet,SG10,CCI,,00161,,,,,
+201,Bilanzierungsgebiet,SG10,CCI,7059,00161,Z20,,Bilanzierungsgebiet,,
+202,Bilanzierungsgebiet,SG10,CCI,7037,00161,,,Bilanzierungsgebiet,,
+203,Zeitreihentyp,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+204,Zeitreihentyp,SG10,CCI,,00162,,,,,
+205,Zeitreihentyp,SG10,CCI,7059,00162,15,,Struktur,,
+206,Zeitreihentyp,SG10,CCI,7037,00162,Z21,,Summenzeitreihentyp,,
+207,Zeitreihentyp,SG10,CAV,,00163,,,,,
+208,Zeitreihentyp,SG10,CAV,7111,00163,,,Code des Zeitreihentyps,,
+209,Aggregationsverantwortung in MaBiS,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+210,Aggregationsverantwortung in MaBiS,SG10,CCI,,00167,,,,,
+211,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,00167,6,,Verantwortlicher,,
+212,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,00167,ZA8,,NB,,
+213,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA9,,ÜNB,,
+214,Prognosegrundlage der Marktlokation,SG10,,,,,,,,[31] Wenn eine Korrektur erfolgt
+215,Prognosegrundlage der Marktlokation,SG10,CCI,,00168,,,,,
+216,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00168,ZC0,,Prognose auf Basis vonWerten,,
+217,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis vonProfilen,,
+218,Details der Prognosegrundlage,SG10,CAV,,00169,,,,,"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
 [21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
 [2182] Segmentgruppe ist"
-289,Details der Prognosegrundlage,SG10,CAV,7111,00169,E02,,SLP/SEP,,
-290,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss [19] ∧[300] ∧ [609],
-291,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss [19] ∧[300] ∧ [609],"[19] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+++ZC0 (Prognose auf Basis von Werten) vorhanden  
+219,Details der Prognosegrundlage,SG10,CAV,7111,00169,E02,,SLP/SEP,,
+220,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss [19] ∧[300] ∧ [609],"[19] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+++ZC0 (Prognose auf Basis von Werten) vorhanden  
 [20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
 [54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
 [300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden  
 [528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
-292,OBIS-Daten der Marktlokation,SG8,SEQ,,00198,,,,Muss,
-293,OBIS-Daten der Marktlokation,SG8,SEQ,1229,00198,Z02,,OBIS-Daten derMarktlokation,X,
-294,Referenz auf die ID der Marktlokation,SG8,,,,,,,,
-295,Referenz auf die ID der Marktlokation,SG8,,,,,,,Muss,
-296,Referenz auf die ID der Marktlokation,SG8,RFF,,00199,,,,Muss,
-297,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00199,Z18,,Marktlokation,X,
-298,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00199,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-299,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,,
-300,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,Muss,
-301,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00200,,,,Muss,
-302,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00200,5,,Produktidentifikation,X,
-303,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00200,,,OBIS-Kennzahl der Marktlokation,X [614],[614] Hinweis: Es werden nur die OBIS Kennzahlen übermittelt die für die Bilanzierung relevant sind
-304,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00200,SRW,,OBIS-Kennzahl,X,
-305,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,
-306,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
-307,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,,00223,,,,,
-308,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,1229,00223,Z30,,OBIS-Daten derMarktlokation derbeteiligten Marktrolle,,
-309,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,,
-310,OBIS-Kennzahl der Marktlokation,SG8,,,,,,,,
-311,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00224,,,,,
-312,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00224,5,,Produktidentifikation,,
-313,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00224,,,OBIS-Kennzahl der Marktlokation,,
-314,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00224,SRW,,OBIS-Kennzahl,,
-315,Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2307] ∧ [609],
-316,Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2307] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
+221,OBIS-Daten der Marktlokation,SG8,SEQ,,00198,,,,Muss,
+222,OBIS-Daten der Marktlokation,SG8,SEQ,1229,00198,Z02,,OBIS-Daten derMarktlokation,X,
+223,Referenz auf die ID der Marktlokation,SG8,RFF,,00199,,,,Muss,
+224,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00199,Z18,,Marktlokation,X,
+225,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00199,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+226,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00200,,,,Muss,
+227,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00200,5,,Produktidentifikation,X,
+228,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00200,,,OBIS-Kennzahl der Marktlokation,X [614],[614] Hinweis: Es werden nur die OBIS Kennzahlen übermittelt die für die Bilanzierung relevant sind
+229,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00200,SRW,,OBIS-Kennzahl,X,
+230,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
+231,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,,00223,,,,,
+232,OBIS-Daten der Marktlokation der beteiligten Marktrolle,SG8,SEQ,1229,00223,Z30,,OBIS-Daten derMarktlokation derbeteiligten Marktrolle,,
+233,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00224,,,,,
+234,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00224,5,,Produktidentifikation,,
+235,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00224,,,OBIS-Kennzahl der Marktlokation,,
+236,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00224,SRW,,OBIS-Kennzahl,,
+237,Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2307] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
 [528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben  
 [2307] Für jede ID im SG5 LOC+Z21 (Tranche) DE3225 genau einmal anzugeben"
-317,Daten der Tranche,SG8,SEQ,,00238,,,,Muss,
-318,Daten der Tranche,SG8,SEQ,1229,00238,Z15,,Daten der Tranche,X,
-319,Referenz auf die ID der Tranche,SG8,,,,,,,,
-320,Referenz auf die ID der Tranche,SG8,,,,,,,Muss,
-321,Referenz auf die ID der Tranche,SG8,RFF,,00239,,,,Muss,
-322,Referenz auf die ID der Tranche,SG8,RFF,1153,00239,Z20,,Tranche,X,
-323,Referenz auf die ID der Tranche,SG8,RFF,1154,00239,,,ID der Tranche,X [950],[950] Format:
-324,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-325,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-326,Zugeordnete Marktpartner,SG10,CCI,,00243,,,,Muss,
-327,Zugeordnete Marktpartner,SG10,CCI,7037,00243,ZB3,,ZugeordneterMarktpartner,X,
-328,Lieferant,SG10,,,,,,,,
-329,Lieferant,SG10,,,,,,,Muss,
-330,Lieferant,SG10,CAV,,00244,,,,Muss,
-331,Lieferant,SG10,CAV,7111,00244,Z89,,LF,X,
-332,Lieferant,SG10,CAV,1131,00244,,,MP-ID,X,
-333,Bilanzkreis,SG10,,,,,,,Soll [166],
-334,Bilanzkreis,SG10,,,,,,,Soll [166],[166] Wenn vorhanden
-335,Bilanzkreis,SG10,CCI,,00245,,,,Muss,
-336,Bilanzkreis,SG10,CCI,7059,00245,Z19,,Bilanzkreis,X,
-337,Bilanzkreis,SG10,CCI,7037,00245,,,Bilanzkreis,X,
-338,Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,
-339,Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
-340,Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,,00249,,,,,
-341,Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,1229,00249,Z31,,Daten der Tranche derbeteiligten Marktrolle,,
-342,Bilanzkreis,SG10,,,,,,,,
-343,Bilanzkreis,SG10,,,,,,,,
-344,Bilanzkreis,SG10,CCI,,00250,,,,,
-345,Bilanzkreis,SG10,CCI,7059,00250,Z19,,Bilanzkreis,,
-346,Bilanzkreis,SG10,CCI,7037,00250,,,Bilanzkreis,,
-347,OBIS-Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2311] ∧ [609],
-348,OBIS-Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2311] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
+238,Daten der Tranche,SG8,SEQ,,00238,,,,Muss,
+239,Daten der Tranche,SG8,SEQ,1229,00238,Z15,,Daten der Tranche,X,
+240,Referenz auf die ID der Tranche,SG8,RFF,,00239,,,,Muss,
+241,Referenz auf die ID der Tranche,SG8,RFF,1153,00239,Z20,,Tranche,X,
+242,Referenz auf die ID der Tranche,SG8,RFF,1154,00239,,,ID der Tranche,X [950],[950] Format:
+243,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+244,Zugeordnete Marktpartner,SG10,CCI,,00243,,,,Muss,
+245,Zugeordnete Marktpartner,SG10,CCI,7037,00243,ZB3,,ZugeordneterMarktpartner,X,
+246,Lieferant,SG10,CAV,,00244,,,,Muss,
+247,Lieferant,SG10,CAV,7111,00244,Z89,,LF,X,
+248,Lieferant,SG10,CAV,1131,00244,,,MP-ID,X,
+249,Bilanzkreis,SG10,,,,,,,Soll [166],[166] Wenn vorhanden
+250,Bilanzkreis,SG10,CCI,,00245,,,,Muss,
+251,Bilanzkreis,SG10,CCI,7059,00245,Z19,,Bilanzkreis,X,
+252,Bilanzkreis,SG10,CCI,7037,00245,,,Bilanzkreis,X,
+253,Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
+254,Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,,00249,,,,,
+255,Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,1229,00249,Z31,,Daten der Tranche derbeteiligten Marktrolle,,
+256,Bilanzkreis,SG10,,,,,,,,
+257,Bilanzkreis,SG10,CCI,,00250,,,,,
+258,Bilanzkreis,SG10,CCI,7059,00250,Z19,,Bilanzkreis,,
+259,Bilanzkreis,SG10,CCI,7037,00250,,,Bilanzkreis,,
+260,OBIS-Daten der Tranche,SG8,,,,,,,Muss [54] ∧[2311] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
 [528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben  
 [2311] Für jede ID im SG5 LOC+Z21 (Tranche) DE3225,"
-349,OBIS-Daten der Tranche,SG8,SEQ,,00260,,,,Muss,
-350,OBIS-Daten der Tranche,SG8,SEQ,1229,00260,Z17,,OBIS-Daten der Tranche,X,
-351,Referenz auf die ID einer Tranche,SG8,,,,,,,,
-352,Referenz auf die ID einer Tranche,SG8,,,,,,,Muss,
-353,Referenz auf die ID einer Tranche,SG8,RFF,,00261,,,,Muss,
-354,Referenz auf die ID einer Tranche,SG8,RFF,1153,00261,Z20,,Tranche,X,
-355,Referenz auf die ID einer Tranche,SG8,RFF,1154,00261,,,ID einer Tranche,X [950],[950] Format: Marktlokations-ID
-356,OBIS-Kennzahl der Tranche,SG8,,,,,,,,
-357,OBIS-Kennzahl der Tranche,SG8,,,,,,,Muss,
-358,OBIS-Kennzahl der Tranche,SG8,PIA,,00262,,,,Muss,
-359,OBIS-Kennzahl der Tranche,SG8,PIA,4347,00262,5,,Produktidentifikation,X,
-360,OBIS-Kennzahl der Tranche,SG8,PIA,7140,00262,,,OBIS-Kennzahl der Tranche,X [269],[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
-361,OBIS-Kennzahl der Tranche,SG8,PIA,7143,00262,SRW,,OBIS-Kennzahl,X,
-362,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,
-363,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
-364,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,,00269,,,,,
-365,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,1229,00269,Z32,,OBIS-Daten der Trancheder beteiligtenMarktrolle,,
-366,OBIS-Kennzahl der Tranche,SG8,,,,,,,,
-367,OBIS-Kennzahl der Tranche,SG8,,,,,,,,
-368,OBIS-Kennzahl der Tranche,SG8,PIA,,00270,,,,,
-369,OBIS-Kennzahl der Tranche,SG8,PIA,4347,00270,5,,Produktidentifikation,,
-370,OBIS-Kennzahl der Tranche,SG8,PIA,7140,00270,,,OBIS-Kennzahl der Tranche,,[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
-371,OBIS-Kennzahl der Tranche,SG8,PIA,7143,00270,SRW,,OBIS-Kennzahl,,
-372,Profildaten,SG8,,,,,,,Muss [20] ∧[119] ∧ [609],
-373,Profildaten,SG8,,,,,,,Muss [20] ∧[119] ∧ [609],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
+261,OBIS-Daten der Tranche,SG8,SEQ,,00260,,,,Muss,
+262,OBIS-Daten der Tranche,SG8,SEQ,1229,00260,Z17,,OBIS-Daten der Tranche,X,
+263,Referenz auf die ID einer Tranche,SG8,RFF,,00261,,,,Muss,
+264,Referenz auf die ID einer Tranche,SG8,RFF,1153,00261,Z20,,Tranche,X,
+265,Referenz auf die ID einer Tranche,SG8,RFF,1154,00261,,,ID einer Tranche,X [950],[950] Format: Marktlokations-ID
+266,OBIS-Kennzahl der Tranche,SG8,PIA,,00262,,,,Muss,
+267,OBIS-Kennzahl der Tranche,SG8,PIA,4347,00262,5,,Produktidentifikation,X,
+268,OBIS-Kennzahl der Tranche,SG8,PIA,7140,00262,,,OBIS-Kennzahl der Tranche,X [269],[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
+269,OBIS-Kennzahl der Tranche,SG8,PIA,7143,00262,SRW,,OBIS-Kennzahl,X,
+270,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
+271,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,,00269,,,,,
+272,OBIS-Daten der Tranche der beteiligten Marktrolle,SG8,SEQ,1229,00269,Z32,,OBIS-Daten der Trancheder beteiligtenMarktrolle,,
+273,OBIS-Kennzahl der Tranche,SG8,PIA,,00270,,,,,
+274,OBIS-Kennzahl der Tranche,SG8,PIA,4347,00270,5,,Produktidentifikation,,
+275,OBIS-Kennzahl der Tranche,SG8,PIA,7140,00270,,,OBIS-Kennzahl der Tranche,,[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
+276,OBIS-Kennzahl der Tranche,SG8,PIA,7143,00270,SRW,,OBIS-Kennzahl,,
+277,Profildaten,SG8,,,,,,,Muss [20] ∧[119] ∧ [609],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
 [119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6"
-374,Profildaten,SG8,SEQ,,00376,,,,Muss,
-375,Profildaten,SG8,SEQ,1229,00376,Z21,,Profildaten,X,
-376,Versionsangabe des Profils,SG8,,,,,,,,
-377,Versionsangabe des Profils,SG8,,,,,,,Muss,
-378,Versionsangabe des Profils,SG8,RFF,,00377,,,,Muss,
-379,Versionsangabe des Profils,SG8,RFF,1153,00377,Z12,,Referenz auf ein Profil,X,
-380,Versionsangabe des Profils,SG8,RFF,1154,00377,,,Version des Profils,X,
-381,Referenz auf die ID der Marktlokation,SG8,,,,,,,,
-382,Referenz auf die ID der Marktlokation,SG8,,,,,,,Muss,
-383,Referenz auf die ID der Marktlokation,SG8,RFF,,00378,,,,Muss,
-384,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00378,Z18,,Marktlokation,X,
-385,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00378,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-386,Normiertes Profil,SG10,,,,,,,Muss,
-387,Normiertes Profil,SG10,,,,,,,Muss,
-388,Normiertes Profil,SG10,CCI,,00380,,,,Muss,
-389,Normiertes Profil,SG10,CCI,7059,00380,Z02,,Standardlastprofil,X,
-390,Normiertes Profil,SG10,CCI,7037,00380,E01,,synthetisches Verfahren,X,
-391,Normiertes Profil,SG10,,,,,,,,
-392,Normiertes Profil,SG10,,,,,,,Muss,
-393,Normiertes Profil,SG10,CAV,,00381,,,,Muss,
-394,Normiertes Profil,SG10,CAV,7111,00381,,,Code des Normierten Profils,X,
-395,Profildaten der beteiligten Marktrolle,SG8,,,,,,,,
-396,Profildaten der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
-397,Profildaten der beteiligten Marktrolle,SG8,SEQ,,00384,,,,,
-398,Profildaten der beteiligten Marktrolle,SG8,SEQ,1229,00384,Z33,,Profildaten derbeteiligten Marktrolle,,
-399,Normiertes Profil,SG10,,,,,,,,
-400,Normiertes Profil,SG10,,,,,,,,
-401,Normiertes Profil,SG10,CCI,,00385,,,,,
-402,Normiertes Profil,SG10,CCI,7059,00385,Z02,,Standardlastprofil,,
-403,Normiertes Profil,SG10,CCI,7037,00385,E01,,synthetisches Verfahren,,
-404,Normiertes Profil,SG10,,,,,,,,
-405,Normiertes Profil,SG10,,,,,,,,
-406,Normiertes Profil,SG10,CAV,,00386,,,,,
-407,Normiertes Profil,SG10,CAV,7111,00386,,,Code des Normierten Profils,,
-408,Nachrichten-Endesegment,,,,,,,,Muss,
-409,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
-410,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einerNachricht,X,
-411,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
+278,Profildaten,SG8,SEQ,,00376,,,,Muss,
+279,Profildaten,SG8,SEQ,1229,00376,Z21,,Profildaten,X,
+280,Versionsangabe des Profils,SG8,RFF,,00377,,,,Muss,
+281,Versionsangabe des Profils,SG8,RFF,1153,00377,Z12,,Referenz auf ein Profil,X,
+282,Versionsangabe des Profils,SG8,RFF,1154,00377,,,Version des Profils,X,
+283,Referenz auf die ID der Marktlokation,SG8,RFF,,00378,,,,Muss,
+284,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00378,Z18,,Marktlokation,X,
+285,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00378,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+286,Normiertes Profil,SG10,,,,,,,Muss,
+287,Normiertes Profil,SG10,CCI,,00380,,,,Muss,
+288,Normiertes Profil,SG10,CCI,7059,00380,Z02,,Standardlastprofil,X,
+289,Normiertes Profil,SG10,CCI,7037,00380,E01,,synthetisches Verfahren,X,
+290,Normiertes Profil,SG10,CAV,,00381,,,,Muss,
+291,Normiertes Profil,SG10,CAV,7111,00381,,,Code des Normierten Profils,X,
+292,Profildaten der beteiligten Marktrolle,SG8,,,,,,,,[31] Wenn eine Korrektur erfolgt
+293,Profildaten der beteiligten Marktrolle,SG8,SEQ,,00384,,,,,
+294,Profildaten der beteiligten Marktrolle,SG8,SEQ,1229,00384,Z33,,Profildaten derbeteiligten Marktrolle,,
+295,Normiertes Profil,SG10,,,,,,,,
+296,Normiertes Profil,SG10,CCI,,00385,,,,,
+297,Normiertes Profil,SG10,CCI,7059,00385,Z02,,Standardlastprofil,,
+298,Normiertes Profil,SG10,CCI,7037,00385,E01,,synthetisches Verfahren,,
+299,Normiertes Profil,SG10,CAV,,00386,,,,,
+300,Normiertes Profil,SG10,CAV,7111,00386,,,Code des Normierten Profils,,
+301,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
+302,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einerNachricht,X,
+303,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
