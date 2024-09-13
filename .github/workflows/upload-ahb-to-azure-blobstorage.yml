@@ -23,7 +23,7 @@ jobs:
           source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
-          extra_args: "--pattern *.json"
+          extra_args: "--pattern *.json --destination-path ${{ env.FOLDER_NAME }}"
           overwrite: "true"
 
       - name: Upload XLSX files to Azure Blob Storage
@@ -33,7 +33,7 @@ jobs:
           source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
-          extra_args: "--pattern *.xlsx"
+          extra_args: "--pattern *.xlsx --destination-path ${{ env.FOLDER_NAME }}"
           overwrite: "true"
 
       - name: Upload CSV files to Azure Blob Storage
@@ -43,5 +43,5 @@ jobs:
           source_dir: ${{ env.FOLDER_NAME }}
           container_name: ahb-tables
           connection_string: ${{ secrets.AzureBlobStorageConnectionString }}
-          extra_args: "--pattern *.csv"
+          extra_args: "--pattern *.csv --destination-path ${{ env.FOLDER_NAME }}"
           overwrite: "true"
