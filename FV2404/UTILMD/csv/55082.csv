@@ -25,7 +25,7 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939],[321] Wenn im DE3155
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939][321]) ∨([940],[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -41,7 +41,7 @@
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Beginn zum,SG4,DTM,,00024,,,,Muss [7] ∧[577],[7] Wenn SG4 STS+7++ZG9/ZH1/ZH2 (Transaktionsgrund: Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden / -wegen Stilllegung / -wegen
+41,Beginn zum,SG4,DTM,,00024,,,,Muss [7] ∧[577],[7] Wenn SG4 STS+7++ZG9/ZH1/ZH2 (Transaktionsgrund: Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden / -wegen Stilllegung / -wegen aufgehobenem Vertragsverhältnis) vorhanden
 42,Beginn zum,SG4,DTM,2005,00024,92,,Datum Vertragsbeginn,X,
 43,Beginn zum,SG4,DTM,2380,00024,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
 44,Beginn zum,SG4,DTM,2379,00024,303,,CCYYMMDDHHMMZZZ,X,
@@ -57,7 +57,7 @@
 54,Transaktionsgrund,SG4,STS,9015,00037,7,,Transaktionsgrund,X,
 55,Transaktionsgrund,SG4,STS,9013,00037,E03,,Wechsel,X,
 56,Transaktionsgrund,SG4,STS,9013,,ZH2,,Aufhebung einerzukünftigen Zuordnungwegen aufgehobenemVertragsverhältnis,X,
-57,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines
+57,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
 58,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
 59,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X,
 60,Status der Antwort,SG4,STS,1131,00039,E_0306,,EBD Nr. E_0306,X,
@@ -78,21 +78,22 @@
 73,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
 74,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
 75,Prüfidentifikator,SG6,RFF,1154,00057,55081,,MPES / Abmeldung,,
-76,Prüfidentifikator,SG6,RFF,1154,,55082,,MPES / Bestätigung,X,
-77,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
-78,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
-79,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions-Referenznummer,X,
-80,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
-81,Daten der Marktlokation,SG8,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-82,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
-83,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
-84,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss [25],[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
-85,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
-86,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-87,Lieferrichtung,SG10,,,,,,,Muss,
-88,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
-89,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
-90,Lieferrichtung,SG10,CCI,7037,00110,Z06,,Erzeugung,X,
-91,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
-92,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einerNachricht,X,
-93,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
+76,Prüfidentifikator,SG6,RFF,1154,,55082,,MPES / BestätigungAbmeldung,X,
+77,Prüfidentifikator,SG6,RFF,1154,,55083,,MPES / AblehnungAbmeldung,,
+78,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
+79,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
+80,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions-Referenznummer,X,
+81,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
+82,Daten der Marktlokation,SG8,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+83,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
+84,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
+85,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss [25],[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
+86,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
+87,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+88,Lieferrichtung,SG10,,,,,,,Muss,
+89,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
+90,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
+91,Lieferrichtung,SG10,CCI,7037,00110,Z06,,Erzeugung,X,
+92,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
+93,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einerNachricht,X,
+94,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
