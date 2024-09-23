@@ -25,11 +25,7 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939][321]) ∨([940][322])) ∧[514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
-[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939][321]) ∨,[321] Wenn im DE3155 in demselben COM der
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -46,7 +42,7 @@
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
 41,Ende zum,SG4,DTM,,00025,,,,Muss [12] ∧[13],"[12] Wenn SG4 DTM+471 (Ende zum nächstmöglichem Termin) nicht vorhanden  
-[13] Wenn SG4"
+[13] Wenn SG4 STS+E01++Z01 (Status der Antwort: Zustimmung mit"
 42,Ende zum,SG4,DTM,2005,00025,93,,Datum Vertragsende,X,
 43,Ende zum,SG4,DTM,2380,00025,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
 44,Ende zum,SG4,DTM,2379,00025,303,,CCYYMMDDHHMMZZZ,X,
@@ -78,7 +74,7 @@
 67,Transaktionsgrund,SG4,STS,,00037,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 68,Transaktionsgrund,SG4,STS,9015,00037,7,,Transaktionsgrund,X,
 69,Transaktionsgrund,SG4,STS,9013,00037,E03,,Wechsel,X,
-70,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten
+70,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
 71,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
 72,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X,
 73,Status der Antwort,SG4,STS,1131,00039,Codeliste Strom Nr.S_0045Codeliste Strom Nr.S_0046,,S_0045S_0046,X,
