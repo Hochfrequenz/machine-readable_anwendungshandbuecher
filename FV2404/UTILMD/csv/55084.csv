@@ -25,7 +25,7 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]),[321] Wenn im DE3155 in
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321])∨ ([940] [322]))∧ [514],[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -45,8 +45,7 @@
 42,Ende zum,SG4,DTM,2005,00025,93,,Datum Vertragsende,X,
 43,Ende zum,SG4,DTM,2380,00025,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
 44,Ende zum,SG4,DTM,2379,00025,303,,CCYYMMDDHHMMZZZ,X,
-45,Bilanzierungsende,SG4,DTM,,00030,,,,Soll [29],"[29] Wenn eine Bilanzierung stattfindet  
-[56] Wenn im STS+E01 im DE9013 ein Antwortcode aus dem Cluster Zustimmung vorhanden ist"
+45,Bilanzierungsende,SG4,DTM,,00030,,,,Soll [29],[29] Wenn eine Bilanzierung stattfindet
 46,Bilanzierungsende,SG4,DTM,2005,00030,159,,Bilanzierungsende,X,
 47,Bilanzierungsende,SG4,DTM,2380,00030,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [UB1],
 48,Bilanzierungsende,SG4,DTM,2379,00030,303,,CCYYMMDDHHMMZZZ,X,
@@ -62,7 +61,8 @@
 58,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00043,,,,,[48] Wenn in dieser SG4 das STS+E01++E14/ A99 (Status der Antwort: Ablehnung Sonstiges) vorhanden
 59,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,ZusätzlicheInformationen (fürallgemeine Hinweise),,
 60,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00043,,,Text für allgemeine Information,,
-61,Marktlokation,SG5,,,,,,,Muss [2061] ∧[348],[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden 
+61,Marktlokation,SG5,,,,,,,Muss [2061] ∧[348],"[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 62,Marktlokation,SG5,LOC,,00051,,,,Muss,
 63,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
 64,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
