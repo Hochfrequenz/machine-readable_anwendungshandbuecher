@@ -1,17 +1,17 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,IFTSTA,,MultimodalerStatusbericht,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,IFTSTA,,Multimodaler Statusbericht,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,18A,,Ausgabe 2018 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,2.0f,,Versionsnummer derzugrundeliegendenBDEW-Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,2.0f,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00002,Z09,,WiM Meldung(en),X,
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Dokumentendatum,,DTM,,00003,,,,Muss,
-11,Dokumentendatum,,DTM,2005,00003,137,,Dokumenten-/Nachrichtendatum/-zeit,X,
-12,Dokumentendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [931][494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+11,Dokumentendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
+12,Dokumentendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
 [931] Format: ZZZ = +00"
 13,Dokumentendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Empfänger,SG1,,,,,,,Muss,
@@ -19,10 +19,10 @@
 16,MP-ID Empfänger,SG1,NAD,3035,00004,MR,,Nachrichtenempfänger,X,
 17,MP-ID Empfänger,SG1,NAD,3039,00004,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
 18,MP-ID Empfänger,SG1,NAD,3055,00004,9,,GS1,X,
-19,MP-ID Empfänger,SG1,NAD,3055,,293,,"DE, BDEW(Bundesverband derEnergie- undWasserwirtschaft e.V.)",X,
+19,MP-ID Empfänger,SG1,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
 20,MP-ID Absender,SG1,,,,,,,Muss,
 21,MP-ID Absender,SG1,NAD,,00005,,,,Muss,
-22,MP-ID Absender,SG1,NAD,3035,00005,MS,,Dokumenten-/Nachrichtenausstellerbzw. -absender,X,
+22,MP-ID Absender,SG1,NAD,3035,00005,MS,,Dokumenten-/ Nachrichtenaussteller bzw. -absender,X,
 23,MP-ID Absender,SG1,NAD,3039,00005,,,MP-ID,X [27],[27] Nur MP-ID aus Sparte Strom
 24,MP-ID Absender,SG1,NAD,3055,00005,9,,GS1,X,
 25,Ansprechpartner,SG2,,,,,,,Kann,
@@ -30,7 +30,7 @@
 27,Ansprechpartner,SG2,CTA,3139,00006,IC,,Informationskontakt,X,
 28,Ansprechpartner,SG2,CTA,3412,00006,,,Kontakt,X,
 29,Kommunikationsverbindun g,SG2,COM,,00007,,,,Muss,
-30,Kommunikationsverbindun g,SG2,COM,3148,00007,,,Nummer / E-Mail Adresse,X (([939][146]) ∨([940][147]))∧ [534],"[146] Wenn im DE3155 in demselben COM der Code EM vorhanden ist 
+30,Kommunikationsverbindun g,SG2,COM,3148,00007,,,Nummer / E-Mail Adresse,X (([939] [146]) ∨ ([940][147])) ∧ [534],"[146] Wenn im DE3155 in demselben COM der Code EM vorhanden ist 
 [147] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
 [534] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
 [939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
@@ -49,53 +49,17 @@
 42,Ersteinbau iMS Planungsstatus,SG15,,,,,,,Muss,[19] Wenn SG15 STS+Z24 nicht vorhanden.
 43,Ersteinbau iMS Planungsstatus,SG15,STS,,00034,,,,Muss,
 44,Ersteinbau iMS Planungsstatus,SG15,STS,9015,00034,Z19,,Ersteinbau iMS,X,
-45,Ersteinbau iMS Planungsstatus,SG15,STS,4405,00034,Z17,,geplant,,
-46,Ersteinbau iMS Planungsstatus,SG15,STS,4405,,Z30,,zugestimmt,X [503],
-47,Ersteinbau iMS Planungsstatus,SG15,STS,4405,,Z31,,widersprochen,,[503] Hinweis: Auf Selbsteinbau eines iMS oder einer mME wird verzichtet
-48,Ersteinbau iMS Planungsstatus,SG15,STS,9013,00034,,,Code des Prüfschritts,X [48],"[47] Es sind nur Codes aus dem EBD-Cluster ""Ablehnung"" möglich. 
+45,Ersteinbau iMS Planungsstatus,SG15,STS,4405,,Z30,,zugestimmt,X [503],
+46,Ersteinbau iMS Planungsstatus,SG15,STS,9013,00034,,,Code des Prüfschritts,X [48],"[47] Es sind nur Codes aus dem EBD-Cluster ""Ablehnung"" möglich. 
 [48] Es sind nur Codes aus dem EBD-Cluster ""Zustimmung"" möglich."
-49,Ersteinbau iMS Planungsstatus,SG15,STS,1131,00034,E_0233,,EBD Nr. E_0233,X,
-50,Prüfidentifikator,SG15,RFF,,00035,,,,Muss,
-51,Prüfidentifikator,SG15,RFF,1153,00035,Z13,,Prüfidentifikator,X,
-52,Prüfidentifikator,SG15,RFF,1154,00035,21029,,WiM / Vorabinformation,,
-53,Prüfidentifikator,SG15,RFF,1154,,21030,,WiM / ZustimmungiMS-Ersteinbau,X,
-54,Prüfidentifikator,SG15,RFF,1154,,21031,,WiM / Bestandsschutz /Eigenausbau iMS,,
-55,Referenz auf die Marktlokation,SG15,RFF,,00036,,,,,[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF
-56,Referenz auf die Marktlokation,SG15,RFF,1153,00036,AVE,,Meldepunkt,,
-57,Referenz auf die Marktlokation,SG15,RFF,1154,00036,,,ID einer Marktlokation,,"[506] Hinweis: Verwendung der ID der Marktlokation 
-[950] Format: Marktlokations-ID"
-58,Referenz auf den Preisschlüsselstamm,SG15,RFF,,00037,,,,,"[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF 
-[144] Wenn RFF+Z45 in dieser SG15 nicht vorhanden"
-59,Referenz auf den Preisschlüsselstamm,SG15,RFF,1153,00037,Z17,,Preisschlüsselstamm,,
-60,Referenz auf den Preisschlüsselstamm,SG15,RFF,1154,00037,,,Code des Preisschlüsselstamms,,
-61,Referenz auf die Artikel-ID,SG15,RFF,,00038,,,,,"[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF 
-[145] Wenn RFF+Z17 in dieser SG15 nicht vorhanden"
-62,Referenz auf die Artikel-ID,SG15,RFF,1153,00038,Z45,,Referenz auf die Artikel-ID,,
-63,Referenz auf die Artikel-ID,SG15,RFF,1154,00038,,,Artikel-ID,,
-64,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,00039,,,,Muss,
-65,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,00039,76,,"Lieferdatum/-zeit,geplant",X,
-66,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,00039,,,"Datum oder Uhrzeit oderZeitspanne, Wert",X [496] ,[496] Der Zeitpunkt muss > dem Wert im DE2380 des DTM+137 sein
-67,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,00039,102,,CCYYMMDD,X,
-68,Ersteinbau mME Planungsstatus,SG15,,,,,,,,"[18] Wenn SG15 STS+Z19 nicht vorhanden. 
-[20] Wenn MP-ID in SG1 NAD+MR in der Rolle LF"
-69,Ersteinbau mME Planungsstatus,SG15,STS,,00040,,,,,
-70,Ersteinbau mME Planungsstatus,SG15,STS,9015,00040,Z24,,Ersteinbau mME,,
-71,Ersteinbau mME Planungsstatus,SG15,STS,4405,00040,Z17,,geplant,,
-72,Prüfidentifikator,SG15,RFF,,00041,,,,,
-73,Prüfidentifikator,SG15,RFF,1153,00041,Z13,,Prüfidentifikator,,
-74,Prüfidentifikator,SG15,RFF,1154,00041,21029,,WiM / Vorabinformation,,
-75,Referenz auf die Marktlokation,SG15,RFF,,00042,,,,,
-76,Referenz auf die Marktlokation,SG15,RFF,1153,00042,AVE,,Meldepunkt,,
-77,Referenz auf die Marktlokation,SG15,RFF,1154,00042,,,ID einer Marktlokation,,"[506] Hinweis: Verwendung der ID der Marktlokation 
-[950] Format: Marktlokations-ID"
-78,Beginn des Zeitintervalls,SG15,DTM,,00043,,,,,
-79,Beginn des Zeitintervalls,SG15,DTM,2005,00043,469,,"Startdatum oder -zeitpunkt, frühestes/r",,
-80,Beginn des Zeitintervalls,SG15,DTM,2380,00043,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,[496] Der Zeitpunkt muss > dem Wert im DE2380
-81,Beginn des Zeitintervalls,SG15,DTM,2379,00043,303,,CCYYMMDDHHMMZZZ,,
-82,Ende des Zeitintervalls,SG15,DTM,,00044,,,,,
-83,Ende des Zeitintervalls,SG15,DTM,2005,00044,472,,"Endedatum oder -zeitpunkt, spätestes/r",,
-84,Ende des Zeitintervalls,SG15,DTM,2380,00044,,,"Datum oder Uhrzeit oderZeitspanne, Wert",,[496] Der Zeitpunkt muss > dem Wert im DE2380 des DTM+137 sein
-85,Ende des Zeitintervalls,SG15,DTM,2379,00044,303,,CCYYMMDDHHMMZZZ,,
-86,Nachrichten-Endesegment,,UNT,,00131,,,,Muss,
-87,Nachrichten-Endesegment,,UNT,0074,00131,,,Anzahl der Segmente in einerNachricht,X,
-88,Nachrichten-Endesegment,,UNT,0062,00131,,,Nachrichten-Referenznummer,X,
+47,Ersteinbau iMS Planungsstatus,SG15,STS,1131,00034,E_0233,,EBD Nr. E_0233,X,
+48,Prüfidentifikator,SG15,RFF,,00035,,,,Muss,
+49,Prüfidentifikator,SG15,RFF,1153,00035,Z13,,Prüfidentifikator,X,
+50,Prüfidentifikator,SG15,RFF,1154,,21030,,WiM / Zustimmung iMS-Ersteinbau,X,
+51,Datum/Uhrzeit/Zeitspanne,SG15,DTM,,00039,,,,Muss,
+52,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2005,00039,76,,"Lieferdatum/-zeit,geplant",X,
+53,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2380,00039,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [496] ,[496] Der Zeitpunkt muss > dem Wert im DE2380 des DTM+137 sein
+54,Datum/Uhrzeit/Zeitspanne,SG15,DTM,2379,00039,102,,CCYYMMDD,X,
+55,Nachrichten-Endesegment,,UNT,,00131,,,,Muss,
+56,Nachrichten-Endesegment,,UNT,0074,00131,,,Anzahl der Segmente in einer Nachricht,X,
+57,Nachrichten-Endesegment,,UNT,0062,00131,,,Nachrichten-Referenznummer,X,
