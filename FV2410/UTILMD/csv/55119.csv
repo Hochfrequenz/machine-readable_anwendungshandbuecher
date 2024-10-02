@@ -7,16 +7,16 @@
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
 6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschrei bung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
-8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldunge n,X,
+8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZ ZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
 15,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
-16,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenausstell,X,
+16,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenausstell er bzw. -absender,X,
 17,MP-ID Absender,SG2,NAD,3039,00008,,,MP-ID,X,
 18,MP-ID Absender,SG2,NAD,3055,00008,9,,GS1,X,
 19,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
@@ -25,73 +25,83 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindu ng,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindu ng,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
-27,MP-ID Empfänger,SG2,,,,,,,Muss,
-28,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
-29,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfän ger,X,
-30,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
-31,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
-32,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-33,Vorgang,SG4,,,,,,,Muss,
-34,Vorgang,SG4,IDE,,00020,,,,Muss,
-35,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
-36,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-37,Transaktionsgrund,SG4,STS,,00037,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-38,Transaktionsgrund,SG4,STS,9015,00037,7,,Transaktionsgrund,X,
-39,Transaktionsgrund,SG4,STS,9013,00037,ZE8,,Änderung vom MSB mit Abhängigkeiten,X,
-40,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
-41,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
-42,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X,
-43,Status der Antwort,SG4,STS,1131,00039,Codeliste Strom Nr. S_0018 Codeliste Strom Nr. S_0019 Codeliste Strom Nr. S_0020,,S_0018 S_0019 S_0020,X [98] X [5] X [135],"[5] Wenn MP-ID in SG2 NAD+MS (Nachrichtenabsender) in der Rolle LF  
-[98] Wenn MP-ID in SG2 NAD+MS (Nachrichtenabsender) in der Rolle NB  
+27,Kommunikationsverbindu ng,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
+28,Kommunikationsverbindu ng,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
+29,Kommunikationsverbindu ng,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+30,Kommunikationsverbindu ng,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+31,MP-ID Empfänger,SG2,,,,,,,Muss,
+32,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
+33,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfän ger,X,
+34,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
+35,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+36,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+37,Vorgang,SG4,,,,,,,Muss,
+38,Vorgang,SG4,IDE,,00020,,,,Muss,
+39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
+40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
+41,Transaktionsgrund,SG4,STS,,00037,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+42,Transaktionsgrund,SG4,STS,9015,00037,7,,Transaktionsgrund,X,
+43,Transaktionsgrund,SG4,STS,9013,00037,ZE8,,Änderung vom MSB mit Abhängigkeiten,X,
+44,Status der Antwort,SG4,STS,,00039,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
+45,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
+46,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X,
+47,Status der Antwort,SG4,STS,1131,00039,Codeliste Strom Nr. S_0018 Codeliste Strom Nr. S_0019 Codeliste Strom Nr. S_0020,,S_0018 S_0019 S_0020,X [98] X [5] X [135],"[5] Wenn MP-ID in SG2 NAD+MS (Nachrichtenabsender) in der Rolle LF
+[98] Wenn MP-ID in SG2 NAD+MS (Nachrichtenabsender) in der Rolle NB
 [135] Wenn MP-ID in SG2 NAD+MS (Nachrichtenabsender) in der Rolle MSB"
-44,Netzlokation,SG5,,,,,,,Muss [2061] ∧ [299] ∧ [347] ∧ [348] ∧ [349],"[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden  
-[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden"
-45,Netzlokation,SG5,LOC,,00050,,,,Muss,
-46,Netzlokation,SG5,LOC,3227,00050,Z18,,Netzlokation,X,
-47,Netzlokation,SG5,LOC,3225,00050,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-48,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [348] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden  
-[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden  
-[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
-[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden  
+48,Netzlokation,SG5,,,,,,,Muss [2061] ∧ [299] ∧ [347] ∧ [348] ∧ [349],"[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden
+[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
+[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-49,Marktlokation,SG5,LOC,,00051,,,,Muss,
-50,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
-51,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-52,Steuerbare Ressource,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [347] ∧ [348] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden  
-[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden  
-[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
-[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden  
+49,Netzlokation,SG5,LOC,,00050,,,,Muss,
+50,Netzlokation,SG5,LOC,3227,00050,Z18,,Netzlokation,X,
+51,Netzlokation,SG5,LOC,3225,00050,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+52,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [348] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden
+[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden
+[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
+[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-53,Steuerbare Ressource,SG5,LOC,,00053,,,,Muss,
-54,Steuerbare Ressource,SG5,LOC,3227,00053,Z19,,Steuerbare Ressource,X,
-55,Steuerbare Ressource,SG5,LOC,3225,00053,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
-56,Tranche,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [347] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden  
-[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden "
-57,Tranche,SG5,LOC,,00054,,,,Muss,
-58,Tranche,SG5,LOC,3227,00054,Z21,,Tranche,X,
-59,Tranche,SG5,LOC,3225,00054,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
-60,Messlokation,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [347] ∧ [348],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden  
-[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden  
-[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden  
-[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
+53,Marktlokation,SG5,LOC,,00051,,,,Muss,
+54,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
+55,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+56,Steuerbare Ressource,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [347] ∧ [348] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden
+[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
+[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-61,Messlokation,SG5,LOC,,00055,,,,Muss,
-62,Messlokation,SG5,LOC,3227,00055,Z17,,Messlokation,X,
-63,Messlokation,SG5,LOC,3225,00055,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-64,Prüfidentifikator,SG6,,,,,,,Muss,
-65,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
-66,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
-67,Prüfidentifikator,SG6,RFF,1154,,55119,,SDÄ Strom / Antwort auf Änderung vom MSB AG an AF,X,
-68,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
-69,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
-70,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions- Referenznummer,X,
-71,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
-72,Nachrichten- Endesegment,,UNT,,00540,,,,Muss,
-73,Nachrichten- Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
-74,Nachrichten- Endesegment,,UNT,0062,00540,,,Nachrichten- Referenznummer,X,
+57,Steuerbare Ressource,SG5,LOC,,00053,,,,Muss,
+58,Steuerbare Ressource,SG5,LOC,3227,00053,Z19,,Steuerbare Ressource,X,
+59,Steuerbare Ressource,SG5,LOC,3225,00053,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+60,Tranche,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [347] ∧ [349],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden
+[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden
+[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[349] Wenn SG5 LOC+Z17 (Messlokation) nicht vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+61,Tranche,SG5,LOC,,00054,,,,Muss,
+62,Tranche,SG5,LOC,3227,00054,Z21,,Tranche,X,
+63,Tranche,SG5,LOC,3225,00054,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
+64,Messlokation,SG5,,,,,,,Muss [2061] ∧ [297] ∧ [299] ∧ [347] ∧ [348],"[297] Wenn SG5 LOC+Z18 (Netzlokation) nicht vorhanden
+[299] Wenn SG5 LOC+Z19 (Steuerbare Ressource) nicht vorhanden
+[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+65,Messlokation,SG5,LOC,,00055,,,,Muss,
+66,Messlokation,SG5,LOC,3227,00055,Z17,,Messlokation,X,
+67,Messlokation,SG5,LOC,3225,00055,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+68,Prüfidentifikator,SG6,,,,,,,Muss,
+69,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
+70,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
+71,Prüfidentifikator,SG6,RFF,1154,,55119,,SDÄ Strom / Antwort auf Änderung vom MSB AG an AF,X,
+72,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
+73,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
+74,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions- Referenznummer,X,
+75,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
+76,Nachrichten- Endesegment,,UNT,,00540,,,,Muss,
+77,Nachrichten- Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
+78,Nachrichten- Endesegment,,UNT,0062,00540,,,Nachrichten- Referenznummer,X,

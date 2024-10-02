@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Referenznummer der Nachricht der betroffenen Antwort auf Bestellung ,SG1,,,,,,,Muss,
@@ -21,7 +21,7 @@
 18,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG1,,,,,,,Muss,
 19,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG1,RFF,,00018,,,,Muss,
 20,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG1,RFF,1153,00018,Z43,,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung (Bestellbestätigung),X,
-21,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG1,RFF,1154,00018,,,"Referenz, Identifikation",X [563],[563] Hinweis: Vorgangsnummer aus CNI DE1490 der IFTSTA mit BGM+Z73 mit der die Antwort auf
+21,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG1,RFF,1154,00018,,,"Referenz, Identifikation",X [563],[563] Hinweis: Vorgangsnummer aus CNI DE1490 der IFTSTA mit BGM+Z73 mit der die Antwort auf die Bestellung der Konfiguration übermittelt wurde
 22,Prüfidentifikator,SG1,,,,,,,Muss,
 23,Prüfidentifikator,SG1,RFF,,00019,,,,Muss,
 24,Prüfidentifikator,SG1,RFF,1153,00019,Z13,,Prüfidentifikator,X,
@@ -49,8 +49,8 @@
 46,MP-ID Empfänger,SG2,NAD,3039,00023,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
 47,MP-ID Empfänger,SG2,NAD,3055,00023,9,,GS1,X,
 48,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-49,Erforderliches Produkt Schaltzeitdefinitionen,SG29,,,,,,,Soll [134] ∧ [2060],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll 
-[2060] Pro Nachricht ist die SG29 LIN+Z64 (Erforderliches Produkt Schaltzeitdefinitionen) maximal"
+49,Erforderliches Produkt Schaltzeitdefinitionen,SG29,,,,,,,Soll [134] ∧ [2060],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll
+[2060] Pro Nachricht ist die SG29 LIN+Z64 (Erforderliches Produkt Schaltzeitdefinitionen) maximal einmal anzugeben"
 50,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,,00096,,,,Muss,
 51,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1082,00096,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
 52,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1229,00096,Schaltzeitdefinitionen,,,Z64,
@@ -65,11 +65,11 @@
 61,Zugeordnete Schaltzeitdefinition,SG30,CCI,,00099,,,,Muss,
 62,Zugeordnete Schaltzeitdefinition,SG30,CCI,7059,00099,Schaltzeitdefinition,,,Z52,
 63,Zugeordnete Schaltzeitdefinition,SG30,CCI,7037,00099,,,"Merkmal, Code",X,
-64,Erforderliches Produkt Leistungskurvendefinitione n,SG29,,,,,,,Soll [134] ∧ [2061],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll 
+64,Erforderliches Produkt Leistungskurvendefinitione n,SG29,,,,,,,Soll [134] ∧ [2061],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll
 [2061] Pro Nachricht ist die SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) maximal einmal anzugeben"
 65,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,,00100,,,,Muss,
 66,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1082,00100,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-67,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1229,00100,Leistungskurvendefinitione n,,,Z65,
+67,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1229,00100,Leistungskurvendefinitionen,,,Z65,
 68,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,,00101,,,,Muss,
 69,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,4347,00101,,,,5,
 70,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,7140,00101,,,Produkt-Code,X [126],"[126] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.2 „Konfigurationsprodukte Leistungskurvendefinition“ enthalten sind."
@@ -81,14 +81,14 @@
 76,Zugeordnete Leistungskurvendefinition,SG30,CCI,,00103,,,,Muss,
 77,Zugeordnete Leistungskurvendefinition,SG30,CCI,7059,00103,Leistungskurvendefinition,,,Z53,
 78,Zugeordnete Leistungskurvendefinition,SG30,CCI,7037,00103,,,"Merkmal, Code",X,
-79,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,,,,,,,Soll [134] ∧ [2062],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll 
+79,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,,,,,,,Soll [134] ∧ [2062],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll
 [2062] Pro Nachricht ist die SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc-Steuerkanal) maximal einmal anzugeben"
 80,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,,00104,,,,Muss,
 81,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1082,00104,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
 82,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1229,00104,Ad-hoc-Steuerkanal,,,Z66,
 83,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,,00105,,,,Muss,
 84,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,4347,00105,,,,5,
-85,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7140,00105,,,Produkt-Code,X [127],"[127] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der"
+85,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7140,00105,,,Produkt-Code,X [127],"[127] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.3 „Konfigurationsprodukte Ad- Hoc-Steuerkanal“ enthalten sind."
 86,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7143,00105,Z12,,Konfigurationsprodukt,X,
 87,Zieladresse URI,SG29,FTX,,00106,,,,Muss [565],[565] Hinweis: Für den Empfang der Mitteilung zum weiteren Vorgehen eines Steuerbefehls und der Antwort auf die Anweisung eines Steuerbefehls.
 88,Zieladresse URI,SG29,FTX,4451,00106,,,,Z17,
@@ -102,8 +102,8 @@
 96,Beschreibung der Reklamation der Konfiguration,SG29,FTX,,00109,,,,Muss,
 97,Beschreibung der Reklamation der Konfiguration,SG29,FTX,4451,00109,teilweise Vorgaben übermittelt,,,Z19 Z20 Z21,
 98,Beschreibung der Reklamation der Konfiguration,SG29,FTX,4440,00109,,,Freier Text,X,
-99,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,,,,,,,Soll [134] ∧ [2063],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll 
-[2063] Pro Nachricht ist die SG29"
+99,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,,,,,,,Soll [134] ∧ [2063],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll
+[2063] Pro Nachricht ist die SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) maximal einmal anzugeben"
 100,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,,00110,,,,Muss,
 101,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1082,00110,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
 102,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1229,00110,für Werte nach Typ 2 aus Backend,,,Z67,
@@ -114,7 +114,7 @@
 107,Beschreibung der Reklamation der Konfiguration,SG29,FTX,,00112,,,,Muss,
 108,Beschreibung der Reklamation der Konfiguration,SG29,FTX,4451,00112,teilweise Vorgaben übermittelt,,,Z19 Z20 Z21,
 109,Beschreibung der Reklamation der Konfiguration,SG29,FTX,4440,00112,,,Freier Text,X,
-110,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,,,,,,,Soll [134] ∧ [2064],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll 
+110,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,,,,,,,Soll [134] ∧ [2064],"[134] Wenn die Position in der ursprünglichen Antwort auf die Bestellung aus SG1 RFF+Z42 vorhanden war und reklamiert werden soll
 [2064] Pro Nachricht ist die SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) maximal einmal anzugeben"
 111,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,,00113,,,,Muss,
 112,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,1082,00113,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
@@ -140,14 +140,14 @@
 132,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7059,00119,,,,Z54,
 133,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,00119,ZF7,,selbstständige Änderungsmöglichkeit erforderlich,X,
 134,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,,ZF8,,selbstständige Änderungsmöglichkeit nicht erforderlich,X,
-135,Schwellwerte,SG30,,,,,,,Muss [2065] ∧ [142],"[142] Wenn innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist. 
+135,Schwellwerte,SG30,,,,,,,Muss [2065] ∧ [142],"[142] Wenn innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist.
 [2065] Diese SG30 ist so oft zu wiederholen, wie zu den unterschiedlichen Messprodukt- Position-Codes zu dem innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) angegebenen Produkt ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist."
 136,Schwellwerte,SG30,CCI,,00120,,,,Muss,
 137,Schwellwerte,SG30,CCI,7059,00120,,,,Z60,
 138,Schwellwerte,SG30,CCI,7037,00120,,,Messprodukt-Position-Code,X [141],"[141] Es sind nur die Messprodukt-Position-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.7 „Art der Werte für Messprodukte nach Typ 2“ enthalten sind."
-139,Schwellwerte,SG30,CCI,7036,00120,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+139,Schwellwerte,SG30,CCI,7036,00120,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
-140,Schwellwerte,SG30,CCI,7036,00120,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+140,Schwellwerte,SG30,CCI,7036,00120,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
 141,Abschnitts-Kontrollsegment,,UNS,,00123,,,,Muss,
 142,Abschnitts-Kontrollsegment,,UNS,0081,00123,und Summenteil,,,S,

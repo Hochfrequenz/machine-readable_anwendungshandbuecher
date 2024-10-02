@@ -5,18 +5,18 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,G1.0a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,G1.0a,X,
 7,Nachrichten-Kopfsegment,,UNH,0068,00003,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
 8,Nachrichten-Kopfsegment,,UNH,0070,00003,,,Übermittlungsfolgenummer,X [252],[252] Wenn DE0068 vorhanden
 9,Nachrichten-Kopfsegment,,UNH,0073,00003,C,,Beginn,M [2],
-10,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenum mer) mit 1 vorhanden  
+10,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE0070 (Übermittlungsfolgenum mer) mit 1 vorhanden
 [3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenum mer"
 11,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 12,Beginn der Nachricht,,BGM,1001,00004,Z22,,Netzbetreiberwechsel,X,
 13,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 14,Nachrichtendatum,,DTM,,00005,,,,Muss,
 15,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-16,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+16,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 17,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 18,MP-ID Absender,SG2,,,,,,,Muss,
@@ -46,12 +46,12 @@
 42,Vorgang,SG4,IDE,,00012,,,,Muss,
 43,Vorgang,SG4,IDE,7495,00012,24,,Transaktion,X,
 44,Vorgang,SG4,IDE,7402,00012,,,Vorgangsnummer,X,
-45,Beginn zum,SG4,DTM,,00015,,,,Muss [508],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden  
+45,Beginn zum,SG4,DTM,,00015,,,,Muss [508],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden
 [508] Hinweis: Beginndatum beim neuen NB"
 46,Beginn zum,SG4,DTM,2005,00015,92,,Datum Vertragsbeginn,X,
 47,Beginn zum,SG4,DTM,2380,00015,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB2],
 48,Beginn zum,SG4,DTM,2379,00015,303,,CCYYMMDDHHMMZZZ,X,
-49,Ende zum,SG4,DTM,,00016,,,,Soll [14],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden  
+49,Ende zum,SG4,DTM,,00016,,,,Soll [14],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden
 [14] Wenn Datum bekannt"
 50,Ende zum,SG4,DTM,2005,00016,93,,Datum Vertragsende,X,
 51,Ende zum,SG4,DTM,2380,00016,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB2],
@@ -64,8 +64,9 @@
 58,Bilanzierungsbeginn,SG4,DTM,2005,00020,158,,Bilanzierungsbeginn,X,
 59,Bilanzierungsbeginn,SG4,DTM,2380,00020,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB2],
 60,Bilanzierungsbeginn,SG4,DTM,2379,00020,303,,CCYYMMDDHHMMZZZ,X,
-61,Bilanzierungsende,SG4,DTM,,00021,,,,Muss [28] ∧ [64],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden  
-[28] Wenn SG4 DTM+93 (Ende zum) vorhanden"
+61,Bilanzierungsende,SG4,DTM,,00021,,,,Muss [28] ∧ [64],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden
+[28] Wenn SG4 DTM+93 (Ende zum) vorhanden
+[64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden"
 62,Bilanzierungsende,SG4,DTM,2005,00021,159,,Bilanzierungsende,X,
 63,Bilanzierungsende,SG4,DTM,2380,00021,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB2],
 64,Bilanzierungsende,SG4,DTM,2379,00021,303,,CCYYMMDDHHMMZZZ,X,
@@ -76,7 +77,8 @@
 69,Bilanzkreiszuordnung zur Marktlokation,SG4,STS,9015,00030,Z18,,Bilanzkreiszuordnung zur Marktlokation,X,
 70,Bilanzkreiszuordnung zur Marktlokation,SG4,STS,4405,00030,Z13,,gescheitert,X,
 71,Bilanzkreiszuordnung zur Marktlokation,SG4,STS,4405,,Z14,,erfolgreich,X,
-72,Meldepunkt,SG5,,,,,,,Muss [2061] ∧ [583],[583] Hinweis: Verwendung der ID der Marktlokation
+72,Meldepunkt,SG5,,,,,,,Muss [2061] ∧ [583],"[583] Hinweis: Verwendung der ID der Marktlokation
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 73,Meldepunkt,SG5,LOC,,00035,,,,Muss,
 74,Meldepunkt,SG5,LOC,3227,00035,172,,Meldepunkt,X,
 75,Meldepunkt,SG5,LOC,3225,00035,,,Identifikator,X [950],[950] Format: Marktlokations-ID
@@ -87,19 +89,20 @@
 80,Daten der Marktlokation,SG8,,,,,,,Muss,[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden
 81,Daten der Marktlokation,SG8,SEQ,,00049,,,,Muss,
 82,Daten der Marktlokation,SG8,SEQ,1229,00049,Z01,,Daten der Marktlokation,X,
-83,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106] ∧ [513],[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) vorhanden 
+83,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106] ∧ [513],"[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) vorhanden
+[513] Hinweis: Ist SG9 QTY+Y02 (TUM Kundenwert) vorhanden, dann ist ausschließlich SG9 QTY+Y02, unabhängig von SG9 QTY+31 (Veranschlagte Jahresmenge gesamt), für die Bilanzierung und MMM-Abrechnung zu nutzen"
 84,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00050,,,,Muss,
 85,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00050,31,,Veranschlagte Jahresmenge Gesamt,X,
-86,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00050,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+86,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00050,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 87,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00050,KWH,,Kilowattstunde,X,
-88,TUM Kundenwert,SG9,,,,,,,Soll [47] ∧ [108] ∧ [106] Muss [46] ∧ [106],"[46] Wenn in SG8 SEQ+Z35 ein SG10 CCI+Z12 (Lastprofil) CAV (Lastprofil) DE3055 der Wert 293 enthalten ist  
-[47] Wenn in SG8 SEQ+Z35 ein SG10 CCI+Z12 (Lastprofil) CAV (Lastprofil) DE3055 der Wert 293 nicht enthalten ist  
-[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) vorhanden  
+88,TUM Kundenwert,SG9,,,,,,,Soll [47] ∧ [108] ∧ [106] Muss [46] ∧ [106],"[46] Wenn in SG8 SEQ+Z35 ein SG10 CCI+Z12 (Lastprofil) CAV (Lastprofil) DE3055 der Wert 293 enthalten ist
+[47] Wenn in SG8 SEQ+Z35 ein SG10 CCI+Z12 (Lastprofil) CAV (Lastprofil) DE3055 der Wert 293 nicht enthalten ist
+[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) vorhanden
 [108] Wenn Kundenwertverfahren (z. B. TU München)"
 89,TUM Kundenwert,SG9,QTY,,00051,,,,Muss,
 90,TUM Kundenwert,SG9,QTY,6063,00051,Y02,,Kundenwert,X,
-91,TUM Kundenwert,SG9,QTY,6060,00051,,,Mengenangabe,X [902] ∧ [907],"[902] Format: Möglicher Wert: ≥ 0  
+91,TUM Kundenwert,SG9,QTY,6060,00051,,,Mengenangabe,X [902] ∧ [907],"[902] Format: Möglicher Wert: ≥ 0
 [907] Format: max. 4 Nachkommastellen"
 92,TUM Kundenwert,SG9,QTY,6411,00051,KWH,,Kilowattstunde,X,
 93,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
@@ -112,7 +115,7 @@
 100,Fallgruppenzuordnung,SG10,CCI,1131,00061,GABi-,,Nominierungsersatzverfa,X,
 101,Fallgruppenzuordnung,SG10,CCI,1131,,GABi- RLMmT,,RLM-Kunde in Tagesregime - Exit,X,
 102,Fallgruppenzuordnung,SG10,CCI,1131,,GABi- RLMoT,,RLM-Kunde im Stundenregime - Exit,X,
-103,Lastprofildaten,SG8,,,,,,,Muss [106],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden  
+103,Lastprofildaten,SG8,,,,,,,Muss [106],"[9] Wenn SG4 STS+7++ZE4 (Transaktionsgrund: Weggefallene Markt- bzw. Messlokation) nicht vorhanden
 [106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) vorhanden"
 104,Lastprofildaten,SG8,SEQ,,00127,,,,Muss,
 105,Lastprofildaten,SG8,SEQ,1229,00127,Z35,,Lastprofildaten,X,

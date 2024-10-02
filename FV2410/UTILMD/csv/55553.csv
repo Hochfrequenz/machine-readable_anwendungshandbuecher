@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,Z56,,Änderung individueller Konfiguration,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]),[321] Wenn im DE3155 in
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -45,15 +49,15 @@
 42,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,00027,157,,"Gültigkeit, Beginndatum",X,
 43,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,00027,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,00027,303,,CCYYMMDDHHMMZZZ,X,
-45,Transaktionsgrund,SG4,STS,,00037,,,,Muss [2061],[2061] Segment bzw.
+45,Transaktionsgrund,SG4,STS,,00037,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 46,Transaktionsgrund,SG4,STS,9015,00037,7,,Transaktionsgrund,X,
 47,Transaktionsgrund,SG4,STS,9013,00037,ZP3,,Stammdaten,X,
-48,Zieladresse URI,SG4,FTX,,00045,,,,Soll ([4] ⊻ [233]) ∧ (([458] ∧ [590]) ⊻ ([453] ∧ [619])),"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
-[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
-[453] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Auslöser „Bei Schwellwertunter-/ - überschreitung“ mit selbständiger Änderungsmöglichkeit bestellt wurde   
-[458] Wenn bei der Bestellung das Konfigurationsprodukte 9991 00000 073 9 bestellt wurde  
-[590] Hinweis: Für den Empfang des Steuerbefehls  
-[619] Hinweis: Für die selbständige Änderungsmöglichkeit der Schwellwertunter- / -über-"
+48,Zieladresse URI,SG4,FTX,,00045,,,,Soll ([4] ⊻ [233]) ∧ (([458] ∧ [590]) ⊻ ([453] ∧ [619])),"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB
+[453] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Auslöser „Bei Schwellwertunter-/ - überschreitung“ mit selbständiger Änderungsmöglichkeit bestellt wurde
+[458] Wenn bei der Bestellung das Konfigurationsprodukte 9991 00000 073 9 bestellt wurde
+[590] Hinweis: Für den Empfang des Steuerbefehls
+[619] Hinweis: Für die selbständige Änderungsmöglichkeit der Schwellwertunter- / -über- schreitung"
 49,Zieladresse URI,SG4,FTX,4451,00045,Z17,,Zieladresse URI,X,
 50,Zieladresse URI,SG4,FTX,4440,00045,,,Zieladresse URI,X,
 51,Zertifikatsaussteller (Issuer),SG4,FTX,,00046,,,,Muss [26],[26] Wenn SG4 FTX+Z17 (Zieladresse URI) vorhanden
@@ -62,8 +66,8 @@
 54,Zertifikatsnutzer (Subject),SG4,FTX,,00047,,,,Muss [26],[26] Wenn SG4 FTX+Z17 (Zieladresse URI) vorhanden
 55,Zertifikatsnutzer (Subject),SG4,FTX,4451,00047,Z23,,Zertifikatsnutzer (Subject),X,
 56,Zertifikatsnutzer (Subject),SG4,FTX,4440,00047,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-57,IP-Adresse für das CLS- Device,SG4,FTX,,00048,,,,Soll ([4] ⊻ [233]) ∧ [459],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
-[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
+57,IP-Adresse für das CLS- Device,SG4,FTX,,00048,,,,Soll ([4] ⊻ [233]) ∧ [459],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB
 [459] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Übertragungsweg ""CLS-Direkt aus dem SMGW"" bestellt wurde"
 58,IP-Adresse für das CLS- Device,SG4,FTX,4451,00048,Z18,,IP-Adresse für das CLS- Device,X,
 59,IP-Adresse für das CLS- Device,SG4,FTX,4440,00048,,,Freier Text,X,
@@ -79,7 +83,7 @@
 69,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,,00062,,,,Muss,
 70,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,1153,00062,Z43,,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung (Bestellbestätigung),X,
 71,Referenznummer des Vorgangs der betroffenen Antwort auf Bestellung,SG6,RFF,1154,00062,,,"Referenz, Identifikation",X,
-72,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [4] ∧ [457],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+72,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [4] ∧ [457],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
 [457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde"
 73,OBIS-Daten der Marktlokation,SG8,SEQ,,00198,,,,Muss,
 74,OBIS-Daten der Marktlokation,SG8,SEQ,1229,00198,Z02,,OBIS-Daten der Marktlokation,X,
@@ -106,8 +110,8 @@
 95,Zugeordnetes Zählzeitregister ,SG10,CCI,,00204,,,,Muss,
 96,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00204,Z38,,Code des Zählzeitregisters,X,
 97,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00204,,,Code des Zählzeitregisters,X,
-98,Zähleinrichtungsdaten,SG8,,,,,,,Muss [241] Soll [4] ∧ [457],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
-[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB  
+98,Zähleinrichtungsdaten,SG8,,,,,,,Muss [241] Soll [4] ∧ [457],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
+[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB
 [457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde"
 99,Zähleinrichtungsdaten,SG8,SEQ,,00326,,,,Muss,
 100,Zähleinrichtungsdaten,SG8,SEQ,1229,00326,Z03,,Zähleinrichtungsdaten,X,
@@ -123,11 +127,11 @@
 110,Identifikation / Nummer des Gerätes,SG10,CAV,,00331,,,,Muss,
 111,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00331,Z30,,Gerätenummer,X,
 112,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00331,,,Gerätenummer,X,
-113,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Muss [241] Soll ([4] ∧ ([457] ⊻ [460])) ⊻ ([233] ∧ [460]),"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
-[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB  
-[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB  
-[457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde  
-[460] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Übertragungsweg ""aus dem"
+113,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Muss [241] Soll ([4] ∧ ([457] ⊻ [460])) ⊻ ([233] ∧ [460]),"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
+[233] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle NB
+[241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB
+[457] Wenn bei der Bestellung das Messprodukten 9991 00000 149 8 bestellt wurde
+[460] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Übertragungsweg ""aus dem SMGW"" bestellt wurde"
 114,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,00339,,,,Muss,
 115,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,00339,Z20,,OBIS-Daten der Zähleinrichtung,X,
 116,Referenz auf die Gerätenummer,SG8,RFF,,00340,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS- Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW

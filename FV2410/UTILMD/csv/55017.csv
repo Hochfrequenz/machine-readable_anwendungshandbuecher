@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E35,,Kündigung,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨,[321] Wenn im DE3155 in demselben COM der
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -41,7 +45,8 @@
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Ende zum,SG4,DTM,,00025,,,,Muss [12] ∧ [357],[12] Wenn SG4 DTM+471 (Ende zum nächstmöglichem Termin) nicht vorhanden
+41,Ende zum,SG4,DTM,,00025,,,,Muss [12] ∧ [357],"[12] Wenn SG4 DTM+471 (Ende zum nächstmöglichem Termin) nicht vorhanden
+[357] Wenn SG4 STS+E01++A06/ A11 vorhanden"
 42,Ende zum,SG4,DTM,2005,00025,93,,Datum Vertragsende,X,
 43,Ende zum,SG4,DTM,2380,00025,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,Ende zum,SG4,DTM,2379,00025,303,,CCYYMMDDHHMMZZZ,X,
@@ -54,13 +59,13 @@
 51,Transaktionsgrund,SG4,STS,9013,00037,E03,,Wechsel,X,
 52,Status der Antwort,SG4,STS,,00039,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 53,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
-54,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt  
+54,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt
 [360] Es sind nur Antwortcodes aus dem Cluster Zustimmung erlaubt"
 55,Status der Antwort,SG4,STS,1131,00039,E_0400,,EBD Nr. E_0400,X,
-56,Marktlokation,SG5,,,,,,,Muss [2061],"[165] Wenn bekannt  
-[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden  
+56,Marktlokation,SG5,,,,,,,Muss [2061],"[165] Wenn bekannt
+[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 57,Marktlokation,SG5,LOC,,00051,,,,Muss,
 58,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
@@ -73,7 +78,7 @@
 65,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
 66,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions- Referenznummer,X,
 67,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
-68,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden  
+68,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 69,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
 70,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
@@ -83,7 +88,7 @@
 74,Vorjahresverbrauch vom Lieferant,SG9,,,,,,,Muss,
 75,Vorjahresverbrauch vom Lieferant,SG9,QTY,,00109,,,,Muss,
 76,Vorjahresverbrauch vom Lieferant,SG9,QTY,6063,00109,Z09,,Vorjahresverbrauch,X,
-77,Vorjahresverbrauch vom Lieferant,SG9,QTY,6060,00109,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+77,Vorjahresverbrauch vom Lieferant,SG9,QTY,6060,00109,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 78,Vorjahresverbrauch vom Lieferant,SG9,QTY,6411,00109,KWH,,Kilowattstunde,X,
 79,Lieferrichtung,SG10,,,,,,,Muss,
@@ -106,8 +111,8 @@
 96,Marktlokationsanschrift,SG12,NAD,,00535,,,,Muss,
 97,Marktlokationsanschrift,SG12,NAD,3035,00535,DP,,Lieferanschrift,X,
 98,Marktlokationsanschrift,SG12,NAD,3124,00535,,,Zusatzinformation zur Identifizierung,K,
-99,Marktlokationsanschrift,SG12,NAD,3042,00535,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[165] Wenn bekannt  
-[166] Wenn vorhanden  
+99,Marktlokationsanschrift,SG12,NAD,3042,00535,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[165] Wenn bekannt
+[166] Wenn vorhanden
 [212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
 100,Marktlokationsanschrift,SG12,NAD,3164,00535,,,Ort,X,
 101,Marktlokationsanschrift,SG12,NAD,3251,00535,,,Postleitzahl,X,

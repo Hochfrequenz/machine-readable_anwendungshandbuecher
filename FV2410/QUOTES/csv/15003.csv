@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Beginn zum (nächstmöglichen Termin),,DTM,,00006,,,,Muss,
@@ -59,137 +59,144 @@
 56,Kommunikationsverbindung,SG14,COM,,00016,,,,Muss,
 57,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X,
 58,Kommunikationsverbindung,SG14,COM,3155,00016,EM,,Elektronische Post,X [1P0..1],
-59,MP-ID Empfänger,SG11,,,,,,,Muss,
-60,MP-ID Empfänger,SG11,NAD,,00017,,,,Muss,
-61,MP-ID Empfänger,SG11,NAD,3035,00017,,,,MR,
-62,MP-ID Empfänger,SG11,NAD,3039,00017,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
-63,MP-ID Empfänger,SG11,NAD,3055,00017,9,,GS1,X,
-64,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-65,"Liefer-, bzw. Bezugsort",SG11,,,,,,,Muss,
-66,"Liefer-, bzw. Bezugsort",SG11,NAD,,00018,,,,Muss,
-67,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
-68,Meldepunkt,SG11,LOC,,00019,,,,Muss,
-69,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-70,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [501]) ⊻ ([951] [502]) ⊻ ([950] [507]) ⊻ ([960] [512]),"[501] Hinweis: Verwendung der ID der Marktlokation 
-[502] Hinweis: Verwendung der ID der Messlokation 
-[507] Hinweis: Verwendung der ID der Tranche 
-[512] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
+59,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
+60,Kommunikationsverbindung,SG14,COM,3155,,TE,,Telefon,X [1P0..1],
+61,Kommunikationsverbindung,SG14,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+62,Kommunikationsverbindung,SG14,COM,3155,,AL,,Handy,X [1P0..1],
+63,MP-ID Empfänger,SG11,,,,,,,Muss,
+64,MP-ID Empfänger,SG11,NAD,,00017,,,,Muss,
+65,MP-ID Empfänger,SG11,NAD,3035,00017,,,,MR,
+66,MP-ID Empfänger,SG11,NAD,3039,00017,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
+67,MP-ID Empfänger,SG11,NAD,3055,00017,9,,GS1,X,
+68,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+69,"Liefer-, bzw. Bezugsort",SG11,,,,,,,Muss,
+70,"Liefer-, bzw. Bezugsort",SG11,NAD,,00018,,,,Muss,
+71,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
+72,Meldepunkt,SG11,LOC,,00019,,,,Muss,
+73,Meldepunkt,SG11,LOC,3227,00019,,,,172,
+74,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [501]) ⊻ ([951] [502]) ⊻ ([950] [507]) ⊻ ([960] [512]),"[501] Hinweis: Verwendung der ID der Marktlokation
+[502] Hinweis: Verwendung der ID der Messlokation
+[507] Hinweis: Verwendung der ID der Tranche
+[512] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
 [960] Format: Netzlokations-ID"
-71,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [64] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden 
-[36] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden 
-[64] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden 
-[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen. 
-[2065] Pro Nachricht ist die SG27 bis zu dreimal anzugeben. Dabei"
-72,Erforderliches Messprodukt der Marktlokation,SG27,LIN,,00054,,,,Muss,
-73,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1082,00054,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-74,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1229,00054,Marktlokation,,,Z27,
-75,Erforderliches Messprodukt der Marktlokation,SG27,PIA,,00055,,,,Muss,
-76,Erforderliches Messprodukt der Marktlokation,SG27,PIA,4347,00055,,,,5,
-77,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7140,00055,,,Messprodukt-Code,X [42] ∧ [45],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
+75,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [64] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden
+[36] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden
+[64] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden
+[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen.
+[2065] Pro Nachricht ist die SG27 bis zu dreimal anzugeben. Dabei darf in allen SG27 einer Nachricht jede Artikel-ID in PIA+Z02 DE7140 (Artikel-ID) nur einmal vorkommen. "
+76,Erforderliches Messprodukt der Marktlokation,SG27,LIN,,00054,,,,Muss,
+77,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1082,00054,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+78,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1229,00054,Marktlokation,,,Z27,
+79,Erforderliches Messprodukt der Marktlokation,SG27,PIA,,00055,,,,Muss,
+80,Erforderliches Messprodukt der Marktlokation,SG27,PIA,4347,00055,,,,5,
+81,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7140,00055,,,Messprodukt-Code,X [42] ∧ [45],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
 [45] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Marktlokation"" angegeben ist."
-78,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7143,00055,Z11,,Messprodukt,X,
-79,Artikel-ID,SG27,PIA,,00056,,,,Muss,
-80,Artikel-ID,SG27,PIA,4347,00056,Artikel-ID,,,Z02,
-81,Artikel-ID,SG27,PIA,7140,00056,,,Artikel-ID,X,
-82,Artikel-ID,SG27,PIA,7143,00056,Z09,,Artikel-ID,X,
-83,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,,00057,,,,Muss,
-84,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,4347,00057,,,,5,
-85,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,7140,00057,,,Erforderliche OBIS-Kennzahl der Marktlokation,X,
-86,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,7143,00057,SRW,,OBIS-Kennzahl,X,
-87,Geldbetrag,SG29,,,,,,,Muss,
-88,Geldbetrag,SG29,MOA,,00058,,,,Muss,
-89,Geldbetrag,SG29,MOA,5025,00058,203,,Positionsbetrag (ohne USt.),X,
-90,Geldbetrag,SG29,MOA,5004,00058,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-91,Preisangaben,SG31,,,,,,,Muss,
-92,Preisangaben,SG31,PRI,,00059,,,,Muss,
-93,Preisangaben,SG31,PRI,5125,00059,CAL,,Berechnungspreis,X,
-94,Preisangaben,SG31,PRI,5118,00059,,,"Preis, Betrag",X [912],[912] Format: max. 6
-95,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [32] ∧ [37] ∧ [64] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden 
-[37] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden 
-[64] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden 
-[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen. 
+82,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7143,00055,Z11,,Messprodukt,X,
+83,Artikel-ID,SG27,PIA,,00056,,,,Muss,
+84,Artikel-ID,SG27,PIA,4347,00056,Artikel-ID,,,Z02,
+85,Artikel-ID,SG27,PIA,7140,00056,,,Artikel-ID,X,
+86,Artikel-ID,SG27,PIA,7143,00056,Z09,,Artikel-ID,X,
+87,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,,00057,,,,Muss,
+88,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,4347,00057,,,,5,
+89,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,7140,00057,,,Erforderliche OBIS-Kennzahl der Marktlokation,X,
+90,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,7143,00057,SRW,,OBIS-Kennzahl,X,
+91,Geldbetrag,SG29,,,,,,,Muss,
+92,Geldbetrag,SG29,MOA,,00058,,,,Muss,
+93,Geldbetrag,SG29,MOA,5025,00058,203,,Positionsbetrag (ohne USt.),X,
+94,Geldbetrag,SG29,MOA,5004,00058,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+95,Preisangaben,SG31,,,,,,,Muss,
+96,Preisangaben,SG31,PRI,,00059,,,,Muss,
+97,Preisangaben,SG31,PRI,5125,00059,CAL,,Berechnungspreis,X,
+98,Preisangaben,SG31,PRI,5118,00059,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+99,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [32] ∧ [37] ∧ [64] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden
+[37] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden
+[64] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden
+[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen.
 [2065] Pro Nachricht ist die SG27 bis zu dreimal anzugeben. Dabei darf in allen SG27 einer Nachricht jede Artikel-ID in PIA+Z02 DE7140 (Artikel-ID) nur einmal vorkommen. "
-96,Erforderliches Messprodukt der Tranche,SG27,LIN,,00060,,,,Muss,
-97,Erforderliches Messprodukt der Tranche,SG27,LIN,1082,00060,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-98,Erforderliches Messprodukt der Tranche,SG27,LIN,1229,00060,der Tranche,,,Z16,
-99,Erforderliches Messprodukt der Tranche,SG27,PIA,,00061,,,,Muss,
-100,Erforderliches Messprodukt der Tranche,SG27,PIA,4347,00061,,,,5,
-101,Erforderliches Messprodukt der Tranche,SG27,PIA,7140,00061,,,Messprodukt-Code,X [42] ∧ [46],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
+100,Erforderliches Messprodukt der Tranche,SG27,LIN,,00060,,,,Muss,
+101,Erforderliches Messprodukt der Tranche,SG27,LIN,1082,00060,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+102,Erforderliches Messprodukt der Tranche,SG27,LIN,1229,00060,der Tranche,,,Z16,
+103,Erforderliches Messprodukt der Tranche,SG27,PIA,,00061,,,,Muss,
+104,Erforderliches Messprodukt der Tranche,SG27,PIA,4347,00061,,,,5,
+105,Erforderliches Messprodukt der Tranche,SG27,PIA,7140,00061,,,Messprodukt-Code,X [42] ∧ [46],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
 [46] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Tranche"" angegeben ist."
-102,Erforderliches Messprodukt der Tranche,SG27,PIA,7143,00061,Z11,,Messprodukt,X,
-103,Artikel-ID,SG27,PIA,,00062,,,,Muss,
-104,Artikel-ID,SG27,PIA,4347,00062,Artikel-ID,,,Z02,
-105,Artikel-ID,SG27,PIA,7140,00062,,,Artikel-ID,X,
-106,Artikel-ID,SG27,PIA,7143,00062,Z09,,Artikel-ID,X,
-107,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,,00063,,,,Muss,
-108,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,4347,00063,,,,5,
-109,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,7140,00063,,,Erforderliche OBIS-Kennzahl der Tranche,X,
-110,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,7143,00063,SRW,,OBIS-Kennzahl,X,
-111,Geldbetrag,SG29,,,,,,,Muss,
-112,Geldbetrag,SG29,MOA,,00064,,,,Muss,
-113,Geldbetrag,SG29,MOA,5025,00064,203,,Positionsbetrag (ohne USt.),X,
-114,Geldbetrag,SG29,MOA,5004,00064,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-115,Preisangaben,SG31,,,,,,,Muss,
-116,Preisangaben,SG31,PRI,,00065,,,,Muss,
-117,Preisangaben,SG31,PRI,5125,00065,CAL,,Berechnungspreis,X,
-118,Preisangaben,SG31,PRI,5118,00065,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-119,Erforderliches Messprodukt der Messlokation,SG27,,,,,,,Muss [33] ∧ [2065] ∧ [515],"[33] Wenn 33-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden 
-[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen. 
+106,Erforderliches Messprodukt der Tranche,SG27,PIA,7143,00061,Z11,,Messprodukt,X,
+107,Artikel-ID,SG27,PIA,,00062,,,,Muss,
+108,Artikel-ID,SG27,PIA,4347,00062,Artikel-ID,,,Z02,
+109,Artikel-ID,SG27,PIA,7140,00062,,,Artikel-ID,X,
+110,Artikel-ID,SG27,PIA,7143,00062,Z09,,Artikel-ID,X,
+111,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,,00063,,,,Muss,
+112,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,4347,00063,,,,5,
+113,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,7140,00063,,,Erforderliche OBIS-Kennzahl der Tranche,X,
+114,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,7143,00063,SRW,,OBIS-Kennzahl,X,
+115,Geldbetrag,SG29,,,,,,,Muss,
+116,Geldbetrag,SG29,MOA,,00064,,,,Muss,
+117,Geldbetrag,SG29,MOA,5025,00064,203,,Positionsbetrag (ohne USt.),X,
+118,Geldbetrag,SG29,MOA,5004,00064,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+119,Preisangaben,SG31,,,,,,,Muss,
+120,Preisangaben,SG31,PRI,,00065,,,,Muss,
+121,Preisangaben,SG31,PRI,5125,00065,CAL,,Berechnungspreis,X,
+122,Preisangaben,SG31,PRI,5118,00065,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+123,Erforderliches Messprodukt der Messlokation,SG27,,,,,,,Muss [33] ∧ [2065] ∧ [515],"[33] Wenn 33-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden
+[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen.
 [2065] Pro Nachricht ist die SG27 bis zu dreimal anzugeben. Dabei darf in allen SG27 einer Nachricht jede Artikel-ID in PIA+Z02 DE7140 (Artikel-ID) nur einmal vorkommen. "
-120,Erforderliches Messprodukt der Messlokation,SG27,LIN,,00066,,,,Muss,
-121,Erforderliches Messprodukt der Messlokation,SG27,LIN,1082,00066,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-122,Erforderliches Messprodukt der Messlokation,SG27,LIN,1229,00066,der Messlokation,,,Z19,
-123,Erforderliches Messprodukt der Messlokation,SG27,PIA,,00067,,,,Muss,
-124,Erforderliches Messprodukt der Messlokation,SG27,PIA,4347,00067,,,,5,
-125,Erforderliches Messprodukt der Messlokation,SG27,PIA,7140,00067,,,Messprodukt-Code,X [42] ∧ [48],[42] In derselben Nachricht muss
-126,Erforderliches Messprodukt der Messlokation,SG27,PIA,7143,00067,Z11,,Messprodukt,X,
-127,Artikel-ID,SG27,PIA,,00068,,,,Muss,
-128,Artikel-ID,SG27,PIA,4347,00068,Artikel-ID,,,Z02,
-129,Artikel-ID,SG27,PIA,7140,00068,,,Artikel-ID,X,
-130,Artikel-ID,SG27,PIA,7143,00068,Z09,,Artikel-ID,X,
-131,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,,00069,,,,Muss [43],[43] Nicht wenn Messprodukt in derselben Nachricht in DE7140 eines PIA mit Z11 in DE7143 aus Kapitel 4 der Codeliste der Konfigurationen vorhanden und der Übertragungsweg aus dem SMGw ist.
-132,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,4347,00069,,,,5,
-133,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,7140,00069,,,Erforderliche OBIS-Kennzahl der Messlokation,X,
-134,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,7143,00069,SRW,,OBIS-Kennzahl,X,
-135,Geldbetrag,SG29,,,,,,,Muss,
-136,Geldbetrag,SG29,MOA,,00070,,,,Muss,
-137,Geldbetrag,SG29,MOA,5025,00070,203,,Positionsbetrag (ohne USt.),X,
-138,Geldbetrag,SG29,MOA,5004,00070,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-139,Preisangaben,SG31,,,,,,,Muss,
-140,Preisangaben,SG31,PRI,,00071,,,,Muss,
-141,Preisangaben,SG31,PRI,5125,00071,CAL,,Berechnungspreis,X,
-142,Preisangaben,SG31,PRI,5118,00071,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-143,Erforderliches Messprodukt der Netzlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [37] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden 
-[36] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden 
-[37] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches"
-144,Erforderliches Messprodukt der Netzlokation,SG27,LIN,,00072,,,,Muss,
-145,Erforderliches Messprodukt der Netzlokation,SG27,LIN,1082,00072,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-146,Erforderliches Messprodukt der Netzlokation,SG27,LIN,1229,00072,der Netzlokation,,,Z53,
-147,Erforderliches Messprodukt der Netzlokation,SG27,PIA,,00073,,,,Muss,
-148,Erforderliches Messprodukt der Netzlokation,SG27,PIA,4347,00073,,,,5,
-149,Erforderliches Messprodukt der Netzlokation,SG27,PIA,7140,00073,,,Messprodukt-Code,X [42] ∧ [48],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
+124,Erforderliches Messprodukt der Messlokation,SG27,LIN,,00066,,,,Muss,
+125,Erforderliches Messprodukt der Messlokation,SG27,LIN,1082,00066,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+126,Erforderliches Messprodukt der Messlokation,SG27,LIN,1229,00066,der Messlokation,,,Z19,
+127,Erforderliches Messprodukt der Messlokation,SG27,PIA,,00067,,,,Muss,
+128,Erforderliches Messprodukt der Messlokation,SG27,PIA,4347,00067,,,,5,
+129,Erforderliches Messprodukt der Messlokation,SG27,PIA,7140,00067,,,Messprodukt-Code,X [42] ∧ [48],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
 [48] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Messlokation"" angegeben ist."
-150,Erforderliches Messprodukt der Netzlokation,SG27,PIA,7143,00073,Z11,,Messprodukt,X,
-151,Artikel-ID,SG27,PIA,,00074,,,,Muss,
-152,Artikel-ID,SG27,PIA,4347,00074,Artikel-ID,,,Z02,
-153,Artikel-ID,SG27,PIA,7140,00074,,,Artikel-ID,X,
-154,Artikel-ID,SG27,PIA,7143,00074,Z09,,Artikel-ID,X,
-155,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,,00075,,,,Muss [43],[43] Nicht wenn Messprodukt in derselben Nachricht in DE7140 eines PIA mit Z11 in DE7143 aus Kapitel 4 der Codeliste der Konfigurationen vorhanden und der Übertragungsweg aus dem SMGw ist.
-156,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,4347,00075,,,,5,
-157,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,7140,00075,,,Erforderliche OBIS-Kennzahl der Messlokation,X,
-158,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,7143,00075,SRW,,OBIS-Kennzahl,X,
-159,Geldbetrag,SG29,,,,,,,Muss,
-160,Geldbetrag,SG29,MOA,,00076,,,,Muss,
-161,Geldbetrag,SG29,MOA,5025,00076,203,,Positionsbetrag (ohne USt.),X,
-162,Geldbetrag,SG29,MOA,5004,00076,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-163,Preisangaben,SG31,,,,,,,Muss,
-164,Preisangaben,SG31,PRI,,00077,,,,Muss,
-165,Preisangaben,SG31,PRI,5125,00077,CAL,,Berechnungspreis,X,
-166,Preisangaben,SG31,PRI,5118,00077,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-167,Abschnitts-Kontrollsegment,,UNS,,00097,,,,Muss,
-168,Abschnitts-Kontrollsegment,,UNS,0081,00097,und Summenteil,,,S,
-169,Nachrichten-Endesegment,,UNT,,00099,,,,Muss,
-170,Nachrichten-Endesegment,,UNT,0074,00099,,,Anzahl der Segmente in einer Nachricht,X,
-171,Nachrichten-Endesegment,,UNT,0062,00099,,,Nachrichten-Referenznummer,X,
+130,Erforderliches Messprodukt der Messlokation,SG27,PIA,7143,00067,Z11,,Messprodukt,X,
+131,Artikel-ID,SG27,PIA,,00068,,,,Muss,
+132,Artikel-ID,SG27,PIA,4347,00068,Artikel-ID,,,Z02,
+133,Artikel-ID,SG27,PIA,7140,00068,,,Artikel-ID,X,
+134,Artikel-ID,SG27,PIA,7143,00068,Z09,,Artikel-ID,X,
+135,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,,00069,,,,Muss [43],[43] Nicht wenn Messprodukt in derselben Nachricht in DE7140 eines PIA mit Z11 in DE7143 aus Kapitel 4 der Codeliste der Konfigurationen vorhanden und der Übertragungsweg aus dem SMGw ist.
+136,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,4347,00069,,,,5,
+137,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,7140,00069,,,Erforderliche OBIS-Kennzahl der Messlokation,X,
+138,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,7143,00069,SRW,,OBIS-Kennzahl,X,
+139,Geldbetrag,SG29,,,,,,,Muss,
+140,Geldbetrag,SG29,MOA,,00070,,,,Muss,
+141,Geldbetrag,SG29,MOA,5025,00070,203,,Positionsbetrag (ohne USt.),X,
+142,Geldbetrag,SG29,MOA,5004,00070,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+143,Preisangaben,SG31,,,,,,,Muss,
+144,Preisangaben,SG31,PRI,,00071,,,,Muss,
+145,Preisangaben,SG31,PRI,5125,00071,CAL,,Berechnungspreis,X,
+146,Preisangaben,SG31,PRI,5118,00071,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+147,Erforderliches Messprodukt der Netzlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [37] ∧ [2065] ∧ [515],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 vorhanden
+[36] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden
+[37] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden
+[515] Hinweis: Einmal, wenn vorhanden, für den Betrieb der Einrichtung, einmal, wenn vorhanden, für das initiale Einrichten der Konfiguration und einmal, wenn vorhanden, für die anfallenden Transaktionen.
+[2065] Pro Nachricht ist die SG27 bis zu dreimal anzugeben. Dabei darf in allen SG27 einer Nachricht jede Artikel-ID in PIA+Z02 DE7140 (Artikel-ID) nur einmal vorkommen. "
+148,Erforderliches Messprodukt der Netzlokation,SG27,LIN,,00072,,,,Muss,
+149,Erforderliches Messprodukt der Netzlokation,SG27,LIN,1082,00072,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+150,Erforderliches Messprodukt der Netzlokation,SG27,LIN,1229,00072,der Netzlokation,,,Z53,
+151,Erforderliches Messprodukt der Netzlokation,SG27,PIA,,00073,,,,Muss,
+152,Erforderliches Messprodukt der Netzlokation,SG27,PIA,4347,00073,,,,5,
+153,Erforderliches Messprodukt der Netzlokation,SG27,PIA,7140,00073,,,Messprodukt-Code,X [42] ∧ [48],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
+[48] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Messlokation"" angegeben ist."
+154,Erforderliches Messprodukt der Netzlokation,SG27,PIA,7143,00073,Z11,,Messprodukt,X,
+155,Artikel-ID,SG27,PIA,,00074,,,,Muss,
+156,Artikel-ID,SG27,PIA,4347,00074,Artikel-ID,,,Z02,
+157,Artikel-ID,SG27,PIA,7140,00074,,,Artikel-ID,X,
+158,Artikel-ID,SG27,PIA,7143,00074,Z09,,Artikel-ID,X,
+159,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,,00075,,,,Muss [43],[43] Nicht wenn Messprodukt in derselben Nachricht in DE7140 eines PIA mit Z11 in DE7143 aus Kapitel 4 der Codeliste der Konfigurationen vorhanden und der Übertragungsweg aus dem SMGw ist.
+160,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,4347,00075,,,,5,
+161,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,7140,00075,,,Erforderliche OBIS-Kennzahl der Messlokation,X,
+162,Erforderliche OBIS-Kennzahl der Netzlokation,SG27,PIA,7143,00075,SRW,,OBIS-Kennzahl,X,
+163,Geldbetrag,SG29,,,,,,,Muss,
+164,Geldbetrag,SG29,MOA,,00076,,,,Muss,
+165,Geldbetrag,SG29,MOA,5025,00076,203,,Positionsbetrag (ohne USt.),X,
+166,Geldbetrag,SG29,MOA,5004,00076,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+167,Preisangaben,SG31,,,,,,,Muss,
+168,Preisangaben,SG31,PRI,,00077,,,,Muss,
+169,Preisangaben,SG31,PRI,5125,00077,CAL,,Berechnungspreis,X,
+170,Preisangaben,SG31,PRI,5118,00077,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+171,Abschnitts-Kontrollsegment,,UNS,,00097,,,,Muss,
+172,Abschnitts-Kontrollsegment,,UNS,0081,00097,und Summenteil,,,S,
+173,Nachrichten-Endesegment,,UNT,,00099,,,,Muss,
+174,Nachrichten-Endesegment,,UNT,0074,00099,,,Anzahl der Segmente in einer Nachricht,X,
+175,Nachrichten-Endesegment,,UNT,0062,00099,,,Nachrichten-Referenznummer,X,

@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨,[321] Wenn im DE3155 in demselben COM der
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -51,10 +55,10 @@
 48,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
 49,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X,
 50,Status der Antwort,SG4,STS,1131,00039,Codeliste Strom Nr. S_0055 Codeliste Strom Nr. S_0056,,S_0055 S_0056,X,
-51,Messlokation,SG5,,,,,,,Muss [2061],"[77] Wenn SG8 SEQ+Z03 (Zähleinrichtungsdaten) CAV+Z30 (Identifikation/Nummer des Gerätes) nicht vorhanden  
-[78] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) nicht vorhanden  
-[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden  
-[675] Hinweis: Es sind alle Messlokationen, zu nennen, die Lokationsbündel angehören wie die prozessual behandelte Messlokation  
+51,Messlokation,SG5,,,,,,,Muss [2061],"[77] Wenn SG8 SEQ+Z03 (Zähleinrichtungsdaten) CAV+Z30 (Identifikation/Nummer des Gerätes) nicht vorhanden
+[78] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) nicht vorhanden
+[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[675] Hinweis: Es sind alle Messlokationen, zu nennen, die Lokationsbündel angehören wie die prozessual behandelte Messlokation
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 52,Messlokation,SG5,LOC,,00055,,,,Muss,
 53,Messlokation,SG5,LOC,3227,00055,Z17,,Messlokation,X,
