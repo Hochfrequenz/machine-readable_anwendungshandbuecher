@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940],[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -66,17 +70,18 @@
 63,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00043,,,,Kann,
 64,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
 65,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00043,,,Text für allgemeine Information,X,
-66,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [328] Soll [333] ∧ [165] ∧ [2061],"[165] Wenn bekannt  
-[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[354] Wenn STS+E01++A01/ A03/ A17/ A18 nicht vorhanden "
+66,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [328] Soll [333] ∧ [165] ∧ [2061],"[165] Wenn bekannt
+[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[354] Wenn STS+E01++A01/ A03/ A17/ A18 nicht vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 67,Marktlokation,SG5,LOC,,00051,,,,Muss,
 68,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
 69,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-70,Messlokation,SG5,,,,,,,Soll [333] ∧ [165] ∧ [669],"[165] Wenn bekannt  
-[166] Wenn vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[527] Hinweis: Es sind alle Identifikatoren der Messlokationen anzugeben  
+70,Messlokation,SG5,,,,,,,Soll [333] ∧ [165] ∧ [669],"[165] Wenn bekannt
+[166] Wenn vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[527] Hinweis: Es sind alle Identifikatoren der Messlokationen anzugeben
 [669] Hinweis: Es können mehrere Messlokationen angegeben werden"
 71,Messlokation,SG5,LOC,,00055,,,,Muss,
 72,Messlokation,SG5,LOC,3227,00055,Z17,,Messlokation,X,
@@ -85,29 +90,29 @@
 75,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
 76,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
 77,Prüfidentifikator,SG6,RFF,1154,00057,55001,,GPKE / Anmeldung NN,X,
-78,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden  
+78,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 79,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
 80,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
 81,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,,Kann,[101] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14/ Z36 (TLP/ TEP/ TEP mit Ref.messung) in dieser SG8 vorhanden
 82,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,00105,,,,Muss,
 83,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,00105,265,,Veranschlagte Jahresmenge Gesamt/ Jahresverbrauchsprogno se für spezifische Arbeit für tagesparameterabhängig e Marktlokation,X,
-84,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeit nach Anhang D der VDN-Richtlinie ""Lastprofile für",X,
+84,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeit nach Anhang D der VDN-Richtlinie ""Lastprofile für unterbrechbare Verbrauchseinrichtungen""",X,
 85,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,00105,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
 86,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,00105,Z16,,kWh/K (Kilowatt- Stunde/Kelvin),X [103],
-87,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],"[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in dieser SG8 vorhanden  
+87,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],"[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in dieser SG8 vorhanden
 [104] Wenn SG9 QTY+Z08 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: angepasste elektrische Arbeit nach Anhang D) in dieser SG8 vorhanden"
 88,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Kann,[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
 89,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00106,,,,Muss,
 90,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00106,31,,Veranschlagte Jahresmenge Gesamt,X,
-91,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00106,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+91,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00106,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 92,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00106,KWH,,Kilowattstunde,X,
 93,Lieferrichtung,SG10,,,,,,,Muss,
 94,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
 95,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
 96,Lieferrichtung,SG10,CCI,7037,00110,Z07,,Verbrauch,X,
-97,Bilanzkreis,SG10,,,,,,,Muss [2061],"[64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden  
+97,Bilanzkreis,SG10,,,,,,,Muss [2061],"[64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 98,Bilanzkreis,SG10,CCI,,00117,,,,Muss,
 99,Bilanzkreis,SG10,CCI,7059,00117,Z19,,Bilanzkreis,X,
@@ -139,125 +144,135 @@
 125,Konzessionsabgabe,SG10,CAV,7111,,SAS,,"Kennzeichnung, dass ein abweichender Preis für Sondervertragskunden vorliegt",X,
 126,Konzessionsabgabe,SG10,CAV,7111,,TAS,,"Kennzeichnung, dass ein abweichender Preis für Tarifkunden vorliegt",X,
 127,Konzessionsabgabe,SG10,CAV,7111,,TKS,,"Kennzeichnung, wenn nach KAV § 2 (2) 2a ein anderer Preis zu verwenden ist",X,
-128,Konzessionsabgabe,SG10,CAV,7111,,TS,,"für Strom mit Schwachlast § 2. (2) 1a NT (niedrige KA, 0,61",X,
-129,Konzessionsabgabe,SG10,CAV,7110,00232,,,Konzessionsabgabe in Euro/kWh,Soll [912] ∧ [914] ∧ [902] [129] ,"[129] Hat der Lieferant auf Grund seines Vertrags Kenntnis über die Höhe der Sonder-KA, so muss er diesen dem NB mitteilen  
-[902] Format: Möglicher Wert: ≥ 0  
-[912] Format: max. 6 Nachkommastellen  
+128,Konzessionsabgabe,SG10,CAV,7111,,TS,,"für Strom mit Schwachlast § 2. (2) 1a NT (niedrige KA, 0,61 ct/kWh)",X,
+129,Konzessionsabgabe,SG10,CAV,7111,,TSS,,"Kennzeichnung, dass ein abweichender Preis für Schwachlast angewendet wird",X,
+130,Konzessionsabgabe,SG10,CAV,7110,00232,,,Konzessionsabgabe in Euro/kWh,Soll [912] ∧ [914] ∧ [902] [129] ,"[129] Hat der Lieferant auf Grund seines Vertrags Kenntnis über die Höhe der Sonder-KA, so muss er diesen dem NB mitteilen
+[902] Format: Möglicher Wert: ≥ 0
+[912] Format: max. 6 Nachkommastellen
 [914] Format: Möglicher Wert: > 0"
-130,Konzessionsabgabe,SG10,CAV,7110,00232,,,Gebührenkategorie der Konzessionsabgabe,Kann,
-131,Steuer-/ Abgabeninformation,SG8,,,,,,,Kann,
-132,Steuer-/ Abgabeninformation,SG8,SEQ,,00233,,,,Muss,
-133,Steuer-/ Abgabeninformation,SG8,SEQ,1229,00233,Z10,,Steuer-/ Abgabeninformation,X,
-134,Steuern-/Abgabenbefreiung,SG10,,,,,,,Muss,
-135,Steuern-/Abgabenbefreiung,SG10,CCI,,00235,,,,Muss,
-136,Steuern-/Abgabenbefreiung,SG10,CCI,7059,00235,Z13,,Steuerinformation,X,
-137,Steuern-/Abgabenbefreiung,SG10,CCI,7037,00235,Z65,,Stromsteuer befreit,X,
-138,Steuern-/Abgabenbefreiung,SG10,CCI,7037,,Z66,,Stromsteuer pflichtig,X,
-139,Gemeinderabatt,SG8,,,,,,,Muss,
-140,Gemeinderabatt,SG8,SEQ,,00236,,,,Muss,
-141,Gemeinderabatt,SG8,SEQ,1229,00236,Z12,,Gemeinderabatt,X,
-142,Gemeinderabatt,SG9,,,,,,,Muss,
-143,Gemeinderabatt,SG9,QTY,,00237,,,,Muss,
-144,Gemeinderabatt,SG9,QTY,6063,00237,Z16,,Gemeinderabatt,X,
-145,Gemeinderabatt,SG9,QTY,6060,00237,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0  
-[930] Format: max. 2 Nachkommastellen  
+131,Konzessionsabgabe,SG10,CAV,7110,00232,,,Gebührenkategorie der Konzessionsabgabe,Kann,
+132,Steuer-/ Abgabeninformation,SG8,,,,,,,Kann,
+133,Steuer-/ Abgabeninformation,SG8,SEQ,,00233,,,,Muss,
+134,Steuer-/ Abgabeninformation,SG8,SEQ,1229,00233,Z10,,Steuer-/ Abgabeninformation,X,
+135,Steuern-/Abgabenbefreiung,SG10,,,,,,,Muss,
+136,Steuern-/Abgabenbefreiung,SG10,CCI,,00235,,,,Muss,
+137,Steuern-/Abgabenbefreiung,SG10,CCI,7059,00235,Z13,,Steuerinformation,X,
+138,Steuern-/Abgabenbefreiung,SG10,CCI,7037,00235,Z65,,Stromsteuer befreit,X,
+139,Steuern-/Abgabenbefreiung,SG10,CCI,7037,,Z66,,Stromsteuer pflichtig,X,
+140,Gemeinderabatt,SG8,,,,,,,Muss,
+141,Gemeinderabatt,SG8,SEQ,,00236,,,,Muss,
+142,Gemeinderabatt,SG8,SEQ,1229,00236,Z12,,Gemeinderabatt,X,
+143,Gemeinderabatt,SG9,,,,,,,Muss,
+144,Gemeinderabatt,SG9,QTY,,00237,,,,Muss,
+145,Gemeinderabatt,SG9,QTY,6063,00237,Z16,,Gemeinderabatt,X,
+146,Gemeinderabatt,SG9,QTY,6060,00237,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0
+[930] Format: max. 2 Nachkommastellen
 [938] Format: Möglicher Wert: <= 10"
-146,Gemeinderabatt,SG9,QTY,6411,00237,P1,,Prozent,X,
-147,Zähleinrichtungsdaten,SG8,,,,,,,Kann,[2286] Für jede SEQ+Z18 (Daten der Messlokation) mindestens einmal anzugeben
-148,Zähleinrichtungsdaten,SG8,SEQ,,00326,,,,Muss,
-149,Zähleinrichtungsdaten,SG8,SEQ,1229,00326,Z03,,Zähleinrichtungsdaten,X,
-150,Zählertyp,SG10,,,,,,,Muss,
-151,Zählertyp,SG10,CCI,,00329,,,,Muss,
-152,Zählertyp,SG10,CCI,7037,00329,E13,,Zählertyp,X,
-153,Identifikation / Nummer des Gerätes,SG10,CAV,,00331,,,,Muss,
-154,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00331,Z30,,Gerätenummer,X,
-155,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00331,,,Gerätenummer,X,
-156,Profildaten,SG8,,,,,,,Kann,[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
-157,Profildaten,SG8,SEQ,,00376,,,,Muss,
-158,Profildaten,SG8,SEQ,1229,00376,Z21,,Profildaten,X,
-159,Normiertes Profil,SG10,,,,,,,Muss,
-160,Normiertes Profil,SG10,CCI,,00380,,,,Muss,
-161,Normiertes Profil,SG10,CCI,7059,00380,Z02,,Standardlastprofil,X,
-162,Normiertes Profil,SG10,CCI,7037,00380,E01,,synthetisches Verfahren,X,
-163,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,[332] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) nicht vorhanden
-164,Normiertes Profil,SG10,CAV,,00381,,,,Muss,
-165,Normiertes Profil,SG10,CAV,7111,00381,,,Code des Normierten Profils,X,
-166,Profilschardaten,SG8,,,,,,,Kann,[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden
-167,Profilschardaten,SG8,SEQ,,00387,,,,Muss,
-168,Profilschardaten,SG8,SEQ,1229,00387,Z08,,Profilschardaten,X,
-169,Profilschar,SG10,,,,,,,Muss,
-170,Profilschar,SG10,CCI,,00397,,,,Muss,
-171,Profilschar,SG10,CCI,7037,00397,Z12,,Profilschar,X,
-172,Profilschar,SG10,CAV,,00398,,,,Muss,
-173,Profilschar,SG10,CAV,7111,00398,,,Code der Profilschar,X,
-174,Normiertes Profil,SG10,,,,,,,Muss,
-175,Normiertes Profil,SG10,CCI,,00399,,,,Muss,
-176,Normiertes Profil,SG10,CCI,7059,00399,Z03,,tagesparameterabhängig es Lastprofil,X,
-177,Normiertes Profil,SG10,CCI,7037,00399,E01,,synthetisches Verfahren,X,
-178,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
-179,Normiertes Profil,SG10,CAV,,00400,,,,Muss,
-180,Normiertes Profil,SG10,CAV,7111,00400,,,Code des Normierten Profils,X,
-181,Daten des Kunden des Lieferanten,SG8,,,,,,,Muss,
-182,Daten des Kunden des Lieferanten,SG8,SEQ,,00515,,,,Muss,
-183,Daten des Kunden des Lieferanten,SG8,SEQ,1229,00515,Z75,,Daten des Kunden des Lieferanten,X,
-184,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,,,,,,,Muss,
-185,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,,00516,,,,Muss,
-186,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7059,00516,Z61,,Grundlage zur Verringerung der Umlagen nach EnFG,X,
-187,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,00516,ZF9,,Kunde erfüllt die Voraussetzung nach EnFG,X,
-188,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG0,,Kunde erfüllt nicht die Voraussetzung nach EnFG,X,
-189,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG1,,"Keine Angabe, da Marktlokation die Voraussetzung zur Verringerung der Umlagen nach EnFG nicht erfüllt",X,
-190,Grund der Privilegierung nach EnFG,SG10,CAV,,00517,,,,Muss [463],[463] Wenn in derselben SG10 das CCI+Z61++ZF9 (Kunde erfüllt die Voraussetzung nach EnFG) vorhanden
-191,Grund der Privilegierung nach EnFG,SG10,CAV,7111,00517,ZU5,,§ 21 EnFG Stromspeicher und Verlustenergie,X [1P0..1],
-192,Kunde des Lieferanten,SG12,,,,,,,Muss,[572] Hinweis: Kundenname aus Anmeldung Lieferant neu
-193,Kunde des Lieferanten,SG12,NAD,,00518,,,,Muss,
-194,Kunde des Lieferanten,SG12,NAD,3035,00518,Z09,,Kunde des LF,X,
-195,Kunde des Lieferanten,SG12,NAD,3036,00518,,,Name,X,
-196,Kunde des Lieferanten,SG12,NAD,3045,00518,Z01,,Struktur von Personennamen,X,
-197,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-198,Kundennummer beim Lieferanten,SG12,RFF,,00519,,,,Kann,[147] Wenn in Anfrage vorhanden
-199,Kundennummer beim Lieferanten,SG12,RFF,1153,00519,AVC,,Kundennummer beim Lieferanten,X,
-200,Kundennummer beim Lieferanten,SG12,RFF,1154,00519,,,Kundennummer beim LF,X,
-201,Kundennummer beim Altlieferant,SG12,RFF,,00520,,,,Soll [165] ∧ [333],"[165] Wenn bekannt  
+147,Gemeinderabatt,SG9,QTY,6411,00237,P1,,Prozent,X,
+148,Zähleinrichtungsdaten,SG8,,,,,,,Kann,[2286] Für jede SEQ+Z18 (Daten der Messlokation) mindestens einmal anzugeben
+149,Zähleinrichtungsdaten,SG8,SEQ,,00326,,,,Muss,
+150,Zähleinrichtungsdaten,SG8,SEQ,1229,00326,Z03,,Zähleinrichtungsdaten,X,
+151,Zählertyp,SG10,,,,,,,Muss,
+152,Zählertyp,SG10,CCI,,00329,,,,Muss,
+153,Zählertyp,SG10,CCI,7037,00329,E13,,Zählertyp,X,
+154,Identifikation / Nummer des Gerätes,SG10,CAV,,00331,,,,Muss,
+155,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00331,Z30,,Gerätenummer,X,
+156,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00331,,,Gerätenummer,X,
+157,Profildaten,SG8,,,,,,,Kann,[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
+158,Profildaten,SG8,SEQ,,00376,,,,Muss,
+159,Profildaten,SG8,SEQ,1229,00376,Z21,,Profildaten,X,
+160,Normiertes Profil,SG10,,,,,,,Muss,
+161,Normiertes Profil,SG10,CCI,,00380,,,,Muss,
+162,Normiertes Profil,SG10,CCI,7059,00380,Z02,,Standardlastprofil,X,
+163,Normiertes Profil,SG10,CCI,7037,00380,E01,,synthetisches Verfahren,X,
+164,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,[332] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) nicht vorhanden
+165,Normiertes Profil,SG10,CAV,,00381,,,,Muss,
+166,Normiertes Profil,SG10,CAV,7111,00381,,,Code des Normierten Profils,X,
+167,Profilschardaten,SG8,,,,,,,Kann,[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden
+168,Profilschardaten,SG8,SEQ,,00387,,,,Muss,
+169,Profilschardaten,SG8,SEQ,1229,00387,Z08,,Profilschardaten,X,
+170,Profilschar,SG10,,,,,,,Muss,
+171,Profilschar,SG10,CCI,,00397,,,,Muss,
+172,Profilschar,SG10,CCI,7037,00397,Z12,,Profilschar,X,
+173,Profilschar,SG10,CAV,,00398,,,,Muss,
+174,Profilschar,SG10,CAV,7111,00398,,,Code der Profilschar,X,
+175,Normiertes Profil,SG10,,,,,,,Muss,
+176,Normiertes Profil,SG10,CCI,,00399,,,,Muss,
+177,Normiertes Profil,SG10,CCI,7059,00399,Z03,,tagesparameterabhängig es Lastprofil,X,
+178,Normiertes Profil,SG10,CCI,7037,00399,E01,,synthetisches Verfahren,X,
+179,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
+180,Normiertes Profil,SG10,CAV,,00400,,,,Muss,
+181,Normiertes Profil,SG10,CAV,7111,00400,,,Code des Normierten Profils,X,
+182,Daten des Kunden des Lieferanten,SG8,,,,,,,Muss,
+183,Daten des Kunden des Lieferanten,SG8,SEQ,,00515,,,,Muss,
+184,Daten des Kunden des Lieferanten,SG8,SEQ,1229,00515,Z75,,Daten des Kunden des Lieferanten,X,
+185,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,,,,,,,Muss,
+186,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,,00516,,,,Muss,
+187,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7059,00516,Z61,,Grundlage zur Verringerung der Umlagen nach EnFG,X,
+188,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,00516,ZF9,,Kunde erfüllt die Voraussetzung nach EnFG,X,
+189,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG0,,Kunde erfüllt nicht die Voraussetzung nach EnFG,X,
+190,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG1,,"Keine Angabe, da Marktlokation die Voraussetzung zur Verringerung der Umlagen nach EnFG nicht erfüllt",X,
+191,Grund der Privilegierung nach EnFG,SG10,CAV,,00517,,,,Muss [463],[463] Wenn in derselben SG10 das CCI+Z61++ZF9 (Kunde erfüllt die Voraussetzung nach EnFG) vorhanden
+192,Grund der Privilegierung nach EnFG,SG10,CAV,7111,00517,ZU5,,§ 21 EnFG Stromspeicher und Verlustenergie,X [1P0..1],
+193,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU6,,§ 22 EnFG elektrisch angetriebene Wärmepumpen,X [1P0..1],
+194,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU7,,§ 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen,X [1P0..1],
+195,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU8,,§ 24 EnFG Herstellung von Grünen Wasserstoff,X [1P0..1],
+196,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU9,,§§ 30 - 35 EnFG stromkostenintensive Unternehmen,X [1P0..1],
+197,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV0,,§ 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen,X [1P0..1],
+198,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV1,,§ 37 EnFG Schienenbahnen,X [1P0..1],
+199,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV2,,§ 38 EnFG elektrische betriebene Bussen im Linienverkehr,X [1P0..1],
+200,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV3,,§ 39 EnFG Landstromanlagen,X [1P0..1],
+201,Kunde des Lieferanten,SG12,,,,,,,Muss,[572] Hinweis: Kundenname aus Anmeldung Lieferant neu
+202,Kunde des Lieferanten,SG12,NAD,,00518,,,,Muss,
+203,Kunde des Lieferanten,SG12,NAD,3035,00518,Z09,,Kunde des LF,X,
+204,Kunde des Lieferanten,SG12,NAD,3036,00518,,,Name,X,
+205,Kunde des Lieferanten,SG12,NAD,3045,00518,Z01,,Struktur von Personennamen,X,
+206,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+207,Kundennummer beim Lieferanten,SG12,RFF,,00519,,,,Kann,[147] Wenn in Anfrage vorhanden
+208,Kundennummer beim Lieferanten,SG12,RFF,1153,00519,AVC,,Kundennummer beim Lieferanten,X,
+209,Kundennummer beim Lieferanten,SG12,RFF,1154,00519,,,Kundennummer beim LF,X,
+210,Kundennummer beim Altlieferant,SG12,RFF,,00520,,,,Soll [165] ∧ [333],"[165] Wenn bekannt
 [333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden"
-202,Kundennummer beim Altlieferant,SG12,RFF,1153,00520,Z01,,Kundennummer beim Altlieferanten,X,
-203,Kundennummer beim Altlieferant,SG12,RFF,1154,00520,,,Kundennummer beim LFA,X,
-204,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss [556] ∧ [559],"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln  
+211,Kundennummer beim Altlieferant,SG12,RFF,1153,00520,Z01,,Kundennummer beim Altlieferanten,X,
+212,Kundennummer beim Altlieferant,SG12,RFF,1154,00520,,,Kundennummer beim LFA,X,
+213,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss [556] ∧ [559],"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln
 [559] Hinweis: Die Korrespondenzanschrift des Endverbrauchers/ Kunden wird nicht zur Identifikation genutzt"
-205,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,00522,,,,Muss,
-206,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,00522,Z04,,Korrespondenzanschrift des Kunden des LF,X,
-207,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,00522,,,Name,X,
-208,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,00522,Z01,,Struktur von Personennamen,X,
-209,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-210,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,00522,,,Straße und Hausnummer oder Postfach,X,
-211,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,00522,,,Ort,X,
-212,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,00522,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+214,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,00522,,,,Muss,
+215,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,00522,Z04,,Korrespondenzanschrift des Kunden des LF,X,
+216,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,00522,,,Name,X,
+217,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,00522,Z01,,Struktur von Personennamen,X,
+218,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+219,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,00522,,,Straße und Hausnummer oder Postfach,X,
+220,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,00522,,,Ort,X,
+221,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,00522,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-213,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,00522,,,"Ländername, Code",X,
-214,Marktlokationsanschrift,SG12,,,,,,,Soll [165] ∧ [333],"[165] Wenn bekannt  
+222,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,00522,,,"Ländername, Code",X,
+223,Marktlokationsanschrift,SG12,,,,,,,Soll [165] ∧ [333],"[165] Wenn bekannt
 [333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden"
-215,Marktlokationsanschrift,SG12,NAD,,00535,,,,Muss,
-216,Marktlokationsanschrift,SG12,NAD,3035,00535,DP,,Lieferanschrift,X,
-217,Marktlokationsanschrift,SG12,NAD,3124,00535,,,Zusatzinformation zur Identifizierung,K,
-218,Marktlokationsanschrift,SG12,NAD,3042,00535,,,Straße und Hausnummer oder Postfach,S [165] M [212],"[165] Wenn bekannt  
-[166] Wenn vorhanden  
+224,Marktlokationsanschrift,SG12,NAD,,00535,,,,Muss,
+225,Marktlokationsanschrift,SG12,NAD,3035,00535,DP,,Lieferanschrift,X,
+226,Marktlokationsanschrift,SG12,NAD,3124,00535,,,Zusatzinformation zur Identifizierung,K,
+227,Marktlokationsanschrift,SG12,NAD,3042,00535,,,Straße und Hausnummer oder Postfach,S [165] M [212],"[165] Wenn bekannt
+[166] Wenn vorhanden
 [212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
-219,Marktlokationsanschrift,SG12,NAD,3164,00535,,,Ort,X,
-220,Marktlokationsanschrift,SG12,NAD,3251,00535,,,Postleitzahl,X,
-221,Marktlokationsanschrift,SG12,NAD,3207,00535,,,"Ländername, Code",X,
-222,Name und Adresse für die Ablesekarte,SG12,,,,,,,Muss [560],[234] Wenn SG10
-223,Name und Adresse für die Ablesekarte,SG12,NAD,,00538,,,,Muss,
-224,Name und Adresse für die Ablesekarte,SG12,NAD,3035,00538,Z05,,Name und Adresse für die Ablesekarte,X,
-225,Name und Adresse für die Ablesekarte,SG12,NAD,3036,00538,,,Name,X,
-226,Name und Adresse für die Ablesekarte,SG12,NAD,3045,00538,Z01,,Struktur von Personennamen,X,
-227,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-228,Name und Adresse für die Ablesekarte,SG12,NAD,3042,00538,,,Straße und Hausnummer oder Postfach,X,
-229,Name und Adresse für die Ablesekarte,SG12,NAD,3164,00538,,,Ort,X,
-230,Name und Adresse für die Ablesekarte,SG12,NAD,3251,00538,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+228,Marktlokationsanschrift,SG12,NAD,3164,00535,,,Ort,X,
+229,Marktlokationsanschrift,SG12,NAD,3251,00535,,,Postleitzahl,X,
+230,Marktlokationsanschrift,SG12,NAD,3207,00535,,,"Ländername, Code",X,
+231,Name und Adresse für die Ablesekarte,SG12,,,,,,,Muss [560],"[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden
+[560] Hinweis: Die Angabe Name und Adresse für die Ablesekarte wird nicht zur Identifikation genutzt"
+232,Name und Adresse für die Ablesekarte,SG12,NAD,,00538,,,,Muss,
+233,Name und Adresse für die Ablesekarte,SG12,NAD,3035,00538,Z05,,Name und Adresse für die Ablesekarte,X,
+234,Name und Adresse für die Ablesekarte,SG12,NAD,3036,00538,,,Name,X,
+235,Name und Adresse für die Ablesekarte,SG12,NAD,3045,00538,Z01,,Struktur von Personennamen,X,
+236,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+237,Name und Adresse für die Ablesekarte,SG12,NAD,3042,00538,,,Straße und Hausnummer oder Postfach,X,
+238,Name und Adresse für die Ablesekarte,SG12,NAD,3164,00538,,,Ort,X,
+239,Name und Adresse für die Ablesekarte,SG12,NAD,3251,00538,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-231,Name und Adresse für die Ablesekarte,SG12,NAD,3207,00538,,,"Ländername, Code",X,
-232,Referenz auf die ID einer Messlokation,SG12,RFF,,00539,,,,Kann,
-233,Referenz auf die ID einer Messlokation,SG12,RFF,1153,00539,Z19,,Messlokation,X,
-234,Referenz auf die ID einer Messlokation,SG12,RFF,1154,00539,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-235,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
-236,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
-237,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
+240,Name und Adresse für die Ablesekarte,SG12,NAD,3207,00538,,,"Ländername, Code",X,
+241,Referenz auf die ID einer Messlokation,SG12,RFF,,00539,,,,Kann,
+242,Referenz auf die ID einer Messlokation,SG12,RFF,1153,00539,Z19,,Messlokation,X,
+243,Referenz auf die ID einer Messlokation,SG12,RFF,1154,00539,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+244,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
+245,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
+246,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,

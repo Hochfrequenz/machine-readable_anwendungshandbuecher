@@ -15,7 +15,7 @@
 13,Beginn der Nachricht,,BGM,1373,00002,,,,11,[8] Wenn das in DE1001 angegebene Preisblatt vom NB nicht genutzt wird.
 14,Nachrichtendatum,,DTM,,00004,,,,Muss,
 15,Nachrichtendatum,,DTM,2005,00004,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-16,Nachrichtendatum,,DTM,2380,00004,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+16,Nachrichtendatum,,DTM,2380,00004,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 17,Nachrichtendatum,,DTM,2379,00004,303,,CCYYMMDDHHMMZZZ,X,
 18,Gültigkeitsbeginn,,DTM,,00005,,,,Muss,
@@ -25,7 +25,7 @@
 22,Vorgängerversion,SG1,,,,,,,Soll [1],[1] Wenn Vorgängerversion vorhanden 
 23,Vorgängerversion,SG1,RFF,,00006,,,,Muss,
 24,Vorgängerversion,SG1,RFF,1153,00006,ACW,,Referenznummer einer vorangegangenen Nachricht,X,
-25,Vorgängerversion,SG1,RFF,1154,00006,,,"Referenz, Identifikation",X [504],[504] Hinweis:
+25,Vorgängerversion,SG1,RFF,1154,00006,,,"Referenz, Identifikation",X [504],[504] Hinweis: Dokumentennummer der PRICAT
 26,Prüfidentifikator,SG1,,,,,,,Muss,
 27,Prüfidentifikator,SG1,RFF,,00007,,,,Muss,
 28,Prüfidentifikator,SG1,RFF,1153,00007,Z13,,Prüfidentifikator,X,
@@ -49,10 +49,10 @@
 46,Ansprechpartner,SG4,CTA,3139,00011,,,,IC,
 47,Ansprechpartner,SG4,CTA,3412,00011,,,Kontakt,X,
 48,Kommunikationsverbindung,SG4,COM,,00012,,,,Muss,
-49,Kommunikationsverbindung,SG4,COM,3148,00012,,,"Kommunikationsadresse, Identifikation",X (([939][37]) ∨ ([940] [38])) ∧ [519],"[37] Wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[38] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[519] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+49,Kommunikationsverbindung,SG4,COM,3148,00012,,,"Kommunikationsadresse, Identifikation",X (([939][37]) ∨ ([940] [38])) ∧ [519],"[37] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[38] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[519] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 50,Kommunikationsverbindung,SG4,COM,3155,00012,EM,,E-Mail,X [1P0..1],
 51,Kommunikationsverbindung,SG4,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -64,31 +64,35 @@
 57,Währungsangaben,SG6,CUX,6347,00013,2,,Referenzwährung,X,
 58,Währungsangaben,SG6,CUX,6345,00013,EUR,,Euro,X,
 59,Währungsangaben,SG6,CUX,6343,00013,8,,Währung der Preisliste,X,
-60,Produktgruppen- Information,SG17,,,,,,,Muss [9] ∧ [27],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
+60,Produktgruppen- Information,SG17,,,,,,,Muss [9] ∧ [27],"[9] Wenn BGM DE1373 =11 nicht vorhanden
 [27] Wenn BGM DE1001 = Z70 nicht vorhanden"
 61,Produktgruppen- Information,SG17,PGI,,00014,,,,Muss,
 62,Produktgruppen- Information,SG17,PGI,5379,00014,,,,9,
 63,Positionsdaten,SG36,,,,,,,Muss,
 64,Positionsdaten,SG36,LIN,,00015,,,,Muss,
 65,Positionsdaten,SG36,LIN,1082,00015,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-66,Positionsdaten,SG36,LIN,7140,00015,,,Produkt-/Leistungsnummer,X [942] ∧ [41],"[41] Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
+66,Positionsdaten,SG36,LIN,7140,00015,,,Produkt-/Leistungsnummer,X [942] ∧ [41],"[41] Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die in der Spalte ""PRICAT Codeverwendung"" ein X haben
 [942] Format: n1-n2-n1-n3"
 67,Positionsdaten,SG36,LIN,7143,00015,Z09,,Artikel-ID,X,
 68,Preisangaben,SG40,,,,,,,Muss [22],"[22] Wenn die Artikel-ID aus dieser SG36 LIN DE7140 in der EDI@Energy Codeliste der Artikelnummern und Artikel-ID in der Spalte ""PRICAT Preisangabe"" ein X hat"
 69,Preisangaben,SG40,PRI,,00018,,,,Muss,
 70,Preisangaben,SG40,PRI,5125,00018,CAL,,Berechnungspreis,X,
-71,Preisangaben,SG40,PRI,5118,00018,,,"Preis, Betrag",X ([946] [513]) ∧ (([968] [48]) ⊻ ([902] [49])),"[48] Wenn in dieser SG36 LIN in DE7140 einer der Codes 1-01-6- 005 / 1-01-9-001 / 1-01-9-002 / 1-02-0-015 / 1-03-8-001 / 1-03- 8-002 / 1-03-8-003 / 1-03-8-004 / 1-03-9-001 / 1-03-9-002 / 1-03- 9-003 / 1-03-9-004 / 1-07-4-001 vorhanden 
-[49] Wenn in dieser SG36 LIN in DE7140 keiner der Codes 1-01-6- 005 / 1-01-9-001 / 1-01-9-002 /"
-72,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,,Muss [9] ∧ [26],"[9] Wenn BGM DE1373 =11 nicht vorhanden 
+71,Preisangaben,SG40,PRI,5118,00018,,,"Preis, Betrag",X ([946] [513]) ∧ (([968] [48]) ⊻ ([902] [49])),"[48] Wenn in dieser SG36 LIN in DE7140 einer der Codes 1-01-6- 005 / 1-01-9-001 / 1-01-9-002 / 1-02-0-015 / 1-03-8-001 / 1-03- 8-002 / 1-03-8-003 / 1-03-8-004 / 1-03-9-001 / 1-03-9-002 / 1-03- 9-003 / 1-03-9-004 / 1-07-4-001 vorhanden
+[49] Wenn in dieser SG36 LIN in DE7140 keiner der Codes 1-01-6- 005 / 1-01-9-001 / 1-01-9-002 / 1-02-0-015 / 1-03-8-001 / 1-03- 8-002 / 1-03-8-003 / 1-03-8-004 / 1-03-9-001 / 1-03-9-002 / 1-03- 9-003 / 1-03-9-004 / 1-07-4-001 vorhanden
+[513] Hinweis: Die zum Preis gehörende Einheit ist in der Codeliste definiert
+[902] Format: Möglicher Wert: ≥ 0
+[946] Format: max. 11 Nachkommastellen
+[968] Format: Möglicher Wert: ≤ 0"
+72,Netzbetreiberindividuelle Artikel-ID,SG17,,,,,,,Muss [9] ∧ [26],"[9] Wenn BGM DE1373 =11 nicht vorhanden
 [26] Wenn BGM DE1001 = Z70 vorhanden"
 73,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,,00020,,,,Muss,
 74,Netzbetreiberindividuelle Artikel-ID,SG17,PGI,5379,00020,Artikel-ID,,,Z01,
 75,Positionsdaten,SG36,,,,,,,Muss,
 76,Positionsdaten,SG36,LIN,,00021,,,,Muss,
 77,Positionsdaten,SG36,LIN,1082,00021,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-78,Positionsdaten,SG36,LIN,7140,00021,,,Produkt-/Leistungsnummer,X ([948] ⊻ [949] ⊻ [957]) ∧ [42],"[42] Es sind nur Werte erlaubt, die die Bildungsvorschrift der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erfüllen, und die in der Spalte ""PRICAT Codeverwendung"" ein X haben 
-[948] Format: n1-n2-n1-n8-n2 
-[949] Format: n1-n2-n1-n8-n2-n1 
+78,Positionsdaten,SG36,LIN,7140,00021,,,Produkt-/Leistungsnummer,X ([948] ⊻ [949] ⊻ [957]) ∧ [42],"[42] Es sind nur Werte erlaubt, die die Bildungsvorschrift der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erfüllen, und die in der Spalte ""PRICAT Codeverwendung"" ein X haben
+[948] Format: n1-n2-n1-n8-n2
+[949] Format: n1-n2-n1-n8-n2-n1
 [957] Format: n1-n2-n1-n8"
 79,Positionsdaten,SG36,LIN,7143,00021,Z09,,Artikel-ID,X,
 80,Preisangaben,SG40,,,,,,,Muss,
@@ -98,8 +102,12 @@
 84,Zonenintervallgrenzen,SG40,RNG,,00023,,,,Muss [24],[24] Wenn in dieser SG36 Wert von LIN DE7140 im Format n1- n2-n1-n8-n2-n1
 85,Zonenintervallgrenzen,SG40,RNG,6167,00023,,,,10,
 86,Zonenintervallgrenzen,SG40,RNG,6411,00023,KWH,,kilowatt hour,X,
-87,Zonenintervallgrenzen,SG40,RNG,6162,00023,,,"Wertebereichsgrenze, untere",X ([926] [28] ⊻ [908] [29]),[28] Wenn die zugehörige Artikel-
-88,Zonenintervallgrenzen,SG40,RNG,6152,00023,,,"Wertebereichsgrenze, obere",S [10] ∧ [512] ,"[10] Wenn eine weitere Zone für diese Gruppenartikel-ID vorhanden 
+87,Zonenintervallgrenzen,SG40,RNG,6162,00023,,,"Wertebereichsgrenze, untere",X ([926] [28] ⊻ [908] [29]) ∧ [511],"[28] Wenn die zugehörige Artikel- ID in der letzten Stelle eine 1 ist
+[29] Wenn die zugehörige Artikel- ID in der letzten Stelle > 1 ist
+[511] Hinweis: 1. Der genannte Wert gehört nicht zum Intervall.  2. Wenn in dieser SG36 die letzte Ziffer von LIN DE7140 >1, dann ist der Wert identisch mit dem Wert des DE6152 im RNG-Segment, in der SG36, in der die letzte Ziffer von LIN DE7140 um 1 kleiner ist, als die letzte Ziffer von LIN DE7140 in dieser SG36. 3. Die untere Wertegrenze zu der Artikel-ID, deren Zahl an der letzten Stelle den Wert n hat, muss kleiner sein, als die untere Wertegrenze zu der Artikel-ID, deren Zahl an der letzten Stelle den Wert n+1 hat.
+[908] Format: Mögliche Werte: 1 bis n
+[926] Format: Möglicher Wert: 0"
+88,Zonenintervallgrenzen,SG40,RNG,6152,00023,,,"Wertebereichsgrenze, obere",S [10] ∧ [512] ,"[10] Wenn eine weitere Zone für diese Gruppenartikel-ID vorhanden
 [512] Hinweis: Der genannte Wert gehört zum Intervall"
 89,Nachrichten-Endesegment,,UNT,,00024,,,,Muss,
 90,Nachrichten-Endesegment,,UNT,0074,00024,,,Anzahl der Segmente in einer Nachricht,X,

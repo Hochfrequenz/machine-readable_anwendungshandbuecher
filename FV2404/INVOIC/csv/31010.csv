@@ -9,7 +9,7 @@
 7,Rechnungsnummer,,BGM,,,,,,Muss,
 8,Rechnungsnummer,,BGM,1001,,380,,Handelsrechnung,X,
 9,Rechnungsnummer,,BGM,1004,,,,Dokumentennummer,X [517],[517] Hinweis: Dokumentennummer der PDF- Kapazitätsrechnung
-10,Rechnungsnummer,,BGM,1225,,,,,7 9,
+10,Rechnungsnummer,,BGM,1225,,,,,79,
 11,Nachrichtendatum,,DTM,,,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
 13,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
@@ -56,7 +56,11 @@
 54,Ansprechpartner,SG5,CTA,3139,,,,,IC,
 55,Ansprechpartner,SG5,CTA,3412,,,,Kontakt,X,
 56,Kommunikationsverbindung,SG5,COM,,,,,,Muss,
-57,Kommunikationsverbindung,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X (([939][74]) ∨ ([940] [75])) ∧ [524],[74] wenn im DE3155 in demselben COM der Code EM
+57,Kommunikationsverbindung,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X (([939][74]) ∨ ([940] [75])) ∧ [524],"[74] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[75] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[524] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 58,Kommunikationsverbindung,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
 59,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
 60,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -73,7 +77,7 @@
 71,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,,Ort,M,
 72,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
 73,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,,"Ländername, Code",X,
-74,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt 
+74,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
 [5] Wenn NAD+MR DE3207 <> „DE“"
 75,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,,Muss,
 76,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,VA,,Umsatzsteuernummer,X,
@@ -112,9 +116,9 @@
 109,Umsatzsteuer der Position,SG34,TAX,,,,,,Muss,
 110,Umsatzsteuer der Position,SG34,TAX,5283,,,,,7,
 111,Umsatzsteuer der Position,SG34,TAX,5153,,VAT,,Umsatzsteuer,X,
-112,Umsatzsteuer der Position,SG34,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+112,Umsatzsteuer der Position,SG34,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-113,Umsatzsteuer der Position,SG34,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,S O AE,
+113,Umsatzsteuer der Position,SG34,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,SO AE,
 114,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
 115,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
 116,Rechnungsbetrag,SG50,,,,,,,Muss,
@@ -141,9 +145,9 @@
 137,Umsatzsteuer der Rechnung,SG52,TAX,,,,,,Muss,
 138,Umsatzsteuer der Rechnung,SG52,TAX,5283,,,,,7,
 139,Umsatzsteuer der Rechnung,SG52,TAX,5153,,VAT,,Umsatzsteuer,X,
-140,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+140,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-141,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,S O AE,
+141,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,SO AE,
 142,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,,Soll [13],[13] Wenn vorausbezahlter Betrag vorliegt
 143,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,,113,,Vorausbezahlter Betrag (inkl. USt.),X,
 144,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
