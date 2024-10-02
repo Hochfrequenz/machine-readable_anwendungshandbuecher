@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Produkt-/ Leistungsbeschreibung,,IMD,,00009,,,,Muss,
@@ -50,11 +50,11 @@
 47,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
 48,Meldepunkt,SG2,LOC,,00026,,,,Muss,
 49,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-50,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X ([950] [521] ∧ [46]) ⊻ ([951] [522] ∧ [47]),"[46] Wenn SG29 IMD++Z46 vorhanden 
-[47] Wenn SG29 IMD++Z46  nicht vorhanden 
-[521] Hinweis: Verwendung der ID der Marktlokation 
-[522] Hinweis: Verwendung der ID der Messlokation 
-[950] Format: Marktlokations-ID 
+50,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X ([950] [521] ∧ [46]) ⊻ ([951] [522] ∧ [47]),"[46] Wenn SG29 IMD++Z46 vorhanden
+[47] Wenn SG29 IMD++Z46  nicht vorhanden
+[521] Hinweis: Verwendung der ID der Marktlokation
+[522] Hinweis: Verwendung der ID der Messlokation
+[950] Format: Marktlokations-ID
 [951] Format: Zählpunktbezeichnung"
 51,Positionsdaten,SG29,,,,,,,Muss [2050],[2050] Pro Nachricht ist die SG29 genau einmal anzugeben
 52,Positionsdaten,SG29,LIN,,00040,,,,Muss,
@@ -63,8 +63,8 @@
 55,Grund der Anforderung,SG29,IMD,7081,00042,Z46,,Abgrenzung von Energiemengen,X [45] ∧ [492],
 56,Grund der Anforderung,SG29,IMD,7081,,Z47,,Abgrenzung,X [15] ∧ [492],
 57,Grund der Anforderung,SG29,IMD,7081,,Z48,,Wechselereignis,X,
-58,Grund der Anforderung,SG29,IMD,7081,,Z49,,Zwischenablesung,X,"[15] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB vorhanden 
-[45] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB nicht vorhanden 
+58,Grund der Anforderung,SG29,IMD,7081,,Z49,,Zwischenablesung,X,"[15] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB vorhanden
+[45] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB nicht vorhanden
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
 59,Zeitpunkt für Wertanfrage,SG29,DTM,,00044,,,,Muss,
 60,Zeitpunkt für Wertanfrage,SG29,DTM,2005,00044,7,,Gültigkeitsdatum/-zeit,X,

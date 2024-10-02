@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -52,16 +52,16 @@
 49,Transaktionsgrund,SG4,STS,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 50,Transaktionsgrund,SG4,STS,9015,,7,,Transaktionsgrund,X,
 51,Transaktionsgrund,SG4,STS,9013,,ZF6,,Bila.rel. Anfrage an LF,X,
-52,Status der Antwort,SG4,STS,,,,,,Muss [249],[249] Innerhalb eines
+52,Status der Antwort,SG4,STS,,,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten
 53,Status der Antwort,SG4,STS,9015,,E01,,Status der Antwort,X,
 54,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X,
 55,Status der Antwort,SG4,STS,1131,,Codeliste Strom Nr. S_0032 Codeliste Strom Nr. S_0033,,S_0032 S_0033,X,
-56,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [348],"[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
+56,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [348],"[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 57,Marktlokation,SG5,LOC,,,,,,Muss,
 58,Marktlokation,SG5,LOC,3227,,Z16,,Marktlokation,X,
 59,Marktlokation,SG5,LOC,3225,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-60,Tranche,SG5,,,,,,,Muss [2061] ∧ [347],"[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden  
+60,Tranche,SG5,,,,,,,Muss [2061] ∧ [347],"[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 61,Tranche,SG5,LOC,,,,,,Muss,
 62,Tranche,SG5,LOC,3227,,Z21,,Tranche,X,
@@ -74,7 +74,7 @@
 69,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,,Muss,
 70,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,,TN,,Transaktions- Referenznummer,X,
 71,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,,Vorgangsnummer,X,
-72,Daten der Marktlokation,SG8,,,,,,,Soll [336],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden  
+72,Daten der Marktlokation,SG8,,,,,,,Soll [336],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 73,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
 74,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
@@ -90,29 +90,33 @@
 84,Bilanzkreis,SG10,CCI,,,,,,Muss,
 85,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
 86,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
-87,Status der erzeugenden Marktlokation,SG10,,,,,,,Soll [54] ∧ [336],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
+87,Status der erzeugenden Marktlokation,SG10,,,,,,,Soll [54] ∧ [336],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 88,Status der erzeugenden Marktlokation,SG10,CCI,,,,,,Muss,
 89,Status der erzeugenden Marktlokation,SG10,CCI,7059,,Z22,,Gesetzliche Kategorie,X,
 90,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z90,,EEG-Veräußerungsform: Ausfallvergütung,X,
-91,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z91,,EEG-Veräußerungsform:,X,
-92,Land der Förderung,SG10,,,,,,,Muss [240],[240] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) CCI+Z22++Z91 (Status der erzeugenden Marktlokation: Veräußerungsform Geförderte Direktvermarktung bzw. Marktprämie) vorhanden
-93,Land der Förderung,SG10,CCI,,,,,,Muss,
-94,Land der Förderung,SG10,CCI,7059,,Z23,,Land der Förderung,X,
-95,Land der Förderung,SG10,CCI,7037,,,,Land der Förderung,X,
-96,Land der Förderung,SG10,CCI,1131,,LAND,,EDI@Energy Codeliste der europäischen Ländercodes,X,
-97,Land der Förderung,SG10,CCI,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-98,Daten der Tranche,SG8,,,,,,,Soll [336],"[167] Wenn SG5 LOC+Z21 (Tranche) vorhanden  
+91,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z91,,EEG-Veräußerungsform: Marktprämie,X,
+92,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z92,,EEG-Veräußerungsform: Sonstiges,X,
+93,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z93,,Vermarktung ohne gesetzliche Vergütung,X,
+94,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z94,,KWKG-Vergütung,X,
+95,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z95,,Veräußerungsform nach § 20 Abs. 1 Nr. 4 EEG 2014 („Einspeisevergütung nach § 38“) bzw. § 21b Abs. 1 Nr. 2 EEG 2017 (Ausfallvergütung),X,
+96,Land der Förderung,SG10,,,,,,,Muss [240],[240] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) CCI+Z22++Z91 (Status der erzeugenden Marktlokation: Veräußerungsform Geförderte Direktvermarktung bzw. Marktprämie) vorhanden
+97,Land der Förderung,SG10,CCI,,,,,,Muss,
+98,Land der Förderung,SG10,CCI,7059,,Z23,,Land der Förderung,X,
+99,Land der Förderung,SG10,CCI,7037,,,,Land der Förderung,X,
+100,Land der Förderung,SG10,CCI,1131,,LAND,,EDI@Energy Codeliste der europäischen Ländercodes,X,
+101,Land der Förderung,SG10,CCI,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+102,Daten der Tranche,SG8,,,,,,,Soll [336],"[167] Wenn SG5 LOC+Z21 (Tranche) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-99,Daten der Tranche,SG8,SEQ,,,,,,Muss,
-100,Daten der Tranche,SG8,SEQ,1229,,Z15,,Daten der Tranche,X,
-101,Referenz auf die ID der Tranche,SG8,RFF,,,,,,Muss,
-102,Referenz auf die ID der Tranche,SG8,RFF,1153,,Z20,,Tranche,X,
-103,Referenz auf die ID der Tranche,SG8,RFF,1154,,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
-104,Bilanzkreis,SG10,,,,,,,Muss,
-105,Bilanzkreis,SG10,CCI,,,,,,Muss,
-106,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
-107,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
-108,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-109,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-110,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+103,Daten der Tranche,SG8,SEQ,,,,,,Muss,
+104,Daten der Tranche,SG8,SEQ,1229,,Z15,,Daten der Tranche,X,
+105,Referenz auf die ID der Tranche,SG8,RFF,,,,,,Muss,
+106,Referenz auf die ID der Tranche,SG8,RFF,1153,,Z20,,Tranche,X,
+107,Referenz auf die ID der Tranche,SG8,RFF,1154,,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
+108,Bilanzkreis,SG10,,,,,,,Muss,
+109,Bilanzkreis,SG10,CCI,,,,,,Muss,
+110,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
+111,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
+112,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+113,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+114,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

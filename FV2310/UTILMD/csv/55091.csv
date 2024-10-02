@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,E35,,Kündigung,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -41,13 +41,14 @@
 38,Vorgang,SG4,IDE,,,,,,Muss,
 39,Vorgang,SG4,IDE,7495,,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,,,,Vorgangsnummer,X,
-41,Datum des bereits bestätigten Vertragsendes,SG4,DTM,,,,,,Muss [15] Soll [16] ∧ [17],"[15] Wenn SG4 STS+E01++Z34 (Status der Antwort: Ablehnung Mehrfachkündigung) vorhanden  
-[16] Wenn SG4 STS+E01++Z12 (Status der Antwort: Ablehnung Vertragsbindung)"
+41,Datum des bereits bestätigten Vertragsendes,SG4,DTM,,,,,,Muss [15] Soll [16] ∧ [17],"[15] Wenn SG4 STS+E01++Z34 (Status der Antwort: Ablehnung Mehrfachkündigung) vorhanden
+[16] Wenn SG4 STS+E01++Z12 (Status der Antwort: Ablehnung Vertragsbindung) vorhanden
+[17] Wenn bereits eine bestätigte Kündigung durch Kunde oder MP vorhanden"
 42,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2005,,Z05,,gegenüber Kunde bestätigtes Kündigungsdatum,X,
 43,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2005,,Z06,,gegenüber Lieferant bestätigtes Kündigungsdatum,X,
 44,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 45,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-46,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,,Muss [16] ∧ [581],"[16] Wenn SG4 STS+E01++Z12 (Status der Antwort: Ablehnung Vertragsbindung) vorhanden  
+46,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,,,,,Muss [16] ∧ [581],"[16] Wenn SG4 STS+E01++Z12 (Status der Antwort: Ablehnung Vertragsbindung) vorhanden
 [581] Hinweis: Es ist das nächst mögliche Kündigungsdatum anzugeben"
 47,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,,157,,"Gültigkeit, Beginndatum",X,
 48,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
@@ -68,12 +69,13 @@
 63,Status der Antwort,SG4,STS,9015,,E01,,Status der Antwort,X,
 64,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X,
 65,Status der Antwort,SG4,STS,1131,,Codeliste Strom Nr. S_0045 Codeliste Strom Nr. S_0046,,S_0045 S_0046,X,
-66,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [348],"[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden  
+66,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [348],"[348] Wenn SG5 LOC+Z21 (Tranche) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 67,Marktlokation,SG5,LOC,,,,,,Muss,
 68,Marktlokation,SG5,LOC,3227,,Z16,,Marktlokation,X,
 69,Marktlokation,SG5,LOC,3225,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-70,Tranche,SG5,,,,,,,Muss [2061],[347] Wenn SG5
+70,Tranche,SG5,,,,,,,Muss [2061] ∧ [347],"[347] Wenn SG5 LOC+Z16 (Marktlokation) nicht vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 71,Tranche,SG5,LOC,,,,,,Muss,
 72,Tranche,SG5,LOC,3227,,Z21,,Tranche,X,
 73,Tranche,SG5,LOC,3225,,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID

@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss,
@@ -59,7 +59,8 @@
 56,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
 57,Meldepunkt,SG2,LOC,,00026,,,,Muss,
 58,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-59,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [951] [522],[522] Hinweis: Verwendung der ID
+59,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation
+[951] Format: Zählpunktbezeichnung"
 60,Währungsangaben,SG7,,,,,,,Muss,
 61,Währungsangaben,SG7,CUX,,00039,,,,Muss,
 62,Währungsangaben,SG7,CUX,6347,00039,2,,Referenzwährung,X,
@@ -68,7 +69,7 @@
 65,Positionsdaten,SG29,,,,,,,Muss,
 66,Positionsdaten,SG29,LIN,,00040,,,,Muss,
 67,Positionsdaten,SG29,LIN,1082,00040,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-68,Positionsdaten,SG29,LIN,7140,00040,,,Artikelnummer,X [52] ∧ [504],"[52] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind. 
+68,Positionsdaten,SG29,LIN,7140,00040,,,Artikelnummer,X [52] ∧ [504],"[52] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind.
 [504] Hinweis: Übernahme der Angabe aus der entsprechenden Position der QUOTES"
 69,Positionsdaten,SG29,LIN,7143,00040,Z01,,Artikelnummer,X,
 70,Menge,SG29,QTY,,00043,,,,Muss,
@@ -97,7 +98,7 @@
 93,Abschnitts-Kontrollsegment,,UNS,0081,00123,und Summenteil,,,S,
 94,Summenbetrag (netto),,MOA,,00124,,,,Muss,
 95,Summenbetrag (netto),,MOA,5025,00124,24,,Summe der Gesamtkosten,X,
-96,Summenbetrag (netto),,MOA,5004,00124,,,Geldbetrag,X [930] [505],"[505] Hinweis: Der Summenbetrag ist entsprechend der Summe der Einzelbeträge der Bestellposition aufzuführen. Bei Annahme des Gesamtangebots kann der Summenbetrag (netto) aus der QUOTES übernommen werden. 
+96,Summenbetrag (netto),,MOA,5004,00124,,,Geldbetrag,X [930] [505],"[505] Hinweis: Der Summenbetrag ist entsprechend der Summe der Einzelbeträge der Bestellposition aufzuführen. Bei Annahme des Gesamtangebots kann der Summenbetrag (netto) aus der QUOTES übernommen werden.
 [930] Format: max. 2 Nachkommastellen"
 97,Nachrichten-Endesegment,,UNT,,00125,,,,Muss,
 98,Nachrichten-Endesegment,,UNT,0074,00125,,,Anzahl der Segmente in einer Nachricht,X,

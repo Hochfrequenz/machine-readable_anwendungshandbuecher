@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -49,11 +49,13 @@
 46,Ende zum,SG4,DTM,2005,,93,,Datum Vertragsende,X,
 47,Ende zum,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 48,Ende zum,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-49,Bilanzierungsbeginn,SG4,DTM,,,,,,Muss [18] Soll [28] ∧ [29],[18] Wenn SG4 DTM+93 (Ende zum) nicht vorhanden  
+49,Bilanzierungsbeginn,SG4,DTM,,,,,,Muss [18] Soll [28] ∧ [29],"[18] Wenn SG4 DTM+93 (Ende zum) nicht vorhanden
+[28] Wenn SG4 DTM+93 (Ende zum) vorhanden
+[29] Wenn eine Bilanzierung stattfindet"
 50,Bilanzierungsbeginn,SG4,DTM,2005,,158,,Bilanzierungsbeginn,X,
 51,Bilanzierungsbeginn,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 52,Bilanzierungsbeginn,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-53,Bilanzierungsende,SG4,DTM,,,,,,Muss [28] ∧ [64],"[28] Wenn SG4 DTM+93 (Ende zum) vorhanden  
+53,Bilanzierungsende,SG4,DTM,,,,,,Muss [28] ∧ [64],"[28] Wenn SG4 DTM+93 (Ende zum) vorhanden
 [64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden"
 54,Bilanzierungsende,SG4,DTM,2005,,159,,Bilanzierungsende,X,
 55,Bilanzierungsende,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
@@ -61,859 +63,891 @@
 57,Transaktionsgrund,SG4,STS,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 58,Transaktionsgrund,SG4,STS,9015,,7,,Transaktionsgrund,X,
 59,Transaktionsgrund,SG4,STS,9013,,E01,,Ein-/Auszug (Umzug),X,
-60,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,,,,,,Soll [37],[37] Wenn Anmeldung/ Änderung befristet
-61,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9015,,Z17,,Transaktionsgrundergänzung für befristete Anmeldung,X,
-62,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9013,,E01,,Ein-/Auszug (Umzug),X,
-63,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
-64,Status der Antwort,SG4,STS,,,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
-65,Status der Antwort,SG4,STS,9015,,E01,,Status der Antwort,X,
-66,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt  
+60,Transaktionsgrund,SG4,STS,9013,,E02,,Einzug in Neuanlage,X,
+61,Transaktionsgrund,SG4,STS,9013,,E03,,Wechsel,X,
+62,Transaktionsgrund,SG4,STS,9013,,ZD2,,Lieferbeginn und Abmeldung aus der Ersatzversorgung,X,
+63,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,,,,,,Soll [37],[37] Wenn Anmeldung/ Änderung befristet
+64,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9015,,Z17,,Transaktionsgrundergänzung für befristete Anmeldung,X,
+65,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9013,,E01,,Ein-/Auszug (Umzug),X,
+66,Transaktionsgrundergänzun g für Lieferende bei befristeter Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
+67,Status der Antwort,SG4,STS,,,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
+68,Status der Antwort,SG4,STS,9015,,E01,,Status der Antwort,X,
+69,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt
 [360] Es sind nur Antwortcodes aus dem Cluster Zustimmung erlaubt"
-67,Status der Antwort,SG4,STS,1131,,E_0404,,EBD Nr. E_0404,X,
-68,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,,,,,Kann,
-69,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
-70,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,,,,Text für allgemeine Information,X,
-71,Netzlokation,SG5,,,,,,,Soll [46] ∧ [688],"[46] Wenn ID für Objekt vergeben wurde  
+70,Status der Antwort,SG4,STS,1131,,E_0404,,EBD Nr. E_0404,X,
+71,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,,,,,Kann,
+72,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
+73,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,,,,Text für allgemeine Information,X,
+74,Netzlokation,SG5,,,,,,,Soll [46] ∧ [688],"[46] Wenn ID für Objekt vergeben wurde
 [688] Hinweis: Es sind alle ID der Netzlokationen, welche der im LOC+Z16 angegebenen Marktlokation vorgelagert sind anzugeben"
-72,Netzlokation,SG5,LOC,,,,,,Muss,
-73,Netzlokation,SG5,LOC,3227,,Z18,,Netzlokation,X,
-74,Netzlokation,SG5,LOC,3225,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-75,Marktlokation,SG5,,,,,,,Muss [2061],"[165] Wenn bekannt  
-[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[354] Wenn STS+E01++A01/ A03/ A17/ A18 nicht vorhanden  
+75,Netzlokation,SG5,LOC,,,,,,Muss,
+76,Netzlokation,SG5,LOC,3227,,Z18,,Netzlokation,X,
+77,Netzlokation,SG5,LOC,3225,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+78,Marktlokation,SG5,,,,,,,Muss [2061],"[165] Wenn bekannt
+[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[354] Wenn STS+E01++A01/ A03/ A17/ A18 nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-76,Marktlokation,SG5,LOC,,,,,,Muss,
-77,Marktlokation,SG5,LOC,3227,,Z16,,Marktlokation,X,
-78,Marktlokation,SG5,LOC,3225,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-79,Technische Ressource,SG5,,,,,,,Soll [46] ∧ [689] ∧ [694],"[46] Wenn ID für Objekt vergeben wurde  
-[689] Hinweis: Es sind alle ID der Technischen"
-80,Technische Ressource,SG5,LOC,,,,,,Muss,
-81,Technische Ressource,SG5,LOC,3227,,Z20,,Technische Ressource,X,
-82,Technische Ressource,SG5,LOC,3225,,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
-83,Steuerbare Ressource,SG5,,,,,,,Soll [46] ∧ [690],"[46] Wenn ID für Objekt vergeben wurde  
+79,Marktlokation,SG5,LOC,,,,,,Muss,
+80,Marktlokation,SG5,LOC,3227,,Z16,,Marktlokation,X,
+81,Marktlokation,SG5,LOC,3225,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+82,Technische Ressource,SG5,,,,,,,Soll [46] ∧ [689] ∧ [694],"[46] Wenn ID für Objekt vergeben wurde
+[689] Hinweis: Es sind alle ID der Technischen Ressourcen, welche der im LOC+Z16 angegebenen Marktlokation zugehören anzugeben
+[694] Hinweis: Wenn in einer Marktlokation eine ID für eine Technischen Ressource vergeben wird, müssen für alle ggf. weitere Technische Ressourcen in der Marktlokation ID vergeben werden. Hintergrund: MSB und LF benötigen einen vollständigen Überblick auf die Art und Nutzung der Technischen Ressourcen in einer Marktlokation für die Plausibilisierung, Ersatzwertbildung, Produktauswahl bzw. Prognose"
+83,Technische Ressource,SG5,LOC,,,,,,Muss,
+84,Technische Ressource,SG5,LOC,3227,,Z20,,Technische Ressource,X,
+85,Technische Ressource,SG5,LOC,3225,,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
+86,Steuerbare Ressource,SG5,,,,,,,Soll [46] ∧ [690],"[46] Wenn ID für Objekt vergeben wurde
 [690] Hinweis: Es sind alle ID der Steuerbaren Ressourcen, welche der im LOC+Z20 angegebenen Technischen Ressourcen zugeordnet sind anzugeben"
-84,Steuerbare Ressource,SG5,LOC,,,,,,Muss,
-85,Steuerbare Ressource,SG5,LOC,3227,,Z19,,Steuerbare Ressource,X,
-86,Steuerbare Ressource,SG5,LOC,3225,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
-87,Messlokation,SG5,,,,,,,Soll [166] ∧ [527],"[165] Wenn bekannt  
-[166] Wenn vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden "
-88,Messlokation,SG5,LOC,,,,,,Muss,
-89,Messlokation,SG5,LOC,3227,,Z17,,Messlokation,X,
-90,Messlokation,SG5,LOC,3225,,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-91,Prüfidentifikator,SG6,,,,,,,Muss,
-92,Prüfidentifikator,SG6,RFF,,,,,,Muss,
-93,Prüfidentifikator,SG6,RFF,1153,,Z13,,Prüfidentifikator,X,
-94,Prüfidentifikator,SG6,RFF,1154,,55002,,GPKE / Bestätigung Anmeldung,X,
-95,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
-96,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,,Muss,
-97,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,,TN,,Transaktions- Referenznummer,X,
-98,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,,Vorgangsnummer,X,
-99,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,,Muss,
-100,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,,,,,,Muss [636],[636] Hinweis: Dieses RFF klassifiziert mit einem Code im DE1153 die in derselben Segmentgruppe enthaltenen DTM zu einem Markt- bzw. Messlokation relevanten Inhalt
-101,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1153,,Z18,,Marktlokation,X,
-102,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-103,Turnusablesung des MSB,SG6,DTM,,,,,,Muss [21] ∧ [234],"[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
-[234] Wenn SG10 CCI+++Z83"
-104,Turnusablesung des MSB,SG6,DTM,2005,,752,,Turnusablesung,X,
-105,Turnusablesung des MSB,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-106,Turnusablesung des MSB,SG6,DTM,2379,,104,,MMWW-MMWW,X,
-107,Turnusablesung des MSB,SG6,DTM,2379,,106,,MMDD,X,
-108,Termin der Netznutzungsabrechnung,SG6,DTM,,,,,,Muss,
-109,Termin der Netznutzungsabrechnung,SG6,DTM,2005,,Z21,,Termin der Netznutzungsabrechnun g,X,
-110,Termin der Netznutzungsabrechnung,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-111,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,106,,MMDD,X,
-112,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,104,,MMWW-MMWW,X,
-113,Nächste Netznutzungsabrechnung,SG6,DTM,,,,,,Muss [230],[230] Sich ergebendes Datum/ bzw. Endedatum des Turnuszeitraums aus DTM+Z21 (Termin der Netznutzungsabrechnun g) und DTM+Z09 (Nächste Netznutzungsabrechnun g) muss >= DTM+92 (Beginn zum) sein
-114,Nächste Netznutzungsabrechnung,SG6,DTM,2005,,Z09,,Nächste Netznutzungsabrechnun g,X,
-115,Nächste Netznutzungsabrechnung,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-116,Nächste Netznutzungsabrechnung,SG6,DTM,2379,,602,,CCYY,X,
-117,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,,,,,Muss,
-118,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2005,,Z22,,Netznutzungsabrechnungs- bzw. Einspeisevergütungsintervall des NB,X,
-119,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-120,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2379,,802,,Monat,X,
-121,Referenz auf die Lokationsbündelstruktur,SG6,,,,,,,Muss [309] ∧ [513] ∧ [2061],"[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00  
-[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlerm eldung mit Fehlercode Z39 (Code nicht aus erlaubtem Wertebereich“) abgelehnt werden  
-[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-122,Referenz auf die Lokationsbündelstruktur,SG6,RFF,,,,,,Muss,
-123,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1153,,Z31,,Lokationsbündelstruktur,X,
-124,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1153,,Z39,,Keine standardisierte Lokationsbündelstruktur vorhanden,X,
-125,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1154,,,,ID der Lokationsbündelstruktur,X [335],"[335] Wenn im SG6 RFF ""Referenz auf die Lokationsbündelstruktur "" im DE1153 der Code Z31 ""Lokationsbündelstruktu r"" vorhanden ist"
-126,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,Muss [2354] ∧ [335] ∧ [513],"[335] Wenn im SG6 RFF ""Referenz auf die Lokationsbündelstruktur "" im DE1153 der Code Z31 ""Lokationsbündelstruktu r"" vorhanden ist  
-[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit"
-127,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,,,,,,Muss,
-128,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,1229,,Z58,,Zuordnung Lokation zum Objektcode des Lokationsbündels,X,
-129,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,,,,,,Muss,
-130,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z32,,Netzlokation,X,
-131,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z18,,Marktlokation,X,
-132,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z19,,Messlokation,X,
-133,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z37,,Technische Ressource,X,
-134,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1154,,,,ID einer Lokation,X ([451] ∧ [950]) ⊻ ([452] ∧ [951]) ⊻ ([450] ∧ [960]) ⊻ ([456] ∧ [922]),"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden  
-[451] Wenn in demselben RFF der Code Z18 (Marktlokation) im DE1153 vorhanden  
-[452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden  
-[456] Wenn in demselben RFF der Code Z37 (Technische Ressource) im DE1153 vorhanden  
-[922] Format: TR-ID 
-[950] Format: Marktlokations-ID"
-135,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,,,,,,Muss [2313],[2313] Je SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) genau einmal anzugeben
-136,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,1153,,Z33,,Objektcode der Lokation in der Lokationsbündelstruktur,X,
-137,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,1154,,,,Objekt Code,X,
-138,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,,,,,,Muss [290],[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 der selben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist
-139,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,,Z34,,vorgelagerte Messlokation,X,
-140,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,,Z35,,vorgelagerte Netzlokation,X,
-141,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1154,,,,ID einer Lokation,X ([452] ∧ [951]) ⊻ ([450] ∧ [960]),"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden  
-[452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden  
-[951] Format: Zählpunktbezeichnung  
-[960] Format: Netzlokations-ID"
-142,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,,,,,,Muss [290] ∧ [291],"[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 der selben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist  
-[291] Wenn in derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) das RFF+Z37 vorhanden"
-143,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1153,,Z16,,zugeordnete Marktlokation,X,
-144,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-145,Daten der Netzlokation,SG8,,,,,,,Muss [294] ∧ [2356],"[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden  
-[2356] Je SG5 LOC+Z18 (Netzlokation) ist genau einmal die Segmentgruppe anzugeben"
-146,Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
-147,Daten der Netzlokation,SG8,SEQ,1229,,Z51,,Daten der Netzlokation,X,
-148,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
-149,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
-150,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-151,Steuerkanal,SG10,,,,,,,Muss,
-152,Steuerkanal,SG10,CCI,,,,,,Muss,
-153,Steuerkanal,SG10,CCI,7059,,Z49,,Steuerkanal,X,
-154,Steuerkanal,SG10,CCI,7037,,ZF2,,Kein Steuerkanal vorhanden,X,
-155,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-156,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
-157,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-158,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
-159,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
-160,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-161,OBIS-Daten der Netzlokation,SG8,,,,,,,Soll [166] ∧ [294],"[166] Wenn vorhanden  
-[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden"
-162,OBIS-Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
-163,OBIS-Daten der Netzlokation,SG8,SEQ,1229,,Z57,,OBIS-Daten der Netzlokation,X,
-164,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
-165,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
-166,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-167,OBIS-Kennzahl der Netzlokation,SG8,PIA,,,,,,Muss,
-168,OBIS-Kennzahl der Netzlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
-169,OBIS-Kennzahl der Netzlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Netzlokation,X,
-170,OBIS-Kennzahl der Netzlokation,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
-171,Produkt-Daten für Lieferant relevant,SG10,,,,,,,Muss,
-172,Produkt-Daten für Lieferant relevant,SG10,CCI,,,,,,Muss,
-173,Produkt-Daten für Lieferant relevant,SG10,CCI,7037,,ZA7,,LF,X,
-174,Verwendungszweck der Werte,SG10,CAV,,,,,,Muss,
-175,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [1P1..1],
-176,Verwendungszweck der Werte,SG10,CAV,7111,,ZD1,,Blindarbeitabrechnung / Betriebsführung,X [1P1..1],
-177,Produkt-Daten der Netzlokation,SG8,,,,,,,Soll [166] ∧ [294],"[166] Wenn vorhanden  
-[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden"
-178,Produkt-Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
-179,Produkt-Daten der Netzlokation,SG8,SEQ,1229,,Z60,,Produkt-Daten der Netzlokation,X,
-180,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
-181,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
-182,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID einer Netzlokation,X [960],[960] Format: Netzlokations-ID
-183,Produkt-Daten der Netzlokation,SG8,PIA,,,,,,Muss,
-184,Produkt-Daten der Netzlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
-185,Produkt-Daten der Netzlokation,SG8,PIA,7140,,,,Konfigurationsprodukt-Code,X [412],"[412] Es sind ausschließlich Konfigurationsprodukt- Codes der ""EDI@Energy Codeliste der Konfigurationen"" aus Kapitel 4.2 Konfigurationsprodukte Leistungskurvendefinitio n erlaubt"
-186,Produkt-Daten der Netzlokation,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
-187,Zugeordnete Leistungskurvendefinition,SG10,,,,,,,Muss [190],[190] Wenn in derselben SG8 SEQ+Z60 (Produkt- Daten der Netzlokation)  PIA+5+9991000000721: Z12 vorhanden
-188,Zugeordnete Leistungskurvendefinition,SG10,CCI,,,,,,Muss,
-189,Zugeordnete Leistungskurvendefinition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinitio n,X,
-190,Zugeordnete Leistungskurvendefinition,SG10,CCI,7037,,,,Code der Leistungskurvendefinition,X,
-191,Auftraggebender Marktpartner,SG10,,,,,,,Muss,
-192,Auftraggebender Marktpartner,SG10,CCI,,,,,,Muss,
-193,Auftraggebender Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-194,Auftraggebender Marktpartner,SG10,CAV,,,,,,Muss,
-195,Auftraggebender Marktpartner,SG10,CAV,7111,,Z88,,NB,X,
-196,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
-197,Auftraggebender Marktpartner,SG10,CAV,1131,,,,MP-ID,X,
-198,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
-199,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
-200,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
-201,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden  
-[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-202,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
-203,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
-204,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
-205,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
-206,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-207,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,,Muss [101],[101] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14/ Z36 (TLP/ TEP/ TEP mit Ref.messung) in dieser SG8 vorhanden
-208,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,,,,,Muss,
-209,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,265,,Veranschlagte Jahresmenge Gesamt/ Jahresverbrauchsprogno se für spezifische Arbeit für tagesparameterabhängig e Marktlokation,X,
-210,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeit nach Anhang D der VDN-Richtlinie ""Lastprofile für unterbrechbare Verbrauchseinrichtungen",X,
-211,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
-212,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,Z16,,kWh/K (Kilowatt- Stunde/Kelvin),X [103],
-213,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],"[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in dieser SG8 vorhanden  
-[104] Wenn SG9 QTY+Z08 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: angepasste elektrische Arbeit nach Anhang D) in dieser SG8 vorhanden"
-214,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106],[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
-215,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,,Muss,
-216,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,,31,,Veranschlagte Jahresmenge Gesamt,X,
-217,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
-[937] Format: keine Nachkommastelle"
-218,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
-219,Lieferrichtung,SG10,,,,,,,Muss,
-220,Lieferrichtung,SG10,CCI,,,,,,Muss,
-221,Lieferrichtung,SG10,CCI,7059,,Z30,,Lieferrichtung,X,
-222,Lieferrichtung,SG10,CCI,7037,,Z07,,Verbrauch,X,
-223,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-224,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
-225,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-226,Übertragungsnetzbetreiber,SG10,CAV,,,,,,Muss,
-227,Übertragungsnetzbetreiber,SG10,CAV,7111,,Z90,,ÜNB,X,
-228,Übertragungsnetzbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-229,Messstellenbetreiber,SG10,CAV,,,,,,Muss [232] ⊻ [234],"[232] Wenn SG10 CCI+++Z83 CAV+Z52 (Messtechnische Einordnung der Marktlokation: iMS) vorhanden  
+87,Steuerbare Ressource,SG5,LOC,,,,,,Muss,
+88,Steuerbare Ressource,SG5,LOC,3227,,Z19,,Steuerbare Ressource,X,
+89,Steuerbare Ressource,SG5,LOC,3225,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+90,Messlokation,SG5,,,,,,,Soll [166] ∧ [527],"[165] Wenn bekannt
+[166] Wenn vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[527] Hinweis: Es sind alle Identifikatoren der Messlokationen anzugeben
+[669] Hinweis: Es können mehrere Messlokationen angegeben werden"
+91,Messlokation,SG5,LOC,,,,,,Muss,
+92,Messlokation,SG5,LOC,3227,,Z17,,Messlokation,X,
+93,Messlokation,SG5,LOC,3225,,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+94,Prüfidentifikator,SG6,,,,,,,Muss,
+95,Prüfidentifikator,SG6,RFF,,,,,,Muss,
+96,Prüfidentifikator,SG6,RFF,1153,,Z13,,Prüfidentifikator,X,
+97,Prüfidentifikator,SG6,RFF,1154,,55002,,GPKE / Bestätigung Anmeldung,X,
+98,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
+99,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,,Muss,
+100,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,,TN,,Transaktions- Referenznummer,X,
+101,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,,Vorgangsnummer,X,
+102,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,,Muss,
+103,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,,,,,,Muss [636],[636] Hinweis: Dieses RFF klassifiziert mit einem Code im DE1153 die in derselben Segmentgruppe enthaltenen DTM zu einem Markt- bzw. Messlokation relevanten Inhalt
+104,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1153,,Z18,,Marktlokation,X,
+105,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+106,Turnusablesung des MSB,SG6,DTM,,,,,,Muss [21] ∧ [234],"[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden
 [234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden"
-230,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
-231,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-232,Messstellenbetreiber,SG10,CAV,7110,,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
-233,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-234,Regelzone,SG10,,,,,,,Muss,
-235,Regelzone,SG10,CCI,,,,,,Muss,
-236,Regelzone,SG10,CCI,7059,,Z18,,Regelzone,X,
-237,Regelzone,SG10,CCI,7037,,,,Regelzone,X,
-238,Bilanzkreis,SG10,,,,,,,Muss [2061] ∧ [64],"[64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden  
+107,Turnusablesung des MSB,SG6,DTM,2005,,752,,Turnusablesung,X,
+108,Turnusablesung des MSB,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+109,Turnusablesung des MSB,SG6,DTM,2379,,104,,MMWW-MMWW,X,
+110,Turnusablesung des MSB,SG6,DTM,2379,,106,,MMDD,X,
+111,Termin der Netznutzungsabrechnung,SG6,DTM,,,,,,Muss,
+112,Termin der Netznutzungsabrechnung,SG6,DTM,2005,,Z21,,Termin der Netznutzungsabrechnung,X,
+113,Termin der Netznutzungsabrechnung,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+114,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,106,,MMDD,X,
+115,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,104,,MMWW-MMWW,X,
+116,Nächste Netznutzungsabrechnung,SG6,DTM,,,,,,Muss [230],[230] Sich ergebendes Datum/ bzw. Endedatum des Turnuszeitraums aus DTM+Z21 (Termin der Netznutzungsabrechnun g) und DTM+Z09 (Nächste Netznutzungsabrechnun g) muss >= DTM+92 (Beginn zum) sein
+117,Nächste Netznutzungsabrechnung,SG6,DTM,2005,,Z09,,Nächste Netznutzungsabrechnung,X,
+118,Nächste Netznutzungsabrechnung,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+119,Nächste Netznutzungsabrechnung,SG6,DTM,2379,,602,,CCYY,X,
+120,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,,,,,Muss,
+121,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2005,,Z22,,Netznutzungsabrechnungs- bzw. Einspeisevergütungsintervall des NB,X,
+122,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+123,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2379,,802,,Monat,X,
+124,Referenz auf die Lokationsbündelstruktur,SG6,,,,,,,Muss [309] ∧ [513] ∧ [2061],"[309] Wenn DTM+137 (Nachrichtendatum) im DE2380 ≥ 202409302200?+00
+[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlerm eldung mit Fehlercode Z39 (Code nicht aus erlaubtem Wertebereich“) abgelehnt werden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-239,Bilanzkreis,SG10,CCI,,,,,,Muss,
-240,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
-241,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
-242,Bilanzierungsgebiet,SG10,,,,,,,Muss ,
-243,Bilanzierungsgebiet,SG10,CCI,,,,,,Muss,
-244,Bilanzierungsgebiet,SG10,CCI,7059,,Z20,,Bilanzierungsgebiet,X,
-245,Bilanzierungsgebiet,SG10,CCI,7037,,,,Bilanzierungsgebiet,X,
-246,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,,,,,,,Muss [89] ∧,[89] Wenn im SG8
-247,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,,,,,,Muss,
-248,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,7037,,E17,,Verbrauchsaufteilung (in %) für temperaturabhängige Marktlokation,X,
-249,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,,,,,,Muss,
-250,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7111,,Z22,,Verbrauchsaufteilung in %,X,
-251,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7110,,,,Verbrauchsaufteilung in %,X [902],[902] Format: Möglicher Wert: ≥ 0
-252,Zeitreihentyp,SG10,,,,,,,Muss [2061] ⊻ ([90] ∧ [2096]),"[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden  
-[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben  
+125,Referenz auf die Lokationsbündelstruktur,SG6,RFF,,,,,,Muss,
+126,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1153,,Z31,,Lokationsbündelstruktur,X,
+127,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1153,,Z39,,Keine standardisierte Lokationsbündelstruktur vorhanden,X,
+128,Referenz auf die Lokationsbündelstruktur,SG6,RFF,1154,,,,ID der Lokationsbündelstruktur,X [335],"[335] Wenn im SG6 RFF ""Referenz auf die Lokationsbündelstruktur "" im DE1153 der Code Z31 ""Lokationsbündelstruktu r"" vorhanden ist"
+129,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,Muss [2354] ∧ [335] ∧ [513],"[335] Wenn im SG6 RFF ""Referenz auf die Lokationsbündelstruktur "" im DE1153 der Code Z31 ""Lokationsbündelstruktu r"" vorhanden ist
+[513] Hinweis: Bei Anwendung dieser Segmentgruppe vor dem 01.10.2024 sind die Codes in diesem Segment noch nicht gültig. Somit wird der Geschäftsvorfall mit einer Verarbeitbarkeitsfehlerm eldung mit Fehlercode Z39 (Code nicht aus erlaubtem Wertebereich“) abgelehnt werden
+[2354] Für jede ID im SG5 LOC+Z16 / Z17 / Z18 / Z20 (Marktlokation / Messlokation / Netzlokation / Technische Ressource) DE3225 genau einmal anzugeben"
+130,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,,,,,,Muss,
+131,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,SEQ,1229,,Z58,,Zuordnung Lokation zum Objektcode des Lokationsbündels,X,
+132,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,,,,,,Muss,
+133,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z32,,Netzlokation,X,
+134,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z18,,Marktlokation,X,
+135,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z19,,Messlokation,X,
+136,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1153,,Z37,,Technische Ressource,X,
+137,Referenz auf die ID der Netzlokation / Marktlokation / Messlokation / Technischen Ressource,SG8,RFF,1154,,,,ID einer Lokation,X ([451] ∧ [950]) ⊻ ([452] ∧ [951]) ⊻ ([450] ∧ [960]) ⊻ ([456] ∧ [922]),"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden
+[451] Wenn in demselben RFF der Code Z18 (Marktlokation) im DE1153 vorhanden
+[452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden
+[456] Wenn in demselben RFF der Code Z37 (Technische Ressource) im DE1153 vorhanden
+[922] Format: TR-ID
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
+[960] Format: Netzlokations-ID"
+138,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,,,,,,Muss [2313],[2313] Je SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) genau einmal anzugeben
+139,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,1153,,Z33,,Objektcode der Lokation in der Lokationsbündelstruktur,X,
+140,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,1154,,,,Objekt Code,X,
+141,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,,,,,,Muss [290],[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 der selben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist
+142,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,,Z34,,vorgelagerte Messlokation,X,
+143,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,,Z35,,vorgelagerte Netzlokation,X,
+144,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1154,,,,ID einer Lokation,X ([452] ∧ [951]) ⊻ ([450] ∧ [960]),"[450] Wenn in demselben RFF der Code Z32 (Netzlokation) im DE1153 vorhanden
+[452] Wenn in demselben RFF der Code Z19 (Messlokation) im DE1153 vorhanden
+[951] Format: Zählpunktbezeichnung
+[960] Format: Netzlokations-ID"
+145,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,,,,,,Muss [290] ∧ [291],"[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstruktur) im DE1154 der selben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist
+[291] Wenn in derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) das RFF+Z37 vorhanden"
+146,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1153,,Z16,,zugeordnete Marktlokation,X,
+147,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+148,Daten der Netzlokation,SG8,,,,,,,Muss [294] ∧ [2356],"[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden
+[2356] Je SG5 LOC+Z18 (Netzlokation) ist genau einmal die Segmentgruppe anzugeben"
+149,Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
+150,Daten der Netzlokation,SG8,SEQ,1229,,Z51,,Daten der Netzlokation,X,
+151,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
+152,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
+153,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+154,Steuerkanal,SG10,,,,,,,Muss,
+155,Steuerkanal,SG10,CCI,,,,,,Muss,
+156,Steuerkanal,SG10,CCI,7059,,Z49,,Steuerkanal,X,
+157,Steuerkanal,SG10,CCI,7037,,ZF2,,Kein Steuerkanal vorhanden,X,
+158,Steuerkanal,SG10,CCI,7037,,ZF3,,Steuerkanal vorhanden,X,
+159,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+160,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
+161,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+162,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
+163,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
+164,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+165,OBIS-Daten der Netzlokation,SG8,,,,,,,Soll [166] ∧ [294],"[166] Wenn vorhanden
+[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden"
+166,OBIS-Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
+167,OBIS-Daten der Netzlokation,SG8,SEQ,1229,,Z57,,OBIS-Daten der Netzlokation,X,
+168,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
+169,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
+170,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+171,OBIS-Kennzahl der Netzlokation,SG8,PIA,,,,,,Muss,
+172,OBIS-Kennzahl der Netzlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
+173,OBIS-Kennzahl der Netzlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Netzlokation,X,
+174,OBIS-Kennzahl der Netzlokation,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
+175,Produkt-Daten für Lieferant relevant,SG10,,,,,,,Muss,
+176,Produkt-Daten für Lieferant relevant,SG10,CCI,,,,,,Muss,
+177,Produkt-Daten für Lieferant relevant,SG10,CCI,7037,,ZA7,,LF,X,
+178,Verwendungszweck der Werte,SG10,CAV,,,,,,Muss,
+179,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [1P1..1],
+180,Verwendungszweck der Werte,SG10,CAV,7111,,ZD1,,Blindarbeitabrechnung / Betriebsführung,X [1P1..1],
+181,Produkt-Daten der Netzlokation,SG8,,,,,,,Soll [166] ∧ [294],"[166] Wenn vorhanden
+[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden"
+182,Produkt-Daten der Netzlokation,SG8,SEQ,,,,,,Muss,
+183,Produkt-Daten der Netzlokation,SG8,SEQ,1229,,Z60,,Produkt-Daten der Netzlokation,X,
+184,Referenz auf die ID der Netzlokation,SG8,RFF,,,,,,Muss,
+185,Referenz auf die ID der Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
+186,Referenz auf die ID der Netzlokation,SG8,RFF,1154,,,,ID einer Netzlokation,X [960],[960] Format: Netzlokations-ID
+187,Produkt-Daten der Netzlokation,SG8,PIA,,,,,,Muss,
+188,Produkt-Daten der Netzlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
+189,Produkt-Daten der Netzlokation,SG8,PIA,7140,,,,Konfigurationsprodukt-Code,X [412],"[412] Es sind ausschließlich Konfigurationsprodukt- Codes der ""EDI@Energy Codeliste der Konfigurationen"" aus Kapitel 4.2 Konfigurationsprodukte Leistungskurvendefinitio n erlaubt"
+190,Produkt-Daten der Netzlokation,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
+191,Zugeordnete Leistungskurvendefinition,SG10,,,,,,,Muss [190],[190] Wenn in derselben SG8 SEQ+Z60 (Produkt- Daten der Netzlokation)  PIA+5+9991000000721: Z12 vorhanden
+192,Zugeordnete Leistungskurvendefinition,SG10,CCI,,,,,,Muss,
+193,Zugeordnete Leistungskurvendefinition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinition,X,
+194,Zugeordnete Leistungskurvendefinition,SG10,CCI,7037,,,,Code der Leistungskurvendefinition,X,
+195,Auftraggebender Marktpartner,SG10,,,,,,,Muss,
+196,Auftraggebender Marktpartner,SG10,CCI,,,,,,Muss,
+197,Auftraggebender Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+198,Auftraggebender Marktpartner,SG10,CAV,,,,,,Muss,
+199,Auftraggebender Marktpartner,SG10,CAV,7111,,Z88,,NB,X,
+200,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
+201,Auftraggebender Marktpartner,SG10,CAV,1131,,,,MP-ID,X,
+202,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
+203,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
+204,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
+205,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+206,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
+207,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
+208,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
+209,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
+210,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+211,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,,Muss [101],[101] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14/ Z36 (TLP/ TEP/ TEP mit Ref.messung) in dieser SG8 vorhanden
+212,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,,,,,Muss,
+213,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,265,,Veranschlagte Jahresmenge Gesamt/ Jahresverbrauchsprogno se für spezifische Arbeit für tagesparameterabhängig e Marktlokation,X,
+214,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeit nach Anhang D der VDN-Richtlinie ""Lastprofile für unterbrechbare Verbrauchseinrichtungen """,X,
+215,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
+216,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,Z16,,kWh/K (Kilowatt- Stunde/Kelvin),X [103],
+217,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],"[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in dieser SG8 vorhanden
+[104] Wenn SG9 QTY+Z08 (Arbeit / Leistung für tagesparameterabhängig e Marktlokation: angepasste elektrische Arbeit nach Anhang D) in dieser SG8 vorhanden"
+218,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106],[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
+219,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,,Muss,
+220,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,,31,,Veranschlagte Jahresmenge Gesamt,X,
+221,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
+[937] Format: keine Nachkommastelle"
+222,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
+223,Lieferrichtung,SG10,,,,,,,Muss,
+224,Lieferrichtung,SG10,CCI,,,,,,Muss,
+225,Lieferrichtung,SG10,CCI,7059,,Z30,,Lieferrichtung,X,
+226,Lieferrichtung,SG10,CCI,7037,,Z07,,Verbrauch,X,
+227,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+228,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
+229,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+230,Übertragungsnetzbetreiber,SG10,CAV,,,,,,Muss,
+231,Übertragungsnetzbetreiber,SG10,CAV,7111,,Z90,,ÜNB,X,
+232,Übertragungsnetzbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+233,Messstellenbetreiber,SG10,CAV,,,,,,Muss [232] ⊻ [234],"[232] Wenn SG10 CCI+++Z83 CAV+Z52 (Messtechnische Einordnung der Marktlokation: iMS) vorhanden
+[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden"
+234,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
+235,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+236,Messstellenbetreiber,SG10,CAV,7110,,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+237,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+238,Regelzone,SG10,,,,,,,Muss,
+239,Regelzone,SG10,CCI,,,,,,Muss,
+240,Regelzone,SG10,CCI,7059,,Z18,,Regelzone,X,
+241,Regelzone,SG10,CCI,7037,,,,Regelzone,X,
+242,Bilanzkreis,SG10,,,,,,,Muss [2061] ∧ [64],"[64] Wenn SG4 DTM+158 (Bilanzierungsbeginn) vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+243,Bilanzkreis,SG10,CCI,,,,,,Muss,
+244,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
+245,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
+246,Bilanzierungsgebiet,SG10,,,,,,,Muss ,
+247,Bilanzierungsgebiet,SG10,CCI,,,,,,Muss,
+248,Bilanzierungsgebiet,SG10,CCI,7059,,Z20,,Bilanzierungsgebiet,X,
+249,Bilanzierungsgebiet,SG10,CCI,7037,,,,Bilanzierungsgebiet,X,
+250,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,,,,,,,Muss [89] ∧ [106],"[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden
+[106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden"
+251,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,,,,,,Muss,
+252,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,7037,,E17,,Verbrauchsaufteilung (in %) für temperaturabhängige Marktlokation,X,
+253,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,,,,,,Muss,
+254,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7111,,Z22,,Verbrauchsaufteilung in%,X,
+255,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7110,,,,Verbrauchsaufteilung in %,X [902],[902] Format: Möglicher Wert: ≥ 0
+256,Zeitreihentyp,SG10,,,,,,,Muss [2061] ⊻ ([90] ∧ [2096]),"[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 [2096] Segmentgruppe ist genau zweimal je SG4 IDE anzugeben"
-253,Zeitreihentyp,SG10,CCI,,,,,,Muss,
-254,Zeitreihentyp,SG10,CCI,7059,,15,,Struktur,X,
-255,Zeitreihentyp,SG10,CCI,7037,,Z21,,Summenzeitreihentyp,X,
-256,Zeitreihentyp,SG10,CAV,,,,,,Muss,
-257,Zeitreihentyp,SG10,CAV,7111,,,,Code des Zeitreihentyps,X,
-258,Spannungsebene der Marktlokation,SG10,,,,,,,Muss,
-259,Spannungsebene der Marktlokation,SG10,CCI,,,,,,Muss,
-260,Spannungsebene der Marktlokation,SG10,CCI,7037,,E03,,Spannungsebene der Marktlokation,X,
-261,Spannungsebene der Marktlokation,SG10,CAV,,,,,,Muss,
-262,Spannungsebene der Marktlokation,SG10,CAV,7111,,E03,,Höchstspannung,X,
-263,Spannungsebene der Marktlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
-264,Spannungsebene der Marktlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
-265,Spannungsebene der Marktlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
-266,Umspannung der Marktlokation,SG10,CAV,,,,,,Soll [166],[166] Wenn vorhanden
-267,Umspannung der Marktlokation,SG10,CAV,7111,,E07,,Hös/HS Umspannung,X [116],
-268,Umspannung der Marktlokation,SG10,CAV,7111,,E08,,HS/MS Umspannung,X [115],
-269,Umspannung der Marktlokation,SG10,CAV,7111,,E09,,MS/NS Umspannung,X [114],"[114] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E06 (Niederspannung) in dieser SG vorhanden  
-[115] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E05 (Mittelspannung) in dieser SG vorhanden  
+257,Zeitreihentyp,SG10,CCI,,,,,,Muss,
+258,Zeitreihentyp,SG10,CCI,7059,,15,,Struktur,X,
+259,Zeitreihentyp,SG10,CCI,7037,,Z21,,Summenzeitreihentyp,X,
+260,Zeitreihentyp,SG10,CAV,,,,,,Muss,
+261,Zeitreihentyp,SG10,CAV,7111,,,,Code des Zeitreihentyps,X,
+262,Spannungsebene der Marktlokation,SG10,,,,,,,Muss,
+263,Spannungsebene der Marktlokation,SG10,CCI,,,,,,Muss,
+264,Spannungsebene der Marktlokation,SG10,CCI,7037,,E03,,Spannungsebene der Marktlokation,X,
+265,Spannungsebene der Marktlokation,SG10,CAV,,,,,,Muss,
+266,Spannungsebene der Marktlokation,SG10,CAV,7111,,E03,,Höchstspannung,X,
+267,Spannungsebene der Marktlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
+268,Spannungsebene der Marktlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
+269,Spannungsebene der Marktlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
+270,Umspannung der Marktlokation,SG10,CAV,,,,,,Soll [166],[166] Wenn vorhanden
+271,Umspannung der Marktlokation,SG10,CAV,7111,,E07,,Hös/HS Umspannung,X [116],
+272,Umspannung der Marktlokation,SG10,CAV,7111,,E08,,HS/MS Umspannung,X [115],
+273,Umspannung der Marktlokation,SG10,CAV,7111,,E09,,MS/NS Umspannung,X [114],"[114] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E06 (Niederspannung) in dieser SG vorhanden
+[115] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E05 (Mittelspannung) in dieser SG vorhanden
 [116] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E04 (Hochspannung) in dieser SG vorhanden"
-270,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,Muss,
-271,Messtechnische Einordnung der Marktlokation,SG10,CCI,,,,,,Muss,
-272,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,,Z83,,Messtechnische Einordnung der Marktlokation,X,
-273,Messtechnische Einordnung der Marktlokation,SG10,CAV,,,,,,Muss,
-274,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z52,,iMS,X,
-275,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
-276,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z68,,keine Messung,X,
-277,Aggregationsverantwortung in MaBiS,SG10,,,,,,,Muss,
-278,Aggregationsverantwortung in MaBiS,SG10,CCI,,,,,,Muss,
-279,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,,6,,Verantwortlicher,X,
-280,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA8,,NB,X,
-281,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA9,,ÜNB,X,
-282,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
-283,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,,Muss,
-284,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZC0,,Prognose auf Basis von Werten,X,
-285,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis von Profilen,X,
-286,Details der Prognosegrundlage,SG10,CAV,,,,,,Muss [21] ∧ ([2182] ⊻ ([90] ∧ [2183])),"[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
-[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden  
-[2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben  
+274,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,Muss,
+275,Messtechnische Einordnung der Marktlokation,SG10,CCI,,,,,,Muss,
+276,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,,Z83,,Messtechnische Einordnung der Marktlokation,X,
+277,Messtechnische Einordnung der Marktlokation,SG10,CAV,,,,,,Muss,
+278,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z52,,iMS,X,
+279,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
+280,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z68,,keine Messung,X,
+281,Aggregationsverantwortung in MaBiS,SG10,,,,,,,Muss,
+282,Aggregationsverantwortung in MaBiS,SG10,CCI,,,,,,Muss,
+283,Aggregationsverantwortung in MaBiS,SG10,CCI,7059,,6,,Verantwortlicher,X,
+284,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA8,,NB,X,
+285,Aggregationsverantwortung in MaBiS,SG10,CCI,7037,,ZA9,,ÜNB,X,
+286,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,
+287,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,,Muss,
+288,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZC0,,Prognose auf Basis von Werten,X,
+289,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis von Profilen,X,
+290,Details der Prognosegrundlage,SG10,CAV,,,,,,Muss [21] ∧ ([2182] ⊻ ([90] ∧ [2183])),"[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden
+[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden
+[2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben
 [2183] Segmentgruppe ist genau zweimal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben"
-287,Details der Prognosegrundlage,SG10,CAV,7111,,E02,,SLP/SEP,X [6P0..1] ⊻ [7P1..1],
-288,Details der Prognosegrundlage,SG10,CAV,7111,,E14,,TLP/TEP,X [6P0..1],
-289,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss [244],[244] Wenn SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) in dieser SG8 vorhanden
-290,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,,,,,,Muss,
-291,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,7037,,Z84,,Wahlrecht der Prognosegrundlage,X,
-292,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,,,,,Muss,
-293,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,Z54,,Wahlrecht durch LF gegeben,X,
-294,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE2,,Wahlrecht durch LF nicht gegeben,X,
-295,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,,,,,Muss [247],[247] Wenn CAV+ZE2 (Wahlrecht durch LF nicht gegeben) vorhanden
-296,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,Z55,,Wahlrecht nicht vorhanden wegen Verbrauch > 10.000 kWh/a,X [1P0..1],
-297,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZC1,,Wahlrecht nicht vorhanden wegen Eigenverbrauch,X [1P0..1],
-298,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZD2,,Wahlrecht nicht vorhanden wegen tagesparameterabhängig em Verbrauch,X [1P0..1],
-299,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE3,,Wahlrecht nicht vorhanden wegen § 14a EnWG,X [1P0..1],
-300,Gruppenzuordnung (nach EnWG) ,SG10,,,,,,,Muss,
-301,Gruppenzuordnung (nach EnWG) ,SG10,CCI,,,,,,Muss,
-302,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z15,,Haushaltskunde gem. EnWG,X,
-303,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z18,,Kein Haushaltskunde gem. EnWG,X,
-304,Netznutzung,SG10,,,,,,,Muss,
-305,Netznutzung,SG10,CCI,,,,,,Muss,
-306,Netznutzung,SG10,CCI,7037,,Z88,,Netznutzung,X,
-307,Netznutzungsvertrag,SG10,CAV,,,,,,Muss,
-308,Netznutzungsvertrag,SG10,CAV,7111,,Z74,,Netznutzungsvertrag,X,
-309,Netznutzungsvertrag,SG10,CAV,7110,,Z08,,Direkter Vertrag zwischen Kunden und NB,X,
-310,Netznutzungsvertrag,SG10,CAV,7110,,Z09,,Vertrag zwischen Lieferanten und NB,X,
-311,Zahlung der Netznutzung,SG10,CAV,,,,,,Muss,
-312,Zahlung der Netznutzung,SG10,CAV,7111,,Z73,,Zahlung der Netznutzung,X,
-313,Zahlung der Netznutzung,SG10,CAV,7110,,Z10,,Kunde,X [216],
-314,Zahlung der Netznutzung,SG10,CAV,7110,,Z11,,Lieferant,X,[216] Wenn CCI+++Z88 (Netznutzung) CAV+Z74:::Z08 (Netznutzungsvertrag: Direkter Vertrag zwischen Kunden und NB) vorhanden
-315,Netznutzungsabrechnungsv ariante,SG10,CAV,,,,,,Muss,
-316,Netznutzungsabrechnungsv ariante,SG10,CAV,7111,,ZB1,,Netznutzungsabrechnun gsvariante,X,
-317,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,,Z14,,Arbeitspreis/Grundpreis,X,
-318,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,,Z15,,Arbeitspreis/ Leistungspreis,X,
-319,Grundlage der Lieferscheinprüfung,SG10,CAV,,,,,,Muss,
-320,Grundlage der Lieferscheinprüfung,SG10,CAV,7111,,ZA7,,Grundlage für Lieferscheinprüfung,X,
-321,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z12,,In der Marktkommunikation ausgetauschte Daten,X,
-322,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z13,,Abweichend vertraglich mit Anschlussnutzer vereinbarte Grundlage,X,
-323,Abwicklungsmodell,SG10,,,,,,,Muss,
-324,Abwicklungsmodell,SG10,CCI,,,,,,Muss,
-325,Abwicklungsmodell,SG10,CCI,7059,,ZA2,,Abwicklungsmodell,X,
-326,Abwicklungsmodell,SG10,CCI,7037,,ZE9,,"Modell 1 ""Bilanzierung an der Marktlokation""",X,
-327,Netznutzungsabrechnungsd aten der Marktlokation,SG8,,,,,,,Muss [225],[225] Wenn CCI+++Z88 (Netznutzung) CAV+Z73:::Z11 (Zahlung der Netznutzung: Lieferant) vorhanden
-328,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,,,,,,Muss,
-329,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z45,,Netznutzungsabrechnun gsdaten der Marktlokation,X,
-330,Gruppenartikel-ID / Artikel- ID,SG8,PIA,,,,,,Muss,
-331,Gruppenartikel-ID / Artikel- ID,SG8,PIA,4347,,Z02,,Gruppenartikel-ID / Artikel-ID,X,
-332,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7140,,,,Produkt-/Leistungsnummer,X ([942] ([270] ⊻ [282]) ∧ [284]) ⊻  ([943] ([259] ⊻ [261]) ∧ [284]) ⊻ ([957] [285] ∧ [287]) ⊻ ([948] [286] ∧ [287]) ,"[259] Wenn in diesem PIA der Code im DE7140 mit 1-01, 1-03, 1-05 enthalten ist  
-[261] Wenn in diesem PIA der Code im DE7140 mit 1-07-1/2, 1-10-1/2/ 4/5/6/7/8/9, 1-11-1 beginnt  
-[270] Wenn in diesem PIA der Code im DE7140 mit 1-02, 1-04, 1-06, 1- 09 beginnt  
-[282] Wenn in diesem PIA der Code im DE7140 1-01-6-005, 1-01-9-001, 1-07-3-001, 1-08-1-001, 1-08-3-001, 1-08-4- 001/002/003/004, 1- 10-3-001 enthalten ist  
-[284] Erlaubte Codes aus der Codeliste der Gruppenartikel- und Artikel-ID sind in der Spalte UTILMD/ Codeverwendung mit X gekennzeichnet  
-[285] Wenn in diesem PIA der Code im DE7140 mit 1-08-3-AGS angegeben ist  
-[286] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/2/4/5-AGS- KG  
-[287] Erlaubte Codes aus der PRICAT BGM+ Z70 (Preisblatt Netznutzung) des verantwortlichen NB"
-333,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z09,,Artikel-ID,X [393] ⊻ ([394] ∧ [397]) ⊻ [395],
-334,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z10,,Gruppenartikel-ID,X [392] ⊻ ([394] ∧ [398]),"[392] Wenn in diesem PIA der Code im Format n1-n2-n1 angegeben ist  
-[393] Wenn in diesem PIA der Code im Format n1-n2-n1-n3 angegeben ist  
-[394] Wenn in diesem PIA der Code im Format n1-n2-n1-n8-n2 angegeben ist  
-[395] Wenn in diesem PIA der Code im Format n1-n2-n1-n8 angegeben ist  
-[397] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/1-08-4 beginnt  
+291,Details der Prognosegrundlage,SG10,CAV,7111,,E02,,SLP/SEP,X [6P0..1] ⊻ [7P1..1],
+292,Details der Prognosegrundlage,SG10,CAV,7111,,E14,,TLP/TEP,X [6P0..1],
+293,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss [244],[244] Wenn SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) in dieser SG8 vorhanden
+294,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,,,,,,Muss,
+295,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,7037,,Z84,,Wahlrecht der Prognosegrundlage,X,
+296,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,,,,,Muss,
+297,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,Z54,,Wahlrecht durch LF gegeben,X,
+298,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE2,,Wahlrecht durch LF nicht gegeben,X,
+299,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,,,,,Muss [247],[247] Wenn CAV+ZE2 (Wahlrecht durch LF nicht gegeben) vorhanden
+300,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,Z55,,Wahlrecht nicht vorhanden wegen Verbrauch > 10.000 kWh/a,X [1P0..1],
+301,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZC1,,Wahlrecht nicht vorhanden wegen Eigenverbrauch,X [1P0..1],
+302,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZD2,,Wahlrecht nicht vorhanden wegen tagesparameterabhängig em Verbrauch,X [1P0..1],
+303,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE3,,Wahlrecht nicht vorhanden wegen § 14a EnWG,X [1P0..1],
+304,Gruppenzuordnung (nach EnWG) ,SG10,,,,,,,Muss,
+305,Gruppenzuordnung (nach EnWG) ,SG10,CCI,,,,,,Muss,
+306,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z15,,Haushaltskunde gem. EnWG,X,
+307,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z18,,Kein Haushaltskunde gem. EnWG,X,
+308,Netznutzung,SG10,,,,,,,Muss,
+309,Netznutzung,SG10,CCI,,,,,,Muss,
+310,Netznutzung,SG10,CCI,7037,,Z88,,Netznutzung,X,
+311,Netznutzungsvertrag,SG10,CAV,,,,,,Muss,
+312,Netznutzungsvertrag,SG10,CAV,7111,,Z74,,Netznutzungsvertrag,X,
+313,Netznutzungsvertrag,SG10,CAV,7110,,Z08,,Direkter Vertrag zwischen Kunden und NB,X,
+314,Netznutzungsvertrag,SG10,CAV,7110,,Z09,,Vertrag zwischen Lieferanten und NB,X,
+315,Zahlung der Netznutzung,SG10,CAV,,,,,,Muss,
+316,Zahlung der Netznutzung,SG10,CAV,7111,,Z73,,Zahlung der Netznutzung,X,
+317,Zahlung der Netznutzung,SG10,CAV,7110,,Z10,,Kunde,X [216],
+318,Zahlung der Netznutzung,SG10,CAV,7110,,Z11,,Lieferant,X,[216] Wenn CCI+++Z88 (Netznutzung) CAV+Z74:::Z08 (Netznutzungsvertrag: Direkter Vertrag zwischen Kunden und NB) vorhanden
+319,Netznutzungsabrechnungsv ariante,SG10,CAV,,,,,,Muss,
+320,Netznutzungsabrechnungsv ariante,SG10,CAV,7111,,ZB1,,Netznutzungsabrechnun gsvariante,X,
+321,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,,Z14,,Arbeitspreis/Grundpreis,X,
+322,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,,Z15,,Arbeitspreis/ Leistungspreis,X,
+323,Grundlage der Lieferscheinprüfung,SG10,CAV,,,,,,Muss,
+324,Grundlage der Lieferscheinprüfung,SG10,CAV,7111,,ZA7,,Grundlage für Lieferscheinprüfung,X,
+325,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z12,,In der Marktkommunikation ausgetauschte Daten,X,
+326,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z13,,Abweichend vertraglich mit Anschlussnutzer vereinbarte Grundlage,X,
+327,Abwicklungsmodell,SG10,,,,,,,Muss,
+328,Abwicklungsmodell,SG10,CCI,,,,,,Muss,
+329,Abwicklungsmodell,SG10,CCI,7059,,ZA2,,Abwicklungsmodell,X,
+330,Abwicklungsmodell,SG10,CCI,7037,,ZE9,,"Modell 1 ""Bilanzierung an der Marktlokation""",X,
+331,Netznutzungsabrechnungsd aten der Marktlokation,SG8,,,,,,,Muss [225],[225] Wenn CCI+++Z88 (Netznutzung) CAV+Z73:::Z11 (Zahlung der Netznutzung: Lieferant) vorhanden
+332,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,,,,,,Muss,
+333,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z45,,Netznutzungsabrechnun gsdaten der Marktlokation,X,
+334,Gruppenartikel-ID / Artikel- ID,SG8,PIA,,,,,,Muss,
+335,Gruppenartikel-ID / Artikel- ID,SG8,PIA,4347,,Z02,,Gruppenartikel-ID / Artikel-ID,X,
+336,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7140,,,,Produkt-/Leistungsnummer,X ([942] ([270] ⊻ [282]) ∧ [284]) ⊻  ([943] ([259] ⊻ [261]) ∧ [284]) ⊻ ([957] [285] ∧ [287]) ⊻ ([948] [286] ∧ [287]) ,"[259] Wenn in diesem PIA der Code im DE7140 mit 1-01, 1-03, 1-05 enthalten ist
+[261] Wenn in diesem PIA der Code im DE7140 mit 1-07-1/2, 1-10-1/2/ 4/5/6/7/8/9, 1-11-1 beginnt
+[270] Wenn in diesem PIA der Code im DE7140 mit 1-02, 1-04, 1-06, 1- 09 beginnt
+[282] Wenn in diesem PIA der Code im DE7140 1-01-6-005, 1-01-9-001, 1-07-3-001, 1-08-1-001, 1-08-3-001, 1-08-4- 001/002/003/004, 1- 10-3-001 enthalten ist
+[284] Erlaubte Codes aus der Codeliste der Gruppenartikel- und Artikel-ID sind in der Spalte UTILMD/ Codeverwendung mit X gekennzeichnet
+[285] Wenn in diesem PIA der Code im DE7140 mit 1-08-3-AGS angegeben ist
+[286] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/2/4/5-AGS- KG
+[287] Erlaubte Codes aus der PRICAT BGM+ Z70 (Preisblatt Netznutzung) des verantwortlichen NB
+[942] Format: n1-n2- n1-n3
+[943] Format: n1-n2-n1
+[948] Format: n1-n2- n1-n8-n2
+[957] Format: n1-n2- n1-n8"
+337,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z09,,Artikel-ID,X [393] ⊻ ([394] ∧ [397]) ⊻ [395],
+338,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z10,,Gruppenartikel-ID,X [392] ⊻ ([394] ∧ [398]),"[392] Wenn in diesem PIA der Code im Format n1-n2-n1 angegeben ist
+[393] Wenn in diesem PIA der Code im Format n1-n2-n1-n3 angegeben ist
+[394] Wenn in diesem PIA der Code im Format n1-n2-n1-n8-n2 angegeben ist
+[395] Wenn in diesem PIA der Code im Format n1-n2-n1-n8 angegeben ist
+[397] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/1-08-4 beginnt
 [398] Wenn in diesem PIA der Code im DE7140 mit 1-08-2/1-08-5 beginnt"
-335,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,,,,,,,Muss [237],[237] Wenn in der selben SG8 im DE7140 des PIA+Z02 (Gruppenartikel-ID / Artikel-ID) eine Gruppenartikel-ID / Artikel-ID mit 1-06 (entspricht Entgelte des Messstellenbetriebs bei kME) beginnt
-336,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,,,,,,Muss,
-337,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6063,,Z38,,Anzahl der abzurechenden,X,
-338,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6060,,,,Menge,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0  
+339,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,,,,,,,Muss [237],[237] Wenn in der selben SG8 im DE7140 des PIA+Z02 (Gruppenartikel-ID / Artikel-ID) eine Gruppenartikel-ID / Artikel-ID mit 1-06 (entspricht Entgelte des Messstellenbetriebs bei kME) beginnt
+340,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,,,,,,Muss,
+341,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6063,,Z38,,Anzahl der abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,X,
+342,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6060,,,,Menge,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-339,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6411,,PCS,,Stück,X,
-340,Gemeinderabatt,SG9,,,,,,,Muss,
-341,Gemeinderabatt,SG9,QTY,,,,,,Muss,
-342,Gemeinderabatt,SG9,QTY,6063,,Z16,,Gemeinderabatt,X,
-343,Gemeinderabatt,SG9,QTY,6060,,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0  
-[930] Format: max. 2 Nachkommastellen  
+343,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6411,,PCS,,Stück,X,
+344,Gemeinderabatt,SG9,,,,,,,Muss,
+345,Gemeinderabatt,SG9,QTY,,,,,,Muss,
+346,Gemeinderabatt,SG9,QTY,6063,,Z16,,Gemeinderabatt,X,
+347,Gemeinderabatt,SG9,QTY,6060,,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0
+[930] Format: max. 2 Nachkommastellen
 [938] Format: Möglicher Wert: <= 10"
-344,Gemeinderabatt,SG9,QTY,6411,,P1,,Prozent,X,
-345,Zuschlag oder Abschlag,SG9,,,,,,,Muss,
-346,Zuschlag oder Abschlag,SG9,QTY,,,,,,Muss,
-347,Zuschlag oder Abschlag,SG9,QTY,6063,,Z34,,Zuschlag,X,
-348,Zuschlag oder Abschlag,SG9,QTY,6063,,Z35,,Abschlag,X,
-349,Zuschlag oder Abschlag,SG9,QTY,6063,,Z37,,Kein Zu-/Abschlag,X,
-350,Zuschlag oder Abschlag,SG9,QTY,6060,,,,Menge,X ([914] ∧ [930] [140]) ⊻ ([926] ∧ [937] [172]),"[140] Wenn im selben QTY im DE6063 Z34/Z35 (Zuschlag/Abschlag) vorhanden  
-[172] Wenn im selben QTY im DE6063 Z37 (Kein Zu- und Abschlag) vorhanden  
-[914] Format: Möglicher Wert: > 0  
-[926] Format: Möglicher Wert: 0  
-[930] Format: max. 2 Nachkommastellen  
+348,Gemeinderabatt,SG9,QTY,6411,,P1,,Prozent,X,
+349,Zuschlag oder Abschlag,SG9,,,,,,,Muss,
+350,Zuschlag oder Abschlag,SG9,QTY,,,,,,Muss,
+351,Zuschlag oder Abschlag,SG9,QTY,6063,,Z34,,Zuschlag,X,
+352,Zuschlag oder Abschlag,SG9,QTY,6063,,Z35,,Abschlag,X,
+353,Zuschlag oder Abschlag,SG9,QTY,6063,,Z37,,Kein Zu-/Abschlag,X,
+354,Zuschlag oder Abschlag,SG9,QTY,6060,,,,Menge,X ([914] ∧ [930] [140]) ⊻ ([926] ∧ [937] [172]),"[140] Wenn im selben QTY im DE6063 Z34/Z35 (Zuschlag/Abschlag) vorhanden
+[172] Wenn im selben QTY im DE6063 Z37 (Kein Zu- und Abschlag) vorhanden
+[914] Format: Möglicher Wert: > 0
+[926] Format: Möglicher Wert: 0
+[930] Format: max. 2 Nachkommastellen
 [937] Format: keine Nachkommastelle"
-351,Zuschlag oder Abschlag,SG9,QTY,6411,,P1,,Prozent,X,
-352,Menge der Singulär genutzten Betriebsmittel,SG9,,,,,,,Muss [73],[73] Wenn in derselben SG8 im PIA DE7140 ein
-353,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,,,,,,Muss,
-354,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6063,,Z33,,Singulär genutzte Betriebsmittel,X,
-355,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6060,,,,Menge,X,
-356,Preisangabe für Singulär genutzte Betriebsmittel,SG10,,,,,,,Muss [73],"[73] Wenn in derselben SG8 im PIA DE7140 ein Code aus der Codeliste der Gruppenartikel- und Artikel-ID vorhanden ist, der in der Spalte UTILMD/Preisangabe mit X gekennzeichnet ist"
-357,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,,,,,,Muss,
-358,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7059,,Z44,,Berechnungspreis,X,
-359,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7037,,ZD8,,Tag,X,
-360,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7036,,,,"Preis, Betrag",X [914] ∧ [946],"[914] Format: Möglicher Wert: > 0  
+355,Zuschlag oder Abschlag,SG9,QTY,6411,,P1,,Prozent,X,
+356,Menge der Singulär genutzten Betriebsmittel,SG9,,,,,,,Muss [73],"[73] Wenn in derselben SG8 im PIA DE7140 ein Code aus der Codeliste der Gruppenartikel- und Artikel-ID vorhanden ist, der in der Spalte UTILMD/Preisangabe mit X gekennzeichnet ist"
+357,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,,,,,,Muss,
+358,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6063,,Z33,,Singulär genutzte Betriebsmittel,X,
+359,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6060,,,,Menge,X,
+360,Preisangabe für Singulär genutzte Betriebsmittel,SG10,,,,,,,Muss [73],"[73] Wenn in derselben SG8 im PIA DE7140 ein Code aus der Codeliste der Gruppenartikel- und Artikel-ID vorhanden ist, der in der Spalte UTILMD/Preisangabe mit X gekennzeichnet ist"
+361,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,,,,,,Muss,
+362,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7059,,Z44,,Berechnungspreis,X,
+363,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7037,,ZD8,,Tag,X,
+364,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7036,,,,"Preis, Betrag",X [914] ∧ [946],"[914] Format: Möglicher Wert: > 0
 [946] Format: max. 11 Nachkommastellen"
-361,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss,
-362,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
-363,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,Z02,,OBIS-Daten der Marktlokation,X,
-364,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
-365,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
-366,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-367,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,,Muss,
-368,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
-369,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Marktlokation,X [314],[314] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3 anzugeben welche
-370,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
-371,Wertegranularität,SG10,,,,,,,Muss [257],[257] Wenn in derselben SG8 SEQ+Z02 (OBIS- Daten der Marktlokation) das PIA+5+1-b?:1.9.e vorhanden
-372,Wertegranularität,SG10,CCI,,,,,,Muss,
-373,Wertegranularität,SG10,CCI,7037,,ZE4,,Wertegranularität,X,
-374,Wertegranularität,SG10,CAV,,,,,,Muss,
-375,Wertegranularität,SG10,CAV,7111,,ZD9,,Jährlich,X,
-376,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
-377,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
-378,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-379,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Muss [386] ∧ [387],"[386] Wenn mehr als eine SG8 SEQ+Z02 (OBIS-Daten der Marktlokation) mit einer OBIS-Kennzahl für Energiemenge im PIA+5 vorhanden   
+365,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss,
+366,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
+367,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,Z02,,OBIS-Daten der Marktlokation,X,
+368,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
+369,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
+370,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+371,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,,Muss,
+372,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
+373,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Marktlokation,X [314],"[314] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3 anzugeben welche an der Marktlokation erforderlich sind, dabei muss der Mindestumfang aus Kap. 3.4 eingehalten werden. Der Mindestumfang der OBIS-Kennzahlen ergibt sich aus den genannten Messprodukt-Codes dem Kap. 5.1 des Dokumentes ""Codeliste der Konfigurationen"""
+374,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
+375,Wertegranularität,SG10,,,,,,,Muss [257],[257] Wenn in derselben SG8 SEQ+Z02 (OBIS- Daten der Marktlokation) das PIA+5+1-b?:1.9.e vorhanden
+376,Wertegranularität,SG10,CCI,,,,,,Muss,
+377,Wertegranularität,SG10,CCI,7037,,ZE4,,Wertegranularität,X,
+378,Wertegranularität,SG10,CAV,,,,,,Muss,
+379,Wertegranularität,SG10,CAV,7111,,ZD9,,Jährlich,X,
+380,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
+381,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
+382,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
+383,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Muss [386] ∧ [387],"[386] Wenn mehr als eine SG8 SEQ+Z02 (OBIS-Daten der Marktlokation) mit einer OBIS-Kennzahl für Energiemenge im PIA+5 vorhanden
 [387] Wenn in derselben SG8 SEQ+Z02 (OBIS Daten der Marktlokation) eine OBIS-Kennzahl für Energiemenge im PIA+5 vorhanden und es sich lt. Codeliste OBIS um eine OBIS mit zugeordneter Zählzeit handelt (Tarif: e = 1 .. 62)"
-380,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,,Muss,
-381,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,,Z39,,Code der Zählzeitdefinition,X,
-382,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,,Code der Zählzeitdefinition,X,
-383,Zugeordnete Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
-384,Zugeordnete Zählzeitregister ,SG10,CCI,,,,,,Muss,
-385,Zugeordnete Zählzeitregister ,SG10,CCI,7059,,Z38,,Code des Zählzeitregisters,X,
-386,Zugeordnete Zählzeitregister ,SG10,CCI,7037,,,,Code des Zählzeitregisters,X,
-387,OBIS Daten für Lieferant relevant,SG10,,,,,,,Muss,
-388,OBIS Daten für Lieferant relevant,SG10,CCI,,,,,,Muss,
-389,OBIS Daten für Lieferant relevant,SG10,CCI,7037,,ZA7,,LF,X,
-390,Verwendungszweck der Werte,SG10,CAV,,,,,,Muss,
-391,Verwendungszweck der Werte,SG10,CAV,7111,,Z84,,Netznutzungsabrechnun g,X [29P0..1] ⊻ [30P0..1] ⊻ [32P0..1] ⊻ [36P0..1],
-392,Verwendungszweck der Werte,SG10,CAV,7111,,Z85,,Bilanzkreisabrechnung,X [31P1..1] ⊻ [32P1..1],
-393,Verwendungszweck der Werte,SG10,CAV,7111,,Z86,,Mehrmindermengenabre chnung,X [30P1..1],
-394,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [28P0..1] ⊻ [29P1..1] ⊻ [30P0..1] ⊻ [32P1..1] ⊻ [36P0..1],
-395,Verwendungszweck der Werte,SG10,CAV,7111,,ZD1,,Blindarbeitabrechnung / Betriebsführung,X [28P0..1],
-396,Produkt-Daten der Marktlokation,SG8,,,,,,,Soll [166],[166] Wenn vorhanden
-397,Produkt-Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
-398,Produkt-Daten der Marktlokation,SG8,SEQ,1229,,Z59,,Produkt-Daten der Marktlokation,X,
-399,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
-400,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
-401,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-402,Produkt-Daten der Marktlokation,SG8,PIA,,,,,,Muss,
-403,Produkt-Daten der Marktlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
-404,Produkt-Daten der Marktlokation,SG8,PIA,7140,,,,Produkt-/Leistungsnummer,X,
-405,Produkt-Daten der Marktlokation,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
-406,Zugeordnete Definition,SG10,,,,,,,Muss,
-407,Zugeordnete Definition,SG10,CCI,,,,,,Muss,
-408,Zugeordnete Definition,SG10,CCI,7059,,Z52,,Code der Schaltzeitdefinition,X,
-409,Zugeordnete Definition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinitio n,X,
-410,Zugeordnete Definition,SG10,CCI,7037,,,,Code der Definition,X,
-411,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
-412,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
-413,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
-414,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,,,,,,,Muss [298],[298] Wenn SG5 LOC+Z20 (Technische Ressource) nicht vorhanden
-415,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,SEQ,,,,,,Muss,
-416,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,SEQ,1229,,Z44,,Verbrauchsart und Nutzung der OBIS- Kennzahl an der Marktlokation,X,
-417,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,,,,,,Muss,
-418,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1153,,Z10,,OBIS-Kennzahl,X,
-419,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1154,,,,OBIS-Kennzahl,X,
-420,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,,,,,,,Muss,
-421,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,CCI,,,,,,Muss,
-422,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,CCI,7059,,Z17,,Stromverbrauchsart,X,
-423,Verbrauchsart,SG10,CAV,,,,,,Muss,
-424,Verbrauchsart,SG10,CAV,7111,,Z64,,Kraft/Licht,X [1P0..1],
-425,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme,X [1P0..1],
-426,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
-427,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
-428,Verbrauchsart,SG10,CAV,7111,,ZB3,,Steuerung,X [1P0..1],
-429,Unterbrechbarkeit,SG10,CAV,,,,,,Muss,
-430,Unterbrechbarkeit,SG10,CAV,7111,,Z62,,unterbrechbare Verbrauchseinrichtung,X,
-431,Unterbrechbarkeit,SG10,CAV,7111,,Z63,,nicht-unterbrechbare Verbrauchseinrichtung,X,
-432,Wärmenutzung,SG10,CAV,,,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme) vorhanden
-433,Wärmenutzung,SG10,CAV,7111,,Z56,,Speicherheizung,X,
-434,Wärmenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe,X,
-435,Wärmenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
-436,Art der E-Mobilität,SG10,CAV,,,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZE5 (E-Mobilität) vorhanden
-437,Art der E-Mobilität,SG10,CAV,7111,,ZE6,,Wallbox,X,
-438,Art der E-Mobilität,SG10,CAV,7111,,Z87,,E-Mobilitätsladesäule,X,
-439,Art der E-Mobilität,SG10,CAV,7111,,ZE7,,Ladepark,X,
-440,Daten der Technischen Ressource,SG8,,,,,,,Muss [296] ∧ [2357],"[296] Wenn SG5 LOC+Z20 (Technische Ressource) vorhanden  
+384,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,,Muss,
+385,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,,Z39,,Code der Zählzeitdefinition,X,
+386,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,,Code der Zählzeitdefinition,X,
+387,Zugeordnete Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
+388,Zugeordnete Zählzeitregister ,SG10,CCI,,,,,,Muss,
+389,Zugeordnete Zählzeitregister ,SG10,CCI,7059,,Z38,,Code des Zählzeitregisters,X,
+390,Zugeordnete Zählzeitregister ,SG10,CCI,7037,,,,Code des Zählzeitregisters,X,
+391,OBIS Daten für Lieferant relevant,SG10,,,,,,,Muss,
+392,OBIS Daten für Lieferant relevant,SG10,CCI,,,,,,Muss,
+393,OBIS Daten für Lieferant relevant,SG10,CCI,7037,,ZA7,,LF,X,
+394,Verwendungszweck der Werte,SG10,CAV,,,,,,Muss,
+395,Verwendungszweck der Werte,SG10,CAV,7111,,Z84,,Netznutzungsabrechnung,X [29P0..1] ⊻ [30P0..1] ⊻ [32P0..1] ⊻ [36P0..1],
+396,Verwendungszweck der Werte,SG10,CAV,7111,,Z85,,Bilanzkreisabrechnung,X [31P1..1] ⊻ [32P1..1],
+397,Verwendungszweck der Werte,SG10,CAV,7111,,Z86,,Mehrmindermengenabre chnung,X [30P1..1],
+398,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [28P0..1] ⊻ [29P1..1] ⊻ [30P0..1] ⊻ [32P1..1] ⊻ [36P0..1],
+399,Verwendungszweck der Werte,SG10,CAV,7111,,ZD1,,Blindarbeitabrechnung / Betriebsführung,X [28P0..1],
+400,Produkt-Daten der Marktlokation,SG8,,,,,,,Soll [166],[166] Wenn vorhanden
+401,Produkt-Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
+402,Produkt-Daten der Marktlokation,SG8,SEQ,1229,,Z59,,Produkt-Daten der Marktlokation,X,
+403,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
+404,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
+405,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+406,Produkt-Daten der Marktlokation,SG8,PIA,,,,,,Muss,
+407,Produkt-Daten der Marktlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
+408,Produkt-Daten der Marktlokation,SG8,PIA,7140,,,,Produkt-/Leistungsnummer,X,
+409,Produkt-Daten der Marktlokation,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
+410,Zugeordnete Definition,SG10,,,,,,,Muss,
+411,Zugeordnete Definition,SG10,CCI,,,,,,Muss,
+412,Zugeordnete Definition,SG10,CCI,7059,,Z52,,Code der Schaltzeitdefinition,X,
+413,Zugeordnete Definition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinition,X,
+414,Zugeordnete Definition,SG10,CCI,7037,,,,Code der Definition,X,
+415,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
+416,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
+417,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
+418,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,,,,,,,Muss [298],[298] Wenn SG5 LOC+Z20 (Technische Ressource) nicht vorhanden
+419,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,SEQ,,,,,,Muss,
+420,Verbrauchsart und Nutzung der OBIS-Kennzahl der Marktlokation,SG8,SEQ,1229,,Z44,,Verbrauchsart und Nutzung der OBIS- Kennzahl an der Marktlokation,X,
+421,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,,,,,,Muss,
+422,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1153,,Z10,,OBIS-Kennzahl,X,
+423,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1154,,,,OBIS-Kennzahl,X,
+424,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,,,,,,,Muss,
+425,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,CCI,,,,,,Muss,
+426,Verbrauchsart und Nutzung an der OBIS-Kennzahl der Marktlokation,SG10,CCI,7059,,Z17,,Stromverbrauchsart,X,
+427,Verbrauchsart,SG10,CAV,,,,,,Muss,
+428,Verbrauchsart,SG10,CAV,7111,,Z64,,Kraft/Licht,X [1P0..1],
+429,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme,X [1P0..1],
+430,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
+431,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
+432,Verbrauchsart,SG10,CAV,7111,,ZB3,,Steuerung Wärmeabgabe,X [1P0..1],
+433,Unterbrechbarkeit,SG10,CAV,,,,,,Muss,
+434,Unterbrechbarkeit,SG10,CAV,7111,,Z62,,unterbrechbare Verbrauchseinrichtung,X,
+435,Unterbrechbarkeit,SG10,CAV,7111,,Z63,,nicht-unterbrechbare Verbrauchseinrichtung,X,
+436,Wärmenutzung,SG10,CAV,,,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme) vorhanden
+437,Wärmenutzung,SG10,CAV,7111,,Z56,,Speicherheizung,X,
+438,Wärmenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe,X,
+439,Wärmenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
+440,Art der E-Mobilität,SG10,CAV,,,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZE5 (E-Mobilität) vorhanden
+441,Art der E-Mobilität,SG10,CAV,7111,,ZE6,,Wallbox,X,
+442,Art der E-Mobilität,SG10,CAV,7111,,Z87,,E-Mobilitätsladesäule,X,
+443,Art der E-Mobilität,SG10,CAV,7111,,ZE7,,Ladepark,X,
+444,Daten der Technischen Ressource,SG8,,,,,,,Muss [296] ∧ [2357],"[296] Wenn SG5 LOC+Z20 (Technische Ressource) vorhanden
 [2357] Je SG5 LOC+Z20 (Technische Ressource) ist genau einmal die Segmentgruppe anzugeben"
-441,Daten der Technischen Ressource,SG8,SEQ,,,,,,Muss,
-442,Daten der Technischen Ressource,SG8,SEQ,1229,,Z52,,Daten der Technischen Ressource,X,
-443,Referenz auf die ID der Technischen Ressource,SG8,RFF,,,,,,Muss,
-444,Referenz auf die ID der Technischen Ressource,SG8,RFF,1153,,Z37,,Technische Ressource,X,
-445,Referenz auf die ID der Technischen Ressource,SG8,RFF,1154,,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
-446,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,,,,,,Soll [166] ∧ [668],"[166] Wenn vorhanden  
+445,Daten der Technischen Ressource,SG8,SEQ,,,,,,Muss,
+446,Daten der Technischen Ressource,SG8,SEQ,1229,,Z52,,Daten der Technischen Ressource,X,
+447,Referenz auf die ID der Technischen Ressource,SG8,RFF,,,,,,Muss,
+448,Referenz auf die ID der Technischen Ressource,SG8,RFF,1153,,Z37,,Technische Ressource,X,
+449,Referenz auf die ID der Technischen Ressource,SG8,RFF,1154,,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
+450,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,,,,,,Soll [166] ∧ [668],"[166] Wenn vorhanden
 [668] Hinweis: Dieses Segment wird nach Abschluss der Einführung der Lokationsbündelstruktur zum 01.10.2025 aus der UTILMD entfernt"
-447,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,1153,,Z34,,vorgelagerte Messlokation,X,
-448,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,1154,,,,ID einer Lokation,X [951],[951] Format: Zählpunktbezeichnung
-449,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,,,,,,Muss [668],[668] Hinweis: Dieses Segment wird nach Abschluss der Einführung der Lokationsbündelstruktur zum 01.10.2025 aus der UTILMD entfernt
-450,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,1153,,Z16,,zugeordnete Marktlokation,X,
-451,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-452,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,,,,,,Soll [166] ∧ [699],"[166] Wenn vorhanden  
+451,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,1153,,Z34,,vorgelagerte Messlokation,X,
+452,Referenz auf die ID der vorgelagerten Messlokation,SG8,RFF,1154,,,,ID einer Lokation,X [951],[951] Format: Zählpunktbezeichnung
+453,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,,,,,,Muss [668],[668] Hinweis: Dieses Segment wird nach Abschluss der Einführung der Lokationsbündelstruktur zum 01.10.2025 aus der UTILMD entfernt
+454,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,1153,,Z16,,zugeordnete Marktlokation,X,
+455,Referenz auf die der Technischen Ressource zugeordneten Marktlokation,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+456,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,,,,,,Soll [166] ∧ [699],"[166] Wenn vorhanden
 [699] Hinweis: Es ist die ID der Steuerbaren Ressource zu nennen über die die Technische Ressource gesteuert wird"
-453,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
-454,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,1154,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
-455,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,,,,,,Soll [166] ∧ [700],"[166] Wenn vorhanden  
+457,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
+458,Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource,SG8,RFF,1154,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+459,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,,,,,,Soll [166] ∧ [700],"[166] Wenn vorhanden
 [700] Hinweis: Es ist die ID der Netzlokation zu nennen über die die Technische Ressource gesteuert wird"
-456,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
-457,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-458,Nennleistung (Aufnahme),SG9,,,,,,,Muss ([446] ∧ ([465] ∨ [466]) ∧ [467] ∧ ([468] ⊻ ([469] ∧ [470]))) ⊻ [448] Soll [165],"[165] Wenn bekannt  
-[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden   
-[448] Wenn in derselben SG8 das CCI+Z56"
-459,Nennleistung (Aufnahme),SG9,QTY,,,,,,Muss,
-460,Nennleistung (Aufnahme),SG9,QTY,6063,,Z43,,Nennleistung (Aufnahme),X,
-461,Nennleistung (Aufnahme),SG9,QTY,6060,,,,Menge,X,
-462,Nennleistung (Aufnahme),SG9,QTY,6411,,KWT,,Kilowatt,X,
-463,Nennleistung (Abgabe),SG9,,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
-464,Nennleistung (Abgabe),SG9,QTY,,,,,,Muss,
-465,Nennleistung (Abgabe),SG9,QTY,6063,,Z44,,Nennleistung (Abgabe),X,
-466,Nennleistung (Abgabe),SG9,QTY,6060,,,,Menge,X,
-467,Nennleistung (Abgabe),SG9,QTY,6411,,KWT,,Kilowatt,X,
-468,Speicherkapazität,SG9,,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
-469,Speicherkapazität,SG9,QTY,,,,,,Muss,
-470,Speicherkapazität,SG9,QTY,6063,,Z42,,Speicherkapazität,X,
-471,Speicherkapazität,SG9,QTY,6060,,,,Menge,X,
-472,Speicherkapazität,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
-473,Art und Nutzung der Technischen Ressource,SG10,,,,,,,Muss,
-474,Art und Nutzung der Technischen Ressource,SG10,CCI,,,,,,Muss,
-475,Art und Nutzung der Technischen Ressource,SG10,CCI,7059,,Z17,,Stromverbrauchsart,X,
-476,Art und Nutzung der Technischen Ressource,SG10,CCI,7059,,Z56,,Speicher,X,
-477,Verbrauchsart,SG10,CAV,,,,,,Muss [446],[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden 
-478,Verbrauchsart,SG10,CAV,7111,,Z64,,Kraft/Licht,X [1P0..1],
-479,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme,X [1P0..1],
-480,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
-481,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
-482,Wärmenutzung,SG10,CAV,,,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme) vorhanden
-483,Wärmenutzung,SG10,CAV,7111,,Z56,,Speicherheizung,X,
-484,Wärmenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe,X,
-485,Wärmenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
-486,Art der E-Mobilität,SG10,CAV,,,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZE5 (E-Mobilität) vorhanden
-487,Art der E-Mobilität,SG10,CAV,7111,,ZE6,,Wallbox,X,
-488,Speicherart,SG10,CAV,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
-489,Speicherart,SG10,CAV,7111,,ZF7,,Wasserstoffspeicher,X,
-490,Speicherart,SG10,CAV,7111,,ZF8,,Pumpspeicher,X,
-491,Speicherart,SG10,CAV,7111,,ZF9,,Batteriespeicher,X,
-492,Speicherart,SG10,CAV,7111,,ZG6,,Sonstige Speicherart,X,
-493,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,,,,,,Muss [446],[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden 
-494,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,7111,,ZG8,,Technischen Ressource fällt unter § 14a EnWG,X,
-495,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,7111,,ZG9,,Technischen Ressource fällt nicht unter § 14a EnWG,X,
-496,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,,,,,,Muss [461],[461] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZG8 (Technischen Ressource fällt unter § 14a EnWG) vorhanden
-497,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,7111,,ZH0,,Inbetriebsetzung der TR nach 2023,X,
-498,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,7111,,ZH1,,Inbetriebsetzung der TR vor 2024,X,
-499,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,,,,,,Muss [462],[462] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZH1 (Inbetriebsetzung der TR vor 2024) vorhanden
-500,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,7111,,ZH2,,Wechselmöglichkeit in,X,
-501,Information zu weiteren technischen Einrichtungen,SG10,,,,,,,Muss [446] ∧ [467],"[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden   
+460,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,1153,,Z32,,Netzlokation,X,
+461,Referenz auf die der Technischen Ressource zugeordneten Netzlokation,SG8,RFF,1154,,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+462,Nennleistung (Aufnahme),SG9,,,,,,,Muss ([446] ∧ ([465] ∨ [466]) ∧ [467] ∧ ([468] ⊻ ([469] ∧ [470]))) ⊻ [448] Soll [165],"[165] Wenn bekannt
+[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden
+[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
+[465] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das RFF+Z38 (Referenz auf die der Technischen Ressource zugeordnete Steuerbare Ressource) vorhanden ist
+[466] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das RFF+Z32 (Referenz auf die der Technischen Ressource zugeordneten Netzlokation) vorhanden ist
+[467] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das CAV+ZG8 (Technischen Ressource fällt unter § 14a EnWG) vorhanden ist
+[468] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das SG10 CAV+ZH0 (Inbetriebsetzung der TR nach 2023) vorhanden ist
+[469] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das SG10 CAV+ZH1 (Inbetriebsetzung der TR vor 2024) vorhanden ist
+[470] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das CAV+ZH5 (Wechsel in das in das § 14a EnWG-Modell gem. Festlegung BK6-22-300 wurde durchgeführt) vorhanden ist"
+463,Nennleistung (Aufnahme),SG9,QTY,,,,,,Muss,
+464,Nennleistung (Aufnahme),SG9,QTY,6063,,Z43,,Nennleistung (Aufnahme),X,
+465,Nennleistung (Aufnahme),SG9,QTY,6060,,,,Menge,X,
+466,Nennleistung (Aufnahme),SG9,QTY,6411,,KWT,,Kilowatt,X,
+467,Nennleistung (Abgabe),SG9,,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
+468,Nennleistung (Abgabe),SG9,QTY,,,,,,Muss,
+469,Nennleistung (Abgabe),SG9,QTY,6063,,Z44,,Nennleistung (Abgabe),X,
+470,Nennleistung (Abgabe),SG9,QTY,6060,,,,Menge,X,
+471,Nennleistung (Abgabe),SG9,QTY,6411,,KWT,,Kilowatt,X,
+472,Speicherkapazität,SG9,,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
+473,Speicherkapazität,SG9,QTY,,,,,,Muss,
+474,Speicherkapazität,SG9,QTY,6063,,Z42,,Speicherkapazität,X,
+475,Speicherkapazität,SG9,QTY,6060,,,,Menge,X,
+476,Speicherkapazität,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
+477,Art und Nutzung der Technischen Ressource,SG10,,,,,,,Muss,
+478,Art und Nutzung der Technischen Ressource,SG10,CCI,,,,,,Muss,
+479,Art und Nutzung der Technischen Ressource,SG10,CCI,7059,,Z17,,Stromverbrauchsart,X,
+480,Art und Nutzung der Technischen Ressource,SG10,CCI,7059,,Z56,,Speicher,X,
+481,Verbrauchsart,SG10,CAV,,,,,,Muss [446],[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden 
+482,Verbrauchsart,SG10,CAV,7111,,Z64,,Kraft/Licht,X [1P0..1],
+483,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme,X [1P0..1],
+484,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
+485,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
+486,Wärmenutzung,SG10,CAV,,,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme) vorhanden
+487,Wärmenutzung,SG10,CAV,7111,,Z56,,Speicherheizung,X,
+488,Wärmenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe,X,
+489,Wärmenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
+490,Art der E-Mobilität,SG10,CAV,,,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZE5 (E-Mobilität) vorhanden
+491,Art der E-Mobilität,SG10,CAV,7111,,ZE6,,Wallbox,X,
+492,Art der E-Mobilität,SG10,CAV,7111,,Z87,,E-Mobilitätsladesäule,X,
+493,Art der E-Mobilität,SG10,CAV,7111,,ZE7,,Ladepark,X,
+494,Speicherart,SG10,CAV,,,,,,Muss [448],[448] Wenn in derselben SG8 das CCI+Z56 (Speicher) vorhanden
+495,Speicherart,SG10,CAV,7111,,ZF7,,Wasserstoffspeicher,X,
+496,Speicherart,SG10,CAV,7111,,ZF8,,Pumpspeicher,X,
+497,Speicherart,SG10,CAV,7111,,ZF9,,Batteriespeicher,X,
+498,Speicherart,SG10,CAV,7111,,ZG6,,Sonstige Speicherart,X,
+499,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,,,,,,Muss [446],[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden 
+500,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,7111,,ZG8,,Technischen Ressource fällt unter § 14a EnWG,X,
+501,Kategorie der verbrauchenden Technischen Ressource,SG10,CAV,7111,,ZG9,,Technischen Ressource fällt nicht unter § 14a EnWG,X,
+502,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,,,,,,Muss [461],[461] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZG8 (Technischen Ressource fällt unter § 14a EnWG) vorhanden
+503,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,7111,,ZH0,,Inbetriebsetzung der TR nach 2023,X,
+504,Inbetriebsetzungsdatum der verbrauchenden Technischen Ressource nach § 14a EnWG,SG10,CAV,7111,,ZH1,,Inbetriebsetzung der TR vor 2024,X,
+505,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,,,,,,Muss [462],[462] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+ZH1 (Inbetriebsetzung der TR vor 2024) vorhanden
+506,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,7111,,ZH2,,Wechselmöglichkeit in das § 14a EnWG-Modell gem. Festlegung BK6- 22-300 einmalig noch möglich,X,
+507,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,7111,,ZH3,,Wechselmöglichkeit in das § 14a EnWG-Modell gem. Festlegung BK6- 22-300 nicht möglich,X,
+508,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,7111,,ZH4,,Befristet im alten § 14a EnWG-Modell bis 2028 ohne Wechselmöglichkeit,X,
+509,Einordnung der verbrauchenden Technischen Ressource nach § 14a EnWG mit Inbetriebsetzung vor 2024,SG10,CAV,7111,,ZH5,,Wechsel in das § 14a EnWG-Modell gem. Festlegung BK6-22-300 wurde durchgeführt,X,
+510,Information zu weiteren technischen Einrichtungen,SG10,,,,,,,Muss [446] ∧ [467],"[446] Wenn in derselben SG8 das CCI+Z17 (Stromverbrauchsart) vorhanden
 [467] Wenn in derselben SG8 SEQ+Z52 (Daten der Technischen Ressource) das CAV+ZG8 (Technischen Ressource fällt unter § 14a EnWG) vorhanden ist"
-502,Information zu weiteren technischen Einrichtungen,SG10,CCI,,,,,,Muss,
-503,Information zu weiteren technischen Einrichtungen,SG10,CCI,7059,,Z63,,Information zu weiteren technischen Einrichtungen,X,
-504,Information zu weiteren technischen Einrichtungen,SG10,CAV,,,,,,Muss,
-505,Information zu weiteren technischen Einrichtungen,SG10,CAV,7111,,ZH7,,Weitere technische Einrichtungen vorhanden,X,
-506,Information zu weiteren technischen Einrichtungen,SG10,CAV,7111,,ZH8,,Keine weitere technische Einrichtung vorhanden,X,
-507,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [205] ∧ [2358],"[205] Wenn SG5 LOC+Z19 (Steuerbare Ressource) vorhanden  
+511,Information zu weiteren technischen Einrichtungen,SG10,CCI,,,,,,Muss,
+512,Information zu weiteren technischen Einrichtungen,SG10,CCI,7059,,Z63,,Information zu weiteren technischen Einrichtungen,X,
+513,Information zu weiteren technischen Einrichtungen,SG10,CAV,,,,,,Muss,
+514,Information zu weiteren technischen Einrichtungen,SG10,CAV,7111,,ZH7,,Weitere technische Einrichtungen vorhanden,X,
+515,Information zu weiteren technischen Einrichtungen,SG10,CAV,7111,,ZH8,,Keine weitere technische Einrichtung vorhanden,X,
+516,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [205] ∧ [2358],"[205] Wenn SG5 LOC+Z19 (Steuerbare Ressource) vorhanden
 [2358] Je SG5 LOC+Z19 (Steuerbare Ressource) ist genau einmal die Segmentgruppe anzugeben"
-508,Daten der Steuerbaren Ressource,SG8,SEQ,,,,,,Muss,
-509,Daten der Steuerbaren Ressource,SG8,SEQ,1229,,Z62,,Daten der Steuerbaren Ressource,X,
-510,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,,,,,Muss,
-511,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
-512,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
-513,Steuerkanal,SG10,,,,,,,Muss,
-514,Steuerkanal,SG10,CCI,,,,,,Muss,
-515,Steuerkanal,SG10,CCI,7059,,Z49,,Steuerkanal,X,
-516,Leistungsbeschreibung des Steuerkanals,SG10,CAV,,,,,,Muss,
-517,Leistungsbeschreibung des Steuerkanals,SG10,CAV,7111,,ZF2,,Leistungsbeschreibung des Steuerkanals,X,
-518,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z14,,An/Aus,X,
-519,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z15,,Gestuft,X,
-520,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-521,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
-522,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-523,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
-524,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
-525,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-526,Produkt-Daten der Steuerbaren Ressource,SG8,,,,,,,Soll [166] ∧ [205],"[166] Wenn vorhanden  
+517,Daten der Steuerbaren Ressource,SG8,SEQ,,,,,,Muss,
+518,Daten der Steuerbaren Ressource,SG8,SEQ,1229,,Z62,,Daten der Steuerbaren Ressource,X,
+519,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,,,,,Muss,
+520,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
+521,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+522,Steuerkanal,SG10,,,,,,,Muss,
+523,Steuerkanal,SG10,CCI,,,,,,Muss,
+524,Steuerkanal,SG10,CCI,7059,,Z49,,Steuerkanal,X,
+525,Leistungsbeschreibung des Steuerkanals,SG10,CAV,,,,,,Muss,
+526,Leistungsbeschreibung des Steuerkanals,SG10,CAV,7111,,ZF2,,Leistungsbeschreibung des Steuerkanals,X,
+527,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z14,,An/Aus,X,
+528,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z15,,Gestuft,X,
+529,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+530,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
+531,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+532,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
+533,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
+534,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+535,Produkt-Daten der Steuerbaren Ressource,SG8,,,,,,,Soll [166] ∧ [205],"[166] Wenn vorhanden
 [205] Wenn SG5 LOC+Z19 (Steuerbare Ressource) vorhanden"
-527,Produkt-Daten der Steuerbaren Ressource,SG8,SEQ,,,,,,Muss,
-528,Produkt-Daten der Steuerbaren Ressource,SG8,SEQ,1229,,Z61,,Produkt-Daten der Steuerbaren Ressource,X,
-529,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,,,,,Muss,
-530,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
-531,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,,,,ID einer Steuerbaren Ressource,X [961],[961] Format: SR-ID
-532,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,,,,,,Muss,
-533,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,4347,,5,,Produktidentifikation,X,
-534,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7140,,,,Konfigurationsprodukt-Code,X,
-535,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
-536,Zugeordnete Definition,SG10,,,,,,,Muss,
-537,Zugeordnete Definition,SG10,CCI,,,,,,Muss,
-538,Zugeordnete Definition,SG10,CCI,7059,,Z52,,Code der Schaltzeitdefinition,X,
-539,Zugeordnete Definition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinitio n,X,
-540,Zugeordnete Definition,SG10,CCI,7037,,,,Code der Definition,X,
-541,Auftraggebender Marktpartner,SG10,,,,,,,Muss,
-542,Auftraggebender Marktpartner,SG10,CCI,,,,,,Muss,
-543,Auftraggebender Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-544,Auftraggebender Marktpartner,SG10,CAV,,,,,,Muss,
-545,Auftraggebender Marktpartner,SG10,CAV,7111,,Z88,,NB,X,
-546,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
-547,Auftraggebender Marktpartner,SG10,CAV,1131,,,,MP-ID,X,
-548,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
-549,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
-550,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
-551,Daten der Messlokation,SG8,,,,,,,Muss [2284],[2284] Für jede Messlokations-ID im SG5 LOC+Z17 (Messlokation) DE3225 genau einmal anzugeben
-552,Daten der Messlokation,SG8,SEQ,,,,,,Muss,
-553,Daten der Messlokation,SG8,SEQ,1229,,Z18,,Daten der Messlokation,X,
-554,Referenz auf die ID der Messlokation,SG8,RFF,,,,,,Muss,
-555,Referenz auf die ID der Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
-556,Referenz auf die ID der Messlokation,SG8,RFF,1154,,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-557,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,,,,,,Muss [235],"[235] Wenn das RFF+Z19 (Messlokation) aus dieser SG8 auf das gleiche SG5 LOC+Z17 (Messlokation), wie ein RFF+Z19 (Messlokation) aus einer SG8 SEQ+Z03 (Zähleinrichtungsdaten), in dem SG10 CCI+++E13 CAV+MME (Zählertyp: mME) nicht vorhanden ist, referenziert"
-558,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,1153,,Z05,,Abrechnung des Messstellenbetriebs über NNE für kME,X,
-559,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,1154,,,,Abrechnung über NNE (Ja/Nein),X,
-560,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-561,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
-562,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-563,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
-564,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
-565,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-566,Messstellenbetreiber,SG10,CAV,7110,,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
-567,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-568,Grundzuständiger Messstellenbetreiber,SG10,CAV,,,,,,Muss,
-569,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,,ZF0,,gMSB,X,
-570,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
-571,Spannungsebene der Messlokation,SG10,,,,,,,Muss,
-572,Spannungsebene der Messlokation,SG10,CCI,,,,,,Muss,
-573,Spannungsebene der Messlokation,SG10,CCI,7037,,E04,,Spannungsebene der Messlokation,X,
-574,Spannungsebene der Messlokation,SG10,CAV,,,,,,Muss,
-575,Spannungsebene der Messlokation,SG10,CAV,7111,,E03,,Höchstspannung,X,
-576,Spannungsebene der Messlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
-577,Spannungsebene der Messlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
-578,Zähleinrichtungsdaten,SG8,,,,,,,Muss [2286],[2286] Für jede SEQ+Z18 (Daten der Messlokation) mindestens einmal anzugeben
-579,Zähleinrichtungsdaten,SG8,SEQ,,,,,,Muss,
-580,Zähleinrichtungsdaten,SG8,SEQ,1229,,Z03,,Zähleinrichtungsdaten,X,
-581,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,Muss,
-582,Referenz auf die ID einer Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
-583,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-584,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,,Soll [166] ∧ [215],"[166] Wenn vorhanden  
+536,Produkt-Daten der Steuerbaren Ressource,SG8,SEQ,,,,,,Muss,
+537,Produkt-Daten der Steuerbaren Ressource,SG8,SEQ,1229,,Z61,,Produkt-Daten der Steuerbaren Ressource,X,
+538,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,,,,,Muss,
+539,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,,Z38,,Steuerbare Ressource,X,
+540,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,,,,ID einer Steuerbaren Ressource,X [961],[961] Format: SR-ID
+541,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,,,,,,Muss,
+542,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,4347,,5,,Produktidentifikation,X,
+543,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7140,,,,Konfigurationsprodukt-Code,X,
+544,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7143,,Z12,,Konfigurationsprodukt,X,
+545,Zugeordnete Definition,SG10,,,,,,,Muss,
+546,Zugeordnete Definition,SG10,CCI,,,,,,Muss,
+547,Zugeordnete Definition,SG10,CCI,7059,,Z52,,Code der Schaltzeitdefinition,X,
+548,Zugeordnete Definition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinition,X,
+549,Zugeordnete Definition,SG10,CCI,7037,,,,Code der Definition,X,
+550,Auftraggebender Marktpartner,SG10,,,,,,,Muss,
+551,Auftraggebender Marktpartner,SG10,CCI,,,,,,Muss,
+552,Auftraggebender Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+553,Auftraggebender Marktpartner,SG10,CAV,,,,,,Muss,
+554,Auftraggebender Marktpartner,SG10,CAV,7111,,Z88,,NB,X,
+555,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
+556,Auftraggebender Marktpartner,SG10,CAV,1131,,,,MP-ID,X,
+557,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,
+558,Produkt-Daten für Marktrolle relevant,SG10,CCI,,,,,,Muss,
+559,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
+560,Daten der Messlokation,SG8,,,,,,,Muss [2284],[2284] Für jede Messlokations-ID im SG5 LOC+Z17 (Messlokation) DE3225 genau einmal anzugeben
+561,Daten der Messlokation,SG8,SEQ,,,,,,Muss,
+562,Daten der Messlokation,SG8,SEQ,1229,,Z18,,Daten der Messlokation,X,
+563,Referenz auf die ID der Messlokation,SG8,RFF,,,,,,Muss,
+564,Referenz auf die ID der Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
+565,Referenz auf die ID der Messlokation,SG8,RFF,1154,,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+566,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,,,,,,Muss [235],"[235] Wenn das RFF+Z19 (Messlokation) aus dieser SG8 auf das gleiche SG5 LOC+Z17 (Messlokation), wie ein RFF+Z19 (Messlokation) aus einer SG8 SEQ+Z03 (Zähleinrichtungsdaten), in dem SG10 CCI+++E13 CAV+MME (Zählertyp: mME) nicht vorhanden ist, referenziert"
+567,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,1153,,Z05,,Abrechnung des Messstellenbetriebs über NNE für kME,X,
+568,Abrechnung des Messstellenbetriebs über NNE für kME,SG8,RFF,1154,,,,Abrechnung über NNE (Ja/Nein),X,
+569,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
+570,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
+571,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
+572,Messstellenbetreiber,SG10,CAV,,,,,,Muss,
+573,Messstellenbetreiber,SG10,CAV,7111,,Z91,,MSB,X,
+574,Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+575,Messstellenbetreiber,SG10,CAV,7110,,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+576,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+577,Grundzuständiger Messstellenbetreiber,SG10,CAV,,,,,,Muss,
+578,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,,ZF0,,gMSB,X,
+579,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,,,,MP-ID,X,
+580,Spannungsebene der Messlokation,SG10,,,,,,,Muss,
+581,Spannungsebene der Messlokation,SG10,CCI,,,,,,Muss,
+582,Spannungsebene der Messlokation,SG10,CCI,7037,,E04,,Spannungsebene der Messlokation,X,
+583,Spannungsebene der Messlokation,SG10,CAV,,,,,,Muss,
+584,Spannungsebene der Messlokation,SG10,CAV,7111,,E03,,Höchstspannung,X,
+585,Spannungsebene der Messlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
+586,Spannungsebene der Messlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
+587,Spannungsebene der Messlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
+588,Zähleinrichtungsdaten,SG8,,,,,,,Muss [2286],[2286] Für jede SEQ+Z18 (Daten der Messlokation) mindestens einmal anzugeben
+589,Zähleinrichtungsdaten,SG8,SEQ,,,,,,Muss,
+590,Zähleinrichtungsdaten,SG8,SEQ,1229,,Z03,,Zähleinrichtungsdaten,X,
+591,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,Muss,
+592,Referenz auf die ID einer Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
+593,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+594,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,,Soll [166] ∧ [215],"[166] Wenn vorhanden
 [215] Wenn in der selben SG8 SEQ+Z03 (Zähleinrichtungsdaten) SG10 CCI+++E13 CAV+MME (Zählertyp: mME) vorhanden"
-585,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,
-586,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,,Identifikation / Nummer des Smartmeter-Gateways,X,
-587,Zählertyp,SG10,,,,,,,Muss,
-588,Zählertyp,SG10,CCI,,,,,,Muss,
-589,Zählertyp,SG10,CCI,7037,,E13,,Zählertyp,X,
-590,Zählertyp,SG10,CAV,,,,,,Muss,
-591,Zählertyp,SG10,CAV,7111,,AHZ,,analoger Haushaltszähler (Drehstrom),X,
-592,Zählertyp,SG10,CAV,7111,,WSZ,,analoger Wechselstromzähler,X,
-593,Zählertyp,SG10,CAV,7111,,LAZ,,Lastgangzähler,X,
-594,Zählertyp,SG10,CAV,7111,,MAZ,,Maximumzähler,X,
-595,Zählertyp,SG10,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
-596,Zählertyp,SG10,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X,
-597,Zählertyp,SG10,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,
-598,Zählertyp,SG10,CAV,7110,,Z01,,EDL40,X [136],
-599,Zählertyp,SG10,CAV,7110,,Z02,,EDL21,X [136],[136] Wenn SG10 CCI+++E13 (Zählertyp)
-600,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
-601,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-602,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
-603,Registeranzahl,SG10,CAV,,,,,,Muss [139],[139] Wenn SG10 CAV+IVA (Individuelle Abstimmung) nicht vorhanden
-604,Registeranzahl,SG10,CAV,7111,,ETZ,,Eintarif,X,
-605,Registeranzahl,SG10,CAV,7111,,ZTZ,,Zweitarif,X,
-606,Registeranzahl,SG10,CAV,7111,,NTZ,,Mehrtarif,X,
-607,Energierichtung,SG10,CAV,,,,,,Muss,
-608,Energierichtung,SG10,CAV,7111,,ERZ,,Einrichtungszähler,X,
-609,Energierichtung,SG10,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
-610,Fernschaltung der Zähleinrichtung,SG10,CAV,,,,,,Muss,
-611,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,,Z58,,Fernschaltung der Zähleinrichtung,X,
-612,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,,Z06,,vorhanden,X,
-613,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,,Z07,,nicht vorhanden,X,
-614,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,Muss [316],[316] Wenn in derselben SG8 das RFF+Z14 (Smartmeter-Gateway) nicht vorhanden
-615,Messwerterfassung an der Zähleinrichtung,SG10,CCI,,,,,,Muss,
-616,Messwerterfassung an der Zähleinrichtung,SG10,CCI,7037,,E12,,Messwerterfassung an der Zähleinrichtung,X,
-617,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,,,,,Muss,
-618,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,AMR,,fernauslesbare Zähler,X,
-619,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,MMR,,manuell ausgelesene,X,
-620,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Muss ([2287] ∧ [121]) ∨ [2350],"[121] Wenn in dem SEQ+Z03 (Zähleinrichtungsdaten) das SG8 RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden  
-[2287] Für jede SEQ+Z03 (Zähleinrichtungsdaten) mindestens einmal anzugeben  
+595,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,
+596,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,,Identifikation / Nummer des Smartmeter-Gateways,X,
+597,Zählertyp,SG10,,,,,,,Muss,
+598,Zählertyp,SG10,CCI,,,,,,Muss,
+599,Zählertyp,SG10,CCI,7037,,E13,,Zählertyp,X,
+600,Zählertyp,SG10,CAV,,,,,,Muss,
+601,Zählertyp,SG10,CAV,7111,,AHZ,,analoger Haushaltszähler (Drehstrom),X,
+602,Zählertyp,SG10,CAV,7111,,WSZ,,analoger Wechselstromzähler,X,
+603,Zählertyp,SG10,CAV,7111,,LAZ,,Lastgangzähler,X,
+604,Zählertyp,SG10,CAV,7111,,MAZ,,Maximumzähler,X,
+605,Zählertyp,SG10,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
+606,Zählertyp,SG10,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X,
+607,Zählertyp,SG10,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,
+608,Zählertyp,SG10,CAV,7110,,Z01,,EDL40,X [136],
+609,Zählertyp,SG10,CAV,7110,,Z02,,EDL21,X [136],
+610,Zählertyp,SG10,CAV,7110,,Z03,,sonstiger EHZ,X [136],
+611,Zählertyp,SG10,CAV,7110,,Z04,,Standard,X [346],
+612,Zählertyp,SG10,CAV,7110,,Z05,,MeDa-Zähler,X [346],"[136] Wenn SG10 CCI+++E13 (Zählertyp) CAV+EHZ (elektronischer Haushaltszähler) vorhanden
+[346] Wenn SG10 CCI+++E13 (Zählertyp) CAV+MME (mME) vorhanden"
+613,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
+614,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+615,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
+616,Registeranzahl,SG10,CAV,,,,,,Muss [139],[139] Wenn SG10 CAV+IVA (Individuelle Abstimmung) nicht vorhanden
+617,Registeranzahl,SG10,CAV,7111,,ETZ,,Eintarif,X,
+618,Registeranzahl,SG10,CAV,7111,,ZTZ,,Zweitarif,X,
+619,Registeranzahl,SG10,CAV,7111,,NTZ,,Mehrtarif,X,
+620,Energierichtung,SG10,CAV,,,,,,Muss,
+621,Energierichtung,SG10,CAV,7111,,ERZ,,Einrichtungszähler,X,
+622,Energierichtung,SG10,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
+623,Fernschaltung der Zähleinrichtung,SG10,CAV,,,,,,Muss,
+624,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,,Z58,,Fernschaltung der Zähleinrichtung,X,
+625,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,,Z06,,vorhanden,X,
+626,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,,Z07,,nicht vorhanden,X,
+627,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,Muss [316],[316] Wenn in derselben SG8 das RFF+Z14 (Smartmeter-Gateway) nicht vorhanden
+628,Messwerterfassung an der Zähleinrichtung,SG10,CCI,,,,,,Muss,
+629,Messwerterfassung an der Zähleinrichtung,SG10,CCI,7037,,E12,,Messwerterfassung an der Zähleinrichtung,X,
+630,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,,,,,Muss,
+631,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,AMR,,fernauslesbare Zähler,X,
+632,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
+633,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Muss ([2287] ∧ [121]) ∨ [2350],"[121] Wenn in dem SEQ+Z03 (Zähleinrichtungsdaten) das SG8 RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden
+[2287] Für jede SEQ+Z03 (Zähleinrichtungsdaten) mindestens einmal anzugeben
 [2350] Für jedes SMGW das im SEQ+Z13 (Smartmeter-Gateway) SG10 CCI+++Z75 CAV+Z30 (Gerätenummer) genannt ist, mindestens einmal je SEQ+Z03 (Zähleinrichtungsdaten) das mit SG8 RFF+Z14 (Referenz auf das Smartmeter-Gateway) auf das SMGW referenziert"
-621,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,,,,,Muss,
-622,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,,Z20,,OBIS-Daten der Zähleinrichtung,X,
-623,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS-Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW
-624,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X [441],
-625,Referenz auf die Gerätenummer,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden ist
-626,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
-627,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,Muss,
-628,Referenz auf die ID einer Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
-629,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-630,Konfigurations-ID,SG8,RFF,,,,,,Muss [78] ∧ [402] ∧ [420] ∧ [661] Soll [166] ∧ [40] ∧ [402] ∧ [420],"[40] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) vorhanden  
-[78] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) nicht vorhanden  
-[166] Wenn vorhanden  
-[402] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) eine OBIS-Kennzahl der Werteart ""Zählerstand"" im PIA+5 vorhanden  
-[420] Wenn in dieser SG8 das RFF+Z14 (Smartmeter-Gateway) vorhanden ist  
-[661] Hinweis: Ist dem NB bereits die ab dem Lieferbeginn zu verwendende Konfuigurations-ID bekannt, teilt er diese bereits hier mit. Liegt diese noch nicht vor, teilt der NB die aktuell verwendete Konfigurations-ID mit und veranlasst beim MSB eine Konfigurationsänderung, welche nach erfolgreichem Abschluss zu einer neuen"
-631,Konfigurations-ID,SG8,RFF,1153,,AGK,,Anwendungsreferenznu mmer,X,
-632,Konfigurations-ID,SG8,RFF,1154,,,,"Referenz, Identifikation",X,
-633,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,,,,,,Muss,
-634,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,4347,,5,,Produktidentifikation,X,
-635,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7140,,,,OBIS-Kennzahl der Zähleinrichtung,X [323],"[323] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3. anzugeben, welche an der Zähleinrichtung genutzt werden. Der Mindestumfang der OBIS-Kennzahlen ergibt sich aus den genannten Messprodukt-Codes dem Kap. 5.1 des Dokumentes ""Codeliste der Konfigurationen"""
-636,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
-637,Wertegranularität,SG10,,,,,,,Muss [256],[256] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e vorhanden
-638,Wertegranularität,SG10,CCI,,,,,,Muss,
-639,Wertegranularität,SG10,CCI,7037,,ZE4,,Wertegranularität,X,
-640,Wertegranularität,SG10,CAV,,,,,,Muss,
-641,Wertegranularität,SG10,CAV,7111,,ZD9,,Jährlich,X,
-642,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
-643,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
-644,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-645,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Muss [389] ∧ [391],[389] Wenn mehr als eine SG8 SEQ+Z20 (OBIS-Daten der
-646,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,,Muss,
-647,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,,Z39,,Code der Zählzeitdefinition,X,
-648,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,,Code der Zählzeitdefinition,X,
-649,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
-650,Zugeordnetes Zählzeitregister ,SG10,CCI,,,,,,Muss,
-651,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,,Z38,,Code des Zählzeitregisters,X,
-652,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,,,,Code des Zählzeitregisters,X,
-653,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Muss [273],[273] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e / 1-b?:3.8.e / 1-b?:4.8.e / 1-b?:5.8.e / 1-b?:6.8.e / 1-b?:7.8.e / 1-b?:8.8.e /  1-b?:1.8.63 vorhanden
-654,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,,,,,Muss,
-655,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,,11,,Produkt,X,
-656,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,,Z33,,Vor- und,X,
-657,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,,,,,Muss,
-658,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,,Angabe der Vorkommastelle,X,
-659,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,,Angabe der Nachkommastelle,X,
-660,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Muss [123] ∧ [273],"[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung Smartmeter-Gateway) mit dem SG8 RFF+MG (Gerätenummer des Zählers) auf die gleiche Identifikation/Nummer des Gerätes referenziert  
+634,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,,,,,Muss,
+635,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,,Z20,,OBIS-Daten der Zähleinrichtung,X,
+636,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS-Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW
+637,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X [441],
+638,Referenz auf die Gerätenummer,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden ist
+639,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
+640,Referenz auf die ID einer Messlokation,SG8,RFF,,,,,,Muss,
+641,Referenz auf die ID einer Messlokation,SG8,RFF,1153,,Z19,,Messlokation,X,
+642,Referenz auf die ID einer Messlokation,SG8,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+643,Konfigurations-ID,SG8,RFF,,,,,,Muss [78] ∧ [402] ∧ [420] ∧ [661] Soll [166] ∧ [40] ∧ [402] ∧ [420],"[40] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) vorhanden
+[78] Wenn SG4 STS+7++E02 (Transaktionsgrund: Einzug in Neuanlage) nicht vorhanden
+[166] Wenn vorhanden
+[402] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) eine OBIS-Kennzahl der Werteart ""Zählerstand"" im PIA+5 vorhanden
+[420] Wenn in dieser SG8 das RFF+Z14 (Smartmeter-Gateway) vorhanden ist
+[661] Hinweis: Ist dem NB bereits die ab dem Lieferbeginn zu verwendende Konfuigurations-ID bekannt, teilt er diese bereits hier mit. Liegt diese noch nicht vor, teilt der NB die aktuell verwendete Konfigurations-ID mit und veranlasst beim MSB eine Konfigurationsänderung, welche nach erfolgreichem Abschluss zu einer neuen Konfigurations-ID führt, die über den Prozess Stammdatenänderung kommuniziert wird."
+644,Konfigurations-ID,SG8,RFF,1153,,AGK,,Anwendungsreferenznu mmer,X,
+645,Konfigurations-ID,SG8,RFF,1154,,,,"Referenz, Identifikation",X,
+646,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,,,,,,Muss,
+647,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,4347,,5,,Produktidentifikation,X,
+648,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7140,,,,OBIS-Kennzahl der Zähleinrichtung,X [323],"[323] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3. anzugeben, welche an der Zähleinrichtung genutzt werden. Der Mindestumfang der OBIS-Kennzahlen ergibt sich aus den genannten Messprodukt-Codes dem Kap. 5.1 des Dokumentes ""Codeliste der Konfigurationen"""
+649,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
+650,Wertegranularität,SG10,,,,,,,Muss [256],[256] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e vorhanden
+651,Wertegranularität,SG10,CCI,,,,,,Muss,
+652,Wertegranularität,SG10,CCI,7037,,ZE4,,Wertegranularität,X,
+653,Wertegranularität,SG10,CAV,,,,,,Muss,
+654,Wertegranularität,SG10,CAV,7111,,ZD9,,Jährlich,X,
+655,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
+656,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
+657,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
+658,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Muss [389] ∧ [391],"[389] Wenn mehr als eine SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway), die mit dem RFF+MG (Referenz auf die Gerätenummer) auf die gleiche Gerätenummer referenziert, mit einer OBIS-Kennzahl der Werteart ""Zählerstand"" im PIA+5 vorhanden
+[391] Wenn in derselben SG8 SEQ+Z20 (OBIS Daten der Zähleinrichtung / Smartmeter-Gateway) eine OBIS-Kennzahl für Zählerstand im PIA+5 vorhanden und es sich lt. Codeliste OBIS um eine OBIS mit zugeordneter Zählzeit handelt (Tarif: e = 1 .. 62)"
+659,Zugeordnete Zählzeitdefinition,SG10,CCI,,,,,,Muss,
+660,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,,Z39,,Code der Zählzeitdefinition,X,
+661,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,,,,Code der Zählzeitdefinition,X,
+662,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
+663,Zugeordnetes Zählzeitregister ,SG10,CCI,,,,,,Muss,
+664,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,,Z38,,Code des Zählzeitregisters,X,
+665,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,,,,Code des Zählzeitregisters,X,
+666,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Muss [273],[273] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e / 1-b?:3.8.e / 1-b?:4.8.e / 1-b?:5.8.e / 1-b?:6.8.e / 1-b?:7.8.e / 1-b?:8.8.e /  1-b?:1.8.63 vorhanden
+667,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,,,,,Muss,
+668,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,,11,,Produkt,X,
+669,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,,Z33,,Vor- und Nachkommastellen des Zählwerkes,X,
+670,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,,,,,Muss,
+671,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,,Angabe der Vorkommastelle,X,
+672,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,,,,Angabe der Nachkommastelle,X,
+673,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Muss [123] ∧ [273],"[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung Smartmeter-Gateway) mit dem SG8 RFF+MG (Gerätenummer des Zählers) auf die gleiche Identifikation/Nummer des Gerätes referenziert
 [273] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e / 1-b?:3.8.e / 1-b?:4.8.e / 1-b?:5.8.e / 1-b?:6.8.e / 1-b?:7.8.e / 1-b?:8.8.e /  1-b?:1.8.63 vorhanden"
-661,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,,,,,,Muss,
-662,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7037,,Z63,,Lokale Kennzeichnung zu Kontrollzwecken,X,
-663,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7036,,,,Bezeichnung des Zählwerks auf dem Gerät,X,
-664,Wandlerdaten,SG8,,,,,,,Soll [130] ,[130] Wenn an Messlokation vorhanden
-665,Wandlerdaten,SG8,SEQ,,,,,,Muss,
-666,Wandlerdaten,SG8,SEQ,1229,,Z04,,Wandler-Daten,X,
-667,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
-668,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
-669,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
-670,Wandler,SG10,,,,,,,Muss,
-671,Wandler,SG10,CCI,,,,,,Muss,
-672,Wandler,SG10,CCI,7037,,Z25,,Wandler,X,
-673,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss [2317] ⊻ [2318],"[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MIW/ MPW/MUW vorhanden, ist das Segment mindestens zweimal anzugeben  
+674,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,,,,,,Muss,
+675,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7037,,Z63,,Lokale Kennzeichnung zu Kontrollzwecken,X,
+676,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7036,,,,Bezeichnung des Zählwerks auf dem Gerät,X,
+677,Wandlerdaten,SG8,,,,,,,Soll [130] ,[130] Wenn an Messlokation vorhanden
+678,Wandlerdaten,SG8,SEQ,,,,,,Muss,
+679,Wandlerdaten,SG8,SEQ,1229,,Z04,,Wandler-Daten,X,
+680,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
+681,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
+682,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
+683,Wandler,SG10,,,,,,,Muss,
+684,Wandler,SG10,CCI,,,,,,Muss,
+685,Wandler,SG10,CCI,7037,,Z25,,Wandler,X,
+686,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss [2317] ⊻ [2318],"[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MIW/ MPW/MUW vorhanden, ist das Segment mindestens zweimal anzugeben
 [2318] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MBW (Blockstromwandler) vorhanden, ist das Segment genau einmal anzugeben"
-674,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-675,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
-676,Wandlertyp und Faktor,SG10,CAV,,,,,,Muss,
-677,Wandlertyp und Faktor,SG10,CAV,7111,,MIW,,Messwandlersatz Strom,X,
-678,Wandlertyp und Faktor,SG10,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
-679,Wandlertyp und Faktor,SG10,CAV,7111,,MBW,,Blockstromwandler,X,
-680,Wandlertyp und Faktor,SG10,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
-681,Wandlertyp und Faktor,SG10,CAV,7110,,,,Wandlerfaktor,X [902] [141],"[141] Wenn SG10 CAV+MIW/ MPW/ MBW vorhanden  
+687,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+688,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
+689,Wandlertyp und Faktor,SG10,CAV,,,,,,Muss,
+690,Wandlertyp und Faktor,SG10,CAV,7111,,MIW,,Messwandlersatz Strom,X,
+691,Wandlertyp und Faktor,SG10,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
+692,Wandlertyp und Faktor,SG10,CAV,7111,,MBW,,Blockstromwandler,X,
+693,Wandlertyp und Faktor,SG10,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
+694,Wandlertyp und Faktor,SG10,CAV,7110,,,,Wandlerfaktor,X [902] [141],"[141] Wenn SG10 CAV+MIW/ MPW/ MBW vorhanden
 [902] Format: Möglicher Wert: ≥ 0"
-682,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Muss [2119] Soll [130] ,"[130] Wenn an Messlokation vorhanden  
+695,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Muss [2119] Soll [130] ,"[130] Wenn an Messlokation vorhanden
 [2119] Je SG8 SEQ+Z13 (Smartmeter-Gateway) ist genau einmal die Segmentgruppe anzugeben"
-683,Kommunikationseinrichtun gsdaten,SG8,SEQ,,,,,,Muss,
-684,Kommunikationseinrichtun gsdaten,SG8,SEQ,1229,,Z05,,Kommunikationseinricht,X,
-685,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
-686,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
-687,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
-688,Kommunikationseinrichtun g,SG10,,,,,,,Muss,
-689,Kommunikationseinrichtun g,SG10,CCI,,,,,,Muss,
-690,Kommunikationseinrichtun g,SG10,CCI,7037,,Z26,,Kommunikationseinricht ung,X,
-691,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
-692,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-693,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
-694,Kommunikationseinrichtun gstyp,SG10,CAV,,,,,,Muss,
-695,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,GSM,,GSM/GPRS/UMTS- Kom.-Einr.,X,
-696,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
-697,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
-698,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
-699,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
-700,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
-701,Daten der technischen Steuereinrichtung,SG8,,,,,,,Soll [130],[130] Wenn an Messlokation vorhanden
-702,Daten der technischen Steuereinrichtung,SG8,SEQ,,,,,,Muss,
-703,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,,Z06,,Daten der technischen Steuereinrichtung,X,
-704,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
-705,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
-706,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
-707,Technische Steuereinrichtung,SG10,,,,,,,Muss,
-708,Technische Steuereinrichtung,SG10,CCI,,,,,,Muss,
-709,Technische Steuereinrichtung,SG10,CCI,7037,,Z27,,Technische Steuereinrichtung,X,
-710,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
-711,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-712,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
-713,Technische Steuereinrichtungstyp,SG10,CAV,,,,,,Muss,
-714,Technische Steuereinrichtungstyp,SG10,CAV,7111,,RSU,,Rundsteuerempfänger,X,
-715,Technische Steuereinrichtungstyp,SG10,CAV,7111,,TSU,,Tarifschaltuhr,X,
-716,Smartmeter-Gateway,SG8,,,,,,,Soll [130],[130] Wenn an Messlokation vorhanden
-717,Smartmeter-Gateway,SG8,SEQ,,,,,,Muss,
-718,Smartmeter-Gateway,SG8,SEQ,1229,,Z13,,Smartmeter-Gateway,X,
-719,Smartmeter-Gateway,SG10,,,,,,,Muss,
-720,Smartmeter-Gateway,SG10,CCI,,,,,,Muss,
-721,Smartmeter-Gateway,SG10,CCI,7037,,Z75,,Smartmeter-Gateway,X,
-722,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
-723,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-724,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
-725,Daten der Steuerbox,SG8,,,,,,,Soll [133],[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
-726,Daten der Steuerbox,SG8,SEQ,,,,,,Muss,
-727,Daten der Steuerbox,SG8,SEQ,1229,,Z14,,Steuerbox,X,
-728,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,,Muss,
-729,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,
-730,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,,Identifikation / Nummer des Smartmeter-Gateways,X,
-731,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
-732,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
-733,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-734,Steuerbox,SG10,,,,,,,Muss,
-735,Steuerbox,SG10,CCI,,,,,,Muss,
-736,Steuerbox,SG10,CCI,7037,,Z76,,Steuerbox,X,
-737,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
-738,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
-739,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
-740,Profildaten,SG8,,,,,,,Muss [119],[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
-741,Profildaten,SG8,SEQ,,,,,,Muss,
-742,Profildaten,SG8,SEQ,1229,,Z21,,Profildaten,X,
-743,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
-744,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
-745,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-746,Normiertes Profil,SG10,,,,,,,Muss,
-747,Normiertes Profil,SG10,CCI,,,,,,Muss,
-748,Normiertes Profil,SG10,CCI,7059,,Z02,,Standardlastprofil,X,
-749,Normiertes Profil,SG10,CCI,7037,,E01,,synthetisches Verfahren,X,
-750,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X [332],[332] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) nicht vorhanden
-751,Normiertes Profil,SG10,CAV,,,,,,Muss,
-752,Normiertes Profil,SG10,CAV,7111,,,,Code des Normierten Profils,X,
-753,Profilschardaten,SG8,,,,,,,Muss [89],[89] Wenn im SG8
-754,Profilschardaten,SG8,SEQ,,,,,,Muss,
-755,Profilschardaten,SG8,SEQ,1229,,Z08,,Profilschardaten,X,
+696,Kommunikationseinrichtun gsdaten,SG8,SEQ,,,,,,Muss,
+697,Kommunikationseinrichtun gsdaten,SG8,SEQ,1229,,Z05,,Kommunikationseinricht ungsdaten,X,
+698,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
+699,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
+700,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
+701,Kommunikationseinrichtun g,SG10,,,,,,,Muss,
+702,Kommunikationseinrichtun g,SG10,CCI,,,,,,Muss,
+703,Kommunikationseinrichtun g,SG10,CCI,7037,,Z26,,Kommunikationseinricht ung,X,
+704,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
+705,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+706,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
+707,Kommunikationseinrichtun gstyp,SG10,CAV,,,,,,Muss,
+708,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,GSM,,GSM/GPRS/UMTS- Kom.-Einr.,X,
+709,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
+710,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
+711,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
+712,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
+713,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
+714,Daten der technischen Steuereinrichtung,SG8,,,,,,,Soll [130],[130] Wenn an Messlokation vorhanden
+715,Daten der technischen Steuereinrichtung,SG8,SEQ,,,,,,Muss,
+716,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,,Z06,,Daten der technischen Steuereinrichtung,X,
+717,Referenz auf die Gerätenummer,SG8,RFF,,,,,,Muss,
+718,Referenz auf die Gerätenummer,SG8,RFF,1153,,MG,,Gerätenummer des Zählers,X,
+719,Referenz auf die Gerätenummer,SG8,RFF,1154,,,,Gerätenummer,X,
+720,Technische Steuereinrichtung,SG10,,,,,,,Muss,
+721,Technische Steuereinrichtung,SG10,CCI,,,,,,Muss,
+722,Technische Steuereinrichtung,SG10,CCI,7037,,Z27,,Technische Steuereinrichtung,X,
+723,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
+724,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+725,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X,
+726,Technische Steuereinrichtungstyp,SG10,CAV,,,,,,Muss,
+727,Technische Steuereinrichtungstyp,SG10,CAV,7111,,RSU,,Rundsteuerempfänger,X,
+728,Technische Steuereinrichtungstyp,SG10,CAV,7111,,TSU,,Tarifschaltuhr,X,
+729,Smartmeter-Gateway,SG8,,,,,,,Soll [130],[130] Wenn an Messlokation vorhanden
+730,Smartmeter-Gateway,SG8,SEQ,,,,,,Muss,
+731,Smartmeter-Gateway,SG8,SEQ,1229,,Z13,,Smartmeter-Gateway,X,
+732,Smartmeter-Gateway,SG10,,,,,,,Muss,
+733,Smartmeter-Gateway,SG10,CCI,,,,,,Muss,
+734,Smartmeter-Gateway,SG10,CCI,7037,,Z75,,Smartmeter-Gateway,X,
+735,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
+736,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+737,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
+738,Daten der Steuerbox,SG8,,,,,,,Soll [133],[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
+739,Daten der Steuerbox,SG8,SEQ,,,,,,Muss,
+740,Daten der Steuerbox,SG8,SEQ,1229,,Z14,,Steuerbox,X,
+741,Referenz auf das Smartmeter-Gateway,SG8,RFF,,,,,,Muss,
+742,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,
+743,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,,,,Identifikation / Nummer des Smartmeter-Gateways,X,
+744,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
+745,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
+746,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+747,Steuerbox,SG10,,,,,,,Muss,
+748,Steuerbox,SG10,CCI,,,,,,Muss,
+749,Steuerbox,SG10,CCI,7037,,Z76,,Steuerbox,X,
+750,Identifikation / Nummer des Gerätes,SG10,CAV,,,,,,Muss,
+751,Identifikation / Nummer des Gerätes,SG10,CAV,7111,,Z30,,Gerätenummer,X,
+752,Identifikation / Nummer des Gerätes,SG10,CAV,7110,,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
+753,Profildaten,SG8,,,,,,,Muss [119],[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
+754,Profildaten,SG8,SEQ,,,,,,Muss,
+755,Profildaten,SG8,SEQ,1229,,Z21,,Profildaten,X,
 756,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
 757,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
 758,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-759,Profilschar,SG10,,,,,,,Muss,
-760,Profilschar,SG10,CCI,,,,,,Muss,
-761,Profilschar,SG10,CCI,7037,,Z12,,Profilschar,X,
-762,Profilschar,SG10,CAV,,,,,,Muss,
-763,Profilschar,SG10,CAV,7111,,,,Code der Profilschar,X,
-764,Normiertes Profil,SG10,,,,,,,Muss,
-765,Normiertes Profil,SG10,CCI,,,,,,Muss,
-766,Normiertes Profil,SG10,CCI,7059,,Z03,,tagesparameterabhängig es Lastprofil,X,
-767,Normiertes Profil,SG10,CCI,7037,,E01,,synthetisches Verfahren,X,
-768,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
-769,Normiertes Profil,SG10,CAV,,,,,,Muss,
-770,Normiertes Profil,SG10,CAV,7111,,,,Code des Normierten Profils,X,
-771,Klimazone / Temperaturmessstelle,SG10,,,,,,,Muss,
-772,Klimazone / Temperaturmessstelle,SG10,CCI,,,,,,Muss,
-773,Klimazone / Temperaturmessstelle,SG10,CCI,7059,,Z99,,Messstelle des Tagesparameters (derzeit ist nur die Temperatur ein erlaubter Tagesparameter),X,
-774,Klimazone / Temperaturmessstelle,SG10,CCI,7059,,ZA0,,Klimazone des Tagesparameters (derzeit ist Tagesparameter),X,
-775,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,,ID Klimazone / Temperaturmessstelle,X,
-776,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,,Dienstanbieter,X [58],[58] Wenn in diesem CCI das DE3055 mit dem Code 293 vorhanden
-777,Klimazone / Temperaturmessstelle,SG10,CCI,3055,,89,,Vergeben vom Händler (hier Netzbetreiber),X,
-778,Klimazone / Temperaturmessstelle,SG10,CCI,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-779,Kunde des Lieferanten,SG12,,,,,,,Muss [572],[572] Hinweis: Kundenname aus Anmeldung Lieferant neu
-780,Kunde des Lieferanten,SG12,NAD,,,,,,Muss,
-781,Kunde des Lieferanten,SG12,NAD,3035,,Z09,,Kunde des LF,X,
-782,Kunde des Lieferanten,SG12,NAD,3036,,,,Name,X,
-783,Kunde des Lieferanten,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
-784,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-785,Kundennummer beim Lieferanten,SG12,RFF,,,,,,Soll [147],[147] Wenn in Anfrage vorhanden
-786,Kundennummer beim Lieferanten,SG12,RFF,1153,,AVC,,Kundennummer beim Lieferanten,X,
-787,Kundennummer beim Lieferanten,SG12,RFF,1154,,,,Kundennummer beim LF,X,
-788,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,,Muss,
-789,Referenz auf die ID der Marktlokation,SG12,RFF,1153,,Z18,,Marktlokation,X,
-790,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-791,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss,"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln  
-[559] Hinweis: Die Korrespondenzanschrift des Endverbrauchers/ Kunden wird nicht zur Identifikation genutzt"
-792,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,,,,,Muss,
-793,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,,Z04,,Korrespondenzanschrift des Kunden des LF,X,
-794,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,,,,Name,X,
-795,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
-796,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-797,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,X,
-798,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,,,,Ort,X,
-799,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
-[268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-800,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,,,,"Ländername, Code",X,
+759,Normiertes Profil,SG10,,,,,,,Muss,
+760,Normiertes Profil,SG10,CCI,,,,,,Muss,
+761,Normiertes Profil,SG10,CCI,7059,,Z02,,Standardlastprofil,X,
+762,Normiertes Profil,SG10,CCI,7037,,E01,,synthetisches Verfahren,X,
+763,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X [332],[332] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+6++ZA9 (Aggreg. verantw. ÜNB) nicht vorhanden
+764,Normiertes Profil,SG10,CAV,,,,,,Muss,
+765,Normiertes Profil,SG10,CAV,7111,,,,Code des Normierten Profils,X,
+766,Profilschardaten,SG8,,,,,,,Muss [89],[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden
+767,Profilschardaten,SG8,SEQ,,,,,,Muss,
+768,Profilschardaten,SG8,SEQ,1229,,Z08,,Profilschardaten,X,
+769,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
+770,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
+771,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+772,Profilschar,SG10,,,,,,,Muss,
+773,Profilschar,SG10,CCI,,,,,,Muss,
+774,Profilschar,SG10,CCI,7037,,Z12,,Profilschar,X,
+775,Profilschar,SG10,CAV,,,,,,Muss,
+776,Profilschar,SG10,CAV,7111,,,,Code der Profilschar,X,
+777,Normiertes Profil,SG10,,,,,,,Muss,
+778,Normiertes Profil,SG10,CCI,,,,,,Muss,
+779,Normiertes Profil,SG10,CCI,7059,,Z03,,tagesparameterabhängig es Lastprofil,X,
+780,Normiertes Profil,SG10,CCI,7037,,E01,,synthetisches Verfahren,X,
+781,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
+782,Normiertes Profil,SG10,CAV,,,,,,Muss,
+783,Normiertes Profil,SG10,CAV,7111,,,,Code des Normierten Profils,X,
+784,Klimazone / Temperaturmessstelle,SG10,,,,,,,Muss,
+785,Klimazone / Temperaturmessstelle,SG10,CCI,,,,,,Muss,
+786,Klimazone / Temperaturmessstelle,SG10,CCI,7059,,Z99,,Messstelle des Tagesparameters (derzeit ist nur die Temperatur ein erlaubter Tagesparameter),X,
+787,Klimazone / Temperaturmessstelle,SG10,CCI,7059,,ZA0,,Klimazone des Tagesparameters (derzeit ist Tagesparameter),X,
+788,Klimazone / Temperaturmessstelle,SG10,CCI,7037,,,,ID Klimazone / Temperaturmessstelle,X,
+789,Klimazone / Temperaturmessstelle,SG10,CCI,1131,,,,Dienstanbieter,X [58],[58] Wenn in diesem CCI das DE3055 mit dem Code 293 vorhanden
+790,Klimazone / Temperaturmessstelle,SG10,CCI,3055,,89,,Vergeben vom Händler (hier Netzbetreiber),X,
+791,Klimazone / Temperaturmessstelle,SG10,CCI,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+792,Kunde des Lieferanten,SG12,,,,,,,Muss [572],[572] Hinweis: Kundenname aus Anmeldung Lieferant neu
+793,Kunde des Lieferanten,SG12,NAD,,,,,,Muss,
+794,Kunde des Lieferanten,SG12,NAD,3035,,Z09,,Kunde des LF,X,
+795,Kunde des Lieferanten,SG12,NAD,3036,,,,Name,X,
+796,Kunde des Lieferanten,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
+797,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+798,Kundennummer beim Lieferanten,SG12,RFF,,,,,,Soll [147],[147] Wenn in Anfrage vorhanden
+799,Kundennummer beim Lieferanten,SG12,RFF,1153,,AVC,,Kundennummer beim Lieferanten,X,
+800,Kundennummer beim Lieferanten,SG12,RFF,1154,,,,Kundennummer beim LF,X,
 801,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,,Muss,
 802,Referenz auf die ID der Marktlokation,SG12,RFF,1153,,Z18,,Marktlokation,X,
 803,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-804,Marktlokationsanschrift,SG12,,,,,,,Muss,"[165] Wenn bekannt  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden"
-805,Marktlokationsanschrift,SG12,NAD,,,,,,Muss,
-806,Marktlokationsanschrift,SG12,NAD,3035,,DP,,Lieferanschrift,X,
-807,Marktlokationsanschrift,SG12,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
-808,Marktlokationsanschrift,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[165] Wenn bekannt  
-[166] Wenn vorhanden  
-[212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
-809,Marktlokationsanschrift,SG12,NAD,3164,,,,Ort,X,
-810,Marktlokationsanschrift,SG12,NAD,3251,,,,Postleitzahl,X,
-811,Marktlokationsanschrift,SG12,NAD,3207,,,,"Ländername, Code",X,
-812,Name und Adresse für die Ablesekarte,SG12,,,,,,,Muss [234],"[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden  
-[560] Hinweis: Die"
-813,Name und Adresse für die Ablesekarte,SG12,NAD,,,,,,Muss,
-814,Name und Adresse für die Ablesekarte,SG12,NAD,3035,,Z05,,Name und Adresse für die Ablesekarte,X,
-815,Name und Adresse für die Ablesekarte,SG12,NAD,3036,,,,Name,X,
-816,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
-817,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-818,Name und Adresse für die Ablesekarte,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,X,
-819,Name und Adresse für die Ablesekarte,SG12,NAD,3164,,,,Ort,X,
-820,Name und Adresse für die Ablesekarte,SG12,NAD,3251,,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+804,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss,"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln
+[559] Hinweis: Die Korrespondenzanschrift des Endverbrauchers/ Kunden wird nicht zur Identifikation genutzt"
+805,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,,,,,Muss,
+806,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,,Z04,,Korrespondenzanschrift des Kunden des LF,X,
+807,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,,,,Name,X,
+808,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
+809,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+810,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,X,
+811,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,,,,Ort,X,
+812,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-821,Name und Adresse für die Ablesekarte,SG12,NAD,3207,,,,"Ländername, Code",X,
-822,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,,Muss,
-823,Referenz auf die ID einer Messlokation,SG12,RFF,1153,,Z19,,Messlokation,X,
-824,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-825,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-826,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-827,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+813,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,,,,"Ländername, Code",X,
+814,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,,Muss,
+815,Referenz auf die ID der Marktlokation,SG12,RFF,1153,,Z18,,Marktlokation,X,
+816,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+817,Marktlokationsanschrift,SG12,,,,,,,Muss,"[165] Wenn bekannt
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden"
+818,Marktlokationsanschrift,SG12,NAD,,,,,,Muss,
+819,Marktlokationsanschrift,SG12,NAD,3035,,DP,,Lieferanschrift,X,
+820,Marktlokationsanschrift,SG12,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
+821,Marktlokationsanschrift,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[165] Wenn bekannt
+[166] Wenn vorhanden
+[212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
+822,Marktlokationsanschrift,SG12,NAD,3164,,,,Ort,X,
+823,Marktlokationsanschrift,SG12,NAD,3251,,,,Postleitzahl,X,
+824,Marktlokationsanschrift,SG12,NAD,3207,,,,"Ländername, Code",X,
+825,Name und Adresse für die Ablesekarte,SG12,,,,,,,Muss [234],"[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden
+[560] Hinweis: Die Angabe Name und Adresse für die Ablesekarte wird nicht zur Identifikation genutzt"
+826,Name und Adresse für die Ablesekarte,SG12,NAD,,,,,,Muss,
+827,Name und Adresse für die Ablesekarte,SG12,NAD,3035,,Z05,,Name und Adresse für die Ablesekarte,X,
+828,Name und Adresse für die Ablesekarte,SG12,NAD,3036,,,,Name,X,
+829,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z01,,Struktur von Personennamen,X,
+830,Name und Adresse für die Ablesekarte,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+831,Name und Adresse für die Ablesekarte,SG12,NAD,3042,,,,Straße und Hausnummer oder Postfach,X,
+832,Name und Adresse für die Ablesekarte,SG12,NAD,3164,,,,Ort,X,
+833,Name und Adresse für die Ablesekarte,SG12,NAD,3251,,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
+[268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
+834,Name und Adresse für die Ablesekarte,SG12,NAD,3207,,,,"Ländername, Code",X,
+835,Referenz auf die ID einer Messlokation,SG12,RFF,,,,,,Muss,
+836,Referenz auf die ID einer Messlokation,SG12,RFF,1153,,Z19,,Messlokation,X,
+837,Referenz auf die ID einer Messlokation,SG12,RFF,1154,,,,ID einer Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+838,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+839,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+840,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

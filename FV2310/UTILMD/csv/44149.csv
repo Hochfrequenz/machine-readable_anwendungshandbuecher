@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,G1.0a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,G1.0a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -51,7 +51,7 @@
 48,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2379,00018,303,,CCYYMMDDHHMMZZZ,X,
 49,Transaktionsgrund,SG4,STS,,00026,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 50,Transaktionsgrund,SG4,STS,9015,00026,7,,Transaktionsgrund,X,
-51,Transaktionsgrund,SG4,STS,9013,00026,ZF5,,Anfrage an MSB mit,X,
+51,Transaktionsgrund,SG4,STS,9013,00026,ZF5,,Anfrage an MSB mit Abhängigkeiten,X,
 52,Status der Antwort,SG4,STS,,00028,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
 53,Status der Antwort,SG4,STS,9015,00028,E01,,Status der Antwort,X,
 54,Status der Antwort,SG4,STS,9013,00028,,,Code des Prüfschritts,X,
@@ -68,7 +68,9 @@
 65,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00038,,,,Muss,
 66,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00038,TN,,Transaktions- Referenznummer,X,
 67,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00038,,,Vorgangsnummer,X,
-68,Zähleinrichtungsdaten,SG8,,,,,,,Muss [345] ∧ [530],[336] Wenn in Änderungsmeldung gefüllt
+68,Zähleinrichtungsdaten,SG8,,,,,,,Muss [345] ∧ [530],"[336] Wenn in Änderungsmeldung gefüllt
+[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden
+[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind"
 69,Zähleinrichtungsdaten,SG8,SEQ,,00088,,,,Muss,
 70,Zähleinrichtungsdaten,SG8,SEQ,1229,00088,Z03,,Zähleinrichtungsdaten,X,
 71,Referenz auf die ID einer Messlokation,SG8,RFF,,00089,,,,Muss,
@@ -95,7 +97,7 @@
 92,Zählergröße,SG10,CAV,7110,,G16,,Gaszähler G16,X,
 93,Zählergröße,SG10,CAV,7110,,G160,,Gaszähler G160,X,
 94,Zählergröße,SG10,CAV,7110,,G1600,,Gaszähler G1600,X,
-95,Zählergröße,SG10,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,X X,
+95,Zählergröße,SG10,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,XX,
 96,Zählergröße,SG10,CAV,7110,,G25,,Gaszähler G25,X,
 97,Zählergröße,SG10,CAV,7110,,G250,,Gaszähler G250,X,
 98,Zählergröße,SG10,CAV,7110,,G2500,,Gaszähler G2500,X,
@@ -126,9 +128,9 @@
 123,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,00098,,,,Muss,
 124,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,00098,AMR,,fernauslesbare Zähler,X,
 125,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
-126,Messdatenregistriergeräted aten,SG8,,,,,,,Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt  
-[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden  
+126,Messdatenregistriergeräted aten,SG8,,,,,,,Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden
 [530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind"
 127,Messdatenregistriergeräted aten,SG8,SEQ,,00099,,,,Muss,
 128,Messdatenregistriergeräted aten,SG8,SEQ,1229,00099,Z50,,Messdatenregistriergerät edaten,X,
@@ -141,9 +143,9 @@
 135,Art der Volumenerfassung,SG10,CAV,,00103,,,,Soll [166],[166] Wenn vorhanden
 136,Art der Volumenerfassung,SG10,CAV,7111,00103,ZC0,,Art der Volumenerfassung,X,
 137,Art der Volumenerfassung,SG10,CAV,7110,00103,Z16,,Hochfrequenzsonde,X,
-138,Mengenumwerterdaten,SG8,,,,,,,Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt  
-[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden  
+138,Mengenumwerterdaten,SG8,,,,,,,Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden
 [530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind"
 139,Mengenumwerterdaten,SG8,SEQ,,00104,,,,Muss,
 140,Mengenumwerterdaten,SG8,SEQ,1229,00104,Z09,,Mengenumwerter-Daten,X,
@@ -164,9 +166,11 @@
 155,Art der Volumenerfassung,SG10,CAV,7111,00109,ZC0,,Art der Volumenerfassung,X,
 156,Art der Volumenerfassung,SG10,CAV,7110,00109,Z17,,Kennlinienkorrektur,X,
 157,Art der Volumenerfassung,SG10,CAV,7110,,Z18,,Schleichmengenunterdrü ckung,X,
-158,OBIS-Daten der Zähleinrichtung / Mengenumwerter,SG8,,,,,,,Muss [345] ∧ [530] ∧ ([2287] ∨ [2353]),"[336] Wenn in Änderungsmeldung gefüllt  
-[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden  
-[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben,"
+158,OBIS-Daten der Zähleinrichtung / Mengenumwerter,SG8,,,,,,,Muss [345] ∧ [530] ∧ ([2287] ∨ [2353]),"[336] Wenn in Änderungsmeldung gefüllt
+[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden
+[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind
+[2287] Für jede SEQ+Z03 (Zähleinrichtungsdaten) mindestens einmal anzugeben
+[2353] Für jede SEQ+Z09 (Mengenumwerter- Daten) mindestens einmal anzugeben"
 159,OBIS-Daten der Zähleinrichtung / Mengenumwerter,SG8,SEQ,,00110,,,,Muss,
 160,OBIS-Daten der Zähleinrichtung / Mengenumwerter,SG8,SEQ,1229,00110,Z20,,OBIS-Daten der Zähleinrichtung,X,
 161,Referenz auf die Gerätenummer,SG8,RFF,,00111,,,,Muss [655],[655] Hinweis: Wenn ein Zähler an einen Mengenumwerter angeschlossen ist werden an dem Zähler keine OBIS-Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom Mengenumwerter  
@@ -188,23 +192,25 @@
 177,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
 178,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
 179,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-180,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Muss [274],[274] Wenn in derselben
+180,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Muss [274],"[274] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Mengenumwerter) das PIA+5+7-b?:3.0.0 / 7- b?:6.0.0 / 7-b?:3.1.0 / 7-b?:6.1.0 / 7-b?:3.2.0 / 7-b?:6.2.0 / 7-b?:13.2.0 / 7-b?:16.2.0 / 7-b?:1.0.0 / 7-b?:2.0.0 / 7-b?:4.0.0 / 7-b?:5.0.0 / 7-b?:11.2.0 / 7-b?:12.2.0 / 7-b?:14.2.0 / 7-b?:15.2.0 vorhanden
+[336] Wenn in Änderungsmeldung gefüllt"
 181,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,,00116,,,,Muss,
 182,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7059,00116,11,,Produkt,X,
 183,Vor- und Nachkommastellen des Zählwerks,SG10,CCI,7037,00116,Z33,,Vor- und Nachkommastellen des Zählwerkes,X,
 184,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,00117,,,,Muss,
 185,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00117,,,Angabe der Vorkommastelle,X,
 186,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00117,,,Angabe der Nachkommastelle,X,
-187,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Muss [123] ∧ [274],"[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Mengenumwerter) mit dem SG8 RFF+MG / Z11 (Gerätenummer des Zählers / Mengenumwerters) auf die gleiche Identifikation/Nummer des Gerätes referenziert  
-[274] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Mengenumwerter) das"
+187,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Muss [123] ∧ [274],"[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Mengenumwerter) mit dem SG8 RFF+MG / Z11 (Gerätenummer des Zählers / Mengenumwerters) auf die gleiche Identifikation/Nummer des Gerätes referenziert
+[274] Wenn in derselben SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Mengenumwerter) das PIA+5+7-b?:3.0.0 / 7- b?:6.0.0 / 7-b?:3.1.0 / 7-b?:6.1.0 / 7-b?:3.2.0 / 7-b?:6.2.0 / 7-b?:13.2.0 / 7-b?:16.2.0 / 7-b?:1.0.0 / 7-b?:2.0.0 / 7-b?:4.0.0 / 7-b?:5.0.0 / 7-b?:11.2.0 / 7-b?:12.2.0 / 7-b?:14.2.0 / 7-b?:15.2.0 vorhanden
+[336] Wenn in Änderungsmeldung gefüllt"
 188,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,,00118,,,,Muss,
 189,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7037,00118,Z63,,Lokale Kennzeichnung zu Kontrollzwecken,X,
 190,Bezeichnung des Zählwerks auf dem Gerät,SG10,CCI,7036,00118,,,Bezeichnung des Zählwerks auf dem Gerät,X,
-191,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Muss [2119] Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt  
-[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden  
-[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind  
-[2119] Je SG8 SEQ+Z13 (Smartmeter-Gateway) ist genau einmal die"
+191,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Muss [2119] Soll [133] ∧ [345] ∧ [530],"[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden
+[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind
+[2119] Je SG8 SEQ+Z13 (Smartmeter-Gateway) ist genau einmal die Segmentgruppe anzugeben"
 192,Kommunikationseinrichtun gsdaten,SG8,SEQ,,00119,,,,Muss,
 193,Kommunikationseinrichtun gsdaten,SG8,SEQ,1229,00119,Z05,,Kommunikationseinricht ungsdaten,X,
 194,Referenz auf die Gerätenummer,SG8,RFF,,00120,,,,Muss,
@@ -223,7 +229,7 @@
 207,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
 208,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
 209,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
-210,Smartmeter-Gateway,SG8,,,,,,,Soll [130],"[130] Wenn an Messlokation vorhanden  
+210,Smartmeter-Gateway,SG8,,,,,,,Soll [130],"[130] Wenn an Messlokation vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 211,Smartmeter-Gateway,SG8,SEQ,,00124,,,,Muss,
 212,Smartmeter-Gateway,SG8,SEQ,1229,00124,Z13,,Smartmeter-Gateway,X,

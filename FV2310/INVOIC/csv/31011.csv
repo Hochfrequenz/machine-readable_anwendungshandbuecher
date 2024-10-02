@@ -9,7 +9,7 @@
 7,Rechnungsnummer,,BGM,,,,,,Muss,
 8,Rechnungsnummer,,BGM,1001,,380,,Handelsrechnung,X,
 9,Rechnungsnummer,,BGM,1004,,,,Dokumentennummer,X,
-10,Rechnungsnummer,,BGM,1225,,,,,7 9,
+10,Rechnungsnummer,,BGM,1225,,,,,79,
 11,Nachrichtendatum,,DTM,,,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
 13,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
@@ -51,7 +51,7 @@
 49,Referenzdatum,SG1,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 50,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,Muss [47],[47] Wenn IMD++Z43 vorhanden
 51,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,,,,,Muss,
-52,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,,ACE,,Nummer des zugehörigen,X,
+52,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,,ACE,,Nummer des zugehörigen Dokuments,X,
 53,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,,,,"Referenz, Identifikation",X [501],[501] Hinweis: Dokumentennummer der ORDERS
 54,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
 55,Name und Anschrift des Nachrichtensenders,SG2,NAD,,,,,,Muss,
@@ -97,7 +97,7 @@
 95,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,,Ort,M,
 96,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
 97,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,,"Ländername, Code",X,
-98,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt 
+98,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
 [5] Wenn SG2 NAD+MR DE3207 <> „DE“"
 99,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,,,,,Muss,
 100,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,VA,,Umsatzsteuernummer,X,
@@ -107,15 +107,21 @@
 104,Adresse der Leistungserbringung,SG2,NAD,,,,,,Muss,
 105,Adresse der Leistungserbringung,SG2,NAD,3035,,,,,DP,
 106,Adresse der Leistungserbringung,SG2,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
-107,Adresse der Leistungserbringung,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [22] M [23],"[22] Wenn vorhanden 
+107,Adresse der Leistungserbringung,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [22] M [23],"[22] Wenn vorhanden
 [23] Wenn im selben SG2 NAD DE3124 nicht vorhanden"
 108,Adresse der Leistungserbringung,SG2,NAD,3164,,,,Ort,M,
 109,Adresse der Leistungserbringung,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
 110,Adresse der Leistungserbringung,SG2,NAD,3207,,,,"Ländername, Code",X,
 111,Meldepunkt,SG2,LOC,,,,,,Muss,
 112,Meldepunkt,SG2,LOC,3227,,,,,172,
-113,Meldepunkt,SG2,LOC,3225,,,,"Ortsangabe, Nummer",X ([950] [509] ∧ ([64] V [70])) V ([952] [522] ∧ [71] ∧ [53]),"[53] Wenn IMD++Z45 vorhanden 
-[64] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤"
+113,Meldepunkt,SG2,LOC,3225,,,,"Ortsangabe, Nummer",X ([950] [509] ∧ ([64] V [70])) V ([952] [522] ∧ [71] ∧ [53]),"[53] Wenn IMD++Z45 vorhanden
+[64] Wenn SG26 DTM+156 (Rechnungsperiode Endedatum) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit
+[70] Wenn IMD++Z45 nicht vorhanden
+[71] Wenn SG26 DTM+155 (Rechnungsperiode Beginndatum) ≥ 1.1.2024 0:00 gesetzlicher deutscher Zeit
+[509] Hinweis: Verwendung der ID der Marktlokation
+[522] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
+[952] Format: Netzlokations-ID"
 114,Währungsangaben,SG7,,,,,,,Muss,
 115,Währungsangaben,SG7,CUX,,,,,,Muss,
 116,Währungsangaben,SG7,CUX,6347,,2,,Referenzwährung,X,
@@ -135,7 +141,7 @@
 130,Positionsdaten,SG26,LIN,7143,,Z09,,Artikel-ID,X,
 131,energetische Mengenangaben,SG26,QTY,,,,,,Muss,
 132,energetische Mengenangaben,SG26,QTY,6063,,47,,Berechnete (fakturierte) Menge,X,
-133,energetische Mengenangaben,SG26,QTY,6060,,,,Menge,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0 
+133,energetische Mengenangaben,SG26,QTY,6060,,,,Menge,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 134,energetische Mengenangaben,SG26,QTY,6411,,K3,,kilovolt ampere reactive hour,X,
 135,energetische Mengenangaben,SG26,QTY,6411,,H87,,Stück,X,
@@ -163,9 +169,9 @@
 157,Umsatzsteuer der Position,SG34,TAX,,,,,,Muss,
 158,Umsatzsteuer der Position,SG34,TAX,5283,,,,,7,
 159,Umsatzsteuer der Position,SG34,TAX,5153,,VAT,,Umsatzsteuer,X,
-160,Umsatzsteuer der Position,SG34,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+160,Umsatzsteuer der Position,SG34,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-161,Umsatzsteuer der Position,SG34,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,S O AE,
+161,Umsatzsteuer der Position,SG34,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,SO AE,
 162,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
 163,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
 164,Rechnungsbetrag,SG50,,,,,,,Muss,
@@ -180,9 +186,9 @@
 173,Umsatzsteuer der Rechnung,SG52,TAX,,,,,,Muss,
 174,Umsatzsteuer der Rechnung,SG52,TAX,5283,,,,,7,
 175,Umsatzsteuer der Rechnung,SG52,TAX,5153,,VAT,,Umsatzsteuer,X,
-176,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+176,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-177,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,S O AE,
+177,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,SO AE,
 178,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,,Muss,
 179,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,,125,,Besteuerungsgrundlage,X,
 180,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
