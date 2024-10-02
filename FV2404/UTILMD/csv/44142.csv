@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,G1.0a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,G1.0a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -52,16 +52,16 @@
 49,Transaktionsgrund,SG4,STS,,00026,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 50,Transaktionsgrund,SG4,STS,9015,00026,7,,Transaktionsgrund,X,
 51,Transaktionsgrund,SG4,STS,9013,00026,ZF4,,Nicht bila.rel. Anfrage an NB,X,
-52,Status der Antwort,SG4,STS,,00028,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle
+52,Status der Antwort,SG4,STS,,00028,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten
 53,Status der Antwort,SG4,STS,9015,00028,E01,,Status der Antwort,X,
 54,Status der Antwort,SG4,STS,9013,00028,,,Code des Prüfschritts,X,
 55,Status der Antwort,SG4,STS,1131,00028,G_0031,,Codeliste Gas Nr. G_0031,X [4],
-56,Status der Antwort,SG4,STS,1131,,G_0069,,Codeliste Gas Nr. G_0069,X [241],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF  
+56,Status der Antwort,SG4,STS,1131,,G_0069,,Codeliste Gas Nr. G_0069,X [241],"[4] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle LF
 [241] Wenn MP-ID in SG2 NAD+MR (Nachrichtenempfänger) in der Rolle MSB"
 57,Meldepunkt,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 58,Meldepunkt,SG5,LOC,,00035,,,,Muss,
 59,Meldepunkt,SG5,LOC,3227,00035,172,,Meldepunkt,X,
-60,Meldepunkt,SG5,LOC,3225,00035,,,Identifikator,X [953],"[951] Format: Zählpunktbezeichnung  
+60,Meldepunkt,SG5,LOC,3225,00035,,,Identifikator,X [953],"[951] Format: Zählpunktbezeichnung
 [953] Format: Marktlokations-ID oder Zählpunktbezeichnung"
 61,Prüfidentifikator,SG6,,,,,,,Muss,
 62,Prüfidentifikator,SG6,RFF,,00037,,,,Muss,
@@ -71,37 +71,38 @@
 66,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00038,,,,Muss,
 67,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00038,TN,,Transaktions- Referenznummer,X,
 68,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00038,,,Vorgangsnummer,X,
-69,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,,Soll [202] ∧,[202] Wenn SG4
+69,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt"
 70,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,,00041,,,,Muss [636],[636] Hinweis: Dieses RFF klassifiziert mit einem Code im DE1153 die in derselben Segmentgruppe enthaltenen DTM zu einem Markt- bzw. Messlokation relevanten Inhalt
 71,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1153,00041,Z18,,Marktlokation,X,
 72,Referenz auf die ID der Marktlokation für Termine der Marktlokation,SG6,RFF,1154,00041,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-73,Start des Abrechnungsjahrs bei Marktlokationen mit Jahresleistungspreis,SG6,DTM,,00042,,,,Soll [202] ∧ [336] ,"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+73,Start des Abrechnungsjahrs bei Marktlokationen mit Jahresleistungspreis,SG6,DTM,,00042,,,,Soll [202] ∧ [336] ,"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 74,Start des Abrechnungsjahrs bei Marktlokationen mit Jahresleistungspreis,SG6,DTM,2005,00042,155,,"Rechnungsperiode, Beginndatum",X,
 75,Start des Abrechnungsjahrs bei Marktlokationen mit Jahresleistungspreis,SG6,DTM,2380,00042,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB2],
 76,Start des Abrechnungsjahrs bei Marktlokationen mit Jahresleistungspreis,SG6,DTM,2379,00042,303,,CCYYMMDDHHMMZZZ,X,
-77,Termin der Netznutzungsabrechnung,SG6,DTM,,00044,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+77,Termin der Netznutzungsabrechnung,SG6,DTM,,00044,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-78,Termin der Netznutzungsabrechnung,SG6,DTM,2005,00044,Z21,,Termin der Netznutzungsabrechnun g,X,
+78,Termin der Netznutzungsabrechnung,SG6,DTM,2005,00044,Z21,,Termin der Netznutzungsabrechnung,X,
 79,Termin der Netznutzungsabrechnung,SG6,DTM,2380,00044,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
 80,Termin der Netznutzungsabrechnung,SG6,DTM,2379,00044,106,,MMDD,X,
 81,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,104,,MMWW-MMWW,X,
-82,Nächste Netznutzungsabrechnung,SG6,DTM,,00045,,,,Muss [24] ∧ [230],"[24] Wenn SG6 DTM+Z21 (Termin der Netznutzungsabrechnun g) vorhanden  
+82,Nächste Netznutzungsabrechnung,SG6,DTM,,00045,,,,Muss [24] ∧ [230],"[24] Wenn SG6 DTM+Z21 (Termin der Netznutzungsabrechnun g) vorhanden
 [230] Sich ergebendes Datum/ bzw. Endedatum des Turnuszeitraums aus DTM+Z21 (Termin der Netznutzungsabrechnun g) und DTM+Z09 (Nächste Netznutzungsabrechnun g) muss >= DTM+92 (Beginn zum) sein"
-83,Nächste Netznutzungsabrechnung,SG6,DTM,2005,00045,Z09,,Nächste Netznutzungsabrechnun g,X,
+83,Nächste Netznutzungsabrechnung,SG6,DTM,2005,00045,Z09,,Nächste Netznutzungsabrechnung,X,
 84,Nächste Netznutzungsabrechnung,SG6,DTM,2380,00045,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
 85,Nächste Netznutzungsabrechnung,SG6,DTM,2379,00045,602,,CCYY,X,
-86,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,00046,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+86,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,00046,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 87,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2005,00046,Z22,,Netznutzungsabrechnungs- bzw. Einspeisevergütungsintervall des NB,X [504],[504] Hinweis: Der Code Z22 wird auch in der Sparte Strom genutzt. Der Verweis auf den Einspeisevergütungsinter vall ist in der Sparte Gas nicht relevant. 
 88,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2380,00046,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
 89,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2379,00046,802,,Monat,X,
-90,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+90,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 91,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,,00047,,,,Muss [636],[636] Hinweis: Dieses RFF klassifiziert mit einem Code im DE1153 die in derselben Segmentgruppe enthaltenen DTM zu einem Markt- bzw. Messlokation relevanten Inhalt
 92,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1153,00047,Z19,,Messlokation,X,
 93,Referenz auf die ID der Messlokation für Termine der Messlokation,SG6,RFF,1154,00047,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-94,Turnusablesung des NB,SG6,DTM,,00048,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+94,Turnusablesung des NB,SG6,DTM,,00048,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 95,Turnusablesung des NB,SG6,DTM,2005,00048,752,,Turnusablesung,X,
 96,Turnusablesung des NB,SG6,DTM,2380,00048,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
@@ -110,11 +111,12 @@
 99,Daten der Marktlokation,SG8,,,,,,,Soll [92],[92] Wenn Wert innerhalb SG bzw. Segment geändert wird
 100,Daten der Marktlokation,SG8,SEQ,,00049,,,,Muss,
 101,Daten der Marktlokation,SG8,SEQ,1229,00049,Z01,,Daten der Marktlokation,X,
-102,Marktgebiet,SG10,,,,,,,Soll [336] ∧,[202] Wenn SG4
+102,Marktgebiet,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt"
 103,Marktgebiet,SG10,CCI,,00055,,,,Muss,
 104,Marktgebiet,SG10,CCI,7059,00055,Z21,,Marktgebiet,X,
 105,Marktgebiet,SG10,CCI,7037,00055,,,Marktgebiet,X,
-106,Druckebene der Marktlokation,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+106,Druckebene der Marktlokation,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 107,Druckebene der Marktlokation,SG10,CCI,,00056,,,,Muss,
 108,Druckebene der Marktlokation,SG10,CCI,7037,00056,Y01,,Druckebene der Marktlokation,X,
@@ -126,7 +128,8 @@
 114,Bereits ausgetauschte Prognosegrundlage der Marktlokation,SG10,CCI,,00059,,,,Muss,
 115,Bereits ausgetauschte Prognosegrundlage der Marktlokation,SG10,CCI,7037,00059,ZB0,,Prognose auf Basis von Werten gültig,X [1P0..1],
 116,Bereits ausgetauschte Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZB1,,Prognose auf Basis von Profilen gültig,X [1P0..1],
-117,Netznutzung,SG10,,,,,,,Soll [202] ∧ [336],[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden 
+117,Netznutzung,SG10,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt"
 118,Netznutzung,SG10,CCI,,00062,,,,Muss,
 119,Netznutzung,SG10,CCI,7037,00062,Z88,,Netznutzung,X,
 120,Netznutzungsvertrag,SG10,CAV,,00063,,,,Muss,
@@ -141,9 +144,10 @@
 129,Netznutzungsabrechnungsv ariante,SG10,CAV,7111,00065,ZB1,,Netznutzungsabrechnun gsvariante,X,
 130,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,00065,Z14,,Arbeitspreis/Grundpreis,X,
 131,Netznutzungsabrechnungsv ariante,SG10,CAV,7110,,Z15,,Arbeitspreis/ Leistungspreis,X,
-132,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336] ∧ [530],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat  
-[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt"
+132,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336] ∧ [530],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat
+[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[530] Hinweis: Es sind alle an dem Meldepunkt vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind"
 133,OBIS-Daten der Marktlokation,SG8,SEQ,,00067,,,,Muss,
 134,OBIS-Daten der Marktlokation,SG8,SEQ,1229,00067,Z02,,OBIS-Daten der Marktlokation,X,
 135,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00068,,,,Muss,
@@ -158,8 +162,8 @@
 144,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
 145,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
 146,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-147,Konzessionsabgabedaten,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat  
-[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+147,Konzessionsabgabedaten,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat
+[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
 148,Konzessionsabgabedaten,SG8,SEQ,,00071,,,,Muss,
 149,Konzessionsabgabedaten,SG8,SEQ,1229,00071,Z07,,Konzessionsabgabedaten,X,
@@ -172,99 +176,103 @@
 156,Konzessionsabgabe,SG10,CAV,,00074,,,,Muss,
 157,Konzessionsabgabe,SG10,CAV,7111,00074,KAS,,"für alle konzessionsvertraglichen Sonderregelungen, die nicht in die Systematik der KAV eingegliedert sind",X,
 158,Konzessionsabgabe,SG10,CAV,7111,,SA,,"Sondervertragskunden < 1 kV nach § 2 (7) und > 1 kV, Preis nach § 2 (3) (für Strom 0,11 ct/kWh und für Gas 0,03 ct/kWh)",X,
-159,Konzessionsabgabe,SG10,CAV,7111,,SAS,,"Kennzeichnung, dass ein",X,
-160,Konzessionsabgabe,SG10,CAV,7110,00074,,,Konzessionsabgabe in Euro/kWh,Muss [912] ∧ [902] [128] ,"[128] Wenn SG10 CAV+TAS/ TKS/ SAS/ KAS vorhanden  
-[902] Format: Möglicher Wert: ≥ 0  
+159,Konzessionsabgabe,SG10,CAV,7111,,SAS,,"Kennzeichnung, dass ein abweichender Preis für Sondervertragskunden vorliegt",X,
+160,Konzessionsabgabe,SG10,CAV,7111,,TA,,"Tarifkunden, für Strom § 2. (2) 1b HT bzw. ET (hohe KA) und für Gas § 2 (2) 2b",X,
+161,Konzessionsabgabe,SG10,CAV,7111,,TAS,,"Kennzeichnung, dass ein abweichender Preis für Tarifkunden vorliegt",X,
+162,Konzessionsabgabe,SG10,CAV,7111,,TK,,für Gas nach KAV § 2 (2) 2a bei ausschließlicher Nutzung zum Kochen und Warmwassererzeugung,X,
+163,Konzessionsabgabe,SG10,CAV,7111,,TKS,,"Kennzeichnung, wenn nach KAV § 2 (2) 2a ein anderer Preis zu verwenden ist",X,
+164,Konzessionsabgabe,SG10,CAV,7110,00074,,,Konzessionsabgabe in Euro/kWh,Muss [912] ∧ [902] [128] ,"[128] Wenn SG10 CAV+TAS/ TKS/ SAS/ KAS vorhanden
+[902] Format: Möglicher Wert: ≥ 0
 [912] Format: max. 6 Nachkommastellen"
-161,Konzessionsabgabe,SG10,CAV,7110,00074,,,Gebührenkategorie der Konzessionsabgabe,Soll [219],[219] Wenn an Marktlokation vorhanden
-162,Gemeinderabatt,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat  
-[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+165,Konzessionsabgabe,SG10,CAV,7110,00074,,,Gebührenkategorie der Konzessionsabgabe,Soll [219],[219] Wenn an Marktlokation vorhanden
+166,Gemeinderabatt,SG8,,,,,,,Soll [25] ∧ [202] ∧ [336],"[25] Wenn der Meldepunkt im SG5 LOC+172 (Meldepunkt) DE3225 das Format der Marktlokations-ID hat
+[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-163,Gemeinderabatt,SG8,SEQ,,00075,,,,Muss,
-164,Gemeinderabatt,SG8,SEQ,1229,00075,Z12,,Gemeinderabatt,X,
-165,Gemeinderabatt,SG9,,,,,,,Muss,
-166,Gemeinderabatt,SG9,QTY,,00076,,,,Muss,
-167,Gemeinderabatt,SG9,QTY,6063,00076,Z16,,Gemeinderabatt,X,
-168,Gemeinderabatt,SG9,QTY,6060,00076,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0  
-[930] Format: max. 2 Nachkommastellen  
+167,Gemeinderabatt,SG8,SEQ,,00075,,,,Muss,
+168,Gemeinderabatt,SG8,SEQ,1229,00075,Z12,,Gemeinderabatt,X,
+169,Gemeinderabatt,SG9,,,,,,,Muss,
+170,Gemeinderabatt,SG9,QTY,,00076,,,,Muss,
+171,Gemeinderabatt,SG9,QTY,6063,00076,Z16,,Gemeinderabatt,X,
+172,Gemeinderabatt,SG9,QTY,6060,00076,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0
+[930] Format: max. 2 Nachkommastellen
 [938] Format: Möglicher Wert: <= 10"
-169,Gemeinderabatt,SG9,QTY,6411,00076,P1,,Prozent,X,
-170,Daten der Messlokation,SG8,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt  
+173,Gemeinderabatt,SG9,QTY,6411,00076,P1,,Prozent,X,
+174,Daten der Messlokation,SG8,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
 [345] Wenn 33-stelliger Meldepunkt im SG5 LOC+172 (Meldepunkt) vorhanden"
-171,Daten der Messlokation,SG8,SEQ,,00077,,,,Muss,
-172,Daten der Messlokation,SG8,SEQ,1229,00077,Z18,,Daten der Messlokation,X,
-173,Referenz auf die ID der Messlokation,SG8,RFF,,00078,,,,Muss,
-174,Referenz auf die ID der Messlokation,SG8,RFF,1153,00078,Z19,,Messlokation,X,
-175,Referenz auf die ID der Messlokation,SG8,RFF,1154,00078,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
-176,Zugeordnete Marktpartner,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+175,Daten der Messlokation,SG8,SEQ,,00077,,,,Muss,
+176,Daten der Messlokation,SG8,SEQ,1229,00077,Z18,,Daten der Messlokation,X,
+177,Referenz auf die ID der Messlokation,SG8,RFF,,00078,,,,Muss,
+178,Referenz auf die ID der Messlokation,SG8,RFF,1153,00078,Z19,,Messlokation,X,
+179,Referenz auf die ID der Messlokation,SG8,RFF,1154,00078,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+180,Zugeordnete Marktpartner,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-177,Zugeordnete Marktpartner,SG10,CCI,,00079,,,,Muss,
-178,Zugeordnete Marktpartner,SG10,CCI,7037,00079,ZB3,,Zugeordneter Marktpartner,X,
-179,Messstellenbetreiber,SG10,CAV,,00080,,,,Muss,
-180,Messstellenbetreiber,SG10,CAV,7111,00080,Z91,,MSB,X,
-181,Messstellenbetreiber,SG10,CAV,1131,00080,,,MP-ID,X,
-182,Messstellenbetreiber,SG10,CAV,7110,00080,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
-183,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-184,Grundzuständiger Messstellenbetreiber,SG10,CAV,,00081,,,,Muss,
-185,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,00081,ZF0,,gMSB,X,
-186,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,00081,,,MP-ID,X,
-187,Gasqualität,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+181,Zugeordnete Marktpartner,SG10,CCI,,00079,,,,Muss,
+182,Zugeordnete Marktpartner,SG10,CCI,7037,00079,ZB3,,Zugeordneter Marktpartner,X,
+183,Messstellenbetreiber,SG10,CAV,,00080,,,,Muss,
+184,Messstellenbetreiber,SG10,CAV,7111,00080,Z91,,MSB,X,
+185,Messstellenbetreiber,SG10,CAV,1131,00080,,,MP-ID,X,
+186,Messstellenbetreiber,SG10,CAV,7110,00080,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+187,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+188,Grundzuständiger Messstellenbetreiber,SG10,CAV,,00081,,,,Muss,
+189,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,00081,ZF0,,gMSB,X,
+190,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,00081,,,MP-ID,X,
+191,Gasqualität,SG10,,,,,,,Soll [336] ∧ [202],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-188,Gasqualität,SG10,CCI,,00083,,,,Muss,
-189,Gasqualität,SG10,CCI,7037,00083,Y02,,Gasqualität,X,
-190,Gasqualität,SG10,CAV,,00084,,,,Muss,
-191,Gasqualität,SG10,CAV,7111,00084,Y04,,H-Gas,X,
-192,Gasqualität,SG10,CAV,7111,,Y05,,L-Gas,X,
-193,Kunde des Netzbetreibers,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
-194,Kunde des Netzbetreibers,SG12,NAD,,00140,,,,Muss,
-195,Kunde des Netzbetreibers,SG12,NAD,3035,00140,Z25,,Kunde des NB,X,
-196,Kunde des Netzbetreibers,SG12,NAD,3036,00140,,,Name,X,
-197,Kunde des Netzbetreibers,SG12,NAD,3045,00140,Z01,,Struktur von Personennamen,X,
-198,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-199,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann
-200,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,,00141,,,,Muss,
-201,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3035,00141,Z26,,Korrespondenzanschrift des Kunden des NB,X,
-202,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3036,00141,,,Name,X,
-203,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,00141,Z01,,Struktur von Personennamen,X,
-204,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-205,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3042,00141,,,Straße und Hausnummer oder Postfach,X,
-206,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3164,00141,,,Ort,X,
-207,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3251,00141,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+192,Gasqualität,SG10,CCI,,00083,,,,Muss,
+193,Gasqualität,SG10,CCI,7037,00083,Y02,,Gasqualität,X,
+194,Gasqualität,SG10,CAV,,00084,,,,Muss,
+195,Gasqualität,SG10,CAV,7111,00084,Y04,,H-Gas,X,
+196,Gasqualität,SG10,CAV,7111,,Y05,,L-Gas,X,
+197,Kunde des Netzbetreibers,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
+198,Kunde des Netzbetreibers,SG12,NAD,,00140,,,,Muss,
+199,Kunde des Netzbetreibers,SG12,NAD,3035,00140,Z25,,Kunde des NB,X,
+200,Kunde des Netzbetreibers,SG12,NAD,3036,00140,,,Name,X,
+201,Kunde des Netzbetreibers,SG12,NAD,3045,00140,Z01,,Struktur von Personennamen,X,
+202,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+203,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
+204,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,,00141,,,,Muss,
+205,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3035,00141,Z26,,Korrespondenzanschrift des Kunden des NB,X,
+206,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3036,00141,,,Name,X,
+207,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,00141,Z01,,Struktur von Personennamen,X,
+208,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+209,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3042,00141,,,Straße und Hausnummer oder Postfach,X,
+210,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3164,00141,,,Ort,X,
+211,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3251,00141,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-208,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3207,00141,,,"Ländername, Code",X,
-209,Netzanschlusseigentümer,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
-210,Netzanschlusseigentümer,SG12,NAD,,00142,,,,Muss,
-211,Netzanschlusseigentümer,SG12,NAD,3035,00142,EO,,Anschlussnehmer,X,
-212,Netzanschlusseigentümer,SG12,NAD,3036,00142,,,Name,X,
-213,Netzanschlusseigentümer,SG12,NAD,3045,00142,Z01,,Struktur von Personennamen,X,
-214,Netzanschlusseigentümer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-215,Netzanschlusseigentümer,SG12,NAD,3042,00142,,,Straße und Hausnummer oder Postfach,X,
-216,Netzanschlusseigentümer,SG12,NAD,3164,00142,,,Ort,X,
-217,Netzanschlusseigentümer,SG12,NAD,3251,00142,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+212,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3207,00141,,,"Ländername, Code",X,
+213,Netzanschlusseigentümer,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
+214,Netzanschlusseigentümer,SG12,NAD,,00142,,,,Muss,
+215,Netzanschlusseigentümer,SG12,NAD,3035,00142,EO,,Anschlussnehmer,X,
+216,Netzanschlusseigentümer,SG12,NAD,3036,00142,,,Name,X,
+217,Netzanschlusseigentümer,SG12,NAD,3045,00142,Z01,,Struktur von Personennamen,X,
+218,Netzanschlusseigentümer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+219,Netzanschlusseigentümer,SG12,NAD,3042,00142,,,Straße und Hausnummer oder Postfach,X,
+220,Netzanschlusseigentümer,SG12,NAD,3164,00142,,,Ort,X,
+221,Netzanschlusseigentümer,SG12,NAD,3251,00142,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-218,Netzanschlusseigentümer,SG12,NAD,3207,00142,,,"Ländername, Code",Muss,
-219,Hausverwalter,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht
-220,Hausverwalter,SG12,NAD,,00143,,,,Muss,
-221,Hausverwalter,SG12,NAD,3035,00143,DDO,,Location manager,X,
-222,Hausverwalter,SG12,NAD,3036,00143,,,Name,X,
-223,Hausverwalter,SG12,NAD,3045,00143,Z01,,Struktur von Personennamen,X,
-224,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-225,Hausverwalter,SG12,NAD,3042,00143,,,Straße und Hausnummer oder Postfach,X,
-226,Hausverwalter,SG12,NAD,3164,00143,,,Ort,X,
-227,Hausverwalter,SG12,NAD,3251,00143,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+222,Netzanschlusseigentümer,SG12,NAD,3207,00142,,,"Ländername, Code",Muss,
+223,Hausverwalter,SG12,,,,,,,Kann [558],[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden
+224,Hausverwalter,SG12,NAD,,00143,,,,Muss,
+225,Hausverwalter,SG12,NAD,3035,00143,DDO,,Location manager,X,
+226,Hausverwalter,SG12,NAD,3036,00143,,,Name,X,
+227,Hausverwalter,SG12,NAD,3045,00143,Z01,,Struktur von Personennamen,X,
+228,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+229,Hausverwalter,SG12,NAD,3042,00143,,,Straße und Hausnummer oder Postfach,X,
+230,Hausverwalter,SG12,NAD,3164,00143,,,Ort,X,
+231,Hausverwalter,SG12,NAD,3251,00143,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-228,Hausverwalter,SG12,NAD,3207,00143,,,"Ländername, Code",Muss,
-229,Marktlokationsanschrift,SG12,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden  
+232,Hausverwalter,SG12,NAD,3207,00143,,,"Ländername, Code",Muss,
+233,Marktlokationsanschrift,SG12,,,,,,,Soll [202] ∧ [336],"[202] Wenn SG4 STS+E01+ZG2 (Status der Antwort: Gültiges Ergebnis nach der Datenprüfung) vorhanden
 [336] Wenn in Änderungsmeldung gefüllt"
-230,Marktlokationsanschrift,SG12,NAD,,00145,,,,Muss,
-231,Marktlokationsanschrift,SG12,NAD,3035,00145,DP,,Lieferanschrift,X,
-232,Marktlokationsanschrift,SG12,NAD,3124,00145,,,Zusatzinformation zur Identifizierung,K,
-233,Marktlokationsanschrift,SG12,NAD,3042,00145,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden  
+234,Marktlokationsanschrift,SG12,NAD,,00145,,,,Muss,
+235,Marktlokationsanschrift,SG12,NAD,3035,00145,DP,,Lieferanschrift,X,
+236,Marktlokationsanschrift,SG12,NAD,3124,00145,,,Zusatzinformation zur Identifizierung,K,
+237,Marktlokationsanschrift,SG12,NAD,3042,00145,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden
 [212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
-234,Marktlokationsanschrift,SG12,NAD,3164,00145,,,Ort,X,
-235,Marktlokationsanschrift,SG12,NAD,3251,00145,,,Postleitzahl,X,
-236,Marktlokationsanschrift,SG12,NAD,3207,00145,,,"Ländername, Code",X,
-237,Nachrichten-Endesegment,,UNT,,00149,,,,Muss,
-238,Nachrichten-Endesegment,,UNT,0074,00149,,,Anzahl der Segmente in einer Nachricht,X,
-239,Nachrichten-Endesegment,,UNT,0062,00149,,,Nachrichten-Referenznummer,X,
+238,Marktlokationsanschrift,SG12,NAD,3164,00145,,,Ort,X,
+239,Marktlokationsanschrift,SG12,NAD,3251,00145,,,Postleitzahl,X,
+240,Marktlokationsanschrift,SG12,NAD,3207,00145,,,"Ländername, Code",X,
+241,Nachrichten-Endesegment,,UNT,,00149,,,,Muss,
+242,Nachrichten-Endesegment,,UNT,0074,00149,,,Anzahl der Segmente in einer Nachricht,X,
+243,Nachrichten-Endesegment,,UNT,0062,00149,,,Nachrichten-Referenznummer,X,

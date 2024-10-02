@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss,
@@ -31,7 +31,7 @@
 28,MP-ID Absender,SG2,NAD,3035,00020,Nachrichtenaussteller bzw. -absender,,,MS,
 29,MP-ID Absender,SG2,NAD,3039,00020,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
 30,MP-ID Absender,SG2,NAD,3055,00020,9,,GS1,X,
-31,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband",X,
+31,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
 32,Ansprechpartner,SG5,,,,,,,Kann,
 33,Ansprechpartner,SG5,CTA,,00021,,,,Muss,
 34,Ansprechpartner,SG5,CTA,3139,00021,,,,IC,
@@ -54,12 +54,12 @@
 51,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
 52,Meldepunkt,SG2,LOC,,00026,,,,Muss,
 53,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-54,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X ([950] [521]) ⊻ ([960] [552]),"[521] Hinweis: Verwendung der ID der Marktlokation 
-[552] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
+54,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X ([950] [521]) ⊻ ([960] [552]),"[521] Hinweis: Verwendung der ID der Marktlokation
+[552] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
 [960] Format: Netzlokations-ID"
-55,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,Muss [2089] ∧ [130] ∧ [93],"[93] Wenn in derselben Nachricht eine SG29 mit Z16 in LIN DE1229 nicht vorhanden 
-[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist 
+55,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,Muss [2089] ∧ [130] ∧ [93],"[93] Wenn in derselben Nachricht eine SG29 mit Z16 in LIN DE1229 nicht vorhanden
+[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist
 [2089] Die SG29 ist so oft zu wiederholen, dass alle Messprodukte ab dem DTM+203 (Ausführungsdatum) zu der in der SG2 genannten Marktlokation genannt sind."
 56,Erforderliches Messprodukt der Marktlokation,SG29,LIN,,00065,,,,Muss,
 57,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1082,00065,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
@@ -96,10 +96,10 @@
 88,Verwendungszweck der Werte,SG30,CAV,,00073,,,,Muss,
 89,Verwendungszweck der Werte,SG30,CAV,7111,00073,Z85,,Bilanzkreisabrechnung,X [1P0..1],
 90,Verwendungszweck der Werte,SG30,CAV,7111,,ZB5,,Zur Ermittlung der Ausgeglichenheit von Bilanzkreisen,X [1P0..1],
-91,Erforderliches Messprodukt der Tranche,SG29,,,,,,,Muss [2001] ∧ [2002] ∧ [130] ∧ [94],"[94] Wenn in derselben Nachricht eine SG29 mit Z27 in LIN DE1229 nicht vorhanden 
-[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist 
-[2001] Die SG29 ist so oft zu wiederholen, wie ab dem DTM+203 (Ausführungsdatum) Tranchen zu der in der SG2 genannten Marktlokation vorhanden sind. 
-[2002] Ist mindestens zwei Mal"
+91,Erforderliches Messprodukt der Tranche,SG29,,,,,,,Muss [2001] ∧ [2002] ∧ [130] ∧ [94],"[94] Wenn in derselben Nachricht eine SG29 mit Z27 in LIN DE1229 nicht vorhanden
+[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist
+[2001] Die SG29 ist so oft zu wiederholen, wie ab dem DTM+203 (Ausführungsdatum) Tranchen zu der in der SG2 genannten Marktlokation vorhanden sind.
+[2002] Ist mindestens zwei Mal anzugeben"
 92,Erforderliches Messprodukt der Tranche,SG29,LIN,,00074,,,,Muss,
 93,Erforderliches Messprodukt der Tranche,SG29,LIN,1082,00074,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 94,Erforderliches Messprodukt der Tranche,SG29,LIN,1229,00074,Tranche,,,Z16,
@@ -124,17 +124,17 @@
 113,Messprodukt für Übertragungsnetzbetreiber relevant,SG30,CCI,7037,00080,ZA9,,ÜNB,X,
 114,Verwendungszweck der Werte,SG30,CAV,,00081,,,,Muss,
 115,Verwendungszweck der Werte,SG30,CAV,7111,00081,Z85,,Bilanzkreisabrechnung,X [1P0..1],
-116,Verwendungszweck der Werte,SG30,CAV,7111,,ZB5,,Zur Ermittlung der Ausgeglichenheit von,X [1P1..1],
+116,Verwendungszweck der Werte,SG30,CAV,7111,,ZB5,,Zur Ermittlung der Ausgeglichenheit von Bilanzkreisen,X [1P1..1],
 117,Referenz auf ID der Tranche,SG34,,,,,,,Muss,
 118,Referenz auf ID der Tranche,SG34,RFF,,00082,,,,Muss,
 119,Referenz auf ID der Tranche,SG34,RFF,1153,00082,Z20,,Tranche,X,
 120,Referenz auf ID der Tranche,SG34,RFF,1154,00082,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
-121,Erforderliches Messprodukt der Messlokation,SG29,,,,,,,Muss ([2003] ∧ [545]) ⊻ ([2007] ∧ [557]),"[545] Hinweis: Es werden nur die Messprodukte der Messlokationen angegeben, die für die in der SG2 genannte Marktlokation bzw. deren Tranchen erforderlich sind. Messprodukte an der Messlokation für weitere Marktlokationen bleiben unverändert. 
-[557] Hinweis: Es werden nur die Messprodukte der Messlokationen angegeben, die für die in der SG2 genannte Netzlokation erforderlich sind. Messprodukte an der Messlokation für weitere Netzlokationen oder Marktlokationen bleiben unverändert. 
-[2003] Die SG29 ist so oft zu wiederholen, wie ab dem DTM+203 (Ausführungsdatum) Messlokationen zu der in der SG2 genannten Marktlokation vorhanden sind und für jede dieser Messlokationen müssen alle Messprodukte genannt sein, die ab dem DTM+203 (Ausführungsdatum) in der SG2 genannten Marktlokation bzw. deren Tranchen vorhanden sind. 
+121,Erforderliches Messprodukt der Messlokation,SG29,,,,,,,Muss ([2003] ∧ [545]) ⊻ ([2007] ∧ [557]),"[545] Hinweis: Es werden nur die Messprodukte der Messlokationen angegeben, die für die in der SG2 genannte Marktlokation bzw. deren Tranchen erforderlich sind. Messprodukte an der Messlokation für weitere Marktlokationen bleiben unverändert.
+[557] Hinweis: Es werden nur die Messprodukte der Messlokationen angegeben, die für die in der SG2 genannte Netzlokation erforderlich sind. Messprodukte an der Messlokation für weitere Netzlokationen oder Marktlokationen bleiben unverändert.
+[2003] Die SG29 ist so oft zu wiederholen, wie ab dem DTM+203 (Ausführungsdatum) Messlokationen zu der in der SG2 genannten Marktlokation vorhanden sind und für jede dieser Messlokationen müssen alle Messprodukte genannt sein, die ab dem DTM+203 (Ausführungsdatum) in der SG2 genannten Marktlokation bzw. deren Tranchen vorhanden sind.
 [2007] Die SG29 ist so oft zu wiederholen, wie ab dem DTM+203 (Ausführungsdatum) Messlokationen zu der in der SG2 genannten Netzlokation vorhanden sind und für jede dieser Messlokationen müssen alle Messprodukte genannt sein, die ab dem DTM+203 (Ausführungsdatum) in der SG2 genannten Netzlokation vorhanden sind."
 122,Erforderliches Messprodukt der Messlokation,SG29,LIN,,00083,,,,Muss,
-123,Erforderliches Messprodukt der Messlokation,SG29,LIN,1082,00083,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend"
+123,Erforderliches Messprodukt der Messlokation,SG29,LIN,1082,00083,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 124,Erforderliches Messprodukt der Messlokation,SG29,LIN,1229,00083,Messlokation,,,Z19,
 125,Erforderliches Messprodukt der Messlokation,SG29,PIA,,00084,,,,Muss,
 126,Erforderliches Messprodukt der Messlokation,SG29,PIA,4347,00084,,,,5,
@@ -154,7 +154,7 @@
 140,Zugeordnete Zählzeitdefinition,SG30,,,,,,,Muss [86],"[86] Wenn in derselben SG29 mit Z19 in LIN DE1229 (Erforderliches Messprodukt der Messlokation) das PIA+5 DE7140 mit einem Messprodukt aus Codeliste der Konfigurationen Kapitel 2.3.1 ""Standard-Messprodukt der Messlokation mit der Wahlmöglichkeit der Zuordnung einer Zählzeit"" vorhanden ist"
 141,Zugeordnete Zählzeitdefinition,SG30,CCI,,00088,,,,Muss,
 142,Zugeordnete Zählzeitdefinition,SG30,CCI,7059,00088,Messprodukt erforderlich,,,Z39 Z41,[75] Wenn für den erforderlichen Wert keine Zählzeit benötigt wird
-143,Zugeordnete Zählzeitdefinition,SG30,CCI,7037,00088,,,Code der Zählzeitdefinition,X [77],[77] Wenn im selben CCI im DE7059 der Code Z39 (Code der
+143,Zugeordnete Zählzeitdefinition,SG30,CCI,7037,00088,,,Code der Zählzeitdefinition,X [77],[77] Wenn im selben CCI im DE7059 der Code Z39 (Code der Zählzeitdefinition) vorhanden ist
 144,Referenz auf ID der Messlokation,SG34,,,,,,,Muss,
 145,Referenz auf ID der Messlokation,SG34,RFF,,00089,,,,Muss,
 146,Referenz auf ID der Messlokation,SG34,RFF,1153,00089,Z19,,Messlokation,X,

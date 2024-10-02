@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten- Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -12,7 +12,7 @@
 10,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 11,Nachrichtendatum,,DTM,,00003,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 14,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZ ZZ,X,
 15,Referenz Nachrichtennummer,SG1,,,,,,,Muss,
@@ -25,7 +25,7 @@
 22,Prüfidentifikator,SG1,RFF,1154,00012,19116,,Bestätigung Sperr-/ Entsperrauftrag,X,
 23,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,,Muss,
 24,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,00013,,,,Muss,
-25,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [17],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein 
+25,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [17],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein
 [18] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Ablehnung zugeordnet sein"
 26,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,00013,E_047,,EBD Nr. E_0470,X [24] ∧,
 27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,0,,,[492],
@@ -34,9 +34,9 @@
 30,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_100,,EBD Nr. E_1000,X [24] ∧,
 31,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,0,,,[493] ,
 32,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_100,,EBD Nr. E_1004,X [25] ∧,
-33,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,4,,,[493],"[24] Wenn BGM+Z51 vorhanden 
-[25] Wenn BGM+Z52 vorhanden 
-[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom 
+33,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,4,,,[493],"[24] Wenn BGM+Z51 vorhanden
+[25] Wenn BGM+Z52 vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
 34,MP-ID Absender,SG3,,,,,,,Muss,
 35,MP-ID Absender,SG3,NAD,,00015,,,,Muss,
@@ -63,13 +63,15 @@
 56,MP-ID Empfänger,SG3,NAD,3055,00018,9,,GS1,X,
 57,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
 58,MP-ID Empfänger,SG3,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-59,Währungsangaben,SG8,,,,,,,Soll ([11],[11] Wenn
+59,Währungsangaben,SG8,,,,,,,Soll ([11] ∨ [45]) ∧ [12],"[11] Wenn AJT+A09+E_0470 vorhanden
+[12] Wenn der NB eine unverbindliche Preisinformation angeben kann
+[45] Wenn AJT+A09+E_1000 vorhanden"
 60,Währungsangaben,SG8,CUX,,00021,,,,Muss,
 61,Währungsangaben,SG8,CUX,6347,00021,2,,Referenzwährung,X,
 62,Währungsangaben,SG8,CUX,6345,00021,EUR,,Euro,X,
 63,Währungsangaben,SG8,CUX,6343,00021,9,,Auftragswährung,X,
-64,Positionsdaten,SG27,,,,,,,Muss ([11] ∨ [45]) ∧ [2036],"[11] Wenn AJT+A09+E_0470 vorhanden 
-[45] Wenn AJT+A09+E_1000 vorhanden 
+64,Positionsdaten,SG27,,,,,,,Muss ([11] ∨ [45]) ∧ [2036],"[11] Wenn AJT+A09+E_0470 vorhanden
+[45] Wenn AJT+A09+E_1000 vorhanden
 [2036] Pro Nachricht ist die SG27 genau einmal anzugeben"
 65,Positionsdaten,SG27,LIN,,00022,,,,Muss,
 66,Positionsdaten,SG27,LIN,1082,00022,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
@@ -80,11 +82,11 @@
 71,Abschnitts- Kontrollsegment,,UNS,0081,00030,S,,Trennung von Positions- und Summenteil,X,
 72,Mindestbetrag (netto) der Kosten einer Sperrung,,MOA,,00032,,,,Muss [37],[37] Wenn in dieser Nachricht das SG8 CUX+2 vorhanden
 73,Mindestbetrag (netto) der Kosten einer Sperrung,,MOA,5025,00032,Z02,,Mindestbetrag,X,
-74,Mindestbetrag (netto) der Kosten einer Sperrung,,MOA,5004,00032,,,Geldbetrag,X [902] ∧ [930],"[902] Format: Format: Möglicher Wert: ≥ 0 
+74,Mindestbetrag (netto) der Kosten einer Sperrung,,MOA,5004,00032,,,Geldbetrag,X [902] ∧ [930],"[902] Format: Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
 75,Höchstbetrag (netto) der Kosten einer Sperrung,,MOA,,00033,,,,Muss [37],[37] Wenn in dieser Nachricht das SG8 CUX+2 vorhanden
 76,Höchstbetrag (netto) der Kosten einer Sperrung,,MOA,5025,00033,Z03,,Höchstbetrag,X,
-77,Höchstbetrag (netto) der Kosten einer Sperrung,,MOA,5004,00033,,,Geldbetrag,X [902] ∧ [930],"[902] Format: Format: Möglicher Wert: ≥ 0 
+77,Höchstbetrag (netto) der Kosten einer Sperrung,,MOA,5004,00033,,,Geldbetrag,X [902] ∧ [930],"[902] Format: Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
 78,Nachrichten- Endesegment,,UNT,,00034,,,,Muss,
 79,Nachrichten- Endesegment,,UNT,0074,00034,,,Anzahl der Segmente in einer Nachricht,X,

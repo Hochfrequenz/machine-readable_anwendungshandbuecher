@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E02,,Abmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940],[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -41,7 +45,8 @@
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Beginn zum,SG4,DTM,,00024,,,,Muss [7] ∧ [577],[7] Wenn SG4 STS+7++ZG9/ZH1/ZH2 (Transaktionsgrund: Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden / -wegen Stilllegung / -wegen aufgehobenem Vertragsverhältnis) vorhanden 
+41,Beginn zum,SG4,DTM,,00024,,,,Muss [7] ∧ [577],"[7] Wenn SG4 STS+7++ZG9/ZH1/ZH2 (Transaktionsgrund: Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden / -wegen Stilllegung / -wegen aufgehobenem Vertragsverhältnis) vorhanden
+[577] Hinweis: Wird mit dem ursprünglich vom NB bestätigten Beginndatum gefüllt"
 42,Beginn zum,SG4,DTM,2005,00024,92,,Datum Vertragsbeginn,X,
 43,Beginn zum,SG4,DTM,2380,00024,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,Beginn zum,SG4,DTM,2379,00024,303,,CCYYMMDDHHMMZZZ,X,
@@ -57,27 +62,30 @@
 54,Transaktionsgrund,SG4,STS,9013,,ZG9,,Aufhebung einer zukünftigen Zuordnung wegen Auszug des Kunden,X,
 55,Transaktionsgrund,SG4,STS,9013,,ZH1,,Aufhebung einer zukünftigen Zuordnung wegen Stilllegung,X,
 56,Transaktionsgrund,SG4,STS,9013,,ZH2,,Aufhebung einer zukünftigen Zuordnung wegen aufgehobenem Vertragsverhältnis,X,[510] Hinweis: Zu verwenden bei der Abmeldung der ESV
-57,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00043,,,,Kann,
-58,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
-59,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00043,,,Text für allgemeine Information,X,
-60,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-61,Marktlokation,SG5,LOC,,00051,,,,Muss,
-62,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
-63,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-64,Prüfidentifikator,SG6,,,,,,,Muss,
-65,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
-66,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
-67,Prüfidentifikator,SG6,RFF,1154,00057,55004,,GPKE / Abmeldung NN,X,
-68,Daten der Marktlokation,SG8,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-69,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
-70,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
-71,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss,
-72,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
-73,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-74,Lieferrichtung,SG10,,,,,,,Muss,
-75,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
-76,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
-77,Lieferrichtung,SG10,CCI,7037,00110,Z07,,Verbrauch,X,
-78,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
-79,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
-80,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,
+57,Transaktionsgrund,SG4,STS,9013,,ZD2,,Lieferbeginn und Abmeldung aus der Ersatzversorgung,X,
+58,Transaktionsgrund,SG4,STS,9013,,ZT4,,Ende wegen Kündigung durch LF,X,
+59,Transaktionsgrund,SG4,STS,9013,,ZT5,,Ende wegen Kündigung durch Kunde/LFN,X,
+60,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00043,,,,Kann,
+61,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
+62,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00043,,,Text für allgemeine Information,X,
+63,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+64,Marktlokation,SG5,LOC,,00051,,,,Muss,
+65,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
+66,Marktlokation,SG5,LOC,3225,00051,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+67,Prüfidentifikator,SG6,,,,,,,Muss,
+68,Prüfidentifikator,SG6,RFF,,00057,,,,Muss,
+69,Prüfidentifikator,SG6,RFF,1153,00057,Z13,,Prüfidentifikator,X,
+70,Prüfidentifikator,SG6,RFF,1154,00057,55004,,GPKE / Abmeldung NN,X,
+71,Daten der Marktlokation,SG8,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+72,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
+73,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,
+74,Referenz auf die ID der Marktlokation,SG8,RFF,,00104,,,,Muss,
+75,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00104,Z18,,Marktlokation,X,
+76,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00104,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+77,Lieferrichtung,SG10,,,,,,,Muss,
+78,Lieferrichtung,SG10,CCI,,00110,,,,Muss,
+79,Lieferrichtung,SG10,CCI,7059,00110,Z30,,Lieferrichtung,X,
+80,Lieferrichtung,SG10,CCI,7037,00110,Z07,,Verbrauch,X,
+81,Nachrichten-Endesegment,,UNT,,00540,,,,Muss,
+82,Nachrichten-Endesegment,,UNT,0074,00540,,,Anzahl der Segmente in einer Nachricht,X,
+83,Nachrichten-Endesegment,,UNT,0062,00540,,,Nachrichten-Referenznummer,X,

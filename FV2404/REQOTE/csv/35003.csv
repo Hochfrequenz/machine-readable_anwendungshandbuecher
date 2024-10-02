@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Anfrage,,REQOT E,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,REQOTE,,Anfrage,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Datum zum geplanten Leistungsbeginn,,DTM,,00004,,,,Muss,
@@ -27,7 +27,7 @@
 24,Prüfidentifikator,SG1,RFF,1154,00009,35003,,Anfrage von Werten für ESA,X,
 25,MP-ID Absender,SG11,,,,,,,Muss,
 26,MP-ID Absender,SG11,NAD,,00014,,,,Muss,
-27,MP-ID Absender,SG11,NAD,3035,00014,Nachrichtenaussteller bzw.,,,MS,
+27,MP-ID Absender,SG11,NAD,3035,00014,Nachrichtenaussteller bzw. -absender,,,MS,
 28,MP-ID Absender,SG11,NAD,3039,00014,,,MP-ID,X [10],[10] MP-ID nur aus Sparte Strom
 29,MP-ID Absender,SG11,NAD,3055,00014,9,,GS1,X,
 30,MP-ID Absender,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
@@ -53,14 +53,16 @@
 50,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
 51,Meldepunkt,SG11,LOC,,00019,,,,Muss,
 52,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-53,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [502]) ⊻ ([951] [503]) ⊻ ([950] [504]) ⊻ ([960] [510]),"[502] Hinweis: Verwendung der ID der Marktlokation 
-[503] Hinweis: Verwendung der ID der Messlokation 
-[504] Hinweis: Verwendung der ID der Tranche 
-[510] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
+53,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [502]) ⊻ ([951] [503]) ⊻ ([950] [504]) ⊻ ([960] [510]),"[502] Hinweis: Verwendung der ID der Marktlokation
+[503] Hinweis: Verwendung der ID der Messlokation
+[504] Hinweis: Verwendung der ID der Tranche
+[510] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
 [960] Format: Netzlokations-ID"
-54,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [2003] ∧ [7] ∧ [34],[7] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches
+54,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [2003] ∧ [7] ∧ [34],"[7] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden
+[34] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden
+[2003] Für 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 genau einmal anzugeben"
 55,Erforderliches Messprodukt der Marktlokation,SG27,LIN,,00021,,,,Muss,
 56,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1082,00021,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
 57,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1229,00021,Marktlokation,,,Z27,
@@ -68,8 +70,8 @@
 59,Erforderliches Messprodukt der Marktlokation,SG27,PIA,4347,00022,,,,5,
 60,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7140,00022,,,Messprodukt-Code,X [11],"[11] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Marktlokation"" angegeben ist."
 61,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7143,00022,Z11,,Messprodukt,X,
-62,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [2003] ∧ [8] ∧ [34],"[8] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden 
-[34] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden 
+62,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [2003] ∧ [8] ∧ [34],"[8] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden
+[34] Wenn in derselben Nachricht eine SG27 mit Z53 (Erforderliches Messprodukt der Netzlokation) in LIN DE1229 nicht vorhanden
 [2003] Für 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 genau einmal anzugeben"
 63,Erforderliches Messprodukt der Tranche,SG27,LIN,,00023,,,,Muss,
 64,Erforderliches Messprodukt der Tranche,SG27,LIN,1082,00023,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
@@ -86,8 +88,8 @@
 75,Erforderliches Messprodukt der Messlokation,SG27,PIA,4347,00026,,,,5,
 76,Erforderliches Messprodukt der Messlokation,SG27,PIA,7140,00026,,,Messprodukt-Code,X [14],"[14] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6 ""Codelisten der Messprodukte Strom für ESA"", in der Spalte ""Ebene"" das Objekt ""Messlokation"" angegeben ist."
 77,Erforderliches Messprodukt der Messlokation,SG27,PIA,7143,00026,Z11,,Messprodukt,X,
-78,Erforderliches Messprodukt der Netzlokation,SG27,,,,,,,Muss [2003] ∧ [7] ∧ [8],"[7] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden 
-[8] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden 
+78,Erforderliches Messprodukt der Netzlokation,SG27,,,,,,,Muss [2003] ∧ [7] ∧ [8],"[7] Wenn in derselben Nachricht eine SG27 mit Z16 (Erforderliches Messprodukt der Tranche) in LIN DE1229 nicht vorhanden
+[8] Wenn in derselben Nachricht eine SG27 mit Z27 (Erforderliches Messprodukt der Marktlokation) in LIN DE1229 nicht vorhanden
 [2003] Für 11-stellige ID im SG11 LOC+172 (Meldepunkt) DE3225 genau einmal anzugeben"
 79,Erforderliches Messprodukt der Netzlokation,SG27,LIN,,00027,,,,Muss,
 80,Erforderliches Messprodukt der Netzlokation,SG27,LIN,1082,00027,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1

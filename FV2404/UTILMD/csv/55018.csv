@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,,S1.1a,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S1.1a,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E35,,Kündigung,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨,[321] Wenn im DE3155 in demselben COM der
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -46,7 +50,7 @@
 43,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2005,,Z06,,gegenüber Lieferant bestätigtes Kündigungsdatum,X,
 44,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2380,00026,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 45,Datum des bereits bestätigten Vertragsendes,SG4,DTM,2379,00026,303,,CCYYMMDDHHMMZZZ,X,
-46,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,00027,,,,Muss [352] ∧ [581],"[352] Wenn SG4 STS++A08/ A09 vorhanden  
+46,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,,00027,,,,Muss [352] ∧ [581],"[352] Wenn SG4 STS++A08/ A09 vorhanden
 [581] Hinweis: Es ist das nächst mögliche Kündigungsdatum anzugeben"
 47,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2005,00027,157,,"Gültigkeit, Beginndatum",X,
 48,"Änderung zum, Gültigkeit, Beginndatum",SG4,DTM,2380,00027,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
@@ -65,16 +69,16 @@
 61,Transaktionsgrund,SG4,STS,9013,00037,E03,,Wechsel,X,
 62,Status der Antwort,SG4,STS,,00039,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 63,Status der Antwort,SG4,STS,9015,00039,E01,,Status der Antwort,X,
-64,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X [359],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt  
+64,Status der Antwort,SG4,STS,9013,00039,,,Code des Prüfschritts,X [359],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt
 [360] Es sind nur Antwortcodes aus dem Cluster Zustimmung erlaubt"
 65,Status der Antwort,SG4,STS,1131,00039,E_0400,,EBD Nr. E_0400,X,
 66,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00043,,,,Muss [109] Kann,[109] Wenn in dieser SG4 das STS+E01++A14 vorhanden 
-67,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,Zusätzliche,X,
+67,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00043,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
 68,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00043,,,Text für allgemeine Information,X,
-69,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [350],"[165] Wenn bekannt  
-[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden  
+69,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [350],"[165] Wenn bekannt
+[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 70,Marktlokation,SG5,LOC,,00051,,,,Muss,
 71,Marktlokation,SG5,LOC,3227,00051,Z16,,Marktlokation,X,
@@ -87,7 +91,7 @@
 78,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00058,,,,Muss,
 79,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00058,TN,,Transaktions- Referenznummer,X,
 80,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00058,,,Vorgangsnummer,X,
-81,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧ [25],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden  
+81,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧ [25],"[25] Wenn SG5 LOC+Z16 (Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 82,Daten der Marktlokation,SG8,SEQ,,00103,,,,Muss,
 83,Daten der Marktlokation,SG8,SEQ,1229,00103,Z01,,Daten der Marktlokation,X,

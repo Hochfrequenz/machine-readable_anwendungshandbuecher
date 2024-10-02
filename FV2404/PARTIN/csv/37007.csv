@@ -12,7 +12,7 @@
 10,Beginn der Nachricht,,BGM,1373,00002,,,,11,[9] Wenn die Kommunikationsdaten vom Absender nicht mehr aktiv sind.
 11,Nachrichtendatum,,DTM,,00003,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931][494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.  
+13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931][494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 14,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 15,Prüfidentifikator,SG1,,,,,,,Muss,
@@ -22,7 +22,8 @@
 19,Versionsnummer,SG1,,,,,,,Muss,
 20,Versionsnummer,SG1,RFF,,00005,,,,Muss,
 21,Versionsnummer,SG1,RFF,1153,00005,AGK,,Anwendungsreferenznum mer,X,
-22,Versionsnummer,SG1,RFF,1056,00005,,,Versionsnummer,X [908][505],"[505] Wenn eine Vorgängerversion (RFF+ACW) angegeben ist, so muss der Wert in diesem DE1056 mindestens um 1 höher sein, als der Wert aus"
+22,Versionsnummer,SG1,RFF,1056,00005,,,Versionsnummer,X [908][505],"[505] Wenn eine Vorgängerversion (RFF+ACW) angegeben ist, so muss der Wert in diesem DE1056 mindestens um 1 höher sein, als der Wert aus DE1056 der Vorgängerversion (RFF+ACW).
+[908] Format: Mögliche Werte: 1 bis n"
 23,Gültig Ab,SG1,DTM,,00006,,,,Soll [4],[4] Wenn Vorgängerversion vorhanden
 24,Gültig Ab,SG1,DTM,2005,00006,157,,"Gültigkeit, Beginndatum",X,
 25,Gültig Ab,SG1,DTM,2380,00006,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
@@ -42,8 +43,11 @@
 39,Ansprechpartner,SG3,CTA,3139,00009,,,,IC,
 40,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 41,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-42,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939][6]) ∨ ([940][7])) ∧ [502],"[6] wenn im DE3155 im demselben COM der Code EM vorhanden ist  
-[7] wenn im DE3155 im demselben COM der Code TE / FX"
+42,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939][6]) ∨ ([940][7])) ∧ [502],"[6] wenn im DE3155 im demselben COM der Code EM vorhanden ist
+[7] wenn im DE3155 im demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[502] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 43,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 44,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 45,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
