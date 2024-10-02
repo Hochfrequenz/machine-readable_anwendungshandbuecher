@@ -1,11 +1,11 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Zahlungsavis,,REMAD V,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,REMADV,,Zahlungsavis,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,05A,,Ausgabe 2005 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,2.9,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,2.9,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,239,,Abgelehnte Forderung (Nicht-Zahlungsavis),X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
@@ -53,7 +53,7 @@
 51,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1004,,,,Dokumentennummer,X [511],[511] Hinweis: BGM DE1004 aus der abgelehnten INVOIC- Nachricht
 52,Geforderter Rechnungsbetrag,SG5,MOA,,,,,,Muss,
 53,Geforderter Rechnungsbetrag,SG5,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
-54,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen. 
+54,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen.
 [930] Format: max. 2 Nachkommastellen"
 55,Überweisungsbetrag,SG5,MOA,,,,,,Muss,
 56,Überweisungsbetrag,SG5,MOA,5025,,12,,Überweisungsbetrag,X,
@@ -65,26 +65,33 @@
 62,Referenz auf COMDIS,SG5,RFF,,,,,,Muss [42],[42] Wenn in SG7 AJT DE1082 = E_0407
 63,Referenz auf COMDIS,SG5,RFF,1153,,ACW,,Referenznummer einer vorangegangenen Nachricht,X,
 64,Referenz auf COMDIS,SG5,RFF,1154,,,,"Referenz, Identifikation",X [512],[512] Hinweis: BGM DE1004 aus der abgelehnten COMDIS-Nachricht
-65,Abweichungsgrund,SG7,,,,,,,Muss [517] ⊻ [518] ⊻ [519] ⊻ [520] ⊻ [521] ⊻ [535] ⊻ [537],"[517] Hinweis: Wenn in dieser SG5 in AJT DE4465 ein Code aus Cluster Ablehnung auf Summenebene verwendet wird, ist diese SG7 so oft zu wiederholen, bis alle Fehler der Summenebene genannt sind. 
-[518] Hinweis: Wenn in dieser SG5 in AJT DE4465 ein Code aus Cluster Ablehnung auf Kopfebene verwendet wird, der von A80 abweicht, ist diese SG7 genau einmal zu nutzen. 
-[519] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = A74 zu"
+65,Abweichungsgrund,SG7,,,,,,,Muss [517] ⊻ [518] ⊻ [519] ⊻ [520] ⊻ [521] ⊻ [535] ⊻ [537],"[517] Hinweis: Wenn in dieser SG5 in AJT DE4465 ein Code aus Cluster Ablehnung auf Summenebene verwendet wird, ist diese SG7 so oft zu wiederholen, bis alle Fehler der Summenebene genannt sind.
+[518] Hinweis: Wenn in dieser SG5 in AJT DE4465 ein Code aus Cluster Ablehnung auf Kopfebene verwendet wird, der von A80 abweicht, ist diese SG7 genau einmal zu nutzen.
+[519] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = A74 zu wiederholen, bis alle Rechnungsnummern im RFF- Segment dieser SG7 genannt sind, die in der INVOIC fehlen, die in diesem SG5 DOC DE1004 genannt ist
+[520] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = A75 zu wiederholen, bis alle Rechnungsnummern der Rechnungen genannt sind, die mindestens eine Abschlagsrechnung enthalten, die in der INVOIC abgerechnet wurden, die in diesem SG5 DOC DE1004 genannt ist.
+[521] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = A76 zu wiederholen, bis alle Rechnungsnummern der Abschlagsrechnungen genannt sind, die in der INVOIC, die in diesem SG5 DOC DE1004 genannt ist, nicht hätten berücksichtigt werden dürfen.
+[535] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = A80 zu wiederholen, bis die Rechnungsnummern der nicht stornierten Sonderrechnungen mit derselben Sonderrechnungsart wie sie in Sonderrechnung genannt ist die in diesem SG5 DOC DE1004 genannt ist, und sich auf dieselbe Rechnung beziehen, die die in diesem SG5 DOC DE1004 genannt ist.
+[537] Hinweis: Diese SG7 ist so oft mit AJT DE4465 = AC5 zu wiederholen, bis alle Rechnungsnummern im RFF Segment dieser SG7 genannt sind, die in der INVOIC berücksichtigt werden sollten, die in diesem SG5 DOC DE1004 genannt ist, aber mindestens eine davon offensichtlich nicht berücksichtigt wurde."
 66,Abweichungsgrund,SG7,AJT,,,,,,Muss ,
-67,Abweichungsgrund,SG7,AJT,4465,,,,Code des Prüfschritts,X (([14] ⊻ [16]) ∧ ([11] ⊻ [12])),"[11] Wenn in diesem AJT DE1082 = E_0406 
-[12] Wenn in diesem AJT DE1082 = E_0407"
+67,Abweichungsgrund,SG7,AJT,4465,,,,Code des Prüfschritts,X (([14] ⊻ [16]) ∧ ([11] ⊻ [12])),"[11] Wenn in diesem AJT DE1082 = E_0406
+[12] Wenn in diesem AJT DE1082 = E_0407
+[14] A-Code aus Cluster Ablehnung auf Kopfebene
+[16] A-Code aus Cluster Ablehnung auf Summenebene"
 68,Abweichungsgrund,SG7,AJT,1082,,E_0406,,EBD Nr. E_0406,X,
 69,Abweichungsgrund,SG7,AJT,1082,,E_0407,,EBD Nr. E_0407,X,
 70,Zugehörige Rechnung,SG7,RFF,,,,,,Muss [36],[36] Wenn in dieser SG7 AJT DE4465 = A12/A75/A80
 71,Zugehörige Rechnung,SG7,RFF,1153,,AFL,,Zugehörige Rechnungen,X,
 72,Zugehörige Rechnung,SG7,RFF,1154,,,,"Referenz, Identifikation",X [536],[536] Hinweis: Dieses DE darf keine Abschlagsrechnungsnummer enthalten 
-73,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,,,,,,Muss ((([40] ⊻ [41]) ∧ [22]) ⊻ ([41] ∧ [39])) Kann,"[22] Wenn in dieser SG7 AJT DE4465 = A02/A06/A16/ A66/A67/A68/A69/A78/A90/ A95/A96/AC3/AC4 
-[39] Wenn in dieser SG7 AJT DE4465 = AC1 
-[40] Wenn in dieser SG7 AJT DE1082 = E_0406 
+73,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,,,,,,Muss ((([40] ⊻ [41]) ∧ [22]) ⊻ ([41] ∧ [39])) Kann,"[22] Wenn in dieser SG7 AJT DE4465 = A02/A06/A16/ A66/A67/A68/A69/A78/A90/ A95/A96/AC3/AC4
+[39] Wenn in dieser SG7 AJT DE4465 = AC1
+[40] Wenn in dieser SG7 AJT DE1082 = E_0406
 [41] Wenn in dieser SG7 AJT DE1082 = E_0407"
 74,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4451,,ABO,,Information über Abweichung,X,
-75,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4440,,,,Freier Text,X [522] ⊻ [530] ⊻ [531],"[522] Hinweis: Wenn in dieser SG7 AJT DE4465 = A66/A67/ A68/A69/AC3/AC4 ist der Steuersatz (aus DE5278) und die Steuerkategorie (aus DE5305) des SG52 TAX der INVOIC, die in diesem SG5 DOC DE1004 genannt ist, anzugeben. 
-[530] Hinweis: Wenn in dieser SG7 AJT DE4465 = A78 ist hier die erwartete Artikel-ID anzugeben. 
+75,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4440,,,,Freier Text,X [522] ⊻ [530] ⊻ [531],"[522] Hinweis: Wenn in dieser SG7 AJT DE4465 = A66/A67/ A68/A69/AC3/AC4 ist der Steuersatz (aus DE5278) und die Steuerkategorie (aus DE5305) des SG52 TAX der INVOIC, die in diesem SG5 DOC DE1004 genannt ist, anzugeben.
+[530] Hinweis: Wenn in dieser SG7 AJT DE4465 = A78 ist hier die erwartete Artikel-ID anzugeben.
 [531] Hinweis: Wenn in dieser SG7 AJT DE4465 = A02/A06/ A16/A90/A95/A96 ist hier die Ursache der Ablehnung ist zu begründen."
-76,Enthaltene Abschlagsrechnungen,SG7,FTX,,,,,,Muss [18] ∧,[18] Wenn in dieser SG7 AJT
+76,Enthaltene Abschlagsrechnungen,SG7,FTX,,,,,,Muss [18] ∧ [529],"[18] Wenn in dieser SG7 AJT DE4465 = A74/A75/A76/AC5
+[529] Hinweis: Wenn in dieser SG7 AJT DE4465 = A75 vorhanden, dann dürfen in den DE4440 dieses FTX- Segments nur Abschlagsrechnungsnummern genannt sein, welche in der Rechnung enthalten sind, deren Nummer in dieser SG7 in SG7 RFF+AFL angegeben ist."
 77,Enthaltene Abschlagsrechnungen,SG7,FTX,4451,,Z14,,Enthaltene Abschläge,X,
 78,Enthaltene Abschlagsrechnungen,SG7,FTX,4440,,,,Freier Text,X [523],"[523] Hinweis: Jede Rechnungsnummer einer Abschlagsrechnung muss in einem separaten DE4440 angegeben werden. Reichen die fünf DE4440 für die Rechnungsnummern aller anzugebenden Abschlagrechnungen nicht aus, ist das FTX+Z14 zu wiederholen."
 79,Trennung von Positions- u. Summenteil,,UNS,,,,,,Muss,

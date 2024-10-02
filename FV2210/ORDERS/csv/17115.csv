@@ -1,25 +1,25 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,1.2a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,1.2a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,Z51,,Sperrung,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-14,Ausführungsdatum,,DTM,,,,,,Muss [55] ∧ [533],"[55] Wenn DTM+469 nicht vorhanden 
+14,Ausführungsdatum,,DTM,,,,,,Muss [55] ∧ [533],"[55] Wenn DTM+469 nicht vorhanden
 [533] Hinweis: Gerichtsvollzieher hat Termin vorgegeben"
 15,Ausführungsdatum,,DTM,2005,,203,,Ausführungsdatum/-zeit,X,
 16,Ausführungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
 17,Ausführungsdatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-18,Beginn zum (nächstmöglichen Termin),,DTM,,,,,,Muss [56],[56] Wenn DTM+203
+18,Beginn zum (nächstmöglichen Termin),,DTM,,,,,,Muss [56],[56] Wenn DTM+203 nicht vorhanden
 19,Beginn zum (nächstmöglichen Termin),,DTM,2005,,469,,"Startdatum oder - zeitpunkt, frühestes/r",X,
 20,Beginn zum (nächstmöglichen Termin),,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
 21,Beginn zum (nächstmöglichen Termin),,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
@@ -41,35 +41,38 @@
 37,Kommunikationsverbindung,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
 38,Kommunikationsverbindung,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
 39,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
-40,MP-ID Empfänger,SG2,,,,,,,Muss,
-41,MP-ID Empfänger,SG2,NAD,,,,,,Muss,
-42,MP-ID Empfänger,SG2,NAD,3035,,MR,,Nachrichtenempfänger,X,
-43,MP-ID Empfänger,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-44,MP-ID Empfänger,SG2,NAD,3055,,9,,GS1,X,
-45,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-46,Meldepunkt,SG2,,,,,,,Muss,
-47,Meldepunkt,SG2,NAD,,,,,,Muss,
-48,Meldepunkt,SG2,NAD,3035,,DP,,Lieferanschrift,X,
-49,Meldepunkt,SG2,LOC,,,,,,Muss,
-50,Meldepunkt,SG2,LOC,3227,,172,,Meldepunkt,X,
-51,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation 
+40,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
+41,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+42,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
+43,MP-ID Empfänger,SG2,,,,,,,Muss,
+44,MP-ID Empfänger,SG2,NAD,,,,,,Muss,
+45,MP-ID Empfänger,SG2,NAD,3035,,MR,,Nachrichtenempfänger,X,
+46,MP-ID Empfänger,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+47,MP-ID Empfänger,SG2,NAD,3055,,9,,GS1,X,
+48,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+49,Meldepunkt,SG2,,,,,,,Muss,
+50,Meldepunkt,SG2,NAD,,,,,,Muss,
+51,Meldepunkt,SG2,NAD,3035,,DP,,Lieferanschrift,X,
+52,Meldepunkt,SG2,LOC,,,,,,Muss,
+53,Meldepunkt,SG2,LOC,3227,,172,,Meldepunkt,X,
+54,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation
 [950] Format: Marktlokations-ID"
-52,Adresse für Treffpunkt,SG2,,,,,,,Kann,
-53,Adresse für Treffpunkt,SG2,NAD,,,,,,Muss,
-54,Adresse für Treffpunkt,SG2,NAD,3035,,Z24,,Treffpunkt,X,
-55,Adresse für Treffpunkt,SG2,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
-56,Adresse für Treffpunkt,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,M [57],[57] Wenn im selben SG2 NAD DE3124 nicht vorhanden
-57,Adresse für Treffpunkt,SG2,NAD,3164,,,,Ort,X,
-58,Adresse für Treffpunkt,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
-59,Adresse für Treffpunkt,SG2,NAD,3207,,,,"Ländername, Code",X,
-60,Positionsdaten,SG29,,,,,,,Kann [2092],[2092] Pro Nachricht ist die SG29 maximal einmal anzugeben
-61,Positionsdaten,SG29,LIN,,,,,,Muss,
-62,Positionsdaten,SG29,LIN,1082,,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-63,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,,,,,,Kann,
-64,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4451,,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
-65,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4440,,,,Freier Text,X,
-66,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
-67,Abschnitts-Kontrollsegment,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
-68,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-69,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-70,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+55,Adresse für Treffpunkt,SG2,,,,,,,Kann,
+56,Adresse für Treffpunkt,SG2,NAD,,,,,,Muss,
+57,Adresse für Treffpunkt,SG2,NAD,3035,,Z24,,Treffpunkt,X,
+58,Adresse für Treffpunkt,SG2,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
+59,Adresse für Treffpunkt,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,M [57],[57] Wenn im selben SG2 NAD DE3124 nicht vorhanden
+60,Adresse für Treffpunkt,SG2,NAD,3164,,,,Ort,X,
+61,Adresse für Treffpunkt,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
+62,Adresse für Treffpunkt,SG2,NAD,3207,,,,"Ländername, Code",X,
+63,Positionsdaten,SG29,,,,,,,Kann [2092],[2092] Pro Nachricht ist die SG29 maximal einmal anzugeben
+64,Positionsdaten,SG29,LIN,,,,,,Muss,
+65,Positionsdaten,SG29,LIN,1082,,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+66,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,,,,,,Kann,
+67,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4451,,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
+68,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4440,,,,Freier Text,X,
+69,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
+70,Abschnitts-Kontrollsegment,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
+71,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+72,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+73,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

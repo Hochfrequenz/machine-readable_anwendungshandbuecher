@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten- Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,9 +11,9 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum /-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
-13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHM,X,
+13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHM MZZZ,X,
 14,Betrachtungszeitintervall,,DTM,,,,,,Muss,[1] Wenn IMD+Z03 vorhanden
 15,Betrachtungszeitintervall,,DTM,2005,,273,,Gültigkeitszeitspan ne,X,
 16,Betrachtungszeitintervall,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
@@ -23,44 +23,45 @@
 20,Prüfidentifikator,SG1,,,,,,,Muss,
 21,Prüfidentifikator,SG1,RFF,,,,,,Muss,
 22,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
-23,MP-ID Absender,SG2,,,,,,,Muss,
-24,MP-ID Absender,SG2,NAD,,,,,,Muss,
-25,MP-ID Absender,SG2,NAD,3035,,MS,,Dokumenten-/ Nachrichtenausstel ler bzw. -absender,X,
-26,MP-ID Absender,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-27,MP-ID Absender,SG2,NAD,3055,,9,,GS1,X,
-28,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-29,Ansprechpartner,SG5,,,,,,,Kann,
-30,Ansprechpartner,SG5,CTA,,,,,,Muss,
-31,Ansprechpartner,SG5,CTA,3139,,IC,,Informationskonta kt,X,
-32,Ansprechpartner,SG5,CTA,3412,,,,Kontakt,X,
-33,Kommunikationsverbindu ng,SG5,COM,,,,,,Muss,
-34,Kommunikationsverbindu ng,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
-35,Kommunikationsverbindu ng,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
-36,Kommunikationsverbindu ng,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
-37,Kommunikationsverbindu ng,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
-38,Kommunikationsverbindu ng,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-39,Kommunikationsverbindu ng,SG5,COM,3155,,AL,,Handy,X [1P0..1],
-40,MP-ID Empfänger,SG2,,,,,,,Muss,
-41,MP-ID Empfänger,SG2,NAD,,,,,,Muss,
-42,MP-ID Empfänger,SG2,NAD,3035,,MR,,Nachrichtenempfä nger,X,
-43,MP-ID Empfänger,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-44,MP-ID Empfänger,SG2,NAD,3055,,9,,GS1,X,
-45,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-46,Positionsdaten,SG29,,,,,,,Muss [2050],[2050] Pro Nachricht ist die SG29 genau einmal anzugeben
-47,Positionsdaten,SG29,LIN,,,,,,Muss,
-48,Positionsdaten,SG29,LIN,1082,,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-49,Versionsangabe der Summenzeitreihe,SG34,,,,,,,Muss,[1] Wenn IMD+Z03 vorhanden
-50,Versionsangabe der Summenzeitreihe,SG34,RFF,,,,,,Muss,
-51,Versionsangabe der Summenzeitreihe,SG34,RFF,1153,,AUU,,Referenz auf eine Zeitreihe,X,
-52,Versionsangabe der Summenzeitreihe,SG34,RFF,1154,,,,Version,X,
-53,Meldepunkt,SG38,,,,,,,Muss,
-54,Meldepunkt,SG38,LOC,,,,,,Muss,
-55,Meldepunkt,SG38,LOC,3227,,172,,Meldepunkt,X,
-56,Meldepunkt,SG38,LOC,3225,,,,Meldepunkt,X [951] [501],"[500] Hinweis: Zählpunkt der BAS 
-[501] Hinweis: Zählpunkt der DZR 
+23,Prüfidentifikator,SG1,RFF,1154,,17205,,Anforderung Clearingliste DZR,X,
+24,MP-ID Absender,SG2,,,,,,,Muss,
+25,MP-ID Absender,SG2,NAD,,,,,,Muss,
+26,MP-ID Absender,SG2,NAD,3035,,MS,,Dokumenten-/ Nachrichtenausstel ler bzw. -absender,X,
+27,MP-ID Absender,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+28,MP-ID Absender,SG2,NAD,3055,,9,,GS1,X,
+29,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+30,Ansprechpartner,SG5,,,,,,,Kann,
+31,Ansprechpartner,SG5,CTA,,,,,,Muss,
+32,Ansprechpartner,SG5,CTA,3139,,IC,,Informationskonta kt,X,
+33,Ansprechpartner,SG5,CTA,3412,,,,Kontakt,X,
+34,Kommunikationsverbindu ng,SG5,COM,,,,,,Muss,
+35,Kommunikationsverbindu ng,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
+36,Kommunikationsverbindu ng,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
+37,Kommunikationsverbindu ng,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
+38,Kommunikationsverbindu ng,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
+39,Kommunikationsverbindu ng,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+40,Kommunikationsverbindu ng,SG5,COM,3155,,AL,,Handy,X [1P0..1],
+41,MP-ID Empfänger,SG2,,,,,,,Muss,
+42,MP-ID Empfänger,SG2,NAD,,,,,,Muss,
+43,MP-ID Empfänger,SG2,NAD,3035,,MR,,Nachrichtenempfä nger,X,
+44,MP-ID Empfänger,SG2,NAD,3039,,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+45,MP-ID Empfänger,SG2,NAD,3055,,9,,GS1,X,
+46,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+47,Positionsdaten,SG29,,,,,,,Muss [2050],[2050] Pro Nachricht ist die SG29 genau einmal anzugeben
+48,Positionsdaten,SG29,LIN,,,,,,Muss,
+49,Positionsdaten,SG29,LIN,1082,,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+50,Versionsangabe der Summenzeitreihe,SG34,,,,,,,Muss,[1] Wenn IMD+Z03 vorhanden
+51,Versionsangabe der Summenzeitreihe,SG34,RFF,,,,,,Muss,
+52,Versionsangabe der Summenzeitreihe,SG34,RFF,1153,,AUU,,Referenz auf eine Zeitreihe,X,
+53,Versionsangabe der Summenzeitreihe,SG34,RFF,1154,,,,Version,X,
+54,Meldepunkt,SG38,,,,,,,Muss,
+55,Meldepunkt,SG38,LOC,,,,,,Muss,
+56,Meldepunkt,SG38,LOC,3227,,172,,Meldepunkt,X,
+57,Meldepunkt,SG38,LOC,3225,,,,Meldepunkt,X [951] [501],"[500] Hinweis: Zählpunkt der BAS
+[501] Hinweis: Zählpunkt der DZR
 [951] Format: Zählpunktbezeichnu ng"
-57,Abschnitts- Kontrollsegment,,UNS,,,,,,Muss,
-58,Abschnitts- Kontrollsegment,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
-59,Nachrichten- Endesegment,,UNT,,,,,,Muss,
-60,Nachrichten- Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-61,Nachrichten- Endesegment,,UNT,0062,,,,Nachrichten- Referenznummer,X,
+58,Abschnitts- Kontrollsegment,,UNS,,,,,,Muss,
+59,Abschnitts- Kontrollsegment,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
+60,Nachrichten- Endesegment,,UNT,,,,,,Muss,
+61,Nachrichten- Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+62,Nachrichten- Endesegment,,UNT,0062,,,,Nachrichten- Referenznummer,X,

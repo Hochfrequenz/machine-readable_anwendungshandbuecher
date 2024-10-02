@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,15 +11,16 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,,,,,Muss [27],[27] Wenn DTM+469 nicht vorhanden
 15,Ausführungsdatum,,DTM,2005,,203,,Ausführungsdatum/-zeit,X,
 16,Ausführungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 17,Ausführungsdatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-18,Beginn zum (nächstmöglichen Termin),,DTM,,,,,,Soll [26] ∧ [28] ∧ [29],"[26] Wenn DTM+203 nicht vorhanden 
-[28] Wenn RFF+AAV vorhanden"
+18,Beginn zum (nächstmöglichen Termin),,DTM,,,,,,Soll [26] ∧ [28] ∧ [29],"[26] Wenn DTM+203 nicht vorhanden
+[28] Wenn RFF+AAV vorhanden
+[29] Wenn DTM+469 in Anfrage (REQOTE) vorhanden war"
 19,Beginn zum (nächstmöglichen Termin),,DTM,2005,,469,,"Startdatum oder - zeitpunkt, frühestes/r",X,
 20,Beginn zum (nächstmöglichen Termin),,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 21,Beginn zum (nächstmöglichen Termin),,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
@@ -41,7 +42,7 @@
 37,Währungsangaben,SG4,CUX,6343,,4,,Währung der Rechnung,X,
 38,MP-ID Absender,SG11,,,,,,,Muss,
 39,MP-ID Absender,SG11,NAD,,,,,,Muss,
-40,MP-ID Absender,SG11,NAD,3035,,Nachrichtenaussteller bzw.,,,MS,
+40,MP-ID Absender,SG11,NAD,3035,,Nachrichtenaussteller bzw. -absender,,,MS,
 41,MP-ID Absender,SG11,NAD,3039,,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
 42,MP-ID Absender,SG11,NAD,3055,,9,,GS1,X,
 43,MP-ID Absender,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
@@ -67,7 +68,8 @@
 63,Marktlokation bzw. Messlokation,SG11,NAD,3035,,,,,DP,
 64,Meldepunkt,SG11,LOC,,,,,,Muss,
 65,Meldepunkt,SG11,LOC,3227,,,,,172,
-66,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [950] [501],[501] Hinweis: Verwendung der ID der Marktlokation
+66,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [950] [501],"[501] Hinweis: Verwendung der ID der Marktlokation
+[950] Format: Marktlokations-ID"
 67,Positionsdaten,SG27,,,,,,,Muss,
 68,Positionsdaten,SG27,LIN,,,,,,Muss,
 69,Positionsdaten,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
@@ -95,7 +97,7 @@
 91,Preisangaben,SG31,PRI,,,,,,Muss,
 92,Preisangaben,SG31,PRI,5125,,CAL,,Berechnungspreis,X,
 93,Preisangaben,SG31,PRI,5118,,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-94,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,,Soll [18] ∧ [20],"[18] Wenn Angebot mehrere Marktlokationen abdeckt (AN nutzt mehrere Marktlokationen in einem Gebäude) 
+94,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,,Soll [18] ∧ [20],"[18] Wenn Angebot mehrere Marktlokationen abdeckt (AN nutzt mehrere Marktlokationen in einem Gebäude)
 [20] Wenn IMD++Z33 vorhanden"
 95,Referenz auf ID weiterer Marktlokationen,SG32,RFF,,,,,,Muss,
 96,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1153,,AVE,,Meldepunkt,X,

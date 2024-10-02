@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,E35,,Kündigung,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -43,9 +43,11 @@
 40,Vorgang,SG4,IDE,,,,,,Muss,
 41,Vorgang,SG4,IDE,7495,,24,,Transaktion,X,
 42,Vorgang,SG4,IDE,7402,,,,Vorgangsnummer,X,
-43,Ende zum,SG4,DTM,,,,,,Muss [12] ∧ (([493] ∧ [13]) ⊻ ([492] ∧ [357])),"[12] Wenn SG4 DTM+471 (Ende zum nächstmöglichem Termin) nicht vorhanden  
-[13] Wenn SG4 STS+E01++Z01 (Status der Antwort: Zustimmung mit Terminänderung) nicht vorhanden  
-[357] Wenn SG4 STS+E01++A06/ A11 vorhanden "
+43,Ende zum,SG4,DTM,,,,,,Muss [12] ∧ (([493] ∧ [13]) ⊻ ([492] ∧ [357])),"[12] Wenn SG4 DTM+471 (Ende zum nächstmöglichem Termin) nicht vorhanden
+[13] Wenn SG4 STS+E01++Z01 (Status der Antwort: Zustimmung mit Terminänderung) nicht vorhanden
+[357] Wenn SG4 STS+E01++A06/ A11 vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 44,Ende zum,SG4,DTM,2005,,93,,Datum Vertragsende,X,
 45,Ende zum,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
 46,Ende zum,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
@@ -58,19 +60,24 @@
 53,Transaktionsgrund,SG4,STS,9013,,E03,,Wechsel,X,
 54,Status der Antwort,SG4,STS,,,,,,Muss [249],[249] Innerhalb eines SG4 IDE müssen alle DE1131 der SG4 STS+E01 den identischen Wert enthalten 
 55,Status der Antwort,SG4,STS,9015,,E01,,Status der Antwort,X,
-56,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X [360],"[359] Wenn im selben STS+E01 im DE1131 E_xxx (ein EBD ausgewählt wurde und keine Codeliste) vorhanden ist, sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt  
-[360] Wenn im selben STS+E01 im DE1131 E_xxx (ein EBD ausgewählt wurde und keine Codeliste)"
+56,Status der Antwort,SG4,STS,9013,,,,Code des Prüfschritts,X [360],"[359] Wenn im selben STS+E01 im DE1131 E_xxx (ein EBD ausgewählt wurde und keine Codeliste) vorhanden ist, sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt
+[360] Wenn im selben STS+E01 im DE1131 E_xxx (ein EBD ausgewählt wurde und keine Codeliste) vorhanden ist, sind nur Antwortcodes aus dem Cluster Zustimmung erlaubt"
 57,Status der Antwort,SG4,STS,1131,,E_0400,,EBD Nr. E_0400,X [492],
-58,Status der Antwort,SG4,STS,1131,,G_0006,,Codeliste Gas Nr. G_0006,X [493],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom  
+58,Status der Antwort,SG4,STS,1131,,G_0006,,Codeliste Gas Nr. G_0006,X [493],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
-59,Meldepunkt,SG5,,,,,,,Muss [2061] ∧ [583],"[165] Wenn bekannt  
-[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden  
-[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden  
-[361] Wenn STS+E01++A03/ A04 nicht vorhanden "
+59,Meldepunkt,SG5,,,,,,,Muss [2061] ∧ [583],"[165] Wenn bekannt
+[328] Wenn IMD++Z36+Z12 (Identifikationslogik: Marktlokations-ID) vorhanden
+[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[350] Wenn STS+E01++A01/ A03/ A04/ A12 nicht vorhanden
+[361] Wenn STS+E01++A03/ A04 nicht vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas
+[583] Hinweis: Verwendung der ID der Marktlokation
+[584] Hinweis: Verwendung der ID der Messlokation
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 60,Meldepunkt,SG5,LOC,,,,,,Muss,
 61,Meldepunkt,SG5,LOC,3227,,172,,Meldepunkt,X,
-62,Meldepunkt,SG5,LOC,3225,,,,Identifikator,X [950],"[950] Format: Marktlokations-ID  
+62,Meldepunkt,SG5,LOC,3225,,,,Identifikator,X [950],"[950] Format: Marktlokations-ID
 [953] Format: Marktlokations-ID oder Zählpunktbezeichnung"
 63,Prüfidentifikator,SG6,,,,,,,Muss,
 64,Prüfidentifikator,SG6,RFF,,,,,,Muss,
@@ -80,7 +87,8 @@
 68,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,,,,,Muss,
 69,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,,TN,,Transaktions- Referenznummer,X,
 70,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,,,,Vorgangsnummer,X,
-71,Daten der Marktlokation,SG8,,,,,,,Muss [2061],[248] Wenn SG5 LOC+172 (Meldepunkt) vorhanden 
+71,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[248] Wenn SG5 LOC+172 (Meldepunkt) vorhanden
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 72,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
 73,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
 74,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
@@ -89,14 +97,16 @@
 77,Vorjahresverbrauch vom Lieferant,SG9,,,,,,,Muss,
 78,Vorjahresverbrauch vom Lieferant,SG9,QTY,,,,,,Muss,
 79,Vorjahresverbrauch vom Lieferant,SG9,QTY,6063,,Z09,,Vorjahresverbrauch,X,
-80,Vorjahresverbrauch vom Lieferant,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+80,Vorjahresverbrauch vom Lieferant,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 81,Vorjahresverbrauch vom Lieferant,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
 82,Lieferrichtung,SG10,,,,,,,Muss,
 83,Lieferrichtung,SG10,CCI,,,,,,Muss,
 84,Lieferrichtung,SG10,CCI,7059,,Z30,,Lieferrichtung,X,
 85,Lieferrichtung,SG10,CCI,7037,,Z07,,Verbrauch,X,
-86,Kunde des Lieferanten,SG12,,,,,,,Muss,[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+86,Kunde des Lieferanten,SG12,,,,,,,Muss,"[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 87,Kunde des Lieferanten,SG12,NAD,,,,,,Muss,
 88,Kunde des Lieferanten,SG12,NAD,3035,,Z09,,Kunde des LF,X,
 89,Kunde des Lieferanten,SG12,NAD,3036,,,,Name,X,
@@ -108,16 +118,19 @@
 95,Referenz auf die ID der Marktlokation,SG12,RFF,,,,,,Muss,
 96,Referenz auf die ID der Marktlokation,SG12,RFF,1153,,Z18,,Marktlokation,X,
 97,Referenz auf die ID der Marktlokation,SG12,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-98,Marktlokationsanschrift,SG12,,,,,,,Muss,"[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden  
-[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom  
+98,Marktlokationsanschrift,SG12,,,,,,,Muss,"[333] Wenn IMD+Z36+Z13 (Identifikationslogik: Alle Identifikationsdaten) vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 99,Marktlokationsanschrift,SG12,NAD,,,,,,Muss,
 100,Marktlokationsanschrift,SG12,NAD,3035,,DP,,Lieferanschrift,X,
 101,Marktlokationsanschrift,SG12,NAD,3124,,,,Zusatzinformation zur Identifizierung,K,
-102,Marktlokationsanschrift,SG12,NAD,3042,,,,Straße und Hausnummer oder,S [166],[165] Wenn bekannt
-103,Marktlokationsanschrift,SG12,NAD,3164,,,,Ort,X,
-104,Marktlokationsanschrift,SG12,NAD,3251,,,,Postleitzahl,X,
-105,Marktlokationsanschrift,SG12,NAD,3207,,,,"Ländername, Code",X,
-106,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-107,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-108,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+102,Marktlokationsanschrift,SG12,NAD,3042,,,,Straße und Hausnummer oder,S [166],
+103,Marktlokationsanschrift,SG12,NAD,3042,,Postfach,,,M [212],"[165] Wenn bekannt
+[166] Wenn vorhanden
+[212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
+104,Marktlokationsanschrift,SG12,NAD,3164,,,,Ort,X,
+105,Marktlokationsanschrift,SG12,NAD,3251,,,,Postleitzahl,X,
+106,Marktlokationsanschrift,SG12,NAD,3207,,,,"Ländername, Code",X,
+107,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+108,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+109,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
