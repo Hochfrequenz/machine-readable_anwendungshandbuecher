@@ -1,11 +1,11 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Zahlungsavis,,REMAD V,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,REMADV,,Zahlungsavis,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,05A,,Ausgabe 2005 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,2.9c,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,2.9c,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,481,,Zahlungsavis,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
@@ -28,10 +28,10 @@
 26,Ansprechpartner,SG3,CTA,3139,,IC,,Informationsstelle,X,
 27,Ansprechpartner,SG3,CTA,3412,,,,Abteilung oder Bearbeiter,X,
 28,Kommunikationsverbindung,SG3,COM,,,,,,Muss,
-29,Kommunikationsverbindung,SG3,COM,3148,,,,"Kommunikationsadresse, Identifikation",X (([939][89]) ∨ ([940][90])) ∧ [549],"[89] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[90] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[549] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+29,Kommunikationsverbindung,SG3,COM,3148,,,,"Kommunikationsadresse, Identifikation",X (([939][89]) ∨ ([940][90])) ∧ [549],"[89] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[90] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[549] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 30,Kommunikationsverbindung,SG3,COM,3155,,EM,,E-Mail,X [1P0..1],
 31,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -53,30 +53,32 @@
 47,Dokument-/Nachrichten- Einzelheiten,SG5,,,,,,,Muss,
 48,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,,,,,,Muss,
 49,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,380,,Handelsrechnung,X,
-50,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,389,,"Selbst ausgestellte Rechnung (engl.: ""Self-",X,
-51,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1004,,,,Dokumentennummer,X [515],"[511] Hinweis: BGM DE1004 aus der abgelehnten INVOIC- Nachricht 
+50,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,389,,"Selbst ausgestellte Rechnung (engl.: ""Self- billed invoice"")",X,
+51,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,457,,Storno einer Belastung.,X,
+52,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,Z25,,Storno für selbst ausgestellte Rechnung (Gutschrift im Gutschriftsverfahren),X,
+53,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1004,,,,Dokumentennummer,X [515],"[511] Hinweis: BGM DE1004 aus der abgelehnten INVOIC- Nachricht
 [515] Hinweis: BGM DE1004 aus der bestätigten INVOIC- Nachricht"
-52,Geforderter Rechnungsbetrag,SG5,MOA,,,,,,Muss,
-53,Geforderter Rechnungsbetrag,SG5,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
-54,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen. 
+54,Geforderter Rechnungsbetrag,SG5,MOA,,,,,,Muss,
+55,Geforderter Rechnungsbetrag,SG5,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
+56,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen.
 [930] Format: max. 2 Nachkommastellen"
-55,Überweisungsbetrag,SG5,MOA,,,,,,Muss,
-56,Überweisungsbetrag,SG5,MOA,5025,,12,,Überweisungsbetrag,X,
-57,Überweisungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] ([3] ⊻ [4]),"[3] Bei SG5 DOC+389 / Z25 ist der Wert aus derselben SG5 MOA+9 mit (-1) multipliziert anzugeben. 
-[4] Bei SG5 DOC+380 / 457 ist der Wert aus derselben SG5 MOA+9 unverändert anzugeben. 
-[926] Format: Möglicher Wert: 0  
+57,Überweisungsbetrag,SG5,MOA,,,,,,Muss,
+58,Überweisungsbetrag,SG5,MOA,5025,,12,,Überweisungsbetrag,X,
+59,Überweisungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] ([3] ⊻ [4]),"[3] Bei SG5 DOC+389 / Z25 ist der Wert aus derselben SG5 MOA+9 mit (-1) multipliziert anzugeben.
+[4] Bei SG5 DOC+380 / 457 ist der Wert aus derselben SG5 MOA+9 unverändert anzugeben.
+[926] Format: Möglicher Wert: 0
 [930] Format: max. 2 Nachkommastellen"
-58,Rechnungsdatum,SG5,DTM,,,,,,Muss,
-59,Rechnungsdatum,SG5,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-60,Rechnungsdatum,SG5,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
-61,Rechnungsdatum,SG5,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-62,Trennung von Positions- u. Summenteil,,UNS,,,,,,Muss,
-63,Trennung von Positions- u. Summenteil,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
-64,Summenbetrag,,MOA,,,,,,Muss,
-65,Summenbetrag,,MOA,5025,,12,,Überweisungsbetrag,X,
-66,Summenbetrag,,MOA,5004,,,,Geldbetrag,X [930] [502],"[502] Hinweis: Bei positivem Betrag ergibt sich eine Forderung des Rechnungsstellers. Bei negativem Betrag ergibt sich eine Forderung für den Rechnungsempfänger. 
-[926] Format: Möglicher Wert: 0  
+60,Rechnungsdatum,SG5,DTM,,,,,,Muss,
+61,Rechnungsdatum,SG5,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
+62,Rechnungsdatum,SG5,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
+63,Rechnungsdatum,SG5,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
+64,Trennung von Positions- u. Summenteil,,UNS,,,,,,Muss,
+65,Trennung von Positions- u. Summenteil,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
+66,Summenbetrag,,MOA,,,,,,Muss,
+67,Summenbetrag,,MOA,5025,,12,,Überweisungsbetrag,X,
+68,Summenbetrag,,MOA,5004,,,,Geldbetrag,X [930] [502],"[502] Hinweis: Bei positivem Betrag ergibt sich eine Forderung des Rechnungsstellers. Bei negativem Betrag ergibt sich eine Forderung für den Rechnungsempfänger.
+[926] Format: Möglicher Wert: 0
 [930] Format: max. 2 Nachkommastellen"
-67,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-68,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-69,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+69,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+70,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+71,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

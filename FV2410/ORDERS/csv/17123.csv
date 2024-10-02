@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss,
@@ -54,9 +54,9 @@
 51,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
 52,Meldepunkt,SG2,LOC,,00026,,,,Muss,
 53,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-54,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation 
+54,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation
 [950] Format: Marktlokations-ID"
-55,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,Muss [2050] ∧ [107],"[107] Wenn IMD++Z57 (Abbestellung Zählzeitdefinition) nicht vorhanden 
+55,Erforderliches Messprodukt der Marktlokation,SG29,,,,,,,Muss [2050] ∧ [107],"[107] Wenn IMD++Z57 (Abbestellung Zählzeitdefinition) nicht vorhanden
 [2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
 56,Erforderliches Messprodukt der Marktlokation,SG29,LIN,,00065,,,,Muss,
 57,Erforderliches Messprodukt der Marktlokation,SG29,LIN,1082,00065,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
@@ -68,10 +68,10 @@
 63,Zugeordnete Zählzeitdefinition,SG30,,,,,,,Muss,
 64,Zugeordnete Zählzeitdefinition,SG30,CCI,,00067,,,,Muss,
 65,Zugeordnete Zählzeitdefinition,SG30,CCI,7059,00067,Messprodukt erforderlich,,,Z39 Z41,[75] Wenn für den erforderlichen Wert keine Zählzeit benötigt wird
-66,Zugeordnete Zählzeitdefinition,SG30,CCI,7037,00067,,,Code der Zählzeitdefinition,X [77] ∧ (([27] ∧ [540]) ⊻ ([23] ∧ [539])),"[23] Wenn MP-ID in SG2 NAD+MR mit Rolle NB vorhanden 
-[27] Wenn MP-ID in SG2 NAD+MR mit Rolle MSB vorhanden 
-[77] Wenn im selben CCI im DE7059 der Code Z39 (Code der Zählzeitdefinition) vorhanden ist 
-[539] Hinweis: Es sind nur Codes von Zählzeiten aus Liste des NB anzugeben 
+66,Zugeordnete Zählzeitdefinition,SG30,CCI,7037,00067,,,Code der Zählzeitdefinition,X [77] ∧ (([27] ∧ [540]) ⊻ ([23] ∧ [539])),"[23] Wenn MP-ID in SG2 NAD+MR mit Rolle NB vorhanden
+[27] Wenn MP-ID in SG2 NAD+MR mit Rolle MSB vorhanden
+[77] Wenn im selben CCI im DE7059 der Code Z39 (Code der Zählzeitdefinition) vorhanden ist
+[539] Hinweis: Es sind nur Codes von Zählzeiten aus Liste des NB anzugeben
 [540] Hinweis: Es sind nur Codes von Zählzeiten aus Liste des LF anzugeben"
 67,Abschnitts-Kontrollsegment,,UNS,,00123,,,,Muss,
 68,Abschnitts-Kontrollsegment,,UNS,0081,00123,und Summenteil,,,S,

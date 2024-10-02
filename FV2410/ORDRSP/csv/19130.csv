@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,11 +11,11 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
-14,geplanter Behebungszeitpunkt,,DTM,,00006,,,,Muss [46] ⊻ [47] ⊻ [48],"[46] Wenn AJT+A06+E_0552 vorhanden 
-[47] Wenn AJT+A06+E_0553 vorhanden 
+14,geplanter Behebungszeitpunkt,,DTM,,00006,,,,Muss [46] ⊻ [47] ⊻ [48],"[46] Wenn AJT+A06+E_0552 vorhanden
+[47] Wenn AJT+A06+E_0553 vorhanden
 [48] Wenn AJT+A06+E_0554 vorhanden"
 15,geplanter Behebungszeitpunkt,,DTM,2005,00006,292,,"Datum/Zeit der abgeschlossenen Leistung (Arbeit), geplant",X,
 16,geplanter Behebungszeitpunkt,,DTM,2380,00006,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
@@ -31,11 +31,11 @@
 26,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,,Muss,
 27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,00013,,,,Muss,
 28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X,
-29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,00013,,,,E_0552 E_0553 E_0554,"[4] Wenn MP-ID in SG3 NAD+MR mit Rolle LF vorhanden 
-[14] Wenn MP-ID in SG3 NAD+MR mit Rolle MSB vorhanden 
+29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,00013,,,,E_0552 E_0553 E_0554,"[4] Wenn MP-ID in SG3 NAD+MR mit Rolle LF vorhanden
+[14] Wenn MP-ID in SG3 NAD+MR mit Rolle MSB vorhanden
 [15] Wenn MP-ID in SG3 NAD+MR mit Rolle NB vorhanden"
-30,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,00014,,,,Muss [72] ⊻ [73] ⊻ [74],"[72] wenn AJT+A04+E_0552 vorhanden 
-[73] wenn AJT+A04+E_0553 vorhanden 
+30,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,00014,,,,Muss [72] ⊻ [73] ⊻ [74],"[72] wenn AJT+A04+E_0552 vorhanden
+[73] wenn AJT+A04+E_0553 vorhanden
 [74] wenn AJT+A04+E_0554 vorhanden"
 31,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4451,00014,,,,AAP,
 32,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4440,00014,,,Freier Text,X,
@@ -53,14 +53,17 @@
 44,Kommunikationsverbindung,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X,
 45,Kommunikationsverbindung,SG6,COM,3155,00017,EM,,Elektronische Post,X [1P0..1],
 46,Kommunikationsverbindung,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
-47,MP-ID Empfänger,SG3,,,,,,,Muss,
-48,MP-ID Empfänger,SG3,NAD,,00018,,,,Muss,
-49,MP-ID Empfänger,SG3,NAD,3035,00018,,,,MR,
-50,MP-ID Empfänger,SG3,NAD,3039,00018,,,MP-ID,X [30],[30] MP-ID nur aus Sparte Strom
-51,MP-ID Empfänger,SG3,NAD,3055,00018,9,,GS1,X,
-52,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-53,Abschnitts-Kontrollsegment,,UNS,,00030,,,,Muss,
-54,Abschnitts-Kontrollsegment,,UNS,0081,00030,und Summenteil,,,S,
-55,Nachrichten-Endesegment,,UNT,,00034,,,,Muss,
-56,Nachrichten-Endesegment,,UNT,0074,00034,,,Anzahl der Segmente in einer Nachricht,X,
-57,Nachrichten-Endesegment,,UNT,0062,00034,,,Nachrichten-Referenznummer,X,
+47,Kommunikationsverbindung,SG6,COM,3155,,TE,,Telefon,X [1P0..1],
+48,Kommunikationsverbindung,SG6,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+49,Kommunikationsverbindung,SG6,COM,3155,,AL,,Handy,X [1P0..1],
+50,MP-ID Empfänger,SG3,,,,,,,Muss,
+51,MP-ID Empfänger,SG3,NAD,,00018,,,,Muss,
+52,MP-ID Empfänger,SG3,NAD,3035,00018,,,,MR,
+53,MP-ID Empfänger,SG3,NAD,3039,00018,,,MP-ID,X [30],[30] MP-ID nur aus Sparte Strom
+54,MP-ID Empfänger,SG3,NAD,3055,00018,9,,GS1,X,
+55,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+56,Abschnitts-Kontrollsegment,,UNS,,00030,,,,Muss,
+57,Abschnitts-Kontrollsegment,,UNS,0081,00030,und Summenteil,,,S,
+58,Nachrichten-Endesegment,,UNT,,00034,,,,Muss,
+59,Nachrichten-Endesegment,,UNT,0074,00034,,,Anzahl der Segmente in einer Nachricht,X,
+60,Nachrichten-Endesegment,,UNT,0062,00034,,,Nachrichten-Referenznummer,X,

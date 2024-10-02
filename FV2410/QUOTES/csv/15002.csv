@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,15 +11,15 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00005,,,,Muss [27],[27] Wenn DTM+469 nicht vorhanden
 15,Ausführungsdatum,,DTM,2005,00005,203,,Ausführungsdatum/-zeit,X,
 16,Ausführungsdatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 17,Ausführungsdatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
-18,Beginn zum (nächstmöglichen Termin),,DTM,,00006,,,,Soll [26] ∧ [28] ∧ [29],"[26] Wenn DTM+203 nicht vorhanden 
-[28] Wenn RFF+AAV vorhanden 
+18,Beginn zum (nächstmöglichen Termin),,DTM,,00006,,,,Soll [26] ∧ [28] ∧ [29],"[26] Wenn DTM+203 nicht vorhanden
+[28] Wenn RFF+AAV vorhanden
 [29] Wenn DTM+469 in Anfrage (REQOTE) vorhanden war"
 19,Beginn zum (nächstmöglichen Termin),,DTM,2005,00006,469,,"Startdatum oder - zeitpunkt, frühestes/r",X,
 20,Beginn zum (nächstmöglichen Termin),,DTM,2380,00006,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
@@ -54,67 +54,71 @@
 49,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X,
 50,Kommunikationsverbindung,SG14,COM,3155,00016,EM,,Elektronische Post,X [1P0..1],
 51,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
-52,MP-ID Empfänger,SG11,,,,,,,Muss,
-53,MP-ID Empfänger,SG11,NAD,,00017,,,,Muss,
-54,MP-ID Empfänger,SG11,NAD,3035,00017,,,,MR,
-55,MP-ID Empfänger,SG11,NAD,3039,00017,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
-56,MP-ID Empfänger,SG11,NAD,3055,00017,9,,GS1,X,
-57,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-58,"Liefer-, bzw. Bezugsort",SG11,,,,,,,Muss,
-59,"Liefer-, bzw. Bezugsort",SG11,NAD,,00018,,,,Muss,
-60,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
-61,Meldepunkt,SG11,LOC,,00019,,,,Muss,
-62,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-63,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X [950] [501],"[501] Hinweis: Verwendung der ID der Marktlokation 
+52,Kommunikationsverbindung,SG14,COM,3155,,TE,,Telefon,X [1P0..1],
+53,Kommunikationsverbindung,SG14,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+54,Kommunikationsverbindung,SG14,COM,3155,,AL,,Handy,X [1P0..1],
+55,MP-ID Empfänger,SG11,,,,,,,Muss,
+56,MP-ID Empfänger,SG11,NAD,,00017,,,,Muss,
+57,MP-ID Empfänger,SG11,NAD,3035,00017,,,,MR,
+58,MP-ID Empfänger,SG11,NAD,3039,00017,,,MP-ID,X [39],[39] MP-ID nur aus Sparte Strom
+59,MP-ID Empfänger,SG11,NAD,3055,00017,9,,GS1,X,
+60,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+61,"Liefer-, bzw. Bezugsort",SG11,,,,,,,Muss,
+62,"Liefer-, bzw. Bezugsort",SG11,NAD,,00018,,,,Muss,
+63,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
+64,Meldepunkt,SG11,LOC,,00019,,,,Muss,
+65,Meldepunkt,SG11,LOC,3227,00019,,,,172,
+66,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X [950] [501],"[501] Hinweis: Verwendung der ID der Marktlokation
 [950] Format: Marktlokations-ID"
-64,Positionsdaten,SG27,,,,,,,Muss,
-65,Positionsdaten,SG27,LIN,,00020,,,,Muss,
-66,Positionsdaten,SG27,LIN,1082,00020,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-67,Positionsdaten,SG27,LIN,7140,00020,,,Produkt-/Leistungsnummer,X ([31] ∧ ([65] ⊻ [66])) ⊻ ([942] [69] ∧ ([67] ⊻ [68])),"[31] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind. 
-[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
-[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00 
-[67] Wenn DTM+203 (Ausführungsdatum) im DE2380 ≥ 202312312300?+00 
-[68] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 ≥ 202312312300?+00 
-[69] Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die im Kapitel 3.5"
-68,Positionsdaten,SG27,LIN,7143,00020,Z01,,Artikelnummer,X [65] ⊻ [66],
-69,Positionsdaten,SG27,LIN,7143,,Z09,,Artikel-ID,X [67] ⊻ [68],"[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
-[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00 
-[67] Wenn DTM+203 (Ausführungsdatum) im DE2380 ≥ 202312312300?+00 
+67,Positionsdaten,SG27,,,,,,,Muss,
+68,Positionsdaten,SG27,LIN,,00020,,,,Muss,
+69,Positionsdaten,SG27,LIN,1082,00020,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+70,Positionsdaten,SG27,LIN,7140,00020,,,Produkt-/Leistungsnummer,X ([31] ∧ ([65] ⊻ [66])) ⊻ ([942] [69] ∧ ([67] ⊻ [68])),"[31] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind.
+[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00
+[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00
+[67] Wenn DTM+203 (Ausführungsdatum) im DE2380 ≥ 202312312300?+00
+[68] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 ≥ 202312312300?+00
+[69] Es sind nur Werte aus der EDI@Energy Codeliste der Artikelnummern und Artikel-ID erlaubt, die im Kapitel 3.5 ""Abrechnung Messstellenbetrieb für die Sparte Strom"" genannt sind.
+[942] Format: n1-n2-n1-n3"
+71,Positionsdaten,SG27,LIN,7143,00020,Z01,,Artikelnummer,X [65] ⊻ [66],
+72,Positionsdaten,SG27,LIN,7143,,Z09,,Artikel-ID,X [67] ⊻ [68],"[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00
+[66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00
+[67] Wenn DTM+203 (Ausführungsdatum) im DE2380 ≥ 202312312300?+00
 [68] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 ≥ 202312312300?+00"
-70,Zusätzliche Produktidentifikation,SG27,PIA,,00021,,,,Muss [20] ∧ ([65] ⊻ [66]),"[20] Wenn IMD++Z33 vorhanden 
-[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00 
+73,Zusätzliche Produktidentifikation,SG27,PIA,,00021,,,,Muss [20] ∧ ([65] ⊻ [66]),"[20] Wenn IMD++Z33 vorhanden
+[65] Wenn DTM+203 (Ausführungsdatum) im DE2380 < 202312312300?+00
 [66] Wenn DTM+469 (Beginn zum (nächstmöglichen Termin)) im DE2380 < 202312312300?+00"
-71,Zusätzliche Produktidentifikation,SG27,PIA,4347,00021,,,,1,
-72,Zusätzliche Produktidentifikation,SG27,PIA,7140,00021,,,Preisschlüsselstamm,X,
-73,Zusätzliche Produktidentifikation,SG27,PIA,7143,00021,Z06,,Preisschlüsselstamm,X,
-74,Menge,SG27,QTY,,00023,,,,Muss,
-75,Menge,SG27,QTY,6063,00023,47,,Berechnete (fakturierte) Menge,X,
-76,Menge,SG27,QTY,6060,00023,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
-77,Menge,SG27,QTY,6411,00023,H87,,Stück,X,
-78,zeitliche Mengenangaben,SG27,QTY,,00024,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
-79,zeitliche Mengenangaben,SG27,QTY,6063,00024,136,,Erreichte Menge in dem Zeitintervall,X,
-80,zeitliche Mengenangaben,SG27,QTY,6060,00024,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
-81,zeitliche Mengenangaben,SG27,QTY,6411,00024,ANN,,Jahr,X,
-82,zeitliche Mengenangaben,SG27,QTY,6411,,DAY,,Tag,X,
-83,zeitliche Mengenangaben,SG27,QTY,6411,,MON,,Monat,X,
-84,Geldbetrag,SG29,,,,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
-85,Geldbetrag,SG29,MOA,,00048,,,,Muss,
-86,Geldbetrag,SG29,MOA,5025,00048,203,,Positionsbetrag (ohne USt.),X,
-87,Geldbetrag,SG29,MOA,5004,00048,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-88,Preisangaben,SG31,,,,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
-89,Preisangaben,SG31,PRI,,00049,,,,Muss,
-90,Preisangaben,SG31,PRI,5125,00049,CAL,,Berechnungspreis,X,
-91,Preisangaben,SG31,PRI,5118,00049,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-92,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,,Soll [18] ∧ [20],"[18] Wenn Angebot mehrere Marktlokationen abdeckt (AN nutzt mehrere Marktlokationen in einem Gebäude) 
+74,Zusätzliche Produktidentifikation,SG27,PIA,4347,00021,,,,1,
+75,Zusätzliche Produktidentifikation,SG27,PIA,7140,00021,,,Preisschlüsselstamm,X,
+76,Zusätzliche Produktidentifikation,SG27,PIA,7143,00021,Z06,,Preisschlüsselstamm,X,
+77,Menge,SG27,QTY,,00023,,,,Muss,
+78,Menge,SG27,QTY,6063,00023,47,,Berechnete (fakturierte) Menge,X,
+79,Menge,SG27,QTY,6060,00023,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
+80,Menge,SG27,QTY,6411,00023,H87,,Stück,X,
+81,zeitliche Mengenangaben,SG27,QTY,,00024,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
+82,zeitliche Mengenangaben,SG27,QTY,6063,00024,136,,Erreichte Menge in dem Zeitintervall,X,
+83,zeitliche Mengenangaben,SG27,QTY,6060,00024,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
+84,zeitliche Mengenangaben,SG27,QTY,6411,00024,ANN,,Jahr,X,
+85,zeitliche Mengenangaben,SG27,QTY,6411,,DAY,,Tag,X,
+86,zeitliche Mengenangaben,SG27,QTY,6411,,MON,,Monat,X,
+87,Geldbetrag,SG29,,,,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
+88,Geldbetrag,SG29,MOA,,00048,,,,Muss,
+89,Geldbetrag,SG29,MOA,5025,00048,203,,Positionsbetrag (ohne USt.),X,
+90,Geldbetrag,SG29,MOA,5004,00048,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+91,Preisangaben,SG31,,,,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
+92,Preisangaben,SG31,PRI,,00049,,,,Muss,
+93,Preisangaben,SG31,PRI,5125,00049,CAL,,Berechnungspreis,X,
+94,Preisangaben,SG31,PRI,5118,00049,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+95,Referenz auf ID weiterer Marktlokationen,SG32,,,,,,,Soll [18] ∧ [20],"[18] Wenn Angebot mehrere Marktlokationen abdeckt (AN nutzt mehrere Marktlokationen in einem Gebäude)
 [20] Wenn IMD++Z33 vorhanden"
-93,Referenz auf ID weiterer Marktlokationen,SG32,RFF,,00051,,,,Muss,
-94,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1153,00051,Z18,,Marktlokation,X,
-95,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1154,00051,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
-96,Abschnitts-Kontrollsegment,,UNS,,00097,,,,Muss,
-97,Abschnitts-Kontrollsegment,,UNS,0081,00097,und Summenteil,,,S,
-98,Summenbetrag (netto),,MOA,,00098,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
-99,Summenbetrag (netto),,MOA,5025,00098,97,,Gesamtbetrag des Angebots,X,
-100,Summenbetrag (netto),,MOA,5004,00098,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-101,Nachrichten-Endesegment,,UNT,,00099,,,,Muss,
-102,Nachrichten-Endesegment,,UNT,0074,00099,,,Anzahl der Segmente in einer Nachricht,X,
-103,Nachrichten-Endesegment,,UNT,0062,00099,,,Nachrichten-Referenznummer,X,
+96,Referenz auf ID weiterer Marktlokationen,SG32,RFF,,00051,,,,Muss,
+97,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1153,00051,Z18,,Marktlokation,X,
+98,Referenz auf ID weiterer Marktlokationen,SG32,RFF,1154,00051,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
+99,Abschnitts-Kontrollsegment,,UNS,,00097,,,,Muss,
+100,Abschnitts-Kontrollsegment,,UNS,0081,00097,und Summenteil,,,S,
+101,Summenbetrag (netto),,MOA,,00098,,,,Muss [21],[21] Wenn IMD++Z34 vorhanden
+102,Summenbetrag (netto),,MOA,5025,00098,97,,Gesamtbetrag des Angebots,X,
+103,Summenbetrag (netto),,MOA,5004,00098,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+104,Nachrichten-Endesegment,,UNT,,00099,,,,Muss,
+105,Nachrichten-Endesegment,,UNT,0074,00099,,,Anzahl der Segmente in einer Nachricht,X,
+106,Nachrichten-Endesegment,,UNT,0062,00099,,,Nachrichten-Referenznummer,X,
