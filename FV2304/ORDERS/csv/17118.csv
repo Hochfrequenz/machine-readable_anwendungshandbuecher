@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,14 +11,14 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,,,,,Muss,
 15,Ausführungsdatum,,DTM,2005,,203,,Ausführungsdatum/-zeit,X,
 16,Ausführungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 17,Ausführungsdatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-18,Bestellung Zählzeiten,,IMD,,,,,,Soll [104] ∧ [105],"[104] Wenn MP-ID in SG2 NAD+VY mit Rolle LF vorhanden 
+18,Bestellung Zählzeiten,,IMD,,,,,,Soll [104] ∧ [105],"[104] Wenn MP-ID in SG2 NAD+VY mit Rolle LF vorhanden
 [105] Wenn die bisherige Konfiguration mit Zählzeiten des LF vom LF beendet werden soll"
 19,Bestellung Zählzeiten,,IMD,7081,,Z60,,Abbestellung Messprodukt mit Zählzeit des LF,X,
 20,Prüfidentifikator,SG1,,,,,,,Muss,
@@ -53,7 +53,7 @@
 49,Meldepunkt,SG2,NAD,3035,,,,,DP,
 50,Meldepunkt,SG2,LOC,,,,,,Muss,
 51,Meldepunkt,SG2,LOC,3227,,,,,172,
-52,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation 
+52,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
 53,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,SG2,,,,,,,Muss,
 54,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,SG2,NAD,,,,,,Muss,
@@ -61,8 +61,9 @@
 56,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,SG2,NAD,3039,,,,MP-ID,X [548],"[548] Hinweis: Wenn die Änderung der Gerätekonfiguration mit einer Zählzeit übermittelt wird, ist hier die MP-ID des Eigentümers der Liste der Zählzeit einzutragen. Wenn anstatt der bisherigen Zählzeit keine Zählzeit mehr verwendet werden soll ist hier die MP-ID des Eigentümers der Liste der Zählzeit einzutragen aus welcher bisher die Zählzeit verwendet wurde."
 57,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,SG2,NAD,3055,,9,,GS1,X,
 58,MP-ID des Eigentümers der Liste der Zählzeitdefinitionen,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-59,Erforderliches Messprodukt der Messlokation,SG29,,,,,,,Muss [2090] ∧ [106] ∧ [551],"[106] wenn IMD++Z60 (Abbestellung Messprodukt mit Zählzeit des LF) nicht vorhanden 
-[551] Hinweis: Die SG29 ist so oft zu wiederholen, dass alle Messprodukte und Zählzeiten genannt werden, die ab dem in DTM+203 genannten Zeitpunkt auf der Messlokation durch den"
+59,Erforderliches Messprodukt der Messlokation,SG29,,,,,,,Muss [2090] ∧ [106] ∧ [551],"[106] wenn IMD++Z60 (Abbestellung Messprodukt mit Zählzeit des LF) nicht vorhanden
+[551] Hinweis: Die SG29 ist so oft zu wiederholen, dass alle Messprodukte und Zählzeiten genannt werden, die ab dem in DTM+203 genannten Zeitpunkt auf der Messlokation durch den MSB konfiguriert werden müssen. Nicht genannte Messprodukte sind ab dem Zeitpunkt nicht mehr in der Konfiguration enthalten.
+[2090] Für 33-stellige ID im SG2 LOC+172 (Meldepunkt) DE3225 mindestens einmal anzugeben"
 60,Erforderliches Messprodukt der Messlokation,SG29,LIN,,,,,,Muss,
 61,Erforderliches Messprodukt der Messlokation,SG29,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 62,Erforderliches Messprodukt der Messlokation,SG29,LIN,1229,,Messlokation,,,Z19,

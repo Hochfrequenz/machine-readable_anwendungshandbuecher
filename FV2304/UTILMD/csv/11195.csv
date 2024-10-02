@@ -5,18 +5,18 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Nachrichten-Kopfsegment,,UNH,0068,,,,Allgemeine Zuordnungs-Referenz,S [1],[1] Wenn Aufteilung vorhanden
 8,Nachrichten-Kopfsegment,,UNH,0070,,,,Übermittlungsfolgenummer,M [252],[252] Wenn DE0068 vorhanden
 9,Nachrichten-Kopfsegment,,UNH,0073,,C,,Beginn,M [2],
-10,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE 0070 (Übermittlungsfolgenummer) mit 1 vorhanden  
+10,Nachrichten-Kopfsegment,,UNH,0073,,F,,Ende,S [3],"[2] Wenn UNH DE 0070 (Übermittlungsfolgenummer) mit 1 vorhanden
 [3] Bei Aufteilung, in der Nachricht mit der höchsten Übermittlungsfolgenummer"
 11,Beginn der Nachricht,,BGM,,,,,,Muss,
 12,Beginn der Nachricht,,BGM,1001,,Z05,,Clearingliste,X,
 13,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 14,Nachrichtendatum,,DTM,,,,,,Muss,
 15,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-16,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+16,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 17,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 18,"Gültigkeit, Beginndatum",,DTM,,,,,,Muss,
@@ -68,7 +68,9 @@
 64,Versionsangabe der Summenzeitreihe,SG8,RFF,,,,,,Muss,
 65,Versionsangabe der Summenzeitreihe,SG8,RFF,1153,,AUU,,Referenz auf eine Zeitreihe,X,
 66,Versionsangabe der Summenzeitreihe,SG8,RFF,1154,,,,Version der Zeitreihe,X,
-67,Vorgang,SG4,,,,,,,Soll [2344] ∧ [617],[617] Hinweis: Mehrere Vorgänge für eine Marktlokation bei Wechsel
+67,Vorgang,SG4,,,,,,,Soll [2344] ∧ [617],"[617] Hinweis: Mehrere Vorgänge für eine Marktlokation bei Wechsel bilanzierungsrelevanter Stammdaten innerhalb des Bilanzierungsmonats
+[2055] Einmal für jede Marktlokation bzw. Tranche, für die der NB nicht die gemeldete Ansicht des ÜNB teilt
+[2344] Einmal für jede Marktlokation bzw. Tranche, die in der DZÜ / BG-CL / LF- SZR berücksichtigt wurde"
 68,Vorgang,SG4,IDE,,,,,,Muss,
 69,Vorgang,SG4,IDE,7495,,24,,Transaktion,X,
 70,Vorgang,SG4,IDE,7402,,,,Vorgangsnummer,X,
@@ -76,33 +78,33 @@
 72,Bilanzierungsbeginn,SG4,DTM,2005,,158,,Bilanzierungsbeginn,X,
 73,Bilanzierungsbeginn,SG4,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 74,Bilanzierungsbeginn,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-75,Bilanzierungsende,SG4,DTM,,,,,,Soll [201] ∧ [609],"[147] Wenn in Anfrage vorhanden  
-[201] Wenn die Marktlokation / Tranche nicht den ganzen Bilanzierungsmonat dem gleichen Tupel aus Bilanzkreis, Zeitreihentyp, Spannungsebene und Lieferant zugeordnet ist  
+75,Bilanzierungsende,SG4,DTM,,,,,,Soll [201] ∧ [609],"[147] Wenn in Anfrage vorhanden
+[201] Wenn die Marktlokation / Tranche nicht den ganzen Bilanzierungsmonat dem gleichen Tupel aus Bilanzkreis, Zeitreihentyp, Spannungsebene und Lieferant zugeordnet ist
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
 76,Bilanzierungsende,SG4,DTM,2005,,159,,Bilanzierungsende,X,
-77,Bilanzierungsende,SG4,DTM,2380,,,,Datum oder Uhrzeit oder,X [UB1],[528] Hinweis: Es ist das
+77,Bilanzierungsende,SG4,DTM,2380,,,,Datum oder Uhrzeit oder,X [UB1],
 78,Bilanzierungsende,SG4,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-79,Meldepunkt,SG5,,,,,,,Muss ([20] ∧ [2061]) ⊻ ([54] ∧ [2057] ∧ [2080]),"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
-[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
-[2057] Segmentgruppe ist mindestens einmal je SG4 IDE+24 (Vorgang) anzugeben  
-[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben  
+79,Meldepunkt,SG5,,,,,,,Muss ([20] ∧ [2061]) ⊻ ([54] ∧ [2057] ∧ [2080]),"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden
+[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+[2057] Segmentgruppe ist mindestens einmal je SG4 IDE+24 (Vorgang) anzugeben
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
 [2080] Segmentgruppe ist max. zweimal je SG4 IDE+24 (Vorgang) anzugeben"
 80,Meldepunkt,SG5,LOC,,,,,,Muss,
 81,Meldepunkt,SG5,LOC,3227,,172,,Meldepunkt,X,
 82,Meldepunkt,SG5,LOC,3225,,,,Identifikator,X [950],[950] Format: Marktlokations-ID
-83,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧ [609],"[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
-[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben  
+83,Daten der Marktlokation,SG8,,,,,,,Muss [2061] ∧ [609],"[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 84,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
 85,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
 86,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
 87,Referenz auf die ID der Marktlokation,SG8,RFF,1153,,Z18,,Marktlokation,X,
 88,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-89,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [20] ∧ [106],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
+89,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [20] ∧ [106],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden
 [106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden"
 90,Veranschlagte Jahresmenge gesamt,SG9,QTY,,,,,,Muss,
 91,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,,31,,Veranschlagte Jahresmenge Gesamt,X,
-92,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+92,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 93,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,,KWH,,Kilowattstunde,X,
 94,Tatsächlich bilanzierte Energiemenge,SG9,,,,,,,Muss,
@@ -118,7 +120,7 @@
 104,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
 105,Zugeordnete Marktpartner,SG10,CCI,,,,,,Muss,
 106,Zugeordnete Marktpartner,SG10,CCI,7037,,ZB3,,Zugeordneter Marktpartner,X,
-107,Lieferant,SG10,CAV,,,,,,Muss [300],[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht
+107,Lieferant,SG10,CAV,,,,,,Muss [300],[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden
 108,Lieferant,SG10,CAV,7111,,Z89,,LF,X,
 109,Lieferant,SG10,CAV,1131,,,,MP-ID,X [611],"[611] Hinweis: Wenn das Unternehmen NB die Aufgaben der Marktrolle LF wahrnimmt, ist die MP-ID des Unternehmens NB in der Marktrolle LF anzugeben"
 110,Übertragungsnetzbetreiber,SG10,CAV,,,,,,Muss,
@@ -128,8 +130,8 @@
 114,Regelzone,SG10,CCI,,,,,,Muss,
 115,Regelzone,SG10,CCI,7059,,Z18,,Regelzone,X,
 116,Regelzone,SG10,CCI,7037,,,,Regelzone,X,
-117,Bilanzkreis,SG10,,,,,,,Soll [2061] ∧ [300] ∧ [166],"[166] Wenn vorhanden  
-[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden  
+117,Bilanzkreis,SG10,,,,,,,Soll [2061] ∧ [300] ∧ [166],"[166] Wenn vorhanden
+[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 118,Bilanzkreis,SG10,CCI,,,,,,Muss,
 119,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
@@ -152,15 +154,15 @@
 136,Prognosegrundlage der Marktlokation,SG10,CCI,,,,,,Muss,
 137,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZC0,,Prognose auf Basis von Werten,X,
 138,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis von Profilen,X,
-139,Details der Prognosegrundlage,SG10,CAV,,,,,,Muss [20] ∧ [21] ∧ [2182],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
-[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
+139,Details der Prognosegrundlage,SG10,CAV,,,,,,Muss [20] ∧ [21] ∧ [2182],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden
+[21] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden
 [2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben"
 140,Details der Prognosegrundlage,SG10,CAV,7111,,E02,,SLP/SEP,X,
-141,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss [19] ∧ [300] ∧ [609],"[19] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+++ZC0 (Prognose auf Basis von Werten) vorhanden  
-[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
-[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
-[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden  
-[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
+141,OBIS-Daten der Marktlokation,SG8,,,,,,,Muss [19] ∧ [300] ∧ [609],"[19] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+++ZC0 (Prognose auf Basis von Werten) vorhanden
+[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden
+[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+[300] Wenn SG8 SEQ+Z15 (Daten der Tranche) nicht vorhanden
+[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
 142,OBIS-Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
 143,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,Z02,,OBIS-Daten der Marktlokation,X,
@@ -169,11 +171,11 @@
 146,Referenz auf die ID der Marktlokation,SG8,RFF,1154,,,,ID einer Marktlokation,X [950],[950] Format: Marktlokations-ID
 147,OBIS-Kennzahl der Marktlokation,SG8,PIA,,,,,,Muss,
 148,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,,5,,Produktidentifikation,X,
-149,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Marktlokation,X [614],[614] Hinweis: Es werden nur die OBIS Kennzahlen
+149,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,,,,OBIS-Kennzahl der Marktlokation,X [614],[614] Hinweis: Es werden nur die OBIS Kennzahlen übermittelt die für die Bilanzierung relevant sind
 150,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
-151,Daten der Tranche,SG8,,,,,,,Muss [54] ∧ [2307] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
-[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
-[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben  
+151,Daten der Tranche,SG8,,,,,,,Muss [54] ∧ [2307] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben
 [2307] Für jede 11-stellige ID im SG5 LOC+172 (Meldepunkt) DE3225 auf die das RFF+Z18 (Marktlokation) der SG8+Z01(Daten der Marktlokation) nicht referenziert genau einmal anzugeben"
 152,Daten der Tranche,SG8,SEQ,,,,,,Muss,
 153,Daten der Tranche,SG8,SEQ,1229,,Z15,,Daten der Tranche,X,
@@ -190,9 +192,9 @@
 164,Bilanzkreis,SG10,CCI,,,,,,Muss,
 165,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
 166,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
-167,OBIS-Daten der Tranche,SG8,,,,,,,Muss [54] ∧ [2308] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden  
-[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
-[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben  
+167,OBIS-Daten der Tranche,SG8,,,,,,,Muss [54] ∧ [2308] ∧ [609],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
+[609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben
 [2308] Für jede ID im SG5 LOC+172 (Meldepunkt) DE3225, auf die ein SG8 RFF+Z20 (Tranche) einer SG8 SEQ+Z15 (Daten der Tranche) referenziert, ist diese Segmentgruppe mindestens einmal anzugeben"
 168,OBIS-Daten der Tranche,SG8,SEQ,,,,,,Muss,
 169,OBIS-Daten der Tranche,SG8,SEQ,1229,,Z17,,OBIS-Daten der Tranche,X,
@@ -203,9 +205,9 @@
 174,OBIS-Kennzahl der Tranche,SG8,PIA,4347,,5,,Produktidentifikation,X,
 175,OBIS-Kennzahl der Tranche,SG8,PIA,7140,,,,OBIS-Kennzahl der Tranche,X [269],[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
 176,OBIS-Kennzahl der Tranche,SG8,PIA,7143,,SRW,,OBIS-Kennzahl,X,
-177,Profildaten (Strom),SG8,,,,,,,Muss [20] ∧ [119] ∧ [609],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden  
-[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden 
-[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden  
+177,Profildaten (Strom),SG8,,,,,,,Muss [20] ∧ [119] ∧ [609],"[20] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z07 (Verbrauch) vorhanden
+[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
+[528] Hinweis: Es ist das Datum/ Daten aus der Anfrage zu verwenden
 [609] Hinweis: In diesem Segment bzw. SG sind die zwischen NB, LF und ÜNB im Rahmen der Marktkommunikation ausgetauschten Daten aus der Sicht des ÜNB anzugeben"
 178,Profildaten (Strom),SG8,SEQ,,,,,,Muss,
 179,Profildaten (Strom),SG8,SEQ,1229,,Z21,,Profildaten,X,

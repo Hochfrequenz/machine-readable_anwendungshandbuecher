@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,,,,,Muss,
@@ -52,7 +52,7 @@
 49,Meldepunkt,SG2,NAD,3035,,,,,DP,
 50,Meldepunkt,SG2,LOC,,,,,,Muss,
 51,Meldepunkt,SG2,LOC,3227,,,,,172,
-52,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation 
+52,Meldepunkt,SG2,LOC,3225,,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
 53,Erforderliches Messprodukt der Messlokation,SG29,,,,,,,Muss [2090],[2090] Für 33-stellige ID im SG2 LOC+172 (Meldepunkt) DE3225 mindestens einmal anzugeben
 54,Erforderliches Messprodukt der Messlokation,SG29,LIN,,,,,,Muss,
@@ -60,12 +60,12 @@
 56,Erforderliches Messprodukt der Messlokation,SG29,LIN,1229,,Messlokation,,,Z19,
 57,Erforderliches Messprodukt der Messlokation,SG29,PIA,,,,,,Muss,
 58,Erforderliches Messprodukt der Messlokation,SG29,PIA,4347,,,,,5,
-59,Erforderliches Messprodukt der Messlokation,SG29,PIA,7140,,,,Messprodukt-Code,X ([100] ∧ [492]) ⊻ ([111] ∧ [493]),"[100] Messprodukt-Code aus dem Kapitel 2.3 ""Standard- Messprodukte der Messlokation"" der Codeliste der Messprodukte 
-[111] Messprodukt-Code aus dem Kapitel 3 ""Codeliste der Standard-Messprodukte Gas"" der Codeliste der Messprodukte 
-[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
+59,Erforderliches Messprodukt der Messlokation,SG29,PIA,7140,,,,Messprodukt-Code,X ([100] ∧ [492]) ⊻ ([111] ∧ [493]),"[100] Messprodukt-Code aus dem Kapitel 2.3 ""Standard- Messprodukte der Messlokation"" der Codeliste der Messprodukte
+[111] Messprodukt-Code aus dem Kapitel 3 ""Codeliste der Standard-Messprodukte Gas"" der Codeliste der Messprodukte
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 60,Erforderliches Messprodukt der Messlokation,SG29,PIA,7143,,Z11,,Messprodukt,X,
-61,Weitere Beschreibung erforderliches Messprodukt,SG30,,,,,,,Muss [7] ∧ [492],"[7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden 
+61,Weitere Beschreibung erforderliches Messprodukt,SG30,,,,,,,Muss [7] ∧ [492],"[7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
 62,Weitere Beschreibung erforderliches Messprodukt,SG30,CCI,,,,,,Muss,
 63,Weitere Beschreibung erforderliches Messprodukt,SG30,CCI,7059,,erforderlicher Wert,,,Z35,
@@ -77,7 +77,7 @@
 69,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG30,CAV,7111,,Z88,,NB,X,
 70,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG30,CAV,7110,,Z06,,vorhanden,X,
 71,Werteübermittlung an den NB aufgrund weiterem Verwendungszweck,SG30,CAV,7110,,Z07,,nicht vorhanden,X,
-72,Zugeordnete Zählzeit,SG30,,,,,,,Muss [86] ∧ [492],"[86] Wenn in derselben SG29 mit Z19 in LIN DE1229 (Erforderliches Messprodukt der Messlokation) das PIA+5 DE7140 mit einem Messprodukt aus Codeliste der Messprodukte Kapitel 2.3.1 Standard-Messprodukt der Messlokation mit der Wahlmöglichkeit der Zuordnung einer Zählzeit vorhanden ist 
+72,Zugeordnete Zählzeit,SG30,,,,,,,Muss [86] ∧ [492],"[86] Wenn in derselben SG29 mit Z19 in LIN DE1229 (Erforderliches Messprodukt der Messlokation) das PIA+5 DE7140 mit einem Messprodukt aus Codeliste der Messprodukte Kapitel 2.3.1 Standard-Messprodukt der Messlokation mit der Wahlmöglichkeit der Zuordnung einer Zählzeit vorhanden ist
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
 73,Zugeordnete Zählzeit,SG30,CCI,,,,,,Muss,
 74,Zugeordnete Zählzeit,SG30,CCI,7059,,Messprodukt erforderlich,,,Z39 Z41,

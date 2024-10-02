@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Dokumentendatum,,DTM,,00003,,,,Muss,
 11,Dokumentendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-12,Dokumentendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt 
+12,Dokumentendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Dokumentendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZ ZZ,X,
 14,MP-ID Empfänger,SG2,,,,,,,Muss,
@@ -40,31 +40,34 @@
 37,Referenzangaben,SG4,RFF,,00008,,,,Muss,
 38,Referenzangaben,SG4,RFF,1153,,TN,,Transaktions- Referenznummer,X,
 39,Referenzangaben,SG4,RFF,1154,00008,,,Dokumenten-/ Vorgangsnummer der Bezugsnachricht,X [500],[500] Hinweis: Vorgangsnummer (DOC DE1004) aus Prozessschritt 4b „Bestätigung der Störungsmeldung“ (Gas) bzw. Prozessschritt 2 „Antwort“ (Strom).
-40,Positionsdaten,SG7,,,,,,,Muss ([512] ⊻ [513] ⊻ [514]),"[512] Hinweis: Wurde eine Störung festgestellt und durch den MSB behoben, ist die Segmentgruppe mit demselben Meldepunkt zweimal anzugeben 
-[513] Hinweis: Wurde keine Störung festgestellt, ist die Segmentgruppe genau einmal anzugeben 
+40,Positionsdaten,SG7,,,,,,,Muss ([512] ⊻ [513] ⊻ [514]),"[512] Hinweis: Wurde eine Störung festgestellt und durch den MSB behoben, ist die Segmentgruppe mit demselben Meldepunkt zweimal anzugeben
+[513] Hinweis: Wurde keine Störung festgestellt, ist die Segmentgruppe genau einmal anzugeben
 [514] Hinweis: Wurde eine Störung festgestellt, die nicht durch den MSB behoben werden konnte, ist die Segmentgruppe genau einmal anzugeben"
 41,Positionsdaten,SG7,LIN,,00015,,,,Muss,
-42,Positionsdaten,SG7,LIN,1082,00015,,,Positionsnummer,X [908] [511],"[511] Hinweis: Die Nummerierung beginnt in jedem Dokument bei 1 
+42,Positionsdaten,SG7,LIN,1082,00015,,,Positionsnummer,X [908] [511],"[511] Hinweis: Die Nummerierung beginnt in jedem Dokument bei 1
 [908] Format: Mögliche Werte: 1 bis n"
-43,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,,00016,,,,Soll [6] ⊻ [9],"[6] Wenn keine Störung festgestellt werden konnte. 
+43,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,,00016,,,,Soll [6] ⊻ [9],"[6] Wenn keine Störung festgestellt werden konnte.
 [9] Wenn eine Störung festgestellt wurde, die durch den MSB selbständig und unverschuldet nicht behoben werden konnte."
 44,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,2005,00016,9,,Bearbeitungs-/ Verarbeitungsdatum /-zeit,X,
-45,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,2380,00016,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧,[13] Wenn DE2379 = 303
+45,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,2380,00016,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧ [495]) ⊻ ([495] ∧ [515]),"[13] Wenn DE2379 = 303
+[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein
+[515] Hinweis: ""≤ dem Wert im DE2380 des DTM+137"" bedeutet, dass der dort genannte Tag ≥ dem in diesem DTM genannten Tag sein muss, wenn in DE2379 der Code 102 steht.
+[931] Format: ZZZ = +00"
 46,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,2379,00016,102,,CCYYMMDD,X,
 47,Zeitpunkt zu dem der Geräte-Status ermittelt wurde,SG7,DTM,2379,,303,,CCYYMMDDHHMMZ ZZ,X,
 48,Beginn des Geräte-Status,SG7,DTM,,00017,,,,Muss [7],[7] Wenn keine weitere SG7 mit demselben Meldepunkt und DTM+9 vorhanden
 49,Beginn des Geräte-Status,SG7,DTM,2005,00017,163,,"Verarbeitung, Beginndatum/-zeit",X ,
-50,Beginn des Geräte-Status,SG7,DTM,2380,00017,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧ [495]) ⊻ ([495] ∧ [515]),"[13] Wenn DE2379 = 303 
-[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein 
-[515] Hinweis: ""≤ dem Wert im DE2380 des DTM+137"" bedeutet, dass der dort genannte Tag ≥ dem in diesem DTM genannten Tag sein muss, wenn in DE2379 der Code 102 steht. 
+50,Beginn des Geräte-Status,SG7,DTM,2380,00017,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧ [495]) ⊻ ([495] ∧ [515]),"[13] Wenn DE2379 = 303
+[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein
+[515] Hinweis: ""≤ dem Wert im DE2380 des DTM+137"" bedeutet, dass der dort genannte Tag ≥ dem in diesem DTM genannten Tag sein muss, wenn in DE2379 der Code 102 steht.
 [931] Format: ZZZ = +00"
 51,Beginn des Geräte-Status,SG7,DTM,2379,00017,102,,CCYYMMDD,X,
 52,Beginn des Geräte-Status,SG7,DTM,2379,,303,,CCYYMMDDHHMMZ ZZ,X,
 53,Ende des Geräte-Status,SG7,DTM,,00018,,,,Muss [8],[8] Wenn in dieser SG7 STS+Z06+Z10 vorhanden
 54,Ende des Geräte-Status,SG7,DTM,2005,00018,164,,"Verarbeitung, Endedatum/-zeit",X,
-55,Ende des Geräte-Status,SG7,DTM,2380,00018,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧ [495]) ⊻ ([495] ∧ [515]),"[13] Wenn DE2379 = 303 
-[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein 
-[515] Hinweis: ""≤ dem Wert im DE2380 des DTM+137"" bedeutet, dass der dort genannte Tag ≥ dem in diesem DTM genannten Tag sein muss, wenn in DE2379 der Code 102 steht. 
+55,Ende des Geräte-Status,SG7,DTM,2380,00018,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931] [13] ∧ [495]) ⊻ ([495] ∧ [515]),"[13] Wenn DE2379 = 303
+[495] Der Zeitpunkt muss ≤ dem Wert im DE2380 des DTM+137 sein
+[515] Hinweis: ""≤ dem Wert im DE2380 des DTM+137"" bedeutet, dass der dort genannte Tag ≥ dem in diesem DTM genannten Tag sein muss, wenn in DE2379 der Code 102 steht.
 [931] Format: ZZZ = +00"
 56,Ende des Geräte-Status,SG7,DTM,2379,00018,102,,CCYYMMDD,X,
 57,Ende des Geräte-Status,SG7,DTM,2379,,303,,CCYYMMDDHHMMZ ZZ,X,
@@ -76,20 +79,23 @@
 63,Gerätestatus,SG7,STS,9013,,Z78,,Gerätewechsel,X ([10] ∧ [12]),
 64,Gerätestatus,SG7,STS,9013,,Z81,,Messeinrichtung gestört/defekt,X [11],
 65,Gerätestatus,SG7,STS,9013,,ZB8,,keine Störung feststellbar,X ([10] ∧ [6]),
-66,Gerätestatus,SG7,STS,9013,,ZC1,,Störungsbehebung nicht möglich,X ([11] ∧ [506] ∧,"[6] Wenn keine Störung festgestellt werden konnte. 
-[10] Wenn in diesem STS DE4405 = Z09 
-[11] Wenn in diesem STS DE4405 = Z10 
-[12] Wenn eine Störung festgestellt wurde, die durch den"
-67,Freier Text,SG7,FTX,,00022,,,,Muss [2],[2] Wenn SG7 STS+Z06+Z10+ZC1 vorhanden.
-68,Freier Text,SG7,FTX,4451,00022,AAO,,Fehlerbeschreibung (Freier Text),X,
-69,Freier Text,SG7,FTX,4440,00022,,,Freier Text,X,
-70,Messlokation,SG8,,,,,,,Muss,
-71,Messlokation,SG8,NAD,,00023,,,,Muss,
-72,Messlokation,SG8,NAD,3035,00023,DP,,Lieferanschrift,X,
-73,Meldepunkt,SG8,LOC,,00024,,,,Muss,
-74,Meldepunkt,SG8,LOC,3227,00024,172,,Meldepunkt,X,
-75,Meldepunkt,SG8,LOC,3225,00024,,,Identifikator,X [951] [509],"[509] Hinweis: Verwendung der ID der Messlokation 
+66,Gerätestatus,SG7,STS,9013,,ZC1,,Störungsbehebung nicht möglich,X ([11] ∧ [506] ∧ [507]),
+67,Gerätestatus,SG7,STS,9013,,ZS1,,Reparatur ohne Gerätewechsel,X ([10] ∧  [12]),"[6] Wenn keine Störung festgestellt werden konnte.
+[10] Wenn in diesem STS DE4405 = Z09
+[11] Wenn in diesem STS DE4405 = Z10
+[12] Wenn eine Störung festgestellt wurde, die durch den MSB behoben wurde.
+[506] Hinweis: Zu nutzen, wenn Behebung der Störung durch den MSB selbständig und unverschuldet nicht möglich ist.
+[507] Hinweis: In SG7 FTX+AAO ist anzugeben, was die übergeordnete Ursache ist, aufgrund derer der MSB nicht in der Lage ist die Störung zu beheben."
+68,Freier Text,SG7,FTX,,00022,,,,Muss [2],[2] Wenn SG7 STS+Z06+Z10+ZC1 vorhanden.
+69,Freier Text,SG7,FTX,4451,00022,AAO,,Fehlerbeschreibung (Freier Text),X,
+70,Freier Text,SG7,FTX,4440,00022,,,Freier Text,X,
+71,Messlokation,SG8,,,,,,,Muss,
+72,Messlokation,SG8,NAD,,00023,,,,Muss,
+73,Messlokation,SG8,NAD,3035,00023,DP,,Lieferanschrift,X,
+74,Meldepunkt,SG8,LOC,,00024,,,,Muss,
+75,Meldepunkt,SG8,LOC,3227,00024,172,,Meldepunkt,X,
+76,Meldepunkt,SG8,LOC,3225,00024,,,Identifikator,X [951] [509],"[509] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
-76,Nachrichten- Endesegment,,UNT,,00026,,,,Muss,
-77,Nachrichten- Endesegment,,UNT,0074,00026,,,Anzahl der Segmente in einer Nachricht,X,
-78,Nachrichten- Endesegment,,UNT,0062,00026,,,Nachrichten- Referenznummer,X,
+77,Nachrichten- Endesegment,,UNT,,00026,,,,Muss,
+78,Nachrichten- Endesegment,,UNT,0074,00026,,,Anzahl der Segmente in einer Nachricht,X,
+79,Nachrichten- Endesegment,,UNT,0062,00026,,,Nachrichten- Referenznummer,X,

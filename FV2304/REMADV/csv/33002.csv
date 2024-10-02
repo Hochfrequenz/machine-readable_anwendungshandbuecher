@@ -1,11 +1,11 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Zahlungsavis,,REMAD V,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,REMADV,,Zahlungsavis,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,05A,,Ausgabe 2005 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,2.9a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,2.9a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,239,,Abgelehnte Forderung (Nicht-Zahlungsavis),X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
@@ -52,17 +52,17 @@
 50,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,389,,"Selbst ausgestellte Rechnung (engl.: ""Self- billed invoice"")",X,
 51,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,457,,Storno einer Belastung.,X,
 52,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1001,,Z25,,Storno für selbst ausgestellte Rechnung (Gutschrift im Gutschriftsverfahren),X,
-53,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1004,,,,Dokumentennummer,X [511],"[511] Hinweis: BGM DE1004 aus der abgelehnten INVOIC- Nachricht 
+53,Dokument-/Nachrichten- Einzelheiten,SG5,DOC,1004,,,,Dokumentennummer,X [511],"[511] Hinweis: BGM DE1004 aus der abgelehnten INVOIC- Nachricht
 [515] Hinweis: BGM DE1004 aus der bestätigten INVOIC- Nachricht"
 54,Geforderter Rechnungsbetrag,SG5,MOA,,,,,,Muss,
 55,Geforderter Rechnungsbetrag,SG5,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
-56,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen. 
+56,Geforderter Rechnungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [930] [501],"[501] Hinweis: An dieser Stelle ist der Betrag aus SG50 MOA+9 der zugrundeliegenden INVOIC zu übernehmen.
 [930] Format: max. 2 Nachkommastellen"
 57,Überweisungsbetrag,SG5,MOA,,,,,,Muss,
 58,Überweisungsbetrag,SG5,MOA,5025,,12,,Überweisungsbetrag,X,
-59,Überweisungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [926],"[3] Bei SG5 DOC+389 / Z25 ist der Wert aus derselben SG5 MOA+9 mit (-1) multipliziert anzugeben. 
-[4] Bei SG5 DOC+380 / 457 ist der Wert aus derselben SG5 MOA+9 unverändert anzugeben. 
-[926] Format: Möglicher Wert: 0  
+59,Überweisungsbetrag,SG5,MOA,5004,,,,Geldbetrag,X [926],"[3] Bei SG5 DOC+389 / Z25 ist der Wert aus derselben SG5 MOA+9 mit (-1) multipliziert anzugeben.
+[4] Bei SG5 DOC+380 / 457 ist der Wert aus derselben SG5 MOA+9 unverändert anzugeben.
+[926] Format: Möglicher Wert: 0
 [930] Format: max. 2 Nachkommastellen"
 60,Rechnungsdatum,SG5,DTM,,,,,,Muss,
 61,Rechnungsdatum,SG5,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
@@ -76,21 +76,35 @@
 69,Abweichungsgrund,SG7,AJT,4465,,,,Code des Prüfschritts,X,
 70,Abweichungsgrund,SG7,AJT,1082,,G_0079,,Codeliste Gas Nr. G_0079,X [493],
 71,Abweichungsgrund,SG7,AJT,1082,,G_0080,,Codeliste Gas Nr. G_0080,X [493],
-72,Abweichungsgrund,SG7,AJT,1082,,G_0081,,Codeliste Gas Nr.,X [493],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
-[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus"
-73,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,,,,,,Muss ([2] ∨ [8] ∨ [9] ∨ [59] ∨ [60] ∨ [61]) Kann,"[2] Wenn SG7 AJT+28 vorhanden 
-[8] Wenn SG7 AJT+A01/ A02+E_0505 vorhanden 
-[9] Wenn SG7 AJT+A32/A99+E_0503 vorhanden 
-[59] Wenn SG7 AJT+A99+E_0459 vorhanden 
-[60] Wenn SG7 AJT+A99+E_0243 vorhanden 
+72,Abweichungsgrund,SG7,AJT,1082,,G_0081,,Codeliste Gas Nr. G_0081,X [493],
+73,Abweichungsgrund,SG7,AJT,1082,,G_0083,,Codeliste Gas Nr. G_0083,X [493],
+74,Abweichungsgrund,SG7,AJT,1082,,G_0084,,Codeliste Gas Nr. G_0084,X [493],
+75,Abweichungsgrund,SG7,AJT,1082,,G_0085,,Codeliste Gas Nr. G_0085,X [493],
+76,Abweichungsgrund,SG7,AJT,1082,,G_0086,,Codeliste Gas Nr. G_0086,X [493],
+77,Abweichungsgrund,SG7,AJT,1082,,G_0087,,Codeliste Gas Nr. G_0087,X [493],
+78,Abweichungsgrund,SG7,AJT,1082,,G_0088 GS_002 GS_004 GS_005,,Codeliste Gas Nr. G_0088 Codeliste Gas und Strom Nr. GS_002 Codeliste Gas und Strom Nr. GS_004 Codeliste Gas und Strom Nr. GS_005,X [493]XXX,
+79,Abweichungsgrund,SG7,AJT,1082,,E_0459,,EBD Nr. E_0459,X [492],
+80,Abweichungsgrund,SG7,AJT,1082,,E_0503,,EBD Nr. E_0503,X [492],
+81,Abweichungsgrund,SG7,AJT,1082,,E_0505,,EBD Nr. E_0505,X [492],
+82,Abweichungsgrund,SG7,AJT,1082,,E_0506,,EBD Nr. E_0506,X [492],
+83,Abweichungsgrund,SG7,AJT,1082,,E_0243,,EBD Nr. E_0243,X [492],
+84,Abweichungsgrund,SG7,AJT,1082,,E_0261,,EBD Nr. E_0261,X [492],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
+85,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,,,,,,Muss ([2] ∨ [8] ∨ [9] ∨ [59] ∨ [60] ∨ [61]) Kann,"[2] Wenn SG7 AJT+28 vorhanden
+[8] Wenn SG7 AJT+A01/ A02+E_0505 vorhanden
+[9] Wenn SG7 AJT+A32/A99+E_0503 vorhanden
+[59] Wenn SG7 AJT+A99+E_0459 vorhanden
+[60] Wenn SG7 AJT+A99+E_0243 vorhanden
 [61] Wenn SG7 AJT+A99+E_0261 vorhanden"
-74,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4451,,ABO,,Information über Abweichung,X,
-75,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4440,,,,Freier Text,X,
-76,Trennung von Positions- u. Summenteil,,UNS,,,,,,Muss,
-77,Trennung von Positions- u. Summenteil,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
-78,Summenbetrag,,MOA,,,,,,Muss,
-79,Summenbetrag,,MOA,5025,,12,,Überweisungsbetrag,X,
-80,Summenbetrag,,MOA,5004,,,,Geldbetrag,X [926],[502] Hinweis: Bei positivem Betrag ergibt sich eine Forderung des
-81,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-82,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-83,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+86,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4451,,ABO,,Information über Abweichung,X,
+87,Nähere Erläuterung des Abweichungsgrundes,SG7,FTX,4440,,,,Freier Text,X,
+88,Trennung von Positions- u. Summenteil,,UNS,,,,,,Muss,
+89,Trennung von Positions- u. Summenteil,,UNS,0081,,S,,Trennung von Positions- und Summenteil,X,
+90,Summenbetrag,,MOA,,,,,,Muss,
+91,Summenbetrag,,MOA,5025,,12,,Überweisungsbetrag,X,
+92,Summenbetrag,,MOA,5004,,,,Geldbetrag,X [926],"[502] Hinweis: Bei positivem Betrag ergibt sich eine Forderung des Rechnungsstellers. Bei negativem Betrag ergibt sich eine Forderung für den Rechnungsempfänger.
+[926] Format: Möglicher Wert: 0
+[930] Format: max. 2 Nachkommastellen"
+93,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+94,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+95,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

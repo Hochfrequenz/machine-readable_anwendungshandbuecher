@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten- Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -12,7 +12,7 @@
 10,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 11,Nachrichtendatum,,DTM,,,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-13,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+13,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 14,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMM ZZZ,X,
 15,Referenz Nachrichtennummer,SG1,RFF,,,,,,Muss,
@@ -22,12 +22,14 @@
 19,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
 20,Prüfidentifikator,SG1,RFF,1154,,19117,,Ablehnung Sperr-/ Entsperrauftrag,X,
 21,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,,,,,Muss,
-22,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein 
+22,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein
 [18] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Ablehnung zugeordnet sein"
-23,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,EBD Nr. E_0470,,E_047 0,X [24],
-24,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_049 7,,EBD Nr. E_0497,X [25],"[24] Wenn BGM+Z51 vorhanden 
+23,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_0470,,EBD Nr. E_0470,X [24],
+24,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_0497,,EBD Nr. E_0497,X [25],"[24] Wenn BGM+Z51 vorhanden
 [25] Wenn BGM+Z52 vorhanden"
-25,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,,,,,Muss [27] ∨ [28],[27] Wenn SG2
+25,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,,,,,Muss [27] ∨ [28],"[27] Wenn SG2 AJT+A05+E_0470 vorhanden
+[28] Wenn AJT+A99 vorhanden
+[33] Wenn AJT+A02/ A03+E_0488 vorhanden"
 26,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4451,,AAP,,Antwort (Freier Text),X,
 27,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4440,,,,Freier Text,X,
 28,MP-ID Absender,SG3,NAD,,,,,,Muss,
