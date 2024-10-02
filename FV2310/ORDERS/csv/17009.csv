@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss,
@@ -27,7 +27,7 @@
 24,Prüfidentifikator,SG1,RFF,1154,00019,17009,,Anzeige Gerätewechselabsicht,X,
 25,MP-ID Absender,SG2,,,,,,,Muss,
 26,MP-ID Absender,SG2,NAD,,00020,,,,Muss,
-27,MP-ID Absender,SG2,NAD,3035,00020,Nachrichtenaussteller bzw.,,,MS,
+27,MP-ID Absender,SG2,NAD,3035,00020,Nachrichtenaussteller bzw. -absender,,,MS,
 28,MP-ID Absender,SG2,NAD,3039,00020,,,MP-ID,X,
 29,MP-ID Absender,SG2,NAD,3055,00020,9,,GS1,X,
 30,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
@@ -55,24 +55,24 @@
 52,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
 53,Meldepunkt,SG2,LOC,,00026,,,,Muss,
 54,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-55,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation 
+55,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X [951] [522],"[522] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
-56,Positionsdaten,SG29,,,,,,,Muss [2004],"[2004] Die SG29 ist so oft zu wiederholen, dass alle Geräte der betroffenen Geräteart die im Rahmen des Gerätewechsels aufgrund MSB-Wechsel getauscht"
+56,Positionsdaten,SG29,,,,,,,Muss [2004],"[2004] Die SG29 ist so oft zu wiederholen, dass alle Geräte der betroffenen Geräteart die im Rahmen des Gerätewechsels aufgrund MSB-Wechsel getauscht werden sollen genannt sind."
 57,Positionsdaten,SG29,LIN,,00040,,,,Muss,
 58,Positionsdaten,SG29,LIN,1082,00040,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 59,Geräteart,SG30,,,,,,,Muss,
 60,Geräteart,SG30,CCI,,00058,,,,Muss,
 61,Geräteart,SG30,CCI,7037,00058,Z25,,Wandler,X [28],
-62,Geräteart,SG30,CCI,7037,,Z26,,Kommunikationseinrichtun g,X,
+62,Geräteart,SG30,CCI,7037,,Z26,,Kommunikationseinrichtung,X,
 63,Geräteart,SG30,CCI,7037,,Z27,,Technische Steuereinrichtung,X,
 64,Geräteart,SG30,CCI,7037,,Z64,,Mengenumwerter,X [29],
 65,Geräteart,SG30,CCI,7037,,Z75,,Smartmeter-Gateway,X,
 66,Geräteart,SG30,CCI,7037,,Z76,,Steuerbox,X [28],
-67,Geräteart,SG30,CCI,7037,,ZD4,,Zähleinrichtung,X,"[28] Wenn MP-ID in SG2 NAD+MR aus Sparte Strom 
+67,Geräteart,SG30,CCI,7037,,ZD4,,Zähleinrichtung,X,"[28] Wenn MP-ID in SG2 NAD+MR aus Sparte Strom
 [29] Wenn MP-ID in SG2 NAD+MR aus Sparte Gas"
-68,Gerätenummer,SG34,,,,,,,Muss ([102] ∧ [2006]) ⊻ ([103] ∧ [2005]),"[102] Wenn in derselben SG29 LIN das CCI+++Z25 (Geräteart Wandler) vorhanden 
-[103] Wenn in derselben SG29 LIN das CCI+++Z25 (Geräteart Wandler) nicht vorhanden 
-[2005] Pro SG29 LIN ist die SG34 RFF+Z09 (Gerätenummer) genau einmal anzugeben 
+68,Gerätenummer,SG34,,,,,,,Muss ([102] ∧ [2006]) ⊻ ([103] ∧ [2005]),"[102] Wenn in derselben SG29 LIN das CCI+++Z25 (Geräteart Wandler) vorhanden
+[103] Wenn in derselben SG29 LIN das CCI+++Z25 (Geräteart Wandler) nicht vorhanden
+[2005] Pro SG29 LIN ist die SG34 RFF+Z09 (Gerätenummer) genau einmal anzugeben
 [2006] Pro SG29 LIN ist die SG34 RFF+Z09 (Gerätenummer) bis zu dreimal anzugeben"
 69,Gerätenummer,SG34,RFF,,00061,,,,Muss,
 70,Gerätenummer,SG34,RFF,1153,00061,Z09,,Gerätenummer,X,
