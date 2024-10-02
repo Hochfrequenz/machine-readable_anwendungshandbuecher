@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Beginn zum (nächstmöglichen Termin),,DTM,,00006,,,,Muss,
@@ -57,10 +57,10 @@
 54,Ansprechpartner,SG14,CTA,3139,00015,,,,IC,
 55,Ansprechpartner,SG14,CTA,3412,00015,,,Kontakt,X,
 56,Kommunikationsverbindung,SG14,COM,,00016,,,,Muss,
-57,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [72]) ∨ ([940] [73])) ∧ [516],"[72] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[73] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[516] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+57,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [72]) ∨ ([940] [73])) ∧ [516],"[72] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[73] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[516] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 58,Kommunikationsverbindung,SG14,COM,3155,00016,EM,,Elektronische Post,X [1P0..1],
 59,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -78,12 +78,12 @@
 71,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
 72,Meldepunkt,SG11,LOC,,00019,,,,Muss,
 73,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-74,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [501]) ⊻ ([951] [502]) ⊻ ([950] [507]) ⊻ ([960] [512]),"[501] Hinweis: Verwendung der ID der Marktlokation 
-[502] Hinweis: Verwendung der ID der Messlokation 
-[507] Hinweis: Verwendung der ID der Tranche 
-[512] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
+74,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [501]) ⊻ ([951] [502]) ⊻ ([950] [507]) ⊻ ([960] [512]),"[501] Hinweis: Verwendung der ID der Marktlokation
+[502] Hinweis: Verwendung der ID der Messlokation
+[507] Hinweis: Verwendung der ID der Tranche
+[512] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
 [960] Format: Netzlokations-ID"
 75,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,,,,,,,Soll [77],"[77] Wenn in der Anfrage nach Werten ein Messprodukt enthalten war, das in der Codeliste der Konfigurationen im Kapitel 4.6.1 ""Werte nach Typ 2 aus Backend"" enthalten ist."
 76,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,,00062,,,,Muss,
@@ -97,7 +97,7 @@
 84,Artikel-ID,SG27,PIA,4347,00064,Artikel-ID,,,Z02,
 85,Artikel-ID,SG27,PIA,7140,00064,,,Artikel-ID,X,
 86,Artikel-ID,SG27,PIA,7143,00064,Z09,,Artikel-ID,X,
-87,OBIS-Kennzahl für Werte nach Typ 2 Backend,SG27,PIA,,00065,,,,Muss [2073],[2073] Das PIA (OBIS-Kennzahl für Werte nach Typ 2 Backend) ist mindestens einmal anzugeben. Es kann in Abhängigkeit zu den anderen PIA Segmenten innerhalb derselben SG27 LIN (Erforderliches Messprodukt für Werte nach Typ2 aus Backend) maximal bis zu 23 mal angegeben werden sofern die anderen PIA Segmente innerhalb derselben SG27 LIN nicht mehr als einmal angegeben werden. Die maximale Anzahl an PIA-Segmenten je SG27
+87,OBIS-Kennzahl für Werte nach Typ 2 Backend,SG27,PIA,,00065,,,,Muss [2073],[2073] Das PIA (OBIS-Kennzahl für Werte nach Typ 2 Backend) ist mindestens einmal anzugeben. Es kann in Abhängigkeit zu den anderen PIA Segmenten innerhalb derselben SG27 LIN (Erforderliches Messprodukt für Werte nach Typ2 aus Backend) maximal bis zu 23 mal angegeben werden sofern die anderen PIA Segmente innerhalb derselben SG27 LIN nicht mehr als einmal angegeben werden. Die maximale Anzahl an PIA-Segmenten je SG27 LIN ist 25.
 88,OBIS-Kennzahl für Werte nach Typ 2 Backend,SG27,PIA,4347,00065,,,,5,
 89,OBIS-Kennzahl für Werte nach Typ 2 Backend,SG27,PIA,7140,00065,,,OBIS-Kennzahl für Werte nach Typ 2 Backend,X,
 90,OBIS-Kennzahl für Werte nach Typ 2 Backend,SG27,PIA,7143,00065,SRW,,OBIS-Kennzahl,X,
@@ -107,13 +107,13 @@
 94,Preisangaben,SG31,PRI,5118,00066,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
 95,Preisangaben,SG31,PRI,5387,00066,Z01,,Einrichtungspreis,X [83],
 96,Preisangaben,SG31,PRI,5387,,Z02,,Transaktionspreis,X [85],
-97,Preisangaben,SG31,PRI,5387,,Z03,,Betriebspreis,X [84],"[83] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""01"" (Kosten für das Einrichten des Messprodukts) vorhanden ist. 
-[84] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""02"" (Kosten für den Betrieb des Messprodukts) vorhanden ist. 
+97,Preisangaben,SG31,PRI,5387,,Z03,,Betriebspreis,X [84],"[83] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""01"" (Kosten für das Einrichten des Messprodukts) vorhanden ist.
+[84] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""02"" (Kosten für den Betrieb des Messprodukts) vorhanden ist.
 [85] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""03"" (Kosten für die anfallenden Transaktionen des Messprodukts) vorhanden ist."
 98,Preisangaben,SG31,PRI,5284,00066,,,"Einzelpreisbasis, Menge",X [903],[903] Format: Möglicher Wert: 1
 99,Preisangaben,SG31,PRI,6411,00066,H87,,Stück,X [86] ⊻ [87],
-100,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [88],"[86] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z01 (Einrichtungspreis) vorhanden ist. 
-[87] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z02 (Transaktionspreis) vorhanden ist. 
+100,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [88],"[86] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z01 (Einrichtungspreis) vorhanden ist.
+[87] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z02 (Transaktionspreis) vorhanden ist.
 [88] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z03 (Betriebspreis) vorhanden ist."
 101,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,,,,,,,Soll [78],"[78] Wenn in der Anfrage nach Werten ein Messprodukt enthalten war, das in der Codeliste der Konfigurationen im Kapitel 4.6.2 ""Werte nach Typ 2 aus SMWG"" enthalten ist."
 102,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,,00067,,,,Muss,
@@ -131,14 +131,18 @@
 114,Preisangaben,SG31,PRI,,00072,,,,Muss,
 115,Preisangaben,SG31,PRI,5125,00072,CAL,,Berechnungspreis,X,
 116,Preisangaben,SG31,PRI,5118,00072,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-117,Preisangaben,SG31,PRI,5387,00072,Z01,,Einrichtungspreis,X [83],[83] Wenn in derselben SG27 LIN
-118,Preisangaben,SG31,PRI,5284,00072,,,"Einzelpreisbasis, Menge",X [903],[903] Format: Möglicher Wert: 1
-119,Preisangaben,SG31,PRI,6411,00072,H87,,Stück,X [86] ⊻ [87],
-120,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [88],"[86] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z01 (Einrichtungspreis) vorhanden ist. 
-[87] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z02 (Transaktionspreis) vorhanden ist. 
+117,Preisangaben,SG31,PRI,5387,00072,Z01,,Einrichtungspreis,X [83],
+118,Preisangaben,SG31,PRI,5387,,Z02,,Transaktionspreis,X [85],
+119,Preisangaben,SG31,PRI,5387,,Z03,,Betriebspreis,X [84],"[83] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""01"" (Kosten für das Einrichten des Messprodukts) vorhanden ist.
+[84] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""02"" (Kosten für den Betrieb des Messprodukts) vorhanden ist.
+[85] Wenn in derselben SG27 LIN ein PIA+Z02 (Artikel-ID) mit einer Artikel-ID im DE7140 bei der die letzten beiden Stellen mit dem Wert ""03"" (Kosten für die anfallenden Transaktionen des Messprodukts) vorhanden ist."
+120,Preisangaben,SG31,PRI,5284,00072,,,"Einzelpreisbasis, Menge",X [903],[903] Format: Möglicher Wert: 1
+121,Preisangaben,SG31,PRI,6411,00072,H87,,Stück,X [86] ⊻ [87],
+122,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [88],"[86] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z01 (Einrichtungspreis) vorhanden ist.
+[87] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z02 (Transaktionspreis) vorhanden ist.
 [88] Wenn in derselben SG31 PRI (Preisangabe zur Position) das DE5387 mit dem Wert Z03 (Betriebspreis) vorhanden ist."
-121,Abschnitts-Kontrollsegment,,UNS,,00073,,,,Muss,
-122,Abschnitts-Kontrollsegment,,UNS,0081,00073,und Summenteil,,,S,
-123,Nachrichten-Endesegment,,UNT,,00074,,,,Muss,
-124,Nachrichten-Endesegment,,UNT,0074,00074,,,Anzahl der Segmente in einer Nachricht,X,
-125,Nachrichten-Endesegment,,UNT,0062,00074,,,Nachrichten-Referenznummer,X,
+123,Abschnitts-Kontrollsegment,,UNS,,00073,,,,Muss,
+124,Abschnitts-Kontrollsegment,,UNS,0081,00073,und Summenteil,,,S,
+125,Nachrichten-Endesegment,,UNT,,00074,,,,Muss,
+126,Nachrichten-Endesegment,,UNT,0074,00074,,,Anzahl der Segmente in einer Nachricht,X,
+127,Nachrichten-Endesegment,,UNT,0062,00074,,,Nachrichten-Referenznummer,X,

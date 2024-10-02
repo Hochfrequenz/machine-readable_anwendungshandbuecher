@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Datum zum geplanten Leistungsbeginn,,DTM,,00004,,,,Muss,
@@ -46,10 +46,10 @@
 43,Ansprechpartner,SG14,CTA,3139,00015,,,,IC,
 44,Ansprechpartner,SG14,CTA,3412,00015,,,Kontakt,X [500],[500] Hinweis: Angabe eines technischen Ansprechpartners für die Geräteübernahme
 45,Kommunikationsverbindung,SG14,COM,,00016,,,,Muss,
-46,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [72]) ∨ ([940] [73])) ∧ [516],"[72] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[73] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[516] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+46,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [72]) ∨ ([940] [73])) ∧ [516],"[72] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[73] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[516] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 47,Kommunikationsverbindung,SG14,COM,3155,00016,EM,,Elektronische Post,X [1P0..1],
 48,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -68,7 +68,7 @@
 61,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
 62,Meldepunkt,SG11,LOC,,00019,,,,Muss,
 63,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-64,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X [951] [502],"[502] Hinweis: Verwendung der ID der Messlokation 
+64,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X [951] [502],"[502] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
 65,Positionsdaten,SG27,,,,,,,Muss,
 66,Positionsdaten,SG27,LIN,,00020,,,,Muss,
@@ -77,26 +77,27 @@
 69,Positionsdaten,SG27,LIN,7143,00020,Z01,,Artikelnummer,X,
 70,Produkt-/ Leistungsbeschreibung,SG27,IMD,,00022,,,,Soll [1],"[1] Wenn Position nicht angeboten werden kann, weil rechtliche Regelungen oder Rechte Dritter dem entgegenstehen"
 71,Produkt-/ Leistungsbeschreibung,SG27,IMD,7081,00022,Z09,,Kann nicht angeboten werden,X,
-72,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,,00023,,,,Muss [2],[2] Wenn in derselben SG27 LIN
+72,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,,00023,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
 73,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,00023,94,,Produktions-/ Herstellungsdatum,X,
 74,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,,Z03,,Baujahr/Jahr des in Verkehrs bringens,X,
 75,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2380,00023,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
 76,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2379,00023,602,,CCYY,X,
-77,Eichgültigkeitsdauer bis,SG27,DTM,,00024,,,,Muss [2] ∧ ([5] ⊻ [3] ⊻ [22]),"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[3] Wenn CCI+++Z64 vorhanden ist 
-[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist 
+77,Eichgültigkeitsdauer bis,SG27,DTM,,00024,,,,Muss [2] ∧ ([5] ⊻ [3] ⊻ [22]),"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[3] Wenn CCI+++Z64 vorhanden ist
+[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist
 [22] Wenn CCI+++Z75 vorhanden ist"
 78,Eichgültigkeitsdauer bis,SG27,DTM,2005,00024,Z04,,Eichgültigkeit,X,
 79,Eichgültigkeitsdauer bis,SG27,DTM,2380,00024,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
 80,Eichgültigkeitsdauer bis,SG27,DTM,2379,00024,602,,CCYY,X,
-81,Herstellernummer,SG27,GIN,,00025,,,,Soll [2] ∧ [4],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
+81,Herstellernummer,SG27,GIN,,00025,,,,Soll [2] ∧ [4],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
 [4] Wenn am Gerät vorhanden und abweichend von Gerätenummer"
 82,Herstellernummer,SG27,GIN,7405,00025,,,,BN,
 83,Herstellernummer,SG27,GIN,7402,00025,,,Herstellernummer,X,
 84,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,,00026,,,,Kann,
 85,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4451,00026,(für allgemeine Hinweise),,,ACB,
 86,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4440,00026,,,Freier Text,X,
-87,Zähleinrichtung,SG28,,,,,,,Muss [2] ∧ [5],[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code
+87,Zähleinrichtung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
 88,Zähleinrichtung,SG28,CCI,,00027,,,,Muss,
 89,Zähleinrichtung,SG28,CCI,7037,00027,E13,,Zählertyp,X,
 90,Zähleinrichtung/Zählertyp,SG28,CAV,,00028,,,,Muss,
@@ -112,13 +113,13 @@
 100,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,TRZ,,Turbinenradgaszähler,X [493],
 101,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,UGZ,,Ultraschallgaszähler,X [493],
 102,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WGZ,,Wirbelgaszähler,X [493],
-103,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WSZ,,analoger Wechselstromzähler,X [492],"[492] wenn MP-ID in NAD+MR aus Sparte Strom 
+103,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WSZ,,analoger Wechselstromzähler,X [492],"[492] wenn MP-ID in NAD+MR aus Sparte Strom
 [493] wenn MP-ID in NAD+MR aus Sparte Gas"
 104,Zähleinrichtung/Zählertyp,SG28,CAV,7110,00028,Z01,,EDL40,X [8],
 105,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z02,,EDL21,X [8],
 106,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z03,,sonstiger EHZ,X [8],
 107,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z04,,Standard,X [25],
-108,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z05,,MeDa-Zähler,X [25],"[8] Wenn SG28 CCI+++E13 CAV+EHZ vorhanden 
+108,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z05,,MeDa-Zähler,X [25],"[8] Wenn SG28 CCI+++E13 CAV+EHZ vorhanden
 [25] Wenn SG28 CCI+++E13 CAV+MME vorhanden"
 109,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,,00029,,,,Muss [493],[493] wenn MP-ID in NAD+MR aus Sparte Gas
 110,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,00029,G10,,Gaszähler G10,X,
@@ -129,7 +130,7 @@
 115,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16,,Gaszähler G16,X,
 116,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G160,,Gaszähler G160,X,
 117,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G1600,,Gaszähler G1600,X,
-118,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,X X,
+118,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,XX,
 119,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G25,,Gaszähler G25,X,
 120,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G250,,Gaszähler G250,X,
 121,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G2500,,Gaszähler G2500,X,
@@ -137,109 +138,115 @@
 123,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4,,Gaszähler G4,X,
 124,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G40,,Gaszähler G40,X,
 125,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G400,,Gaszähler G400,X,
-126,Zähleinrichtung/Tarifanzahl,SG28,CAV,,00030,,,,Muss [492],[492] wenn MP-ID in NAD+MR aus Sparte Strom
-127,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,00030,ETZ,,Eintarif,X,
-128,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ZTZ,,Zweitarif,X,
-129,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,NTZ,,Mehrtarif,X,
-130,Zähleinrichtung/ Energierichtung,SG28,CAV,,00031,,,,Muss [492],[492] wenn MP-ID in NAD+MR aus Sparte Strom
-131,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,00031,ERZ,,Einrichtungszähler,X,
-132,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
-133,Wandler,SG28,,,,,,,Muss [2] ∧ [492] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist 
+126,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4000,,Gaszähler G4000,X,
+127,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6,,Gaszähler G6,X,
+128,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G65,,Gaszähler G65,X,
+129,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G650,,Gaszähler G650,X,
+130,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6500,,Gaszähler G6500,X,
+131,Zähleinrichtung/Tarifanzahl,SG28,CAV,,00030,,,,Muss [492],[492] wenn MP-ID in NAD+MR aus Sparte Strom
+132,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,00030,ETZ,,Eintarif,X,
+133,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ZTZ,,Zweitarif,X,
+134,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,NTZ,,Mehrtarif,X,
+135,Zähleinrichtung/ Energierichtung,SG28,CAV,,00031,,,,Muss [492],[492] wenn MP-ID in NAD+MR aus Sparte Strom
+136,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,00031,ERZ,,Einrichtungszähler,X,
+137,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
+138,Wandler,SG28,,,,,,,Muss [2] ∧ [492] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist
 [492] wenn MP-ID in NAD+MR aus Sparte Strom"
-134,Wandler,SG28,CCI,,00032,,,,Muss,
-135,Wandler,SG28,CCI,7037,00032,Z25,,Wandler,X,
-136,Wandlertyp und Faktor,SG28,CAV,,00033,,,,Muss,
-137,Wandlertyp und Faktor,SG28,CAV,7111,00033,MBW,,Blockstromwandler,X,
-138,Wandlertyp und Faktor,SG28,CAV,7111,,MIW,,Messwandlersatz Strom,X,
-139,Wandlertyp und Faktor,SG28,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
-140,Wandlertyp und Faktor,SG28,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
-141,Wandlertyp und Faktor,SG28,CAV,7110,00033,,,Wandlerfaktor,M [914] [10],"[10] Wenn SG28 CAV+MIW/ MPW/MBW vorhanden 
+139,Wandler,SG28,CCI,,00032,,,,Muss,
+140,Wandler,SG28,CCI,7037,00032,Z25,,Wandler,X,
+141,Wandlertyp und Faktor,SG28,CAV,,00033,,,,Muss,
+142,Wandlertyp und Faktor,SG28,CAV,7111,00033,MBW,,Blockstromwandler,X,
+143,Wandlertyp und Faktor,SG28,CAV,7111,,MIW,,Messwandlersatz Strom,X,
+144,Wandlertyp und Faktor,SG28,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
+145,Wandlertyp und Faktor,SG28,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
+146,Wandlertyp und Faktor,SG28,CAV,7110,00033,,,Wandlerfaktor,M [914] [10],"[10] Wenn SG28 CAV+MIW/ MPW/MBW vorhanden
 [914] Format: Möglicher Wert: > 0"
-142,Mengenumwerter,SG28,,,,,,,Muss [2] ∧ [493] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist 
-[493] wenn MP-ID in NAD+MR aus"
-143,Mengenumwerter,SG28,CCI,,00034,,,,Muss,
-144,Mengenumwerter,SG28,CCI,7037,00034,Z64,,Mengenumwerter,X,
-145,Mengenumwertertyp,SG28,CAV,,00035,,,,Muss,
-146,Mengenumwertertyp,SG28,CAV,7111,00035,DMU,,Dichtemengenumwerter,X,
-147,Mengenumwertertyp,SG28,CAV,7111,,TMU,,Temperaturmengenumwer ter,X,
-148,Mengenumwertertyp,SG28,CAV,7111,,ZMU,,Zustandsmengenumwerter,X,
-149,Kommunikationseinrichtun g,SG28,,,,,,,Muss [2] ∧ [11],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[11] Wenn in derselben SG27 LIN die Artikelnummer 9990001000665 vorhanden ist"
-150,Kommunikationseinrichtun g,SG28,CCI,,00036,,,,Muss,
-151,Kommunikationseinrichtun g,SG28,CCI,7037,00036,Z26,,Kommunikationseinrichtun g,X,
-152,Kommunikationseinrichtun g,SG28,CAV,,00037,,,,Muss,
-153,Kommunikationseinrichtun g,SG28,CAV,7111,00037,GSM,,GSM/GPRS/UMTS-Kom.- Einr.,X,
-154,Kommunikationseinrichtun g,SG28,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
-155,Kommunikationseinrichtun g,SG28,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
-156,Kommunikationseinrichtun g,SG28,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
-157,Kommunikationseinrichtun g,SG28,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
-158,Kommunikationseinrichtun g,SG28,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
-159,Technische Steuereinrichtung,SG28,,,,,,,Muss [2] ∧ [12],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[12] Wenn in derselben SG27 LIN die Artikelnummer 9990001000673 vorhanden ist"
-160,Technische Steuereinrichtung,SG28,CCI,,00038,,,,Muss,
-161,Technische Steuereinrichtung,SG28,CCI,7037,00038,Z27,,Technische Steuereinrichtung,X,
-162,Technische Steuereinrichtung,SG28,CAV,,00039,,,,Muss,
-163,Technische Steuereinrichtung,SG28,CAV,7111,00039,RSU,,Rundsteuerempfänger,X,
-164,Technische Steuereinrichtung,SG28,CAV,7111,,TSU,,Tarifschaltuhr,X,
-165,Smartmeter-Gateway,SG28,,,,,,,Muss [2] ∧ [15],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[15] Wenn in derselben SG27 LIN die Artikelnummer 9990001000772 vorhanden ist"
-166,Smartmeter-Gateway,SG28,CCI,,00040,,,,Muss,
-167,Smartmeter-Gateway,SG28,CCI,7037,00040,Z75,,Smartmeter-Gateway,X,
-168,Steuerbox,SG28,,,,,,,Muss [2] ∧ [16],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[16] Wenn in derselben SG27 LIN die Artikelnummer 9990001000780 vorhanden ist"
-169,Steuerbox,SG28,CCI,,00041,,,,Muss,
-170,Steuerbox,SG28,CCI,7037,00041,Z76,,Steuerbox,X,
-171,Befestigungsart,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
-172,Befestigungsart,SG28,CCI,,00042,,,,Muss,
-173,Befestigungsart,SG28,CCI,7037,00042,Z28,,Befestigungsart Zähleinrichtung,X,
-174,Befestigungsart,SG28,CAV,,00043,,,,Muss,
-175,Befestigungsart,SG28,CAV,7111,00043,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X [492],
-176,Befestigungsart,SG28,CAV,7111,,DPA,,3-Dreipunktaufhängung,X [492],
-177,Befestigungsart,SG28,CAV,7111,,HUT,,Hutschiene,X [492],
-178,Befestigungsart,SG28,CAV,7111,,Z31,,Einstutzen-Zähler,X [493],
-179,Befestigungsart,SG28,CAV,7111,,Z32,,Zweistutzen-Zähler,X [493],"[492] wenn MP-ID in NAD+MR aus Sparte Strom 
+147,Mengenumwerter,SG28,,,,,,,Muss [2] ∧ [493] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist
 [493] wenn MP-ID in NAD+MR aus Sparte Gas"
-180,Messwerterfassung,SG28,,,,,,,Muss [2] ∧ [5],[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
-181,Messwerterfassung,SG28,CCI,,00044,,,,Muss,
-182,Messwerterfassung,SG28,CCI,7037,00044,E12,,Messwerterfassung an der Zähleinrichtung,X,
-183,Messwerterfassung,SG28,CAV,,00045,,,,Muss,
-184,Messwerterfassung,SG28,CAV,7111,00045,AMR,,fernauslesbare Zähler,X,
-185,Messwerterfassung,SG28,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
-186,Preisangaben,SG31,,,,,,,Muss [2] ∧ [2068],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
+148,Mengenumwerter,SG28,CCI,,00034,,,,Muss,
+149,Mengenumwerter,SG28,CCI,7037,00034,Z64,,Mengenumwerter,X,
+150,Mengenumwertertyp,SG28,CAV,,00035,,,,Muss,
+151,Mengenumwertertyp,SG28,CAV,7111,00035,DMU,,Dichtemengenumwerter,X,
+152,Mengenumwertertyp,SG28,CAV,7111,,TMU,,Temperaturmengenumwer ter,X,
+153,Mengenumwertertyp,SG28,CAV,7111,,ZMU,,Zustandsmengenumwerter,X,
+154,Kommunikationseinrichtun g,SG28,,,,,,,Muss [2] ∧ [11],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[11] Wenn in derselben SG27 LIN die Artikelnummer 9990001000665 vorhanden ist"
+155,Kommunikationseinrichtun g,SG28,CCI,,00036,,,,Muss,
+156,Kommunikationseinrichtun g,SG28,CCI,7037,00036,Z26,,Kommunikationseinrichtung,X,
+157,Kommunikationseinrichtun g,SG28,CAV,,00037,,,,Muss,
+158,Kommunikationseinrichtun g,SG28,CAV,7111,00037,GSM,,GSM/GPRS/UMTS-Kom.- Einr.,X,
+159,Kommunikationseinrichtun g,SG28,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
+160,Kommunikationseinrichtun g,SG28,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
+161,Kommunikationseinrichtun g,SG28,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
+162,Kommunikationseinrichtun g,SG28,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
+163,Kommunikationseinrichtun g,SG28,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
+164,Technische Steuereinrichtung,SG28,,,,,,,Muss [2] ∧ [12],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[12] Wenn in derselben SG27 LIN die Artikelnummer 9990001000673 vorhanden ist"
+165,Technische Steuereinrichtung,SG28,CCI,,00038,,,,Muss,
+166,Technische Steuereinrichtung,SG28,CCI,7037,00038,Z27,,Technische Steuereinrichtung,X,
+167,Technische Steuereinrichtung,SG28,CAV,,00039,,,,Muss,
+168,Technische Steuereinrichtung,SG28,CAV,7111,00039,RSU,,Rundsteuerempfänger,X,
+169,Technische Steuereinrichtung,SG28,CAV,7111,,TSU,,Tarifschaltuhr,X,
+170,Smartmeter-Gateway,SG28,,,,,,,Muss [2] ∧ [15],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[15] Wenn in derselben SG27 LIN die Artikelnummer 9990001000772 vorhanden ist"
+171,Smartmeter-Gateway,SG28,CCI,,00040,,,,Muss,
+172,Smartmeter-Gateway,SG28,CCI,7037,00040,Z75,,Smartmeter-Gateway,X,
+173,Steuerbox,SG28,,,,,,,Muss [2] ∧ [16],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[16] Wenn in derselben SG27 LIN die Artikelnummer 9990001000780 vorhanden ist"
+174,Steuerbox,SG28,CCI,,00041,,,,Muss,
+175,Steuerbox,SG28,CCI,7037,00041,Z76,,Steuerbox,X,
+176,Befestigungsart,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
+177,Befestigungsart,SG28,CCI,,00042,,,,Muss,
+178,Befestigungsart,SG28,CCI,7037,00042,Z28,,Befestigungsart Zähleinrichtung,X,
+179,Befestigungsart,SG28,CAV,,00043,,,,Muss,
+180,Befestigungsart,SG28,CAV,7111,00043,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X [492],
+181,Befestigungsart,SG28,CAV,7111,,DPA,,3-Dreipunktaufhängung,X [492],
+182,Befestigungsart,SG28,CAV,7111,,HUT,,Hutschiene,X [492],
+183,Befestigungsart,SG28,CAV,7111,,Z31,,Einstutzen-Zähler,X [493],
+184,Befestigungsart,SG28,CAV,7111,,Z32,,Zweistutzen-Zähler,X [493],"[492] wenn MP-ID in NAD+MR aus Sparte Strom
+[493] wenn MP-ID in NAD+MR aus Sparte Gas"
+185,Messwerterfassung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
+186,Messwerterfassung,SG28,CCI,,00044,,,,Muss,
+187,Messwerterfassung,SG28,CCI,7037,00044,E12,,Messwerterfassung an der Zähleinrichtung,X,
+188,Messwerterfassung,SG28,CAV,,00045,,,,Muss,
+189,Messwerterfassung,SG28,CAV,7111,00045,AMR,,fernauslesbare Zähler,X,
+190,Messwerterfassung,SG28,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
+191,Preisangaben,SG31,,,,,,,Muss [2] ∧ [2068],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
 [2068] Pro SG27 LIN ist die SG31 PRI genau einmal anzugeben."
-187,Preisangaben,SG31,PRI,,00046,,,,Muss,
-188,Preisangaben,SG31,PRI,5125,00046,CAL,,Berechnungspreis,X,
-189,Preisangaben,SG31,PRI,5118,00046,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-190,Preisangaben,SG31,PRI,5284,00046,,,"Einzelpreisbasis, Menge",X [908],[908] Format: Mögliche Werte: 1 bis n
-191,Preisangaben,SG31,PRI,6411,00046,H87,,Stück,X [79],
-192,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [80],"[79] Wenn IMD DE7081 (Produkt-/Leistungsbeschreibung) mit Wert Z07 (Kauf) vorhanden. 
+192,Preisangaben,SG31,PRI,,00046,,,,Muss,
+193,Preisangaben,SG31,PRI,5125,00046,CAL,,Berechnungspreis,X,
+194,Preisangaben,SG31,PRI,5118,00046,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+195,Preisangaben,SG31,PRI,5284,00046,,,"Einzelpreisbasis, Menge",X [908],[908] Format: Mögliche Werte: 1 bis n
+196,Preisangaben,SG31,PRI,6411,00046,H87,,Stück,X [79],
+197,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X [80],"[79] Wenn IMD DE7081 (Produkt-/Leistungsbeschreibung) mit Wert Z07 (Kauf) vorhanden.
 [80] Wenn IMD DE7081 (Produkt-/Leistungsbeschreibung) mit Wert Z08 (Nutzungsüberlassung) vorhanden."
-193,Gerätenummer,SG32,,,,,,,Soll [2] ∧ [13] ∧ [506],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden. 
-[13] Wenn am Gerät vorhanden 
+198,Gerätenummer,SG32,,,,,,,Soll [2] ∧ [13] ∧ [506],"[2] Wenn in derselben SG27 LIN IMD DE7081 (Produkt-/ Leistungsbeschreibung) mit Code Z09 (Kann nicht angeboten werden) nicht vorhanden.
+[13] Wenn am Gerät vorhanden
 [506] Hinweis: Wenn zu einer Position (z. B. Messwandlersatz) mehrere Gerätenummern existieren, sind die Gerätenummern in derselben Position (LIN-Segment) mittels Wiederholung der SG32 RFF+Z09 anzugeben"
-194,Gerätenummer,SG32,RFF,,00047,,,,Muss,
-195,Gerätenummer,SG32,RFF,1153,00047,Z09,,Gerätenummer,X,
-196,Gerätenummer,SG32,RFF,1154,00047,,,Gerätenummer,X,
-197,Referenz auf einen veröffentlichten Preiskatalog,SG32,,,,,,,Kann,
-198,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,,00049,,,,Muss,
-199,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1153,00049,APF,,Verweis auf Katalognummer,X,
-200,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1154,00049,,,Katalognummer,X,
-201,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1156,00049,,,Zeilennummer,X,
-202,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1056,00049,,,Versionsnummer,X,
-203,Beteiligter Marktpartner MP-ID,SG42,,,,,,,Soll [30] ∧ [44] ∧ [503],"[30] Wenn SG27 IMD+Z09 vorhanden 
-[44] Wenn MSBA nicht Eigentümer des Gerätes/der Geräte ist 
+199,Gerätenummer,SG32,RFF,,00047,,,,Muss,
+200,Gerätenummer,SG32,RFF,1153,00047,Z09,,Gerätenummer,X,
+201,Gerätenummer,SG32,RFF,1154,00047,,,Gerätenummer,X,
+202,Referenz auf einen veröffentlichten Preiskatalog,SG32,,,,,,,Kann,
+203,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,,00049,,,,Muss,
+204,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1153,00049,APF,,Verweis auf Katalognummer,X,
+205,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1154,00049,,,Katalognummer,X,
+206,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1156,00049,,,Zeilennummer,X,
+207,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1056,00049,,,Versionsnummer,X,
+208,Beteiligter Marktpartner MP-ID,SG42,,,,,,,Soll [30] ∧ [44] ∧ [503],"[30] Wenn SG27 IMD+Z09 vorhanden
+[44] Wenn MSBA nicht Eigentümer des Gerätes/der Geräte ist
 [503] Hinweis: Es ist die MP-ID des Eigentümers (MSB) zur bilateralen Klärung anzugeben, wenn z. B. der MSBA das Gerät / die Geräte selbst gepachtet hat."
-204,Beteiligter Marktpartner MP-ID,SG42,NAD,,00050,,,,Muss,
-205,Beteiligter Marktpartner MP-ID,SG42,NAD,3035,00050,,,,VY,
-206,Beteiligter Marktpartner MP-ID,SG42,NAD,3039,00050,,,MP-ID,X,
-207,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,00050,9,,GS1,X,
-208,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-209,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-210,Abschnitts-Kontrollsegment,,UNS,,00073,,,,Muss,
-211,Abschnitts-Kontrollsegment,,UNS,0081,00073,und Summenteil,,,S,
-212,Nachrichten-Endesegment,,UNT,,00074,,,,Muss,
-213,Nachrichten-Endesegment,,UNT,0074,00074,,,Anzahl der Segmente in einer Nachricht,X,
-214,Nachrichten-Endesegment,,UNT,0062,00074,,,Nachrichten-Referenznummer,X,
+209,Beteiligter Marktpartner MP-ID,SG42,NAD,,00050,,,,Muss,
+210,Beteiligter Marktpartner MP-ID,SG42,NAD,3035,00050,,,,VY,
+211,Beteiligter Marktpartner MP-ID,SG42,NAD,3039,00050,,,MP-ID,X,
+212,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,00050,9,,GS1,X,
+213,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+214,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+215,Abschnitts-Kontrollsegment,,UNS,,00073,,,,Muss,
+216,Abschnitts-Kontrollsegment,,UNS,0081,00073,und Summenteil,,,S,
+217,Nachrichten-Endesegment,,UNT,,00074,,,,Muss,
+218,Nachrichten-Endesegment,,UNT,0074,00074,,,Anzahl der Segmente in einer Nachricht,X,
+219,Nachrichten-Endesegment,,UNT,0062,00074,,,Nachrichten-Referenznummer,X,

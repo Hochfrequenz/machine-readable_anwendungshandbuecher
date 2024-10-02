@@ -28,202 +28,216 @@
 26,Abrechnungszeitraum Ende,,DTM,2380,00008,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 27,Abrechnungszeitraum Ende,,DTM,2379,00008,303,,CCYYMMDDHHMMZ ZZ,X,
 28,Rechnungstyp,,IMD,,00014,,,,Muss,
-29,Meldeinformationen,,FTX,,00015,,,,Soll [4] ,[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
-30,Meldeinformationen,,FTX,4451,00015,REG,,Meldeinformatione n,X,
-31,Meldeinformationen,,FTX,4441,00015,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerscha ft des Leistungsempfänger s,X,
-32,Prüfidentifikator,SG1,,,,,,,Muss,
-33,Prüfidentifikator,SG1,RFF,,00017,,,,Muss,
-34,Prüfidentifikator,SG1,RFF,1153,00017,Z13,,Prüfidentifikator,X,
-35,Prüfidentifikator,SG1,RFF,1154,,31009,,MSB-Rechnung,X,
-36,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,Muss [492] ∧ [36] ∧ [50],"[36] Wenn DTM+156 (Abrechnungszeitraum Ende) ≥ 01.12.2019 
-[37] Wenn Lieferschein zuvor ausgetauscht wurde 
-[50] Wenn IMD++SOR nicht vorhanden 
-[66] Wenn IMD++KON vorhanden 
-[72] Wenn MP-ID in NAD+MR in der Rolle LF 
-[73] Wenn IMD++MSB"
-37,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,00020,,,,Muss,
-38,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,00020,ACE,,Nummer des zugehörigen Dokuments,X,
-39,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,00020,,,"Referenz, Identifikation",X ([66] ∧  [501]) ⊻ ([73] ∧ [508]),"[66] Wenn IMD++KON vorhanden 
-[73] Wenn IMD++MSB vorhanden 
-[501] Hinweis: Dokumentennummer der ORDERS 
-[508] Hinweis: Dokumentennummer der QUOTES 
+29,Rechnungstyp,,IMD,7081,,MSB,,Rechnung für Messstellenbetrieb,X [72] ∨ [76],
+30,Rechnungstyp,,IMD,7081,,KON,,Abrechnung von Konfigurationen (Universalbestellpro zess),X,"[56] Wenn DTM+137 (Nachrichtendatum ≥ 1.1.2023 0:00 gesetzlicher deutscher Zeit
+[57] Wenn DTM+156 (Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit
+[72] Wenn MP-ID in NAD+MR in der Rolle LF
+[76] Wenn MP-ID in NAD+MR in der Rolle NB
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+31,Meldeinformationen,,FTX,,00015,,,,Soll [4] ,[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
+32,Meldeinformationen,,FTX,4451,00015,REG,,Meldeinformationen,X,
+33,Meldeinformationen,,FTX,4441,00015,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerscha ft des Leistungsempfängers,X,
+34,Prüfidentifikator,SG1,,,,,,,Muss,
+35,Prüfidentifikator,SG1,RFF,,00017,,,,Muss,
+36,Prüfidentifikator,SG1,RFF,1153,00017,Z13,,Prüfidentifikator,X,
+37,Prüfidentifikator,SG1,RFF,1154,,31009,,MSB-Rechnung,X,
+38,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,Muss [492] ∧ [36] ∧ [50],"[36] Wenn DTM+156 (Abrechnungszeitraum Ende) ≥ 01.12.2019
+[37] Wenn Lieferschein zuvor ausgetauscht wurde
+[50] Wenn IMD++SOR nicht vorhanden
+[66] Wenn IMD++KON vorhanden
+[72] Wenn MP-ID in NAD+MR in der Rolle LF
+[73] Wenn IMD++MSB vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom
+[516] Hinweis: Ein Lieferschein zu einer Rechnung ist für alle Abrechnungszeiträum e, die erstmals nach dem 1.12.2019 abgerechnet werden und für alle Abrechnungszeiträum e, für die sich nach dem 1.12.2019 geänderte Mengen oder Leistungswerte ergeben, nötig."
+39,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,00020,,,,Muss,
+40,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,00020,ACE,,Nummer des zugehörigen Dokuments,X,
+41,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,00020,,,"Referenz, Identifikation",X ([66] ∧  [501]) ⊻ ([73] ∧ [508]),"[66] Wenn IMD++KON vorhanden
+[73] Wenn IMD++MSB vorhanden
+[501] Hinweis: Dokumentennummer der ORDERS
+[508] Hinweis: Dokumentennummer der QUOTES
 [514] Hinweis: Dokumentennummer der Lieferschein- MSCONS"
-40,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
-41,Name und Anschrift des Nachrichtensenders,SG2,NAD,,00022,,,,Muss,
-42,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,00022,MS,,Dokumenten-/ Nachrichtenausstell er bzw. -absender,X,
-43,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,00022,,,MP-ID,X [45],[45] Nur MP-ID aus Sparte Strom
-44,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,00022,9,,GS1,X,
-45,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,293,,"DE, BDEW",X,
-46,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,00022,,,Beteiligter,X,
-47,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,00022,Z01,,Struktur von Personennamen,X,
-48,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-49,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,00022,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitza hl verwendet wird
-50,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,00022,,,Ort,M,
-51,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,00022,,,"Postleitzahl, Code",X,
-52,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,00022,,,"Ländername, Code",X,
-53,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss,
-54,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,00023,,,,Muss,
-55,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,00023,VA,,Umsatzsteuernumm er,X,
-56,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn NAD+MR DE3207 = „DE“
-57,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,00023,,,"Referenz, Identifikation",X,
-58,Ansprechpartner,SG5,,,,,,,Kann,
-59,Ansprechpartner,SG5,CTA,,00024,,,,Muss,
-60,Ansprechpartner,SG5,CTA,3139,00024,IC,,Informationskontakt,X,
-61,Ansprechpartner,SG5,CTA,3412,00024,,,Kontakt,X,
-62,Kommunikationsverbindu ng,SG5,COM,,00025,,,,Muss,
-63,Kommunikationsverbindu ng,SG5,COM,3148,00025,,,"Kommunikationsadresse, Identifikation",X (([939] [74]) ∨ ([940][75])) ∧ [524],"[74] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[75] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[524] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
-[940] Format: Die Zeichenkette muss mit"
-64,Kommunikationsverbindu ng,SG5,COM,3155,00025,EM,,Elektronische Post,X [1P0..1],
-65,Kommunikationsverbindu ng,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
-66,Kommunikationsverbindu ng,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
-67,Kommunikationsverbindu ng,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-68,Kommunikationsverbindu ng,SG5,COM,3155,,AL,,Handy,X [1P0..1],
-69,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,Muss,
-70,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,00026,,,,Muss,
-71,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,00026,MR,,Nachrichtenempfän ger,X,
-72,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,00026,,,MP-ID,X [45],[45] Nur MP-ID aus Sparte Strom
-73,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,00026,9,,GS1,X,
-74,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-75,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,00026,,,Beteiligter,X,
-76,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,00026,Z01,,Struktur von Personennamen,X,
-77,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-78,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,00026,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitza hl verwendet wird
-79,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,00026,,,Ort,M,
-80,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,00026,,,"Postleitzahl, Code",X,
-81,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,00026,,,"Ländername, Code",X,
-82,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt 
+42,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
+43,Name und Anschrift des Nachrichtensenders,SG2,NAD,,00022,,,,Muss,
+44,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,00022,MS,,Dokumenten-/ Nachrichtenausstell er bzw. -absender,X,
+45,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,00022,,,MP-ID,X [45],[45] Nur MP-ID aus Sparte Strom
+46,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,00022,9,,GS1,X,
+47,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+48,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,00022,,,Beteiligter,X,
+49,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,00022,Z01,,Struktur von Personennamen,X,
+50,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+51,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,00022,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitza hl verwendet wird
+52,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,00022,,,Ort,M,
+53,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,00022,,,"Postleitzahl, Code",X,
+54,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,00022,,,"Ländername, Code",X,
+55,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss,
+56,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,00023,,,,Muss,
+57,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,00023,VA,,Umsatzsteuernumm er,X,
+58,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn NAD+MR DE3207 = „DE“
+59,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,00023,,,"Referenz, Identifikation",X,
+60,Ansprechpartner,SG5,,,,,,,Kann,
+61,Ansprechpartner,SG5,CTA,,00024,,,,Muss,
+62,Ansprechpartner,SG5,CTA,3139,00024,IC,,Informationskontakt,X,
+63,Ansprechpartner,SG5,CTA,3412,00024,,,Kontakt,X,
+64,Kommunikationsverbindu ng,SG5,COM,,00025,,,,Muss,
+65,Kommunikationsverbindu ng,SG5,COM,3148,00025,,,"Kommunikationsadresse, Identifikation",X (([939] [74]) ∨ ([940][75])) ∧ [524],"[74] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[75] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[524] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+66,Kommunikationsverbindu ng,SG5,COM,3155,00025,EM,,Elektronische Post,X [1P0..1],
+67,Kommunikationsverbindu ng,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
+68,Kommunikationsverbindu ng,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
+69,Kommunikationsverbindu ng,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+70,Kommunikationsverbindu ng,SG5,COM,3155,,AL,,Handy,X [1P0..1],
+71,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,Muss,
+72,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,00026,,,,Muss,
+73,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,00026,MR,,Nachrichtenempfän ger,X,
+74,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,00026,,,MP-ID,X [45],[45] Nur MP-ID aus Sparte Strom
+75,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,00026,9,,GS1,X,
+76,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+77,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,00026,,,Beteiligter,X,
+78,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,00026,Z01,,Struktur von Personennamen,X,
+79,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+80,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,00026,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitza hl verwendet wird
+81,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,00026,,,Ort,M,
+82,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,00026,,,"Postleitzahl, Code",X,
+83,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,00026,,,"Ländername, Code",X,
+84,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
 [5] Wenn NAD+MR DE3207 <> „DE“"
-83,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,00027,,,,Muss,
-84,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,00027,VA,,Umsatzsteuernumm er,X,
-85,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn NAD+MR DE3207 = „DE“
-86,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,00027,,,"Referenz, Identifikation",X,
-87,Adresse der Leistungserbringung,SG2,,,,,,,Muss,
-88,Adresse der Leistungserbringung,SG2,NAD,,00028,,,,Muss,
-89,Adresse der Leistungserbringung,SG2,NAD,3035,00028,DP,,Lieferanschrift,X,
-90,Adresse der Leistungserbringung,SG2,NAD,3124,00028,,,Zusatzinformation zur Identifizierung,K,
-91,Adresse der Leistungserbringung,SG2,NAD,3042,00028,,,Straße und Hausnummer oder Postfach,S [22] M [23],"[22] Wenn vorhanden 
+85,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,00027,,,,Muss,
+86,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,00027,VA,,Umsatzsteuernumm er,X,
+87,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn NAD+MR DE3207 = „DE“
+88,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1154,00027,,,"Referenz, Identifikation",X,
+89,Adresse der Leistungserbringung,SG2,,,,,,,Muss,
+90,Adresse der Leistungserbringung,SG2,NAD,,00028,,,,Muss,
+91,Adresse der Leistungserbringung,SG2,NAD,3035,00028,DP,,Lieferanschrift,X,
+92,Adresse der Leistungserbringung,SG2,NAD,3124,00028,,,Zusatzinformation zur Identifizierung,K,
+93,Adresse der Leistungserbringung,SG2,NAD,3042,00028,,,Straße und Hausnummer oder Postfach,S [22] M [23],"[22] Wenn vorhanden
 [23] Wenn im selben NAD DE3124 nicht vorhanden"
-92,Adresse der Leistungserbringung,SG2,NAD,3164,00028,,,Ort,M,
-93,Adresse der Leistungserbringung,SG2,NAD,3251,00028,,,"Postleitzahl, Code",X,
-94,Adresse der Leistungserbringung,SG2,NAD,3207,00028,,,"Ländername, Code",X,
-95,Meldepunkt,SG2,LOC,,00029,,,,Muss,
-96,Meldepunkt,SG2,LOC,3227,00029,172,,Meldepunkt,X,
-97,Meldepunkt,SG2,LOC,3225,00029,,,"Ortsangabe, Nummer",X ([950] [509]) ⊻ ([951] [510]) ⊻ ([960] [522]) ⊻ ([961] [523]),"[509] Hinweis: Verwendung der ID der Marktlokation 
-[510] Hinweis: Verwendung der ID der Messlokation 
-[522] Hinweis: Verwendung der ID der Netzlokation 
-[523] Hinweis: Verwendung der ID der Steuerbaren Ressource 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
-[960] Format: Netzlokations-ID 
+94,Adresse der Leistungserbringung,SG2,NAD,3164,00028,,,Ort,M,
+95,Adresse der Leistungserbringung,SG2,NAD,3251,00028,,,"Postleitzahl, Code",X,
+96,Adresse der Leistungserbringung,SG2,NAD,3207,00028,,,"Ländername, Code",X,
+97,Meldepunkt,SG2,LOC,,00029,,,,Muss,
+98,Meldepunkt,SG2,LOC,3227,00029,172,,Meldepunkt,X,
+99,Meldepunkt,SG2,LOC,3225,00029,,,"Ortsangabe, Nummer",X ([950] [509]) ⊻ ([951] [510]) ⊻ ([960] [522]) ⊻ ([961] [523]),"[509] Hinweis: Verwendung der ID der Marktlokation
+[510] Hinweis: Verwendung der ID der Messlokation
+[522] Hinweis: Verwendung der ID der Netzlokation
+[523] Hinweis: Verwendung der ID der Steuerbaren Ressource
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
+[960] Format: Netzlokations-ID
 [961] Format: SR-ID"
-98,Währungsangaben,SG7,,,,,,,Muss,
-99,Währungsangaben,SG7,CUX,,00031,,,,Muss,
-100,Währungsangaben,SG7,CUX,6347,00031,2,,Referenzwährung,X,
-101,Währungsangaben,SG7,CUX,6345,00031,EUR,,Euro,X,
-102,Währungsangaben,SG7,CUX,6343,00031,4,,Währung der Rechnung,X,
-103,Zahlungsbedingungen,SG8,,,,,,,Muss,
-104,Zahlungsbedingungen,SG8,PYT,,00032,,,,Muss,
-105,Zahlungsbedingungen,SG8,PYT,4279,00032,3,,Fixdatum,X,
-106,Fälligkeitsdatum,SG8,DTM,,00033,,,,Muss,
-107,Fälligkeitsdatum,SG8,DTM,2005,00033,265,,Fälligkeitsdatum,X,
-108,Fälligkeitsdatum,SG8,DTM,2380,00033,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],"[20] Wenn fälliger Betrag (SG50 MOA+9) ≥ 0 
-[21] Wenn fälliger Betrag (SG50 MOA+9) < 0 
-[24] Wert muss mindestens 10 WT nach Wert aus DTM+137 DE2380 liegen 
-[25] Wert darf maximal 10 WT nach Wert aus DTM+137 DE2380 liegen 
-[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom 
+100,Währungsangaben,SG7,,,,,,,Muss,
+101,Währungsangaben,SG7,CUX,,00031,,,,Muss,
+102,Währungsangaben,SG7,CUX,6347,00031,2,,Referenzwährung,X,
+103,Währungsangaben,SG7,CUX,6345,00031,EUR,,Euro,X,
+104,Währungsangaben,SG7,CUX,6343,00031,4,,Währung der Rechnung,X,
+105,Zahlungsbedingungen,SG8,,,,,,,Muss,
+106,Zahlungsbedingungen,SG8,PYT,,00032,,,,Muss,
+107,Zahlungsbedingungen,SG8,PYT,4279,00032,3,,Fixdatum,X,
+108,Fälligkeitsdatum,SG8,DTM,,00033,,,,Muss,
+109,Fälligkeitsdatum,SG8,DTM,2005,00033,265,,Fälligkeitsdatum,X,
+110,Fälligkeitsdatum,SG8,DTM,2380,00033,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],"[20] Wenn fälliger Betrag (SG50 MOA+9) ≥ 0
+[21] Wenn fälliger Betrag (SG50 MOA+9) < 0
+[24] Wert muss mindestens 10 WT nach Wert aus DTM+137 DE2380 liegen
+[25] Wert darf maximal 10 WT nach Wert aus DTM+137 DE2380 liegen
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
-109,Fälligkeitsdatum,SG8,DTM,2379,00033,303,,CCYYMMDDHHMMZ ZZ,X,
-110,Positionsdaten,SG26,,,,,,,Muss,
-111,Positionsdaten,SG26,LIN,,00034,,,,Muss,
-112,Positionsdaten,SG26,LIN,1082,00034,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-113,Positionsdaten,SG26,LIN,7140,00034,,,Produkt-/Leistungsnummer,X [40],"[40] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern und Artikel-ID mit dem entsprechenden Prüfidentifikator versehen sind oder Artikel-ID aus der Codeliste der Artikelnummern und Artikel-ID. 
-[41] Wenn IMD++SOR vorhanden 
-[50] Wenn IMD++SOR nicht vorhanden 
-[67] Es sind nur die Artikelnummern erlaubt, die im Kapitel"
-114,Positionsdaten,SG26,LIN,7143,00034,Z01,,Artikelnummer,X [77],
-115,Positionsdaten,SG26,LIN,7143,,Z09,,Artikel-ID,X [65] ∨ [66],"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit 
-[59] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2023 0: 00 gesetzlicher deutscher Zeit 
-[65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit 
-[66] Wenn IMD++KON vorhanden 
-[77] Wenn SG26 DTM+156 (Positionsbezogener"
-116,energetische Mengenangaben,SG26,QTY,,00035,,,,Muss,
-117,energetische Mengenangaben,SG26,QTY,6063,00035,47,,Berechnete (fakturierte) Menge,X,
-118,energetische Mengenangaben,SG26,QTY,6060,00035,,,Menge,X [902] ∧ [906],"[902] Format: Möglicher Wert: ≥ 0 
-[906] Format: max. 3 Nachkommastellen 
+111,Fälligkeitsdatum,SG8,DTM,2379,00033,303,,CCYYMMDDHHMMZ ZZ,X,
+112,Positionsdaten,SG26,,,,,,,Muss,
+113,Positionsdaten,SG26,LIN,,00034,,,,Muss,
+114,Positionsdaten,SG26,LIN,1082,00034,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+115,Positionsdaten,SG26,LIN,7140,00034,,,Produkt-/Leistungsnummer,X [40],"[40] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern und Artikel-ID mit dem entsprechenden Prüfidentifikator versehen sind oder Artikel-ID aus der Codeliste der Artikelnummern und Artikel-ID.
+[41] Wenn IMD++SOR vorhanden
+[50] Wenn IMD++SOR nicht vorhanden
+[67] Es sind nur die Artikelnummern erlaubt, die im Kapitel 2 „Codeliste der Artikelnummer“ in der Codeliste der Artikelnummern und Artikel-ID ein „X“ für den entsprechenden Prüfidentifikator haben.
+[68] Es sind nur die Artikel-ID erlaubt, die im Kapitel 3 „Codeliste der Gruppenartikel-ID und Artikel-ID“  in der Codeliste der Artikelnummern und Artikel-ID ein „X“ in der Spalte „INVOIC Codeverwendung“ haben.
+[69] Es sind nur die Artikel-ID erlaubt, die im Kapitel 3 „Codeliste der Gruppenartikel-ID und Artikel-ID“  in der Codeliste der Artikelnummern und Artikel-ID ein „SOR“ in der Spalte „INVOIC Codeverwendung“ haben."
+116,Positionsdaten,SG26,LIN,7143,00034,Z01,,Artikelnummer,X [77],
+117,Positionsdaten,SG26,LIN,7143,,Z09,,Artikel-ID,X [65] ∨ [66],"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit
+[59] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2023 0: 00 gesetzlicher deutscher Zeit
+[65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit
+[66] Wenn IMD++KON vorhanden
+[77] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+118,energetische Mengenangaben,SG26,QTY,,00035,,,,Muss,
+119,energetische Mengenangaben,SG26,QTY,6063,00035,47,,Berechnete (fakturierte) Menge,X,
+120,energetische Mengenangaben,SG26,QTY,6060,00035,,,Menge,X [902] ∧ [906],"[902] Format: Möglicher Wert: ≥ 0
+[906] Format: max. 3 Nachkommastellen
 [910] Format: Möglicher Wert: < 0 oder ≥ 0 "
-119,energetische Mengenangaben,SG26,QTY,6411,,H87,,Stück,X,"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit 
+121,energetische Mengenangaben,SG26,QTY,6411,,H87,,Stück,X,"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Strom"
-120,zeitliche Mengenangaben,SG26,QTY,,00036,,,,Soll [8],[8] Bei zeitabhängigen Preisen
-121,zeitliche Mengenangaben,SG26,QTY,6063,00036,136,,Erreichte Menge in dem Zeitintervall,X,
-122,zeitliche Mengenangaben,SG26,QTY,6060,00036,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
-123,zeitliche Mengenangaben,SG26,QTY,6411,00036,DAY,,Tag,X,
-124,zeitliche Mengenangaben,SG26,QTY,6411,,MON,,Monat,X [64],
-125,zeitliche Mengenangaben,SG26,QTY,6411,,ANN,,Jahr,X [64],"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit 
-[64] Wenn DTM+156 (Abrechnungszeitraum"
-126,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,,00038,,,,Muss [9],[9] Wenn SG26 DTM+203 nicht vorhanden
-127,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2005,00038,155,,"Rechnungsperiode, Beginndatum",X,
-128,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2380,00038,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
-129,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2379,00038,303,,CCYYMMDDHHMMZ ZZ,X,
-130,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,,00039,,,,Muss [9],[9] Wenn SG26 DTM+203 nicht vorhanden
-131,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2005,00039,156,,"Rechnungsperiode, Endedatum",X,
-132,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2380,00039,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
-133,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2379,00039,303,,CCYYMMDDHHMMZ ZZ,X,
-134,Ausführungsdatum,SG26,DTM,,00040,,,,Muss [10],[10] Wenn SG26 DTM+155/156 nicht vorhanden
-135,Ausführungsdatum,SG26,DTM,2005,00040,203,,Ausführungsdatum/- zeit,X,
-136,Ausführungsdatum,SG26,DTM,2380,00040,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
-137,Ausführungsdatum,SG26,DTM,2379,00040,303,,CCYYMMDDHHMMZ ZZ,X,
-138,Positionsnettobetrag,SG27,,,,,,,Muss,
-139,Positionsnettobetrag,SG27,MOA,,00041,,,,Muss,
-140,Positionsnettobetrag,SG27,MOA,5025,00041,203,,Positionsbetrag (ohne USt.),X,
-141,Positionsnettobetrag,SG27,MOA,5004,00041,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-142,Preis,SG29,,,,,,,Muss,
-143,Preis,SG29,PRI,,00043,,,,Muss,
-144,Preis,SG29,PRI,5125,00043,CAL,,Berechnungspreis,X,
-145,Preis,SG29,PRI,5118,00043,,,"Preis, Betrag",X [912],"[912] Format: max. 6 Nachkommastellen 
-[946] Format: max. 11 Nachkommastellen"
-146,Preis,SG29,PRI,6411,00043,DAY,,Tag,X [12] ∧ [65],
-147,Preis,SG29,PRI,6411,,ANN,,Jahr,X [12] ∧ [77],"[12] Wenn SG26 QTY+136 vorhanden 
-[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit 
-[65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit 
-[77] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit 
+122,zeitliche Mengenangaben,SG26,QTY,,00036,,,,Soll [8],[8] Bei zeitabhängigen Preisen
+123,zeitliche Mengenangaben,SG26,QTY,6063,00036,136,,Erreichte Menge in dem Zeitintervall,X,
+124,zeitliche Mengenangaben,SG26,QTY,6060,00036,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
+125,zeitliche Mengenangaben,SG26,QTY,6411,00036,DAY,,Tag,X,
+126,zeitliche Mengenangaben,SG26,QTY,6411,,MON,,Monat,X [64],
+127,zeitliche Mengenangaben,SG26,QTY,6411,,ANN,,Jahr,X [64],"[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit
+[64] Wenn DTM+156 (Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
-148,Umsatzsteuer der Position,SG34,,,,,,,Muss,
-149,Umsatzsteuer der Position,SG34,TAX,,00044,,,,Muss,
-150,Umsatzsteuer der Position,SG34,TAX,5283,00044,7,,Steuer,X,
-151,Umsatzsteuer der Position,SG34,TAX,5153,00044,VAT,,Umsatzsteuer,X,
-152,Umsatzsteuer der Position,SG34,TAX,5278,00044,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+128,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,,00038,,,,Muss [9],[9] Wenn SG26 DTM+203 nicht vorhanden
+129,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2005,00038,155,,"Rechnungsperiode, Beginndatum",X,
+130,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2380,00038,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
+131,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,2379,00038,303,,CCYYMMDDHHMMZ ZZ,X,
+132,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,,00039,,,,Muss [9],[9] Wenn SG26 DTM+203 nicht vorhanden
+133,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2005,00039,156,,"Rechnungsperiode, Endedatum",X,
+134,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2380,00039,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
+135,Positionsbezogener Abrechnungszeitraum Ende,SG26,DTM,2379,00039,303,,CCYYMMDDHHMMZ ZZ,X,
+136,Ausführungsdatum,SG26,DTM,,00040,,,,Muss [10],[10] Wenn SG26 DTM+155/156 nicht vorhanden
+137,Ausführungsdatum,SG26,DTM,2005,00040,203,,Ausführungsdatum/- zeit,X,
+138,Ausführungsdatum,SG26,DTM,2380,00040,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
+139,Ausführungsdatum,SG26,DTM,2379,00040,303,,CCYYMMDDHHMMZ ZZ,X,
+140,Positionsnettobetrag,SG27,,,,,,,Muss,
+141,Positionsnettobetrag,SG27,MOA,,00041,,,,Muss,
+142,Positionsnettobetrag,SG27,MOA,5025,00041,203,,Positionsbetrag (ohne USt.),X,
+143,Positionsnettobetrag,SG27,MOA,5004,00041,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+144,Preis,SG29,,,,,,,Muss,
+145,Preis,SG29,PRI,,00043,,,,Muss,
+146,Preis,SG29,PRI,5125,00043,CAL,,Berechnungspreis,X,
+147,Preis,SG29,PRI,5118,00043,,,"Preis, Betrag",X [912],"[912] Format: max. 6 Nachkommastellen
+[946] Format: max. 11 Nachkommastellen"
+148,Preis,SG29,PRI,6411,00043,DAY,,Tag,X [12] ∧ [65],
+149,Preis,SG29,PRI,6411,,ANN,,Jahr,X [12] ∧ [77],"[12] Wenn SG26 QTY+136 vorhanden
+[51] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2023 0:00 gesetzlicher deutscher Zeit
+[65] Wenn SG26 DTM+155 (Positionsbezogener Abrechnungszeitraum Beginn) ≥ 1.1.2024 0: 00 gesetzlicher deutscher Zeit
+[77] Wenn SG26 DTM+156 (Positionsbezogener Abrechnungszeitraum Ende) ≤ 1.1.2024 0:00 gesetzlicher deutscher Zeit
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfäng er) aus Sparte Gas"
+150,Umsatzsteuer der Position,SG34,,,,,,,Muss,
+151,Umsatzsteuer der Position,SG34,TAX,,00044,,,,Muss,
+152,Umsatzsteuer der Position,SG34,TAX,5283,00044,7,,Steuer,X,
+153,Umsatzsteuer der Position,SG34,TAX,5153,00044,VAT,,Umsatzsteuer,X,
+154,Umsatzsteuer der Position,SG34,TAX,5278,00044,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-153,Umsatzsteuer der Position,SG34,TAX,5305,00044,S,,Einheitssatz (Standard),X,
-154,Umsatzsteuer der Position,SG34,TAX,5305,,O,,nicht steuerbar,X,
-155,Umsatzsteuer der Position,SG34,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfänger s,X,
-156,Abschnitts- Kontrollsegment,,UNS,,00051,,,,Muss,
-157,Abschnitts- Kontrollsegment,,UNS,0081,00051,S,,Trennung von Positions- und Summenteil,X,
-158,Rechnungsbetrag,SG50,,,,,,,Muss,
-159,Rechnungsbetrag,SG50,MOA,,00052,,,,Muss,
-160,Rechnungsbetrag,SG50,MOA,5025,00052,77,,Rechnungsbetrag,X,
-161,Rechnungsbetrag,SG50,MOA,5004,00052,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-162,Fälliger Betrag,SG50,,,,,,,Muss,
-163,Fälliger Betrag,SG50,MOA,,00057,,,,Muss,
-164,Fälliger Betrag,SG50,MOA,5025,00057,9,,Fälliger Betrag (inkl. USt.),X,
-165,Fälliger Betrag,SG50,MOA,5004,00057,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-166,Umsatzsteuer der Rechnung,SG52,,,,,,,Muss,
-167,Umsatzsteuer der Rechnung,SG52,TAX,,00058,,,,Muss,
-168,Umsatzsteuer der Rechnung,SG52,TAX,5283,00058,7,,Steuer,X,
-169,Umsatzsteuer der Rechnung,SG52,TAX,5153,00058,VAT,,Umsatzsteuer,X,
-170,Umsatzsteuer der Rechnung,SG52,TAX,5278,00058,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+155,Umsatzsteuer der Position,SG34,TAX,5305,00044,S,,Einheitssatz (Standard),X,
+156,Umsatzsteuer der Position,SG34,TAX,5305,,O,,nicht steuerbar,X,
+157,Umsatzsteuer der Position,SG34,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfängers,X,
+158,Abschnitts- Kontrollsegment,,UNS,,00051,,,,Muss,
+159,Abschnitts- Kontrollsegment,,UNS,0081,00051,S,,Trennung von Positions- und Summenteil,X,
+160,Rechnungsbetrag,SG50,,,,,,,Muss,
+161,Rechnungsbetrag,SG50,MOA,,00052,,,,Muss,
+162,Rechnungsbetrag,SG50,MOA,5025,00052,77,,Rechnungsbetrag,X,
+163,Rechnungsbetrag,SG50,MOA,5004,00052,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+164,Fälliger Betrag,SG50,,,,,,,Muss,
+165,Fälliger Betrag,SG50,MOA,,00057,,,,Muss,
+166,Fälliger Betrag,SG50,MOA,5025,00057,9,,Fälliger Betrag (inkl. USt.),X,
+167,Fälliger Betrag,SG50,MOA,5004,00057,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+168,Umsatzsteuer der Rechnung,SG52,,,,,,,Muss,
+169,Umsatzsteuer der Rechnung,SG52,TAX,,00058,,,,Muss,
+170,Umsatzsteuer der Rechnung,SG52,TAX,5283,00058,7,,Steuer,X,
+171,Umsatzsteuer der Rechnung,SG52,TAX,5153,00058,VAT,,Umsatzsteuer,X,
+172,Umsatzsteuer der Rechnung,SG52,TAX,5278,00058,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-171,Umsatzsteuer der Rechnung,SG52,TAX,5305,00058,S,,Einheitssatz (Standard),X,
-172,Umsatzsteuer der Rechnung,SG52,TAX,5305,,O,,nicht steuerbar,X,
-173,Umsatzsteuer der Rechnung,SG52,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfänger s,X,
-174,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,00061,,,,Muss,
-175,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,00061,125,,Besteuerungsgrundl age,X,
-176,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,00061,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-177,Steuerbetrag (steuersatzbezogen),SG52,MOA,,00062,,,,Muss,
-178,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,00062,161,,Steuer-/ Gebühren-/ Abgabebetrag,X,
-179,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,00062,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-180,Nachrichtenende,,UNT,,00063,,,,Muss,
-181,Nachrichtenende,,UNT,0074,00063,,,Anzahl der Segmente in einer Nachricht,X,
-182,Nachrichtenende,,UNT,0062,00063,,,Nachrichten- Referenznummer,X,
+173,Umsatzsteuer der Rechnung,SG52,TAX,5305,00058,S,,Einheitssatz (Standard),X,
+174,Umsatzsteuer der Rechnung,SG52,TAX,5305,,O,,nicht steuerbar,X,
+175,Umsatzsteuer der Rechnung,SG52,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfängers,X,
+176,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,00061,,,,Muss,
+177,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,00061,125,,Besteuerungsgrundl age,X,
+178,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,00061,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+179,Steuerbetrag (steuersatzbezogen),SG52,MOA,,00062,,,,Muss,
+180,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,00062,161,,Steuer-/ Gebühren-/ Abgabebetrag,X,
+181,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,00062,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+182,Nachrichtenende,,UNT,,00063,,,,Muss,
+183,Nachrichtenende,,UNT,0074,00063,,,Anzahl der Segmente in einer Nachricht,X,
+184,Nachrichtenende,,UNT,0062,00063,,,Nachrichten- Referenznummer,X,
