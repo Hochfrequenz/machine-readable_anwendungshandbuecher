@@ -10,7 +10,7 @@
 8,Rechnungsnummer,,BGM,1001,,457,,Storno einer Belastung.,X,
 9,Rechnungsnummer,,BGM,1001,,Z25,,Storno für selbst ausgestellte Rechnung (Gutschrift im Gutschriftsverfahren),X,
 10,Rechnungsnummer,,BGM,1004,,,,Dokumentennummer,X,
-11,Rechnungsnummer,,BGM,1225,,,,,7 9,
+11,Rechnungsnummer,,BGM,1225,,,,,79,
 12,Nachrichtendatum,,DTM,,,,,,Muss,
 13,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
 14,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
@@ -19,18 +19,18 @@
 17,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2005,,9,,Bearbeitungs-/ Verarbeitungsdatum/-zeit,X,
 18,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
 19,Bearbeitungs-/ Verarbeitungsdatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-20,Abrechnungszeitraum Beginn,,DTM,,,,,,Muss [18] ∧ [44] ∧ [49] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt 
-[18] Wenn IMD++WIM nicht vorhanden 
-[19] Wenn IMD++WIM vorhanden 
-[44] Wenn IMD++ABS nicht vorhanden 
+20,Abrechnungszeitraum Beginn,,DTM,,,,,,Muss [18] ∧ [44] ∧ [49] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt
+[18] Wenn IMD++WIM nicht vorhanden
+[19] Wenn IMD++WIM vorhanden
+[44] Wenn IMD++ABS nicht vorhanden
 [49] Wenn IMD++Z43 und IMD+Z44 nicht vorhanden"
 21,Abrechnungszeitraum Beginn,,DTM,2005,,155,,"Rechnungsperiode, Beginndatum",X,
 22,Abrechnungszeitraum Beginn,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
 23,Abrechnungszeitraum Beginn,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-24,Abrechnungszeitraum Ende,,DTM,,,,,,Muss [18] ∧ [44] ∧ [49] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt 
-[18] Wenn IMD++WIM nicht vorhanden 
-[19] Wenn IMD++WIM vorhanden 
-[44] Wenn IMD++ABS nicht vorhanden 
+24,Abrechnungszeitraum Ende,,DTM,,,,,,Muss [18] ∧ [44] ∧ [49] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt
+[18] Wenn IMD++WIM nicht vorhanden
+[19] Wenn IMD++WIM vorhanden
+[44] Wenn IMD++ABS nicht vorhanden
 [49] Wenn IMD++Z43 und IMD+Z44 nicht vorhanden"
 25,Abrechnungszeitraum Ende,,DTM,2005,,156,,"Rechnungsperiode, Endedatum",X,
 26,Abrechnungszeitraum Ende,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
@@ -43,150 +43,164 @@
 33,vorläufiger Abrechnungszeitraum Ende,,DTM,2005,,Z43,,vorläufiger Abrechnungszeitraum Ende,X,
 34,vorläufiger Abrechnungszeitraum Ende,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3],
 35,vorläufiger Abrechnungszeitraum Ende,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-36,Ausführungsdatum,,DTM,,,,,,Muss [47] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt 
-[19] Wenn IMD++WIM vorhanden 
+36,Ausführungsdatum,,DTM,,,,,,Muss [47] Soll [19] ∧ [1],"[1] Wenn in zu stornierender Rechnung gefüllt
+[19] Wenn IMD++WIM vorhanden
 [47] Wenn IMD++Z43 vorhanden"
 37,Ausführungsdatum,,DTM,2005,,203,,Ausführungsdatum/-zeit,X,
-38,Ausführungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931][60]) ⊻ [61],"[60] Wenn DTM+203 DE2379 in demselben Segment mit Wert 303 vorhanden 
-[61] Wenn DTM+203 DE2379 in demselben Segment mit Wert 102 vorhanden 
+38,Ausführungsdatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X ([931][60]) ⊻ [61],"[60] Wenn DTM+203 DE2379 in demselben Segment mit Wert 303 vorhanden
+[61] Wenn DTM+203 DE2379 in demselben Segment mit Wert 102 vorhanden
 [931] Format: ZZZ = +00"
 39,Ausführungsdatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X [19],
-40,Ausführungsdatum,,DTM,2379,,102,,CCYYMMDD,X [47],"[19] Wenn IMD++WIM vorhanden 
+40,Ausführungsdatum,,DTM,2379,,102,,CCYYMMDD,X [47],"[19] Wenn IMD++WIM vorhanden
 [47] Wenn IMD++Z43 vorhanden"
 41,Rechnungstyp,,IMD,,,,,,Muss,
 42,Rechnungstyp,,IMD,7081,,ABR,,Abschlussrechnung,X,
 43,Rechnungstyp,,IMD,7081,,ABS,,Abschlagsrechnung,X,
-44,Rechnungstyp,,IMD,7081,,JVR,,Turnusrechnung,X,"[52] Wenn MP-ID in SG2 NAD+MR aus Sparte Gas 
-[57] Wenn DTM+156"
-45,Meldeinformationen,,FTX,,,,,,Soll [4] ,[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
-46,Meldeinformationen,,FTX,4451,,,,,REG,
-47,Meldeinformationen,,FTX,4441,,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerschaft des Leistungsempfängers,X,
-48,Prüfidentifikator,SG1,,,,,,,Muss,
-49,Prüfidentifikator,SG1,RFF,,,,,,Muss,
-50,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
-51,Prüfidentifikator,SG1,RFF,1154,,31004,,Stornorechnung,X,
-52,Referenz auf Ursprungsrechnungsnumm er,SG1,,,,,,,Muss,
-53,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,,,,,,Muss,
-54,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,1153,,OI,,Ursprungsrechnungsnumm er,X [515],[515] Hinweis: BGM DE1004 aus Original-INVOIC-Nachricht
-55,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,1154,,,,"Referenz, Identifikation",X,
-56,Referenzdatum,SG1,DTM,,,,,,Muss,
-57,Referenzdatum,SG1,DTM,2005,,171,,Referenzdatum/-zeit,X,
-58,Referenzdatum,SG1,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
-59,Referenzdatum,SG1,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-60,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
-61,Name und Anschrift des Nachrichtensenders,SG2,NAD,,,,,,Muss,
-62,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,,Nachrichtenaussteller bzw. -absender,,,MS,
-63,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,,,,MP-ID,X,
-64,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,9,,GS1,X,
-65,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband",X,
-66,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,,,,Beteiligter,X,
-67,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z01,,Struktur von Personennamen,X,
-68,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-69,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitzahl verwendet wird
-70,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,,,,Ort,M,
-71,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
-72,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,,,,"Ländername, Code",X,
-73,"Steuernummer, Umsatzsteuer-ID",SG3,,,,,,,Muss,
-74,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,,,,,,Muss,
-75,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,VA,,Umsatzsteueridentifikation snummer,X,
-76,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
-77,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1154,,,,"Referenz, Identifikation",X,
-78,Ansprechpartner,SG5,,,,,,,Kann,
-79,Ansprechpartner,SG5,CTA,,,,,,Muss,
-80,Ansprechpartner,SG5,CTA,3139,,,,,IC,
-81,Ansprechpartner,SG5,CTA,3412,,,,Kontakt,X,
-82,Kommunikationsverbindung,SG5,COM,,,,,,Muss,
-83,Kommunikationsverbindung,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
-84,Kommunikationsverbindung,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
-85,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
-86,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
-87,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-88,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
-89,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,Muss,
-90,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,,,,,Muss,
-91,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,,,,,MR,
-92,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,,,,MP-ID,X,
-93,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,9,,GS1,X,
-94,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-95,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-96,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,,,,Beteiligter,X,
-97,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,,Z01,,Struktur von,X,
-98,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitzahl verwendet wird
-99,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,,Ort,M,
-100,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
-101,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,,"Ländername, Code",X,
-102,"Steuernummer, Umsatzsteuer-ID",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt 
+44,Rechnungstyp,,IMD,7081,,JVR,,Turnusrechnung,X,
+45,Rechnungstyp,,IMD,7081,,MVR,,Monatsrechnung,X,
+46,Rechnungstyp,,IMD,7081,,WIM,,Rechnung für WiM,X,
+47,Rechnungstyp,,IMD,7081,,ZVR,,Zwischenrechnung,X,
+48,Rechnungstyp,,IMD,7081,,13I,,Integrierte 13. Rechnung,X,
+49,Rechnungstyp,,IMD,7081,,13R,,13. Rechnung,X [52] ∨ [57],
+50,Rechnungstyp,,IMD,7081,,MMM,,Mehr-/ Mindermengenabrechnung,X,
+51,Rechnungstyp,,IMD,7081,,MSB,,Rechnung für Messstellenbetrieb,X,
+52,Rechnungstyp,,IMD,7081,,NAP,,Kapazitätsrechnung,X,
+53,Rechnungstyp,,IMD,7081,,Z43,,Rechnung für Sperren und Wiederinbetriebnahme,X,
+54,Rechnungstyp,,IMD,7081,,Z44,,Verzugskostenrechnung,X,
+55,Rechnungstyp,,IMD,7081,,Z45,,Blindarbeitrechnung,X,
+56,Rechnungstyp,,IMD,7081,,SOR,,Sonderrechnung,X,"[52] Wenn MP-ID in SG2 NAD+MR aus Sparte Gas
+[57] Wenn DTM+156 (Abrechnungszeitraum Ende) <= 1.1.2023 0:00 gesetzlicher deutscher Zeit"
+57,Meldeinformationen,,FTX,,,,,,Soll [4] ,[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
+58,Meldeinformationen,,FTX,4451,,,,,REG,
+59,Meldeinformationen,,FTX,4441,,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerschaft des Leistungsempfängers,X,
+60,Prüfidentifikator,SG1,,,,,,,Muss,
+61,Prüfidentifikator,SG1,RFF,,,,,,Muss,
+62,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
+63,Prüfidentifikator,SG1,RFF,1154,,31004,,Stornorechnung,X,
+64,Referenz auf Ursprungsrechnungsnumm er,SG1,,,,,,,Muss,
+65,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,,,,,,Muss,
+66,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,1153,,OI,,Ursprungsrechnungsnumm er,X [515],[515] Hinweis: BGM DE1004 aus Original-INVOIC-Nachricht
+67,Referenz auf Ursprungsrechnungsnumm er,SG1,RFF,1154,,,,"Referenz, Identifikation",X,
+68,Referenzdatum,SG1,DTM,,,,,,Muss,
+69,Referenzdatum,SG1,DTM,2005,,171,,Referenzdatum/-zeit,X,
+70,Referenzdatum,SG1,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
+71,Referenzdatum,SG1,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
+72,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
+73,Name und Anschrift des Nachrichtensenders,SG2,NAD,,,,,,Muss,
+74,Name und Anschrift des Nachrichtensenders,SG2,NAD,3035,,Nachrichtenaussteller bzw. -absender,,,MS,
+75,Name und Anschrift des Nachrichtensenders,SG2,NAD,3039,,,,MP-ID,X,
+76,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,9,,GS1,X,
+77,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+78,Name und Anschrift des Nachrichtensenders,SG2,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+79,Name und Anschrift des Nachrichtensenders,SG2,NAD,3036,,,,Beteiligter,X,
+80,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z01,,Struktur von Personennamen,X,
+81,Name und Anschrift des Nachrichtensenders,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+82,Name und Anschrift des Nachrichtensenders,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitzahl verwendet wird
+83,Name und Anschrift des Nachrichtensenders,SG2,NAD,3164,,,,Ort,M,
+84,Name und Anschrift des Nachrichtensenders,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
+85,Name und Anschrift des Nachrichtensenders,SG2,NAD,3207,,,,"Ländername, Code",X,
+86,"Steuernummer, Umsatzsteuer-ID",SG3,,,,,,,Muss,
+87,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,,,,,,Muss,
+88,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,VA,,Umsatzsteueridentifikation snummer,X,
+89,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
+90,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1154,,,,"Referenz, Identifikation",X,
+91,Ansprechpartner,SG5,,,,,,,Kann,
+92,Ansprechpartner,SG5,CTA,,,,,,Muss,
+93,Ansprechpartner,SG5,CTA,3139,,,,,IC,
+94,Ansprechpartner,SG5,CTA,3412,,,,Kontakt,X,
+95,Kommunikationsverbindung,SG5,COM,,,,,,Muss,
+96,Kommunikationsverbindung,SG5,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
+97,Kommunikationsverbindung,SG5,COM,3155,,EM,,Elektronische Post,X [1P0..1],
+98,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
+99,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
+100,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+101,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
+102,Name und Anschrift des Nachrichtenempfängers,SG2,,,,,,,Muss,
+103,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,,,,,,Muss,
+104,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3035,,,,,MR,
+105,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3039,,,,MP-ID,X,
+106,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,9,,GS1,X,
+107,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+108,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+109,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3036,,,,Beteiligter,X,
+110,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,,Z01,,Struktur von Personennamen,X,
+111,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+112,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [7],[7] Sofern keine Großkundenpostleitzahl verwendet wird
+113,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,,,,Ort,M,
+114,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
+115,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,,,,"Ländername, Code",X,
+116,"Steuernummer, Umsatzsteuer-ID",SG3,,,,,,,Muss [5] Soll [4],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
 [5] Wenn SG2 NAD+MR DE3207 <> „DE“"
-103,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,,,,,,Muss,
-104,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,VA,,Umsatzsteueridentifikation snummer,X,
-105,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
-106,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1154,,,,"Referenz, Identifikation",X,
-107,Adresse der Markt- oder Messlokation,SG2,,,,,,,Muss [30],[30] Wenn MP-ID in SG2 NAD+MR nicht in der Rolle MGV oder KN
-108,Adresse der Markt- oder Messlokation,SG2,NAD,,,,,,Muss,
-109,Adresse der Markt- oder Messlokation,SG2,NAD,3035,,,,,DP,
-110,Adresse der Markt- oder Messlokation,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [22],[22] Wenn vorhanden
-111,Adresse der Markt- oder Messlokation,SG2,NAD,3164,,,,Ort,M,
-112,Adresse der Markt- oder Messlokation,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
-113,Adresse der Markt- oder Messlokation,SG2,NAD,3207,,,,"Ländername, Code",X,
-114,Meldepunkt,SG2,LOC,,,,,,Muss,
-115,Meldepunkt,SG2,LOC,3227,,,,,172,
-116,Meldepunkt,SG2,LOC,3225,,,,"Ortsangabe, Nummer",X [950] [509]  X [951] [510],"[509] Hinweis: Verwendung der ID der Marktlokation 
-[510] Hinweis: Verwendung der ID der Messlokation 
-[950] Format: Marktlokations-ID 
+117,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,,,,,,Muss,
+118,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,VA,,Umsatzsteueridentifikation snummer,X,
+119,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1153,,FC,,Steuernummer,X [6],[6] Wenn SG2 NAD+MR DE3207 = „DE“
+120,"Steuernummer, Umsatzsteuer-ID",SG3,RFF,1154,,,,"Referenz, Identifikation",X,
+121,Adresse der Markt- oder Messlokation,SG2,,,,,,,Muss [30],[30] Wenn MP-ID in SG2 NAD+MR nicht in der Rolle MGV oder KN
+122,Adresse der Markt- oder Messlokation,SG2,NAD,,,,,,Muss,
+123,Adresse der Markt- oder Messlokation,SG2,NAD,3035,,,,,DP,
+124,Adresse der Markt- oder Messlokation,SG2,NAD,3042,,,,Straße und Hausnummer oder Postfach,S [22],[22] Wenn vorhanden
+125,Adresse der Markt- oder Messlokation,SG2,NAD,3164,,,,Ort,M,
+126,Adresse der Markt- oder Messlokation,SG2,NAD,3251,,,,"Postleitzahl, Code",X,
+127,Adresse der Markt- oder Messlokation,SG2,NAD,3207,,,,"Ländername, Code",X,
+128,Meldepunkt,SG2,LOC,,,,,,Muss,
+129,Meldepunkt,SG2,LOC,3227,,,,,172,
+130,Meldepunkt,SG2,LOC,3225,,,,"Ortsangabe, Nummer",X [950] [509]  X [951] [510],"[509] Hinweis: Verwendung der ID der Marktlokation
+[510] Hinweis: Verwendung der ID der Messlokation
+[950] Format: Marktlokations-ID
 [951] Format: Zählpunktbezeichnung"
-117,Netzbetreiberkontonumme r,SG2,,,,,,,Muss [31],[31] Wenn MP-ID in SG2 NAD+MR in der Rolle MGV
-118,Netzbetreiberkontonumme r,SG2,NAD,,,,,,Muss,
-119,Netzbetreiberkontonumme r,SG2,NAD,3035,,,,,ZSH,
-120,Netzbetreiberkontonumme r,SG2,NAD,3039,,,,"Beteiligter, Identifikation",X,
-121,Währungsangaben,SG7,,,,,,,Muss,
-122,Währungsangaben,SG7,CUX,,,,,,Muss,
-123,Währungsangaben,SG7,CUX,6347,,2,,Referenzwährung,X,
-124,Währungsangaben,SG7,CUX,6345,,EUR,,Euro,X,
-125,Währungsangaben,SG7,CUX,6343,,4,,Währung der Rechnung,X,
-126,Zahlungsbedingungen,SG8,,,,,,,Muss,
-127,Zahlungsbedingungen,SG8,PYT,,,,,,Muss,
-128,Zahlungsbedingungen,SG8,PYT,4279,,,,,3,
-129,Fälligkeitsdatum,SG8,DTM,,,,,,Muss,
-130,Fälligkeitsdatum,SG8,DTM,2005,,265,,Fälligkeitsdatum,X,
-131,Fälligkeitsdatum,SG8,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-132,Fälligkeitsdatum,SG8,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
-133,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
-134,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
-135,Rechnungsbetrag,SG50,,,,,,,Muss,
-136,Rechnungsbetrag,SG50,MOA,,,,,,Muss,
-137,Rechnungsbetrag,SG50,MOA,5025,,77,,Rechnungsbetrag,X,
-138,Rechnungsbetrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-139,Vorausbezahlter Betrag,SG50,,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
-140,Vorausbezahlter Betrag,SG50,MOA,,,,,,Muss,
-141,Vorausbezahlter Betrag,SG50,MOA,5025,,113,,Vorausbezahlter Betrag (inkl. USt.),X,
-142,Vorausbezahlter Betrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-143,Gemeinderabatt,SG50,,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
-144,Gemeinderabatt,SG50,MOA,,,,,,Muss,
-145,Gemeinderabatt,SG50,MOA,5025,,Z01,,Gemeinderabatt,X,
-146,Gemeinderabatt,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-147,Fälliger Betrag,SG50,,,,,,,Muss,
-148,Fälliger Betrag,SG50,MOA,,,,,,Muss,
-149,Fälliger Betrag,SG50,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
-150,Fälliger Betrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-151,Umsatzsteuer der Rechnung,SG52,,,,,,,Muss,
-152,Umsatzsteuer der Rechnung,SG52,TAX,,,,,,Muss,
-153,Umsatzsteuer der Rechnung,SG52,TAX,5283,,,,,7,
-154,Umsatzsteuer der Rechnung,SG52,TAX,5153,,VAT,,Umsatzsteuer,X,
-155,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+131,Netzbetreiberkontonumme r,SG2,,,,,,,Muss [31],[31] Wenn MP-ID in SG2 NAD+MR in der Rolle MGV
+132,Netzbetreiberkontonumme r,SG2,NAD,,,,,,Muss,
+133,Netzbetreiberkontonumme r,SG2,NAD,3035,,,,,ZSH,
+134,Netzbetreiberkontonumme r,SG2,NAD,3039,,,,"Beteiligter, Identifikation",X,
+135,Währungsangaben,SG7,,,,,,,Muss,
+136,Währungsangaben,SG7,CUX,,,,,,Muss,
+137,Währungsangaben,SG7,CUX,6347,,2,,Referenzwährung,X,
+138,Währungsangaben,SG7,CUX,6345,,EUR,,Euro,X,
+139,Währungsangaben,SG7,CUX,6343,,4,,Währung der Rechnung,X,
+140,Zahlungsbedingungen,SG8,,,,,,,Muss,
+141,Zahlungsbedingungen,SG8,PYT,,,,,,Muss,
+142,Zahlungsbedingungen,SG8,PYT,4279,,,,,3,
+143,Fälligkeitsdatum,SG8,DTM,,,,,,Muss,
+144,Fälligkeitsdatum,SG8,DTM,2005,,265,,Fälligkeitsdatum,X,
+145,Fälligkeitsdatum,SG8,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+146,Fälligkeitsdatum,SG8,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
+147,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
+148,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
+149,Rechnungsbetrag,SG50,,,,,,,Muss,
+150,Rechnungsbetrag,SG50,MOA,,,,,,Muss,
+151,Rechnungsbetrag,SG50,MOA,5025,,77,,Rechnungsbetrag,X,
+152,Rechnungsbetrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+153,Vorausbezahlter Betrag,SG50,,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
+154,Vorausbezahlter Betrag,SG50,MOA,,,,,,Muss,
+155,Vorausbezahlter Betrag,SG50,MOA,5025,,113,,Vorausbezahlter Betrag (inkl. USt.),X,
+156,Vorausbezahlter Betrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+157,Gemeinderabatt,SG50,,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
+158,Gemeinderabatt,SG50,MOA,,,,,,Muss,
+159,Gemeinderabatt,SG50,MOA,5025,,Z01,,Gemeinderabatt,X,
+160,Gemeinderabatt,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+161,Fälliger Betrag,SG50,,,,,,,Muss,
+162,Fälliger Betrag,SG50,MOA,,,,,,Muss,
+163,Fälliger Betrag,SG50,MOA,5025,,9,,Fälliger Betrag (inkl. USt.),X,
+164,Fälliger Betrag,SG50,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+165,Umsatzsteuer der Rechnung,SG52,,,,,,,Muss,
+166,Umsatzsteuer der Rechnung,SG52,TAX,,,,,,Muss,
+167,Umsatzsteuer der Rechnung,SG52,TAX,5283,,,,,7,
+168,Umsatzsteuer der Rechnung,SG52,TAX,5153,,VAT,,Umsatzsteuer,X,
+169,Umsatzsteuer der Rechnung,SG52,TAX,5278,,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
-156,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,S O AE,
-157,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
-158,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,,113,,Vorausbezahlter Betrag (inkl. USt.),X,
-159,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-160,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
-161,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,,115,,Vorausbezahlte Steuern (USt.-Anteil des vorausbezahlten Betrages),X,
-162,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-163,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,,Muss,
-164,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,,125,,Besteuerungsgrundlage,X,
-165,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-166,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,,Muss,
-167,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,,161,,Steuer-/Gebühren-/ Abgabebetrag,X,
-168,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-169,Nachrichtenende,,UNT,,,,,,Muss,
-170,Nachrichtenende,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-171,Nachrichtenende,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+170,Umsatzsteuer der Rechnung,SG52,TAX,5305,,Steuerschuldnerschaft des Leistungsempfängers,,,SO AE,
+171,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
+172,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5025,,113,,Vorausbezahlter Betrag (inkl. USt.),X,
+173,Vorausbezahlter Betrag (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+174,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,,,,,,Soll [34],[34] Wenn in Ursprungsrechnung vorhanden
+175,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5025,,115,,Vorausbezahlte Steuern (USt.-Anteil des vorausbezahlten Betrages),X,
+176,Vorausbezahlte Steuern (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+177,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,,,,,Muss,
+178,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,,125,,Besteuerungsgrundlage,X,
+179,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+180,Steuerbetrag (steuersatzbezogen),SG52,MOA,,,,,,Muss,
+181,Steuerbetrag (steuersatzbezogen),SG52,MOA,5025,,161,,Steuer-/Gebühren-/ Abgabebetrag,X,
+182,Steuerbetrag (steuersatzbezogen),SG52,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+183,Nachrichtenende,,UNT,,,,,,Muss,
+184,Nachrichtenende,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+185,Nachrichtenende,,UNT,0062,,,,Nachrichten-Referenznummer,X,

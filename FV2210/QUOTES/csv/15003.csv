@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Beginn zum (nächstmöglichen Termin),,DTM,,,,,,Muss,
@@ -20,7 +20,7 @@
 17,Beginn zum (nächstmöglichen Termin),,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 18,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,,,,,,Kann,
 19,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2005,,279,,Vom Bestelleingangsdatum bis Lieferdatum,X,
-20,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2380,,,,Zeitraum,X [908],[908] Format: Mögliche Werte: 1
+20,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2380,,,,Zeitraum,X [908],[908] Format: Mögliche Werte: 1 bis n
 21,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2379,,802,,Monat,X,
 22,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2379,,803,,Woche,X,
 23,Erforderliche Zeitspanne zur Einrichtung der Übermittlung von Werten ab Bestellung,,DTM,2379,,804,,Tag,X,
@@ -74,19 +74,22 @@
 71,Marktlokation bzw. Messlokation,SG11,NAD,3035,,,,,DP,
 72,Meldepunkt,SG11,LOC,,,,,,Muss,
 73,Meldepunkt,SG11,LOC,3227,,,,,172,
-74,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [950] [501] ⊻ [951] [502] ⊻ [950] [507],"[501] Hinweis: Verwendung der ID der Marktlokation 
-[502] Hinweis: Verwendung der ID der Messlokation"
-75,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [2041] ∧ [510],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden 
-[36] Wenn in derselben Nachricht eine SG27 mit Z16 in LIN DE1229 nicht vorhanden 
-[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung 
+74,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [950] [501] ⊻ [951] [502] ⊻ [950] [507],"[501] Hinweis: Verwendung der ID der Marktlokation
+[502] Hinweis: Verwendung der ID der Messlokation
+[507] Hinweis: Verwendung der ID der Tranche
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung"
+75,Erforderliches Messprodukt der Marktlokation,SG27,,,,,,,Muss [32] ∧ [36] ∧ [2041] ∧ [510],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden
+[36] Wenn in derselben Nachricht eine SG27 mit Z16 in LIN DE1229 nicht vorhanden
+[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung
 [2041] Pro Nachricht ist die SG27 bis zu zwei Mal anzugeben. Wird die SG27 zwei Mal angegeben, dann ist SG31 ein Mal mit Stückpreis und ein Mal mit Tagespreis anzugeben. Wird die SG27 ein Mal angegeben, dann ist SG31 ein Mal mit Tagespreis anzugeben."
 76,Erforderliches Messprodukt der Marktlokation,SG27,LIN,,,,,,Muss,
 77,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 78,Erforderliches Messprodukt der Marktlokation,SG27,LIN,1229,,Marktlokation,,,Z27,
 79,Erforderliches Messprodukt der Marktlokation,SG27,PIA,,,,,,Muss,
 80,Erforderliches Messprodukt der Marktlokation,SG27,PIA,4347,,,,,5,
-81,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ [45],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
-[45] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 2.1 ""Standard- Messprodukte der Marktlokation"""
+81,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ [45],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
+[45] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 2.1 ""Standard- Messprodukte der Marktlokation"" in der Spalte ""Messprodukt gegenüber MSB von Marktrolle bestellbar"" bei ESA mit ""X"" gekennzeichnet sind."
 82,Erforderliches Messprodukt der Marktlokation,SG27,PIA,7143,,Z11,,Messprodukt,X,
 83,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,,,,,,Muss,
 84,Erforderliche OBIS-Kennzahl der Marktlokation,SG27,PIA,4347,,,,,5,
@@ -102,16 +105,16 @@
 94,Preisangaben,SG31,PRI,5118,,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
 95,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X,
 96,Preisangaben,SG31,PRI,6411,,H87,,Stück,X,
-97,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [32] ∧ [37] ∧ [2041] ∧ [510],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden 
-[37] Wenn in derselben Nachricht eine SG27 mit Z27 in LIN DE1229 nicht vorhanden 
-[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung 
-[2041] Pro Nachricht ist die SG27 bis zu zwei Mal anzugeben. Wird die SG27 zwei Mal angegeben, dann ist SG31 ein Mal mit Stückpreis und ein Mal mit"
+97,Erforderliches Messprodukt der Tranche,SG27,,,,,,,Muss [32] ∧ [37] ∧ [2041] ∧ [510],"[32] Wenn 11-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden
+[37] Wenn in derselben Nachricht eine SG27 mit Z27 in LIN DE1229 nicht vorhanden
+[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung
+[2041] Pro Nachricht ist die SG27 bis zu zwei Mal anzugeben. Wird die SG27 zwei Mal angegeben, dann ist SG31 ein Mal mit Stückpreis und ein Mal mit Tagespreis anzugeben. Wird die SG27 ein Mal angegeben, dann ist SG31 ein Mal mit Tagespreis anzugeben."
 98,Erforderliches Messprodukt der Tranche,SG27,LIN,,,,,,Muss,
 99,Erforderliches Messprodukt der Tranche,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 100,Erforderliches Messprodukt der Tranche,SG27,LIN,1229,,der Tranche,,,Z16,
 101,Erforderliches Messprodukt der Tranche,SG27,PIA,,,,,,Muss,
 102,Erforderliches Messprodukt der Tranche,SG27,PIA,4347,,,,,5,
-103,Erforderliches Messprodukt der Tranche,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ [46],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
+103,Erforderliches Messprodukt der Tranche,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ [46],"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
 [46] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 2.2 ""Standard- Messprodukte der Tranche"" in der Spalte ""Messprodukt gegenüber MSB von Marktrolle bestellbar"" bei ESA mit ""X"" gekennzeichnet sind."
 104,Erforderliches Messprodukt der Tranche,SG27,PIA,7143,,Z11,,Messprodukt,X,
 105,Erforderliche OBIS-Kennzahl der Tranche,SG27,PIA,,,,,,Muss,
@@ -128,16 +131,17 @@
 116,Preisangaben,SG31,PRI,5118,,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
 117,Preisangaben,SG31,PRI,6411,,DAY,,Tag,X,
 118,Preisangaben,SG31,PRI,6411,,H87,,Stück,X,
-119,Erforderliches Messprodukt der Messlokation,SG27,,,,,,,Muss [33] ∧ [2041] ∧ [510],"[33] Wenn 33-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden 
-[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung 
+119,Erforderliches Messprodukt der Messlokation,SG27,,,,,,,Muss [33] ∧ [2041] ∧ [510],"[33] Wenn 33-stellige ID im SG11 LOC+172 (Meldepunk) DE3225 vorhanden
+[510] Hinweis: Ein Mal für die regelmäßige Übermittlung der Werte und ein Mal, wenn vorhanden, für die initiale Einrichtung der Wertübermittlung
 [2041] Pro Nachricht ist die SG27 bis zu zwei Mal anzugeben. Wird die SG27 zwei Mal angegeben, dann ist SG31 ein Mal mit Stückpreis und ein Mal mit Tagespreis anzugeben. Wird die SG27 ein Mal angegeben, dann ist SG31 ein Mal mit Tagespreis anzugeben."
 120,Erforderliches Messprodukt der Messlokation,SG27,LIN,,,,,,Muss,
 121,Erforderliches Messprodukt der Messlokation,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
 122,Erforderliches Messprodukt der Messlokation,SG27,LIN,1229,,der Messlokation,,,Z19,
 123,Erforderliches Messprodukt der Messlokation,SG27,PIA,,,,,,Muss,
 124,Erforderliches Messprodukt der Messlokation,SG27,PIA,4347,,,,,5,
-125,Erforderliches Messprodukt der Messlokation,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ ([47] ∨ [48]),"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden. 
-[47] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 2.3 ""Standard- Messprodukte der Messlokation"" in der Spalte ""Messprodukt gegenüber MSB von Marktrolle"
+125,Erforderliches Messprodukt der Messlokation,SG27,PIA,7140,,,,Messprodukt-Code,X [42] ∧ ([47] ∨ [48]),"[42] In derselben Nachricht muss immer derselbe Messprodukt- Code angegeben werden.
+[47] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 2.3 ""Standard- Messprodukte der Messlokation"" in der Spalte ""Messprodukt gegenüber MSB von Marktrolle bestellbar"" bei ESA mit ""X"" gekennzeichnet sind.
+[48] Es sind nur die Messprodukt-Codes erlaubt, die in der Codeliste der Messprodukte im Kapitel 4 ""Codeliste der Mess- produkte Strom, die ausschließlich für die Rolle ESA Anwendung finden"" angegeben sind."
 126,Erforderliches Messprodukt der Messlokation,SG27,PIA,7143,,Z11,,Messprodukt,X,
 127,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,,,,,,Muss [43],[43] Nicht wenn Messprodukt in derselben Nachricht in DE7140 eines PIA mit Z11 in DE7143 aus Kapitel 4 der Codeliste der Messprodukte vorhanden und der Übertragungsweg aus dem SMGw ist.
 128,Erforderliche OBIS-Kennzahl der Messlokation,SG27,PIA,4347,,,,,5,

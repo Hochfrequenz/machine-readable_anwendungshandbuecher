@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibun g,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,,5.2e,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -62,7 +62,11 @@
 59,Prüfidentifikator,SG6,RFF,,,,,,Muss,
 60,Prüfidentifikator,SG6,RFF,1153,,Z13,,Prüfidentifikator,X,
 61,Prüfidentifikator,SG6,RFF,1154,,11150,,SDÄ / Bila.rel. Anfrage an LF NB an LF,X,
-62,Daten der Marktlokation,SG8,,,,,,,Muss ([493] ∧ [2061]) ⊻ ([492] ∧,"[250] Für die  11-stellige ID im SG5 LOC+172 (Meldepunkt) DE3225,"
+62,Daten der Marktlokation,SG8,,,,,,,Muss ([493] ∧ [2061]) ⊻ ([492] ∧ [250]),"[250] Für die  11-stellige ID im SG5 LOC+172 (Meldepunkt) DE3225, wenn SG8+Z15 (Daten der Tranche) nicht vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
 63,Daten der Marktlokation,SG8,SEQ,,,,,,Muss,
 64,Daten der Marktlokation,SG8,SEQ,1229,,Z01,,Daten der Marktlokation,X,
 65,Referenz auf die ID der Marktlokation,SG8,RFF,,,,,,Muss,
@@ -77,7 +81,9 @@
 74,Bilanzkreis,SG10,CCI,,,,,,Muss,
 75,Bilanzkreis,SG10,CCI,7059,,Z19,,Bilanzkreis,X,
 76,Bilanzkreis,SG10,CCI,7037,,,,Bilanzkreis,X,
-77,Status der erzeugenden Marktlokation,SG10,,,,,,,Kann [54] ∧ [492],[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+77,Status der erzeugenden Marktlokation,SG10,,,,,,,Kann [54] ∧ [492],"[54] Wenn SG8 SEQ+Z01 (Daten der Marktlokation) SG10 CCI+Z30++Z06 (Lieferrichtung: Erzeugung) vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
 78,Status der erzeugenden Marktlokation,SG10,CCI,,,,,,Muss,
 79,Status der erzeugenden Marktlokation,SG10,CCI,7059,,Z22,,Gesetzliche Kategorie,X,
 80,Status der erzeugenden Marktlokation,SG10,CCI,7037,,Z90,,Veräußerungsform nach § 20 Abs. 1 Nr. 3 EEG 2014 („Einspeisevergütung nach § 37“) bzw. § 21 Abs. 2 EEG 2017,X,
@@ -90,10 +96,10 @@
 87,Land der Förderung,SG10,CCI,,,,,,Muss,
 88,Land der Förderung,SG10,CCI,7059,,Z23,,Land der Förderung,X,
 89,Land der Förderung,SG10,CCI,7037,,,,Land der Förderung,X,
-90,Land der Förderung,SG10,CCI,1131,,LAND,,EDI@Energy Codeliste der europäischen,X,
+90,Land der Förderung,SG10,CCI,1131,,LAND,,EDI@Energy Codeliste der europäischen Ländercodes,X,
 91,Land der Förderung,SG10,CCI,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-92,Daten der Tranche,SG8,,,,,,,Muss [492] ∧ [226] ,"[226] Für die 11-stellige ID im SG5 LOC+172 (Meldepunkt) DE3225, wenn SG8 SEQ+Z01 (Daten der Marktlokation) nicht vorhanden  
-[336] Wenn in Änderungsmeldung gefüllt  
+92,Daten der Tranche,SG8,,,,,,,Muss [492] ∧ [226] ,"[226] Für die 11-stellige ID im SG5 LOC+172 (Meldepunkt) DE3225, wenn SG8 SEQ+Z01 (Daten der Marktlokation) nicht vorhanden
+[336] Wenn in Änderungsmeldung gefüllt
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
 93,Daten der Tranche,SG8,SEQ,,,,,,Muss,
 94,Daten der Tranche,SG8,SEQ,1229,,Z15,,Daten der Tranche,X,
