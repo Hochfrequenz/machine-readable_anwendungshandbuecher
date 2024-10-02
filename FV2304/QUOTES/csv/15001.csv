@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Angebot,,QUOTE S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,QUOTES,,Angebot,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Datum zum geplanten Leistungsbeginn,,DTM,,,,,,Muss,
@@ -50,200 +50,205 @@
 47,Kommunikationsverbindung,SG14,COM,3155,,EM,,Elektronische Post,X [1P0..1],
 48,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
 49,Kommunikationsverbindung,SG14,COM,3155,,TE,,Telefon,X [1P0..1],
-50,MP-ID Empfänger,SG11,,,,,,,Muss,
-51,MP-ID Empfänger,SG11,NAD,,,,,,Muss,
-52,MP-ID Empfänger,SG11,NAD,3035,,,,,MR,
-53,MP-ID Empfänger,SG11,NAD,3039,,,,MP-ID,X,
-54,MP-ID Empfänger,SG11,NAD,3055,,9,,GS1,X,
-55,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-56,MP-ID Empfänger,SG11,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-57,Marktlokation bzw. Messlokation,SG11,,,,,,,Muss,
-58,Marktlokation bzw. Messlokation,SG11,NAD,,,,,,Muss,
-59,Marktlokation bzw. Messlokation,SG11,NAD,3035,,,,,DP,
-60,Meldepunkt,SG11,LOC,,,,,,Muss,
-61,Meldepunkt,SG11,LOC,3227,,,,,172,
-62,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [951] [502],"[502] Hinweis: Verwendung der ID der Messlokation 
+50,Kommunikationsverbindung,SG14,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+51,Kommunikationsverbindung,SG14,COM,3155,,AL,,Handy,X [1P0..1],
+52,MP-ID Empfänger,SG11,,,,,,,Muss,
+53,MP-ID Empfänger,SG11,NAD,,,,,,Muss,
+54,MP-ID Empfänger,SG11,NAD,3035,,,,,MR,
+55,MP-ID Empfänger,SG11,NAD,3039,,,,MP-ID,X,
+56,MP-ID Empfänger,SG11,NAD,3055,,9,,GS1,X,
+57,MP-ID Empfänger,SG11,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+58,MP-ID Empfänger,SG11,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+59,Marktlokation bzw. Messlokation,SG11,,,,,,,Muss,
+60,Marktlokation bzw. Messlokation,SG11,NAD,,,,,,Muss,
+61,Marktlokation bzw. Messlokation,SG11,NAD,3035,,,,,DP,
+62,Meldepunkt,SG11,LOC,,,,,,Muss,
+63,Meldepunkt,SG11,LOC,3227,,,,,172,
+64,Meldepunkt,SG11,LOC,3225,,,,Identifikator,X [951] [502],"[502] Hinweis: Verwendung der ID der Messlokation
 [951] Format: Zählpunktbezeichnung"
-63,Positionsdaten,SG27,,,,,,,Muss,
-64,Positionsdaten,SG27,LIN,,,,,,Muss,
-65,Positionsdaten,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
-66,Positionsdaten,SG27,LIN,7140,,,,Artikelnummer,X [31],"[31] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind."
-67,Positionsdaten,SG27,LIN,7143,,Z01,,Artikelnummer,X,
-68,Produkt-/ Leistungsbeschreibung,SG27,IMD,,,,,,Soll [1],[1] Wenn Position nicht
-69,Produkt-/ Leistungsbeschreibung,SG27,IMD,7081,,Z09,,Kann nicht angeboten werden,X,
-70,Menge,SG27,QTY,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-71,Menge,SG27,QTY,6063,,145,,Istbestand,X,
-72,Menge,SG27,QTY,6060,,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
-73,Menge,SG27,QTY,6411,,H87,,Stück,X,
-74,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-75,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,,94,,Produktions-/ Herstellungsdatum,X,
-76,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,,Z03,,Baujahr/Jahr des in Verkehrs bringens,X,
-77,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-78,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2379,,602,,CCYY,X,
-79,Eichgültigkeitsdauer bis,SG27,DTM,,,,,,Muss [2] ∧ ([5] ⊻ [3] ⊻ [22]),"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
-[3] Wenn CCI+++Z64 vorhanden ist 
-[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist 
+65,Positionsdaten,SG27,,,,,,,Muss,
+66,Positionsdaten,SG27,LIN,,,,,,Muss,
+67,Positionsdaten,SG27,LIN,1082,,,,Positionsnummer,X [911],"[911] Format: Mögliche Werte: 1 bis n, je Nachricht oder Segmentgruppe bei 1 beginnend und fortlaufend aufsteigend"
+68,Positionsdaten,SG27,LIN,7140,,,,Artikelnummer,X [31],"[31] Es sind nur die Artikelnummern erlaubt, die in der Codeliste der Artikelnummern des BDEW mit dem entsprechenden Prüfidentifikator versehen sind."
+69,Positionsdaten,SG27,LIN,7143,,Z01,,Artikelnummer,X,
+70,Produkt-/ Leistungsbeschreibung,SG27,IMD,,,,,,Soll [1],"[1] Wenn Position nicht angeboten werden kann, weil rechtliche Regelungen oder Rechte Dritter dem entgegenstehen"
+71,Produkt-/ Leistungsbeschreibung,SG27,IMD,7081,,Z09,,Kann nicht angeboten werden,X,
+72,Menge,SG27,QTY,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+73,Menge,SG27,QTY,6063,,145,,Istbestand,X,
+74,Menge,SG27,QTY,6060,,,,Menge,X [908],[908] Format: Mögliche Werte: 1 bis n
+75,Menge,SG27,QTY,6411,,H87,,Stück,X,
+76,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+77,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,,94,,Produktions-/ Herstellungsdatum,X,
+78,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2005,,Z03,,Baujahr/Jahr des in Verkehrs bringens,X,
+79,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+80,Baujahr/Jahr des In Verkehrs bringen,SG27,DTM,2379,,602,,CCYY,X,
+81,Eichgültigkeitsdauer bis,SG27,DTM,,,,,,Muss [2] ∧ ([5] ⊻ [3] ⊻ [22]),"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[3] Wenn CCI+++Z64 vorhanden ist
+[5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist
 [22] Wenn CCI+++Z75 vorhanden ist"
-80,Eichgültigkeitsdauer bis,SG27,DTM,2005,,Z04,,Eichgültigkeit,X,
-81,Eichgültigkeitsdauer bis,SG27,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-82,Eichgültigkeitsdauer bis,SG27,DTM,2379,,602,,CCYY,X,
-83,Herstellernummer,SG27,GIN,,,,,,Soll [2] ∧ [4],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-84,Herstellernummer,SG27,GIN,7405,,,,,BN,
-85,Herstellernummer,SG27,GIN,7402,,,,Herstellernummer,X,
-86,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,,,,,,Kann,
-87,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4451,,(für allgemeine Hinweise),,,ACB,
-88,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4440,,,,Freier Text,X,
-89,Zähleinrichtung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
+82,Eichgültigkeitsdauer bis,SG27,DTM,2005,,Z04,,Eichgültigkeit,X,
+83,Eichgültigkeitsdauer bis,SG27,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+84,Eichgültigkeitsdauer bis,SG27,DTM,2379,,602,,CCYY,X,
+85,Herstellernummer,SG27,GIN,,,,,,Soll [2] ∧ [4],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[4] Wenn am Gerät vorhanden und abweichend von Gerätenummer"
+86,Herstellernummer,SG27,GIN,7405,,,,,BN,
+87,Herstellernummer,SG27,GIN,7402,,,,Herstellernummer,X,
+88,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,,,,,,Kann,
+89,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4451,,(für allgemeine Hinweise),,,ACB,
+90,Allgemeine Information (Feld für allgemeine Hinweise),SG27,FTX,4440,,,,Freier Text,X,
+91,Zähleinrichtung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
 [5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
-90,Zähleinrichtung,SG28,CCI,,,,,,Muss,
-91,Zähleinrichtung,SG28,CCI,7037,,E13,,Zählertyp,X,
-92,Zähleinrichtung/Zählertyp,SG28,CAV,,,,,,Muss,
-93,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,AHZ,,analoger Haushaltszähler (Drehstrom),X [492],
-94,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WSZ,,analoger Wechselstromzähler,X [492],
-95,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,LAZ,,Lastgangzähler,X [492],
-96,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MAZ,,Maximumzähler,X [492],
-97,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,DKZ,,Drehkolbengaszähler,X [493],
-98,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,BGZ,,Balgengaszähler,X [493],
-99,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,TRZ,,Turbinenradgaszähler,X [493],
-100,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,UGZ,,Ultraschallgaszähler,X [493],
-101,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WGZ,,Wirbelgaszähler,X [493],
-102,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MRG,,Messdatenregistriergerät,X [493],
-103,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X,
-104,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
-105,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
+92,Zähleinrichtung,SG28,CCI,,,,,,Muss,
+93,Zähleinrichtung,SG28,CCI,7037,,E13,,Zählertyp,X,
+94,Zähleinrichtung/Zählertyp,SG28,CAV,,,,,,Muss,
+95,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,AHZ,,analoger Haushaltszähler (Drehstrom),X [492],
+96,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WSZ,,analoger Wechselstromzähler,X [492],
+97,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,LAZ,,Lastgangzähler,X [492],
+98,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MAZ,,Maximumzähler,X [492],
+99,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,DKZ,,Drehkolbengaszähler,X [493],
+100,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,BGZ,,Balgengaszähler,X [493],
+101,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,TRZ,,Turbinenradgaszähler,X [493],
+102,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,UGZ,,Ultraschallgaszähler,X [493],
+103,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,WGZ,,Wirbelgaszähler,X [493],
+104,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MRG,,Messdatenregistriergerät,X [493],
+105,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X,
+106,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
+107,Zähleinrichtung/Zählertyp,SG28,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
-106,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z01,,EDL40,X [8],
-107,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z02,,EDL21,X [8],
-108,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z03,,sonstiger EHZ,X [8],
-109,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z04,,Standard,X [25],"[8] Wenn SG28 CCI+++E13 CAV+EHZ vorhanden 
+108,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z01,,EDL40,X [8],
+109,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z02,,EDL21,X [8],
+110,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z03,,sonstiger EHZ,X [8],
+111,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z04,,Standard,X [25],"[8] Wenn SG28 CCI+++E13 CAV+EHZ vorhanden
 [25] Wenn SG28 CCI+++E13 CAV+MME vorhanden"
-110,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,,,,,,Muss [493],[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas
-111,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G10,,Gaszähler G10,X,
-112,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G100,,Gaszähler G100,X,
-113,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G1000,,Gaszähler G1000,X,
-114,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G10000,,Gaszähler G10000,X,
-115,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G12500,,Gaszähler G12500,X,
-116,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16,,Gaszähler G16,X,
-117,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G160,,Gaszähler G160,X,
-118,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G1600,,Gaszähler G1600,X,
-119,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,X X,
-120,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G25,,Gaszähler G25,X,
-121,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G250,,Gaszähler G250,X,
-122,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G2500,,Gaszähler G2500,X,
-123,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G350,,Gaszähler G350,X,
-124,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4,,Gaszähler G4,X,
-125,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G40,,Gaszähler G40,X,
-126,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G400,,Gaszähler G400,X,
-127,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4000,,Gaszähler G4000,X,
-128,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6,,Gaszähler G6,X,
-129,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G65,,Gaszähler G65,X,
-130,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G650,,Gaszähler G650,X,
-131,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6500,,Gaszähler G6500,X,
-132,Zähleinrichtung/Tarifanzahl,SG28,CAV,,,,,,Muss [492],[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
-133,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ETZ,,Eintarif,X,
-134,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ZTZ,,Zweitarif,X,
-135,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,NTZ,,Mehrtarif,X,
-136,Zähleinrichtung/ Energierichtung,SG28,CAV,,,,,,Muss [492],[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
-137,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ERZ,,Einrichtungszähler,X,
-138,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
-139,Wandler,SG28,,,,,,,Muss [2] ∧ [492] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
-[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist 
+112,Zähleinrichtung/Zählertyp,SG28,CAV,7110,,Z05,,MeDa-Zähler,X [25],
+113,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,,,,,,Muss [493],[493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas
+114,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G10,,Gaszähler G10,X,
+115,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G100,,Gaszähler G100,X,
+116,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G1000,,Gaszähler G1000,X,
+117,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G10000,,Gaszähler G10000,X,
+118,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G12500,,Gaszähler G12500,X,
+119,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16,,Gaszähler G16,X,
+120,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G160,,Gaszähler G160,X,
+121,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G1600,,Gaszähler G1600,X,
+122,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G16000 G2.5,,Gaszähler G16000 Gaszähler G2.5,XX,
+123,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G25,,Gaszähler G25,X,
+124,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G250,,Gaszähler G250,X,
+125,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G2500,,Gaszähler G2500,X,
+126,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G350,,Gaszähler G350,X,
+127,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4,,Gaszähler G4,X,
+128,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G40,,Gaszähler G40,X,
+129,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G400,,Gaszähler G400,X,
+130,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G4000,,Gaszähler G4000,X,
+131,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6,,Gaszähler G6,X,
+132,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G65,,Gaszähler G65,X,
+133,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G650,,Gaszähler G650,X,
+134,Zähleinrichtung/ Zählergröße (Gas),SG28,CAV,7110,,G6500,,Gaszähler G6500,X,
+135,Zähleinrichtung/Tarifanzahl,SG28,CAV,,,,,,Muss [492],[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+136,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ETZ,,Eintarif,X,
+137,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,ZTZ,,Zweitarif,X,
+138,Zähleinrichtung/Tarifanzahl,SG28,CAV,7111,,NTZ,,Mehrtarif,X,
+139,Zähleinrichtung/ Energierichtung,SG28,CAV,,,,,,Muss [492],[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
+140,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ERZ,,Einrichtungszähler,X,
+141,Zähleinrichtung/ Energierichtung,SG28,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
+142,Wandler,SG28,,,,,,,Muss [2] ∧ [492] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist
 [492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom"
-140,Wandler,SG28,CCI,,,,,,Muss,
-141,Wandler,SG28,CCI,7037,,Z25,,Wandler,X,
-142,Wandlertyp und Faktor,SG28,CAV,,,,,,Muss,
-143,Wandlertyp und Faktor,SG28,CAV,7111,,MBW,,Blockstromwandler,X,
-144,Wandlertyp und Faktor,SG28,CAV,7111,,MIW,,Messwandlersatz Strom,X,
-145,Wandlertyp und Faktor,SG28,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
-146,Wandlertyp und Faktor,SG28,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
-147,Wandlertyp und Faktor,SG28,CAV,7110,,,,Wandlerfaktor,M [914] [10],"[10] Wenn SG28 CAV+MIW/ MPW/MBW vorhanden 
+143,Wandler,SG28,CCI,,,,,,Muss,
+144,Wandler,SG28,CCI,7037,,Z25,,Wandler,X,
+145,Wandlertyp und Faktor,SG28,CAV,,,,,,Muss,
+146,Wandlertyp und Faktor,SG28,CAV,7111,,MBW,,Blockstromwandler,X,
+147,Wandlertyp und Faktor,SG28,CAV,7111,,MIW,,Messwandlersatz Strom,X,
+148,Wandlertyp und Faktor,SG28,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
+149,Wandlertyp und Faktor,SG28,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
+150,Wandlertyp und Faktor,SG28,CAV,7110,,,,Wandlerfaktor,M [914] [10],"[10] Wenn SG28 CAV+MIW/ MPW/MBW vorhanden
 [914] Format: Möglicher Wert: > 0"
-148,Mengenumwerter,SG28,,,,,,,Muss [2] ∧ [493] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
-[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist 
+151,Mengenumwerter,SG28,,,,,,,Muss [2] ∧ [493] ∧ [9],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[9] Wenn in derselben SG27 LIN die Artikelnummer 9990001000657 vorhanden ist
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
-149,Mengenumwerter,SG28,CCI,,,,,,Muss,
-150,Mengenumwerter,SG28,CCI,7037,,Z64,,Mengenumwerter,X,
-151,Mengenumwertertyp,SG28,CAV,,,,,,Muss,
-152,Mengenumwertertyp,SG28,CAV,7111,,DMU,,Dichtemengenumwerter,X,
-153,Mengenumwertertyp,SG28,CAV,7111,,TMU,,Temperaturmengenumwer ter,X,
-154,Mengenumwertertyp,SG28,CAV,7111,,ZMU,,Zustandsmengenumwerter,X,
-155,Kommunikationseinrichtun g,SG28,,,,,,,Muss [2] ∧ [11],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
-[11] Wenn in derselben SG27 LIN"
-156,Kommunikationseinrichtun g,SG28,CCI,,,,,,Muss,
-157,Kommunikationseinrichtun g,SG28,CCI,7037,,Z26,,Kommunikationseinrichtun g,X,
-158,Kommunikationseinrichtun g,SG28,CAV,,,,,,Muss,
-159,Kommunikationseinrichtun g,SG28,CAV,7111,,GSM,,GSM/GPRS/UMTS-Kom.- Einr.,X,
-160,Kommunikationseinrichtun g,SG28,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
-161,Kommunikationseinrichtun g,SG28,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
-162,Kommunikationseinrichtun g,SG28,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
-163,Kommunikationseinrichtun g,SG28,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
-164,Kommunikationseinrichtun g,SG28,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
-165,Technische Steuereinrichtung,SG28,,,,,,,Muss [2] ∧ [12],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
+152,Mengenumwerter,SG28,CCI,,,,,,Muss,
+153,Mengenumwerter,SG28,CCI,7037,,Z64,,Mengenumwerter,X,
+154,Mengenumwertertyp,SG28,CAV,,,,,,Muss,
+155,Mengenumwertertyp,SG28,CAV,7111,,DMU,,Dichtemengenumwerter,X,
+156,Mengenumwertertyp,SG28,CAV,7111,,TMU,,Temperaturmengenumwer ter,X,
+157,Mengenumwertertyp,SG28,CAV,7111,,ZMU,,Zustandsmengenumwerter,X,
+158,Kommunikationseinrichtun g,SG28,,,,,,,Muss [2] ∧ [11],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[11] Wenn in derselben SG27 LIN die Artikelnummer 9990001000665 vorhanden ist"
+159,Kommunikationseinrichtun g,SG28,CCI,,,,,,Muss,
+160,Kommunikationseinrichtun g,SG28,CCI,7037,,Z26,,Kommunikationseinrichtung,X,
+161,Kommunikationseinrichtun g,SG28,CAV,,,,,,Muss,
+162,Kommunikationseinrichtun g,SG28,CAV,7111,,GSM,,GSM/GPRS/UMTS-Kom.- Einr.,X,
+163,Kommunikationseinrichtun g,SG28,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/WLAN,X,
+164,Kommunikationseinrichtun g,SG28,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
+165,Kommunikationseinrichtun g,SG28,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
+166,Kommunikationseinrichtun g,SG28,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
+167,Kommunikationseinrichtun g,SG28,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
+168,Technische Steuereinrichtung,SG28,,,,,,,Muss [2] ∧ [12],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
 [12] Wenn in derselben SG27 LIN die Artikelnummer 9990001000673 vorhanden ist"
-166,Technische Steuereinrichtung,SG28,CCI,,,,,,Muss,
-167,Technische Steuereinrichtung,SG28,CCI,7037,,Z27,,Technische Steuereinrichtung,X,
-168,Technische Steuereinrichtung,SG28,CAV,,,,,,Muss,
-169,Technische Steuereinrichtung,SG28,CAV,7111,,RSU,,Rundsteuerempfänger,X,
-170,Technische Steuereinrichtung,SG28,CAV,7111,,TSU,,Tarifschaltuhr,X,
-171,Smartmeter-Gateway,SG28,,,,,,,Muss [2] ∧ [15],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
+169,Technische Steuereinrichtung,SG28,CCI,,,,,,Muss,
+170,Technische Steuereinrichtung,SG28,CCI,7037,,Z27,,Technische Steuereinrichtung,X,
+171,Technische Steuereinrichtung,SG28,CAV,,,,,,Muss,
+172,Technische Steuereinrichtung,SG28,CAV,7111,,RSU,,Rundsteuerempfänger,X,
+173,Technische Steuereinrichtung,SG28,CAV,7111,,TSU,,Tarifschaltuhr,X,
+174,Smartmeter-Gateway,SG28,,,,,,,Muss [2] ∧ [15],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
 [15] Wenn in derselben SG27 LIN die Artikelnummer 9990001000772 vorhanden ist"
-172,Smartmeter-Gateway,SG28,CCI,,,,,,Muss,
-173,Smartmeter-Gateway,SG28,CCI,7037,,Z75,,Smartmeter-Gateway,X,
-174,Steuerbox,SG28,,,,,,,Muss [2] ∧ [16],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-175,Steuerbox,SG28,CCI,,,,,,Muss,
-176,Steuerbox,SG28,CCI,7037,,Z76,,Steuerbox,X,
-177,Befestigungsart,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
+175,Smartmeter-Gateway,SG28,CCI,,,,,,Muss,
+176,Smartmeter-Gateway,SG28,CCI,7037,,Z75,,Smartmeter-Gateway,X,
+177,Steuerbox,SG28,,,,,,,Muss [2] ∧ [16],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[16] Wenn in derselben SG27 LIN die Artikelnummer 9990001000780 vorhanden ist"
+178,Steuerbox,SG28,CCI,,,,,,Muss,
+179,Steuerbox,SG28,CCI,7037,,Z76,,Steuerbox,X,
+180,Befestigungsart,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
 [5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
-178,Befestigungsart,SG28,CCI,,,,,,Muss,
-179,Befestigungsart,SG28,CCI,7037,,Z28,,Befestigungsart Zähleinrichtung,X,
-180,Befestigungsart,SG28,CAV,,,,,,Muss,
-181,Befestigungsart,SG28,CAV,7111,,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X [492],
-182,Befestigungsart,SG28,CAV,7111,,DPA,,3-Dreipunktaufhängung,X [492],
-183,Befestigungsart,SG28,CAV,7111,,HUT,,Hutschiene,X [492],
-184,Befestigungsart,SG28,CAV,7111,,Z31,,Einstutzen-Zähler,X [493],
-185,Befestigungsart,SG28,CAV,7111,,Z32,,Zweistutzen-Zähler,X [493],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
+181,Befestigungsart,SG28,CCI,,,,,,Muss,
+182,Befestigungsart,SG28,CCI,7037,,Z28,,Befestigungsart Zähleinrichtung,X,
+183,Befestigungsart,SG28,CAV,,,,,,Muss,
+184,Befestigungsart,SG28,CAV,7111,,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X [492],
+185,Befestigungsart,SG28,CAV,7111,,DPA,,3-Dreipunktaufhängung,X [492],
+186,Befestigungsart,SG28,CAV,7111,,HUT,,Hutschiene,X [492],
+187,Befestigungsart,SG28,CAV,7111,,Z31,,Einstutzen-Zähler,X [493],
+188,Befestigungsart,SG28,CAV,7111,,Z32,,Zweistutzen-Zähler,X [493],"[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
-186,Messwerterfassung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
+189,Messwerterfassung,SG28,,,,,,,Muss [2] ∧ [5],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
 [5] Wenn in derselben SG27 LIN die Artikelnummer 9990001000649 vorhanden ist"
-187,Messwerterfassung,SG28,CCI,,,,,,Muss,
-188,Messwerterfassung,SG28,CCI,7037,,E12,,Messwerterfassung an der Zähleinrichtung,X,
-189,Messwerterfassung,SG28,CAV,,,,,,Muss,
-190,Messwerterfassung,SG28,CAV,7111,,AMR,,fernauslesbare Zähler,X,
-191,Messwerterfassung,SG28,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
-192,Geldbetrag,SG29,,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-193,Geldbetrag,SG29,MOA,,,,,,Muss,
-194,Geldbetrag,SG29,MOA,5025,,203,,Positionsbetrag (ohne USt.),X,
-195,Geldbetrag,SG29,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2
-196,Preisangaben,SG31,,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
-197,Preisangaben,SG31,PRI,,,,,,Muss,
-198,Preisangaben,SG31,PRI,5125,,CAL,,Berechnungspreis,X,
-199,Preisangaben,SG31,PRI,5118,,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
-200,Gerätenummer,SG32,,,,,,,Soll [2] ∧ [13] ∧ [506],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden 
-[13] Wenn am Gerät vorhanden 
+190,Messwerterfassung,SG28,CCI,,,,,,Muss,
+191,Messwerterfassung,SG28,CCI,7037,,E12,,Messwerterfassung an der Zähleinrichtung,X,
+192,Messwerterfassung,SG28,CAV,,,,,,Muss,
+193,Messwerterfassung,SG28,CAV,7111,,AMR,,fernauslesbare Zähler,X,
+194,Messwerterfassung,SG28,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
+195,Geldbetrag,SG29,,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+196,Geldbetrag,SG29,MOA,,,,,,Muss,
+197,Geldbetrag,SG29,MOA,5025,,203,,Positionsbetrag (ohne USt.),X,
+198,Geldbetrag,SG29,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+199,Preisangaben,SG31,,,,,,,Muss [2],[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+200,Preisangaben,SG31,PRI,,,,,,Muss,
+201,Preisangaben,SG31,PRI,5125,,CAL,,Berechnungspreis,X,
+202,Preisangaben,SG31,PRI,5118,,,,"Preis, Betrag",X [912],[912] Format: max. 6 Nachkommastellen
+203,Gerätenummer,SG32,,,,,,,Soll [2] ∧ [13] ∧ [506],"[2] Wenn in derselben SG27 LIN IMD++Z09 nicht vorhanden
+[13] Wenn am Gerät vorhanden
 [506] Hinweis: Wenn zu einer Position (z. B. Messwandlersatz) mehrere Gerätenummern existieren, sind die Gerätenummern in derselben Position (LIN-Segment) mittels Wiederholung der SG32 RFF+Z09 anzugeben"
-201,Gerätenummer,SG32,RFF,,,,,,Muss,
-202,Gerätenummer,SG32,RFF,1153,,Z09,,Gerätenummer,X,
-203,Gerätenummer,SG32,RFF,1154,,,,Gerätenummer,X,
-204,Referenz auf einen veröffentlichten Preiskatalog,SG32,,,,,,,Kann,
-205,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,,,,,,Muss,
-206,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1153,,APF,,Verweis auf Katalognummer,X,
-207,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1154,,,,Katalognummer,X,
-208,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1156,,,,Zeilennummer,X,
-209,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1056,,,,Versionsnummer,X,
-210,Beteiligter Marktpartner MP-ID,SG42,,,,,,,Soll [30] ∧ [44] ∧ [503],"[30] Wenn SG27 IMD+Z09 vorhanden 
-[44] Wenn MSBA nicht Eigentümer des Gerätes/der Geräte ist 
+204,Gerätenummer,SG32,RFF,,,,,,Muss,
+205,Gerätenummer,SG32,RFF,1153,,Z09,,Gerätenummer,X,
+206,Gerätenummer,SG32,RFF,1154,,,,Gerätenummer,X,
+207,Referenz auf einen veröffentlichten Preiskatalog,SG32,,,,,,,Kann,
+208,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,,,,,,Muss,
+209,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1153,,APF,,Verweis auf Katalognummer,X,
+210,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1154,,,,Katalognummer,X,
+211,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1156,,,,Zeilennummer,X,
+212,Referenz auf einen veröffentlichten Preiskatalog,SG32,RFF,1056,,,,Versionsnummer,X,
+213,Beteiligter Marktpartner MP-ID,SG42,,,,,,,Soll [30] ∧ [44] ∧ [503],"[30] Wenn SG27 IMD+Z09 vorhanden
+[44] Wenn MSBA nicht Eigentümer des Gerätes/der Geräte ist
 [503] Hinweis: Es ist die MP-ID des Eigentümers (MSB) zur bilateralen Klärung anzugeben, wenn z. B. der MSBA das Gerät / die Geräte selbst gepachtet hat."
-211,Beteiligter Marktpartner MP-ID,SG42,NAD,,,,,,Muss,
-212,Beteiligter Marktpartner MP-ID,SG42,NAD,3035,,,,,VY,
-213,Beteiligter Marktpartner MP-ID,SG42,NAD,3039,,,,MP-ID,X,
-214,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,9,,GS1,X,
-215,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-216,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-217,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
-218,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
-219,Summenbetrag (netto),,MOA,,,,,,Muss [14],"[14] Nicht, wenn in allen SG27 LIN das SG27 IMD++Z09 vorhanden ist"
-220,Summenbetrag (netto),,MOA,5025,,97,,Gesamtbetrag des Angebots,X,
-221,Summenbetrag (netto),,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
-222,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-223,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-224,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+214,Beteiligter Marktpartner MP-ID,SG42,NAD,,,,,,Muss,
+215,Beteiligter Marktpartner MP-ID,SG42,NAD,3035,,,,,VY,
+216,Beteiligter Marktpartner MP-ID,SG42,NAD,3039,,,,MP-ID,X,
+217,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,9,,GS1,X,
+218,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+219,Beteiligter Marktpartner MP-ID,SG42,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+220,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
+221,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
+222,Summenbetrag (netto),,MOA,,,,,,Muss [14],"[14] Nicht, wenn in allen SG27 LIN das SG27 IMD++Z09 vorhanden ist"
+223,Summenbetrag (netto),,MOA,5025,,97,,Gesamtbetrag des Angebots,X,
+224,Summenbetrag (netto),,MOA,5004,,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
+225,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+226,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+227,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,

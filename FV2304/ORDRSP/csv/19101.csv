@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,,303,,CCYYMMDDHHMMZZZ,X,
 14,Referenz Nachrichtennummer,SG1,,,,,,,Muss,
@@ -21,14 +21,14 @@
 18,Prüfidentifikator,SG1,,,,,,,Muss,
 19,Prüfidentifikator,SG1,RFF,,,,,,Muss,
 20,Prüfidentifikator,SG1,RFF,1153,,Z13,,Prüfidentifikator,X,
-21,Prüfidentifikator,SG1,RFF,1154,,19101,,Ablehnung Anfrage,X,
+21,Prüfidentifikator,SG1,RFF,1154,,19101,,Ablehnung Anfrage Stammdaten,X,
 22,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,,Muss,
 23,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,,,,,Muss,
 24,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,,,,Code des Prüfschritts,X,
-25,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,S_0044,,,E_0441 E_0443 G_0049 G_0078 S_0044,"[4] Wenn MP-ID in SG3 NAD+MR mit Rolle LF vorhanden 
-[14] Wenn MP-ID in SG3 NAD+MR mit Rolle MSB vorhanden 
-[16] Wenn MP-ID in SG3 NAD+MR mit Rolle ÜNB vorhanden 
-[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom 
+25,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,S_0044,,,E_0441 E_0443 G_0049 G_0078 S_0044,"[4] Wenn MP-ID in SG3 NAD+MR mit Rolle LF vorhanden
+[14] Wenn MP-ID in SG3 NAD+MR mit Rolle MSB vorhanden
+[16] Wenn MP-ID in SG3 NAD+MR mit Rolle ÜNB vorhanden
+[492] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Strom
 [493] Wenn MP-ID in NAD+MR (Nachrichtenempfänger) aus Sparte Gas"
 26,MP-ID Absender,SG3,,,,,,,Muss,
 27,MP-ID Absender,SG3,NAD,,,,,,Muss,
@@ -45,15 +45,18 @@
 38,Kommunikationsverbindung,SG6,COM,3148,,,,"Kommunikationsadresse, Identifikation",X,
 39,Kommunikationsverbindung,SG6,COM,3155,,EM,,Elektronische Post,X [1P0..1],
 40,Kommunikationsverbindung,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
-41,MP-ID Empfänger,SG3,,,,,,,Muss,
-42,MP-ID Empfänger,SG3,NAD,,,,,,Muss,
-43,MP-ID Empfänger,SG3,NAD,3035,,,,,MR,
-44,MP-ID Empfänger,SG3,NAD,3039,,,,MP-ID,X,
-45,MP-ID Empfänger,SG3,NAD,3055,,9,,GS1,X,
-46,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-47,MP-ID Empfänger,SG3,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
-48,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
-49,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
-50,Nachrichten-Endesegment,,UNT,,,,,,Muss,
-51,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
-52,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
+41,Kommunikationsverbindung,SG6,COM,3155,,TE,,Telefon,X [1P0..1],
+42,Kommunikationsverbindung,SG6,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+43,Kommunikationsverbindung,SG6,COM,3155,,AL,,Handy,X [1P0..1],
+44,MP-ID Empfänger,SG3,,,,,,,Muss,
+45,MP-ID Empfänger,SG3,NAD,,,,,,Muss,
+46,MP-ID Empfänger,SG3,NAD,3035,,,,,MR,
+47,MP-ID Empfänger,SG3,NAD,3039,,,,MP-ID,X,
+48,MP-ID Empfänger,SG3,NAD,3055,,9,,GS1,X,
+49,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+50,MP-ID Empfänger,SG3,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
+51,Abschnitts-Kontrollsegment,,UNS,,,,,,Muss,
+52,Abschnitts-Kontrollsegment,,UNS,0081,,und Summenteil,,,S,
+53,Nachrichten-Endesegment,,UNT,,,,,,Muss,
+54,Nachrichten-Endesegment,,UNT,0074,,,,Anzahl der Segmente in einer Nachricht,X,
+55,Nachrichten-Endesegment,,UNT,0062,,,,Nachrichten-Referenznummer,X,
