@@ -30,8 +30,8 @@
 28,Rechnungstyp,,IMD,,00014,,,,Muss,
 29,Rechnungstyp,,IMD,7081,00014,MMM,,Mehr-/ Mindermengenabre chnung,X,
 30,Meldeinformationen,,FTX,,00015,,,,Soll [4] ,[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
-31,Meldeinformationen,,FTX,4451,00015,REG,,Meldeinformatione n,X,
-32,Meldeinformationen,,FTX,4441,00015,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerscha ft des Leistungsempfänger s,X,
+31,Meldeinformationen,,FTX,4451,00015,REG,,Meldeinformationen,X,
+32,Meldeinformationen,,FTX,4441,00015,RCH,,Reverse Charge gemäß §13b UStG / Steuerschuldnerscha ft des Leistungsempfängers,X,
 33,Prüfidentifikator,SG1,,,,,,,Muss,
 34,Prüfidentifikator,SG1,RFF,,00017,,,,Muss,
 35,Prüfidentifikator,SG1,RFF,1153,00017,Z13,,Prüfidentifikator,X,
@@ -39,7 +39,7 @@
 37,Referenz auf Nummer des zugehörigen Dokuments,SG1,,,,,,,Muss,[17] Wenn DTM+Z11 vorhanden
 38,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,,00020,,,,Muss,
 39,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1153,00020,ACE,,Nummer des zugehörigen Dokuments,X,
-40,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,00020,,,"Referenz, Identifikation",X [507],"[502] Hinweis: Dokumentennummer der Bilanzierungs- MSCONS 
+40,Referenz auf Nummer des zugehörigen Dokuments,SG1,RFF,1154,00020,,,"Referenz, Identifikation",X [507],"[502] Hinweis: Dokumentennummer der Bilanzierungs- MSCONS
 [507] Hinweis: Dokumentennummer der SSQNOT"
 41,Name und Anschrift des Nachrichtensenders,SG2,,,,,,,Muss,
 42,Name und Anschrift des Nachrichtensenders,SG2,NAD,,00022,,,,Muss,
@@ -64,11 +64,11 @@
 61,Ansprechpartner,SG5,CTA,3139,00024,IC,,Informationskontakt,X,
 62,Ansprechpartner,SG5,CTA,3412,00024,,,Kontakt,X,
 63,Kommunikationsverbindu ng,SG5,COM,,00025,,,,Muss,
-64,Kommunikationsverbindu ng,SG5,COM,3148,00025,,,"Kommunikationsadresse, Identifikation",X (([939] [74]) ∨ ([940][75])) ∧ [524],"[74] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[75] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[524] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
-[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch"
+64,Kommunikationsverbindu ng,SG5,COM,3148,00025,,,"Kommunikationsadresse, Identifikation",X (([939] [74]) ∨ ([940][75])) ∧ [524],"[74] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[75] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[524] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 65,Kommunikationsverbindu ng,SG5,COM,3155,00025,EM,,Elektronische Post,X [1P0..1],
 66,Kommunikationsverbindu ng,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
 67,Kommunikationsverbindu ng,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -87,7 +87,7 @@
 80,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3164,00026,,,Ort,M,
 81,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3251,00026,,,"Postleitzahl, Code",X,
 82,Name und Anschrift des Nachrichtenempfängers,SG2,NAD,3207,00026,,,"Ländername, Code",X,
-83,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt 
+83,"Steuernummer, Umsatzsteuernummer",SG3,,,,,,,Muss [5],"[4] Wenn Steuerschuldnerschaft des Leistungsempfängers vorliegt
 [5] Wenn NAD+MR DE3207 <> „DE“"
 84,"Steuernummer, Umsatzsteuernummer",SG3,RFF,,00027,,,,Muss,
 85,"Steuernummer, Umsatzsteuernummer",SG3,RFF,1153,00027,VA,,Umsatzsteuernumm er,X,
@@ -107,8 +107,10 @@
 99,Zahlungsbedingungen,SG8,PYT,4279,00032,3,,Fixdatum,X,
 100,Fälligkeitsdatum,SG8,DTM,,00033,,,,Muss,
 101,Fälligkeitsdatum,SG8,DTM,2005,00033,265,,Fälligkeitsdatum,X,
-102,Fälligkeitsdatum,SG8,DTM,2380,00033,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1] ∧ [25],"[20] Wenn fälliger Betrag (SG50 MOA+9) ≥ 0 
-[21] Wenn fälliger Betrag (SG50 MOA+9) < 0"
+102,Fälligkeitsdatum,SG8,DTM,2380,00033,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1] ∧ [25],"[20] Wenn fälliger Betrag (SG50 MOA+9) ≥ 0
+[21] Wenn fälliger Betrag (SG50 MOA+9) < 0
+[24] Wert muss mindestens 10 WT nach Wert aus DTM+137 DE2380 liegen
+[25] Wert darf maximal 10 WT nach Wert aus DTM+137 DE2380 liegen"
 103,Fälligkeitsdatum,SG8,DTM,2379,00033,303,,CCYYMMDDHHMMZ ZZ,X,
 104,Positionsdaten,SG26,,,,,,,Muss,
 105,Positionsdaten,SG26,LIN,,00034,,,,Muss,
@@ -117,7 +119,7 @@
 108,Positionsdaten,SG26,LIN,7143,00034,Z01,,Artikelnummer,X,
 109,energetische Mengenangaben,SG26,QTY,,00035,,,,Muss,
 110,energetische Mengenangaben,SG26,QTY,6063,00035,47,,Berechnete (fakturierte) Menge,X,
-111,energetische Mengenangaben,SG26,QTY,6060,00035,,,Menge,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0 
+111,energetische Mengenangaben,SG26,QTY,6060,00035,,,Menge,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
 112,energetische Mengenangaben,SG26,QTY,6411,00035,KWH,,Kilowattstunde,X,
 113,Positionsbezogener Abrechnungszeitraum Beginn,SG26,DTM,,00038,,,,Muss,
@@ -140,17 +142,18 @@
 130,Umsatzsteuer der Position,SG34,TAX,,00044,,,,Muss,
 131,Umsatzsteuer der Position,SG34,TAX,5283,00044,7,,Steuer,X,
 132,Umsatzsteuer der Position,SG34,TAX,5153,00044,VAT,,Umsatzsteuer,X,
-133,Umsatzsteuer der Position,SG34,TAX,5278,00044,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧,[902] Format:
+133,Umsatzsteuer der Position,SG34,TAX,5278,00044,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
+[930] Format: max. 2 Nachkommastellen"
 134,Umsatzsteuer der Position,SG34,TAX,5305,00044,S,,Einheitssatz (Standard),X,
 135,Umsatzsteuer der Position,SG34,TAX,5305,,O,,nicht steuerbar,X,
-136,Umsatzsteuer der Position,SG34,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfänger s,X,
+136,Umsatzsteuer der Position,SG34,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfängers,X,
 137,Abschnitts- Kontrollsegment,,UNS,,00051,,,,Muss,
 138,Abschnitts- Kontrollsegment,,UNS,0081,00051,S,,Trennung von Positions- und Summenteil,X,
 139,Rechnungsbetrag,SG50,,,,,,,Muss,
 140,Rechnungsbetrag,SG50,MOA,,00052,,,,Muss,
 141,Rechnungsbetrag,SG50,MOA,5025,00052,77,,Rechnungsbetrag,X,
-142,Rechnungsbetrag,SG50,MOA,5004,00052,,,Geldbetrag,X [930] [504],"[503] Hinweis: Ein positiver Betrag ist eine Forderung des Rechnungsstellers.  
-[504] Hinweis: Ein positiver Betrag ist eine Forderung des Rechnungsempfängers . 
+142,Rechnungsbetrag,SG50,MOA,5004,00052,,,Geldbetrag,X [930] [504],"[503] Hinweis: Ein positiver Betrag ist eine Forderung des Rechnungsstellers.
+[504] Hinweis: Ein positiver Betrag ist eine Forderung des Rechnungsempfängers .
 [930] Format: max. 2 Nachkommastellen"
 143,Fälliger Betrag,SG50,,,,,,,Muss,
 144,Fälliger Betrag,SG50,MOA,,00057,,,,Muss,
@@ -160,11 +163,11 @@
 148,Umsatzsteuer der Rechnung,SG52,TAX,,00058,,,,Muss,
 149,Umsatzsteuer der Rechnung,SG52,TAX,5283,00058,7,,Steuer,X,
 150,Umsatzsteuer der Rechnung,SG52,TAX,5153,00058,VAT,,Umsatzsteuer,X,
-151,Umsatzsteuer der Rechnung,SG52,TAX,5278,00058,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0 
+151,Umsatzsteuer der Rechnung,SG52,TAX,5278,00058,,,Zoll-/Steuer-/Gebührenrate,X [902] ∧ [930],"[902] Format: Möglicher Wert: ≥ 0
 [930] Format: max. 2 Nachkommastellen"
 152,Umsatzsteuer der Rechnung,SG52,TAX,5305,00058,S,,Einheitssatz (Standard),X,
 153,Umsatzsteuer der Rechnung,SG52,TAX,5305,,O,,nicht steuerbar,X,
-154,Umsatzsteuer der Rechnung,SG52,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfänger s,X,
+154,Umsatzsteuer der Rechnung,SG52,TAX,5305,,AE,,Reverse Charge / Steuerschuldnerscha ft des Leistungsempfängers,X,
 155,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,,00061,,,,Muss,
 156,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5025,00061,125,,Besteuerungsgrundl age,X,
 157,Besteuerungsgrundlage (steuersatzbezogen),SG52,MOA,5004,00061,,,Geldbetrag,X [930],[930] Format: max. 2 Nachkommastellen
