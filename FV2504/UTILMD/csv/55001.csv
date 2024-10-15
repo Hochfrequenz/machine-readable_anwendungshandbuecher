@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,10 +25,10 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -45,7 +45,7 @@
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Beginn zum,SG4,DTM,,00023,,,,Muss,
+41,Beginn zum,SG4,DTM,,00023,,,,Muss,"[521] Hinweis: Wenn im zweiten DE 9013 des STS+7 (Transaktionsgrund) der Code ZAP vorhanden ist, so ist das hier angegebene Datum als Zuordnungsbeginn bei der Bildung der ""Ruhenden MaLo zu verstehen. Bei der Integration einer MaLo als Ruhenede MaLo in eine bestehende Marktlokation „Abbildung von § 20 Abs. 1d EnWG bzw. § 10c EEG“ ist dies das Datum ab welchem die zu  integrierende MaLo hinzugefügt wurde. Am Zuordnungsbeginn der Marklokation „Abbildung von § 20 Abs. 1d EnWG bzw. § 10c EEG“ ändert sich nichts"
 42,Beginn zum,SG4,DTM,2005,00023,92,,Datum Vertragsbeginn,X,
 43,Beginn zum,SG4,DTM,2380,00023,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,Beginn zum,SG4,DTM,2379,00023,303,,CCYYMMDDHHMMZZZ,X,
@@ -53,88 +53,109 @@
 46,Ende zum,SG4,DTM,2005,00024,93,,Datum Vertragsende,X,
 47,Ende zum,SG4,DTM,2380,00024,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 48,Ende zum,SG4,DTM,2379,00024,303,,CCYYMMDDHHMMZZZ,X,
-49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E01,,Ein-/Auszug (Umzug),X,
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E01,,Ein-/Auszug (Umzug),X,
 52,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
-53,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZW4,,Verbrauchende Marktlokation,X,
-54,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X,
-55,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E01,,Ein-/Auszug (Umzug),S [9P0..1],
+53,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZW4,,Verbrauchende Marktlokation,X,
+54,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X,"[519] Hinweis: Wenn in der Anmeldung der Code ZAP vorhanden war, so ist dieser auch in der Antwort zu verwenden.
+[520] Hinweis: Bei der Verwendung des Codes ZAP handelt es sich immer um eine gemessene Marktlokation"
+55,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E01,,Ein-/Auszug (Umzug),S [9P0..1],
 56,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,S [9P0..1],
-57,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-58,Marktlokation,SG5,LOC,,00048,,,,Muss,
-59,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-60,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-61,Ruhende Marktlokation,SG5,,,,,,,Muss [2061] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden  
-[2003] Einmal für jede ruhende Marktlokation, die der Marktlokation ""Kundenanlage"" aus dem SG5 LOC+Z16 (Marktlokation) ab dem Zeitpunkt aus dem SG4 DTM+92 (Beginn zum) untergeordnet ist  
+57,Marktlokation,SG5,,,,,,,Muss [2061] ∧ [67],"[67] Wenn in keinem SG8 SEQ+Z79 (Bestandteil eine Produktpaketes CCI+Z66/CAV+ZH9 (Produkteigenschaft/ Code der Produkteigenschaft) der Code 9991 00000 293 3 (Ruhende Marktlokation ausprägen) vorhanden ist.
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-62,Ruhende Marktlokation,SG5,LOC,,00049,,,,Muss,
-63,Ruhende Marktlokation,SG5,LOC,3227,00049,Z22,,Ruhende Marktlokation,X,
-64,Ruhende Marktlokation,SG5,LOC,3225,00049,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
+58,Marktlokation,SG5,LOC,,00049,,,,Muss,
+59,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+60,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+61,Ruhende Marktlokation,SG5,,,,,,,Muss [2061] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
+[2003] Einmal für jede ruhende Marktlokation, die der Marktlokation ""Kundenanlage"" aus dem SG5 LOC+Z16 (Marktlokation) ab dem Zeitpunkt aus dem SG4 DTM+92 (Beginn zum) untergeordnet ist
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+62,Ruhende Marktlokation,SG5,LOC,,00050,,,,Muss,
+63,Ruhende Marktlokation,SG5,LOC,3227,00050,Z22,,Ruhende Marktlokation,X,
+64,Ruhende Marktlokation,SG5,LOC,3225,00050,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
 65,Prüfidentifikator,SG6,,,,,,,Muss,
-66,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-67,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
-68,Prüfidentifikator,SG6,RFF,1154,00055,55001,,GPKE / Anmeldung verbrauchende MaLo,X,
-69,Bestandteil eines Produktpakets,SG8,,,,,,,Muss [480],[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden
-70,Bestandteil eines Produktpakets,SG8,SEQ,,00080,,,,Muss,
-71,Bestandteil eines Produktpakets,SG8,SEQ,1229,00080,Z79,,Bestandteil eines Produktpakets,X,
-72,Bestandteil eines Produktpakets,SG8,SEQ,1050,00080,,,Produktpaket-ID,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0  
+66,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+67,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+68,Prüfidentifikator,SG6,RFF,1154,00056,55001,,GPKE / Anmeldung verbrauchende MaLo,X,
+69,Bestandteil eines Produktpakets,SG8,,,,,,,Muss,
+70,Bestandteil eines Produktpakets,SG8,SEQ,,00081,,,,Muss,
+71,Bestandteil eines Produktpakets,SG8,SEQ,1229,00081,Z79,,Bestandteil eines Produktpakets,X,
+72,Bestandteil eines Produktpakets,SG8,SEQ,1050,00081,,,Produktpaket-ID,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-73,Erforderliches Produkt,SG8,PIA,,00081,,,,Muss,
-74,Erforderliches Produkt,SG8,PIA,4347,00081,5,,Produktidentifikation,X,
-75,Erforderliches Produkt,SG8,PIA,7140,00081,,,Produkt-Code,X [292],"[292] Es sind nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Anmeldung einer Zuordnung des LFN (UTILMD) "" mit dem entsprechenden Prüfidentifikator des Anwendungsfalls gekennzeichnet ist."
-76,Erforderliches Produkt,SG8,PIA,7143,00081,Z11,,Produkt,X,
+73,Erforderliches Produkt,SG8,PIA,,00082,,,,Muss,
+74,Erforderliches Produkt,SG8,PIA,4347,00082,5,,Produktidentifikation,X,
+75,Erforderliches Produkt,SG8,PIA,7140,00082,,,Produkt-Code,X [292],"[292] Es sind nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Anmeldung einer Zuordnung des LFN (UTILMD) "" mit dem entsprechenden Prüfidentifikator des Anwendungsfalls gekennzeichnet ist."
+76,Erforderliches Produkt,SG8,PIA,7143,00082,Z11,,Produkt,X,
 77,Produkteigenschaft,SG10,,,,,,,Muss,
-78,Produkteigenschaft,SG10,CCI,,00082,,,,Muss,
-79,Produkteigenschaft,SG10,CCI,7059,00082,Z66,,Produkteigenschaft,X,
-80,Code der Produkteigenschaft,SG10,CAV,,00083,,,,Muss [36] ∧ [38],"[36] Wenn in derselben SG8 SEQ+Z79 im PIA+5 (Erforderliches Produkt) DE7140 ein Produkt- Code genannt ist, der in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Code der"
-81,Code der Produkteigenschaft,SG10,CAV,7111,00083,ZH9,,Code der Produkteigenschaft,X,
-82,Code der Produkteigenschaft,SG10,CAV,7110,00083,,,Code der Produkteigenschaft,X,
-83,Wertedetails zum Produkt,SG10,CAV,,00084,,,,Muss [39],"[39] Wenn in derselben SG8 SEQ+Z79 m PIA+5 (Erforderliches Produkt) DE7140 ein Produkt- Code genannt ist, der in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Wertedetails für Position"" die ggf. enthaltene Bedingung erfüllt ist"
-84,Wertedetails zum Produkt,SG10,CAV,7111,00084,ZV4,,Wertedetails zum Produkt,X,
-85,Wertedetails zum Produkt,SG10,CAV,7110,00084,,,Merkmalswert,X [40],"[40] Es ist nur der Wertebereich erlaubt, der zu dem in derselben SG8 SEQ+Z79 im PIA+5 (Erforderliches Produkt) DE7140 genannten Produkt, das in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in derselben Zeile wie der Produkt-"
+78,Produkteigenschaft,SG10,CCI,,00083,,,,Muss,
+79,Produkteigenschaft,SG10,CCI,7059,00083,Z66,,Produkteigenschaft,X,
+80,Code der Produkteigenschaft,SG10,CAV,,00084,,,,Muss [36],"[36] Wenn in derselben SG8 SEQ+Z79 im PIA+5 (Erforderliches Produkt) DE7140 ein Produkt- Code genannt ist, der in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Code der Produkteigenschaft (Wertebereich)"" mit einem Code befüllt ist."
+81,Code der Produkteigenschaft,SG10,CAV,7111,00084,ZH9,,Code der Produkteigenschaft,X,
+82,Code der Produkteigenschaft,SG10,CAV,7110,00084,,,Code der Produkteigenschaft,X [38],"[38] Es sind nur die Code der Produkteigenschaft zu dem in derselben SG8 SEQ+Z79 im PIA+5 (Erforderliches Produkt) DE7140 erlaubt, die in der Codeliste der Konfigurationen im Kapitel  6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in derselben Zeile wie der Produkt- Code stehen und in der Spalte ""Code der Produkteigenschaft (Wertebereich)"" genannt sind."
+83,Wertedetails zum Produkt,SG10,CAV,,00085,,,,Muss [39],"[39] Wenn in derselben SG8 SEQ+Z79 m PIA+5 (Erforderliches Produkt) DE7140 ein Produkt- Code genannt ist, der in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in der Spalte ""Wertedetails für Position"" die ggf. enthaltene Bedingung erfüllt ist"
+84,Wertedetails zum Produkt,SG10,CAV,7111,00085,ZV4,,Wertedetails zum Produkt,X,
+85,Wertedetails zum Produkt,SG10,CAV,7110,00085,,,Merkmalswert,X [40],"[40] Es ist nur der Wertebereich erlaubt, der zu dem in derselben SG8 SEQ+Z79 im PIA+5 (Erforderliches Produkt) DE7140 genannten Produkt, das in der Codeliste der Konfigurationen im Kapitel 6.1 ""Anmeldung einer Zuordnung des LFN (UTILMD)"" in derselben Zeile wie der Produkt- Code in der Spalte ""Wertedetails für Position"" genannt ist"
 86,Priorisierung erforderliches Produktpaket,SG8,,,,,,,Muss [2002],[2002] Für jede Produktpaket-ID im SG8 SEQ+Z79 (Erforderliches Produkt) DE1050 genau einmal anzugeben
-87,Priorisierung erforderliches Produktpaket,SG8,SEQ,,00085,,,,Muss,
-88,Priorisierung erforderliches Produktpaket,SG8,SEQ,1229,00085,ZH0,,Priorisierung erforderliches Produktpaket,X,
-89,Priorisierung erforderliches Produktpaket,SG8,SEQ,1050,00085,,,Referenz auf Produktpaket-ID,X [914] ∧ [937] [41],"[41] Es ist eine Produktpaket-ID aus dem DE1050 von einem SG8 SEQ+Z79 (Erforderliches Produkt) zu nennen  
-[914] Format: Möglicher Wert: > 0  
+87,Priorisierung erforderliches Produktpaket,SG8,SEQ,,00086,,,,Muss,
+88,Priorisierung erforderliches Produktpaket,SG8,SEQ,1229,00086,ZH0,,Priorisierung erforderliches Produktpaket,X,
+89,Priorisierung erforderliches Produktpaket,SG8,SEQ,1050,00086,,,Referenz auf Produktpaket-ID,X [914] ∧ [937] [41],"[41] Es ist eine Produktpaket-ID aus dem DE1050 von einem SG8 SEQ+Z79 (Erforderliches Produkt) zu nennen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
 90,Umsetzungsgradvorgabe des Produktpakets,SG10,,,,,,,Muss,
-91,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,,00086,,,,Muss,
-92,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,7059,00086,Z65,,Umsetzungsgradvorgabe des Produktpakets,X,
-93,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,4051,00086,Z01,,Produktpaket ist vollumfänglich umzusetzen,X [1P0..5],
+91,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,,00087,,,,Muss,
+92,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,7059,00087,Z65,,Umsetzungsgradvorgabe des Produktpakets,X,
+93,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,4051,00087,Z01,,Produktpaket ist vollumfänglich umzusetzen,X [1P0..5],
 94,Umsetzungsgradvorgabe des Produktpakets,SG10,CCI,4051,,Z02,,Produktpaket kann in Teilen umgesetzt werden,X [1P0..1],
-95,Priorisierung erforderliches Produktpaket,SG10,CAV,,00087,,,,Muss [42],[42] Wenn mehr als ein SG8 SEQ+ZH0 (Priorisierung erforderliches Produktpaket) vorhanden
-96,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,00087,Z75,,1. Priorität,X [10P1..1],
+95,Priorisierung erforderliches Produktpaket,SG10,CAV,,00088,,,,Muss [42],[42] Wenn mehr als ein SG8 SEQ+ZH0 (Priorisierung erforderliches Produktpaket) vorhanden
+96,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,00088,Z75,,1. Priorität,X [10P1..1],
 97,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,,Z76,,2. Priorität,X [10P1..1],
 98,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,,Z77,,3. Priorität,X [11P1..1],
 99,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,,Z78,,4. Priorität,X [12P1..1],
 100,Priorisierung erforderliches Produktpaket,SG10,CAV,7111,,Z79,,5. Priorität,X [13P1..1],
-101,Daten der Marktlokation,SG8,,,,,,,Muss [480] ∧ [2061],"[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden  
+101,Daten der Marktlokation,SG8,,,,,,,Muss [480] ∧ [2061],"[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-102,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
-103,Daten der Marktlokation,SG8,SEQ,1229,00113,Z01,,Daten der Marktlokation,X,
+102,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
+103,Daten der Marktlokation,SG8,SEQ,1229,00114,Z01,,Daten der Marktlokation,X,
 104,Gruppenzuordnung (nach EnWG) ,SG10,,,,,,,Muss,
-105,Gruppenzuordnung (nach EnWG) ,SG10,CCI,,00146,,,,Muss,
-106,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,00146,Z15,,Haushaltskunde gem. EnWG,X,
-107,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z18,,Kein Haushaltskundegem. EnWG,X,
-108,Kunde des Lieferanten,SG12,,,,,,,Muss,
-109,Kunde des Lieferanten,SG12,NAD,,00495,,,,Muss,
-110,Kunde des Lieferanten,SG12,NAD,3035,00495,Z09,,Kunde des LF,X,
-111,Kunde des Lieferanten,SG12,NAD,3036,00495,,,Name,X,
-112,Kunde des Lieferanten,SG12,NAD,3045,00495,Z01,,Struktur von Personennamen,X,
-113,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-114,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss [556],"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln"
-115,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,00499,,,,Muss,
-116,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,00499,Z04,,Korrespondenzanschrift des Kunden des LF,X,
-117,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,00499,,,Name,X,
-118,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,00499,Z01,,Struktur von Personennamen,X,
-119,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-120,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,00499,,,Straße und Hausnummer oder Postfach,X,
-121,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,00499,,,Ort,X,
-122,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,00499,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
-[268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen"
-123,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,00499,,,"Ländername, Code",X,
-124,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-125,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-126,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+105,Gruppenzuordnung (nach EnWG) ,SG10,CCI,,00144,,,,Muss,
+106,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,00144,Z15,,Haushaltskunde gem. EnWG,X,
+107,Gruppenzuordnung (nach EnWG) ,SG10,CCI,7037,,Z18,,Kein Haushaltskunde gem. EnWG,X,
+108,Daten des Kunden des Lieferanten,SG8,,,,,,,Muss,
+109,Daten des Kunden des Lieferanten,SG8,SEQ,,00491,,,,Muss,
+110,Daten des Kunden des Lieferanten,SG8,SEQ,1229,00491,Z75,,Daten des Kunden des Lieferanten,X,
+111,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,,,,,,,Muss,
+112,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,,00492,,,,Muss,
+113,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7059,00492,Z61,,Grundlage zur Verringerung der Umlagen nach EnFG,X,
+114,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,00492,ZF9,,Kunde erfüllt die Voraussetzung nach EnFG,X,
+115,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG0,,Kunde erfüllt nicht die Voraussetzung nach EnFG,X,
+116,Grundlage zur Verringerung der Umlagen nach EnFG,SG10,CCI,7037,,ZG1,,"Keine Angabe, da Marktlokation die Voraussetzung zur Verringerung der Umlagen nach EnFG nicht erfüllt",X,
+117,Grund der Privilegierung nach EnFG,SG10,CAV,,00493,,,,Muss,
+118,Grund der Privilegierung nach EnFG,SG10,CAV,7111,00493,ZU5,,§ 21 EnFG Stromspeicher und Verlustenergie,X,
+119,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU6,,§ 22 EnFG elektrisch angetriebene Wärmepumpen,X,
+120,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU7,,§ 23 EnFG Umlageerhebung bei Anlagen zur Verstromung von Kuppelgasen,X,
+121,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU8,,§ 24 EnFG Herstellung von Grünen Wasserstoff,X,
+122,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZU9,,§§ 30 - 35 EnFG stromkostenintensive Unternehmen,X,
+123,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV0,,§ 36 EnFG Herstellung von Wasserstoff in stromkostenintensiven Unternehmen,X,
+124,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV1,,§ 37 EnFG Schienenbahnen,X,
+125,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV2,,§ 38 EnFG elektrische betriebene Bussen im Linienverkehr,X,
+126,Grund der Privilegierung nach EnFG,SG10,CAV,7111,,ZV3,,§ 39 EnFG Landstromanlagen,X,
+127,Kunde des Lieferanten,SG12,,,,,,,Muss,
+128,Kunde des Lieferanten,SG12,NAD,,00494,,,,Muss,
+129,Kunde des Lieferanten,SG12,NAD,3035,00494,Z09,,Kunde des LF,X,
+130,Kunde des Lieferanten,SG12,NAD,3036,00494,,,Name,X,
+131,Kunde des Lieferanten,SG12,NAD,3045,00494,Z01,,Struktur von Personennamen,X,
+132,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+133,Korrespondenzanschrift des Kunden des Lieferanten,SG12,,,,,,,Muss [556],"[556] Hinweis: Wenn keine Korrespondenzanschrift des Endverbrauchers/ Kunden vorliegt, ist die Anschrift der Marktlokation zu übermitteln"
+134,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,,00498,,,,Muss,
+135,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3035,00498,Z04,,Korrespondenzanschrift des Kunden des LF,X,
+136,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3036,00498,,,Name,X,
+137,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,00498,Z01,,Struktur von Personennamen,X,
+138,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+139,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3042,00498,,,Straße und Hausnummer oder Postfach,X,
+140,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3164,00498,,,Ort,X,
+141,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3251,00498,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
+[268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
+142,Korrespondenzanschrift des Kunden des Lieferanten,SG12,NAD,3207,00498,,,"Ländername, Code",X,
+143,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+144,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+145,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

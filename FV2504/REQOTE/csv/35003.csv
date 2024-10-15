@@ -1,17 +1,17 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Anfrage,,REQOT E,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,REQOTE,,Anfrage,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.3a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.3b,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00002,Z57,,Übermittlung von Werten an ESA,X,
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Datum zum geplanten Leistungsbeginn,,DTM,,00004,,,,Muss,
@@ -36,10 +36,10 @@
 33,Ansprechpartner,SG14,CTA,3139,00015,,,,IC,
 34,Ansprechpartner,SG14,CTA,3412,00015,,,Kontakt,X,
 35,Kommunikationsverbindung,SG14,COM,,00016,,,,Muss,
-36,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [39]) ∨ ([940] [40])) ∧ [514],"[39] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[40] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+36,Kommunikationsverbindung,SG14,COM,3148,00016,,,"Kommunikationsadresse, Identifikation",X (([939] [39]) ∨ ([940] [40])) ∧ [514],"[39] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[40] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 37,Kommunikationsverbindung,SG14,COM,3155,00016,EM,,Elektronische Post,X [1P0..1],
 38,Kommunikationsverbindung,SG14,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -57,51 +57,52 @@
 50,"Liefer-, bzw. Bezugsort",SG11,NAD,3035,00018,,,,DP,
 51,Meldepunkt,SG11,LOC,,00019,,,,Muss,
 52,Meldepunkt,SG11,LOC,3227,00019,,,,172,
-53,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [502]) ⊻ ([951] [503]) ⊻ ([950] [504]) ⊻ ([960] [510]),"[502] Hinweis: Verwendung der ID der Marktlokation 
-[503] Hinweis: Verwendung der ID der Messlokation 
-[504] Hinweis: Verwendung der ID der Tranche 
-[510] Hinweis: Verwendung der ID der Netzlokation 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
+53,Meldepunkt,SG11,LOC,3225,00019,,,Identifikator,X ([950] [502]) ⊻ ([951] [503]) ⊻ ([950] [504]) ⊻ ([960] [510]),"[502] Hinweis: Verwendung der ID der Marktlokation
+[503] Hinweis: Verwendung der ID der Messlokation
+[504] Hinweis: Verwendung der ID der Tranche
+[510] Hinweis: Verwendung der ID der Netzlokation
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
 [960] Format: Netzlokations-ID"
-54,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,,,,,,,Soll [24] ∧ [2063],"[24] Wenn Produkt bestellt werden soll 
+54,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,,,,,,,Soll [24] ∧ [2063],"[24] Wenn Produkt bestellt werden soll
 [2063] Pro Nachricht ist die SG27 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) maximal einmal anzugeben"
-55,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,,00032,,,,Muss,
-56,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,1082,00032,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-57,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,1229,00032,für Werte nach Typ 2 aus Backend,,,Z67,
-58,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,,00033,,,,Muss,
-59,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,4347,00033,,,,5,
-60,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,7140,00033,,,Produkt-Code,X [41] ,"[41] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6.1 „Werte nach Typ 2 aus Backend“ enthalten sind."
-61,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,7143,00033,Z11,,Produkt,X,
-62,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,,,,,,,Soll [24] ∧ [2064],"[24] Wenn Produkt bestellt werden soll 
+55,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,,00029,,,,Muss,
+56,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,1082,00029,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+57,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,LIN,1229,00029,für Werte nach Typ 2 aus Backend,,,Z67,
+58,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,,00030,,,,Muss,
+59,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,4347,00030,,,,5,
+60,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,7140,00030,,,Produkt-Code,X [41] ,"[41] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6.1 „Werte nach Typ 2 aus Backend“ enthalten sind."
+61,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG27,PIA,7143,00030,Z11,,Produkt,X,
+62,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,,,,,,,Soll [24] ∧ [2064],"[24] Wenn Produkt bestellt werden soll
 [2064] Pro Nachricht ist die SG27 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) maximal einmal anzugeben"
-63,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,,00034,,,,Muss,
-64,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,1082,00034,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-65,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,1229,00034,Konfigurationserlaubnis für,,,Z68,
-66,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,,00035,,,,Muss,
-67,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,4347,00035,,,,5,
-68,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,7140,00035,,,Produkt-Code,X [42] ,"[42] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6.2 „Werte nach Typ 2 aus SMGW“ enthalten sind."
-69,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,7143,00035,Z11,,Produkt,X,
-70,Zieladresse URI,SG27,FTX,,00036,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-71,Zieladresse URI,SG27,FTX,4451,00036,,,,Z17,
-72,Zieladresse URI,SG27,FTX,4440,00036,,,Zieladresse URI IPv4 für die Bereitstellung der Werte,X [515],[515] Hinweis: Es ist eine URI IPv4 für die Bereitstellung der Werte anzugeben.
-73,Zieladresse URI,SG27,FTX,4440,00036,,,Zieladresse URI IPv6 für die Bereitstellung der Werte,X [516],[516] Hinweis: Es ist eine URI IPv6 für die Bereitstellung der Werte anzugeben.
-74,Zertifikatsaussteller (Issuer),SG27,FTX,,00037,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-75,Zertifikatsaussteller (Issuer),SG27,FTX,4451,00037,,,,Z24,
-76,Zertifikatsaussteller (Issuer),SG27,FTX,4440,00037,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-77,Zertifikatsnutzer (Subject),SG27,FTX,,00038,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-78,Zertifikatsnutzer (Subject),SG27,FTX,4451,00038,,,,Z23,
-79,Zertifikatsnutzer (Subject),SG27,FTX,4440,00038,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-80,Schwellwerte,SG28,,,,,,,Muss [2066] ∧ [43] ,"[43] Wenn innerhalb derselben SG27 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.6.2 „Werte nach Typ 2 aus SMGW“ in der Spalte"
-81,Schwellwerte,SG28,CCI,,00040,,,,Muss,
-82,Schwellwerte,SG28,CCI,7059,00040,,,,Z60,
-83,Schwellwerte,SG28,CCI,7037,00040,,,Messprodukt-Position-Code,X [37],"[37] Es sind nur die Messprodukt-Position-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.7 „Art der Werte für Messprodukte nach Typ 2“ enthalten sind."
-84,Schwellwerte,SG28,CCI,7036,00040,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+63,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,,00031,,,,Muss,
+64,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,1082,00031,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+65,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,LIN,1229,00031,Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,,,Z68,
+66,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,,00032,,,,Muss,
+67,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,4347,00032,,,,5,
+68,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,7140,00032,,,Produkt-Code,X [42] ,"[42] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.6.2 „Werte nach Typ 2 aus SMGW“ enthalten sind."
+69,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG27,PIA,7143,00032,Z11,,Produkt,X,
+70,Zieladresse URI,SG27,FTX,,00033,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+71,Zieladresse URI,SG27,FTX,4451,00033,,,,Z17,
+72,Zieladresse URI,SG27,FTX,4440,00033,,,Zieladresse URI IPv4 für die Bereitstellung der Werte,X [515],[515] Hinweis: Es ist eine URI IPv4 für die Bereitstellung der Werte anzugeben.
+73,Zieladresse URI,SG27,FTX,4440,00033,,,Zieladresse URI IPv6 für die Bereitstellung der Werte,X [516],[516] Hinweis: Es ist eine URI IPv6 für die Bereitstellung der Werte anzugeben.
+74,Zertifikatsaussteller (Issuer),SG27,FTX,,00034,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+75,Zertifikatsaussteller (Issuer),SG27,FTX,4451,00034,,,,Z24,
+76,Zertifikatsaussteller (Issuer),SG27,FTX,4440,00034,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+77,Zertifikatsnutzer (Subject),SG27,FTX,,00035,,,,Muss [512],[512] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+78,Zertifikatsnutzer (Subject),SG27,FTX,4451,00035,,,,Z23,
+79,Zertifikatsnutzer (Subject),SG27,FTX,4440,00035,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+80,Schwellwerte,SG28,,,,,,,Muss [2066] ∧ [43] ,"[43] Wenn innerhalb derselben SG27 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.6.2 „Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist.
+[2066] Diese SG28 ist so oft zu wiederholen, wie zu den unterschiedlichen Messprodukt- Position-Codes zu dem innerhalb derselben SG27 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) angegebenen Produkt ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.6.2 „Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist."
+81,Schwellwerte,SG28,CCI,,00037,,,,Muss,
+82,Schwellwerte,SG28,CCI,7059,00037,,,,Z60,
+83,Schwellwerte,SG28,CCI,7037,00037,,,Messprodukt-Position-Code,X [37],"[37] Es sind nur die Messprodukt-Position-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.7 „Art der Werte für Messprodukte nach Typ 2“ enthalten sind."
+84,Schwellwerte,SG28,CCI,7036,00037,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
-85,Schwellwerte,SG28,CCI,7036,00040,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+85,Schwellwerte,SG28,CCI,7036,00037,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
-86,Abschnitts-Kontrollsegment,,UNS,,00041,,,,Muss,
-87,Abschnitts-Kontrollsegment,,UNS,0081,00041,und Summenteil,,,S,
-88,Nachrichten-Endesegment,,UNT,,00042,,,,Muss,
-89,Nachrichten-Endesegment,,UNT,0074,00042,,,Anzahl der Segmente in einer Nachricht,X,
-90,Nachrichten-Endesegment,,UNT,0062,00042,,,Nachrichten-Referenznummer,X,
+86,Abschnitts-Kontrollsegment,,UNS,,00038,,,,Muss,
+87,Abschnitts-Kontrollsegment,,UNS,0081,00038,und Summenteil,,,S,
+88,Nachrichten-Endesegment,,UNT,,00039,,,,Muss,
+89,Nachrichten-Endesegment,,UNT,0074,00039,,,Anzahl der Segmente in einer Nachricht,X,
+90,Nachrichten-Endesegment,,UNT,0062,00039,,,Nachrichten-Referenznummer,X,

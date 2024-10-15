@@ -1,21 +1,21 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
+0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,[555] Die Anwendungsfälle für die Durchführung der BDEW- Anwendungshilfe „Marktprozesse Netzbetreiberwechsel Sparte Strom“ sind ab dem 01.08.2025 für Netzbetreiberwechsel ab dem 01.01.2026 zu verwenden
 1,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten- Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILM,,Netzanschluss-,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschrei bung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschrei bung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X [705],
-9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird  
+9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird
 [706] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Bestellung einer Änderung von Stammdaten..."" durchgeführt wird, mit dem Ziel ein Datenclearing durchzuführen "
 10,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 11,Nachrichtendatum,,DTM,,00005,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-13,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+13,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
-14,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZ,X,
+14,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZ ZZ,X,
 15,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
 16,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenausstell er bzw. -absender,X,
 17,MP-ID Absender,SG2,NAD,3039,00008,,,MP-ID,X,
@@ -25,220 +25,246 @@
 21,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 22,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 23,Kommunikationsverbindu ng,SG3,COM,,00010,,,,Muss,
-24,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+24,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 25,Kommunikationsverbindu ng,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 26,Kommunikationsverbindu ng,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 27,Kommunikationsverbindu ng,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
-28,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
-29,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
-30,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
-31,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
-32,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-33,Vorgang,SG4,IDE,,00020,,,,Muss,
-34,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
-35,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-36,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-37,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-38,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZX6,,Änderung Daten der MaLo,X,
-39,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZW3,,Erzeugende Marktlokation,X,
-40,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
-41,Status der Antwort,SG4,STS,,00035,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitrau m der Daten: ""Gültige Daten"" / ""Keine Daten"") anzugeben"
-42,Status der Antwort,SG4,STS,9015,00035,E01,,Status der Antwort,X,
-43,Status der Antwort,SG4,STS,9013,00035,,,Code des Prüfschritts,X,
-44,Status der Antwort,SG4,STS,1131,00035,E_040,,EBD Nr. E_0408,X,
-45,Status der Antwort,SG4,STS,9012,00035,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+28,Kommunikationsverbindu ng,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+29,Kommunikationsverbindu ng,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+30,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
+31,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfän ger,X,
+32,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
+33,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+34,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+35,Vorgang,SG4,IDE,,00020,,,,Muss,
+36,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
+37,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
+38,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+39,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+40,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX6,,Änderung Daten der MaLo,X,
+41,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZW3,,Erzeugende Marktlokation,X,
+42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
+43,Status der Antwort,SG4,STS,,00036,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitrau m der Daten: ""Gültige Daten"" / ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 (Referenz Vorgangsnummer (aus Anfragenachricht)) anzugeben"
+44,Status der Antwort,SG4,STS,9015,00036,E01,,Status der Antwort,X,
+45,Status der Antwort,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
+46,Status der Antwort,SG4,STS,1131,00036,E_0408,,EBD Nr. E_0408,X,
+47,Status der Antwort,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-46,Marktlokation,SG5,LOC,,00048,,,,Muss,
-47,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-48,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-49,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-50,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
-51,Prüfidentifikator,SG6,RFF,1154,,55622,,GPKE / Rückmeldung / Anfrage Daten der MaLo vom LF an NB,X,
-52,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00056,,,,Muss,
-53,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00056,TN,,Transaktions- Referenznummer,X,
-54,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00056,,,Vorgangsnummer,X,
-55,Verwendungszeitraum der Daten,SG6,RFF,,00065,,,,Muss,
-56,Verwendungszeitraum der Daten,SG6,RFF,1153,00065,Z47,,Im System vorhandene Daten,X [5P0..n],
-57,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
-58,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
-59,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
-60,Verwendungszeitraum der Daten,SG6,RFF,1156,00065,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.  "
-61,Verwendung der Daten ab,SG6,DTM,,00066,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitrau m der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem älterer Tag 0:00 Uhr deutscher Zeit vom DTM+137 DE2380 (Nachrichtendatum) sein  
-[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6"
-62,Verwendung der Daten ab,SG6,DTM,2005,00066,Z25,,Verwendung der Daten ab,X,
-63,Verwendung der Daten ab,SG6,DTM,2380,00066,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-64,Verwendung der Daten ab,SG6,DTM,2379,00066,303,,CCYYMMDDHHMMZ ZZ,X,
-65,Verwendung der Daten bis,SG6,DTM,,00067,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)  
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten:"
-66,Verwendung der Daten bis,SG6,DTM,2005,00067,Z26,,Verwendung der Daten bis,X,
-67,Verwendung der Daten bis,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-68,Verwendung der Daten bis,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZ ZZ,X,
-69,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
-70,Daten der Marktlokation,SG8,SEQ,1229,,Z80,,Erwartete Daten der Marktlokation,X [2P0..n],
-71,Daten der Marktlokation,SG8,SEQ,1229,,Z81,,Im System vorhandene Daten der Marktlokation,X [3P0..n],
-72,Daten der Marktlokation,SG8,SEQ,1050,00113,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem
-73,Zugeordnete Marktpartner,SG10,CCI,,00121,,,,Muss,
-74,Zugeordnete Marktpartner,SG10,CCI,7037,00121,ZB3,,Zugeordneter Marktpartner,X,
-75,Messstellenbetreiber,SG10,CAV,,00124,,,,Muss,
-76,Messstellenbetreiber,SG10,CAV,7111,00124,Z91,,MSB,X,
-77,Messstellenbetreiber,SG10,CAV,1131,00124,,,MP-ID,X,
-78,Messstellenbetreiber,SG10,CAV,7110,00124,Z39,,Grundzuständiger Messstellenbetreibe r,X,
-79,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreibe r,X,
-80,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellen betreiber,X,
-81,Messstellenbetreiber,SG10,CAV,7110,00124,Z19,,Auf vertraglicher Grundlagegegenüber Anschlussnutzer / Anschlussnehmer,X,
-82,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-83,Messtechnische Einordnung der Marktlokation,SG10,CCI,,00135,,,,Muss,
-84,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,00135,Z83,,Messtechnische Einordnung der Marktlokation,X,
-85,Messtechnische Einordnung der Marktlokation,SG10,CAV,,00136,,,,Muss,
-86,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,00136,Z52,,iMS,X,
-87,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
-88,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z68,,keine Messung,X,
-89,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,,00141,,,,Muss,
-90,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CCI,7037,00141,Z84,,Wahlrecht der Prognosegrundlage,X,
-91,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,00142,,,,Muss,
-92,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,00142,Z54,,Wahlrecht durch LFgegeben,X,
-93,Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE2,,Wahlrecht durch LFnicht gegeben,X,
-94,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,,00143,,,,Muss,
-95,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,00143,Z55,,Wahlrecht nicht vorhanden wegen Verbrauch > 10.000 kWh/a,X [1P0..1],
-96,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZC1,,Wahlrecht nicht vorhanden wegen Eigenverbrauch,X [1P0..1],
-97,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZD2,,Wahlrecht nicht vorhanden wegentagesparameterabh ängigem Verbrauch,X [1P0..1],
-98,Grund für nicht vorhandenes Wahlrecht der Prognosegrundlage der Marktlokation,SG10,CAV,7111,,ZE3,,Wahlrecht nicht vorhanden wegen § 14a EnWG,X [1P0..1],
-99,Art der erzeugenden Marktlokation,SG10,CCI,,00144,,,,Muss,
-100,Art der erzeugenden Marktlokation,SG10,CCI,7037,00144,Z34,,Art der erzeugenden Marktlokation,X,
-101,Art der erzeugenden Marktlokation ,SG10,CAV,,00145,,,,Muss,
-102,Art der erzeugenden Marktlokation ,SG10,CAV,7111,00145,Z33,,EEG-Marktlokation ohne DV-Pflicht,X,
-103,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z34,,KWKG- Marktlokation ohne DV-Pflicht,X,
-104,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z35,,sonstige Marktlokation,X,
-105,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z37,,EEG-Marktlokationmit DV-Pflicht,X,
-106,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z46,,KWKG- Marktlokation mit DV-Pflicht,X,
-107,Empfänger der Vergütung zur Einspeisung,SG10,CCI,,00151,,,,Muss,
-108,Empfänger der Vergütung zur Einspeisung,SG10,CCI,7037,00151,Z89,,Empfänger der Vergütung,X,
-109,Empfänger der Vergütung zur Einspeisung,SG10,CAV,,00152,,,,Muss,
-110,Empfänger der Vergütung zur Einspeisung,SG10,CAV,7110,00152,Z10,,Kunde,X,
-111,Empfänger der Vergütung zur Einspeisung,SG10,CAV,7110,,Z11,,Lieferant,X,
-112,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,,00153,,,,Muss,
-113,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7059,00153,Z22,,Gesetzliche Kategorie,X,
-114,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7037,00153,Z90,,EEG-,X,[695] Hinweis:
-115,Status der Fernsteuerbarkeit,SG10,CCI,,00155,,,,Muss,
-116,Status der Fernsteuerbarkeit,SG10,CCI,7059,00155,Z24,,Status der Fernsteuerbarkeit,X,
-117,Status der Fernsteuerbarkeit,SG10,CCI,7037,00155,Z96,,Marktlokation isttechnisch nicht fernsteuerbar,X,
-118,Status der Fernsteuerbarkeit,SG10,CCI,7037,,Z97,,Marktlokation isttechnisch fernsteuerbar,X,
-119,Status der Fernsteuerbarkeit,SG10,CCI,7037,,Z98,,Marktlokation ist durch den Lieferanten fernsteuerbar,X,
-120,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,,00215,,,,Muss,
-121,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1229,,ZD1,,Erwartete Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,X,
-122,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1229,,ZD2,,Im System vorhandene Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,X,
-123,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1050,00215,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49
-124,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,,00216,,,,Muss,
-125,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1153,00216,Z10,,OBIS-Kennzahl,X,
-126,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1154,00216,,,OBIS-Kennzahl,X,
-127,Verbrauchsart und Nutzung an der OBIS- Kennzahl der Marktlokation,SG10,CCI,,00217,,,,Muss,
-128,Verbrauchsart und Nutzung an der OBIS- Kennzahl der Marktlokation,SG10,CCI,7059,00217,Z17,,Stromverbrauchsart,X,
-129,Verbrauchsart,SG10,CAV,,00218,,,,Muss,
-130,Verbrauchsart,SG10,CAV,7111,00218,Z64,,Kraft/Licht,X [1P0..1],
-131,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme/Kälte,X [1P0..1],
-132,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
-133,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
-134,Verbrauchsart,SG10,CAV,7111,,ZB3,,Steuerung Wärmeabgabe,X [1P0..1],
-135,Unterbrechbarkeit,SG10,CAV,,00219,,,,Muss,
-136,Unterbrechbarkeit,SG10,CAV,7111,00219,Z62,,unterbrechbare Verbrauchseinrichtung,X,
-137,Unterbrechbarkeit,SG10,CAV,7111,,Z63,,nicht- unterbrechbare Verbrauchseinrichtung,X,
-138,Wärme-/Kältenutzung,SG10,CAV,,00220,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme/Kälte)
-139,Wärme-/Kältenutzung,SG10,CAV,7111,00220,Z56,,Speicherheizung,X,
-140,Wärme-/Kältenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe (unspezifiziert),X,
-141,Wärme-/Kältenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
-142,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV5,,Wärmepumpe (Wärme und Kälte),X,
-143,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV6,,Wärmepumpe (Kälte),X,
-144,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV7,,Wärmepumpe (Wärme),X,
-145,Art der E-Mobilität,SG10,CAV,,00221,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) CAV+ZE5 (E-Mobilität) vorhanden
-146,Art der E-Mobilität,SG10,CAV,7111,00221,ZE6,,Wallbox,X,
-147,Art der E-Mobilität,SG10,CAV,7111,,Z87,,E- Mobilitätsladesäule,X,
-148,Art der E-Mobilität,SG10,CAV,7111,,ZE7,,Ladepark,X,
-149,Produkt-Daten der Marktlokation des NB,SG8,SEQ,,00224,,,,Muss,
-150,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1229,,ZD3,,Erwartete Produkt- Daten der Marktlokation des NB,X,
-151,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1229,,ZD4,,Im System,X,
-152,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1050,00224,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+48,Marktlokation,SG5,LOC,,00049,,,,Muss,
+49,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+50,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+51,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+52,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+53,Prüfidentifikator,SG6,RFF,1154,,55622,,GPKE / Rückmeldung / Anfrage Daten der MaLo vom LF an NB,X,
+54,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
+55,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions- Referenznummer,X,
+56,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
+57,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+58,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
+59,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
+60,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
+61,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
+62,Verwendungszeitraum der Daten,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
+[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-153,Produktidentifikation der Marktlokation,SG8,PIA,,00225,,,,Soll [8] ∧ [648],"[8] Wenn für Datenclearing erforderlich  
-[262] Wenn Produkt an der Marktlokation vorhanden ist  
+63,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitrau m der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[135] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[401] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen "
+64,Verwendung der Daten ab,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+65,Verwendung der Daten ab,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+66,Verwendung der Daten ab,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZ ZZ,X,
+67,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)
+[473] Wenn im selben SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) DE1156 (Zeitraum-ID)"
+68,Verwendung der Daten bis,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+69,Verwendung der Daten bis,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+70,Verwendung der Daten bis,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZ ZZ,X,
+71,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
+72,Daten der Marktlokation,SG8,SEQ,1229,,Z80,,Erwartete Daten der Marktlokation,X [2P0..n],
+73,Daten der Marktlokation,SG8,SEQ,1229,,Z81,,Im System vorhandene Daten der Marktlokation,X [3P0..n],
+74,Daten der Marktlokation,SG8,SEQ,1050,00114,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+75,Zugeordnete Marktpartner,SG10,CCI,,00122,,,,Muss,
+76,Zugeordnete Marktpartner,SG10,CCI,7037,00122,ZB3,,Zugeordneter Marktpartner,X,
+77,Messstellenbetreiber,SG10,CAV,,00125,,,,Muss,"[232] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z52 (iMS) vorhanden
+[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden"
+78,Messstellenbetreiber,SG10,CAV,7111,00125,Z91,,MSB,X,
+79,Messstellenbetreiber,SG10,CAV,1131,00125,,,MP-ID,X,
+80,Messstellenbetreiber,SG10,CAV,7110,00125,Z39,,Grundzuständiger Messstellenbetreiber,X,
+81,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
+82,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellen betreiber,X,
+83,Messstellenbetreiber,SG10,CAV,7110,00125,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+84,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+85,Spannungsebene der Marktlokation,SG10,CCI,,00133,,,,Muss,
+86,Spannungsebene der Marktlokation,SG10,CAV,,00134,,,,Muss,
+87,Spannungsebene der Marktlokation,SG10,CAV,7111,00134,E03,,Höchstspannung,X,
+88,Spannungsebene der Marktlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
+89,Spannungsebene der Marktlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
+90,Spannungsebene der Marktlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
+91,Umspannung der Marktlokation,SG10,CAV,,00135,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[166] Wenn vorhanden"
+92,Umspannung der Marktlokation,SG10,CAV,7111,00135,E07,,Hös/HS Umspannung,X [116],
+93,Umspannung der Marktlokation,SG10,CAV,7111,,E08,,HS/MS Umspannung,X [115],
+94,Umspannung der Marktlokation,SG10,CAV,7111,,E09,,MS/NS Umspannung,X [114],"[114] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E06 (Niederspannung) in dieser SG vorhanden
+[115] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E05 (Mittelspannung) in dieser SG vorhanden
+[116] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E04 (Hochspannung) in dieser SG vorhanden"
+95,Messtechnische Einordnung der Marktlokation,SG10,CCI,,00136,,,,Muss,
+96,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,00136,Z83,,Messtechnische Einordnung der Marktlokation,X,
+97,Messtechnische Einordnung der Marktlokation,SG10,CAV,,00137,,,,Muss,
+98,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,00137,Z52,,iMS,X,
+99,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
+100,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z68,,keine Messung,X,
+101,Art der erzeugenden Marktlokation,SG10,CCI,,00142,,,,Muss,
+102,Art der erzeugenden Marktlokation,SG10,CCI,7037,00142,Z34,,Art der erzeugenden Marktlokation,X,
+103,Art der erzeugenden Marktlokation ,SG10,CAV,,00143,,,,Muss,
+104,Art der erzeugenden Marktlokation ,SG10,CAV,7111,00143,Z33,,EEG-Marktlokation ohne DV-Pflicht,X,
+105,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z34,,KWKG- Marktlokation ohne DV-Pflicht,X,
+106,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z35,,sonstige Marktlokation,X,
+107,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z37,,EEG-Marktlokation mit DV-Pflicht,X,
+108,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z46,,KWKG- Marktlokation mit DV-Pflicht,X,
+109,Empfänger der Vergütung zur Einspeisung,SG10,CCI,,00149,,,,Muss,
+110,Empfänger der Vergütung zur Einspeisung,SG10,CCI,7037,00149,Z89,,Empfänger der Vergütung,X,
+111,Empfänger der Vergütung zur Einspeisung,SG10,CAV,,00150,,,,Muss,
+112,Empfänger der Vergütung zur Einspeisung,SG10,CAV,7110,00150,Z10,,Kunde,X,
+113,Empfänger der Vergütung zur Einspeisung,SG10,CAV,7110,,Z11,,Lieferant,X,
+114,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,,00151,,,,Muss,
+115,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7059,00151,Z22,,Gesetzliche Kategorie,X,
+116,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7037,00151,Z90,,EEG- Veräußerungsform: Ausfallvergütung,X,
+117,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7037,,Z91,,EEG- Veräußerungsform: Marktprämie,X,
+118,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7037,,Z92,,Veräußerungsform ohne gesetzliche Vergütung,X,
+119,Veräußerungsungsform der erzeugenden Marktlokation,SG10,CCI,7037,,Z94,,KWKG-Vergütung,X,"[695] Hinweis: Verwendung, wenn Rolle LF einem Unternehmen NB zugeordnet ist
+[696] Hinweis: Verwendung, nur wenn die Rolle LF nicht einem Unternehmen NB zugeordnet ist"
+120,Status der Fernsteuerbarkeit,SG10,CCI,,00153,,,,Muss,
+121,Status der Fernsteuerbarkeit,SG10,CCI,7059,00153,Z24,,Status der Fernsteuerbarkeit,X,
+122,Status der Fernsteuerbarkeit,SG10,CCI,7037,00153,Z96,,Marktlokation ist technisch nicht fernsteuerbar,X,
+123,Status der Fernsteuerbarkeit,SG10,CCI,7037,,Z97,,Marktlokation ist technisch fernsteuerbar,X,
+124,Status der Fernsteuerbarkeit,SG10,CCI,7037,,Z98,,Marktlokation ist durch den Lieferanten fernsteuerbar,X,
+125,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,,00214,,,,Muss,
+126,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1229,,ZD1,,Erwartete Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,X,
+127,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1229,,ZD2,,Im System vorhandene Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,X,
+128,Verbrauchsart und Nutzung der OBIS- Kennzahl der Marktlokation,SG8,SEQ,1050,00214,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+129,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,,00215,,,,Muss,
+130,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1153,00215,Z10,,OBIS-Kennzahl,X,
+131,Referenz auf die OBIS- Kennzahl der Marktlokation,SG8,RFF,1154,00215,,,OBIS-Kennzahl,X,
+132,Verbrauchsart und Nutzung an der OBIS- Kennzahl der Marktlokation,SG10,CCI,,00216,,,,Muss,
+133,Verbrauchsart und Nutzung an der OBIS- Kennzahl der Marktlokation,SG10,CCI,7059,00216,Z17,,Stromverbrauchsart,X,
+134,Verbrauchsart,SG10,CAV,,00217,,,,Muss,
+135,Verbrauchsart,SG10,CAV,7111,00217,Z64,,Kraft/Licht,X [1P0..1],
+136,Verbrauchsart,SG10,CAV,7111,,Z65,,Wärme/Kälte,X [1P0..1],
+137,Verbrauchsart,SG10,CAV,7111,,ZE5,,E-Mobilität,X [1P0..1],
+138,Verbrauchsart,SG10,CAV,7111,,ZA8,,Straßenbeleuchtung,X [1P0..1],
+139,Verbrauchsart,SG10,CAV,7111,,ZB3,,Steuerung Wärmeabgabe,X [1P0..1],
+140,Unterbrechbarkeit,SG10,CAV,,00218,,,,Muss,
+141,Unterbrechbarkeit,SG10,CAV,7111,00218,Z62,,unterbrechbare Verbrauchseinrichtu ng,X,
+142,Unterbrechbarkeit,SG10,CAV,7111,,Z63,,nicht- unterbrechbare Verbrauchseinrichtu ng,X,
+143,Wärme-/Kältenutzung,SG10,CAV,,00219,,,,Muss [239],[239] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) im CAV+Z65 (Wärme/Kälte) vorhanden
+144,Wärme-/Kältenutzung,SG10,CAV,7111,00219,Z56,,Speicherheizung,X,
+145,Wärme-/Kältenutzung,SG10,CAV,7111,,Z57,,Wärmepumpe (unspezifiziert),X,
+146,Wärme-/Kältenutzung,SG10,CAV,7111,,Z61,,Direktheizung,X,
+147,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV5,,Wärmepumpe (Wärme und Kälte),X,
+148,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV6,,Wärmepumpe (Kälte),X,
+149,Wärme-/Kältenutzung,SG10,CAV,7111,,ZV7,,Wärmepumpe (Wärme),X,
+150,Art der E-Mobilität,SG10,CAV,,00220,,,,Muss [95],[95] Wenn in derselben SG10 das CCI+Z17 (Stromverbrauchsart) CAV+ZE5 (E-Mobilität) vorhanden
+151,Art der E-Mobilität,SG10,CAV,7111,00220,ZE6,,Wallbox,X,
+152,Art der E-Mobilität,SG10,CAV,7111,,Z87,,E- Mobilitätsladesäule,X,
+153,Art der E-Mobilität,SG10,CAV,7111,,ZE7,,Ladepark,X,
+154,Produkt-Daten der Marktlokation des NB,SG8,SEQ,,00223,,,,Muss,
+155,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1229,,ZD3,,Erwartete Produkt- Daten der Marktlokation des NB,X,
+156,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1229,,ZD4,,Im System vorhandene Produkt-Daten der Marktlokation des NB,X,
+157,Produkt-Daten der Marktlokation des NB,SG8,SEQ,1050,00223,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+158,Produktidentifikation der Marktlokation,SG8,PIA,,00224,,,,Soll [8] ∧ [648],"[8] Wenn für Datenclearing erforderlich
+[262] Wenn Produkt an der Marktlokation vorhanden ist
 [648] Hinweis: Soll ein Produkt ab dem Datum ""Änderung zum"" nicht mehr vorhanden sein, wird dies durch nicht angeben des PIA+5 ausgedrückt"
-154,Produktidentifikation der Marktlokation,SG8,PIA,4347,00225,5,,Produktidentifikation,X,
-155,Produktidentifikation der Marktlokation,SG8,PIA,7140,00225,AUA,,Ausfallarbeit,X,
-156,Produktidentifikation der Marktlokation,SG8,PIA,7143,00225,Z08,,Medium,X,
-157,Kunde des Netzbetreibers,SG12,NAD,,00507,,,,Muss,
-158,Kunde des Netzbetreibers,SG12,NAD,3035,,Z51,,Erwarteter Kunde des Netzbetreibers,X,
-159,Kunde des Netzbetreibers,SG12,NAD,3035,,Z52,,Im System vorhandener Kunde des Netzbetreibers,X,
-160,Kunde des Netzbetreibers,SG12,NAD,3036,00507,,,Name,X,
-161,Kunde des Netzbetreibers,SG12,NAD,3045,00507,Z01,,Struktur von Personennamen,X,
-162,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-163,Referenz auf Zeitraum.ID,SG12,RFF,,00508,,,,Muss,
-164,Referenz auf Zeitraum.ID,SG12,RFF,1153,00508,Z46,,Referenz auf Zeitraum-ID,X,
-165,Referenz auf Zeitraum.ID,SG12,RFF,1154,00508,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+159,Produktidentifikation der Marktlokation,SG8,PIA,4347,00224,5,,Produktidentifikation,X,
+160,Produktidentifikation der Marktlokation,SG8,PIA,7140,00224,AUA,,Ausfallarbeit,X,
+161,Produktidentifikation der Marktlokation,SG8,PIA,7143,00224,Z08,,Medium,X,
+162,Kunde des Netzbetreibers,SG12,NAD,,00506,,,,Muss,
+163,Kunde des Netzbetreibers,SG12,NAD,3035,,Z51,,Erwarteter Kunde des Netzbetreibers,X,
+164,Kunde des Netzbetreibers,SG12,NAD,3035,,Z52,,Im System vorhandener Kunde des Netzbetreibers,X,
+165,Kunde des Netzbetreibers,SG12,NAD,3036,00506,,,Name,X,
+166,Kunde des Netzbetreibers,SG12,NAD,3045,00506,Z01,,Struktur von Personennamen,X,
+167,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+168,Referenz auf Zeitraum.ID,SG12,RFF,,00507,,,,Muss,
+169,Referenz auf Zeitraum.ID,SG12,RFF,1153,00507,Z46,,Referenz auf Zeitraum-ID,X,
+170,Referenz auf Zeitraum.ID,SG12,RFF,1154,00507,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-166,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,,00510,,,,Muss,
-167,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3035,,Z53,,Erwartete Korrespondenzansc hrift des Kunden des Netzbetreibers,X,
-168,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3035,,Z54,,Im System vorhandene Korrespondenzansc hrift des Kunden des Netzbetreibers,X,
-169,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3036,00510,,,Name,X,
-170,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,00510,Z01,,Struktur von Personennamen,X,
-171,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3042,00510,,,Straße und Hausnummer oder Postfach,X,
-172,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3164,00510,,,Ort,X,
-173,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3251,00510,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+171,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,,00509,,,,Muss,
+172,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3035,,Z53,,Erwartete Korrespondenzansc hrift des Kunden des Netzbetreibers,X,
+173,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3035,,Z54,,Im System vorhandene Korrespondenzansc hrift des Kunden des Netzbetreibers,X,
+174,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3036,00509,,,Name,X,
+175,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3045,00509,Z01,,Struktur von Personennamen,X,
+176,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+177,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3042,00509,,,Straße und Hausnummer oder Postfach,X,
+178,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3164,00509,,,Ort,X,
+179,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3251,00509,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-174,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3207,00510,,,"Ländername, Code",X,
-175,Referenz auf Zeitraum.ID,SG12,RFF,,00511,,,,Muss,
-176,Referenz auf Zeitraum.ID,SG12,RFF,1153,00511,Z46,,Referenz auf Zeitraum-ID,X,
-177,Referenz auf Zeitraum.ID,SG12,RFF,1154,00511,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+180,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3207,00509,,,"Ländername, Code",X,
+181,Referenz auf Zeitraum.ID,SG12,RFF,,00510,,,,Muss,
+182,Referenz auf Zeitraum.ID,SG12,RFF,1153,00510,Z46,,Referenz auf Zeitraum-ID,X,
+183,Referenz auf Zeitraum.ID,SG12,RFF,1154,00510,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-178,Anschlussnehmer,SG12,NAD,,00513,,,,Muss,
-179,Anschlussnehmer,SG12,NAD,3035,,Z55,,Erwarteter Anschlussnehmer,X,
-180,Anschlussnehmer,SG12,NAD,3035,,Z56,,Im System vorhandener Anschlussnehmer,X,
-181,Anschlussnehmer,SG12,NAD,3036,00513,,,Name,X,
-182,Anschlussnehmer,SG12,NAD,3045,00513,Z01,,Struktur von Personennamen,X,
-183,Anschlussnehmer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-184,Anschlussnehmer,SG12,NAD,3042,00513,,,Straße und Hausnummer oder Postfach,X,
-185,Anschlussnehmer,SG12,NAD,3164,00513,,,Ort,X,
-186,Anschlussnehmer,SG12,NAD,3251,00513,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+184,Anschlussnehmer,SG12,NAD,,00512,,,,Muss,
+185,Anschlussnehmer,SG12,NAD,3035,,Z55,,Erwarteter Anschlussnehmer,X,
+186,Anschlussnehmer,SG12,NAD,3035,,Z56,,Im System vorhandener Anschlussnehmer,X,
+187,Anschlussnehmer,SG12,NAD,3036,00512,,,Name,X,
+188,Anschlussnehmer,SG12,NAD,3045,00512,Z01,,Struktur von Personennamen,X,
+189,Anschlussnehmer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+190,Anschlussnehmer,SG12,NAD,3042,00512,,,Straße und Hausnummer oder Postfach,X,
+191,Anschlussnehmer,SG12,NAD,3164,00512,,,Ort,X,
+192,Anschlussnehmer,SG12,NAD,3251,00512,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-187,Anschlussnehmer,SG12,NAD,3207,00513,,,"Ländername, Code",M,
-188,Referenz auf Zeitraum.ID,SG12,RFF,,00514,,,,Muss,
-189,Referenz auf Zeitraum.ID,SG12,RFF,1153,00514,Z46,,Referenz auf Zeitraum-ID,X,
-190,Referenz auf Zeitraum.ID,SG12,RFF,1154,00514,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+193,Anschlussnehmer,SG12,NAD,3207,00512,,,"Ländername, Code",M,
+194,Referenz auf Zeitraum.ID,SG12,RFF,,00513,,,,Muss,
+195,Referenz auf Zeitraum.ID,SG12,RFF,1153,00513,Z46,,Referenz auf Zeitraum-ID,X,
+196,Referenz auf Zeitraum.ID,SG12,RFF,1154,00513,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-191,Hausverwalter,SG12,NAD,,00515,,,,Muss,
-192,Hausverwalter,SG12,NAD,3036,00515,,,Name,X,
-193,Hausverwalter,SG12,NAD,3045,00515,Z01,,Struktur von Personennamen,X,
-194,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-195,Hausverwalter,SG12,NAD,3042,00515,,,Straße und Hausnummer oder Postfach,X,
-196,Hausverwalter,SG12,NAD,3164,00515,,,Ort,X,
-197,Hausverwalter,SG12,NAD,3251,00515,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+197,Hausverwalter,SG12,NAD,,00514,,,,Muss,
+198,Hausverwalter,SG12,NAD,3035,,Z57,,Erwarteter Hausverwalter,X,
+199,Hausverwalter,SG12,NAD,3035,,Z58,,Im System vorhandener Hausverwalter,X,
+200,Hausverwalter,SG12,NAD,3036,00514,,,Name,X,
+201,Hausverwalter,SG12,NAD,3045,00514,Z01,,Struktur von Personennamen,X,
+202,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+203,Hausverwalter,SG12,NAD,3042,00514,,,Straße und Hausnummer oder Postfach,X,
+204,Hausverwalter,SG12,NAD,3164,00514,,,Ort,X,
+205,Hausverwalter,SG12,NAD,3251,00514,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-198,Hausverwalter,SG12,NAD,3207,00515,,,"Ländername, Code",M,
-199,Referenz auf Zeitraum.ID,SG12,RFF,,00516,,,,Muss,
-200,Referenz auf Zeitraum.ID,SG12,RFF,1153,00516,Z46,,Referenz auf Zeitraum-ID,X,
-201,Referenz auf Zeitraum.ID,SG12,RFF,1154,00516,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49
-202,Marktlokationsanschrift,SG12,NAD,,00519,,,,Muss,
-203,Marktlokationsanschrift,SG12,NAD,3035,,Z59,,Erwartete Marktlokationsansc hrift,X,
-204,Marktlokationsanschrift,SG12,NAD,3035,,Z60,,Im System vorhandene Marktlokationsansc hrift,X,
-205,Marktlokationsanschrift,SG12,NAD,3124,00519,,,Zusatzinformation zur Identifizierung,K,
-206,Marktlokationsanschrift,SG12,NAD,3042,00519,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden  
+206,Hausverwalter,SG12,NAD,3207,00514,,,"Ländername, Code",M,
+207,Referenz auf Zeitraum.ID,SG12,RFF,,00515,,,,Muss,
+208,Referenz auf Zeitraum.ID,SG12,RFF,1153,00515,Z46,,Referenz auf Zeitraum-ID,X,
+209,Referenz auf Zeitraum.ID,SG12,RFF,1154,00515,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+210,Marktlokationsanschrift,SG12,NAD,,00518,,,,Muss,
+211,Marktlokationsanschrift,SG12,NAD,3035,,Z59,,Erwartete Marktlokationsansc hrift,X,
+212,Marktlokationsanschrift,SG12,NAD,3035,,Z60,,Im System vorhandene Marktlokationsansc hrift,X,
+213,Marktlokationsanschrift,SG12,NAD,3124,00518,,,Zusatzinformation zur Identifizierung,K,
+214,Marktlokationsanschrift,SG12,NAD,3042,00518,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden
 [212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
-207,Marktlokationsanschrift,SG12,NAD,3164,00519,,,Ort,X,
-208,Marktlokationsanschrift,SG12,NAD,3251,00519,,,Postleitzahl,X,
-209,Marktlokationsanschrift,SG12,NAD,3207,00519,,,"Ländername, Code",X,
-210,Referenz auf Zeitraum.ID,SG12,RFF,,00520,,,,Muss,
-211,Referenz auf Zeitraum.ID,SG12,RFF,1153,00520,Z46,,Referenz auf Zeitraum-ID,X,
-212,Referenz auf Zeitraum.ID,SG12,RFF,1154,00520,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+215,Marktlokationsanschrift,SG12,NAD,3164,00518,,,Ort,X,
+216,Marktlokationsanschrift,SG12,NAD,3251,00518,,,Postleitzahl,X,
+217,Marktlokationsanschrift,SG12,NAD,3207,00518,,,"Ländername, Code",X,
+218,Referenz auf Zeitraum.ID,SG12,RFF,,00519,,,,Muss,
+219,Referenz auf Zeitraum.ID,SG12,RFF,1153,00519,Z46,,Referenz auf Zeitraum-ID,X,
+220,Referenz auf Zeitraum.ID,SG12,RFF,1154,00519,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-213,Nachrichten- Endesegment,,UNT,,00527,,,,Muss,
-214,Nachrichten- Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-215,Nachrichten- Endesegment,,UNT,0062,00527,,,Nachrichten- Referenznummer,X,
+221,Nachrichten- Endesegment,,UNT,,00526,,,,Muss,
+222,Nachrichten- Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+223,Nachrichten- Endesegment,,UNT,0062,00526,,,Nachrichten- Referenznummer,X,

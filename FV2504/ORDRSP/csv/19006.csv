@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,7 +11,7 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss,
@@ -28,7 +28,7 @@
 25,Prüfidentifikator,SG1,RFF,1154,,19006,,Ablehnung der Änderung der Messlokation,X,
 26,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,,Muss,
 27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,00013,,,,Muss,
-28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein 
+28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein
 [18] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Ablehnung zugeordnet sein"
 29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,00013,E_0249,,EBD Nr. E_0249,X [15] ∧ [492],
 30,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_0250,,EBD Nr. E_0250,X [4] ∧ [492],
@@ -46,7 +46,11 @@
 42,Ansprechpartner,SG6,CTA,3139,00016,IC,,Informationskontakt,X,
 43,Ansprechpartner,SG6,CTA,3412,00016,,,Kontakt,X,
 44,Kommunikationsverbindung,SG6,COM,,00017,,,,Muss,
-45,Kommunikationsverbindung,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧,[50] wenn im DE3155 in demselben COM der Code EM
+45,Kommunikationsverbindung,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧ [540],"[50] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[51] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[540] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 46,Kommunikationsverbindung,SG6,COM,3155,00017,EM,,Elektronische Post,X [1P0..1],
 47,Kommunikationsverbindung,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
 48,Kommunikationsverbindung,SG6,COM,3155,,TE,,Telefon,X [1P0..1],

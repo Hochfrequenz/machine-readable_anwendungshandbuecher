@@ -1,19 +1,19 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
+0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,[555] Die Anwendungsfälle für die Durchführung der BDEW-Anwendungshilfe „Marktprozesse Netzbetreiberwechsel Sparte Strom“ sind ab dem 01.08. 2025 für Netzbetreiberwechsel ab dem 01.01.2026 zu verwenden
 1,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILMD,,Netzanschluss-Stammdaten,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X,
-9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
+9,EDIFACT Struktur,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
-11,EDIFACT Struktur,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,EDIFACT Struktur,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
-13,EDIFACT Struktur,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
+13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
 15,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
 16,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenaussteller bzw. - absender,X,
@@ -21,94 +21,98 @@
 18,MP-ID Absender,SG2,NAD,3055,00008,9,,GS1,X,
 19,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e. V.)",X,
 20,Ansprechpartner,SG3,,,,,,,Kann,
-21,Ansprechpartner,SG3,CTA,,00009,,,,Muss,
-22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
-23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
+21,EDIFACT Struktur,SG3,CTA,,00009,,,,Muss,
+22,EDIFACT Struktur,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
+23,EDIFACT Struktur,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,EDIFACT Struktur,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
-26,EDIFACT Struktur,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
-27,EDIFACT Struktur,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
-28,EDIFACT Struktur,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
-29,EDIFACT Struktur,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-30,EDIFACT Struktur,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
+27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
+28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
+29,Kommunikationsverbindung,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+30,Kommunikationsverbindung,SG3,COM,3155,,AL,,Handy,X [1P0..1],
 31,MP-ID Empfänger,SG2,,,,,,,Muss,
 32,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
 33,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
 34,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
-35,EDIFACT Struktur,SG2,NAD,3055,00011,9,,GS1,X,
-36,EDIFACT Struktur,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e. V.)",X,
+35,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+36,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e. V.)",X,
 37,Vorgang,SG4,,,,,,,Muss,
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZX9,,Änderung Daten der SR,X,
+41,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX9,,Änderung Daten der SR,X,
 44,Steuerbare Ressource,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-45,Steuerbare Ressource,SG5,LOC,,00051,,,,Muss,
-46,Steuerbare Ressource,SG5,LOC,3227,00051,Z19,,Steuerbare Ressource,X,
-47,Steuerbare Ressource,SG5,LOC,3225,00051,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+45,Steuerbare Ressource,SG5,LOC,,00052,,,,Muss,
+46,Steuerbare Ressource,SG5,LOC,3227,00052,Z19,,Steuerbare Ressource,X,
+47,Steuerbare Ressource,SG5,LOC,3225,00052,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
 48,Prüfidentifikator,SG6,,,,,,,Muss,
-49,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-50,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
+49,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+50,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
 51,Prüfidentifikator,SG6,RFF,1154,,55651,,GPKE / Änderung Daten der SR vom MSB an LF,X,
-52,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [707],"[8] Wenn für Datenclearing erforderlich  
-[301] Wenn BGM+E03"
-53,EDIFACT Struktur,SG6,RFF,,00065,,,,Muss,
-54,EDIFACT Struktur,SG6,RFF,1153,,Z49,,Gültige Daten,X,
-55,EDIFACT Struktur,SG6,RFF,1153,,Z53,,Keine Daten,X,
-56,EDIFACT Struktur,SG6,RFF,1156,00065,,,Zeitraum-ID,X [914] ∧ [937] [126],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.   
-[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z48/ Z55"
-57,Verwendung der Daten ab,SG6,DTM,,00066,,,,Muss [131] ⊻ [401],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem älterer Tag 0:00 Uhr deutscher Zeit vom DTM+137 DE2380"
-58,EDIFACT Struktur,SG6,DTM,2005,00066,Z25,,Verwendung der Daten ab,X,
-59,EDIFACT Struktur,SG6,DTM,2380,00066,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-60,EDIFACT Struktur,SG6,DTM,2379,00066,303,,CCYYMMDDHHMMZZZ,X,
-61,Verwendung der Daten bis,SG6,DTM,,00067,,,,Muss [471],[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum-
-62,EDIFACT Struktur,SG6,DTM,2005,00067,Z26,,Verwendung der Daten bis,X,
-63,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-64,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
-65,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [2004],"[8] Wenn für Datenclearing erforderlich  
+52,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [707],"[8] Wenn für Datenclearing erforderlich
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden
+[707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
+53,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+54,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z49,,Gültige Daten,X,
+55,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z53,,Keine Daten,X,
+56,Verwendungszeitraum der Daten,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [126],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat"
+57,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [401],[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der
+58,EDIFACT Struktur,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+59,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+60,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
+61,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [471],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)
+[473] Wenn im selben SG6 RFF+Z47/ Z54 (Verwendungszeitraum der"
+62,EDIFACT Struktur,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+63,EDIFACT Struktur,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+64,EDIFACT Struktur,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
+65,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [2004],"[8] Wenn für Datenclearing erforderlich
 [2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-66,Daten der Steuerbaren Ressource,SG8,SEQ,,00279,,,,Muss,
-67,Daten der Steuerbaren Ressource,SG8,SEQ,1229,00279,Z62,,Daten der Steuerbaren Ressource,X,
-68,Daten der Steuerbaren Ressource,SG8,SEQ,1050,00279,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der
-69,Steuerkanal,SG10,,,,,,,Muss,
-70,Steuerkanal,SG10,CCI,,00281,,,,Muss,
-71,Steuerkanal,SG10,CCI,7059,00281,Z49,,Steuerkanal,X,
-72,Leistungsbeschreibung des Steuerkanals,SG10,CAV,,00282,,,,Muss,
-73,Leistungsbeschreibung des Steuerkanals,SG10,CAV,7111,00282,ZF2,,Leistungsbeschreibung des Steuerkanals,X,
-74,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,00282,Z14,,An/Aus,X,
-75,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z15,,Gestuft,X,
-76,Produkt-Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [2005],"[8] Wenn für Datenclearing erforderlich  
-[2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"")"
-77,EDIFACT Struktur,SG8,SEQ,,00285,,,,Muss,
-78,EDIFACT Struktur,SG8,SEQ,1229,00285,Z61,,Produkt-Daten der Steuerbaren Ressource,X,
-79,EDIFACT Struktur,SG8,SEQ,1050,00285,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+66,Daten der Steuerbaren Ressource,SG8,SEQ,,00278,,,,Muss,
+67,Daten der Steuerbaren Ressource,SG8,SEQ,1229,00278,Z62,,Daten der Steuerbaren Ressource,X,
+68,EDIFACT Struktur,SG8,SEQ,1050,00278,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-80,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,,00287,,,,Muss,
-81,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,4347,00287,5,,Produktidentifikation,X,
-82,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7140,00287,,,Konfigurationsprodukt-Code,X,
-83,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,7143,00287,Z12,,Konfigurationsprodukt,X,
+69,Steuerkanal,SG10,,,,,,,Muss,
+70,Steuerkanal,SG10,CCI,,00280,,,,Muss,
+71,Steuerkanal,SG10,CCI,7059,00280,Z49,,Steuerkanal,X,
+72,Leistungsbeschreibung des Steuerkanals,SG10,CAV,,00281,,,,Muss,
+73,Leistungsbeschreibung des Steuerkanals,SG10,CAV,7111,00281,ZF2,,Leistungsbeschreibung des Steuerkanals,X,
+74,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,00281,Z14,,An/Aus,X,
+75,Leistungsbeschreibung des Steuerkanals,SG10,CAV,1131,,Z15,,Gestuft,X,
+76,Produkt-Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [2005],[8] Wenn für Datenclearing erforderlich
+77,EDIFACT Struktur,SG8,SEQ,,00284,,,,Muss,
+78,EDIFACT Struktur,SG8,SEQ,1229,00284,Z61,,Produkt-Daten der Steuerbaren Ressource,X,
+79,EDIFACT Struktur,SG8,SEQ,1050,00284,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+80,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,,00286,,,,Muss,
+81,Produkt-Daten der Steuerbaren Ressource,SG8,PIA,4347,00286,5,,Produktidentifikation,X,
+82,EDIFACT Struktur,SG8,PIA,7140,00286,,,Konfigurationsprodukt-Code,X,
+83,EDIFACT Struktur,SG8,PIA,7143,00286,Z12,,Konfigurationsprodukt,X,
 84,Zugeordnete Definition,SG10,,,,,,,Muss,
-85,Zugeordnete Definition,SG10,CCI,,00288,,,,Muss,
-86,EDIFACT Struktur,SG10,CCI,7059,00288,Z52,,Code der Schaltzeitdefinition,X,
-87,EDIFACT Struktur,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinition,X,
-88,EDIFACT Struktur,SG10,CCI,7037,00288,,,Code der Definition,X,
+85,Zugeordnete Definition,SG10,CCI,,00287,,,,Muss,
+86,Zugeordnete Definition,SG10,CCI,7059,00287,Z52,,Code der Schaltzeitdefinition,X,
+87,Zugeordnete Definition,SG10,CCI,7059,,Z53,,Code der Leistungskurvendefinition,X,
+88,Zugeordnete Definition,SG10,CCI,7037,00287,,,Code der Definition,X,
 89,Auftraggebender Marktpartner,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
-90,Auftraggebender Marktpartner,SG10,CCI,,00289,,,,Muss,
-91,Auftraggebender Marktpartner,SG10,CCI,7037,00289,ZB3,,Zugeordneter Marktpartner,X,
-92,Auftraggebender Marktpartner,SG10,CAV,,00290,,,,Muss,
-93,Auftraggebender Marktpartner,SG10,CAV,7111,00290,Z88,,NB,X,
+90,Auftraggebender Marktpartner,SG10,CCI,,00288,,,,Muss,
+91,Auftraggebender Marktpartner,SG10,CCI,7037,00288,ZB3,,Zugeordneter Marktpartner,X,
+92,Auftraggebender Marktpartner,SG10,CAV,,00289,,,,Muss,
+93,Auftraggebender Marktpartner,SG10,CAV,7111,00289,Z88,,NB,X,
 94,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
-95,Auftraggebender Marktpartner,SG10,CAV,1131,00290,,,MP-ID,X,
+95,Auftraggebender Marktpartner,SG10,CAV,1131,00289,,,MP-ID,X,
 96,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
-97,Produkt-Daten für Marktrolle relevant,SG10,CCI,,00291,,,,Muss,
+97,Produkt-Daten für Marktrolle relevant,SG10,CCI,,00290,,,,Muss,
 98,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA7,,LF,X,
-99,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-100,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-101,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+99,Nachrichten-Endesegment EDIFACT Struktur,,UNT,,00526,,,,Muss,
+100,Nachrichten-Endesegment EDIFACT Struktur,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+101,Nachrichten-Endesegment EDIFACT Struktur,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

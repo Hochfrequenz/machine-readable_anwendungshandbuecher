@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,7 +25,11 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]),[321] Wenn im DE3155 in
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -49,32 +53,33 @@
 46,Bilanzierungsbeginn,SG4,DTM,2005,00028,158,,Bilanzierungsbeginn,X,
 47,Bilanzierungsbeginn,SG4,DTM,2380,00028,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1] ∧ [317],[317] Es ist derselbe Wert wie im DE2380 von DTM+92 (Datum Vertragsbeginn) einzutragen
 48,Bilanzierungsbeginn,SG4,DTM,2379,00028,303,,CCYYMMDDHHMMZZZ,X,
-49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E03,,Wechsel,X,
-52,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00037,,,,Kann,[48] Wenn in dieser SG4 das STS+E01++A99 (Status der Antwort: Sonstiges) vorhanden
-53,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00037,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
-54,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00037,,,Text für allgemeine Information,X,
-55,Marktlokation,SG5,,,,,,,Muss [2061],"[56] Wenn im STS+E01 im DE9013 (Status der Antwort) ein Antwortcode aus dem Cluster Zustimmung vorhanden ist  
-[663] Hinweis: Es ist die ID der Marktlokation und die ZPB des"
-56,Marktlokation,SG5,LOC,,00048,,,,Muss,
-57,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-58,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E03,,Wechsel,X,
+52,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,,00038,,,,Kann,[48] Wenn in dieser SG4 das STS+E01++A99 (Status der Antwort: Sonstiges) vorhanden
+53,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4451,00038,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
+54,Bemerkung (Feld für allgemeine Hinweise),SG4,FTX,4440,00038,,,Text für allgemeine Information,X,
+55,Marktlokation,SG5,,,,,,,Muss [2061],"[56] Wenn im STS+E01 im DE9013 (Status der Antwort) ein Antwortcode aus dem Cluster Zustimmung vorhanden ist
+[663] Hinweis: Es ist die ID der Marktlokation und die ZPB des ZP der NGZ anzugeben
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+56,Marktlokation,SG5,LOC,,00049,,,,Muss,
+57,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+58,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
 59,Prüfidentifikator,SG6,,,,,,,Muss,
-60,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-61,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
-62,Prüfidentifikator,SG6,RFF,1154,00055,55238,,E-Mob / Anmeldung in Modell 2,X,
-63,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[56] Wenn im STS+E01 im DE9013 (Status der Antwort) ein Antwortcode aus dem Cluster Zustimmung vorhanden ist  
-[2061] Segment bzw."
-64,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
-65,Daten der Marktlokation,SG8,SEQ,1229,00113,Z01,,Daten der Marktlokation,X,
-66,Referenz auf die ID der Marktlokation,SG8,RFF,,00114,,,,Muss,
-67,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00114,Z18,,Marktlokation,X,
-68,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00114,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+60,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+61,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+62,Prüfidentifikator,SG6,RFF,1154,00056,55238,,E-Mob / Anmeldung in Modell 2,X,
+63,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[56] Wenn im STS+E01 im DE9013 (Status der Antwort) ein Antwortcode aus dem Cluster Zustimmung vorhanden ist
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+64,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
+65,Daten der Marktlokation,SG8,SEQ,1229,00114,Z01,,Daten der Marktlokation,X,
+66,Referenz auf die ID der Marktlokation,SG8,RFF,,00115,,,,Muss,
+67,Referenz auf die ID der Marktlokation,SG8,RFF,1153,00115,Z18,,Marktlokation,X,
+68,Referenz auf die ID der Marktlokation,SG8,RFF,1154,00115,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
 69,Bilanzierungsgebiet,SG10,,,,,,,Muss [664],[664] Hinweis: Es ist das BG des NB (LPB) anzugeben
-70,Bilanzierungsgebiet,SG10,CCI,,00127,,,,Muss,
-71,Bilanzierungsgebiet,SG10,CCI,7059,00127,Z20,,Bilanzierungsgebiet,X,
-72,Bilanzierungsgebiet,SG10,CCI,7037,00127,,,Bilanzierungsgebiet,X,
-73,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-74,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-75,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+70,Bilanzierungsgebiet,SG10,CCI,,00128,,,,Muss,
+71,Bilanzierungsgebiet,SG10,CCI,7059,00128,Z20,,Bilanzierungsgebiet,X,
+72,Bilanzierungsgebiet,SG10,CCI,7037,00128,,,Bilanzierungsgebiet,X,
+73,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+74,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+75,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E01,,Anmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,10 +25,10 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -45,7 +45,7 @@
 38,Vorgang,SG4,IDE,,00020,,,,Muss,
 39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-41,Beginn zum,SG4,DTM,,00023,,,,Muss,
+41,Beginn zum,SG4,DTM,,00023,,,,Muss [521],"[521] Hinweis: Wenn im zweiten DE 9013 des STS+7 (Transaktionsgrund) der Code ZAP vorhanden ist, so ist das hier angegebene Datum als Zuordnungsbeginn bei der Bildung der ""Ruhenden MaLo zu verstehen. Bei der Integration einer MaLo als Ruhenede MaLo in eine bestehende Marktlokation „Abbildung von § 20 Abs. 1d EnWG bzw. § 10c EEG“ ist dies das Datum ab welchem die zu  integrierende MaLo hinzugefügt wurde. Am Zuordnungsbeginn der Marklokation „Abbildung von § 20 Abs. 1d EnWG bzw. § 10c EEG“ ändert sich nichts"
 42,Beginn zum,SG4,DTM,2005,00023,92,,Datum Vertragsbeginn,X,
 43,Beginn zum,SG4,DTM,2380,00023,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,Beginn zum,SG4,DTM,2379,00023,303,,CCYYMMDDHHMMZZZ,X,
@@ -53,127 +53,135 @@
 46,Ende zum,SG4,DTM,2005,00024,93,,Datum Vertragsende,X,
 47,Ende zum,SG4,DTM,2380,00024,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 48,Ende zum,SG4,DTM,2379,00024,303,,CCYYMMDDHHMMZZZ,X,
-49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E01,,Ein-/Auszug (Umzug),X,
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E01,,Ein-/Auszug (Umzug),X,
 52,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
 53,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW6,,Pauschale Marktlokation,X,
 54,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW7,,Gemessene Marktlokation,X,
-55,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X,
-56,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E01,,Ein-/Auszug (Umzug),S [9P0..1],
+55,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X [519] ∧ [520],"[519] Hinweis: Wenn in der Anmeldung der Code ZAP vorhanden war, so ist dieser auch in der Antwort zu verwenden.
+[520] Hinweis: Bei der Verwendung des Codes ZAP handelt es sich immer um eine gemessene Marktlokation"
+56,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E01,,Ein-/Auszug (Umzug),S [9P0..1],
 57,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,S [9P0..1],
-58,Status der Antwort,SG4,STS,,00035,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-59,Status der Antwort,SG4,STS,9015,00035,E01,,Status der Antwort,X,
-60,Status der Antwort,SG4,STS,9013,00035,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt  
+58,Status der Antwort,SG4,STS,,00036,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+59,Status der Antwort,SG4,STS,9015,00036,E01,,Status der Antwort,X,
+60,Status der Antwort,SG4,STS,9013,00036,,,Code des Prüfschritts,X [360],"[359] Es sind nur Antwortcodes aus dem Cluster Ablehnung erlaubt
 [360] Es sind nur Antwortcodes aus dem Cluster Zustimmung erlaubt"
 61,Status der Antwort,SG4,STS,1131,,E_0623,,EBD Nr. E_0623,X,
-62,Netzlokation,SG5,,,,,,,Muss [96] ∧ [688] Soll [46] ∧ [688],"[46] Wenn ID für Objekt vergeben wurde  
-[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende"
-63,Netzlokation,SG5,LOC,,00047,,,,Muss,
-64,Netzlokation,SG5,LOC,3227,00047,Z18,,Netzlokation,X,
-65,Netzlokation,SG5,LOC,3225,00047,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
-66,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-67,Marktlokation,SG5,LOC,,00048,,,,Muss,
-68,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-69,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-70,Ruhende Marktlokation,SG5,,,,,,,Muss [2003] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden  
-[2003] Einmal für jede ruhende Marktlokation, die der Marktlokation ""Kundenanlage"" aus dem SG5 LOC+Z16 (Marktlokation) ab dem Zeitpunkt aus dem SG4 DTM+92 (Beginn zum) untergeordnet ist  
+62,Netzlokation,SG5,,,,,,,Muss [96] ∧ [688] Soll [46] ∧ [688],"[46] Wenn ID für Objekt vergeben wurde
+[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
+[688] Hinweis: Es sind alle ID der Netzlokationen, welche der im LOC+Z16 angegebenen Marktlokation vorgelagert sind, anzugeben"
+63,Netzlokation,SG5,LOC,,00048,,,,Muss,
+64,Netzlokation,SG5,LOC,3227,00048,Z18,,Netzlokation,X,
+65,Netzlokation,SG5,LOC,3225,00048,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+66,Marktlokation,SG5,,,,,,,Muss [2061],"[67] Wenn in keinem SG8 SEQ+Z79 (Bestandteil eine Produktpaketes CCI+Z66/CAV+ZH9 (Produkteigenschaft/ Code der Produkteigenschaft) der Code 9991 00000 293 3 (Ruhende Marktlokation ausprägen) vorhanden ist.
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-71,Ruhende Marktlokation,SG5,LOC,,00049,,,,Muss,
-72,Ruhende Marktlokation,SG5,LOC,3227,00049,Z22,,Ruhende Marktlokation,X,
-73,Ruhende Marktlokation,SG5,LOC,3225,00049,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
-74,Technische Ressource,SG5,,,,,,,Soll [46] ∧ [689] ∧,[46] Wenn ID für Objekt vergeben wurde
-75,Technische Ressource,SG5,LOC,,00050,,,,Muss,
-76,Technische Ressource,SG5,LOC,3227,00050,Z20,,Technische Ressource,X,
-77,Technische Ressource,SG5,LOC,3225,00050,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
-78,Steuerbare Ressource,SG5,,,,,,,Soll [46] ∧ [690],"[46] Wenn ID für Objekt vergeben wurde  
+67,Marktlokation,SG5,LOC,,00049,,,,Muss,
+68,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+69,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+70,Ruhende Marktlokation,SG5,,,,,,,Muss [2003] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
+[2003] Einmal für jede ruhende Marktlokation, die der Marktlokation ""Kundenanlage"" aus dem SG5 LOC+Z16 (Marktlokation) ab dem Zeitpunkt aus dem SG4 DTM+92 (Beginn zum) untergeordnet ist
+[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
+71,Ruhende Marktlokation,SG5,LOC,,00050,,,,Muss,
+72,Ruhende Marktlokation,SG5,LOC,3227,00050,Z22,,Ruhende Marktlokation,X,
+73,Ruhende Marktlokation,SG5,LOC,3225,00050,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
+74,Technische Ressource,SG5,,,,,,,Soll [46] ∧ [689] ∧ [694],"[46] Wenn ID für Objekt vergeben wurde
+[689] Hinweis: Es sind alle ID der Technischen Ressourcen, welche der im LOC+Z16 angegebenen Marktlokation zugehören, anzugeben
+[694] Hinweis: Wenn in einer Marktlokation eine ID für eine Technischen Ressource vergeben wird, müssen für alle ggf. weitere Technische Ressourcen in der Marktlokation ID vergeben werden. Hintergrund: MSB und LF benötigen einen vollständigen Überblick auf die Art und Nutzung der Technischen Ressourcen in einer Marktlokation für die Plausibilisierung, Ersatzwertbildung, Produktauswahl bzw. Prognose"
+75,Technische Ressource,SG5,LOC,,00051,,,,Muss,
+76,Technische Ressource,SG5,LOC,3227,00051,Z20,,Technische Ressource,X,
+77,Technische Ressource,SG5,LOC,3225,00051,,,ID der Technischen Ressource,X [922],[922] Format: TR-ID
+78,Steuerbare Ressource,SG5,,,,,,,Soll [46] ∧ [690],"[46] Wenn ID für Objekt vergeben wurde
 [690] Hinweis: Es sind alle ID der Steuerbaren Ressourcen, welche der im LOC+Z20 angegebenen Technischen Ressourcen zugeordnet sind, anzugeben"
-79,Steuerbare Ressource,SG5,LOC,,00051,,,,Muss,
-80,Steuerbare Ressource,SG5,LOC,3227,00051,Z19,,Steuerbare Ressource,X,
-81,Steuerbare Ressource,SG5,LOC,3225,00051,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
-82,Messlokation,SG5,,,,,,,Muss ([96] ⊻ [483]) ∧ [623],[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
-83,Messlokation,SG5,LOC,,00053,,,,Muss,
-84,Messlokation,SG5,LOC,3227,00053,Z17,,Messlokation,X,
-85,Messlokation,SG5,LOC,3225,00053,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+79,Steuerbare Ressource,SG5,LOC,,00052,,,,Muss,
+80,Steuerbare Ressource,SG5,LOC,3227,00052,Z19,,Steuerbare Ressource,X,
+81,Steuerbare Ressource,SG5,LOC,3225,00052,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+82,Messlokation,SG5,,,,,,,Muss ([96] ⊻ [483]) ∧ [623],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
+[483] Wenn SG4 STS+7++xxx+ZW7 (Transaktionsgrundergän zung Gemessene Marktlokation) vorhanden
+[623] Hinweis: Es sind alle Identifikatoren der Messlokationen anzugeben, die zur Ermittlung der Energiemenge der im Vorgang genannten Marktlokation benötigt werden"
+83,Messlokation,SG5,LOC,,00054,,,,Muss,
+84,Messlokation,SG5,LOC,3227,00054,Z17,,Messlokation,X,
+85,Messlokation,SG5,LOC,3225,00054,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
 86,Prüfidentifikator,SG6,,,,,,,Muss,
-87,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-88,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
+87,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+88,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
 89,Prüfidentifikator,SG6,RFF,1154,,55002,,GPKE / Bestätigung Anmeldung verbrauchende MaLo,X,
 90,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss,
-91,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00056,,,,Muss,
-92,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00056,TN,,Transaktions- Referenznummer,X,
-93,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00056,,,Vorgangsnummer,X,
+91,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
+92,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions- Referenznummer,X,
+93,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
 94,Informativ zur Umsetzung geplantes Produktpaket,SG6,,,,,,,Muss,
-95,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,,00061,,,,Muss,
-96,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,1153,00061,Z60,,Informativ zur Umsetzung geplantes Produktpaket,X,
-97,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,1154,00061,,,Zur Umsetzung geplantes Produktpaket,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0  
+95,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,,00062,,,,Muss,
+96,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,1153,00062,Z60,,Informativ zur Umsetzung geplantes Produktpaket,X,
+97,Informativ zur Umsetzung geplantes Produktpaket,SG6,RFF,1154,00062,,,Zur Umsetzung geplantes Produktpaket,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-98,Daten der Netzlokation,SG8,,,,,,,Muss [294] ∧ [2356],"[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden  
+98,Daten der Netzlokation,SG8,,,,,,,Muss [294] ∧ [2356],"[294] Wenn SG5 LOC+Z18 (Netzlokation) vorhanden
 [2356] Je SG5 LOC+Z18 (Netzlokation) ist genau einmal die Segmentgruppe anzugeben"
-99,Daten der Netzlokation,SG8,SEQ,,00088,,,,Muss,
-100,Daten der Netzlokation,SG8,SEQ,1229,00088,ZD7,,Informative Daten der Netzlokation,X,
-101,Referenz auf die ID der Netzlokation,SG8,RFF,,00089,,,,Muss,
-102,Referenz auf die ID der Netzlokation,SG8,RFF,1153,00089,Z32,,Netzlokation,X,
-103,Referenz auf die ID der Netzlokation,SG8,RFF,1154,00089,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
+99,Daten der Netzlokation,SG8,SEQ,,00089,,,,Muss,
+100,Daten der Netzlokation,SG8,SEQ,1229,00089,ZD7,,Informative Daten der Netzlokation,X,
+101,Referenz auf die ID der Netzlokation,SG8,RFF,,00090,,,,Muss,
+102,Referenz auf die ID der Netzlokation,SG8,RFF,1153,00090,Z32,,Netzlokation,X,
+103,Referenz auf die ID der Netzlokation,SG8,RFF,1154,00090,,,ID der Netzlokation,X [960],[960] Format: Netzlokations-ID
 104,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-105,Zugeordnete Marktpartner,SG10,CCI,,00091,,,,Muss,
-106,Zugeordnete Marktpartner,SG10,CCI,7037,00091,ZB3,,Zugeordneter Marktpartner,X,
-107,Messstellenbetreiber,SG10,CAV,,00092,,,,Muss,
-108,Messstellenbetreiber,SG10,CAV,7111,00092,Z91,,MSB,X,
-109,Messstellenbetreiber,SG10,CAV,1131,00092,,,MP-ID,X,
-110,Messstellenbetreiber,SG10,CAV,7110,00092,Z39,,Grundzuständiger Messstellenbetreiber,X,
+105,Zugeordnete Marktpartner,SG10,CCI,,00092,,,,Muss,
+106,Zugeordnete Marktpartner,SG10,CCI,7037,00092,ZB3,,Zugeordneter Marktpartner,X,
+107,Messstellenbetreiber,SG10,CAV,,00093,,,,Muss,
+108,Messstellenbetreiber,SG10,CAV,7111,00093,Z91,,MSB,X,
+109,Messstellenbetreiber,SG10,CAV,1131,00093,,,MP-ID,X,
+110,Messstellenbetreiber,SG10,CAV,7110,00093,Z39,,Grundzuständiger Messstellenbetreiber,X,
 111,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
 112,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellenbetre iber,X,
-113,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden  
+113,Daten der Marktlokation,SG8,,,,,,,Muss [2061],"[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-114,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
+114,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
 115,Daten der Marktlokation,SG8,SEQ,1229,,Z98,,Informative Daten der Marktlokation,X,
-116,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-117,Zugeordnete Marktpartner,SG10,CCI,,00121,,,,Muss,
-118,Zugeordnete Marktpartner,SG10,CCI,7037,00121,ZB3,,Zugeordneter Marktpartner,X,
-119,Messstellenbetreiber,SG10,CAV,,00124,,,,Muss [483],[483] Wenn SG4 STS+7++xxx+ZW7 (Transaktionsgrundergän zung Gemessene Marktlokation) vorhanden
-120,Messstellenbetreiber,SG10,CAV,7111,00124,Z91,,MSB,X,
-121,Messstellenbetreiber,SG10,CAV,1131,00124,,,MP-ID,X,
-122,Messstellenbetreiber,SG10,CAV,7110,00124,Z39,,Grundzuständiger Messstellenbetreiber,X,
+116,Zugeordnete Marktpartner,SG10,,,,,,,Muss [483],[483] Wenn SG4 STS+7++xxx+ZW7 (Transaktionsgrundergän zung Gemessene Marktlokation) vorhanden
+117,Zugeordnete Marktpartner,SG10,CCI,,00122,,,,Muss,
+118,Zugeordnete Marktpartner,SG10,CCI,7037,00122,ZB3,,Zugeordneter Marktpartner,X,
+119,Messstellenbetreiber,SG10,CAV,,00125,,,,Muss,
+120,Messstellenbetreiber,SG10,CAV,7111,00125,Z91,,MSB,X,
+121,Messstellenbetreiber,SG10,CAV,1131,00125,,,MP-ID,X,
+122,Messstellenbetreiber,SG10,CAV,7110,00125,Z39,,Grundzuständiger Messstellenbetreiber,X,
 123,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
 124,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellenbetre iber,X,
-125,Messstellenbetreiber,SG10,CAV,7110,00124,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+125,Messstellenbetreiber,SG10,CAV,7110,00125,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
 126,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-127,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [205] ∧ [2358],"[205] Wenn SG5 LOC+Z19 (Steuerbare Ressource) vorhanden  
+127,Daten der Steuerbaren Ressource,SG8,,,,,,,Muss [205] ∧ [2358],"[205] Wenn SG5 LOC+Z19 (Steuerbare Ressource) vorhanden
 [2358] Je SG5 LOC+Z19 (Steuerbare Ressource) ist genau einmal die Segmentgruppe anzugeben"
-128,Daten der Steuerbaren Ressource,SG8,SEQ,,00279,,,,Muss,
-129,Daten der Steuerbaren Ressource,SG8,SEQ,1229,00279,ZF1,,Informative Daten der Steuerbaren Ressource,X,
-130,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,00280,,,,Muss,
-131,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,00280,Z38,,Steuerbare Ressource,X,
-132,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,00280,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
+128,Daten der Steuerbaren Ressource,SG8,SEQ,,00278,,,,Muss,
+129,Daten der Steuerbaren Ressource,SG8,SEQ,1229,00278,ZF1,,Informative Daten der Steuerbaren Ressource,X,
+130,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,,00279,,,,Muss,
+131,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1153,00279,Z38,,Steuerbare Ressource,X,
+132,Referenz auf die ID der Steuerbaren Ressource,SG8,RFF,1154,00279,,,ID der Steuerbaren Ressource,X [961],[961] Format: SR-ID
 133,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-134,Zugeordnete Marktpartner,SG10,CCI,,00283,,,,Muss,
-135,Zugeordnete Marktpartner,SG10,CCI,7037,00283,ZB3,,Zugeordneter Marktpartner,X,
-136,Messstellenbetreiber,SG10,CAV,,00284,,,,Muss,
-137,Messstellenbetreiber,SG10,CAV,7111,00284,Z91,,MSB,X,
-138,Messstellenbetreiber,SG10,CAV,1131,00284,,,MP-ID,X,
-139,Messstellenbetreiber,SG10,CAV,7110,00284,Z39,,Grundzuständiger Messstellenbetreiber,X,
+134,Zugeordnete Marktpartner,SG10,CCI,,00282,,,,Muss,
+135,Zugeordnete Marktpartner,SG10,CCI,7037,00282,ZB3,,Zugeordneter Marktpartner,X,
+136,Messstellenbetreiber,SG10,CAV,,00283,,,,Muss,
+137,Messstellenbetreiber,SG10,CAV,7111,00283,Z91,,MSB,X,
+138,Messstellenbetreiber,SG10,CAV,1131,00283,,,MP-ID,X,
+139,Messstellenbetreiber,SG10,CAV,7110,00283,Z39,,Grundzuständiger Messstellenbetreiber,X,
 140,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
 141,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellenbetre iber,X,
 142,Daten der Messlokation,SG8,,,,,,,Muss [2284],[2284] Für jede Messlokations-ID im SG5 LOC+Z17 (Messlokation) DE3225 genau einmal anzugeben
-143,Daten der Messlokation,SG8,SEQ,,00292,,,,Muss,
-144,Daten der Messlokation,SG8,SEQ,1229,00292,ZF3,,Informative Daten der Messlokation,X,
-145,Referenz auf die ID der Messlokation,SG8,RFF,,00293,,,,Muss,
-146,Referenz auf die ID der Messlokation,SG8,RFF,1153,00293,Z19,,Messlokation,X,
-147,Referenz auf die ID der Messlokation,SG8,RFF,1154,00293,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+143,Daten der Messlokation,SG8,SEQ,,00291,,,,Muss,
+144,Daten der Messlokation,SG8,SEQ,1229,00291,ZF3,,Informative Daten der Messlokation,X,
+145,Referenz auf die ID der Messlokation,SG8,RFF,,00292,,,,Muss,
+146,Referenz auf die ID der Messlokation,SG8,RFF,1153,00292,Z19,,Messlokation,X,
+147,Referenz auf die ID der Messlokation,SG8,RFF,1154,00292,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
 148,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
-149,Zugeordnete Marktpartner,SG10,CCI,,00296,,,,Muss,
-150,Zugeordnete Marktpartner,SG10,CCI,7037,00296,ZB3,,Zugeordneter Marktpartner,X,
-151,Messstellenbetreiber,SG10,CAV,,00297,,,,Muss,
-152,Messstellenbetreiber,SG10,CAV,7111,00297,Z91,,MSB,X,
-153,Messstellenbetreiber,SG10,CAV,1131,00297,,,MP-ID,X,
-154,Messstellenbetreiber,SG10,CAV,7110,00297,Z39,,Grundzuständiger Messstellenbetreiber,X,
-155,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher,X,
-156,Messstellenbetreiber,SG10,CAV,7110,00297,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
-157,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-158,Grundzuständiger Messstellenbetreiber,SG10,CAV,,00298,,,,Muss,
-159,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,00298,ZF0,,gMSB,X,
-160,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,00298,,,MP-ID,X,
-161,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-162,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-163,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+149,Zugeordnete Marktpartner,SG10,CCI,,00295,,,,Muss,
+150,Zugeordnete Marktpartner,SG10,CCI,7037,00295,ZB3,,Zugeordneter Marktpartner,X,
+151,Messstellenbetreiber,SG10,CAV,,00296,,,,Muss,
+152,Messstellenbetreiber,SG10,CAV,7111,00296,Z91,,MSB,X,
+153,Messstellenbetreiber,SG10,CAV,1131,00296,,,MP-ID,X,
+154,Messstellenbetreiber,SG10,CAV,7110,00296,Z39,,Grundzuständiger Messstellenbetreiber,X,
+155,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
+156,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellenbetre iber,X,
+157,Messstellenbetreiber,SG10,CAV,7110,00296,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+158,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+159,Grundzuständiger Messstellenbetreiber,SG10,CAV,,00297,,,,Muss,
+160,Grundzuständiger Messstellenbetreiber,SG10,CAV,7111,00297,ZF0,,gMSB,X,
+161,Grundzuständiger Messstellenbetreiber,SG10,CAV,1131,00297,,,MP-ID,X,
+162,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+163,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+164,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

@@ -5,15 +5,15 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X [716],
-9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [717],"[716] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Abrechnungsdaten"" durchgeführt wird  
+9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [717],"[716] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Abrechnungsdaten"" durchgeführt wird
 [717] Hinweis: Wenn die Aktion des Sequenzdiagramms ""Bestellung einer Änderung von Abrechnungsdaten"" durchgeführt wird, mit dem Ziel ein Datenclearing durchzuführen "
 10,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 11,Nachrichtendatum,,DTM,,00005,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-13,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+13,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 14,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 15,MP-ID Absender,SG2,,,,,,,Muss,
@@ -21,16 +21,16 @@
 17,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenaussteller bzw. -absender,X,
 18,MP-ID Absender,SG2,NAD,3039,00008,,,MP-ID,X,
 19,MP-ID Absender,SG2,NAD,3055,00008,9,,GS1,X,
-20,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW",X,
+20,MP-ID Absender,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
 21,Ansprechpartner,SG3,,,,,,,Kann,
 22,Ansprechpartner,SG3,CTA,,00009,,,,Muss,
 23,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 24,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 25,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-26,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+26,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 27,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 28,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -47,180 +47,195 @@
 39,Vorgang,SG4,IDE,,00020,,,,Muss,
 40,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 41,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZX4,,Abrechnungsdaten NNA,X,
-45,Status der Antwort,SG4,STS,,00035,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"" / ""Keine Daten"") anzugeben"
-46,Status der Antwort,SG4,STS,9015,00035,E01,,Status der Antwort,X,
-47,Status der Antwort,SG4,STS,9013,00035,,,Code des Prüfschritts,X,
-48,Status der Antwort,SG4,STS,1131,00035,E_0610,,EBD Nr. E_0610,X,
-49,Status der Antwort,SG4,STS,9012,00035,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX4,,Abrechnungsdaten NNA,X,
+45,Status der Antwort,SG4,STS,,00036,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"" / ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 (Referenz Vorgangsnummer (aus Anfragenachricht)) anzugeben"
+46,Status der Antwort,SG4,STS,9015,00036,E01,,Status der Antwort,X,
+47,Status der Antwort,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
+48,Status der Antwort,SG4,STS,1131,00036,E_0610,,EBD Nr. E_0610,X,
+49,Status der Antwort,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
 50,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-51,Marktlokation,SG5,LOC,,00048,,,,Muss,
-52,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-53,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+51,Marktlokation,SG5,LOC,,00049,,,,Muss,
+52,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+53,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
 54,Prüfidentifikator,SG6,,,,,,,Muss,
-55,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-56,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
+55,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+56,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
 57,Prüfidentifikator,SG6,RFF,1154,,55220,,GPKE / Rückmeldung/ Anfrage Abrechnungsdaten Netznutzungsabrechnung,X,
 58,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
-59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00056,,,,Muss,
-60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00056,TN,,Transaktions- Referenznummer,X,
-61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00056,,,Vorgangsnummer,X,
-62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich  
-[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[315] Wenn BGM+Z88 (Datenclearing) vorhanden  
+59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
+60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions- Referenznummer,X,
+61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
+62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden
 [707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
-63,Verwendungszeitraum der Daten,SG6,RFF,,00065,,,,Muss,
-64,Verwendungszeitraum der Daten,SG6,RFF,1153,00065,Z47,,Im System vorhandene Daten,X [5P0..n],
+63,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+64,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
 65,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
 66,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
 67,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
-68,Verwendungszeitraum der Daten,SG6,RFF,1156,00065,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die"
-69,Verwendung der Daten ab,SG6,DTM,,00066,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem älterer Tag 0:00 Uhr deutscher Zeit vom DTM+137 DE2380 (Nachrichtendatum) sein  
-[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen  
-[135] Wenn dieses DTM+Z25 (Verwendung der Daten ab)"
-70,Verwendung der Daten ab,SG6,DTM,2005,00066,Z25,,Verwendung der Daten ab,X,
-71,Verwendung der Daten ab,SG6,DTM,2380,00066,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-72,Verwendung der Daten ab,SG6,DTM,2379,00066,303,,CCYYMMDDHHMMZZZ,X,
-73,Verwendung der Daten bis,SG6,DTM,,00067,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)  
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156"
-74,Verwendung der Daten bis,SG6,DTM,2005,00067,Z26,,Verwendung der Daten bis,X,
-75,Verwendung der Daten bis,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-76,Verwendung der Daten bis,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
-77,Termine der Marktlokation,SG6,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+68,Verwendungszeitraum der Daten,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
+[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+69,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[135] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[401] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen "
+70,Verwendung der Daten ab,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+71,Verwendung der Daten ab,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+72,Verwendung der Daten ab,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
+73,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)
+[473] Wenn im selben SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) DE1156 (Zeitraum-ID)"
+74,Verwendung der Daten bis,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+75,Verwendung der Daten bis,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+76,Verwendung der Daten bis,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
+77,Termine der Marktlokation,SG6,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-78,Termine der Marktlokation,SG6,RFF,,00068,,,,Muss,
+78,Termine der Marktlokation,SG6,RFF,,00069,,,,Muss,
 79,Termine der Marktlokation,SG6,RFF,1153,,Z51,,Erwartete Termindaten der Marktlokation,X [2P0..n],
 80,Termine der Marktlokation,SG6,RFF,1153,,Z52,,Im System vorhandene Termindaten der Marktlokation,X [3P0..n],
-81,Termine der Marktlokation,SG6,RFF,1154,00068,,,ID der Marktlokation / Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert:"
-82,Termin der Netznutzungsabrechnung,SG6,DTM,,00070,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-83,Termin der Netznutzungsabrechnung,SG6,DTM,2005,00070,Z21,,Termin der Netznutzungsabrechnung,X,
-84,Termin der Netznutzungsabrechnung,SG6,DTM,2380,00070,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-85,Termin der Netznutzungsabrechnung,SG6,DTM,2379,00070,106,,MMDD,X,
+81,Termine der Marktlokation,SG6,RFF,1154,00069,,,ID der Marktlokation / Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+82,Termin der Netznutzungsabrechnung,SG6,DTM,,00071,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+83,Termin der Netznutzungsabrechnung,SG6,DTM,2005,00071,Z21,,Termin der Netznutzungsabrechnung,X,
+84,Termin der Netznutzungsabrechnung,SG6,DTM,2380,00071,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+85,Termin der Netznutzungsabrechnung,SG6,DTM,2379,00071,106,,MMDD,X,
 86,Termin der Netznutzungsabrechnung,SG6,DTM,2379,,104,,MMWW-MMWW,X,
-87,Nächste Netznutzungsabrechnung,SG6,DTM,,00071,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+87,Nächste Netznutzungsabrechnung,SG6,DTM,,00072,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [489] Wenn das DTM+Z25 (Verwendung der Daten ab) des älteste Verwendungszeitraums gleich mit dem Zuordnungsbeginn des LF zur Marktlokation ist"
-88,Nächste Netznutzungsabrechnung,SG6,DTM,2005,00071,Z09,,Nächste Netznutzungsabrechnung,X,
-89,Nächste Netznutzungsabrechnung,SG6,DTM,2380,00071,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-90,Nächste Netznutzungsabrechnung,SG6,DTM,2379,00071,602,,CCYY,X,
-91,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,00072,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-92,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2005,00072,Z22,,Netznutzungsabrechnungs- bzw. Einspeisevergütungsintervall des NB,X,
-93,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2380,00072,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-94,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2379,00072,802,,Monat,X,
-95,Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[2004] Segmentgruppe ist genau einmal für jede"
-96,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
+88,Nächste Netznutzungsabrechnung,SG6,DTM,2005,00072,Z09,,Nächste Netznutzungsabrechnung,X,
+89,Nächste Netznutzungsabrechnung,SG6,DTM,2380,00072,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+90,Nächste Netznutzungsabrechnung,SG6,DTM,2379,00072,602,,CCYY,X,
+91,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,,00073,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+92,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2005,00073,Z22,,Netznutzungsabrechnungs- bzw. Einspeisevergütungsintervall des NB,X,
+93,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2380,00073,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+94,Netznutzungsabrechnungsi ntervall des NB,SG6,DTM,2379,00073,802,,Monat,X,
+95,Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+96,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
 97,Daten der Marktlokation,SG8,SEQ,1229,,Z80,,Erwartete Daten der Marktlokation,X [2P0..n],
 98,Daten der Marktlokation,SG8,SEQ,1229,,Z81,,Im System vorhandene Daten der Marktlokation,X [3P0..n],
-99,Daten der Marktlokation,SG8,SEQ,1050,00113,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+99,Daten der Marktlokation,SG8,SEQ,1050,00114,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-100,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+100,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [166] Wenn vorhanden"
-101,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,,00128,,,,Muss,
-102,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,7037,00128,E17,,Verbrauchsaufteilung (in %) fürtemperaturabhängige Marktlokation,X,
-103,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,,00129,,,,Muss,
-104,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7111,00129,Z22,,Verbrauchsaufteilung in %,X,
-105,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7110,00129,,,Verbrauchsaufteilung in %,X [902],[902] Format: Möglicher Wert: ≥ 0
+101,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,,00129,,,,Muss,
+102,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CCI,7037,00129,E17,,Verbrauchsaufteilung (in %) für temperaturabhängige Marktlokation,X,
+103,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,,00130,,,,Muss,
+104,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7111,00130,Z22,,Verbrauchsaufteilung in%,X,
+105,Verbrauchsaufteilung für temperaturabhängige Marktlokation,SG10,CAV,7110,00130,,,Verbrauchsaufteilung in %,X [902],[902] Format: Möglicher Wert: ≥ 0
 106,Netznutzung,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-107,Netznutzung,SG10,CCI,,00147,,,,Muss,
-108,Netznutzung,SG10,CCI,7037,00147,Z88,,Netznutzung,X,
-109,Netznutzungsvertrag,SG10,CAV,,00148,,,,Muss,
-110,Netznutzungsvertrag,SG10,CAV,7111,00148,Z74,,Netznutzungsvertrag,X,
-111,Netznutzungsvertrag,SG10,CAV,7110,00148,Z08,,Direkter Vertrag zwischen Kunden und NB,X,
+107,Netznutzung,SG10,CCI,,00145,,,,Muss,
+108,Netznutzung,SG10,CCI,7037,00145,Z88,,Netznutzung,X,
+109,Netznutzungsvertrag,SG10,CAV,,00146,,,,Muss,
+110,Netznutzungsvertrag,SG10,CAV,7111,00146,Z74,,Netznutzungsvertrag,X,
+111,Netznutzungsvertrag,SG10,CAV,7110,00146,Z08,,Direkter Vertrag zwischen Kunden und NB,X,
 112,Netznutzungsvertrag,SG10,CAV,7110,,Z09,,Vertrag zwischen Lieferanten und NB,X,
-113,Zahlung der Netznutzung,SG10,CAV,,00149,,,,Muss,
-114,Zahlung der Netznutzung,SG10,CAV,7111,00149,Z73,,Zahlung der Netznutzung,X,
-115,Zahlung der Netznutzung,SG10,CAV,7110,00149,Z10,,Kunde,X [216],
+113,Zahlung der Netznutzung,SG10,CAV,,00147,,,,Muss,
+114,Zahlung der Netznutzung,SG10,CAV,7111,00147,Z73,,Zahlung der Netznutzung,X,
+115,Zahlung der Netznutzung,SG10,CAV,7110,00147,Z10,,Kunde,X [216],
 116,Zahlung der Netznutzung,SG10,CAV,7110,,Z11,,Lieferant,X,[216] Wenn CCI+++Z88 (Netznutzung) CAV+Z74:::Z08 (Netznutzungsvertrag: Direkter Vertrag zwischen Kunden und NB) vorhanden
-117,Grundlage der Lieferscheinprüfung,SG10,CAV,,00150,,,,Muss,
-118,Grundlage der Lieferscheinprüfung,SG10,CAV,7111,00150,ZA7,,Grundlage für Lieferscheinprüfung,X,
-119,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,00150,Z12,,In der Marktkommunikation ausgetauschte Daten,X,
-120,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z13,,Abweichend vertraglichmit Anschlussnutzer vereinbarte Grundlage,X,
-121,Netznutzungsabrechnungsd aten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+117,Grundlage der Lieferscheinprüfung,SG10,CAV,,00148,,,,Muss,
+118,Grundlage der Lieferscheinprüfung,SG10,CAV,7111,00148,ZA7,,Grundlage für Lieferscheinprüfung,X,
+119,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,00148,Z12,,In der Marktkommunikation ausgetauschte Daten,X,
+120,Grundlage der Lieferscheinprüfung,SG10,CAV,7110,,Z13,,Abweichend vertraglich mit Anschlussnutzer vereinbarte Grundlage,X,
+121,Netznutzungsabrechnungsd aten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-122,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,,00171,,,,Muss,
-123,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z82,,Erwartete Netznutzungsabrechnungsdaten der Marktlokation,X [2P0..n],
-124,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z83,,Im System vorhandene Netznutzungsabrechnungsdaten der Marktlokation,X [3P0..n],
-125,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1050,00171,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+122,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,,00170,,,,Muss,
+123,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z82,,Erwartete Netznutzungsabrechnun gsdaten der Marktlokation,X [2P0..n],
+124,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z83,,Im System vorhandene Netznutzungsabrechnun gsdaten der Marktlokation,X [3P0..n],
+125,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z96,,Erwartete Differenz- Netznutzungsabrechnun gsdaten der Marktlokation,X [2P0..n],
+126,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1229,,Z97,,Im System vorhandene Differenz- Netznutzungsabrechnun gsdaten der Marktlokation,X [3P0..n],
+127,Netznutzungsabrechnungsd aten der Marktlokation,SG8,SEQ,1050,00170,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-126,Gruppenartikel-ID / Artikel- ID,SG8,PIA,,00172,,,,Muss,
-127,Gruppenartikel-ID / Artikel- ID,SG8,PIA,4347,00172,Z02,,Gruppenartikel-ID / Artikel-ID,X,
-128,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7140,00172,,,Produkt-/Leistungsnummer,X ([942] ([270] ⊻ [282]) ∧ [284]) ⊻  ([943] ([259] ⊻ [261]) ∧ [284]) ⊻ ([957] [285] ∧ [287]) ⊻ ([948] [286] ∧ [287]) ,"[259] Wenn in diesem PIA der Code im DE7140 mit 1-01, 1- 03, 1-05 enthalten ist  
-[261] Wenn in diesem PIA der Code im DE7140 mit 1-07-1/2, 1-10-1/2/4/5/6/7/8/9, 1-11-1 beginnt  
-[270] Wenn in diesem PIA der Code im DE7140 mit 1-02, 1- 04, 1-06, 1-09 beginnt  
-[282] Wenn in diesem PIA der Code im DE7140 1-01-6-005, 1-01-9-001, 1-07-3-001, 1- 08-1-001, 1-08-3-001, 1-08- 4-001/002/003/004, 1-10-3- 001 enthalten ist  
-[284] Erlaubte Codes aus der Codeliste der Gruppenartikel- und Artikel-ID sind in der Spalte UTILMD/ Codeverwendung mit X gekennzeichnet  
-[285] Wenn in diesem PIA der Code im DE7140 mit 1-08-3-"
-129,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,00172,Z09,,Artikel-ID,X [393] ⊻ ([394] ∧ [397]) ⊻ [395],
-130,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z10,,Gruppenartikel-ID,X [392] ⊻ ([394] ∧ [398]),"[392] Wenn in diesem PIA der Code im Format n1-n2-n1 angegeben ist  
-[393] Wenn in diesem PIA der Code im Format n1-n2-n1-n3 angegeben ist  
-[394] Wenn in diesem PIA der Code im Format n1-n2-n1- n8-n2 angegeben ist  
-[395] Wenn in diesem PIA der Code im Format n1-n2-n1-n8 angegeben ist  
-[397] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/ 1-08-4 beginnt  
+128,Gruppenartikel-ID / Artikel- ID,SG8,PIA,,00171,,,,Muss,
+129,Gruppenartikel-ID / Artikel- ID,SG8,PIA,4347,00171,Z02,,Gruppenartikel-ID / Artikel-ID,X,
+130,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7140,00171,,,Produkt-/Leistungsnummer,X ([942] ([270] ⊻ [282]) ∧ [284]) ⊻  ([943] ([259] ⊻ [261]) ∧ [284])⊻ ([957] [285] ∧ [287]) ⊻ ([948] [286] ∧ [287]) ,"[259] Wenn in diesem PIA der Code im DE7140 mit 1-01, 1- 03, 1-05 enthalten ist
+[261] Wenn in diesem PIA der Code im DE7140 mit 1-07-1/2, 1-10-1/2/4/5/6/7/8/9, 1-11-1 beginnt
+[270] Wenn in diesem PIA der Code im DE7140 mit 1-02, 1- 04, 1-06, 1-09 beginnt
+[282] Wenn in diesem PIA der Code im DE7140 1-01-6-005, 1-01-9-001, 1-07-3-001, 1- 08-1-001, 1-08-3-001, 1-08- 4-001/002/003/004, 1-10-3- 001 enthalten ist
+[284] Erlaubte Codes aus der Codeliste der Gruppenartikel- und Artikel-ID sind in der Spalte UTILMD/ Codeverwendung mit X gekennzeichnet
+[285] Wenn in diesem PIA der Code im DE7140 mit 1-08-3- AGS angegeben ist
+[286] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/ 2/4/5-AGS-KG
+[287] Erlaubte Codes aus der PRICAT BGM+ Z70 (Preisblatt Netznutzung) des verantwortlichen NB
+[942] Format: n1-n2-n1-n3
+[943] Format: n1-n2-n1
+[948] Format: n1-n2-n1-n8-n2
+[957] Format: n1-n2-n1-n8"
+131,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,00171,Z09,,Artikel-ID,X [393] ⊻ ([394] ∧ [397]) ⊻ [395],
+132,Gruppenartikel-ID / Artikel- ID,SG8,PIA,7143,,Z10,,Gruppenartikel-ID,X [392] ⊻ ([394] ∧ [398]),"[392] Wenn in diesem PIA der Code im Format n1-n2-n1 angegeben ist
+[393] Wenn in diesem PIA der Code im Format n1-n2-n1-n3 angegeben ist
+[394] Wenn in diesem PIA der Code im Format n1-n2-n1- n8-n2 angegeben ist
+[395] Wenn in diesem PIA der Code im Format n1-n2-n1-n8 angegeben ist
+[397] Wenn in diesem PIA der Code im DE7140 mit 1-08-1/ 1-08-4 beginnt
 [398] Wenn in diesem PIA der Code im DE7140 mit 1-08-2/ 1-08-5 beginnt"
-131,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,,,,,,,Soll [8] ∧ [237],"[8] Wenn für Datenclearing erforderlich  
-[237] Wenn in derselben SG8 im DE7140 des PIA+Z02 (Gruppenartikel-ID / Artikel- ID) eine Gruppenartikel-ID / Artikel-ID mit 1-06 (entspricht Entgelte des Messstellenbetriebs bei kME)"
-132,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,,00173,,,,Muss,
-133,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6063,00173,Z38,,Anzahl der abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,X,
-134,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6060,00173,,,Menge,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0  
+133,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,,,,,,,Soll [8] ∧ [237],"[8] Wenn für Datenclearing erforderlich
+[237] Wenn in derselben SG8 im DE7140 des PIA+Z02 (Gruppenartikel-ID / Artikel- ID) eine Gruppenartikel-ID / Artikel-ID mit 1-06 (entspricht Entgelte des Messstellenbetriebs bei kME) beginnt"
+134,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,,00172,,,,Muss,
+135,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6063,00172,Z38,,Anzahl der abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,X,
+136,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6060,00172,,,Menge,X [914] ∧ [937],"[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-135,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6411,00173,H87,,Stück,X,
-136,Gemeinderabatt,SG9,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-137,Gemeinderabatt,SG9,QTY,,00174,,,,Muss,
-138,Gemeinderabatt,SG9,QTY,6063,00174,Z16,,Gemeinderabatt,X,
-139,Gemeinderabatt,SG9,QTY,6060,00174,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0  
-[930] Format: max. 2 Nachkommastellen  
+137,Anzahl in der NNA abzurechenden Positionen der Gruppenartikel-ID / Artikel-ID,SG9,QTY,6411,00172,H87,,Stück,X,
+138,Gemeinderabatt,SG9,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+139,Gemeinderabatt,SG9,QTY,,00173,,,,Muss,
+140,Gemeinderabatt,SG9,QTY,6063,00173,Z16,,Gemeinderabatt,X,
+141,Gemeinderabatt,SG9,QTY,6060,00173,,,Menge,X [902] ∧ [930] ∧ [938],"[902] Format: Möglicher Wert: ≥ 0
+[930] Format: max. 2 Nachkommastellen
 [938] Format: Möglicher Wert: <= 10"
-140,Gemeinderabatt,SG9,QTY,6411,00174,P1,,Prozent,X,
-141,Zuschlag oder Abschlag,SG9,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-142,Zuschlag oder Abschlag,SG9,QTY,,00175,,,,Muss,
-143,Zuschlag oder Abschlag,SG9,QTY,6063,00175,Z34,,Zuschlag,X,
-144,Zuschlag oder Abschlag,SG9,QTY,6063,,Z35,,Abschlag,X,
-145,Zuschlag oder Abschlag,SG9,QTY,6063,,Z37,,Kein Zu-/Abschlag,X,
-146,Zuschlag oder Abschlag,SG9,QTY,6060,00175,,,Menge,X ([914] ∧ [930] [140]) ⊻ ([926] ∧ [937] [172]),"[140] Wenn im selben QTY im DE6063 Z34/Z35 (Zuschlag/ Abschlag) vorhanden  
-[172] Wenn im selben QTY im DE6063 Z37 (Kein Zu- und Abschlag) vorhanden  
-[914] Format: Möglicher Wert: > 0  
-[926] Format: Möglicher Wert: 0  
-[930] Format: max. 2 Nachkommastellen  
+142,Gemeinderabatt,SG9,QTY,6411,00173,P1,,Prozent,X,
+143,Zuschlag oder Abschlag,SG9,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+144,Zuschlag oder Abschlag,SG9,QTY,,00174,,,,Muss,
+145,Zuschlag oder Abschlag,SG9,QTY,6063,00174,Z34,,Zuschlag,X,
+146,Zuschlag oder Abschlag,SG9,QTY,6063,,Z35,,Abschlag,X,
+147,Zuschlag oder Abschlag,SG9,QTY,6063,,Z37,,Kein Zu-/Abschlag,X,
+148,Zuschlag oder Abschlag,SG9,QTY,6060,00174,,,Menge,X ([914] ∧ [930] [140]) ⊻ ([926] ∧ [937] [172]),"[140] Wenn im selben QTY im DE6063 Z34/Z35 (Zuschlag/ Abschlag) vorhanden
+[172] Wenn im selben QTY im DE6063 Z37 (Kein Zu- und Abschlag) vorhanden
+[914] Format: Möglicher Wert: > 0
+[926] Format: Möglicher Wert: 0
+[930] Format: max. 2 Nachkommastellen
 [937] Format: keine Nachkommastelle"
-147,Zuschlag oder Abschlag,SG9,QTY,6411,00175,P1,,Prozent,X,
-148,Menge der Singulär genutzten Betriebsmittel,SG9,,,,,,,Soll [8] ∧ [73],"[8] Wenn für Datenclearing erforderlich  
+149,Zuschlag oder Abschlag,SG9,QTY,6411,00174,P1,,Prozent,X,
+150,Menge der Singulär genutzten Betriebsmittel,SG9,,,,,,,Soll [8] ∧ [73],"[8] Wenn für Datenclearing erforderlich
 [73] Wenn in derselben SG8 im PIA DE7140 ein Code aus der Codeliste der Gruppenartikel- und Artikel-ID vorhanden ist, der in der Spalte UTILMD/Preisangabe mit X gekennzeichnet ist"
-149,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,,00176,,,,Muss,
-150,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6063,00176,Z33,,Singulär genutzte Betriebsmittel,X,
-151,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6060,00176,,,Menge,X,
-152,Preisangabe für Singulär genutzte Betriebsmittel,SG10,,,,,,,Soll [8] ∧ [73],"[8] Wenn für Datenclearing erforderlich  
+151,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,,00175,,,,Muss,
+152,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6063,00175,Z33,,Singulär genutzte Betriebsmittel,X,
+153,Menge der Singulär genutzten Betriebsmittel,SG9,QTY,6060,00175,,,Menge,X,
+154,Preisangabe für Singulär genutzte Betriebsmittel,SG10,,,,,,,Soll [8] ∧ [73],"[8] Wenn für Datenclearing erforderlich
 [73] Wenn in derselben SG8 im PIA DE7140 ein Code aus der Codeliste der Gruppenartikel- und Artikel-ID vorhanden ist, der in der Spalte UTILMD/Preisangabe mit X gekennzeichnet ist"
-153,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,,00177,,,,Muss,
-154,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7059,00177,Z44,,Berechnungspreis,X,
-155,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7037,00177,ZD8,,Tag,X,
-156,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7036,00177,,,"Preis, Betrag",X [914] ∧ [946],"[914] Format: Möglicher Wert: > 0  
+155,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,,00176,,,,Muss,
+156,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7059,00176,Z44,,Berechnungspreis,X,
+157,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7037,00176,ZD8,,Tag,X,
+158,Preisangabe für Singulär genutzte Betriebsmittel,SG10,CCI,7036,00176,,,"Preis, Betrag",X [914] ∧ [946],"[914] Format: Möglicher Wert: > 0
 [946] Format: max. 11 Nachkommastellen"
-157,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8] ∧ [59] ∧ [108],"[8] Wenn für Datenclearing erforderlich  
-[59] Wenn mehr als eine SG8 SEQ+Z45 (Netznutzungsabrechnungsdat en der Marktlokation) mit einer Gruppen-/Artikel-ID im SG8 PIA+Z02 (Gruppenartikel- ID / Artikel-ID), welche mit 1- 08-1/2/3/4/5 beginnt, vorhanden  
-[108] Wenn in derselben SG8"
-158,Zugeordnete Zählzeitdefinition,SG10,CCI,,00178,,,,Muss,
-159,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,00178,Z39,,Code der Zählzeitdefinition,X,
-160,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,00178,,,Code der Zählzeitdefinition,X,
-161,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Soll [8] ∧ [59] ∧ [108],"[8] Wenn für Datenclearing erforderlich  
-[59] Wenn mehr als eine SG8 SEQ+Z45 (Netznutzungsabrechnungsdat en der Marktlokation) mit einer Gruppen-/Artikel-ID im SG8 PIA+Z02 (Gruppenartikel- ID / Artikel-ID), welche mit 1- 08-1/2/3/4/5 beginnt, vorhanden  
+159,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[62] Wenn mehr als eine SG8 SEQ+Z45 (Netznutzungsabrechnungsdat en der Marktlokation), mit der selben Zeitraum-ID im DE1050, mit einer Gruppen-/ Artikel-ID im SG8 PIA+Z02 (Gruppenartikel-ID / Artikel- ID), welche mit 1-08-1/2/3/ 4/5 beginnt, vorhanden
 [108] Wenn in derselben SG8 (Netznutzungsabrechnungsdat en der Marktlokation) eine Gruppen-/Artikel-ID im PIA+Z02 (Gruppenartikel-ID / Artikel-ID), welche mit 1-08- 1/2/3/4/5 beginnt, vorhanden"
-162,Zugeordnetes Zählzeitregister ,SG10,CCI,,00179,,,,Muss,
-163,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00179,Z38,,Code des Zählzeitregisters,X,
-164,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00179,,,Code des Zählzeitregisters,X,
-165,Zugeordnete Marktpartner,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-166,Zugeordnete Marktpartner,SG10,CCI,,00180,,,,Muss,
-167,Zugeordnete Marktpartner,SG10,CCI,7037,00180,ZB3,,Zugeordneter Marktpartner,X,
-168,Netzbetreiber,SG10,CAV,,00181,,,,Muss,
-169,Netzbetreiber,SG10,CAV,7111,00181,Z88,,NB,X,
-170,Netzbetreiber,SG10,CAV,1131,00181,,,MP-ID,X,"[714] Hinweis: Es ist bei einer unterjährigen Gebietsübernahme möglich hier den bisherigen NB zu nennen um aufzuzeigen, dass die im PIA+5 dieser SG8 genannten Gruppenartikel-ID"
-171,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-172,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-173,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+160,Zugeordnete Zählzeitdefinition,SG10,CCI,,00177,,,,Muss,
+161,Zugeordnete Zählzeitdefinition,SG10,CCI,7059,00177,Z39,,Code der Zählzeitdefinition,X,
+162,Zugeordnete Zählzeitdefinition,SG10,CCI,7037,00177,,,Code der Zählzeitdefinition,X,
+163,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[62] Wenn mehr als eine SG8 SEQ+Z45 (Netznutzungsabrechnungsdat en der Marktlokation), mit der selben Zeitraum-ID im DE1050, mit einer Gruppen-/ Artikel-ID im SG8 PIA+Z02 (Gruppenartikel-ID / Artikel- ID), welche mit 1-08-1/2/3/ 4/5 beginnt, vorhanden
+[108] Wenn in derselben SG8 (Netznutzungsabrechnungsdat en der Marktlokation) eine Gruppen-/Artikel-ID im PIA+Z02 (Gruppenartikel-ID / Artikel-ID), welche mit 1-08- 1/2/3/4/5 beginnt, vorhanden"
+164,Zugeordnetes Zählzeitregister ,SG10,CCI,,00178,,,,Muss,
+165,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00178,Z38,,Code des Zählzeitregisters,X,
+166,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00178,,,Code des Zählzeitregisters,X,
+167,Zugeordnete Marktpartner,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+168,Zugeordnete Marktpartner,SG10,CCI,,00179,,,,Muss,
+169,Zugeordnete Marktpartner,SG10,CCI,7037,00179,ZB3,,Zugeordneter Marktpartner,X,
+170,Netzbetreiber,SG10,CAV,,00180,,,,Muss,
+171,Netzbetreiber,SG10,CAV,7111,00180,Z88,,NB,X,
+172,Netzbetreiber,SG10,CAV,1131,00180,,,MP-ID,X,"[714] Hinweis: Es ist bei einer unterjährigen Gebietsübernahme möglich hier den bisherigen NB zu nennen um aufzuzeigen, dass die im PIA+5 dieser SG8 genannten Gruppenartikel-ID bzw. Artikel-ID auf die Preise des bisherigen NB beziehen. Wenn dies nicht der Fall ist wird die eigene MP-ID eingetragen"
+173,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+174,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+175,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

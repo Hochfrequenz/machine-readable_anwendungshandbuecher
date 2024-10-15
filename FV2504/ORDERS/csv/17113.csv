@@ -1,17 +1,17 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00002,Z34,,Reklamation von Werten,X,
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Produkt-/ Leistungsbeschreibung,,IMD,,00009,,,,Muss,
@@ -38,10 +38,10 @@
 35,Ansprechpartner,SG5,CTA,3139,00022,,,,IC,
 36,Ansprechpartner,SG5,CTA,3412,00022,,,Kontakt,X,
 37,Kommunikationsverbindung,SG5,COM,,00023,,,,Muss,
-38,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+38,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 39,Kommunikationsverbindung,SG5,COM,3155,00023,EM,,Elektronische Post,X [1P0..1],
 40,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -54,30 +54,30 @@
 47,MP-ID Empfänger,SG2,NAD,3039,00024,,,MP-ID,X,
 48,MP-ID Empfänger,SG2,NAD,3055,00024,9,,GS1,X,
 49,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-50,MP-ID Empfänger,SG2,NAD,3055,,332,,"DE, DVGW Service &",X,
+50,MP-ID Empfänger,SG2,NAD,3055,,332,,"DE, DVGW Service & Consult GmbH",X,
 51,Meldepunkt,SG2,,,,,,,Muss,
 52,Meldepunkt,SG2,NAD,,00026,,,,Muss,
 53,Meldepunkt,SG2,NAD,3035,00026,,,,DP,
-54,Meldepunkt,SG2,LOC,,00027,,,,Muss [24] ⊻ [18] ⊻ ([492] ∧ [108] ∧ [19]),"[18] Wenn IMD++Z11 vorhanden 
-[19] Wenn IMD++Z12 vorhanden 
-[24] Wenn IMD++Z35 vorhanden 
-[108] Wenn RFF+AGK (Konfigurations-ID) nicht vorhanden 
+54,Meldepunkt,SG2,LOC,,00027,,,,Muss [24] ⊻ [18] ⊻ ([492] ∧ [108] ∧ [19]),"[18] Wenn IMD++Z11 vorhanden
+[19] Wenn IMD++Z12 vorhanden
+[24] Wenn IMD++Z35 vorhanden
+[108] Wenn RFF+AGK (Konfigurations-ID) nicht vorhanden
 [492] wenn MP-ID in NAD+MR aus Sparte Strom"
 55,Meldepunkt,SG2,LOC,3227,00027,,,,172,
-56,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X (([950] [521] ∧ ([6] ⊻ [7] ⊻ [26])) ⊻ ([951] [522] ∧ ([6] ⊻ [7] ⊻ [15])) ⊻ ([950] [523] ∧ ([6] ⊻ [7] ⊻ [26]))),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden 
-[7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden 
-[15] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB vorhanden 
-[26] Wenn MP-ID in SG2 NAD+MS mit Rolle ÜNB vorhanden 
-[521] Hinweis: Verwendung der ID der Marktlokation 
-[522] Hinweis: Verwendung der ID der Messlokation 
-[523] Hinweis: Verwendung der ID der Tranche 
-[950] Format: Marktlokations-ID 
+56,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X (([950] [521] ∧ ([6] ⊻ [7] ⊻ [26])) ⊻ ([951] [522] ∧ ([6] ⊻ [7] ⊻ [15])) ⊻ ([950] [523] ∧ ([6] ⊻ [7] ⊻ [26]))),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
+[7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden
+[15] Wenn MP-ID in SG2 NAD+MS mit Rolle MSB vorhanden
+[26] Wenn MP-ID in SG2 NAD+MS mit Rolle ÜNB vorhanden
+[521] Hinweis: Verwendung der ID der Marktlokation
+[522] Hinweis: Verwendung der ID der Messlokation
+[523] Hinweis: Verwendung der ID der Tranche
+[950] Format: Marktlokations-ID
 [951] Format: Zählpunktbezeichnung"
-57,Konfigurations-ID,SG3,,,,,,,Muss [492] ∧ [19] ∧ [109],"[19] Wenn IMD++Z12 vorhanden 
-[109] Wenn LOC+172 (Meldepunkt) nicht vorhanden 
+57,Konfigurations-ID,SG3,,,,,,,Muss [492] ∧ [19] ∧ [109],"[19] Wenn IMD++Z12 vorhanden
+[109] Wenn LOC+172 (Meldepunkt) nicht vorhanden
 [492] wenn MP-ID in NAD+MR aus Sparte Strom"
 58,Konfigurations-ID,SG3,RFF,,00033,,,,Muss,
-59,Konfigurations-ID,SG3,RFF,1153,00033,AGK,,Anwendungsreferenznummer,X,
+59,Konfigurations-ID,SG3,RFF,1153,00033,AGK,,Anwendungsreferenznum mer,X,
 60,Konfigurations-ID,SG3,RFF,1154,00033,,,Konfigurations-ID,X,
 61,Positionsdaten,SG29,,,,,,,Muss,
 62,Positionsdaten,SG29,LIN,,00050,,,,Muss,
@@ -86,18 +86,18 @@
 65,OBIS-Kennzahl,SG29,PIA,4347,00051,,,,5,
 66,OBIS-Kennzahl,SG29,PIA,7140,00051,,,OBIS-Kennzahl,X,
 67,OBIS-Kennzahl,SG29,PIA,7143,00051,SRW,,OBIS-Kennzahl,X,
-68,Zeitpunkt für Wertanfrage,SG29,DTM,,00053,,,,Muss [19] ∧ [67] ∧ [549],"[19] Wenn IMD++Z12 vorhanden 
-[67] Wenn DTM+163 nicht vorhanden 
+68,Zeitpunkt für Wertanfrage,SG29,DTM,,00053,,,,Muss [19] ∧ [67] ∧ [549],"[19] Wenn IMD++Z12 vorhanden
+[67] Wenn DTM+163 nicht vorhanden
 [549] Hinweis: Findet bei der Reklamation von Zählerständen immer Anwendung. Einzige Ausnahme ist, wenn es sich um die Reklamation eines fehlenden Zählerstandes aufgrund einer Turnusablesung handelt, bei welcher der MSB am Objekt der Marktlokation die Information zur ""geplanten Turnusablesung des MSB (Strom)"" in der UTILMD im SG6 DTM+752 als Ablesezeitraum (DE2379 mit Code 104 MMWW- MMWW) in den vorherigen Stammdaten übermittelt hatte, denn dann ist keine Zeitpunktangabe möglich, sondern das Zeitintervall in der Segmentausprägung DTM+163 / DTM+164 zu verwenden."
 69,Zeitpunkt für Wertanfrage,SG29,DTM,2005,00053,7,,Gültigkeitsdatum/-zeit,X,
 70,Zeitpunkt für Wertanfrage,SG29,DTM,2380,00053,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
 71,Zeitpunkt für Wertanfrage,SG29,DTM,2379,00053,303,,CCYYMMDDHHMMZZZ,X,
-72,Beginn Zeitraum für Wertanfrage,SG29,DTM,,00054,,,,Muss [18] ⊻ [24] ⊻ ([19] ∧ [54] ∧ [68] ∧ [550]),"[18] Wenn IMD++Z11 vorhanden 
-[19] Wenn IMD++Z12 vorhanden 
-[24] Wenn IMD++Z35 vorhanden 
-[54] Wenn FTX+Z06 vorhanden 
-[68] Wenn DTM+7 nicht vorhanden 
-[550] Hinweis: Findet nur dann Anwendung, wenn es sich um die Reklamation eines fehlenden Zählerstandes aufgrund einer Turnusablesung handelt, bei welcher der MSB am Objekt der Marktlokation die Information zur ""geplanten Turnusablesung des MSB (Strom)"" in der UTILMD im SG6 DTM+752 als Ablesezeitraum (DE2379 mit Code 104 MMWW-"
+72,Beginn Zeitraum für Wertanfrage,SG29,DTM,,00054,,,,Muss [18] ⊻ [24] ⊻ ([19] ∧ [54] ∧ [68] ∧ [550]),"[18] Wenn IMD++Z11 vorhanden
+[19] Wenn IMD++Z12 vorhanden
+[24] Wenn IMD++Z35 vorhanden
+[54] Wenn FTX+Z06 vorhanden
+[68] Wenn DTM+7 nicht vorhanden
+[550] Hinweis: Findet nur dann Anwendung, wenn es sich um die Reklamation eines fehlenden Zählerstandes aufgrund einer Turnusablesung handelt, bei welcher der MSB am Objekt der Marktlokation die Information zur ""geplanten Turnusablesung des MSB (Strom)"" in der UTILMD im SG6 DTM+752 als Ablesezeitraum (DE2379 mit Code 104 MMWW- MMWW) in den vorherigen Stammdaten übermittelt hatte."
 73,Beginn Zeitraum für Wertanfrage,SG29,DTM,2005,00054,163,,"Verarbeitung, Beginndatum/-zeit",X,
 74,Beginn Zeitraum für Wertanfrage,SG29,DTM,2380,00054,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931],[931] Format: ZZZ = +00
 75,Beginn Zeitraum für Wertanfrage,SG29,DTM,2379,00054,303,,CCYYMMDDHHMMZZZ,X,
@@ -108,8 +108,8 @@
 80,Beschreibung der Reklamation von Werten und Definitionen,SG29,FTX,,00057,,,,Muss,
 81,Beschreibung der Reklamation von Werten und Definitionen,SG29,FTX,4451,00057,angegebenen Zeitintervall angegebenen Zeitintervall angegebenen Zeitintervall,,,Z04 Z05 Z06,[492] wenn MP-ID in NAD+MR aus Sparte Strom
 82,Beschreibung der Reklamation von Werten und Definitionen,SG29,FTX,4440,00057,,,Beschreibung der Reklamation,K,
-83,Abschnitts-Kontrollsegment,,UNS,,00139,,,,Muss,
-84,Abschnitts-Kontrollsegment,,UNS,0081,00139,und Summenteil,,,S,
-85,Nachrichten-Endesegment,,UNT,,00140,,,,Muss,
-86,Nachrichten-Endesegment,,UNT,0074,00140,,,Anzahl der Segmente in einer Nachricht,X,
-87,Nachrichten-Endesegment,,UNT,0062,00140,,,Nachrichten-Referenznummer,X,
+83,Abschnitts-Kontrollsegment,,UNS,,00136,,,,Muss,
+84,Abschnitts-Kontrollsegment,,UNS,0081,00136,und Summenteil,,,S,
+85,Nachrichten-Endesegment,,UNT,,00137,,,,Muss,
+86,Nachrichten-Endesegment,,UNT,0074,00137,,,Anzahl der Segmente in einer Nachricht,X,
+87,Nachrichten-Endesegment,,UNT,0062,00137,,,Nachrichten-Referenznummer,X,
