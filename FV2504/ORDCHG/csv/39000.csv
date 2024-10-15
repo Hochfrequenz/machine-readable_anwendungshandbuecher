@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestelländerung,,ORDCH G,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDCHG,,Bestelländerung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,20B,,Ausgabe 2020 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -13,15 +13,15 @@
 11,Beginn der Nachricht,,BGM,1225,00002,1,,Aufhebung/Stornierung,X,
 12,Nachrichtendatum,,DTM,,00003,,,,Muss,
 13,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-14,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+14,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 15,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 16,Nachrichtennummer der Anfrage/Bestellung,SG1,,,,,,,Muss,
 17,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,,00004,,,,Muss,
 18,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1153,00004,ON,,Auftragsnummer (Einkauf),X,
-19,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1154,00004,,,Nachrichtennummer,X [500],"[2] Wenn BGM+Z51 (Sperrung) vorhanden 
-[3] Wenn BGM+Z52 (Entsperrung) vorhanden 
-[500] Hinweis: Dokumentennummer aus BGM DE1004 der ORDERS 
+19,Nachrichtennummer der Anfrage/Bestellung,SG1,RFF,1154,00004,,,Nachrichtennummer,X [500],"[2] Wenn BGM+Z51 (Sperrung) vorhanden
+[3] Wenn BGM+Z52 (Entsperrung) vorhanden
+[500] Hinweis: Dokumentennummer aus BGM DE1004 der ORDERS
 [501] Hinweis: Wert aus BGM+Z33 DE1004 der IFTSTA mit der die Information über den Entsperrauftrag übermittelt wurde"
 20,Prüfidentifikator,SG1,,,,,,,Muss,
 21,Prüfidentifikator,SG1,RFF,,00006,,,,Muss,
@@ -39,10 +39,11 @@
 33,Ansprechpartner,SG6,CTA,3139,00008,IC,,Informationskontakt,X,
 34,Ansprechpartner,SG6,CTA,3412,00008,,,Kontakt,X,
 35,Kommunikationsverbindung,SG6,COM,,00009,,,,Muss,
-36,Kommunikationsverbindung,SG6,COM,3148,00009,,,"Kommunikationsadresse, Identifikation",X (([939] [4]) ∨ ([940] [5])) ∧ [503],"[4] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[5] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[503] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen"
+36,Kommunikationsverbindung,SG6,COM,3148,00009,,,"Kommunikationsadresse, Identifikation",X (([939] [4]) ∨ ([940] [5])) ∧ [503],"[4] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[5] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[503] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 37,Kommunikationsverbindung,SG6,COM,3155,00009,EM,,Elektronische Post,X [1P0..1],
 38,Kommunikationsverbindung,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
 39,Kommunikationsverbindung,SG6,COM,3155,,TE,,Telefon,X [1P0..1],

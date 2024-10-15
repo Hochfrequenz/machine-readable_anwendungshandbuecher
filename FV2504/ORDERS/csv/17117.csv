@@ -1,17 +1,17 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,,Z52,,Entsperrung,X,
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Produkt-/ Leistungsbeschreibung,,IMD,,00009,,,,Muss,
@@ -33,11 +33,11 @@
 30,Ansprechpartner,SG5,CTA,3139,00022,IC,,Informationskontakt,X,
 31,Ansprechpartner,SG5,CTA,3412,00022,,,Kontakt,X,
 32,Kommunikationsverbindung,SG5,COM,,00023,,,,Muss,
-33,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
-[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen"
+33,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 34,Kommunikationsverbindung,SG5,COM,3155,00023,EM,,Elektronische Post,X [1P0..1],
 35,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
 36,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
@@ -55,7 +55,7 @@
 48,Meldepunkt,SG2,NAD,3035,00026,DP,,Lieferanschrift,X,
 49,Meldepunkt,SG2,LOC,,00027,,,,Muss,
 50,Meldepunkt,SG2,LOC,3227,00027,172,,Meldepunkt,X,
-51,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation 
+51,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X [950] [521],"[521] Hinweis: Verwendung der ID der Marktlokation
 [950] Format: Marktlokations-ID"
 52,Adresse für Treffpunkt,SG2,,,,,,,Kann,
 53,Adresse für Treffpunkt,SG2,NAD,,00041,,,,Muss,
@@ -71,8 +71,8 @@
 63,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,,00056,,,,Kann,
 64,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4451,00056,ACB,,Zusätzliche Informationen (für allgemeine Hinweise),X,
 65,Allgemeine Information (Feld für allgemeine Hinweise),SG29,FTX,4440,00056,,,Freier Text,X,
-66,Abschnitts-Kontrollsegment,,UNS,,00139,,,,Muss,
-67,Abschnitts-Kontrollsegment,,UNS,0081,00139,S,,Trennung von Positions- und Summenteil,X,
-68,Nachrichten-Endesegment,,UNT,,00140,,,,Muss,
-69,Nachrichten-Endesegment,,UNT,0074,00140,,,Anzahl der Segmente in einer Nachricht,X,
-70,Nachrichten-Endesegment,,UNT,0062,00140,,,Nachrichten-Referenznummer,X,
+66,Abschnitts-Kontrollsegment,,UNS,,00136,,,,Muss,
+67,Abschnitts-Kontrollsegment,,UNS,0081,00136,S,,Trennung von Positions- und Summenteil,X,
+68,Nachrichten-Endesegment,,UNT,,00137,,,,Muss,
+69,Nachrichten-Endesegment,,UNT,0074,00137,,,Anzahl der Segmente in einer Nachricht,X,
+70,Nachrichten-Endesegment,,UNT,0062,00137,,,Nachrichten-Referenznummer,X,

@@ -1,21 +1,21 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
+0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,[555] Die Anwendungsfälle für die Durchführung der BDEW-Anwendungshilfe „Marktprozesse Netzbetreiberwechsel Sparte Strom“ sind ab dem 01.08. 2025 für Netzbetreiberwechsel ab dem 01.01.2026 zu verwenden
 1,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten-Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILMD,,Netzanschluss-Stammdaten,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X [705],
-9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird  
-[706] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Bestellung einer Änderung von Stammdaten..."" durchgeführt wird, mit dem Ziel ein Datenclearing durchzuführen "
-10,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
-11,Nachrichtendatum EDIFACT Struktur,,DTM,,00005,,,,Muss,
-12,Nachrichtendatum EDIFACT Struktur,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-13,Nachrichtendatum EDIFACT Struktur,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+9,Beginn der Nachricht,,BGM,1001,,Z88,,Anfrage Datenclearing,X [706],"[705] Hinweis: Wenn die Aktion eines Sequenzdiagramms ""Rückmeldung auf Änderung"" durchgeführt wird
+[706] Hinweis: Wenn die Aktion eines Sequenzdiagramms"
+10,EDIFACT Struktur,,BGM,1004,00004,,,Dokumentennummer,X,
+11,Nachrichtendatum,,DTM,,00005,,,,Muss,
+12,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
+13,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
-14,Nachrichtendatum EDIFACT Struktur,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
+14,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 15,MP-ID Absender,SG2,,,,,,,Muss,
 16,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
 17,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenaussteller bzw. - absender,X,
@@ -26,364 +26,366 @@
 22,Ansprechpartner,SG3,CTA,,00009,,,,Muss,
 23,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 24,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
-25,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,,00010,,,,Muss,
-26,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
+26,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
-27,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
-28,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
-29,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
-30,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-31,Kommunikationsverbindung EDIFACT Struktur,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+27,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
+28,EDIFACT Struktur,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
+29,EDIFACT Struktur,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
+30,EDIFACT Struktur,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+31,EDIFACT Struktur,SG3,COM,3155,,AL,,Handy,X [1P0..1],
 32,MP-ID Empfänger,SG2,,,,,,,Muss,
 33,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
-34,EDIFACT Struktur,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
-35,EDIFACT Struktur,SG2,NAD,3039,00011,,,MP-ID,X,
-36,EDIFACT Struktur,SG2,NAD,3055,00011,9,,GS1,X,
-37,EDIFACT Struktur,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e. V.)",X,
+34,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
+35,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
+36,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+37,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e. V.)",X,
 38,Vorgang,SG4,,,,,,,Muss,
 39,Vorgang,SG4,IDE,,00020,,,,Muss,
 40,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
 41,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZX7,,Änderung Daten der MeLo,X,
-45,Status der Antwort,SG4,STS,,00035,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156"
-46,EDIFACT Struktur,SG4,STS,9015,00035,E01,,Status der Antwort,X,
-47,EDIFACT Struktur,SG4,STS,9013,00035,,,Code des Prüfschritts,X,
+42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX7,,Änderung Daten der MeLo,X,
+45,Status der Antwort,SG4,STS,,00036,,,,Muss [301] ∧,[301] Wenn BGM+E03
+46,EDIFACT Struktur,SG4,STS,9015,00036,E01,,Status der Antwort,X,
+47,EDIFACT Struktur,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
 48,EDIFACT Struktur,SG4,STS,1131,,E_0415,,EBD Nr. E_0415,X,
-49,EDIFACT Struktur,SG4,STS,9012,00035,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen  
-[914] Format: Möglicher Wert: > 0  
-[937] Format: keine Nachkommastelle"
-50,Messlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang)
-51,EDIFACT Struktur,SG5,LOC,,00053,,,,Muss,
-52,EDIFACT Struktur,SG5,LOC,3227,00053,Z17,,Messlokation,X,
-53,EDIFACT Struktur,SG5,LOC,3225,00053,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
+49,EDIFACT Struktur,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen"
+50,Messlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+51,Messlokation,SG5,LOC,,00054,,,,Muss,
+52,Messlokation,SG5,LOC,3227,00054,Z17,,Messlokation,X,
+53,Messlokation,SG5,LOC,3225,00054,,,ID der Messlokation,X [951],[951] Format: Zählpunktbezeichnung
 54,Prüfidentifikator,SG6,,,,,,,Muss,
-55,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-56,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
+55,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+56,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
 57,Prüfidentifikator,SG6,RFF,1154,,55648,,GPKE / Rückmeldung / Anfrage Daten der MeLo vom NB an MSB,X,
 58,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
-59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00056,,,,Muss,
-60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00056,TN,,Transaktions-Referenznummer,X,
-61,EDIFACT Struktur,SG6,RFF,1154,00056,,,Vorgangsnummer,X,
-62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich  
-[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[315] Wenn BGM+Z88 (Datenclearing) vorhanden  
+59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
+60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions-Referenznummer,X,
+61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
+62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden
 [707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
-63,Verwendungszeitraum der Daten,SG6,RFF,,00065,,,,Muss,
-64,Verwendungszeitraum der Daten,SG6,RFF,1153,00065,Z47,,Im System vorhandene Daten,X [5P0..n],
+63,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+64,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
 65,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
-66,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
-67,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
-68,Verwendungszeitraum der Daten,SG6,RFF,1156,00065,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das"
-69,Verwendung der Daten ab,SG6,DTM,,00066,,,,Muss [131] ⊻ [134] ⊻ [135],[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab)
-70,EDIFACT Struktur,SG6,DTM,2005,00066,Z25,,Verwendung der Daten ab,X,
-71,EDIFACT Struktur,SG6,DTM,2380,00066,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-72,EDIFACT Struktur,SG6,DTM,2379,00066,303,,CCYYMMDDHHMMZZZ,X,
-73,Verwendung der Daten bis,SG6,DTM,,00067,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)  
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID) "
-74,EDIFACT Struktur,SG6,DTM,2005,00067,Z26,,Verwendung der Daten bis,X,
-75,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-76,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
-77,Daten der Messlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+66,EDIFACT Struktur,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
+67,EDIFACT Struktur,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
+68,EDIFACT Struktur,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
+[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt
+[914] Format: Möglicher"
+69,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55"
+70,EDIFACT Struktur,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+71,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+72,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
+73,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/"
+74,EDIFACT Struktur,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+75,EDIFACT Struktur,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+76,EDIFACT Struktur,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
+77,Daten der Messlokation EDIFACT Struktur,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-78,EDIFACT Struktur,SG8,SEQ,,00292,,,,Muss,
-79,EDIFACT Struktur,SG8,SEQ,1229,,ZG6,,Erwartete Daten der Messlokation,x [2P0..n],
-80,EDIFACT Struktur,SG8,SEQ,1229,,ZG7,,Im System vorhandene Daten der Messlokation,x [3P0..n],
-81,EDIFACT Struktur,SG8,SEQ,1050,00292,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+78,Daten der Messlokation EDIFACT Struktur,SG8,SEQ,,00291,,,,Muss,
+79,Daten der Messlokation EDIFACT Struktur,SG8,SEQ,1229,,ZG6,,Erwartete Daten der Messlokation,X [2P0..n],
+80,Daten der Messlokation EDIFACT Struktur,SG8,SEQ,1229,,ZG7,,Im System vorhandene Daten der Messlokation,X [3P0..n],
+81,Daten der Messlokation EDIFACT Struktur,SG8,SEQ,1050,00291,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
 82,Spannungsebene der Messlokation,SG10,,,,,,,Muss,
-83,Spannungsebene der Messlokation,SG10,CCI,,00300,,,,Muss,
-84,Spannungsebene der Messlokation,SG10,CCI,7037,00300,E04,,Spannungsebene der Messlokation,X,
-85,Spannungsebene der Messlokation,SG10,CAV,,00301,,,,Muss,
-86,Spannungsebene der Messlokation,SG10,CAV,7111,00301,E03,,Höchstspannung,X,
+83,Spannungsebene der Messlokation,SG10,CCI,,00299,,,,Muss,
+84,EDIFACT Struktur,SG10,CCI,7037,00299,E04,,Spannungsebene der Messlokation,X,
+85,Spannungsebene der Messlokation,SG10,CAV,,00300,,,,Muss,
+86,Spannungsebene der Messlokation,SG10,CAV,7111,00300,E03,,Höchstspannung,X,
 87,Spannungsebene der Messlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
 88,Spannungsebene der Messlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
-89,EDIFACT Struktur,SG10,CAV,7111,,E06,,Niederspannung,X,
-90,Zähleinrichtungsdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+89,Spannungsebene der Messlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
+90,Zähleinrichtungsdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-91,Zähleinrichtungsdaten,SG8,SEQ,,00312,,,,Muss,
+91,Zähleinrichtungsdaten,SG8,SEQ,,00311,,,,Muss,
 92,Zähleinrichtungsdaten,SG8,SEQ,1229,,ZA3,,Erwartete Zähleinrichtungsdaten,X [2P0..n],
 93,Zähleinrichtungsdaten,SG8,SEQ,1229,,ZA4,,Im System vorhandene Zähleinrichtungsdaten,X [3P0..n],
-94,Zähleinrichtungsdaten,SG8,SEQ,1050,00312,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
-[937] Format: keine Nachkommastelle"
-95,Smartmeter-Gateway,SG8,RFF,,00314,,,,Soll [166] ∧ [215],"[166] Wenn vorhanden  
+94,Zähleinrichtungsdaten,SG8,SEQ,1050,00311,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49
+95,Referenz auf das Smartmeter-Gateway,SG8,RFF,,00313,,,,Soll [166] ∧ [215],"[166] Wenn vorhanden
 [215] Wenn in derselben SG8 (Zähleinrichtungsdaten) SG10 CCI+++E13 CAV+MME (Zählertyp: mME) vorhanden"
-96,Smartmeter-Gateway,SG8,RFF,1153,00314,Z14,,Smartmeter-Gateway,X,
-97,Smartmeter-Gateway,SG8,RFF,1154,00314,,,Identifikation / Nummer des Smartmeter- Gateways,X,
+96,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,00313,Z14,,Smartmeter-Gateway,X,
+97,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,00313,,,Identifikation / Nummer des Smartmeter- Gateways,X,
 98,Zählertyp,SG10,,,,,,,Muss,
-99,Zählertyp,SG10,CCI,,00315,,,,Muss,
-100,Zählertyp,SG10,CCI,7037,00315,E13,,Zählertyp,X,
-101,Zählertyp,SG10,CAV,,00316,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-102,Zählertyp,SG10,CAV,7111,00316,AHZ,,analoger Haushaltszähler (Drehstrom),X,
-103,Zählertyp,SG10,CAV,7111,,WSZ,,analoger Wechselstromzähler,X,
-104,Zählertyp,SG10,CAV,7111,,LAZ,,Lastgangzähler,X,
-105,Zählertyp,SG10,CAV,7111,,MAZ,,Maximumzähler,X,
-106,Zählertyp,SG10,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
-107,Zählertyp,SG10,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X ,
-108,Zählertyp,SG10,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,
-109,EDIFACT Struktur,SG10,CAV,7110,00316,Z01,,EDL40,X [136],
+99,Zählertyp,SG10,CCI,,00314,,,,Muss,
+100,Zählertyp,SG10,CCI,7037,00314,E13,,Zählertyp,X,
+101,Zählertyp,SG10,CAV,,00315,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+102,Zählertyp,SG10,CAV,7111,00315,AHZ,,analoger Haushaltszähler (Drehstrom),X,
+103,EDIFACT Struktur,SG10,CAV,7111,,WSZ,,analoger Wechselstromzähler,X,
+104,EDIFACT Struktur,SG10,CAV,7111,,LAZ,,Lastgangzähler,X,
+105,EDIFACT Struktur,SG10,CAV,7111,,MAZ,,Maximumzähler,X,
+106,EDIFACT Struktur,SG10,CAV,7111,,MME,,moderne Messeinrichtung nach MsbG,X,
+107,EDIFACT Struktur,SG10,CAV,7111,,EHZ,,elektronischer Haushaltszähler,X ,
+108,EDIFACT Struktur,SG10,CAV,7111,,IVA,,Individuelle Abstimmung (Sonderausstattung),X,
+109,EDIFACT Struktur,SG10,CAV,7110,00315,Z01,,EDL40,X [136],
 110,EDIFACT Struktur,SG10,CAV,7110,,Z02,,EDL21,X [136],
 111,EDIFACT Struktur,SG10,CAV,7110,,Z03,,sonstiger EHZ,X [136],
 112,EDIFACT Struktur,SG10,CAV,7110,,Z04,,Standard,X [346],
-113,EDIFACT Struktur,SG10,CAV,7110,,Z05,,MeDa-Zähler,X [346],"[136] Wenn SG10 CCI+++E13 (Zählertyp) CAV+EHZ (elektronischer Haushaltszähler) vorhanden  
+113,EDIFACT Struktur,SG10,CAV,7110,,Z05,,MeDa-Zähler,X [346],"[136] Wenn SG10 CCI+++E13 (Zählertyp) CAV+EHZ (elektronischer Haushaltszähler) vorhanden
 [346] Wenn SG10 CCI+++E13 (Zählertyp) CAV+MME (mME) vorhanden"
-114,Identifikation / Nummer des Gerätes,SG10,CAV,,00317,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-115,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00317,Z30,,Gerätenummer,X,
-116,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00317,,,Gerätenummer,X,
-117,Registeranzahl,SG10,CAV,,00318,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+114,Identifikation / Nummer des Gerätes,SG10,CAV,,00316,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+115,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00316,Z30,,Gerätenummer,X,
+116,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00316,,,Gerätenummer,X,
+117,Registeranzahl,SG10,CAV,,00317,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [139] Wenn SG10 CAV+IVA (Individuelle Abstimmung) nicht vorhanden"
-118,Registeranzahl,SG10,CAV,7111,00318,ETZ,,Eintarif,X,
-119,Registeranzahl,SG10,CAV,7111,,ZTZ,,Zweitarif,X,
-120,Registeranzahl,SG10,CAV,7111,,NTZ,,Mehrtarif,X,
-121,Energierichtung,SG10,CAV,,00319,,,,Soll [8],[8] Wenn für Datenclearing
-122,EDIFACT Struktur,SG10,CAV,7111,00319,ERZ,,Einrichtungszähler,X,
-123,EDIFACT Struktur,SG10,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
-124,Fernschaltung der Zähleinrichtung,SG10,CAV,,00320,,,,Muss,
-125,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,00320,Z58,,Fernschaltung der Zähleinrichtung,X,
-126,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,00320,Z06,,vorhanden,X,
+118,EDIFACT Struktur,SG10,CAV,7111,00317,ETZ,,Eintarif,X,
+119,EDIFACT Struktur,SG10,CAV,7111,,ZTZ,,Zweitarif,X,
+120,EDIFACT Struktur,SG10,CAV,7111,,NTZ,,Mehrtarif,X,
+121,Energierichtung,SG10,CAV,,00318,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+122,Energierichtung,SG10,CAV,7111,00318,ERZ,,Einrichtungszähler,X,
+123,Energierichtung,SG10,CAV,7111,,ZRZ,,Zweirichtungszähler,X,
+124,Fernschaltung der Zähleinrichtung,SG10,CAV,,00319,,,,Muss,
+125,Fernschaltung der Zähleinrichtung,SG10,CAV,7111,00319,Z58,,Fernschaltung der Zähleinrichtung,X,
+126,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,00319,Z06,,vorhanden,X,
 127,Fernschaltung der Zähleinrichtung,SG10,CAV,7110,,Z07,,nicht vorhanden,X,
 128,Befestigungsart Zähleinrichtung,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-129,Befestigungsart Zähleinrichtung,SG10,CCI,,00321,,,,Muss,
-130,Befestigungsart Zähleinrichtung,SG10,CCI,7037,00321,Z28,,Befestigungsart Zähleinrichtung,X,
-131,Befestigungsart Zähleinrichtung,SG10,CAV,,00322,,,,Muss,
-132,Befestigungsart Zähleinrichtung,SG10,CAV,7111,00322,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X,
+129,Befestigungsart Zähleinrichtung,SG10,CCI,,00320,,,,Muss,
+130,Befestigungsart Zähleinrichtung,SG10,CCI,7037,00320,Z28,,Befestigungsart Zähleinrichtung,X,
+131,Befestigungsart Zähleinrichtung,SG10,CAV,,00321,,,,Muss,
+132,Befestigungsart Zähleinrichtung,SG10,CAV,7111,00321,BKE,,Stecktechnik (Befestigungs- und Kontaktierungseinrichtung),X,
 133,Befestigungsart Zähleinrichtung,SG10,CAV,7111,,DPA,,3-Dreipunktaufhängung,X,
-134,Befestigungsart Zähleinrichtung,SG10,CAV,7111,,HUT,,Hutschiene,X,
-135,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,Muss [316],[316] Wenn in derselben SG8 das RFF+Z14 (Smartmeter-
-136,EDIFACT Struktur,SG10,CCI,,00323,,,,Muss,
-137,EDIFACT Struktur,SG10,CCI,7037,00323,E12,,Messwerterfassung an der Zähleinrichtung,X,
-138,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,00324,,,,Muss,
-139,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,00324,AMR,,fernauslesbare Zähler,X,
+134,EDIFACT Struktur,SG10,CAV,7111,,HUT,,Hutschiene,X,
+135,Messwerterfassung an der Zähleinrichtung,SG10,,,,,,,Muss [316],[316] Wenn in derselben SG8 das RFF+Z14 (Smartmeter- Gateway) nicht vorhanden
+136,Messwerterfassung an der Zähleinrichtung,SG10,CCI,,00322,,,,Muss,
+137,Messwerterfassung an der Zähleinrichtung,SG10,CCI,7037,00322,E12,,Messwerterfassung an der Zähleinrichtung,X,
+138,Messwerterfassung an der Zähleinrichtung,SG10,CAV,,00323,,,,Muss,
+139,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,00323,AMR,,fernauslesbare Zähler,X,
 140,Messwerterfassung an der Zähleinrichtung,SG10,CAV,7111,,MMR,,manuell ausgelesene Zähler,X,
-141,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+141,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-142,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,00325,,,,Muss,
-143,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,,ZA5,,Erwartete OBIS-Daten der Zähleinrichtung,X [2P0..n],
-144,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1229,,ZA6,,Im System vorhandene OBIS- Daten der Zähleinrichtung,X [3P0..n],
-145,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,1050,00325,,,Referenz auf Zeitraum-ID,X [914] ∧,[22] Es ist die Zeitraum-ID
-146,Referenz auf die Gerätenummer,SG8,RFF,,00326,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS- Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW
-147,Referenz auf die Gerätenummer,SG8,RFF,1153,00326,MG,,Gerätenummer des Zählers,X [441],
-148,Referenz auf die Gerätenummer,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14 (Referenz auf das Smartmeter-Gateway) nicht vorhanden ist
-149,Referenz auf die Gerätenummer,SG8,RFF,1154,00326,,,Gerätenummer,X,
-150,Konfigurations-ID,SG8,RFF,,00329,,,,Muss [402] ∧ [420],"[402] Wenn in derselben SG8  (OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway) eine OBIS-Kennzahl der Werteart ""Zählerstand"" im PIA+5 vorhanden  
+142,OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway,SG8,SEQ,,00324,,,,Muss,
+143,EDIFACT Struktur,SG8,SEQ,1229,,ZA5,,Erwartete OBIS-Daten der Zähleinrichtung,X [2P0..n],
+144,EDIFACT Struktur,SG8,SEQ,1229,,ZA6,,Im System vorhandene OBIS- Daten der Zähleinrichtung,X [3P0..n],
+145,EDIFACT Struktur,SG8,SEQ,1050,00324,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+146,Referenz auf die Gerätenummer,SG8,RFF,,00325,,,,Muss [665],[665] Hinweis: Wenn ein Zähler mit einem SMGW parametriert ist werden an dem Zähler keine OBIS- Kennzahlen angegeben Hier gibt es nur OBIS Kennzahlen vom SMGW
+147,Referenz auf die Gerätenummer,SG8,RFF,1153,00325,MG,,Gerätenummer des Zählers,X [441],
+148,Referenz auf die Gerätenummer,SG8,RFF,1153,,Z14,,Smartmeter-Gateway,X,[441] Wenn im SG8+SEQ+Z03 (Zähleinrichtungsdaten) für die in diesem RFF DE1154 genannte Gerätenummer eines Zählers das RFF+Z14
+149,EDIFACT Struktur,SG8,RFF,1154,00325,,,Gerätenummer,X,
+150,Konfigurations-ID,SG8,RFF,,00328,,,,Muss [402] ∧ [420],"[402] Wenn in derselben SG8  (OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway) eine OBIS-Kennzahl der Werteart ""Zählerstand"" im PIA+5 vorhanden
 [420] Wenn in dieser SG8 das RFF+Z14 (Smartmeter- Gateway) vorhanden ist"
-151,Konfigurations-ID,SG8,RFF,1153,00329,AGK,,Anwendungsreferenznummer,X,
-152,Konfigurations-ID,SG8,RFF,1154,00329,,,"Referenz, Identifikation",X,
-153,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,,00330,,,,Muss,
-154,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,4347,00330,5,,Produktidentifikation,X,
-155,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7140,00330,,,OBIS-Kennzahl der Zähleinrichtung,X [323],"[323] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap. 3. anzugeben, welche an der Zähleinrichtung genutzt werden. Der Mindestumfang"
-156,EDIFACT Struktur,SG8,PIA,7143,00330,SRW,,OBIS-Kennzahl,X,
-157,Wertegranularität,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+151,Konfigurations-ID,SG8,RFF,1153,00328,AGK,,Anwendungsreferenznummer,X,
+152,Konfigurations-ID,SG8,RFF,1154,00328,,,"Referenz, Identifikation",X,
+153,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,,00329,,,,Muss,
+154,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,4347,00329,5,,Produktidentifikation,X,
+155,OBIS-Kennzahl der Zähleinrichtung / Smartmeter-Gateway,SG8,PIA,7140,00329,,,OBIS-Kennzahl der Zähleinrichtung,X [323],[323] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen
+156,EDIFACT Struktur,SG8,PIA,7143,00329,SRW,,OBIS-Kennzahl,X,
+157,Wertegranularität,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [256] Wenn in derselben SG8 SEQ (OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e vorhanden"
-158,Wertegranularität,SG10,CCI,,00331,,,,Muss,
-159,Wertegranularität,SG10,CCI,7037,00331,ZE4,,Wertegranularität,X,
-160,Wertegranularität,SG10,CAV,,00332,,,,Muss,
-161,Wertegranularität,SG10,CAV,7111,00332,ZD9,,Jährlich,X,
+158,Wertegranularität,SG10,CCI,,00330,,,,Muss,
+159,Wertegranularität,SG10,CCI,7037,00330,ZE4,,Wertegranularität,X,
+160,Wertegranularität,SG10,CAV,,00331,,,,Muss,
+161,Wertegranularität,SG10,CAV,7111,00331,ZD9,,Jährlich,X,
 162,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
 163,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
 164,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-165,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing
-166,EDIFACT Struktur,SG10,CCI,,00333,,,,Muss,
-167,EDIFACT Struktur,SG10,CCI,7059,00333,Z39,,Code der Zählzeitdefinition,X,
-168,EDIFACT Struktur,SG10,CCI,7037,00333,,,Code der Zählzeitdefinition,X,
-169,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+165,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[327] Wenn DTM+157 (Änderung zum) im DE2380 ≥ 202212312300?+00
+[390] Wenn mindestens eine weitere SG8 SEQ+Z20 (OBIS- Daten der Zähleinrichtung / Smartmeter-Gateway), die mit dem RFF+Z18 (Referenz auf die ID der Marktlokation) auf die gleiche ID einer Marktlokation wie in dieser SG referenziert und mit dem RFF+MG / Z14 (Referenz auf die Gerätenummer / Referenz auf das SMGw) auf die gleiche Gerätenummer wie in dieser SG referenziert und mit dem SG8 RFF+AGK (Konfigurations-ID auf die gleich Konfigurations-ID referenziert (wenn diese vorhanden), und auch mit einer OBIS-Kennzahl für Zählerstand im PIA+5 vorhanden "
+166,EDIFACT Struktur,SG10,CCI,,00332,,,,Muss,
+167,EDIFACT Struktur,SG10,CCI,7059,00332,Z39,,Code der Zählzeitdefinition,X,
+168,EDIFACT Struktur,SG10,CCI,7037,00332,,,Code der Zählzeitdefinition,X,
+169,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist"
-170,Zugeordnetes Zählzeitregister ,SG10,CCI,,00334,,,,Muss,
-171,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00334,Z38,,Code des Zählzeitregisters,X,
-172,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00334,,,Code des Zählzeitregisters,X,
-173,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[273] Wenn in derselben SG8 SEQ+Z20 (OBIS-Daten der"
-174,EDIFACT Struktur,SG10,CCI,,00335,,,,Muss,
-175,EDIFACT Struktur,SG10,CCI,7059,00335,11,,Produkt,X,
-176,EDIFACT Struktur,SG10,CCI,7037,00335,Z33,,Vor- und Nachkommastellen des Zählwerkes,X,
-177,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,00336,,,,Muss,
-178,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00336,,,Angabe der Vorkommastelle,X,
-179,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00336,,,Angabe der Nachkommastelle,X,
-180,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung Smartmeter-Gateway) mit dem SG8 RFF+MG (Gerätenummer des Zählers)"
-181,EDIFACT Struktur,SG10,CCI,,00337,,,,Muss,
-182,EDIFACT Struktur,SG10,CCI,7037,00337,Z63,,Lokale Kennzeichnung zu Kontrollzwecken,X,
-183,EDIFACT Struktur,SG10,CCI,7036,00337,,,Bezeichnung des Zählwerks auf dem Gerät,X,
-184,Schwachlastfähigkeit,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+170,Zugeordnetes Zählzeitregister ,SG10,CCI,,00333,,,,Muss,
+171,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00333,Z38,,Code des Zählzeitregisters,X,
+172,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00333,,,Code des Zählzeitregisters,X,
+173,Vor- und Nachkommastellen des Zählwerks,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+174,EDIFACT Struktur,SG10,CCI,,00334,,,,Muss,
+175,EDIFACT Struktur,SG10,CCI,7059,00334,11,,Produkt,X,
+176,EDIFACT Struktur,SG10,CCI,7037,00334,Z33,,Vor- und Nachkommastellen des Zählwerkes,X,
+177,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,,00335,,,,Muss,
+178,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00335,,,Angabe der Vorkommastelle,X,
+179,Vor- und Nachkommastellen des Zählwerks,SG10,CAV,7110,00335,,,Angabe der Nachkommastelle,X,
+180,Bezeichnung des Zählwerks auf dem Gerät,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[123] Wenn noch mindestens eine weitere SG8 SEQ+Z20 (OBIS-Daten der Zähleinrichtung"
+181,EDIFACT Struktur,SG10,CCI,,00336,,,,Muss,
+182,EDIFACT Struktur,SG10,CCI,7037,00336,Z63,,Lokale Kennzeichnung zu Kontrollzwecken,X,
+183,EDIFACT Struktur,SG10,CCI,7036,00336,,,Bezeichnung des Zählwerks auf dem Gerät,X,
+184,Schwachlastfähigkeit,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [256] Wenn in derselben SG8 SEQ (OBIS-Daten der Zähleinrichtung / Smartmeter-Gateway) das PIA+5+1-b?:1.8.e / 1-b?:2.8.e vorhanden"
-185,Schwachlastfähigkeit,SG10,CCI,,00338,,,,Muss,
-186,Schwachlastfähigkeit,SG10,CCI,7059,00338,Z10,,Schwachlastfähigkeit,X,
-187,Schwachlastfähigkeit,SG10,CCI,7037,00338,Z59,,Nicht-Schwachlast fähig,X,
+185,Schwachlastfähigkeit,SG10,CCI,,00337,,,,Muss,
+186,EDIFACT Struktur,SG10,CCI,7059,00337,Z10,,Schwachlastfähigkeit,X,
+187,EDIFACT Struktur,SG10,CCI,7037,00337,Z59,,Nicht-Schwachlast fähig,X,
 188,EDIFACT Struktur,SG10,CCI,7037,,Z60,,Schwachlast fähig,X,
-189,Wandlerdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+189,Wandlerdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden"
-190,Wandlerdaten,SG8,SEQ,,00339,,,,Muss,
+190,Wandlerdaten,SG8,SEQ,,00338,,,,Muss,
 191,Wandlerdaten,SG8,SEQ,1229,,ZB9,,Erwartete Wandlerdaten,X [2P0..n],
 192,Wandlerdaten,SG8,SEQ,1229,,ZC0,,Im System vorhandene Wandlerdaten,X [3P0..n],
-193,Wandlerdaten,SG8,SEQ,1050,00339,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+193,Wandlerdaten,SG8,SEQ,1050,00338,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-194,Referenz auf die Gerätenummer,SG8,RFF,,00340,,,,Muss,
-195,Referenz auf die Gerätenummer,SG8,RFF,1153,00340,MG,,Gerätenummer des Zählers,X,
-196,EDIFACT Struktur,SG8,RFF,1154,00340,,,Gerätenummer,X,
+194,Referenz auf die Gerätenummer,SG8,RFF,,00339,,,,Muss,
+195,Referenz auf die Gerätenummer,SG8,RFF,1153,00339,MG,,Gerätenummer des Zählers,X,
+196,Referenz auf die Gerätenummer,SG8,RFF,1154,00339,,,Gerätenummer,X,
 197,Wandler,SG10,,,,,,,Muss,
-198,Wandler,SG10,CCI,,00341,,,,Muss,
-199,Wandler,SG10,CCI,7037,00341,Z25,,Wandler,X,
-200,Identifikation / Nummer des Gerätes,SG10,CAV,,00342,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MIW/ MPW/MUW vorhanden, ist das Segment mindestens zweimal anzugeben  
+198,Wandler,SG10,CCI,,00340,,,,Muss,
+199,Wandler,SG10,CCI,7037,00340,Z25,,Wandler,X,
+200,Identifikation / Nummer des Gerätes,SG10,CAV,,00341,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2317] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MIW/ MPW/MUW vorhanden, ist das Segment mindestens zweimal anzugeben
 [2318] Wenn in derselben SG8 SEQ+Z04 (Wandlerdaten) das SG10 CCI+++Z25 (Wandler) CAV+MBW (Blockstromwandler) vorhanden, ist das Segment genau einmal anzugeben"
-201,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00342,Z30,,Gerätenummer,X,
-202,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00342,,,Gerätenummer,X,
-203,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,,00343,,,,Muss,
-204,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,7111,00343,MIW,,Messwandlersatz Strom,X,
-205,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
-206,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,7111,,MBW,,Blockstromwandler,X,
-207,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
-208,Wandlertyp und Faktor EDIFACT Struktur,SG10,CAV,7110,00343,,,Wandlerfaktor,X [902] [141],"[141] Wenn SG10 CAV+MIW/ MPW/ MBW vorhanden  
+201,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00341,Z30,,Gerätenummer,X,
+202,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00341,,,Gerätenummer,X,
+203,Wandlertyp und Faktor,SG10,CAV,,00342,,,,Muss,
+204,Wandlertyp und Faktor,SG10,CAV,7111,00342,MIW,,Messwandlersatz Strom,X,
+205,Wandlertyp und Faktor,SG10,CAV,7111,,MPW,,Kombimesswandlersatz (Strom und Spannung),X,
+206,Wandlertyp und Faktor,SG10,CAV,7111,,MBW,,Blockstromwandler,X,
+207,Wandlertyp und Faktor,SG10,CAV,7111,,MUW,,Messwandlersatz Spannung,X,
+208,Wandlertyp und Faktor,SG10,CAV,7110,00342,,,Wandlerfaktor,X [902] [141],"[141] Wenn SG10 CAV+MIW/ MPW/ MBW vorhanden
 [902] Format: Möglicher Wert: ≥ 0"
-209,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden  
-[345] Wenn SG5 LOC+Z17 (Messlokation) vorhanden  
-[530] Hinweis: Es sind alle an der Lokation vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann"
-210,EDIFACT Struktur,SG8,SEQ,,00344,,,,Muss,
+209,Kommunikationseinrichtun gsdaten,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
+[345] Wenn SG5 LOC+Z17 (Messlokation) vorhanden
+[530] Hinweis: Es sind alle an der Lokation vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit"
+210,EDIFACT Struktur,SG8,SEQ,,00343,,,,Muss,
 211,EDIFACT Struktur,SG8,SEQ,1229,,ZB7,,Erwartete Kommunikationseinrichtungsdaten,X [2P0..n],
 212,EDIFACT Struktur,SG8,SEQ,1229,,ZB8,,Im System vorhandene Kommunikationseinrichtungsdaten,X [3P0..n],
-213,EDIFACT Struktur,SG8,SEQ,1050,00344,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+213,EDIFACT Struktur,SG8,SEQ,1050,00343,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-214,Gerätenummer,SG8,RFF,,00345,,,,Muss,
-215,Gerätenummer,SG8,RFF,1153,00345,MG,,Gerätenummer des Zählers,X,
-216,Gerätenummer,SG8,RFF,1154,00345,,,Gerätenummer,X,
+214,Referenz auf die Gerätenummer,SG8,RFF,,00344,,,,Muss,
+215,Referenz auf die Gerätenummer,SG8,RFF,1153,00344,MG,,Gerätenummer des Zählers,X,
+216,Referenz auf die Gerätenummer,SG8,RFF,1154,00344,,,Gerätenummer,X,
 217,Kommunikationseinrichtun g,SG10,,,,,,,Muss,
-218,Kommunikationseinrichtun g,SG10,CCI,,00346,,,,Muss,
-219,Kommunikationseinrichtun g,SG10,CCI,7037,00346,Z26,,Kommunikationseinrichtung,X,
-220,Identifikation / Nummer des Gerätes,SG10,CAV,,00347,,,,Muss,
-221,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00347,Z30,,Gerätenummer,X,
-222,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00347,,,Gerätenummer,X,
-223,Kommunikationseinrichtun gstyp,SG10,CAV,,00348,,,,Muss,
-224,Kommunikationseinrichtun gstyp,SG10,CAV,7111,00348,GSM,,GSM/GPRS/UMTS-Kom.-Einr.,X,
+218,Kommunikationseinrichtun g,SG10,CCI,,00345,,,,Muss,
+219,Kommunikationseinrichtun g,SG10,CCI,7037,00345,Z26,,Kommunikationseinrichtung,X,
+220,Identifikation / Nummer des Gerätes,SG10,CAV,,00346,,,,Muss,
+221,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00346,Z30,,Gerätenummer,X,
+222,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00346,,,Gerätenummer,X,
+223,Kommunikationseinrichtun gstyp,SG10,CAV,,00347,,,,Muss,
+224,Kommunikationseinrichtun gstyp,SG10,CAV,7111,00347,GSM,,GSM/GPRS/UMTS-Kom.-Einr.,X,
 225,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,ETH,,Ethernet-Kom.-Einricht. LAN/ WLAN,X,
 226,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PLC,,PLC-Kom.-Einrichtung,X,
 227,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,PST,,Festnetz-Kom.-Einricht. TAE,X,
 228,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,DSL,,DSL-Kom.Einr.,X,
 229,Kommunikationseinrichtun gstyp,SG10,CAV,7111,,LTE,,LTE-Kom.-Einr.,X,
-230,Daten der technischen Steuereinrichtung,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden  
+230,Steuereinrichtung,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden
 [530] Hinweis: Es sind alle an der Lokation vorhandenen Daten, die mit dieser Segmentgruppe übermittelt werden und zum Datum „Änderung zum“ Gültigkeit haben, anzugeben. Dies kann zur Folge haben, dass Segmentgruppen bzw. Segmente zu wiederholen sind"
-231,Daten der technischen Steuereinrichtung,SG8,SEQ,,00349,,,,Muss,
-232,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,,ZC1,,Erwartete Daten der technischen Steuereinrichtung,X [2P0..n],
-233,Daten der technischen Steuereinrichtung,SG8,SEQ,1229,,ZC2,,Im System vorhandene Daten dertechnischen Steuereinrichtung,X [3P0..n],
-234,Daten der technischen Steuereinrichtung,SG8,SEQ,1050,00349,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49
-235,Referenz auf die Gerätenummer,SG8,RFF,,00350,,,,Muss,
-236,Referenz auf die Gerätenummer,SG8,RFF,1153,00350,MG,,Gerätenummer des Zählers,X,
-237,Referenz auf die Gerätenummer,SG8,RFF,1154,00350,,,Gerätenummer,X,
+231,Steuereinrichtung,SG8,SEQ,,00348,,,,Muss,
+232,Steuereinrichtung,SG8,SEQ,1229,,ZC1,,Erwartete Daten der technischen Steuereinrichtung,X [2P0..n],
+233,Steuereinrichtung,SG8,SEQ,1229,,ZC2,,Im System vorhandene Daten der technischen Steuereinrichtung,X [3P0..n],
+234,Steuereinrichtung,SG8,SEQ,1050,00348,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der
+235,Referenz auf die Gerätenummer,SG8,RFF,,00349,,,,Muss,
+236,Referenz auf die Gerätenummer,SG8,RFF,1153,00349,MG,,Gerätenummer des Zählers,X,
+237,Referenz auf die Gerätenummer,SG8,RFF,1154,00349,,,Gerätenummer,X,
 238,Technische Steuereinrichtung,SG10,,,,,,,Muss,
-239,Technische Steuereinrichtung,SG10,CCI,,00351,,,,Muss,
-240,Technische Steuereinrichtung,SG10,CCI,7037,00351,Z27,,Technische Steuereinrichtung,X,
-241,Identifikation / Nummer des Gerätes,SG10,CAV,,00352,,,,Muss,
-242,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00352,Z30,,Gerätenummer,X,
-243,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00352,,,Gerätenummer,X,
-244,Technische Steuereinrichtungstyp,SG10,CAV,,00353,,,,Muss,
-245,Technische Steuereinrichtungstyp,SG10,CAV,7111,00353,RSU,,Rundsteuerempfänger,X,
-246,Technische Steuereinrichtungstyp,SG10,CAV,7111,,TSU,,Tarifschaltuhr,X,
-247,Smartmeter-Gateway,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+239,Technische Steuereinrichtung,SG10,CCI,,00350,,,,Muss,
+240,Technische Steuereinrichtung,SG10,CCI,7037,00350,Z27,,Technische Steuereinrichtung,X,
+241,Identifikation / Nummer des Gerätes,SG10,CAV,,00351,,,,Muss,
+242,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00351,Z30,,Gerätenummer,X,
+243,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00351,,,Gerätenummer,X,
+244,Technische Steuereinrichtungstyp,SG10,CAV,,00352,,,,Muss,
+245,Technische Steuereinrichtungstyp,SG10,CAV,7111,00352,RSU,,Rundsteuerempfänger,X,
+246,EDIFACT Struktur,SG10,CAV,7111,,TSU,,Tarifschaltuhr,X,
+247,Smartmeter-Gateway,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [130] Wenn an Messlokation vorhanden"
-248,Smartmeter-Gateway,SG8,SEQ,,00354,,,,Muss,
+248,Smartmeter-Gateway,SG8,SEQ,,00353,,,,Muss,
 249,Smartmeter-Gateway,SG8,SEQ,1229,,ZC3,,Erwartetes Smartmeter-Gateway,X [2P0..n],
 250,Smartmeter-Gateway,SG8,SEQ,1229,,ZC4,,Im System vorhandenes Smartmeter-Gateway,X [3P0..n],
-251,Smartmeter-Gateway,SG8,SEQ,1050,00354,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+251,Smartmeter-Gateway,SG8,SEQ,1050,00353,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
 252,Smartmeter-Gateway,SG10,,,,,,,Muss,
-253,Smartmeter-Gateway,SG10,CCI,,00355,,,,Muss,
-254,Smartmeter-Gateway,SG10,CCI,7037,00355,Z75,,Smartmeter-Gateway,X,
-255,Identifikation / Nummer des Gerätes,SG10,CAV,,00356,,,,Muss,
-256,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00356,Z30,,Gerätenummer,X,
-257,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00356,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
-258,Daten der Steuerbox,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+253,Smartmeter-Gateway,SG10,CCI,,00354,,,,Muss,
+254,Smartmeter-Gateway,SG10,CCI,7037,00354,Z75,,Smartmeter-Gateway,X,
+255,Identifikation / Nummer des Gerätes EDIFACT Struktur,SG10,CAV,,00355,,,,Muss,
+256,Identifikation / Nummer des Gerätes EDIFACT Struktur,SG10,CAV,7111,00355,Z30,,Gerätenummer,X,
+257,Identifikation / Nummer des Gerätes EDIFACT Struktur,SG10,CAV,7110,00355,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
+258,Daten der Steuerbox,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [133] Wenn an der übermittelten Marktlokation / Messlokation vorhanden"
-259,Daten der Steuerbox,SG8,SEQ,,00357,,,,Muss,
+259,Daten der Steuerbox,SG8,SEQ,,00356,,,,Muss,
 260,Daten der Steuerbox,SG8,SEQ,1229,,ZH3,,Erwartete Daten der Steuerbox,X,
 261,Daten der Steuerbox,SG8,SEQ,1229,,ZH4,,Im System vorhandene Daten der Steuerbox,X,
-262,Daten der Steuerbox,SG8,SEQ,1050,00357,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
-[937] Format: keine"
-263,Referenz auf das Smartmeter-Gateway,SG8,RFF,,00358,,,,Muss,
-264,Referenz auf das Smartmeter-Gateway,SG8,RFF,1153,00358,Z14,,Smartmeter-Gateway,X,
-265,Referenz auf das Smartmeter-Gateway,SG8,RFF,1154,00358,,,Identifikation / Nummer des Smartmeter- Gateways,X,
+262,Daten der Steuerbox,SG8,SEQ,1050,00356,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+263,Smartmeter-Gateway,SG8,RFF,,00357,,,,Muss,
+264,Smartmeter-Gateway,SG8,RFF,1153,00357,Z14,,Smartmeter-Gateway,X,
+265,Smartmeter-Gateway,SG8,RFF,1154,00357,,,Identifikation / Nummer des Smartmeter- Gateways,X,
 266,Steuerbox,SG10,,,,,,,Muss,
-267,Steuerbox,SG10,CCI,,00360,,,,Muss,
-268,Steuerbox,SG10,CCI,7037,00360,Z76,,Steuerbox,X,
-269,Identifikation / Nummer des Gerätes,SG10,CAV,,00361,,,,Muss,
-270,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00361,Z30,,Gerätenummer,X,
-271,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00361,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
-272,Kunde des Messstellenbetreibers,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49"
-273,EDIFACT Struktur,SG12,NAD,,00502,,,,Muss,
+267,Steuerbox,SG10,CCI,,00359,,,,Muss,
+268,Steuerbox,SG10,CCI,7037,00359,Z76,,Steuerbox,X,
+269,Identifikation / Nummer des Gerätes,SG10,CAV,,00360,,,,Muss,
+270,Identifikation / Nummer des Gerätes,SG10,CAV,7111,00360,Z30,,Gerätenummer,X,
+271,Identifikation / Nummer des Gerätes,SG10,CAV,7110,00360,,,Gerätenummer,X [952],[952] Format: Gerätenummer nach DIN 43863-5
+272,Kunde des Messstellenbetreibers,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+273,Kunde des Messstellenbetreibers,SG12,NAD,,00501,,,,Muss,
 274,EDIFACT Struktur,SG12,NAD,3035,,Z39,,Erwarteter Kunde des MSB,X [2P0..1],
 275,EDIFACT Struktur,SG12,NAD,3035,,Z40,,Im System vorhandener Kunde des MSB,X [3P0..1],
-276,EDIFACT Struktur,SG12,NAD,3036,00502,,,Name,X,
-277,EDIFACT Struktur,SG12,NAD,3045,00502,Z01,,Struktur von Personennamen,X,
+276,EDIFACT Struktur,SG12,NAD,3036,00501,,,Name,X,
+277,EDIFACT Struktur,SG12,NAD,3045,00501,Z01,,Struktur von Personennamen,X,
 278,EDIFACT Struktur,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-279,Referenz auf Zeitraum.ID,SG12,RFF,,00503,,,,Muss,
-280,Referenz auf Zeitraum.ID,SG12,RFF,1153,00503,Z46,,Referenz auf Zeitraum-ID,X,
-281,Referenz auf Zeitraum.ID,SG12,RFF,1154,00503,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+279,Referenz auf Zeitraum.ID,SG12,RFF,,00502,,,,Muss,
+280,Referenz auf Zeitraum.ID,SG12,RFF,1153,00502,Z46,,Referenz auf Zeitraum-ID,X,
+281,Referenz auf Zeitraum.ID,SG12,RFF,1154,00502,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-282,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-283,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,,00505,,,,Muss,
-284,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3035,,Z41,,Erwartete Korrespondenzanschrift des Kunden des MSB,X [2P0..1],
-285,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3035,,Z42,,Im System vorhandene Korrespondenzanschrift des Kunden des MSB,X [3P0..1],
-286,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3036,00505,,,Name,X,
-287,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3045,00505,Z01,,Struktur von Personennamen,X,
-288,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-289,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3042,00505,,,Straße und Hausnummer oder Postfach,X,
-290,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3164,00505,,,Ort,X,
-291,Korrespondenzanschrift des Kunden des Messstellenbetreibers EDIFACT Struktur,SG12,NAD,3251,00505,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+282,Korrespondenzanschrift des Kunden des Messstellenbetreibers,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist"
+283,EDIFACT Struktur,SG12,NAD,,00504,,,,Muss,
+284,EDIFACT Struktur,SG12,NAD,3035,,Z41,,Erwartete Korrespondenzanschrift des Kunden des MSB,X [2P0..1],
+285,EDIFACT Struktur,SG12,NAD,3035,,Z42,,Im System vorhandene Korrespondenzanschrift des Kunden des MSB,X [3P0..1],
+286,EDIFACT Struktur,SG12,NAD,3036,00504,,,Name,X,
+287,EDIFACT Struktur,SG12,NAD,3045,00504,Z01,,Struktur von Personennamen,X,
+288,EDIFACT Struktur,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+289,EDIFACT Struktur,SG12,NAD,3042,00504,,,Straße und Hausnummer oder Postfach,X,
+290,EDIFACT Struktur,SG12,NAD,3164,00504,,,Ort,X,
+291,EDIFACT Struktur,SG12,NAD,3251,00504,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-292,EDIFACT Struktur,SG12,NAD,3207,00505,,,"Ländername, Code",X,
-293,Referenz auf Zeitraum.ID,SG12,RFF,,00506,,,,Muss,
-294,Referenz auf Zeitraum.ID,SG12,RFF,1153,00506,Z46,,Referenz auf Zeitraum-ID,X,
-295,Referenz auf Zeitraum.ID,SG12,RFF,1154,00506,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+292,EDIFACT Struktur,SG12,NAD,3207,00504,,,"Ländername, Code",X,
+293,Referenz auf Zeitraum.ID,SG12,RFF,,00505,,,,Muss,
+294,Referenz auf Zeitraum.ID,SG12,RFF,1153,00505,Z46,,Referenz auf Zeitraum-ID,X,
+295,Referenz auf Zeitraum.ID,SG12,RFF,1154,00505,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-296,Messlokationsadresse,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
+296,Messlokationsadresse,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-297,Messlokationsadresse,SG12,NAD,,00521,,,,Muss,
-298,EDIFACT Struktur,SG12,NAD,3035,,Z43,,Erwartete Messlokationsadresse,X [2P0..1],
-299,EDIFACT Struktur,SG12,NAD,3035,,Z44,,Im System vorhandene Messlokationsadresse,X [3P0..1],
-300,EDIFACT Struktur,SG12,NAD,3124,00521,,,Zusatzinformation zur Identifizierung,S [336],[336] Wenn in Änderungsmeldung gefüllt
-301,EDIFACT Struktur,SG12,NAD,3042,00521,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden  
+297,Messlokationsadresse,SG12,NAD,,00520,,,,Muss,
+298,Messlokationsadresse,SG12,NAD,3035,,Z43,,Erwartete Messlokationsadresse,X [2P0..1],
+299,Messlokationsadresse,SG12,NAD,3035,,Z44,,Im System vorhandene Messlokationsadresse,X [3P0..1],
+300,Messlokationsadresse,SG12,NAD,3124,00520,,,Zusatzinformation zur Identifizierung,S [336],[336] Wenn in
+301,EDIFACT Struktur,SG12,NAD,3042,00520,,,Straße und Hausnummer oder Postfach,S [166] M [212],"[166] Wenn vorhanden
 [212] Wenn im selben SG12 NAD DE3124 nicht vorhanden"
-302,EDIFACT Struktur,SG12,NAD,3164,00521,,,Ort,X,
-303,EDIFACT Struktur,SG12,NAD,3251,00521,,,Postleitzahl,X,
-304,EDIFACT Struktur,SG12,NAD,3207,00521,,,"Ländername, Code",X,
-305,Referenz auf Zeitraum.ID,SG12,RFF,,00522,,,,Muss,
-306,Referenz auf Zeitraum.ID,SG12,RFF,1153,00522,Z46,,Referenz auf Zeitraum-ID,X,
-307,Referenz auf Zeitraum.ID,SG12,RFF,1154,00522,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+302,EDIFACT Struktur,SG12,NAD,3164,00520,,,Ort,X,
+303,EDIFACT Struktur,SG12,NAD,3251,00520,,,Postleitzahl,X,
+304,EDIFACT Struktur,SG12,NAD,3207,00520,,,"Ländername, Code",X,
+305,Referenz auf Zeitraum.ID,SG12,RFF,,00521,,,,Muss,
+306,Referenz auf Zeitraum.ID,SG12,RFF,1153,00521,Z46,,Referenz auf Zeitraum-ID,X,
+307,Referenz auf Zeitraum.ID,SG12,RFF,1154,00521,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-308,Ablesekarte,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich  
-[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-309,Ablesekarte,SG12,NAD,,00524,,,,Muss,
-310,Ablesekarte,SG12,NAD,3035,,Z45,,Erwarteter Name und Adresse für die Ablesekarte,X [2P0..1],
-311,Ablesekarte,SG12,NAD,3035,,Z46,,Im System vorhandener Name und Adresse für die Ablesekarte,X [3P0..1],
-312,Ablesekarte,SG12,NAD,3036,00524,,,Name,X,
-313,Ablesekarte,SG12,NAD,3045,00524,Z01,,Struktur von Personennamen,X,
-314,Ablesekarte,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-315,Ablesekarte,SG12,NAD,3042,00524,,,Straße und Hausnummer oder Postfach,X,
-316,Ablesekarte,SG12,NAD,3164,00524,,,Ort,X,
-317,Ablesekarte,SG12,NAD,3251,00524,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+308,Name und Adresse für die Ablesekarte,SG12,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist"
+309,EDIFACT Struktur,SG12,NAD,,00523,,,,Muss,
+310,EDIFACT Struktur,SG12,NAD,3035,,Z45,,Erwarteter Name und Adresse für die Ablesekarte,X [2P0..1],
+311,EDIFACT Struktur,SG12,NAD,3035,,Z46,,Im System vorhandener Name und Adresse für die Ablesekarte,X [3P0..1],
+312,EDIFACT Struktur,SG12,NAD,3036,00523,,,Name,X,
+313,EDIFACT Struktur,SG12,NAD,3045,00523,Z01,,Struktur von Personennamen,X,
+314,EDIFACT Struktur,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+315,EDIFACT Struktur,SG12,NAD,3042,00523,,,Straße und Hausnummer oder Postfach,X,
+316,EDIFACT Struktur,SG12,NAD,3164,00523,,,Ort,X,
+317,EDIFACT Struktur,SG12,NAD,3251,00523,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-318,EDIFACT Struktur,SG12,NAD,3207,00524,,,"Ländername, Code",X,
-319,Referenz auf Zeitraum.ID,SG12,RFF,,00525,,,,Muss,
-320,Referenz auf Zeitraum.ID,SG12,RFF,1153,00525,Z46,,Referenz auf Zeitraum-ID,X,
-321,Referenz auf Zeitraum.ID,SG12,RFF,1154,00525,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+318,EDIFACT Struktur,SG12,NAD,3207,00523,,,"Ländername, Code",X,
+319,Referenz auf Zeitraum.ID,SG12,RFF,,00524,,,,Muss,
+320,EDIFACT Struktur,SG12,RFF,1153,00524,Z46,,Referenz auf Zeitraum-ID,X,
+321,EDIFACT Struktur,SG12,RFF,1154,00524,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-322,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-323,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-324,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+322,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+323,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+324,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

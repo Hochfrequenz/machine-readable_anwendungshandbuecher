@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -11,12 +11,12 @@
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,verschobener Abmeldetermin,,DTM,,00005,,,,Muss,
 15,verschobener Abmeldetermin,,DTM,2005,00005,Z02,,Verschobener Abmeldetermin,X,
-16,verschobener Abmeldetermin,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3] ∧ [503],"[503] Hinweis: Datum, bis zu dem der MSBA zur Fortführung verpflichtet wurde 
+16,verschobener Abmeldetermin,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB3] ∧ [503],"[503] Hinweis: Datum, bis zu dem der MSBA zur Fortführung verpflichtet wurde
 [504] Hinweis: Ggf. korrigiert bei einer Zeitangabe in der ORDERS, die außerhalb des max. möglichen Weiterverpflichtungszeitraum s ist. Als Antwort wird dann in SG2 AJT Zustimmung mit Terminänderung angegeben."
 17,verschobener Abmeldetermin,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 18,Referenz Nachrichtennummer,SG1,,,,,,,Muss,
@@ -30,7 +30,7 @@
 26,Einzelheiten zu einer Anpassung/Änderung,SG2,,,,,,,Muss,
 27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,00013,,,,Muss,
 28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X,
-29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,G_0073 S_0061 S_0062,,Codeliste Gas Nr. G_0073 Codeliste Strom Nr. S_0061 Codeliste Strom Nr. S_0062,X [493] X [492],"[492] wenn MP-ID in NAD+MR aus Sparte Strom 
+29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,G_0073 S_0061 S_0062,,Codeliste Gas Nr. G_0073 Codeliste Strom Nr. S_0061 Codeliste Strom Nr. S_0062,X [493] X [492],"[492] wenn MP-ID in NAD+MR aus Sparte Strom
 [493] wenn MP-ID in NAD+MR aus Sparte Gas"
 30,MP-ID Absender,SG3,,,,,,,Muss,
 31,MP-ID Absender,SG3,NAD,,00015,,,,Muss,
@@ -44,8 +44,11 @@
 39,Ansprechpartner,SG6,CTA,3139,00016,IC,,Informationskontakt,X,
 40,Ansprechpartner,SG6,CTA,3412,00016,,,Kontakt,X,
 41,Kommunikationsverbindung,SG6,COM,,00017,,,,Muss,
-42,Kommunikationsverbindung,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧ [540],"[50] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[51] wenn im DE3155 in demselben COM der Code TE /"
+42,Kommunikationsverbindung,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧ [540],"[50] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[51] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[540] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 43,Kommunikationsverbindung,SG6,COM,3155,00017,EM,,Elektronische Post,X [1P0..1],
 44,Kommunikationsverbindung,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
 45,Kommunikationsverbindung,SG6,COM,3155,,TE,,Telefon,X [1P0..1],

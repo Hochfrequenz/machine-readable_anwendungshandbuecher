@@ -1,17 +1,17 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten-Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellung,,ORDER S,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDERS,,Bestellung,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4a,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00002,Z73,,Bestellung einer Konfiguration,X,
 9,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00003,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+12,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZZZ,X,
 14,Ausführungsdatum,,DTM,,00004,,,,Muss [122],[122] Wenn SG1 RFF+Z41 (Referenznummer des Vorgangs der Anmeldung nach WiM) nicht vorhanden 
@@ -20,7 +20,7 @@
 17,Ausführungsdatum,,DTM,2379,00004,303,,CCYYMMDDHHMMZZZ,X,
 18,Referenznummer des Vorgangs der Anmeldung nach WiM,SG1,,,,,,,Muss [123],[123] Wenn DTM+203 (Ausführungsdatum) nicht vorhanden 
 19,Referenznummer des Vorgangs der Anmeldung nach WiM,SG1,RFF,,00017,,,,Muss,
-20,Referenznummer des Vorgangs der Anmeldung nach WiM,SG1,RFF,1153,00017,Z41,,Referenznummer des Vorgangs der Anmeldungnach WiM,X,
+20,Referenznummer des Vorgangs der Anmeldung nach WiM,SG1,RFF,1153,00017,Z41,,Referenznummer des Vorgangs der Anmeldung nach WiM,X,
 21,Referenznummer des Vorgangs der Anmeldung nach WiM,SG1,RFF,1154,00017,,,"Referenz, Identifikation",X [555],[555] Hinweis: Vorgangsnummer aus SG4 IDE+24 DE7402 der UTILMD mit BGM+E01 mit der die Anmeldung des MSB-Wechsels erfolgt ist.
 22,Prüfidentifikator,SG1,,,,,,,Muss,
 23,Prüfidentifikator,SG1,RFF,,00020,,,,Muss,
@@ -37,10 +37,10 @@
 34,Ansprechpartner,SG5,CTA,3139,00022,,,,IC,
 35,Ansprechpartner,SG5,CTA,3412,00022,,,Kontakt,X,
 36,Kommunikationsverbindung,SG5,COM,,00023,,,,Muss,
-37,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
+37,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 38,Kommunikationsverbindung,SG5,COM,3155,00023,EM,,Elektronische Post,X [1P0..1],
 39,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -52,135 +52,135 @@
 45,MP-ID Empfänger,SG2,NAD,3035,00024,,,,MR,
 46,MP-ID Empfänger,SG2,NAD,3039,00024,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
 47,MP-ID Empfänger,SG2,NAD,3055,00024,9,,GS1,X,
-48,Meldepunkt,SG2,,,,,,,Muss,
-49,Meldepunkt,SG2,NAD,,00026,,,,Muss,
-50,Meldepunkt,SG2,NAD,3035,00026,,,,DP,
-51,Meldepunkt,SG2,LOC,,00027,,,,Muss,
-52,Meldepunkt,SG2,LOC,3227,00027,,,,172,
-53,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X ([950] [521] ∧ ([118] ⊻ [120])) ⊻ ([951] [522] ∧ ([120] ⊻ [121])) ⊻ ([960] [552] ∧ ([118] ⊻ [119] ⊻ [120])) ⊻ ([961] [553] ∧ ([117] ⊻ [118] ⊻ [119])),"[117] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) vorhanden 
-[118] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) vorhanden 
-[119] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) vorhanden 
-[120] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) vorhanden 
-[121] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) vorhanden 
-[521] Hinweis: Verwendung der ID der Marktlokation 
-[522] Hinweis: Verwendung der ID der Messlokation 
-[552] Hinweis: Verwendung der ID der Netzlokation 
-[553] Hinweis: Verwendung der ID der Steuerbaren Ressource 
-[950] Format: Marktlokations-ID 
-[951] Format: Zählpunktbezeichnung 
-[960] Format: Netzlokations-ID 
+48,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+49,Meldepunkt,SG2,,,,,,,Muss,
+50,Meldepunkt,SG2,NAD,,00026,,,,Muss,
+51,Meldepunkt,SG2,NAD,3035,00026,,,,DP,
+52,Meldepunkt,SG2,LOC,,00027,,,,Muss,
+53,Meldepunkt,SG2,LOC,3227,00027,,,,172,
+54,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X ([950] [521] ∧ ([118] ⊻ [120])) ⊻ ([951] [522] ∧ ([120] ⊻ [121])) ⊻ ([960] [552] ∧ ([118] ⊻ [119] ⊻ [120])) ⊻ ([961] [553] ∧ ([117] ⊻ [118] ⊻ [119])),"[117] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) vorhanden
+[118] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) vorhanden
+[119] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) vorhanden
+[120] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) vorhanden
+[121] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) vorhanden
+[521] Hinweis: Verwendung der ID der Marktlokation
+[522] Hinweis: Verwendung der ID der Messlokation
+[552] Hinweis: Verwendung der ID der Netzlokation
+[553] Hinweis: Verwendung der ID der Steuerbaren Ressource
+[950] Format: Marktlokations-ID
+[951] Format: Zählpunktbezeichnung
+[960] Format: Netzlokations-ID
 [961] Format: SR-ID"
-54,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,,,,,,,Muss [124],[124] Wenn SG1 RFF+Z41 (Referenznummer des Vorgangs der Anmeldung nach WiM) vorhanden 
-55,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,,00043,,,,Muss,
-56,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3035,00043,,,,DDM,
-57,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3039,00043,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-58,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3055,00043,9,,GS1,X,
-59,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und",X,
-60,Erforderliches Produkt Schaltzeitdefinitionen,SG29,,,,,,,Muss [133] ∧ [136] ∧ [137] ∧ [138] ∧ [139] ∧ [2050],"[133] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist 
-[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden 
-[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden 
-[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden 
-[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden 
+55,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,,,,,,,Muss [124],[124] Wenn SG1 RFF+Z41 (Referenznummer des Vorgangs der Anmeldung nach WiM) vorhanden 
+56,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,,00043,,,,Muss,
+57,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3035,00043,,,,DDM,
+58,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3039,00043,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+59,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3055,00043,9,,GS1,X,
+60,MP-ID des NB des Vorgangs der Anmeldung nach WiM,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+61,Erforderliches Produkt Schaltzeitdefinitionen,SG29,,,,,,,Muss [133] ∧ [136] ∧ [137] ∧ [138] ∧ [139] ∧ [2050],"[133] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist
+[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden
+[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden
+[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden
+[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden
 [2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
-61,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,,00108,,,,Muss,
-62,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1082,00108,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-63,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1229,00108,Schaltzeitdefinitionen,,,Z64,
-64,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,,00109,,,,Muss,
-65,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,4347,00109,,,,5,
-66,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,7140,00109,,,Produkt-Code,X [125],"[125] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.1 „Konfigurationsprodukte Schaltzeitdefinition“ enthalten sind."
-67,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,7143,00109,Z11,,Produkt,X,
-68,Zugeordnete Schaltzeitdefinition,SG30,,,,,,,Muss,
-69,Zugeordnete Schaltzeitdefinition,SG30,CCI,,00111,,,,Muss,
-70,Zugeordnete Schaltzeitdefinition,SG30,CCI,7059,00111,Schaltzeitdefinition,,,Z52,
-71,Zugeordnete Schaltzeitdefinition,SG30,CCI,7037,00111,,,Code der Schaltzeitdefinition,X,
-72,Erforderliches Produkt Leistungskurvendefinitione n,SG29,,,,,,,Muss ([130] ⊻ [132] ⊻,[130] Wenn in LOC+172 DE3225
-73,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,,00112,,,,Muss,
-74,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1082,00112,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-75,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1229,00112,Leistungskurvendefinitionen,,,Z65,
-76,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,,00113,,,,Muss,
-77,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,4347,00113,,,,5,
-78,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,7140,00113,,,Produkt-Code,X [126],"[126] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.2 „Konfigurationsprodukte Leistungskurvendefinition“ enthalten sind."
-79,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,7143,00113,Z11,,Produkt,X,
-80,Zugeordnete Leistungskurvendefinition,SG30,,,,,,,Muss,
-81,Zugeordnete Leistungskurvendefinition,SG30,CCI,,00115,,,,Muss,
-82,Zugeordnete Leistungskurvendefinition,SG30,CCI,7059,00115,Leistungskurvendefinition,,,Z53,
-83,Zugeordnete Leistungskurvendefinition,SG30,CCI,7037,00115,,,Code der Leistungskurvendefinition,X,
-84,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,,,,,,,Muss ([132] ⊻ [133]) ∧ [135] ∧ [136] ∧ [138] ∧ [139] ∧ [2050],"[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist 
-[133] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist 
-[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden 
-[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden 
-[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden 
-[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden 
+62,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,,00108,,,,Muss,
+63,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1082,00108,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+64,Erforderliches Produkt Schaltzeitdefinitionen,SG29,LIN,1229,00108,Schaltzeitdefinitionen,,,Z64,
+65,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,,00109,,,,Muss,
+66,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,4347,00109,,,,5,
+67,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,7140,00109,,,Produkt-Code,X [125],"[125] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.1 „Konfigurationsprodukte Schaltzeitdefinition“ enthalten sind."
+68,Erforderliches Produkt Schaltzeitdefinitionen,SG29,PIA,7143,00109,Z11,,Produkt,X,
+69,Zugeordnete Schaltzeitdefinition,SG30,,,,,,,Muss,
+70,Zugeordnete Schaltzeitdefinition,SG30,CCI,,00111,,,,Muss,
+71,Zugeordnete Schaltzeitdefinition,SG30,CCI,7059,00111,Schaltzeitdefinition,,,Z52,
+72,Zugeordnete Schaltzeitdefinition,SG30,CCI,7037,00111,,,Code der Schaltzeitdefinition,X,
+73,Erforderliches Produkt Leistungskurvendefinitione n,SG29,,,,,,,Muss ([130] ⊻ [132] ⊻ [133]) ∧ [135] ∧ [137] ∧ [138] ∧ [139] ∧ [2050],"[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist
+[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist
+[133] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist
+[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden
+[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden
+[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden
+[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden
 [2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
-85,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,,00116,,,,Muss,
-86,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1082,00116,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-87,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1229,00116,Ad-hoc-Steuerkanal,,,Z66,
-88,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,,00117,,,,Muss,
-89,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,4347,00117,,,,5,
-90,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7140,00117,,,Produkt-Code,X [127],"[127] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.3 „Konfigurationsprodukte Ad- Hoc-Steuerkanal“ enthalten sind."
-91,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7143,00117,Z11,,Produkt,X,
-92,Zieladresse URI,SG29,FTX,,00118,,,,Muss [565],[565] Hinweis: Für den Empfang der Mitteilung zum weiteren Vorgehen eines Steuerbefehls und der Antwort auf die Anweisung eines Steuerbefehls.
-93,Zieladresse URI,SG29,FTX,4451,00118,,,,Z17,
-94,Zieladresse URI,SG29,FTX,4440,00118,,,Zieladresse URI für Kommunikation Steuerbefehl,X,
-95,Zertifikatsaussteller (Issuer),SG29,FTX,,00119,,,,Muss [565],[565] Hinweis: Für den Empfang der Mitteilung zum weiteren Vorgehen eines Steuerbefehls und der Antwort auf die Anweisung eines Steuerbefehls.
-96,Zertifikatsaussteller (Issuer),SG29,FTX,4451,00119,,,,Z24,
-97,Zertifikatsaussteller (Issuer),SG29,FTX,4440,00119,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-98,Zertifikatsnutzer (Subject),SG29,FTX,,00120,,,,Muss [565],[565] Hinweis: Für den Empfang der Mitteilung zum weiteren Vorgehen eines Steuerbefehls und der Antwort auf die Anweisung eines Steuerbefehls.
-99,Zertifikatsnutzer (Subject),SG29,FTX,4451,00120,,,,Z23,
-100,Zertifikatsnutzer (Subject),SG29,FTX,4440,00120,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-101,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,,,,,,,Muss ([130] ⊻ [131] ⊻ [132]) ∧ [135] ∧ [136] ∧ [137] ∧ [139] ∧ [2050],"[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist 
-[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist 
-[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist 
-[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden 
-[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden 
-[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden 
-[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden 
+74,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,,00112,,,,Muss,
+75,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1082,00112,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+76,Erforderliches Produkt Leistungskurvendefinitione n,SG29,LIN,1229,00112,Leistungskurvendefinitionen,,,Z65,
+77,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,,00113,,,,Muss,
+78,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,4347,00113,,,,5,
+79,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,7140,00113,,,Produkt-Code,X [126],"[126] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.2 „Konfigurationsprodukte Leistungskurvendefinition“ enthalten sind."
+80,Erforderliches Produkt Leistungskurvendefinitione n,SG29,PIA,7143,00113,Z11,,Produkt,X,
+81,Zugeordnete Leistungskurvendefinition,SG30,,,,,,,Muss,
+82,Zugeordnete Leistungskurvendefinition,SG30,CCI,,00115,,,,Muss,
+83,Zugeordnete Leistungskurvendefinition,SG30,CCI,7059,00115,Leistungskurvendefinition,,,Z53,
+84,Zugeordnete Leistungskurvendefinition,SG30,CCI,7037,00115,,,Code der Leistungskurvendefinition,X,
+85,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,,,,,,,Muss ([132] ⊻ [133]) ∧ [135] ∧ [136] ∧ [138] ∧ [139] ∧ [2050],"[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist
+[133] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist
+[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden
+[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden
+[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden
+[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden
 [2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
-102,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,,00122,,,,Muss,
-103,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1082,00122,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-104,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1229,00122,für Werte nach Typ 2 aus Backend,,,Z67,
-105,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,,00123,,,,Muss,
-106,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,4347,00123,,,,5,
-107,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,7140,00123,,,Produkt-Code,X [128],"[128] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.5 „Messprodukte für Werte nach Typ 2 aus Backend für LF und NB“ enthalten sind."
-108,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,7143,00123,Z11,,Produkt,X,
-109,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,,,,,,,Muss [131] ∧ [135] ∧ [136] ∧ [137] ∧ [138] ∧ [2050],"[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist 
-[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden 
-[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden 
-[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden 
-[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden 
+86,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,,00116,,,,Muss,
+87,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1082,00116,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+88,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,LIN,1229,00116,Ad-hoc-Steuerkanal,,,Z66,
+89,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,,00117,,,,Muss,
+90,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,4347,00117,,,,5,
+91,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7140,00117,,,Produkt-Code,X [127],"[127] Es sind nur die Konfigurations-Produkte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.3 „Konfigurationsprodukte Ad- Hoc-Steuerkanal“ enthalten sind."
+92,Erforderliches Produkt Ad- hoc-Steuerkanal,SG29,PIA,7143,00117,Z11,,Produkt,X,
+93,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,,,,,,,Muss ([130] ⊻ [131] ⊻ [132]) ∧ [135] ∧ [136] ∧ [137] ∧ [139] ∧ [2050],"[130] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Marktlokation angegeben ist
+[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist
+[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist
+[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden
+[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden
+[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden
+[139] Wenn SG29 LIN++Z68 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) nicht vorhanden
 [2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
-110,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,,00125,,,,Muss,
-111,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,1082,00125,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-112,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,1229,00125,Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,,,Z68,
-113,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,,00126,,,,Muss,
-114,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,4347,00126,,,,5,
-115,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,7140,00126,,,Produkt-Code,X [129],"[129] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit"
-116,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,7143,00126,Z11,,Produkt,X,
-117,Zieladresse URI,SG29,FTX,,00127,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-118,Zieladresse URI,SG29,FTX,4451,00127,,,,Z17,
-119,Zieladresse URI,SG29,FTX,4440,00127,,,Zieladresse URI IPv4 für die Bereitstellung der Werte,X [573],[573] Hinweis: Es ist eine URI IPv4 für die Bereitstellung der Werte anzugeben.
-120,Zieladresse URI,SG29,FTX,4440,00127,,,Zieladresse URI IPv6 für die Bereitstellung der Werte,X [574],[574] Hinweis: Es ist eine URI IPv6 für die Bereitstellung der Werte anzugeben.
-121,Zertifikatsaussteller (Issuer),SG29,FTX,,00128,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-122,Zertifikatsaussteller (Issuer),SG29,FTX,4451,00128,,,,Z24,
-123,Zertifikatsaussteller (Issuer),SG29,FTX,4440,00128,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-124,Zertifikatsnutzer (Subject),SG29,FTX,,00129,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
-125,Zertifikatsnutzer (Subject),SG29,FTX,4451,00129,,,,Z23,
-126,Zertifikatsnutzer (Subject),SG29,FTX,4440,00129,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
-127,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,,,,,,,Muss,
-128,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,,00131,,,,Muss,
-129,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7059,00131,Konfiguration im SMGW,,,Z54,
-130,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,00131,ZF7,,selbstständige Änderungsmöglichkeit erforderlich,X,
-131,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,,ZF8,,selbstständige Änderungsmöglichkeitnicht erforderlich,X,
-132,Schwellwerte,SG30,,,,,,,Muss [2065] ∧ [142],"[142] Wenn innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im"
-133,Schwellwerte,SG30,CCI,,00132,,,,Muss,
-134,Schwellwerte,SG30,CCI,7059,00132,,,,Z60,
-135,Schwellwerte,SG30,CCI,7037,00132,,,Messprodukt-Position-Code,X [141],"[141] Es sind nur die Messprodukt-Position-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.7 „Art der Werte für Messprodukte nach Typ 2“ enthalten sind."
-136,Schwellwerte,SG30,CCI,7036,00132,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+94,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,,00119,,,,Muss,
+95,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1082,00119,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+96,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,LIN,1229,00119,für Werte nach Typ 2 aus Backend,,,Z67,
+97,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,,00120,,,,Muss,
+98,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,4347,00120,,,,5,
+99,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,7140,00120,,,Produkt-Code,X [128],"[128] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.5 „Messprodukte für Werte nach Typ 2 aus Backend für LF und NB“ enthalten sind."
+100,Erforderliches Messprodukt für Werte nach Typ 2 aus Backend,SG29,PIA,7143,00120,Z11,,Produkt,X,
+101,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,,,,,,,Muss [131] ∧ [135] ∧ [136] ∧ [137] ∧ [138] ∧ [2050],"[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist
+[135] Wenn SG29 LIN++Z64 (Erforderliches Produkt Schaltzeitdefinitionen) nicht vorhanden
+[136] Wenn SG29 LIN++Z65 (Erforderliches Produkt Leistungskurvendefinitionen) nicht vorhanden
+[137] Wenn SG29 LIN++Z66 (Erforderliches Produkt Ad-hoc- Steuerkanal) nicht vorhanden
+[138] Wenn SG29 LIN++Z67 (Erforderliches Messprodukt für Werte nach Typ 2 aus Backend) nicht vorhanden
+[2050] Pro Nachricht ist die SG29 genau einmal anzugeben"
+102,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,,00122,,,,Muss,
+103,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,1082,00122,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+104,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,LIN,1229,00122,,,,Z68,
+105,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,,00123,,,,Muss,
+106,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,4347,00123,,,,5,
+107,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,7140,00123,,,Produkt-Code,X [129],"[129] Es sind nur die Messprodukte erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ enthalten sind."
+108,Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW,SG29,PIA,7143,00123,Z11,,Produkt,X,
+109,Zieladresse URI,SG29,FTX,,00124,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+110,Zieladresse URI,SG29,FTX,4451,00124,,,,Z17,
+111,Zieladresse URI,SG29,FTX,4440,00124,,,Zieladresse URI IPv4 für die Bereitstellung der Werte,X [573],[573] Hinweis: Es ist eine URI IPv4 für die Bereitstellung der Werte anzugeben.
+112,Zieladresse URI,SG29,FTX,4440,00124,,,Zieladresse URI IPv6 für die Bereitstellung der Werte,X [574],[574] Hinweis: Es ist eine URI IPv6 für die Bereitstellung der Werte anzugeben.
+113,Zertifikatsaussteller (Issuer),SG29,FTX,,00125,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+114,Zertifikatsaussteller (Issuer),SG29,FTX,4451,00125,,,,Z24,
+115,Zertifikatsaussteller (Issuer),SG29,FTX,4440,00125,,,Zertifikatsaussteller,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+116,Zertifikatsnutzer (Subject),SG29,FTX,,00126,,,,Muss [564],[564] Hinweis: Für den Empfang der Werte nach Typ 2 aus dem SMGW.
+117,Zertifikatsnutzer (Subject),SG29,FTX,4451,00126,,,,Z23,
+118,Zertifikatsnutzer (Subject),SG29,FTX,4440,00126,,,Zertifikatsnutzer,X [967],"[967] Format: Zertifikatskörper gemäß X509.1, BSI TR-03109-4"
+119,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,,,,,,,Muss,
+120,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,,00128,,,,Muss,
+121,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7059,00128,Konfiguration im SMGW,,,Z54,
+122,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,00128,ZF7,,selbstständige Änderungsmöglichkeit erforderlich,X,
+123,Änderungsmöglichkeit der Konfiguration im SMGW,SG30,CCI,7037,,ZF8,,selbstständige Änderungsmöglichkeit nicht erforderlich,X,
+124,Schwellwerte,SG30,,,,,,,Muss [2065] ∧ [142],"[142] Wenn innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist.
+[2065] Diese SG30 ist so oft zu wiederholen, wie zu den unterschiedlichen Messprodukt- Position-Codes zu dem innerhalb derselben SG29 LIN im PIA+5 DE7140 (Erforderliches Produkt Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW) angegebenen Produkt ein Produkt angegeben ist, das in der Codeliste der Konfigurationen im Kapitel 4.4 „Messprodukte mit Konfigurationserlaubnis für Werte nach Typ 2 aus SMGW“ in der Spalte ""Auslöser"" mit dem Wert ""Bei Schwellwertunter- / - überschreitung"" gekennzeichnet ist."
+125,Schwellwerte,SG30,CCI,,00129,,,,Muss,
+126,Schwellwerte,SG30,CCI,7059,00129,,,,Z60,
+127,Schwellwerte,SG30,CCI,7037,00129,,,Messprodukt-Position-Code,X [141],"[141] Es sind nur die Messprodukt-Position-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 4.7 „Art der Werte für Messprodukte nach Typ 2“ enthalten sind."
+128,Schwellwerte,SG30,CCI,7036,00129,,,oberer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
-137,Schwellwerte,SG30,CCI,7036,00132,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen 
+129,Schwellwerte,SG30,CCI,7036,00129,,,unterer Schwellwert,X [906] ∧ [962],"[906] Format: max. 3 Nachkommastellen
 [962] Format: max. 6 Vorkommastellen"
-138,Abschnitts-Kontrollsegment,,UNS,,00139,,,,Muss,
-139,Abschnitts-Kontrollsegment,,UNS,0081,00139,und Summenteil,,,S,
-140,Nachrichten-Endesegment,,UNT,,00140,,,,Muss,
-141,Nachrichten-Endesegment,,UNT,0074,00140,,,Anzahl der Segmente in einer Nachricht,X,
-142,Nachrichten-Endesegment,,UNT,0062,00140,,,Nachrichten-Referenznummer,X,
+130,Abschnitts-Kontrollsegment,,UNS,,00136,,,,Muss,
+131,Abschnitts-Kontrollsegment,,UNS,0081,00136,,,,S,
+132,Nachrichten-Endesegment,,UNT,,00137,,,,Muss,
+133,Nachrichten-Endesegment,,UNT,0074,00137,,,Anzahl der Segmente in einer Nachricht,X,
+134,Nachrichten-Endesegment,,UNT,0062,00137,,,Nachrichten-Referenznummer,X,

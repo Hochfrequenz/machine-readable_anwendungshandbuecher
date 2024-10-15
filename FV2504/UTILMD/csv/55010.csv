@@ -5,13 +5,13 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E02,,Abmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/-zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
 13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
@@ -25,10 +25,10 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindung,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindung,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindung,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindung,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
@@ -49,47 +49,51 @@
 42,Ende zum,SG4,DTM,2005,00024,93,,Datum Vertragsende,X,
 43,Ende zum,SG4,DTM,2380,00024,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 44,Ende zum,SG4,DTM,2379,00024,303,,CCYYMMDDHHMMZZZ,X,
-45,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-46,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-47,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,E01,,Ein-/Auszug (Umzug),X,
-48,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
-49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZW3,,Erzeugende Marktlokation,X,
-50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
-51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW5,,Tranche,X,
-52,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X,
-53,Marktlokation,SG5,,,,,,,Muss [2061] ∧ ([479] ⊻ [480]),"[479] Wenn SG4 STS+7++xxx+ZW3 (Transaktionsgrundergän zung Erzeugende Marktlokation) vorhanden  
-[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden  
+45,ÜT der Lieferanmeldung des LFN,SG4,DTM,,00030,,,,Muss,
+46,ÜT der Lieferanmeldung des LFN,SG4,DTM,2005,00030,154,,Annahmedatum eines Dokument,X,
+47,ÜT der Lieferanmeldung des LFN,SG4,DTM,2380,00030,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+48,ÜT der Lieferanmeldung des LFN,SG4,DTM,2379,00030,102,,CCYYMMDD,X,
+49,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+50,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+51,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,E01,,Ein-/Auszug (Umzug),X,
+52,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,E03,,Wechsel,X,
+53,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZW3,,Erzeugende Marktlokation,X,
+54,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
+55,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW5,,Tranche,X,
+56,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZAP,,ruhende Marktlokation,X,
+57,Marktlokation,SG5,,,,,,,Muss [2061] ∧ ([479] ⊻ [480]),"[479] Wenn SG4 STS+7++xxx+ZW3 (Transaktionsgrundergän zung Erzeugende Marktlokation) vorhanden
+[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrundergän zung Verbrauchende Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-54,Marktlokation,SG5,LOC,,00048,,,,Muss,
-55,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-56,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-57,Ruhende Marktlokation,SG5,,,,,,,Muss [2061] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden  
+58,Marktlokation,SG5,LOC,,00049,,,,Muss,
+59,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+60,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+61,Ruhende Marktlokation,SG5,,,,,,,Muss [2061] ∧ [96],"[96] Wenn SG4 STS+7++xxx+ZAP (Transaktionsgrundergän zung ruhende Marktlokation) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-58,Ruhende Marktlokation,SG5,LOC,,00049,,,,Muss,
-59,Ruhende Marktlokation,SG5,LOC,3227,00049,Z22,,Ruhende Marktlokation,X,
-60,Ruhende Marktlokation,SG5,LOC,3225,00049,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
-61,Tranche,SG5,,,,,,,Muss [2061] ∧ [481],"[481] Wenn SG4 STS+7++xxx+ZW5 (Transaktionsgrundergän zung Tranche) vorhanden  
+62,Ruhende Marktlokation,SG5,LOC,,00050,,,,Muss,
+63,Ruhende Marktlokation,SG5,LOC,3227,00050,Z22,,Ruhende Marktlokation,X,
+64,Ruhende Marktlokation,SG5,LOC,3225,00050,,,ID der ruhenden Marktlokation,X [950],[950] Format: Marktlokations-ID
+65,Tranche,SG5,,,,,,,Muss [2061] ∧ [481],"[481] Wenn SG4 STS+7++xxx+ZW5 (Transaktionsgrundergän zung Tranche) vorhanden
 [2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben"
-62,Tranche,SG5,LOC,,00052,,,,Muss,
-63,Tranche,SG5,LOC,3227,00052,Z21,,Tranche,X,
-64,Tranche,SG5,LOC,3225,00052,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
-65,Prüfidentifikator,SG6,,,,,,,Muss,
-66,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-67,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
-68,Prüfidentifikator,SG6,RFF,1154,00055,55010,,GPKE / Abmeldeanfrage des NB,X,
-69,Kunde des Lieferanten,SG12,,,,,,,Muss [279] ∧ [572],"[279] Wenn STS+7++xxx+ZW4 / ZAP (Transaktionsgrundergän zung  verbrauchende Marktlokation / ruhende Marktlokation) vorhanden   
+66,Tranche,SG5,LOC,,00053,,,,Muss,
+67,Tranche,SG5,LOC,3227,00053,Z21,,Tranche,X,
+68,Tranche,SG5,LOC,3225,00053,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
+69,Prüfidentifikator,SG6,,,,,,,Muss,
+70,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+71,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+72,Prüfidentifikator,SG6,RFF,1154,00056,55010,,GPKE / Abmeldeanfrage des NB,X,
+73,Kunde des Lieferanten,SG12,,,,,,,Muss [279] ∧ [572],"[279] Wenn STS+7++xxx+ZW4 / ZAP (Transaktionsgrundergän zung  verbrauchende Marktlokation / ruhende Marktlokation) vorhanden
 [572] Hinweis: Kundenname aus Anmeldung Lieferant neu"
-70,Kunde des Lieferanten,SG12,NAD,,00495,,,,Muss,
-71,Kunde des Lieferanten,SG12,NAD,3035,00495,Z09,,Kunde des LF,X,
-72,Kunde des Lieferanten,SG12,NAD,3036,00495,,,Name,X,
-73,Kunde des Lieferanten,SG12,NAD,3045,00495,Z01,,Struktur von Personennamen,X,
-74,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-75,Beteiligter Marktpartner MP-ID,SG12,,,,,,,Muss [567],[567] Hinweis: Neulieferant
-76,Beteiligter Marktpartner MP-ID,SG12,NAD,,00517,,,,Muss,
-77,Beteiligter Marktpartner MP-ID,SG12,NAD,3035,00517,VY,,andere zugehörige Partei,X,
-78,Beteiligter Marktpartner MP-ID,SG12,NAD,3039,00517,,,MP-ID,X,
-79,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,00517,9,,GS1,X,
-80,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-81,Nachrichten-Endesegment,,UNT,,00527,,,,Muss,
-82,Nachrichten-Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-83,Nachrichten-Endesegment,,UNT,0062,00527,,,Nachrichten-Referenznummer,X,
+74,Kunde des Lieferanten,SG12,NAD,,00494,,,,Muss,
+75,Kunde des Lieferanten,SG12,NAD,3035,00494,Z09,,Kunde des LF,X,
+76,Kunde des Lieferanten,SG12,NAD,3036,00494,,,Name,X,
+77,Kunde des Lieferanten,SG12,NAD,3045,00494,Z01,,Struktur von Personennamen,X,
+78,Kunde des Lieferanten,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+79,Beteiligter Marktpartner MP-ID,SG12,,,,,,,Muss [567],[567] Hinweis: Neulieferant
+80,Beteiligter Marktpartner MP-ID,SG12,NAD,,00516,,,,Muss,
+81,Beteiligter Marktpartner MP-ID,SG12,NAD,3035,00516,VY,,andere zugehörige Partei,X,
+82,Beteiligter Marktpartner MP-ID,SG12,NAD,3039,00516,,,MP-ID,X,
+83,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,00516,9,,GS1,X,
+84,Beteiligter Marktpartner MP-ID,SG12,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+85,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+86,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+87,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

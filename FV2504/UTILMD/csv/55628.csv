@@ -1,19 +1,19 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
-0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,
+0,Nachrichten-Kopfsegment,,UNH,,00003,,,,Muss,[555] Die Anwendungsfälle für die Durchführung der BDEW- Anwendungshilfe „Marktprozesse Netzbetreiberwechsel Sparte Strom“ sind ab dem 01.08.2025 für Netzbetreiberwechsel ab dem 01.01.2026 zu verwenden
 1,Nachrichten-Kopfsegment,,UNH,0062,00003,,,Nachrichten- Referenznummer,X,
 2,Nachrichten-Kopfsegment,,UNH,0065,00003,UTILM,,Netzanschluss-,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00003,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00003,11A,,Ausgabe 2011 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00003,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschrei bung,,S2.0,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00003,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschrei bung,,S2.1,X,
 7,Beginn der Nachricht,,BGM,,00004,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00004,E03,,Änderungsmeldungen,X,
 9,Beginn der Nachricht,,BGM,1004,00004,,,Dokumentennummer,X,
 10,Nachrichtendatum,,DTM,,00005,,,,Muss,
 11,Nachrichtendatum,,DTM,2005,00005,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt  
+12,Nachrichtendatum,,DTM,2380,00005,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt
 [931] Format: ZZZ = +00"
-13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZ,X,
+13,Nachrichtendatum,,DTM,2379,00005,303,,CCYYMMDDHHMMZ ZZ,X,
 14,MP-ID Absender,SG2,,,,,,,Muss,
 15,MP-ID Absender,SG2,NAD,,00008,,,,Muss,
 16,MP-ID Absender,SG2,NAD,3035,00008,MS,,Dokumenten-/ Nachrichtenausstell er bzw. -absender,X,
@@ -25,244 +25,265 @@
 22,Ansprechpartner,SG3,CTA,3139,00009,IC,,Informationskontakt,X,
 23,Ansprechpartner,SG3,CTA,3412,00009,,,Name vom Ansprechpartner,X,
 24,Kommunikationsverbindu ng,SG3,COM,,00010,,,,Muss,
-25,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist  
-[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist  
-[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden  
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten  
+25,Kommunikationsverbindu ng,SG3,COM,3148,00010,,,Nummer / Adresse,X (([939] [321]) ∨ ([940] [322])) ∧ [514],"[321] Wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[322] Wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[514] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 26,Kommunikationsverbindu ng,SG3,COM,3155,00010,EM,,Elektronische Post,X [1P0..1],
 27,Kommunikationsverbindu ng,SG3,COM,3155,,FX,,Telefax,X [1P0..1],
 28,Kommunikationsverbindu ng,SG3,COM,3155,,TE,,Telefon,X [1P0..1],
-29,MP-ID Empfänger,SG2,,,,,,,Muss,
-30,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
-31,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfänger,X,
-32,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
-33,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
-34,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-35,Vorgang,SG4,,,,,,,Muss,
-36,Vorgang,SG4,IDE,,00020,,,,Muss,
-37,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
-38,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
-39,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00034,,,,Muss,
-40,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00034,7,,Transaktionsgrund,X,
-41,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZX6,,Änderung Daten der MaLo,X,
-42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00034,ZW3,,Erzeugende Marktlokation,X,
-43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
-44,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-45,Marktlokation,SG5,LOC,,00048,,,,Muss,
-46,Marktlokation,SG5,LOC,3227,00048,Z16,,Marktlokation,X,
-47,Marktlokation,SG5,LOC,3225,00048,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-48,Prüfidentifikator,SG6,,,,,,,Muss,
-49,Prüfidentifikator,SG6,RFF,,00055,,,,Muss,
-50,Prüfidentifikator,SG6,RFF,1153,00055,Z13,,Prüfidentifikator,X,
-51,Prüfidentifikator,SG6,RFF,1154,,55628,,GPKE / Änderung Daten der MaLo vom NB an MSB,X,
-52,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧,"[8] Wenn für Datenclearing erforderlich  
-[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden  
-[315] Wenn BGM+Z88 (Datenclearing) vorhanden  
+29,Kommunikationsverbindu ng,SG3,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+30,Kommunikationsverbindu ng,SG3,COM,3155,,AL,,Handy,X [1P0..1],
+31,MP-ID Empfänger,SG2,,,,,,,Muss,
+32,MP-ID Empfänger,SG2,NAD,,00011,,,,Muss,
+33,MP-ID Empfänger,SG2,NAD,3035,00011,MR,,Nachrichtenempfän ger,X,
+34,MP-ID Empfänger,SG2,NAD,3039,00011,,,MP-ID,X,
+35,MP-ID Empfänger,SG2,NAD,3055,00011,9,,GS1,X,
+36,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+37,Vorgang,SG4,,,,,,,Muss,
+38,Vorgang,SG4,IDE,,00020,,,,Muss,
+39,Vorgang,SG4,IDE,7495,00020,24,,Transaktion,X,
+40,Vorgang,SG4,IDE,7402,00020,,,Vorgangsnummer,X,
+41,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
+42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
+43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX6,,Änderung Daten der MaLo,X,
+44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZW3,,Erzeugende Marktlokation,X,
+45,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
+46,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+47,Marktlokation,SG5,LOC,,00049,,,,Muss,
+48,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+49,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+50,Prüfidentifikator,SG6,,,,,,,Muss,
+51,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+52,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+53,Prüfidentifikator,SG6,RFF,1154,,55628,,GPKE / Änderung Daten der MaLo vom NB an MSB,X,
+54,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧,"[8] Wenn für Datenclearing erforderlich
+[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[315] Wenn BGM+Z88 (Datenclearing) vorhanden
 [707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
-53,Verwendungszeitraum der Daten,SG6,RFF,,00065,,,,Muss,
-54,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z49,,Gültige Daten,X,
-55,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z53,,Keine Daten,X,
-56,Verwendungszeitraum der Daten,SG6,RFF,1156,00065,,,Zeitraum-ID,X [914] ∧ [937] [126],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.  "
-57,Verwendung der Daten ab,SG6,DTM,,00066,,,,Muss [131] ⊻ [401],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitrau m der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum der darauffolgende oder einem älterer Tag 0:00 Uhr deutscher Zeit vom DTM+137 DE2380 (Nachrichtendatum) sein  
-[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6"
-58,Verwendung der Daten ab,SG6,DTM,2005,00066,Z25,,Verwendung der Daten ab,X,
-59,Verwendung der Daten ab,SG6,DTM,2380,00066,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-60,Verwendung der Daten ab,SG6,DTM,2379,00066,303,,CCYYMMDDHHMMZ ZZ,X,
-61,Verwendung der Daten bis,SG6,DTM,,00067,,,,Muss [471],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)  
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten:"
-62,Verwendung der Daten bis,SG6,DTM,2005,00067,Z26,,Verwendung der Daten bis,X,
-63,Verwendung der Daten bis,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-64,Verwendung der Daten bis,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZ ZZ,X,
-65,Daten der Marktlokation,SG8,,,,,,,Soll [8] [2004],"[8] Wenn für Datenclearing erforderlich  
+55,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+56,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z49,,Gültige Daten,X,
+57,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z53,,Keine Daten,X,
+58,Verwendungszeitraum der Daten,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [126],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
+[127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigk eit des SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+59,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [401],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitrau m der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[135] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen
+[401] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) mit der nächst niedrigeren Zeitraum ID im DE1156 entsprechen "
+60,Verwendung der Daten ab,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+61,Verwendung der Daten ab,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+62,Verwendung der Daten ab,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZ ZZ,X,
+63,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [471],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitrau m der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitrau m der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)
+[473] Wenn im selben SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z47/ Z54 (Verwendungszeitrau m der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) DE1156 (Zeitraum-ID)"
+64,Verwendung der Daten bis,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+65,Verwendung der Daten bis,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+66,Verwendung der Daten bis,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZ ZZ,X,
+67,Daten der Marktlokation,SG8,,,,,,,Soll [8] [2004],"[8] Wenn für Datenclearing erforderlich
 [2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitrau m der Daten: ""Gültige Daten"") anzugeben"
-66,Daten der Marktlokation,SG8,SEQ,,00113,,,,Muss,
-67,Daten der Marktlokation,SG8,SEQ,1229,00113,Z01,,Daten der Marktlokation,X,
-68,Daten der Marktlokation,SG8,SEQ,1050,00113,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem
-69,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,,Muss [101],"[8] Wenn für Datenclearing erforderlich  
+68,Daten der Marktlokation,SG8,SEQ,,00114,,,,Muss,
+69,Daten der Marktlokation,SG8,SEQ,1229,00114,Z01,,Daten der Marktlokation,X,
+70,Daten der Marktlokation,SG8,SEQ,1050,00114,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+71,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,,,,,,,Muss [101],"[8] Wenn für Datenclearing erforderlich
 [101] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14/ Z36 (TLP/ TEP/ TEP mit Ref. messung) in dieser SG8 vorhanden"
-70,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,00115,,,,Muss,
-71,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,00115,Z10,,Leistung der Marktlokation,X [102],
-72,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,265,,Veranschlagte Jahresmenge Gesamt/ Jahresverbrauchspr ognose für spezifische Arbeit fürtagesparameterabh ängige Marktlokation,X,
-73,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeitnach Anhang D der VDN-Richtlinie ""Lastprofile für unterbrechbare Verbrauchseinrichtungen""",X,[102] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+Z36 (TEP mit Ref.messung) in dieser SG8 vorhanden
-74,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,00115,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
-75,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,00115,Z16,,kWh/K (Kilowatt- Stunde/Kelvin),X [103],
-76,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],[103] Wenn SG9 QTY+265 (Arbeit / Leistung für
-77,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106],"[8] Wenn für Datenclearing erforderlich  
+72,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,,00116,,,,Muss,
+73,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,00116,Z10,,Leistung der Marktlokation,X [102],
+74,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,265,,Veranschlagte Jahresmenge Gesamt/ Jahresverbrauchspr ognose für spezifische Arbeit für tagesparameterabh ängige Marktlokation,X,
+75,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6063,,Z08,,"Angepasste elektrische Arbeit nach Anhang D der VDN-Richtlinie ""Lastprofile für unterbrechbare Verbrauchseinrichtu ngen""",X,[102] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+Z36 (TEP mit Ref.messung) in dieser SG8 vorhanden
+76,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6060,00116,,,Menge,X [902],[902] Format: Möglicher Wert: ≥ 0
+77,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,00116,Z16,,kWh/K (Kilowatt- Stunde/Kelvin),X [103],
+78,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWH,,Kilowattstunde,X [104],
+79,Arbeit / Leistung für tagesparameterabhängige Marktlokation,SG9,QTY,6411,,KWT,,Kilowatt,X [105],"[103] Wenn SG9 QTY+265 (Arbeit / Leistung für tagesparameterabhän gig e Marktlokation: Veranschlagte Jahresmenge Gesamt) in dieser SG8 vorhanden
+[104] Wenn SG9 QTY+Z08 (Arbeit / Leistung für tagesparameterabhän gige Marktlokation: angepasste elektrische Arbeit nach Anhang D) in dieser SG8 vorhanden
+[105] Wenn SG9 QTY+Z10 (Arbeit / Leistung für tagesparameterabhän gige Marktlokation: Leistung der Marktlokation) in dieser SG8 vorhanden"
+80,Veranschlagte Jahresmenge gesamt,SG9,,,,,,,Muss [106],"[8] Wenn für Datenclearing erforderlich
 [106] Wenn in dieser SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden"
-78,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00116,,,,Muss,
-79,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00116,31,,Veranschlagte Jahresmenge Gesamt,X,
-80,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00116,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0  
+81,Veranschlagte Jahresmenge gesamt,SG9,QTY,,00117,,,,Muss,
+82,Veranschlagte Jahresmenge gesamt,SG9,QTY,6063,00117,31,,Veranschlagte Jahresmenge Gesamt,X,
+83,Veranschlagte Jahresmenge gesamt,SG9,QTY,6060,00117,,,Mengenangabe,X [902] ∧ [937],"[902] Format: Möglicher Wert: ≥ 0
 [937] Format: keine Nachkommastelle"
-81,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00116,KWH,,Kilowattstunde,X,
-82,Zugeordnete Marktpartner,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing
-83,Zugeordnete Marktpartner,SG10,CCI,,00121,,,,Muss,
-84,Zugeordnete Marktpartner,SG10,CCI,7037,00121,ZB3,,Zugeordneter Marktpartner,X,
-85,Übertragungsnetzbetreib er,SG10,CAV,,00123,,,,Muss,
-86,Übertragungsnetzbetreib er,SG10,CAV,7111,00123,Z90,,ÜNB,X,
-87,Übertragungsnetzbetreib er,SG10,CAV,1131,00123,,,MP-ID,X,
-88,Messstellenbetreiber,SG10,CAV,,00124,,,,Muss,
-89,Messstellenbetreiber,SG10,CAV,7111,00124,Z91,,MSB,X,
-90,Messstellenbetreiber,SG10,CAV,1131,00124,,,MP-ID,X,
-91,Messstellenbetreiber,SG10,CAV,7110,00124,Z39,,Grundzuständiger Messstellenbetreibe r,X,
-92,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreibe r,X,
-93,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellen betreiber,X,
-94,Messstellenbetreiber,SG10,CAV,7110,00124,Z19,,Auf vertraglicher Grundlagegegenüber Anschlussnutzer / Anschlussnehmer,X,
-95,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
-96,Spannungsebene der Marktlokation,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
-97,Spannungsebene der Marktlokation,SG10,CCI,,00132,,,,Muss,
-98,Spannungsebene der Marktlokation,SG10,CCI,7037,00132,E03,,Spannungsebene der Marktlokation,X,
-99,Spannungsebene der Marktlokation,SG10,CAV,,00133,,,,Muss,
-100,Spannungsebene der Marktlokation,SG10,CAV,7111,00133,E03,,Höchstspannung,X,
-101,Spannungsebene der Marktlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
-102,Spannungsebene der Marktlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
-103,Spannungsebene der Marktlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
-104,Umspannung der Marktlokation,SG10,CAV,,00134,,,,Soll [166],"[8] Wenn für Datenclearing erforderlich  
+84,Veranschlagte Jahresmenge gesamt,SG9,QTY,6411,00117,KWH,,Kilowattstunde,X,
+85,Zugeordnete Marktpartner,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+86,Zugeordnete Marktpartner,SG10,CCI,,00122,,,,Muss,
+87,Zugeordnete Marktpartner,SG10,CCI,7037,00122,ZB3,,Zugeordneter Marktpartner,X,
+88,Übertragungsnetzbetreib er,SG10,CAV,,00124,,,,Muss,
+89,Übertragungsnetzbetreib er,SG10,CAV,7111,00124,Z90,,ÜNB,X,
+90,Übertragungsnetzbetreib er,SG10,CAV,1131,00124,,,MP-ID,X,
+91,Messstellenbetreiber,SG10,CAV,,00125,,,,Muss,"[232] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z52 (iMS) vorhanden
+[234] Wenn SG10 CCI+++Z83 (Messtechnische Einordnung der Marktlokation) CAV+Z53 (kME/ mME) vorhanden"
+92,Messstellenbetreiber,SG10,CAV,7111,00125,Z91,,MSB,X,
+93,Messstellenbetreiber,SG10,CAV,1131,00125,,,MP-ID,X,
+94,Messstellenbetreiber,SG10,CAV,7110,00125,Z39,,Grundzuständiger Messstellenbetreiber,X,
+95,Messstellenbetreiber,SG10,CAV,7110,,Z40,,Wettbewerblicher Messstellenbetreiber,X,
+96,Messstellenbetreiber,SG10,CAV,7110,,Z41,,Auffangmessstellen betreiber,X,
+97,Messstellenbetreiber,SG10,CAV,7110,00125,Z19,,Auf vertraglicher Grundlage gegenüber Anschlussnutzer / Anschlussnehmer,X,
+98,Messstellenbetreiber,SG10,CAV,7110,,Z20,,In der Ausübung der Weiterverpflichtung durch den gMSB,X,
+99,Spannungsebene der Marktlokation,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+100,Spannungsebene der Marktlokation,SG10,CCI,,00133,,,,Muss,
+101,Spannungsebene der Marktlokation,SG10,CCI,7037,00133,E03,,Spannungsebene der Marktlokation,X,
+102,Spannungsebene der Marktlokation,SG10,CAV,,00134,,,,Muss,
+103,Spannungsebene der Marktlokation,SG10,CAV,7111,00134,E03,,Höchstspannung,X,
+104,Spannungsebene der Marktlokation,SG10,CAV,7111,,E04,,Hochspannung,X,
+105,Spannungsebene der Marktlokation,SG10,CAV,7111,,E05,,Mittelspannung,X,
+106,Spannungsebene der Marktlokation,SG10,CAV,7111,,E06,,Niederspannung,X,
+107,Umspannung der Marktlokation,SG10,CAV,,00135,,,,Soll [166],"[8] Wenn für Datenclearing erforderlich
 [166] Wenn vorhanden"
-105,Umspannung der Marktlokation,SG10,CAV,7111,00134,E07,,Hös/HS Umspannung,X [116],
-106,Umspannung der Marktlokation,SG10,CAV,7111,,E08,,HS/MS Umspannung,X [115],
-107,Umspannung der Marktlokation,SG10,CAV,7111,,E09,,MS/NS Umspannung,X [114],"[114] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E06 (Niederspannung) in dieser SG vorhanden  
-[115] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E05 (Mittelspannung) in dieser SG vorhanden  
+108,Umspannung der Marktlokation,SG10,CAV,7111,00135,E07,,Hös/HS Umspannung,X [116],
+109,Umspannung der Marktlokation,SG10,CAV,7111,,E08,,HS/MS Umspannung,X [115],
+110,Umspannung der Marktlokation,SG10,CAV,7111,,E09,,MS/NS Umspannung,X [114],"[114] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E06 (Niederspannung) in dieser SG vorhanden
+[115] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E05 (Mittelspannung) in dieser SG vorhanden
 [116] Wenn das SG10 CCI+E03 (Spannungsebene der Marktlokation) CAV E04 (Hochspannung) in dieser SG vorhanden"
-108,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-109,Messtechnische Einordnung der Marktlokation,SG10,CCI,,00135,,,,Muss,
-110,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,00135,Z83,,Messtechnische Einordnung der Marktlokation,X,
-111,Messtechnische Einordnung der Marktlokation,SG10,CAV,,00136,,,,Muss,
-112,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,00136,Z52,,iMS,X,
-113,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
-114,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
-115,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00139,ZC0,,Prognose auf Basis von Werten,X,
-116,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis von Profilen,X,
-117,Details der Prognosegrundlage,SG10,CAV,,00140,,,,Muss [210] ∧ ([2182] ⊻ ([90] ∧ [2183])),"[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/ TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden  
-[210] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden  
-[2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben  
-[2183] Segmentgruppe ist genau zweimal je SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben"
-118,Details der Prognosegrundlage,SG10,CAV,7111,00140,E02,,SLP/SEP,X [1P0..1],
-119,Details der Prognosegrundlage,SG10,CAV,7111,,E14,,TLP/TEP,X [1P0..1],
-120,Details der Prognosegrundlage,SG10,CAV,7111,,Z36,,TEP mit Referenzmessung,X [1P0..1],
-121,Art der erzeugenden Marktlokation,SG10,,,,,,,Soll [8] ∧ [479],"[8] Wenn für Datenclearing erforderlich  
+111,Messtechnische Einordnung der Marktlokation,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+112,Messtechnische Einordnung der Marktlokation,SG10,CCI,,00136,,,,Muss,
+113,Messtechnische Einordnung der Marktlokation,SG10,CCI,7037,00136,Z83,,Messtechnische Einordnung der Marktlokation,X,
+114,Messtechnische Einordnung der Marktlokation,SG10,CAV,,00137,,,,Muss,
+115,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,00137,Z52,,iMS,X,
+116,Messtechnische Einordnung der Marktlokation,SG10,CAV,7111,,Z53,,kME / mME,X,
+117,Prognosegrundlage der Marktlokation,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
+118,Prognosegrundlage der Marktlokation,SG10,CCI,,00140,,,,Muss,
+119,Prognosegrundlage der Marktlokation,SG10,CCI,7037,00140,ZC0,,Prognose auf Basis von Werten,X,
+120,Prognosegrundlage der Marktlokation,SG10,CCI,7037,,ZA6,,Prognose auf Basis von Profilen,X,
+121,Details der Prognosegrundlage,SG10,CAV,,00141,,,,Muss [210] ∧ ([2182] ⊻ ([90] ∧ [2183])),"[90] Wenn SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) einmal mit CAV+E14 (TLP/ TEP) und einmal mit CAV+E02 (SLP/SEP) in dieser SG8 vorhanden
+[210] Wenn SG10 CCI+++ZA6 (Prognose auf Basis von Profilen) in dieser SG8 vorhanden
+[2182] Segmentgruppe ist genau einmal je SG8 SEQ+Z01 / Z80 / Z81 (Daten der Marktlokation/ Erwartete Daten der Marktlokation/ Im System vorhandene Daten der Marktlokation) anzugeben
+[2183] Segmentgruppe ist genau zweimal je SG8 SEQ+Z01 / Z80 / Z81 (Daten der Marktlokation/ Erwartete Daten der Marktlokation/ Im System vorhandene Daten der Marktlokation) anzugeben"
+122,Details der Prognosegrundlage,SG10,CAV,7111,00141,E02,,SLP/SEP,X [1P0..1],
+123,Details der Prognosegrundlage,SG10,CAV,7111,,E14,,TLP/TEP,X [1P0..1],
+124,Details der Prognosegrundlage,SG10,CAV,7111,,Z36,,TEP mit Referenzmessung,X [1P0..1],
+125,Art der erzeugenden Marktlokation,SG10,,,,,,,Soll [8] ∧ [479],"[8] Wenn für Datenclearing erforderlich
 [479] Wenn SG4 STS+7++xxx+ZW3 (Transaktionsgrunderg änzung Erzeugende Marktlokation) vorhanden"
-122,Art der erzeugenden Marktlokation,SG10,CCI,,00144,,,,Muss,
-123,Art der erzeugenden Marktlokation,SG10,CCI,7037,00144,Z34,,Art der erzeugenden Marktlokation,X,
-124,Art der erzeugenden Marktlokation ,SG10,CAV,,00145,,,,Muss,
-125,Art der erzeugenden Marktlokation ,SG10,CAV,7111,00145,Z33,,EEG-Marktlokation ohne DV-Pflicht,X,
-126,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z34,,KWKG- Marktlokation ohne DV-Pflicht,X,
-127,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z35,,sonstige Marktlokation,X,
-128,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z37,,EEG-Marktlokationmit DV-Pflicht,X,
-129,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z46,,KWKG- Marktlokation mit DV-Pflicht,X,
-130,Abwicklungsmodell,SG10,,,,,,,Muss [460],"[8] Wenn für Datenclearing erforderlich  
-[460] Wenn bei der Bestellung ein Messprodukt der Codeliste der Konfigurationen aus dem Kapitel 4.4 mit dem Übertragungsweg ""aus dem SMGW"" bestellt wurde"
-131,Abwicklungsmodell,SG10,CCI,,00158,,,,Muss,
-132,Abwicklungsmodell,SG10,CCI,7059,00158,ZA2,,Abwicklungsmodell,X,
-133,Abwicklungsmodell,SG10,CCI,7037,00158,ZE9,,Modell 1,X,
-134,Profildaten,SG8,,,,,,,Muss [119] ∧ [2006] ,"[8] Wenn für Datenclearing erforderlich  
-[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02"
-135,Profildaten,SG8,SEQ,,00362,,,,Muss,
-136,Profildaten,SG8,SEQ,1229,00362,Z21,,Profildaten,X,
-137,Profildaten,SG8,SEQ,1050,00362,,,Zeitraum,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+126,Art der erzeugenden Marktlokation,SG10,CCI,,00142,,,,Muss,
+127,Art der erzeugenden Marktlokation,SG10,CCI,7037,00142,Z34,,Art der erzeugenden Marktlokation,X,
+128,Art der erzeugenden Marktlokation ,SG10,CAV,,00143,,,,Muss,
+129,Art der erzeugenden Marktlokation ,SG10,CAV,7111,00143,Z33,,EEG-Marktlokation ohne DV-Pflicht,X,
+130,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z34,,KWKG- Marktlokation ohne DV-Pflicht,X,
+131,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z35,,sonstige Marktlokation,X,
+132,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z37,,EEG-Marktlokation mit DV-Pflicht,X,
+133,Art der erzeugenden Marktlokation ,SG10,CAV,7111,,Z46,,KWKG- Marktlokation mit DV-Pflicht,X,
+134,Abwicklungsmodell,SG10,,,,,,,Muss,[8] Wenn für Datenclearing erforderlich
+135,Abwicklungsmodell,SG10,CCI,,00156,,,,Muss,
+136,Abwicklungsmodell,SG10,CCI,7059,00156,ZA2,,Abwicklungsmodell,X,
+137,Abwicklungsmodell,SG10,CCI,7037,00156,ZE9,,"Modell 1 ""Bilanzierung an der Marktlokation""",X,
+138,Abwicklungsmodell,SG10,CCI,7037,,ZF0,,"Modell 2 ""Bilanzierung im Bilanzierungsgebiet (BG) des LPB""",X,
+139,Profildaten,SG8,,,,,,,Muss [119] ∧ [2006] ,"[8] Wenn für Datenclearing erforderlich
+[119] Wenn in der SG8 SEQ+Z01 SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E02 (SLP/SEP) vorhanden
+[2006] Segmentgruppe ist genau einmal für jede SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben, bei der die Bedingung [119] an der Segmentgruppe erfüllt wird. Dabei ist die selbe Zeitraum-ID im nachfolgenden SEQ DE1050 anzugeben"
+140,Profildaten,SG8,SEQ,,00361,,,,Muss,
+141,Profildaten,SG8,SEQ,1229,00361,Z21,,Profildaten,X,
+142,Profildaten,SG8,SEQ,1050,00361,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-138,Normiertes Profil,SG10,,,,,,,Muss,
-139,Normiertes Profil,SG10,CCI,,00366,,,,Muss,
-140,Normiertes Profil,SG10,CCI,7059,00366,Z02,,Standardlastprofil,X,
-141,Normiertes Profil,SG10,CCI,7059,,Z04,,Standardeinspeisepr ofil,X,
-142,Normiertes Profil,SG10,CCI,7037,00366,E01,,synthetisches Verfahren,X,
-143,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
-144,Normiertes Profil,SG10,CAV,,00367,,,,Muss,
-145,Normiertes Profil,SG10,CAV,7111,00367,,,Code des Normierten Profils,X,
-146,Profilschardaten,SG8,,,,,,,Muss [89] ∧ [2008],[8] Wenn für Datenclearing
-147,Profilschardaten,SG8,SEQ,,00373,,,,Muss,
-148,Profilschardaten,SG8,SEQ,1229,00373,Z08,,Profilschardaten,X,
-149,Profilschardaten,SG8,SEQ,1229,,Z87,,Erwartete Profilschardaten,X [2P0..n],
-150,Profilschardaten,SG8,SEQ,1050,00373,,,Zeitraum,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+143,Normiertes Profil,SG10,,,,,,,Muss,
+144,Normiertes Profil,SG10,CCI,,00365,,,,Muss,
+145,Normiertes Profil,SG10,CCI,7059,00365,Z02,,Standardlastprofil,X,
+146,Normiertes Profil,SG10,CCI,7059,,Z04,,Standardeinspeisepr ofil,X,
+147,Normiertes Profil,SG10,CCI,7037,00365,E01,,synthetisches Verfahren,X,
+148,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
+149,Normiertes Profil,SG10,CAV,,00366,,,,Muss,
+150,Normiertes Profil,SG10,CAV,7111,00366,,,Code des Normierten Profils,X,
+151,Profilschardaten,SG8,,,,,,,Muss [89] ∧ [2008],"[8] Wenn für Datenclearing erforderlich
+[89] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+E14 (TLP/TEP) vorhanden
+[2008] Segmentgruppe ist genau einmal für jede SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben, bei der die Bedingung [89] an der Segmentgruppe erfüllt wird. Dabei ist die selbe Zeitraum-ID im nachfolgenden SEQ DE1050 anzugeben"
+152,Profilschardaten,SG8,SEQ,,00372,,,,Muss,
+153,Profilschardaten,SG8,SEQ,1229,00372,Z08,,Profilschardaten,X,
+154,Profilschardaten,SG8,SEQ,1050,00372,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-151,Normiertes Profil,SG10,,,,,,,Muss,
-152,Normiertes Profil,SG10,CCI,,00385,,,,Muss,
-153,Normiertes Profil,SG10,CCI,7059,00385,Z03,,tagesparameterabh ängiges Lastprofil,X,
-154,Normiertes Profil,SG10,CCI,7059,,Z05,,tagesparameterabh ängiges Einspeiseprofil,X,
-155,Normiertes Profil,SG10,CCI,7037,00385,E01,,synthetisches,X,
-156,Normiertes Profil,SG10,CAV,,00386,,,,Muss,
-157,Normiertes Profil,SG10,CAV,7111,00386,,,Code des Normierten Profils,X,
-158,Referenzprofildaten,SG8,,,,,,,Muss [265] ∧ [479] ∧ [2010],"[8] Wenn für Datenclearing erforderlich  
-
-[265] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+Z36 (TEP m. Referenzmessung) vorhanden  
-
-[479] Wenn SG4 STS+7++xxx+ZW3 (Transaktionsgrunderg änzung Erzeugende Marktlokation) vorhanden  
+155,Normiertes Profil,SG10,,,,,,,Muss,
+156,Normiertes Profil,SG10,CCI,,00384,,,,Muss,
+157,Normiertes Profil,SG10,CCI,7059,00384,Z03,,tagesparameterabh ängiges Lastprofil,X,
+158,Normiertes Profil,SG10,CCI,7059,,Z05,,tagesparameterabh ängiges Einspeiseprofil,X,
+159,Normiertes Profil,SG10,CCI,7037,00384,E01,,synthetisches Verfahren,X,
+160,Normiertes Profil,SG10,CCI,7037,,Z10,,analytisches Verfahren,X,
+161,Normiertes Profil,SG10,CAV,,00385,,,,Muss,
+162,Normiertes Profil,SG10,CAV,7111,00385,,,Code des Normierten Profils,X,
+163,Referenzprofildaten,SG8,,,,,,,Muss [265] ∧ [479] ∧ [2010],"[8] Wenn für Datenclearing erforderlich
+[265] Wenn im SG8 SEQ+Z01 (Daten der Marktlokation) das SG10 CCI+++ZA6 (Prognosegrundlage der Marktlokation: Prognose auf Basis von Profilen) CAV+Z36 (TEP m. Referenzmessung) vorhanden
+[479] Wenn SG4 STS+7++xxx+ZW3 (Transaktionsgrunderg änzung Erzeugende Marktlokation) vorhanden
 [2010] Segmentgruppe ist genau einmal für jede SG8 SEQ+Z01 (Daten der Marktlokation) anzugeben, bei der die Bedingungen [265] ∧ [479] an der Segmentgruppe erfüllt wird. Dabei ist die selbe Zeitraum-ID im nachfolgenden SEQ DE1050 anzugeben"
-159,Referenzprofildaten,SG8,SEQ,,00391,,,,Muss,
-160,Referenzprofildaten,SG8,SEQ,1229,00391,Z38,,Referenzprofildaten,X,
-161,Referenzprofildaten,SG8,SEQ,1229,,Z90,,Im System vorhandene Referenzprofildaten,X [3P0..n],
-162,Referenzprofildaten,SG8,SEQ,1050,00391,,,Zeitraum,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom
-163,Referenzprofil,SG10,,,,,,,Muss,
-164,Referenzprofil,SG10,CCI,,00395,,,,Muss,
-165,Referenzprofil,SG10,CCI,7059,00395,,,"Klassentyp, Code",X,
-166,Referenzprofil,SG10,CAV,,00396,,,,Muss,
-167,Referenzprofil,SG10,CAV,7111,00396,,,Code des Referenzprofils,X,
-168,Kunde des Netzbetreibers,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird  
-[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden  
+164,Referenzprofildaten,SG8,SEQ,,00390,,,,Muss,
+165,Referenzprofildaten,SG8,SEQ,1229,00390,Z38,,Referenzprofildaten,X,
+166,Referenzprofildaten,SG8,SEQ,1050,00390,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+167,Referenzprofil,SG10,,,,,,,Muss,
+168,Referenzprofil,SG10,CCI,,00394,,,,Muss,
+169,Referenzprofil,SG10,CCI,7059,00394,,,"Klassentyp, Code",X,
+170,Referenzprofil,SG10,CAV,,00395,,,,Muss,
+171,Referenzprofil,SG10,CAV,7111,00395,,,Code des Referenzprofils,X,
+172,Kunde des Netzbetreibers,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird
+[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden
 [558] Hinweis: Diese Information kann freiwillig ausgetauscht werden"
-169,Kunde des Netzbetreibers,SG12,NAD,,00507,,,,Muss,
-170,Kunde des Netzbetreibers,SG12,NAD,3035,00507,Z25,,Kunde des NB,X,
-171,Kunde des Netzbetreibers,SG12,NAD,3036,00507,,,Name,X,
-172,Kunde des Netzbetreibers,SG12,NAD,3045,00507,Z01,,Struktur von Personennamen,X,
-173,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-174,Referenz auf Zeitraum.ID,SG12,RFF,,00508,,,,Muss,
-175,Referenz auf Zeitraum.ID,SG12,RFF,1153,00508,Z46,,Referenz auf Zeitraum-ID,X,
-176,Referenz auf Zeitraum.ID,SG12,RFF,1154,00508,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+173,Kunde des Netzbetreibers,SG12,NAD,,00506,,,,Muss,
+174,Kunde des Netzbetreibers,SG12,NAD,3035,00506,Z25,,Kunde des NB,X,
+175,Kunde des Netzbetreibers,SG12,NAD,3036,00506,,,Name,X,
+176,Kunde des Netzbetreibers,SG12,NAD,3045,00506,Z01,,Struktur von Personennamen,X,
+177,Kunde des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+178,Referenz auf Zeitraum.ID,SG12,RFF,,00507,,,,Muss,
+179,Referenz auf Zeitraum.ID,SG12,RFF,1153,00507,Z46,,Referenz auf Zeitraum-ID,X,
+180,Referenz auf Zeitraum.ID,SG12,RFF,1154,00507,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-177,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird  
-[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden  
+181,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird
+[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden
 [558] Hinweis: Diese Information kann freiwillig ausgetauscht werden"
-178,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,,00510,,,,Muss,
-179,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3035,00510,Z26,,Korrespondenzansc hrift des Kunden des NB,X,
-180,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3036,00510,,,Name,X,
-181,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3045,00510,Z01,,Struktur von Personennamen,X,
-182,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3042,00510,,,Straße und Hausnummer oder Postfach,X,
-183,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3164,00510,,,Ort,X,
-184,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3251,00510,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+182,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,,00509,,,,Muss,
+183,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3035,00509,Z26,,Korrespondenzansc hrift des Kunden des NB,X,
+184,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3036,00509,,,Name,X,
+185,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3045,00509,Z01,,Struktur von Personennamen,X,
+186,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+187,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3042,00509,,,Straße und Hausnummer oder Postfach,X,
+188,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3164,00509,,,Ort,X,
+189,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3251,00509,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-185,Korrespondenzanschrift des Kunde des Netzbetreibers,SG12,NAD,3207,00510,,,"Ländername, Code",X,
-186,Referenz auf Zeitraum.ID,SG12,RFF,,00511,,,,Muss,
-187,Referenz auf Zeitraum.ID,SG12,RFF,1153,00511,Z46,,Referenz auf Zeitraum-ID,X,
-188,Referenz auf Zeitraum.ID,SG12,RFF,1154,00511,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+190,Korrespondenzanschrift des Kunden des Netzbetreibers,SG12,NAD,3207,00509,,,"Ländername, Code",X,
+191,Referenz auf Zeitraum.ID,SG12,RFF,,00510,,,,Muss,
+192,Referenz auf Zeitraum.ID,SG12,RFF,1153,00510,Z46,,Referenz auf Zeitraum-ID,X,
+193,Referenz auf Zeitraum.ID,SG12,RFF,1154,00510,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-189,Anschlussnehmer,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird  
-[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden  
-[558] Hinweis: Diese Information kann"
-190,Anschlussnehmer,SG12,NAD,,00513,,,,Muss,
-191,Anschlussnehmer,SG12,NAD,3035,00513,EO,,Anschlussnehmer,X,
-192,Anschlussnehmer,SG12,NAD,3036,00513,,,Name,X,
-193,Anschlussnehmer,SG12,NAD,3045,00513,Z01,,Struktur von Personennamen,X,
-194,Anschlussnehmer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-195,Anschlussnehmer,SG12,NAD,3042,00513,,,Straße und Hausnummer oder Postfach,X,
-196,Anschlussnehmer,SG12,NAD,3164,00513,,,Ort,X,
-197,Anschlussnehmer,SG12,NAD,3251,00513,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+194,Anschlussnehmer,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird
+[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden
+[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden"
+195,Anschlussnehmer,SG12,NAD,,00512,,,,Muss,
+196,Anschlussnehmer,SG12,NAD,3035,00512,EO,,Anschlussnehmer,X,
+197,Anschlussnehmer,SG12,NAD,3036,00512,,,Name,X,
+198,Anschlussnehmer,SG12,NAD,3045,00512,Z01,,Struktur von Personennamen,X,
+199,Anschlussnehmer,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+200,Anschlussnehmer,SG12,NAD,3042,00512,,,Straße und Hausnummer oder Postfach,X,
+201,Anschlussnehmer,SG12,NAD,3164,00512,,,Ort,X,
+202,Anschlussnehmer,SG12,NAD,3251,00512,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-198,Anschlussnehmer,SG12,NAD,3207,00513,,,"Ländername, Code",M,
-199,Referenz auf Zeitraum.ID,SG12,RFF,,00514,,,,Muss,
-200,Referenz auf Zeitraum.ID,SG12,RFF,1153,00514,Z46,,Referenz auf Zeitraum-ID,X,
-201,Referenz auf Zeitraum.ID,SG12,RFF,1154,00514,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen  
-[914] Format: Möglicher Wert: > 0  
+203,Anschlussnehmer,SG12,NAD,3207,00512,,,"Ländername, Code",M,
+204,Referenz auf Zeitraum.ID,SG12,RFF,,00513,,,,Muss,
+205,Referenz auf Zeitraum.ID,SG12,RFF,1153,00513,Z46,,Referenz auf Zeitraum-ID,X,
+206,Referenz auf Zeitraum.ID,SG12,RFF,1154,00513,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-202,Hausverwalter,SG12,,,,,,,Kann [92] ∧ [480] ∧,[92] Wenn Wert innerhalb SG bzw.
-203,Hausverwalter,SG12,NAD,,00515,,,,Muss,
-204,Hausverwalter,SG12,NAD,3035,00515,DDO,,Hausverwalter,X,
-205,Hausverwalter,SG12,NAD,3035,,Z57,,Erwarteter Hausverwalter,X,
-206,Hausverwalter,SG12,NAD,3035,,Z58,,Im System vorhandener Hausverwalter,X,
-207,Hausverwalter,SG12,NAD,3036,00515,,,Name,X,
-208,Hausverwalter,SG12,NAD,3045,00515,Z01,,Struktur von Personennamen,X,
-209,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
-210,Hausverwalter,SG12,NAD,3042,00515,,,Straße und Hausnummer oder Postfach,X,
-211,Hausverwalter,SG12,NAD,3164,00515,,,Ort,X,
-212,Hausverwalter,SG12,NAD,3251,00515,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden  
+207,Hausverwalter,SG12,,,,,,,Kann [92] ∧ [480] ∧ [558],"[92] Wenn Wert innerhalb SG bzw. Segment geändert wird
+[480] Wenn SG4 STS+7++xxx+ZW4 (Transaktionsgrunderg änzung Verbrauchende Marktlokation) vorhanden
+[558] Hinweis: Diese Information kann freiwillig ausgetauscht werden"
+208,Hausverwalter,SG12,NAD,,00514,,,,Muss,
+209,Hausverwalter,SG12,NAD,3035,00514,DDO,,Hausverwalter,X,
+210,Hausverwalter,SG12,NAD,3036,00514,,,Name,X,
+211,Hausverwalter,SG12,NAD,3045,00514,Z01,,Struktur von Personennamen,X,
+212,Hausverwalter,SG12,NAD,3045,,Z02,,Struktur der Firmenbezeichnung,X,
+213,Hausverwalter,SG12,NAD,3042,00514,,,Straße und Hausnummer oder Postfach,X,
+214,Hausverwalter,SG12,NAD,3164,00514,,,Ort,X,
+215,Hausverwalter,SG12,NAD,3251,00514,,,Postleitzahl,M [268] S [166],"[166] Wenn vorhanden
 [268] Wenn der Code im DE3207 in der ""EDI@Energy Codeliste der europäischen Ländercodes"" in der Spalte ""PLZ vorhanden"" ein ""X"" aufgeführt ist"
-213,Hausverwalter,SG12,NAD,3207,00515,,,"Ländername, Code",M,
-214,Referenz auf Zeitraum.ID,SG12,RFF,,00516,,,,Muss,
-215,Referenz auf Zeitraum.ID,SG12,RFF,1153,00516,Z46,,Referenz auf Zeitraum-ID,X,
-216,Referenz auf Zeitraum.ID,SG12,RFF,1154,00516,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49
-217,Nachrichten- Endesegment,,UNT,,00527,,,,Muss,
-218,Nachrichten- Endesegment,,UNT,0074,00527,,,Anzahl der Segmente in einer Nachricht,X,
-219,Nachrichten- Endesegment,,UNT,0062,00527,,,Nachrichten- Referenznummer,X,
+216,Hausverwalter,SG12,NAD,3207,00514,,,"Ländername, Code",M,
+217,Referenz auf Zeitraum.ID,SG12,RFF,,00515,,,,Muss,
+218,Referenz auf Zeitraum.ID,SG12,RFF,1153,00515,Z46,,Referenz auf Zeitraum-ID,X,
+219,Referenz auf Zeitraum.ID,SG12,RFF,1154,00515,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitrau m der Daten) einzutragen
+[914] Format: Möglicher Wert: > 0
+[937] Format: keine Nachkommastelle"
+220,Nachrichten- Endesegment,,UNT,,00526,,,,Muss,
+221,Nachrichten- Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+222,Nachrichten- Endesegment,,UNT,0062,00526,,,Nachrichten- Referenznummer,X,

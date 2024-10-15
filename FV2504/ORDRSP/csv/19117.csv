@@ -1,7 +1,7 @@
 ,Segmentname,Segmentgruppe,Segment,Datenelement,Segment ID,Code,Qualifier,Beschreibung,Bedingungsausdruck,Bedingung
 0,Nachrichten-Kopfsegment,,UNH,,00001,,,,Muss,
 1,Nachrichten-Kopfsegment,,UNH,0062,00001,,,Nachrichten- Referenznummer,X,
-2,Nachrichten-Kopfsegment,,UNH,0065,00001,Bestellantwort,,ORDRS P,X,
+2,Nachrichten-Kopfsegment,,UNH,0065,00001,ORDRSP,,Bestellantwort,X,
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,10A,,Ausgabe 2010 - A,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
@@ -12,7 +12,7 @@
 10,Beginn der Nachricht,,BGM,1004,00002,,,Dokumentennummer,X,
 11,Nachrichtendatum,,DTM,,00003,,,,Muss,
 12,Nachrichtendatum,,DTM,2005,00003,137,,Dokumenten-/ Nachrichtendatum/- zeit,X,
-13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt. 
+13,Nachrichtendatum,,DTM,2380,00003,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [931] [494],"[494] Das hier genannte Datum muss der Zeitpunkt sein, zu dem das Dokument erstellt wurde, oder ein Zeitpunkt, der davor liegt.
 [931] Format: ZZZ = +00"
 14,Nachrichtendatum,,DTM,2379,00003,303,,CCYYMMDDHHMMZ ZZ,X,
 15,Referenz Nachrichtennummer,SG1,RFF,,00009,,,,Muss,
@@ -22,7 +22,7 @@
 19,Prüfidentifikator,SG1,RFF,1153,00012,Z13,,Prüfidentifikator,X,
 20,Prüfidentifikator,SG1,RFF,1154,,19117,,Ablehnung Sperr-/ Entsperrauftrag,X,
 21,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,,00013,,,,Muss,
-22,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein 
+22,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,4465,00013,,,Code des Prüfschritts,X [18],"[17] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Zustimmung zugeordnet sein
 [18] Der hier angegebene Code des Prüfschritts muss im EBD dem Cluster Ablehnung zugeordnet sein"
 23,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,00013,E_047,,EBD Nr. E_0470,X [24] ∧,
 24,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,0,,,[492],
@@ -31,14 +31,15 @@
 27,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_100,,EBD Nr. E_1000,X [24] ∧,
 28,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,0,,,[493],
 29,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,E_100,,EBD Nr. E_1004,X [25] ∧,
-30,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,4,,,[493],"[24] Wenn BGM+Z51 vorhanden 
-[25] Wenn BGM+Z52 vorhanden 
-[492] wenn MP-ID in NAD+MR aus Sparte Strom 
+30,Einzelheiten zu einer Anpassung/Änderung,SG2,AJT,1082,,4,,,[493],"[24] Wenn BGM+Z51 vorhanden
+[25] Wenn BGM+Z52 vorhanden
+[492] wenn MP-ID in NAD+MR aus Sparte Strom
 [493] wenn MP-ID in NAD+MR aus Sparte Gas"
-31,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,00014,,,,Muss [27] ∨ [28] ∨ [44],"[27] Wenn AJT+A05+E_0470 vorhanden 
-[28] Wenn AJT+A99 vorhanden 
-[33] Wenn AJT+A02/ A03+E_0488 vorhanden 
-[43] Wenn AJT+A02/ A03+E_1001 vorhanden"
+31,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,,00014,,,,Muss [27] ∨ [28] ∨ [44],"[27] Wenn AJT+A05+E_0470 vorhanden
+[28] Wenn AJT+A99 vorhanden
+[33] Wenn AJT+A02/ A03+E_0488 vorhanden
+[43] Wenn AJT+A02/ A03+E_1001 vorhanden
+[44] Wenn AJT+A05+E_1000 vorhanden"
 32,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4451,00014,AAP,,Antwort (Freier Text),X,
 33,Allgemeine Information (Feld für allgemeine Hinweise),SG2,FTX,4440,00014,,,Freier Text,X,
 34,MP-ID Absender,SG3,NAD,,00015,,,,Muss,
@@ -51,18 +52,18 @@
 41,Ansprechpartner,SG6,CTA,3139,00016,IC,,Informationskontakt,X,
 42,Ansprechpartner,SG6,CTA,3412,00016,,,Kontakt,X,
 43,Kommunikationsverbindu ng,SG6,COM,,00017,,,,Muss,
-44,Kommunikationsverbindu ng,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧ [540],"[50] wenn im DE3155 in demselben COM der Code EM vorhanden ist 
-[51] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist 
-[540] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden 
-[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten 
-[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch"
+44,Kommunikationsverbindu ng,SG6,COM,3148,00017,,,"Kommunikationsadresse, Identifikation",X (([939] [50]) ∨ ([940] [51])) ∧ [540],"[50] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[51] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[540] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
 45,Kommunikationsverbindu ng,SG6,COM,3155,00017,EM,,Elektronische Post,X [1P0..1],
 46,Kommunikationsverbindu ng,SG6,COM,3155,,FX,,Telefax,X [1P0..1],
 47,Kommunikationsverbindu ng,SG6,COM,3155,,TE,,Telefon,X [1P0..1],
 48,Kommunikationsverbindu ng,SG6,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
 49,Kommunikationsverbindu ng,SG6,COM,3155,,AL,,Handy,X [1P0..1],
 50,MP-ID Empfänger,SG3,NAD,,00018,,,,Muss,
-51,MP-ID Empfänger,SG3,NAD,3035,00018,MR,,Nachrichtenempfänger,X,
+51,MP-ID Empfänger,SG3,NAD,3035,00018,MR,,Nachrichtenempfän ger,X,
 52,MP-ID Empfänger,SG3,NAD,3039,00018,,,MP-ID,X,
 53,MP-ID Empfänger,SG3,NAD,3055,00018,9,,GS1,X,
 54,MP-ID Empfänger,SG3,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
