@@ -1,13 +1,15 @@
-name: Generate AHB diffs via dependabot triggered by `ahlbatross` version bump.
+name: Create PR to generate and safe AHB diffs to machine-readable-AHBs.
+# this workflow is activated by `ahlbatross` releases, triggering dependabot to bump the version in requirements.txt.
 
 on:
-  pull_request:
+  push:
+    branches:
+      - main
     paths:
       - "requirements.txt"
 
 jobs:
-  update-if-dependabot:
-    if: ${{ github.actor == 'dependabot[bot]' }}
+  generate-diffs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -15,8 +17,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref }}
 
       - uses: actions/setup-python@v4
         with:
@@ -32,14 +32,16 @@ jobs:
           mkdir -p diff
           ahlbatross --output-dir diff
 
-      - name: Commit and push if changes exist
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "Update AHB diffs after latest ahlbatross release"
+          title: "chore: update AHB diffs after latest ahlbatross release"
+          branch: "update-diffs"
+          delete-branch: true
+      - name: Enable auto-merge
+        if: steps.create-pull-request.outputs.pull-request-operation == 'created'
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'action@github.com'
-          git add diff/
-          if git diff --staged --quiet; then
-            echo "no changes to commit"
-          else
-            git commit -m "update generated diff files for new ahlbatross release"
-            git push
-          fi
+          gh pr merge --auto --merge "${{ steps.create-pull-request.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
