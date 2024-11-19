@@ -1,0 +1,47 @@
+name: Create PR to generate and safe AHB diffs to machine-readable-AHBs.
+# this workflow is activated by `ahlbatross` releases, triggering dependabot to bump the version in requirements.txt.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "requirements.txt" # == dependabot version bump
+
+jobs:
+  generate-diffs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.13"
+
+      - name: Install updated package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate content
+        run: |
+          mkdir -p diff
+          ahlbatross --output-dir diff
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "Update AHB diffs after latest ahlbatross release"
+          title: "chore: update AHB diffs after latest ahlbatross release"
+          branch: "update-diffs"
+          delete-branch: true
+      - name: Enable auto-merge
+        if: steps.create-pull-request.outputs.pull-request-operation == 'created'
+        run: |
+          gh pr merge --auto --merge "${{ steps.create-pull-request.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
