@@ -11,6 +11,7 @@ Wir pflegen analog zu den hier abgelegten Daten auch:
 
 Zur Erstellung der hier veröffentlichten Daten nutzen wir [`kohlrahbi`](https://github.com/Hochfrequenz/kohlrahbi/), eine Open Source AHB Scraping Library.
 Änderungen auf edi-energy.de werden mehrmals täglich automatisiert über unseren [edi_energy_mirror](https://github.com/Hochfrequenz/edi_energy_mirror) in dieses Repository synchronisiert.
+Zur Weiterverarbeitung der Daten, z.B. einem automatischen Abgleich von AHBs in verschiedenen Versionen, eignet sich [`ahlbatross`](https://github.com/Hochfrequenz/kohlrahbi/).
 
 ## Struktur & Datenformate
 
