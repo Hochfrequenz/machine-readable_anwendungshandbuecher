@@ -1,24 +1,32 @@
 name: Prettier
-on: pull_request
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   run-linters:
-    name: Run Prettier and Autofix
+    name: Run Prettier Check
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v4
+
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 14
-      - name: Install Node.js dependencies
+          node-version: 20
+
+      - name: Install Prettier
         run: npm install prettier
-      - name: Run linters
-        uses: wearerequired/lint-action@v2
-        with:
-          github_token: "${{ secrets.github_token }}"
-          eslint: false
-          prettier: true
-          auto_fix: true
-          prettier_args: --ignore-path .prettierignore
-          eslint_args: --ignore-path .eslintignore
+
+      # just runs a check; use for instance https://prettier.io/playground/ to fix formatting issues manually
+      - name: Run Prettier check
+        run: npx prettier --check . --ignore-path .prettierignore
