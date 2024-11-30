@@ -1,4 +1,4 @@
-name: Create PR to generate and safe AHB diffs to machine-readable-AHBs.
+name: Create PR to generate and safe AHB diffs to machine-readable-AHBs as soon as ahlbatross has new release.
 # this workflow is activated by `ahlbatross` releases, triggering dependabot to bump the version in requirements.txt.
 
 on:
@@ -9,8 +9,24 @@ on:
       - "requirements.txt" # == dependabot version bump of `ahlbatross`
 
 jobs:
-  generate-diffs:
+  setup:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get latest ahlbatross release version tag
+        id: get-release-version-tag
+        run: |
+          VERSION=$(grep "^ahlbatross==" requirements.txt | cut -d'=' -f3)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+  generate-diffs:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ahlbatross_version: ['${{ needs.setup.outputs.version }}']
     permissions:
       contents: write
       pull-requests: write
@@ -38,9 +54,9 @@ jobs:
         id: create-pr
         uses: peter-evans/create-pull-request@v7
         with:
-          commit-message: "Update AHB diffs after latest ahlbatross release"
-          title: "chore: update AHB diffs after latest ahlbatross release"
-          branch: "update-diffs"
+          commit-message: "Update AHB diffs for ahlbatross release ${{ matrix.ahlbatross_version }}"
+          title: "chore: update AHB diffs for ahlbatross release ${{ matrix.ahlbatross_version }}"
+          branch: "update-diffs-${{ matrix.ahlbatross_version }}"
           delete-branch: true
           reviewers: |
             OLILHR
