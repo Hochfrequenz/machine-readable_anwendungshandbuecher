@@ -133,8 +133,8 @@
 [914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
 98,Zuordnung Lokation zum Objektcode des Lokationsbündels,SG8,,,,,,,Muss (([306] ∧ [2360] ∧ [2361]) ⊻ ([307] ∧ [2359] ∧ [2360])) ∧ [335],"[8] Wenn für Datenclearing erforderlich
-[306] Wenn SG5 LOC+Z22 (ruhende Marktlokation) mit der selben Zeitraum-ID im DE3224 vorhanden wie in dieser SG8 im DE1050 (Referenz auf Zeitraum-ID) des SEQ+Z58
-[307] Wenn SG5 LOC+Z22 (ruhende Marktlokation) mit der selben Zeitraum-ID im DE3224 nicht vorhanden wie in dieser SG8 im DE1050 (Referenz auf Zeitraum-ID) des SEQ+Z58
+[306] Wenn SG5 LOC+Z22 (ruhende Marktlokation) mit derselben Zeitraum-ID im DE3224 vorhanden wie in dieser SG8 im DE1050 (Referenz auf Zeitraum-ID) des SEQ+Z58
+[307] Wenn SG5 LOC+Z22 (ruhende Marktlokation) mit derselben Zeitraum-ID im DE3224 nicht vorhanden wie in dieser SG8 im DE1050 (Referenz auf Zeitraum-ID) des SEQ+Z58
 [335] Wenn in dieser SG8 im SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) im DE1050 eine Zeitraum-ID angegeben wird, wie in einer SG8 SEQ+Z78 RFF+Z31 (Referenz auf die Lokationsbündelstru ktur) im DE1154
 [2359] Für jede ID im SG5 LOC+Z16 / Z17 / Z20 (Marktlokation / Messlokation / Technische Ressource) DE3225 mindestens einmal anzugeben
 [2360] Für jede ID im SG5 LOC+Z18 (Netzlokation) DE3225 mindestens einmal anzugeben
@@ -164,21 +164,20 @@
 111,Referenz auf den Objektcode in der Lokationsbündelstruktur,SG8,RFF,1156,00078,,,Fortlaufende Nummer eines Lokationsbündels im Geschäftsvorfall,M [914] ∧ [937] [32],"[32] Wenn mehr als ein SG8 (Referenz auf die Lokationsbündelstru ktur) vorhanden
 [914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-112,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,,00079,,,,Muss ([176] ∧ (([173] ∧ [290]) ⊻ ([174] ∧ [175]))) ⊻ ([177] ∧ [178] ∧ [179]),"[173] Wenn im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) das DE1156 (Fortlaufende Nummer eines Lokationsbündels im Geschäftsvorfall) in derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) nicht vorhanden ist
+112,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,,00079,,,,Muss ([176] ∧ (([173] ∧ [179]) ⊻ ([174] ∧ [175]))) ⊻ ([177] ∧ [178] ∧ [179]),"[173] Wenn im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) das DE1156 (Fortlaufende Nummer eines Lokationsbündels im Geschäftsvorfall) in derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) nicht vorhanden ist
 [174] Wenn im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) das DE1156 Fortlaufende Nummer eines Lokationsbündels im Geschäftsvorfall) in derselben SG8 SEQ+Z58 Zuordnung Lokation zum Objektcode des Lokationsbündels) vorhanden ist
 [175] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 mit derselben fortlaufenden Nummer vorhanden ist
 [176] Wenn in demselben Segment das DE1153 mit dem Code Z34 vorgelagerte Messlokation vorhanden ist
 [177] Wenn in demselben Segment das DE1153 mit dem Code Z35 vorgelagerte Netzlokation vorhanden ist
 [178] Wenn das LOC+Z18 (Netzlokation) vorhanden ist
-[179] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) vorhanden ist
-[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist"
+[179] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) vorhanden ist"
 113,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,00079,Z34,,vorgelagerte Messlokation,X,
 114,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1153,,Z35,,vorgelagerte Netzlokation,X,
 115,Referenz auf die ID der vorgelagerten Netzlokation / Messlokation ,SG8,RFF,1154,00079,,,ID einer Lokation,X ([442] ∧ [951]) ⊻ ([440] ∧ [960]),"[440] Wenn in demselben RFF der Code Z35 (vorgelagerte Netzlokation) im DE1153 vorhanden
 [442] Wenn in demselben RFF der Code Z34 (vorgelagerte Messlokation) im DE1153 vorhanden
 [951] Format: Zählpunktbezeichnu ng
 [960] Format: Netzlokations-ID"
-116,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,,00080,,,,Muss [290] ∧ [291],"[290] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 vorhanden ist
+116,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,,00080,,,,Muss [179] ∧ [291],"[179] Wenn der Objektcode im RFF+Z33 (Referenz auf den Objektcode in der Lokationsbündelstru ktur) im DE1154 derselben SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) in einem weiteren SG8 SEQ+Z58 (Zuordnung Lokation zum Objektcode des Lokationsbündels) vorhanden ist
 [291] Wenn in derselben SG8 (Zuordnung Lokation zum Objektcode des Lokationsbündels) das RFF+Z37 vorhanden"
 117,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1153,00080,Z16,,zugeordnete Marktlokation,X,
 118,Referenz auf die der Technischen Ressource zugeordneten Marktlokation ,SG8,RFF,1154,00080,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
@@ -213,13 +212,13 @@
 142,Zugeordnete Marktpartner,SG10,,,,,,,Muss,
 143,Zugeordnete Marktpartner,SG10,CCI,,00122,,,,Muss,
 144,Zugeordnete Marktpartner,SG10,CCI,7037,00122,ZB3,,Zugeordneter Marktpartner,X,
-145,Lieferant,SG10,CAV,,00123,,,,Muss [50],[50] Wenn kein SG8 SEQ+ZE7 (Informative Daten der Tranche) mit der selben Zeitraum-ID im DE1050 auf die gleiche Marktlokation-ID mit dem RFF+Z18 (Marktlokation) referenziert wie dieses SG8 SEQ+Z98 (Informative Daten der Marktlokation)
+145,Lieferant,SG10,CAV,,00123,,,,Muss [50],[50] Wenn kein SG8 SEQ+ZE7 (Informative Daten der Tranche) mit derselben Zeitraum-ID im DE1050 auf die gleiche Marktlokation-ID mit dem RFF+Z18 (Marktlokation) referenziert wie dieses SG8 SEQ+Z98 (Informative Daten der Marktlokation)
 146,Lieferant,SG10,CAV,7111,00123,Z89,,LF,X,
 147,Lieferant,SG10,CAV,1131,00123,,,MP-ID,X [611],"[611] Hinweis: Wenn das Unternehmen NB die Aufgaben der Marktrolle LF wahrnimmt, ist die MP-ID des Unternehmens NB in der Marktrolle LF anzugeben"
 148,Übertragungsnetzbetreib er,SG10,CAV,,00124,,,,Muss,
 149,Übertragungsnetzbetreib er,SG10,CAV,7111,00124,Z90,,ÜNB,X,
 150,Übertragungsnetzbetreib er,SG10,CAV,1131,00124,,,MP-ID,X,
-151,Messstellenbetreiber,SG10,CAV,,00125,,,,Muss [51],[51] Wenn nicht im selben SG8 SEQ+Z98 (Informative Daten der Marktlokation) mit der selben Zeitraum-ID im DE1050 auf die gleiche Marktlokation-ID mit dem RFF+Z18 (Marktlokation) referenziert wird die ID der Lokationsbündelstru ktur 9992 00000 0001 8 (Verbrauch ohne Messlokation (Pauschal)) im SG8 SEQ+Z78 (Referenz auf die Lokationsbündelstru ktur) RFF+Z31 im DE1154 vorhanden ist
+151,Messstellenbetreiber,SG10,CAV,,00125,,,,Muss [51],"[51] Wenn die Marktlokations-ID im SG8 RFF+Z18 derselben SG8 SEQ+Z98 (Informative Daten der Marktlokation) mit derselben Zeitraum-ID im DE1050 nicht auf ein SG8 SEQ+Z78 (Referenz auf die Lokationsbündelstru ktur) verweist, welches im SG8 RFF+Z31 (Referenz auf die Lokationsbündelstru ktur) den Code der Lokationsbündelstru ktur mit der ID 9992 00000 001 8 (Verbrauch ohne Messlokation (Pauschal)) vorhanden ist"
 152,Messstellenbetreiber,SG10,CAV,7111,00125,Z91,,MSB,X,
 153,Messstellenbetreiber,SG10,CAV,1131,00125,,,MP-ID,X,
 154,Messstellenbetreiber,SG10,CAV,7110,00125,Z39,,Grundzuständiger Messstellenbetreib er,X,

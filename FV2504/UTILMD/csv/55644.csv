@@ -104,13 +104,12 @@
 85,EDIFACT Struktur,SG10,CCI,7037,00091,ZF2,,Kein Steuerkanal vorhanden,X,
 86,EDIFACT Struktur,SG10,CCI,7037,,ZF3,,Steuerkanal vorhanden,X,
 87,OBIS-Daten der Netzlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
-[2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+[388] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben, wenn in diesem Zeitraum Blindarbeit bzw. - leistung an der Netzlokation zu erfassen ist."
 88,OBIS-Daten der Netzlokation,SG8,SEQ,,00099,,,,Muss,
 89,OBIS-Daten der Netzlokation,SG8,SEQ,1229,,ZA7,,Erwartete OBIS-Daten der Netzlokation,X [2P0..n],
 90,OBIS-Daten der Netzlokation,SG8,SEQ,1229,,ZA8,,Im System vorhandene OBIS- Daten der Netzlokation,X [3P0..n],
 91,OBIS-Daten der Netzlokation,SG8,SEQ,1050,00099,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
-[914] Format: Möglicher Wert: > 0
-[937] Format: keine"
+[914] Format: Möglicher"
 92,OBIS-Kennzahl der Netzlokation,SG8,PIA,,00101,,,,Muss,
 93,OBIS-Kennzahl der Netzlokation,SG8,PIA,4347,00101,5,,Produktidentifikation,X,
 94,OBIS-Kennzahl der Netzlokation,SG8,PIA,7140,00101,,,OBIS-Kennzahl der Netzlokation,X,
@@ -126,16 +125,14 @@
 103,Produkt-Daten der Netzlokation,SG8,SEQ,1229,,ZG8,,Erwartete Produkt-Daten der NeLo,X [2P0..n],
 104,Produkt-Daten der Netzlokation,SG8,SEQ,1229,,ZG9,,Im System vorhandene Produkt- Daten der NeLo,X [3P0..n],
 105,Produkt-Daten der Netzlokation,SG8,SEQ,1050,00106,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
-[914] Format: Möglicher Wert: > 0
-[937] Format: keine"
+[914] Format: Möglicher"
 106,Produkt-Daten der Netzlokation,SG8,PIA,,00108,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [445] Wenn in derselben SG8 (Produkt-Daten der Netzlokation) das SG10 CCI+11 (Details zum Produkt der Netzlokation) nicht vorhanden"
 107,Produkt-Daten der Netzlokation,SG8,PIA,4347,00108,5,,Produktidentifikation,X,
 108,Produkt-Daten der Netzlokation,SG8,PIA,7140,00108,,,Konfigurationsprodukt-Code,X [412],"[412] Es sind ausschließlich Konfigurationsprodukt-Codes der ""EDI@Energy Codeliste der Konfigurationen"" aus Kapitel 4.2 Konfigurationsprodukte Leistungskurvendefinition erlaubt"
 109,Produkt-Daten der Netzlokation,SG8,PIA,7143,00108,Z12,,Konfigurationsprodukt,X,
-110,Details zum Produkt der Netzlokation,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
-[444] Wenn in derselben SG8 (Produkt-Daten der Netzlokation) das PIA+5"
-111,EDIFACT Struktur,SG10,CCI,,00109,,,,X,
+110,Details zum Produkt der Netzlokation,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich 
+111,EDIFACT Struktur,SG10,CCI,,00109,,,,Muss,
 112,EDIFACT Struktur,SG10,CCI,7059,00109,11,,Produkt,X,
 113,EDIFACT Struktur,SG10,CCI,7037,00109,ZF6,,Kein Produkt zugeordnet,X,
 114,Zugeordnete Leistungskurvendefinition,SG10,,,,,,,Muss [190],[190] Wenn in derselben SG8 SEQ+Z60 (Produkt-Daten der Netzlokation)  PIA+5+9991000000721:Z12 vorhanden
@@ -146,9 +143,9 @@
 119,Auftraggebender Marktpartner,SG10,CCI,,00111,,,,Muss,
 120,Auftraggebender Marktpartner,SG10,CCI,7037,00111,ZB3,,Zugeordneter Marktpartner,X,
 121,Auftraggebender Marktpartner,SG10,CAV,,00112,,,,Muss,
-122,Auftraggebender Marktpartner,SG10,CAV,7111,00112,Z88,,NB,X,
-123,Auftraggebender Marktpartner,SG10,CAV,7111,,Z89,,LF,X,
-124,Auftraggebender Marktpartner,SG10,CAV,1131,00112,,,MP-ID,X,
+122,EDIFACT Struktur,SG10,CAV,7111,00112,Z88,,NB,X,
+123,EDIFACT Struktur,SG10,CAV,7111,,Z89,,LF,X,
+124,EDIFACT Struktur,SG10,CAV,1131,00112,,,MP-ID,X,
 125,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
 126,Produkt-Daten für Marktrolle relevant,SG10,CCI,,00113,,,,Muss,
 127,Produkt-Daten für Marktrolle relevant,SG10,CCI,7037,,ZA8,,NB,X,

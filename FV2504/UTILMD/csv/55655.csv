@@ -50,122 +50,125 @@
 42,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,,00035,,,,Muss,
 43,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9015,00035,7,,Transaktionsgrund,X,
 44,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZX6,,Änderung Daten der MaLo,X,
-45,Status der Antwort,SG4,STS,,00036,,,,Muss [301] ∧,[301] Wenn BGM+E03
-46,EDIFACT Struktur,SG4,STS,9015,00036,E01,,Status der Antwort,X,
-47,EDIFACT Struktur,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
-48,EDIFACT Struktur,SG4,STS,1131,00036,E_0412,,EBD Nr. E_0412,X,
-49,EDIFACT Struktur,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen"
-50,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
-51,Marktlokation,SG5,LOC,,00049,,,,Muss,
-52,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
-53,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-54,Prüfidentifikator,SG6,,,,,,,Muss,
-55,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
-56,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
-57,Prüfidentifikator,SG6,RFF,1154,,55655,,GPKE / Rückmeldung / Anfrage Daten der MaLo vom LF an MSB,X,
-58,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
-59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
-60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions-Referenznummer,X,
-61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
-62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
+45,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,00035,ZW3,,Erzeugende Marktlokation,X,
+46,Transaktionsgrund / Ergänzung / Transaktionsgrund befristete Anmeldung,SG4,STS,9013,,ZW4,,Verbrauchende Marktlokation,X,
+47,Status der Antwort EDIFACT Struktur,SG4,STS,,00036,,,,Muss [301] ∧ [2011],"[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+[2011] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 / Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"" / ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 (Referenz Vorgangsnummer (aus Anfragenachricht)) anzugeben"
+48,Status der Antwort EDIFACT Struktur,SG4,STS,9015,00036,E01,,Status der Antwort,X,
+49,Status der Antwort EDIFACT Struktur,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
+50,Status der Antwort EDIFACT Struktur,SG4,STS,1131,00036,E_0412,,EBD Nr. E_0412,X,
+51,Status der Antwort EDIFACT Struktur,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus"
+52,Marktlokation,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+53,Marktlokation,SG5,LOC,,00049,,,,Muss,
+54,Marktlokation,SG5,LOC,3227,00049,Z16,,Marktlokation,X,
+55,Marktlokation,SG5,LOC,3225,00049,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
+56,Prüfidentifikator,SG6,,,,,,,Muss,
+57,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
+58,Prüfidentifikator,SG6,RFF,1153,00056,Z13,,Prüfidentifikator,X,
+59,Prüfidentifikator,SG6,RFF,1154,,55655,,GPKE / Rückmeldung / Anfrage Daten der MaLo vom LF an MSB,X,
+60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
+61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
+62,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions-Referenznummer,X,
+63,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
+64,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
 [301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
 [315] Wenn BGM+Z88 (Datenclearing) vorhanden
 [707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
-63,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
-64,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
-65,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
-66,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
-67,EDIFACT Struktur,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
-68,EDIFACT Struktur,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
+65,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
+66,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
+67,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
+68,EDIFACT Struktur,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
+69,EDIFACT Struktur,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
+70,EDIFACT Struktur,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw.
 [127] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) ergibt
-[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt
-[914] Format: Möglicher Wert: > 0"
-69,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
-[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6 RFF+Z48/ Z55 (Verwendungszeitraum der"
-70,EDIFACT Struktur,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
-71,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-72,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
-73,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im"
-74,EDIFACT Struktur,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
-75,EDIFACT Struktur,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
-76,EDIFACT Struktur,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
-77,Termine der Marktlokation,SG6,,,,,,,Soll [8],[8] Wenn für Datenclearing
-78,EDIFACT Struktur,SG6,RFF,,00069,,,,Muss,
-79,EDIFACT Struktur,SG6,RFF,1153,,Z51,,Erwartete Termindaten der Marktlokation,X [2P0..n],
-80,EDIFACT Struktur,SG6,RFF,1153,,Z52,,Im System vorhandene Termindaten der Marktlokation,X [3P0..n],
-81,EDIFACT Struktur,SG6,RFF,1154,00069,,,ID der Marktlokation / Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[128] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z47/ Z54 (Verwendungszeitraum der Daten: Im System vorhandene Daten/ Im System keine Daten vorhanden) ergibt "
+71,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],"[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID ""1"" im DE1156 gekennzeichnet ist, muss das Datum in diesem DE2380 der direkt auf DTM+137 DE2380 (Nachrichtendatum) folgende Tag 0:00 Uhr oder ein älterer Tag als dieser 0:00 Uhr deutscher Zeit sein
+[134] Wenn dieses DTM+Z25 (Verwendung der Daten ab) nicht im SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) mit der Zeitraum ID ""1"" im DE1156 ist, muss das Datum dem DTM+Z26 (Verwendung der Daten bis) des SG6"
+72,EDIFACT Struktur,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
+73,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+74,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
+75,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der"
+76,EDIFACT Struktur,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
+77,EDIFACT Struktur,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
+78,EDIFACT Struktur,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
+79,Termine der Marktlokation,SG6,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+80,Termine der Marktlokation,SG6,RFF,,00069,,,,Muss,
+81,Termine der Marktlokation,SG6,RFF,1153,,Z51,,Erwartete Termindaten der Marktlokation,X [2P0..n],
+82,Termine der Marktlokation,SG6,RFF,1153,,Z52,,Im System vorhandene Termindaten der Marktlokation,X [3P0..n],
+83,Termine der Marktlokation,SG6,RFF,1154,00069,,,ID der Marktlokation / Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
 [914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-82,Turnusablesung des MSB,SG6,DTM,,00070,,,,Muss,
-83,Turnusablesung des MSB,SG6,DTM,2005,00070,752,,Turnusablesung,X,
-84,EDIFACT Struktur,SG6,DTM,2380,00070,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
-85,EDIFACT Struktur,SG6,DTM,2379,00070,104,,MMWW-MMWW,X,
-86,EDIFACT Struktur,SG6,DTM,2379,,106,,MMDD,X,
-87,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+84,Turnusablesung des MSB,SG6,DTM,,00070,,,,Muss,
+85,Turnusablesung des MSB,SG6,DTM,2005,00070,752,,Turnusablesung,X,
+86,Turnusablesung des MSB,SG6,DTM,2380,00070,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X,
+87,Turnusablesung des MSB,SG6,DTM,2379,00070,104,,MMWW-MMWW,X,
+88,Turnusablesung des MSB,SG6,DTM,2379,,106,,MMDD,X,
+89,OBIS-Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [2005] Segmentgruppe ist mindesten einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
-88,OBIS-Daten der Marktlokation,SG8,SEQ,,00195,,,,Muss,
-89,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,ZA1,,Erwartete OBIS-Daten der Marktlokation,X [2P0..n],
-90,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,ZA2,,Im System vorhandene OBIS- Daten der Marktlokation,X [3P0..n],
-91,OBIS-Daten der Marktlokation,SG8,SEQ,1050,00195,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
-[914] Format: Möglicher Wert: > 0 "
-92,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00197,,,,Muss,
-93,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00197,5,,Produktidentifikation,X,
-94,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00197,,,OBIS-Kennzahl der Marktlokation,X [314] ,[314] Es sind alle OBIS- Kennzahlen gem. Codeliste der OBIS-Kennzahlen und Medien Kapitel 3 anzugeben welche an der Marktlokation erforderlich sind. Der Mindestumfang der OBIS- Kennzahlen ergibt sich aus den genannten Messprodukt-Codes dem Kapitel 5.1 des Dokumentes Codeliste der Konfigurationen
-95,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00197,SRW,,OBIS-Kennzahl,X,
-96,Wertegranularität,SG10,,,,,,,Muss [257] ⊻ [288],"[257] Wenn in derselben SG8 SEQ (OBIS-Daten der Marktlokation) das PIA+5+1- b?:1.9.e vorhanden
-[288] Wenn in derselben SG8 (OBIS-Daten der Marktlokation) das PIA+5+1- b?:2.9.e vorhanden"
-97,Wertegranularität,SG10,CCI,,00198,,,,Muss,
-98,EDIFACT Struktur,SG10,CCI,7037,00198,ZE4,,Wertegranularität,X,
-99,Wertegranularität,SG10,CAV,,00199,,,,Muss,
-100,Wertegranularität,SG10,CAV,7111,00199,ZD9,,Jährlich,X,
-101,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
-102,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
-103,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
-104,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+90,OBIS-Daten der Marktlokation,SG8,SEQ,,00195,,,,Muss,
+91,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,ZA1,,Erwartete OBIS-Daten der Marktlokation,X [2P0..n],
+92,OBIS-Daten der Marktlokation,SG8,SEQ,1229,,ZA2,,Im System vorhandene OBIS- Daten der Marktlokation,X [3P0..n],
+93,OBIS-Daten der Marktlokation,SG8,SEQ,1050,00195,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[914] Format: Möglicher"
+94,OBIS-Kennzahl der Marktlokation,SG8,PIA,,00197,,,,Muss,
+95,OBIS-Kennzahl der Marktlokation,SG8,PIA,4347,00197,5,,Produktidentifikation,X,
+96,OBIS-Kennzahl der Marktlokation,SG8,PIA,7140,00197,,,OBIS-Kennzahl der Marktlokation,X [314] ,[314] Es sind alle OBIS- Kennzahlen gem. Codeliste der OBIS-Kennzahlen und Medien Kapitel 3 anzugeben welche an der Marktlokation erforderlich sind. Der Mindestumfang der OBIS- Kennzahlen ergibt sich aus den genannten Messprodukt-Codes dem Kapitel 5.1 des Dokumentes Codeliste der Konfigurationen
+97,OBIS-Kennzahl der Marktlokation,SG8,PIA,7143,00197,SRW,,OBIS-Kennzahl,X,
+98,Wertegranularität,SG10,,,,,,,Muss [257] ⊻ [288],"[257] Wenn in derselben SG8 SEQ (OBIS-Daten der Marktlokation) das PIA+5+1- b?:1.9.e vorhanden
+[288] Wenn in derselben SG8 (OBIS-Daten der Marktlokation) das PIA+5+1-"
+99,EDIFACT Struktur,SG10,CCI,,00198,,,,Muss,
+100,EDIFACT Struktur,SG10,CCI,7037,00198,ZE4,,Wertegranularität,X,
+101,Wertegranularität,SG10,CAV,,00199,,,,Muss,
+102,Wertegranularität,SG10,CAV,7111,00199,ZD9,,Jährlich,X,
+103,Wertegranularität,SG10,CAV,7111,,ZE8,,Halbjährlich,X,
+104,Wertegranularität,SG10,CAV,7111,,ZE9,,Quartalsweise,X,
+105,Wertegranularität,SG10,CAV,7111,,ZB7,,Monatlich,X,
+106,Zugeordnete Zählzeitdefinition,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [386] Wenn mehr als eine SG8 SEQ+Z02 (OBIS-Daten der Marktlokation) mit einer OBIS-Kennzahl für Energiemenge im PIA+5 vorhanden
-[387] Wenn in derselben SG8 (OBIS Daten der Marktlokation) eine OBIS- Kennzahl für Energiemenge im PIA+5 vorhanden und es sich lt. Codeliste OBIS um eine OBIS mit zugeordneter Zählzeit handelt (Tarif: e = 1 .. 62)"
-105,Zugeordnete Zählzeitdefinition,SG10,CCI,,00200,,,,Muss,
-106,EDIFACT Struktur,SG10,CCI,7059,00200,Z39,,Code der Zählzeitdefinition,X,
-107,EDIFACT Struktur,SG10,CCI,7037,00200,,,Code der Zählzeitdefinition,X,
-108,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
-109,Zugeordnetes Zählzeitregister ,SG10,CCI,,00201,,,,Muss,
-110,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00201,Z38,,Code des Zählzeitregisters,X,
-111,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00201,,,Code des Zählzeitregisters,X,
-112,OBIS Daten für Lieferant relevant,SG10,,,,,,,Muss,
-113,OBIS Daten für Lieferant relevant,SG10,CCI,,00204,,,,Muss,
-114,OBIS Daten für Lieferant relevant,SG10,CCI,7037,00204,ZA7,,LF,X,
-115,Verwendungszweck der Werte,SG10,CAV,,00205,,,,Muss,
-116,Verwendungszweck der Werte,SG10,CAV,7111,00205,Z84,,Netznutzungsabrechnung,X [29P0..1] ⊻ [30P0..1] ⊻ [32P0..1] ⊻ [36P0..1],
-117,Verwendungszweck der Werte,SG10,CAV,7111,,Z85,,Bilanzkreisabrechnung,X [31P1..1] ⊻ [32P1..1] ⊻ [33P1..1] ⊻ [34P1..1],
-118,Verwendungszweck der Werte,SG10,CAV,7111,,Z86,,Mehrmindermengenabrechnung,X [30P1..1] ⊻ [37P1..1],
-119,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [28P0..1] ⊻ [29P1..1] ⊻ [30P0..1] ⊻ [32P1..1] ⊻ [34P1..1] ⊻ [35P1..1] ⊻ [36P0..1] ⊻ [37P1..1],
-120,EDIFACT Struktur,SG10,CAV,7111,,ZE1,,Es liegt kein Verwendungszweck vor,X [38P1..1],
-121,Produkt-Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
-[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49"
-122,EDIFACT Struktur,SG8,SEQ,,00208,,,,Muss,
-123,EDIFACT Struktur,SG8,SEQ,1229,,ZB5,,Erwartete Produkt-Daten der Marktlokation,X [2P0..n],
-124,EDIFACT Struktur,SG8,SEQ,1229,,ZB6,,Im System vorhandene Produkt- Daten der Marktlokation,X [3P0..n],
-125,EDIFACT Struktur,SG8,SEQ,1050,00208,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
+[387] Wenn in derselben SG8 (OBIS Daten der Marktlokation) eine OBIS- Kennzahl für Energiemenge im PIA+5 vorhanden und es sich lt. Codeliste OBIS um eine OBIS mit zugeordneter Zählzeit handelt (Tarif: e = 1 .."
+107,EDIFACT Struktur,SG10,CCI,,00200,,,,Muss,
+108,EDIFACT Struktur,SG10,CCI,7059,00200,Z39,,Code der Zählzeitdefinition,X,
+109,EDIFACT Struktur,SG10,CCI,7037,00200,,,Code der Zählzeitdefinition,X,
+110,Zugeordnetes Zählzeitregister ,SG10,,,,,,,Muss [421],[421] Wenn in dieser SG8 das SG10 CCI+Z39 (Zugeordnete Zählzeitdefinition) vorhanden ist
+111,Zugeordnetes Zählzeitregister ,SG10,CCI,,00201,,,,Muss,
+112,Zugeordnetes Zählzeitregister ,SG10,CCI,7059,00201,Z38,,Code des Zählzeitregisters,X,
+113,Zugeordnetes Zählzeitregister ,SG10,CCI,7037,00201,,,Code des Zählzeitregisters,X,
+114,OBIS Daten für Lieferant relevant,SG10,,,,,,,Muss,
+115,OBIS Daten für Lieferant relevant,SG10,CCI,,00204,,,,Muss,
+116,OBIS Daten für Lieferant relevant,SG10,CCI,7037,00204,ZA7,,LF,X,
+117,Verwendungszweck der Werte,SG10,CAV,,00205,,,,Muss,
+118,Verwendungszweck der Werte,SG10,CAV,7111,00205,Z84,,Netznutzungsabrechnung,X [39P0..1] ⊻ [40P0..1] ⊻ [42P0..1] ⊻ [46P0..1],
+119,Verwendungszweck der Werte,SG10,CAV,7111,,Z85,,Bilanzkreisabrechnung,X [41P1..1] ⊻ [42P1..1] ⊻ [43P1..1] ⊻ [44P1..1],
+120,Verwendungszweck der Werte,SG10,CAV,7111,,Z86,,Mehrmindermengenabrechnung,X [40P1..1] ⊻ [47P1..1],
+121,Verwendungszweck der Werte,SG10,CAV,7111,,Z47,,Endkundenabrechnung,X [28P0..1] ⊻ [39P1..1] ⊻ [40P0..1] ⊻ [42P1..1] ⊻ [44P1..1] ⊻ [45P1..1] ⊻,
+122,EDIFACT Struktur,SG10,CAV,7111,,ZE1,,Es liegt kein Verwendungszweck vor,X [38P1..1],
+123,Produkt-Daten der Marktlokation,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[2004] Segmentgruppe ist genau einmal für jede"
+124,EDIFACT Struktur,SG8,SEQ,,00208,,,,Muss,
+125,EDIFACT Struktur,SG8,SEQ,1229,,ZB5,,Erwartete Produkt-Daten der Marktlokation,X [2P0..n],
+126,EDIFACT Struktur,SG8,SEQ,1229,,ZB6,,Im System vorhandene Produkt- Daten der Marktlokation,X [3P0..n],
+127,EDIFACT Struktur,SG8,SEQ,1050,00208,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
 [914] Format: Möglicher Wert: > 0
 [937] Format: keine Nachkommastelle"
-126,Produkt-Daten der Marktlokation,SG8,PIA,,00210,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
-[112] Wenn in derselben SG8 SEQ+Z59 (Produkt-Daten der Marktlokation) das SG10 CCI+11 (Details zum Produkt"
-127,EDIFACT Struktur,SG8,PIA,4347,00210,5,,Produktidentifikation,X,
-128,EDIFACT Struktur,SG8,PIA,7140,00210,,,Produkt-/Leistungsnummer,X,
-129,EDIFACT Struktur,SG8,PIA,7143,00210,Z12,,Konfigurationsprodukt,X,
-130,Details zum Produkt der Marktlokation,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+128,Produkt-Daten der Marktlokation,SG8,PIA,,00210,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
+[112] Wenn in derselben SG8 SEQ+Z59 (Produkt-Daten der"
+129,EDIFACT Struktur,SG8,PIA,4347,00210,5,,Produktidentifikation,X,
+130,EDIFACT Struktur,SG8,PIA,7140,00210,,,Produkt-/Leistungsnummer,X,
+131,EDIFACT Struktur,SG8,PIA,7143,00210,Z12,,Konfigurationsprodukt,X,
+132,Details zum Produkt der Marktlokation,SG10,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
 [111] Wenn in derselben SG8 SEQ+Z59 (Produkt-Daten der Marktlokation) das PIA+5 (Produkt-Daten der Marktlokation) nicht vorhanden"
-131,Details zum Produkt der Marktlokation,SG10,CCI,,00211,,,,Muss,
-132,Details zum Produkt der Marktlokation,SG10,CCI,7059,00211,11,,Produkt,X,
-133,Details zum Produkt der Marktlokation,SG10,CCI,7037,00211,ZF6,,Kein Produkt zugeordnet,X,
-134,Zugeordnete Definition,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-135,Zugeordnete Definition,SG10,CCI,,00212,,,,Muss,
-136,Zugeordnete Definition,SG10,CCI,7059,00212,Z53,,Code der Leistungskurvendefinition,X,
-137,Zugeordnete Definition,SG10,CCI,7037,00212,,,Code der Definition,X,
-138,Produkt-Daten für Marktrolle relevant,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
-139,EDIFACT Struktur,SG10,CCI,,00213,,,,Muss,
-140,EDIFACT Struktur,SG10,CCI,7037,,ZA7,,LF,X,
-141,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
-142,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
-143,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,
+133,Details zum Produkt der Marktlokation,SG10,CCI,,00211,,,,Muss,
+134,Details zum Produkt der Marktlokation,SG10,CCI,7059,00211,11,,Produkt,X,
+135,Details zum Produkt der Marktlokation,SG10,CCI,7037,00211,ZF6,,Kein Produkt zugeordnet,X,
+136,Zugeordnete Definition,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+137,Zugeordnete Definition,SG10,CCI,,00212,,,,Muss,
+138,Zugeordnete Definition,SG10,CCI,7059,00212,Z53,,Code der Leistungskurvendefinition,X,
+139,Zugeordnete Definition,SG10,CCI,7037,00212,,,Code der Definition,X,
+140,Produkt-Daten für Marktrolle relevant EDIFACT Struktur,SG10,,,,,,,Soll [8],[8] Wenn für Datenclearing erforderlich
+141,Produkt-Daten für Marktrolle relevant EDIFACT Struktur,SG10,CCI,,00213,,,,Muss,
+142,Produkt-Daten für Marktrolle relevant EDIFACT Struktur,SG10,CCI,7037,,ZA7,,LF,X,
+143,Nachrichten-Endesegment,,UNT,,00526,,,,Muss,
+144,Nachrichten-Endesegment,,UNT,0074,00526,,,Anzahl der Segmente in einer Nachricht,X,
+145,Nachrichten-Endesegment,,UNT,0062,00526,,,Nachrichten-Referenznummer,X,

@@ -55,9 +55,9 @@
 47,EDIFACT Struktur,SG4,STS,9013,00036,,,Code des Prüfschritts,X,
 48,EDIFACT Struktur,SG4,STS,1131,00036,E_0412,,EBD Nr. E_0412,X,
 49,EDIFACT Struktur,SG4,STS,9012,00036,,,Zeitraum-ID aus der Änderungsmeldung des Verantwortlichen,X [914] ∧ [937] ∧ [44],"[44] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: ""Gültige Daten"", ""Keine Daten"") aus der Anfragennachricht aus SG6 RFF+TN DE1154 ((Referenz Vorgangsnummer (aus Anfragenachricht)) einzutragen"
-50,Tranche,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang)
-51,EDIFACT Struktur,SG5,LOC,,00053,,,,Muss,
-52,EDIFACT Struktur,SG5,LOC,3227,00053,Z21,,Tranche,X,
+50,Tranche,SG5,,,,,,,Muss [2061],[2061] Segment bzw. Segmentgruppe ist genau einmal je SG4 IDE (Vorgang) anzugeben
+51,Tranche,SG5,LOC,,00053,,,,Muss,
+52,Tranche,SG5,LOC,3227,00053,Z21,,Tranche,X,
 53,EDIFACT Struktur,SG5,LOC,3225,00053,,,ID der Tranche,X [950],[950] Format: Marktlokations-ID
 54,Prüfidentifikator,SG6,,,,,,,Muss,
 55,Prüfidentifikator,SG6,RFF,,00056,,,,Muss,
@@ -66,29 +66,30 @@
 58,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,,,,,,,Muss [301],[301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
 59,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,,00057,,,,Muss,
 60,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1153,00057,TN,,Transaktions-Referenznummer,X,
-61,EDIFACT Struktur,SG6,RFF,1154,00057,,,Vorgangsnummer,X,
-62,Verwendungszeitraum der Daten,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
+61,Referenz Vorgangsnummer (aus Anfragenachricht),SG6,RFF,1154,00057,,,Vorgangsnummer,X,
+62,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,,,,,,,Muss [315] ∧ [707] Soll [8] ∧ [301] ∧ [707],"[8] Wenn für Datenclearing erforderlich
 [301] Wenn BGM+E03 (Änderungsmeldung) vorhanden
 [315] Wenn BGM+Z88 (Datenclearing) vorhanden
 [707] Hinweis: für weitere Details siehe Kapitel 5.3.3 ""SG6 Verwendungszeitraum der Daten"""
-63,Verwendungszeitraum der Daten,SG6,RFF,,00066,,,,Muss,
-64,Verwendungszeitraum der Daten,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
-65,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
-66,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
-67,Verwendungszeitraum der Daten,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
-68,Verwendungszeitraum der Daten,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das"
-69,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab)
+63,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,,00066,,,,Muss,
+64,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,1153,00066,Z47,,Im System vorhandene Daten,X [5P0..n],
+65,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,1153,,Z48,,Erwartete Daten,X [2P0..n],
+66,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,1153,,Z54,,Im System keine Daten vorhanden,X [4P0..n],
+67,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,1153,,Z55,,Keine Daten erwartet,X [2P0..n],
+68,Verwendungszeitraum der Daten EDIFACT Struktur,SG6,RFF,1156,00066,,,Zeitraum-ID,X [914] ∧ [937] [127] ⊻ [128],"[126] Es ist der Wert einzutragen, der sich aus der Wiederholungshäufigkeit des SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) ergibt. Bedeutet: Das erste SG6 RFF+Z49/ Z53 hat somit die „1“, das zweite die „2“, das dritte die „3“ usw. "
+69,Verwendung der Daten ab,SG6,DTM,,00067,,,,Muss [131] ⊻ [134] ⊻ [135],[131] Wenn dieses DTM+Z25 (Verwendung der Daten ab) im SG6 RFF (Verwendungszeitraum der Daten) mit der Zeitraum ID
 70,EDIFACT Struktur,SG6,DTM,2005,00067,Z25,,Verwendung der Daten ab,X,
 71,EDIFACT Struktur,SG6,DTM,2380,00067,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 72,EDIFACT Struktur,SG6,DTM,2379,00067,303,,CCYYMMDDHHMMZZZ,X,
 73,Verwendung der Daten bis,SG6,DTM,,00068,,,,Muss [472] ⊻ [473],"[471] Wenn im selben SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) im DE1156 (Zeitraum- ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z49/ Z53 (Verwendungszeitraum der Daten: Gültige Daten/ Keine Daten) DE1156 (Zeitraum-ID)
-[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)"
+[472] Wenn im selben SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) im DE1156 (Zeitraum-ID) eine Zeitraum ID genannt ist, die kleiner ist als in einem anderen SG6 RFF+Z48/ Z55 (Verwendungszeitraum der Daten: Erwartete Daten/ Keine Daten erwartet) DE1156 (Zeitraum-ID)
+[473] Wenn im selben SG6 RFF+Z47/ Z54"
 74,EDIFACT Struktur,SG6,DTM,2005,00068,Z26,,Verwendung der Daten bis,X,
 75,EDIFACT Struktur,SG6,DTM,2380,00068,,,"Datum oder Uhrzeit oder Zeitspanne, Wert",X [UB1],
 76,EDIFACT Struktur,SG6,DTM,2379,00068,303,,CCYYMMDDHHMMZZZ,X,
 77,OBIS-Daten der Tranche,SG8,,,,,,,Soll [8],"[8] Wenn für Datenclearing erforderlich
-[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"")"
-78,EDIFACT Struktur,SG8,SEQ,,00247,,,,Muss,
+[2004] Segmentgruppe ist genau einmal für jede Zeitraum-ID aus dem DE1156 der SG6 RFF+Z49 (Verwendungszeitraum der Daten: ""Gültige Daten"") anzugeben"
+78,OBIS-Daten der Tranche,SG8,SEQ,,00247,,,,Muss,
 79,EDIFACT Struktur,SG8,SEQ,1229,,Z99,,Erwartete OBIS-Daten der Tranche,X [2P0..n],
 80,EDIFACT Struktur,SG8,SEQ,1229,,ZA0,,Im System vorhandene OBIS- Daten der Tranche,X [3P0..n],
 81,EDIFACT Struktur,SG8,SEQ,1050,00247,,,Referenz auf Zeitraum-ID,X [914] ∧ [937] [22],"[22] Es ist die Zeitraum-ID vom DE1156 aus einem passenden SG6 RFF+Z47/ Z48/ Z49 (Verwendungszeitraum der Daten) einzutragen
@@ -97,7 +98,7 @@
 82,OBIS-Kennzahl der Tranche,SG8,PIA,,00249,,,,Muss,
 83,OBIS-Kennzahl der Tranche,SG8,PIA,4347,00249,5,,Produktidentifikation,X,
 84,OBIS-Kennzahl der Tranche,SG8,PIA,7140,00249,,,OBIS-Kennzahl der Tranche,X [269],[269] Es sind alle OBIS- Kennzahlen gem. EDI@Energy Codeliste der OBIS-Kennzahlen und Medien für den deutschen Energiemarkt Kap.3 anzugeben welche an der Tranche erforderlich sind
-85,EDIFACT Struktur,SG8,PIA,7143,00249,SRW,,OBIS-Kennzahl,X,
+85,OBIS-Kennzahl der Tranche,SG8,PIA,7143,00249,SRW,,OBIS-Kennzahl,X,
 86,OBIS Daten für Lieferant relevant,SG10,,,,,,,Muss,
 87,OBIS Daten für Lieferant relevant,SG10,CCI,,00252,,,,Muss,
 88,OBIS Daten für Lieferant relevant,SG10,CCI,7037,00252,ZA7,,LF,X,
