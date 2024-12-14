@@ -56,94 +56,89 @@
 49,Meldepunkt,SG2,NAD,3035,00026,,,,DP,
 50,Meldepunkt,SG2,LOC,,00027,,,,Muss,
 51,Meldepunkt,SG2,LOC,3227,00027,,,,172,
-52,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X ([951] [522]) ⊻ ([922] [566] ∧ [492]) ⊻ ([960] [552] ∧ [492]),"[492] wenn MP-ID in NAD+MR aus Sparte Strom
+52,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X ([951] [522]) ⊻ ([961] [553] ∧ [492]) ⊻ ([960] [552] ∧ [492]),"[492] wenn MP-ID in NAD+MR aus Sparte Strom
 [522] Hinweis: Verwendung der ID der Messlokation
 [552] Hinweis: Verwendung der ID der Netzlokation
-[566] Hinweis: Verwendung der ID der Technischen Ressource
-[922] Format: TR-ID
+[553] Hinweis: Verwendung der ID der Steuerbaren Ressource
 [951] Format: Zählpunktbezeichnung
-[960] Format: Netzlokations-ID"
+[960] Format: Netzlokations-ID
+[961] Format: SR-ID"
 53,Referenz auf ID der Marktlokation,SG3,,,,,,,Muss [152] ,"[152] Wenn in SG29 LIN (Erforderliches Produkt der Messlokation) das PIA+5 DE7140 mit einem Produkt-Code vorhanden ist der in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" in der ""Spalte Bezeichnung"" mit dem Wert ""weitere Energieflussrichtung"" vorhanden ist."
 54,Referenz auf ID der Marktlokation,SG3,RFF,,00028,,,,Muss,
 55,Referenz auf ID der Marktlokation,SG3,RFF,1153,00028,Z18,,Marktlokation,X,
 56,Referenz auf ID der Marktlokation,SG3,RFF,1154,00028,,,ID der Marktlokation,X [950],[950] Format: Marktlokations-ID
-57,Referenz auf ID der Steuerbaren Ressource,SG3,,,,,,,Muss [143],[143] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Technischen Ressource angegeben ist
-58,Referenz auf ID der Steuerbaren Ressource,SG3,RFF,,00030,,,,Muss,
-59,Referenz auf ID der Steuerbaren Ressource,SG3,RFF,1153,00030,Z38,,Steuerbare Ressource,X,
-60,Referenz auf ID der Steuerbaren Ressource,SG3,RFF,1154,00030,,,ID der Steuerbaren Ressource,X [961] [553],"[553] Hinweis: Verwendung der ID der Steuerbaren Ressource
-[961] Format: SR-ID"
-61,Referenz auf ID der Technischen Ressource,SG3,,,,,,,Soll [2066] ∧ [143] ,"[143] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Technischen Ressource angegeben ist
-[2066] Die SG3 RFF+Z37 Referenz auf ID der Technischen Ressource ist so oft zu wiederholen, bis alle IDs der Technischen Ressourcen angegeben sind, die zusätzlich zur Technischen Ressource in LOC+172 DE3225, die der Steuerbaren Ressource in SG3 RFF+Z38 Referenz auf ID der Steuerbaren Ressource, DE1154 mit diesem Vorgang zugeordnet werden sollen genannt sind."
-62,Referenz auf ID der Technischen Ressource,SG3,RFF,,00031,,,,Muss,
-63,Referenz auf ID der Technischen Ressource,SG3,RFF,1153,00031,Z37,,Technische Ressource,X,
-64,Referenz auf ID der Technischen Ressource,SG3,RFF,1154,00031,,,ID der Technischen Ressource,X [922] [566],"[566] Hinweis: Verwendung der ID der Technischen Ressource
+57,Referenz auf ID der Technischen Ressource,SG3,,,,,,,Soll [2066] ∧ [143] ,"[143] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist
+[2066] Die SG3 RFF+Z37 Referenz auf ID der Technischen Ressource ist so oft zu wiederholen, bis alle IDs der Technischen Ressourcen angegeben sind, die der Steuerbaren Ressource in LOC+172 DE3225 (Meldepunkt) mit diesem Vorgang zugeordnet werden sollen genannt sind."
+58,Referenz auf ID der Technischen Ressource,SG3,RFF,,00031,,,,Muss,
+59,Referenz auf ID der Technischen Ressource,SG3,RFF,1153,00031,Z37,,Technische Ressource,X,
+60,Referenz auf ID der Technischen Ressource,SG3,RFF,1154,00031,,,ID der Technischen Ressource,X [922] [566],"[566] Hinweis: Verwendung der ID der Technischen Ressource
 [922] Format: TR-ID"
-65,Kunde des Lieferanten,SG2,,,,,,,Kann [6] ∧ [570],"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
+61,Kunde des Lieferanten,SG2,,,,,,,Kann [6] ∧ [570],"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
 [570] Hinweis: zur Angabe von Kontaktdaten des Kunden des Lieferanten um die Änderung an der Technik zu vereinfachen."
-66,Kunde des Lieferanten,SG2,NAD,,00036,,,,Muss,
-67,Kunde des Lieferanten,SG2,NAD,3035,00036,,,,Z09,
-68,Kontaktdaten des Kunden,SG5,,,,,,,Muss,
-69,Kontaktdaten des Kunden,SG5,CTA,,00038,,,,Muss,
-70,Kontaktdaten des Kunden,SG5,CTA,3139,00038,,,,IC,
-71,Kontaktdaten des Kunden,SG5,CTA,3412,00038,,,Kontakt,X,
-72,Kommunikationsverbindung,SG5,COM,,00039,,,,Muss,
-73,Kommunikationsverbindung,SG5,COM,3148,00039,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+62,Kunde des Lieferanten,SG2,NAD,,00036,,,,Muss,
+63,Kunde des Lieferanten,SG2,NAD,3035,00036,,,,Z09,
+64,Kontaktdaten des Kunden,SG5,,,,,,,Muss,
+65,Kontaktdaten des Kunden,SG5,CTA,,00038,,,,Muss,
+66,Kontaktdaten des Kunden,SG5,CTA,3139,00038,,,,IC,
+67,Kontaktdaten des Kunden,SG5,CTA,3412,00038,,,Kontakt,X,
+68,Kommunikationsverbindung,SG5,COM,,00039,,,,Muss,
+69,Kommunikationsverbindung,SG5,COM,3148,00039,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
 [148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
 [567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
 [939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
 [940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
-74,Kommunikationsverbindung,SG5,COM,3155,00039,EM,,E-Mail,X [1P0..1],
-75,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
-76,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
-77,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
-78,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
-79,MSB der Marktlokation,SG2,,,,,,,Muss [152],"[152] Wenn in SG29 LIN (Erforderliches Produkt der Messlokation) das PIA+5 DE7140 mit einem Produkt-Code vorhanden ist der in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" in der ""Spalte Bezeichnung"" mit dem Wert ""weitere Energieflussrichtung"" vorhanden ist."
-80,MSB der Marktlokation,SG2,NAD,,00048,,,,Muss [571],"[571] Hinweis: MSB der Marktlokation, an den die Werte der weiteren Energieflussrichtung der Messlokation zu übermitteln sind."
-81,MSB der Marktlokation,SG2,NAD,3035,00048,,,,DEB,
-82,MSB der Marktlokation,SG2,NAD,3039,00048,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-83,MSB der Marktlokation,SG2,NAD,3055,00048,9,,GS1,X,
-84,MSB der Marktlokation,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
-85,Erforderliches Produkt der Messlokation,SG29,,,,,,,Muss [2095] ∧ [131],"[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist
+70,Kommunikationsverbindung,SG5,COM,3155,00039,EM,,E-Mail,X [1P0..1],
+71,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
+72,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
+73,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
+74,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
+75,MSB der Marktlokation,SG2,,,,,,,Muss [152],"[152] Wenn in SG29 LIN (Erforderliches Produkt der Messlokation) das PIA+5 DE7140 mit einem Produkt-Code vorhanden ist der in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" in der ""Spalte Bezeichnung"" mit dem Wert ""weitere Energieflussrichtung"" vorhanden ist."
+76,MSB der Marktlokation,SG2,NAD,,00048,,,,Muss [571],"[571] Hinweis: MSB der Marktlokation, an den die Werte der weiteren Energieflussrichtung der Messlokation zu übermitteln sind."
+77,MSB der Marktlokation,SG2,NAD,3035,00048,,,,DEB,
+78,MSB der Marktlokation,SG2,NAD,3039,00048,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+79,MSB der Marktlokation,SG2,NAD,3055,00048,9,,GS1,X,
+80,MSB der Marktlokation,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
+81,Erforderliches Produkt der Messlokation,SG29,,,,,,,Muss [2095] ∧ [131],"[131] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Messlokation angegeben ist
 [2095] Diese SG29 ist so oft zu wiederholen, dass alle Produkte zur Lokation die ab dem DTM+203 (Ausführungsdatum) gewünscht sind und deren Kombination gemäß Codeliste der Konfigurationen Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation""möglich sind, genannt sind."
-86,Erforderliches Produkt der Messlokation,SG29,LIN,,00093,,,,Muss,
-87,Erforderliches Produkt der Messlokation,SG29,LIN,1082,00093,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-88,Erforderliches Produkt der Messlokation,SG29,LIN,1229,00093,Messlokation,,,Z19,
-89,Erforderliches Produkt der Messlokation,SG29,PIA,,00094,,,,Muss,
-90,Erforderliches Produkt der Messlokation,SG29,PIA,4347,00094,,,,5,
-91,Erforderliches Produkt der Messlokation,SG29,PIA,7140,00094,,,Produkt-Code,X [153] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
+82,Erforderliches Produkt der Messlokation,SG29,LIN,,00093,,,,Muss,
+83,Erforderliches Produkt der Messlokation,SG29,LIN,1082,00093,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+84,Erforderliches Produkt der Messlokation,SG29,LIN,1229,00093,Messlokation,,,Z19,
+85,Erforderliches Produkt der Messlokation,SG29,PIA,,00094,,,,Muss,
+86,Erforderliches Produkt der Messlokation,SG29,PIA,4347,00094,,,,5,
+87,Erforderliches Produkt der Messlokation,SG29,PIA,7140,00094,,,Produkt-Code,X [153] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
 [7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden
 [153] Es sind nur die Produkt- Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Ebene"" mit dem Wert ""Messlokation"" vorhanden sind.
 [156] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""NB"" gekennzeichnet ist.
 [157] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""LF"" gekennzeichnet ist."
-92,Erforderliches Produkt der Messlokation,SG29,PIA,7143,00094,Z11,,Produkt,X,
-93,Erforderliches Produkt der Netzlokation,SG29,,,,,,,Muss [2095] ∧ [132],"[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist
+88,Erforderliches Produkt der Messlokation,SG29,PIA,7143,00094,Z11,,Produkt,X,
+89,Erforderliches Produkt der Netzlokation,SG29,,,,,,,Muss [2095] ∧ [132],"[132] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Netzlokation angegeben ist
 [2095] Diese SG29 ist so oft zu wiederholen, dass alle Produkte zur Lokation die ab dem DTM+203 (Ausführungsdatum) gewünscht sind und deren Kombination gemäß Codeliste der Konfigurationen Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation""möglich sind, genannt sind."
-94,Erforderliches Produkt der Netzlokation,SG29,LIN,,00100,,,,Muss,
-95,Erforderliches Produkt der Netzlokation,SG29,LIN,1082,00100,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-96,Erforderliches Produkt der Netzlokation,SG29,LIN,1229,00100,Netzlokation,,,Z55,
-97,Erforderliches Produkt der Netzlokation,SG29,PIA,,00101,,,,Muss,
-98,Erforderliches Produkt der Netzlokation,SG29,PIA,4347,00101,,,,5,
-99,Erforderliches Produkt der Netzlokation,SG29,PIA,7140,00101,,,Produkt-Code,X [154] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
+90,Erforderliches Produkt der Netzlokation,SG29,LIN,,00100,,,,Muss,
+91,Erforderliches Produkt der Netzlokation,SG29,LIN,1082,00100,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+92,Erforderliches Produkt der Netzlokation,SG29,LIN,1229,00100,Netzlokation,,,Z55,
+93,Erforderliches Produkt der Netzlokation,SG29,PIA,,00101,,,,Muss,
+94,Erforderliches Produkt der Netzlokation,SG29,PIA,4347,00101,,,,5,
+95,Erforderliches Produkt der Netzlokation,SG29,PIA,7140,00101,,,Produkt-Code,X [154] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
 [7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden
 [154] Es sind nur die Produkt- Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Ebene"" mit dem Wert ""Netzlokation"" vorhanden sind.
 [156] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""NB"" gekennzeichnet ist.
 [157] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""LF"" gekennzeichnet ist."
-100,Erforderliches Produkt der Netzlokation,SG29,PIA,7143,00101,Z11,,Produkt,X,
-101,Erforderliches Produkt der Technischen Ressource,SG29,,,,,,,Muss [2095] ∧ [143],"[143] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Technischen Ressource angegeben ist
+96,Erforderliches Produkt der Netzlokation,SG29,PIA,7143,00101,Z11,,Produkt,X,
+97,Erforderliches Produkt der Steuerbaren Ressource,SG29,,,,,,,Muss [2095] ∧ [143],"[143] Wenn in LOC+172 DE3225 (Meldepunkt) die ID einer Steuerbaren Ressource angegeben ist
 [2095] Diese SG29 ist so oft zu wiederholen, dass alle Produkte zur Lokation die ab dem DTM+203 (Ausführungsdatum) gewünscht sind und deren Kombination gemäß Codeliste der Konfigurationen Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation""möglich sind, genannt sind."
-102,Erforderliches Produkt der Technischen Ressource,SG29,LIN,,00106,,,,Muss,
-103,Erforderliches Produkt der Technischen Ressource,SG29,LIN,1082,00106,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
-104,Erforderliches Produkt der Technischen Ressource,SG29,LIN,1229,00106,Technischen Ressource,,,Z91,
-105,Erforderliches Produkt der Technischen Ressource,SG29,PIA,,00107,,,,Muss,
-106,Erforderliches Produkt der Technischen Ressource,SG29,PIA,4347,00107,,,,5,
-107,Erforderliches Produkt der Technischen Ressource,SG29,PIA,7140,00107,,,Produkt-Code,X [155] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
+98,Erforderliches Produkt der Steuerbaren Ressource,SG29,LIN,,00106,,,,Muss,
+99,Erforderliches Produkt der Steuerbaren Ressource,SG29,LIN,1082,00106,,,Positionsnummer,X [903],[903] Format: Möglicher Wert: 1
+100,Erforderliches Produkt der Steuerbaren Ressource,SG29,LIN,1229,00106,Steuerbaren Ressource,,,Z56,
+101,Erforderliches Produkt der Steuerbaren Ressource,SG29,PIA,,00107,,,,Muss,
+102,Erforderliches Produkt der Steuerbaren Ressource,SG29,PIA,4347,00107,,,,5,
+103,Erforderliches Produkt der Steuerbaren Ressource,SG29,PIA,7140,00107,,,Produkt-Code,X [155] ∧ (([6] ∧ [157]) ⊻ ([7] ∧ [156])),"[6] Wenn MP-ID in SG2 NAD+MS mit Rolle LF vorhanden
 [7] Wenn MP-ID in SG2 NAD+MS mit Rolle NB vorhanden
-[155] Es sind nur die Produkt- Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Ebene"" mit dem Wert ""Technische Ressource"" vorhanden sind.
+[155] Es sind nur die Produkt- Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Ebene"" mit dem Wert ""Steuerbare Ressource"" vorhanden sind.
 [156] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""NB"" gekennzeichnet ist.
 [157] Es sind weiterhin nur die Produkt-Codes erlaubt, die in der Codeliste der Konfigurationen im Kapitel 7 ""Produkte zur Bestellung einer Änderung an einer Lokation"" die in der Spalte ""Produkt gegenüber MSB von Marktrolle bestellbar"" mit einem ""X"" in der Spalte ""LF"" gekennzeichnet ist."
-108,Erforderliches Produkt der Technischen Ressource,SG29,PIA,7143,00107,Z11,,Produkt,X,
-109,Abschnitts-Kontrollsegment,,UNS,,00136,,,,Muss,
-110,Abschnitts-Kontrollsegment,,UNS,0081,00136,und Summenteil,,,S,
-111,Nachrichten-Endesegment,,UNT,,00137,,,,Muss,
-112,Nachrichten-Endesegment,,UNT,0074,00137,,,Anzahl der Segmente in einer Nachricht,X,
-113,Nachrichten-Endesegment,,UNT,0062,00137,,,Nachrichten-Referenznummer,X,
+104,Erforderliches Produkt der Steuerbaren Ressource,SG29,PIA,7143,00107,Z11,,Produkt,X,
+105,Abschnitts-Kontrollsegment,,UNS,,00136,,,,Muss,
+106,Abschnitts-Kontrollsegment,,UNS,0081,00136,und Summenteil,,,S,
+107,Nachrichten-Endesegment,,UNT,,00137,,,,Muss,
+108,Nachrichten-Endesegment,,UNT,0074,00137,,,Anzahl der Segmente in einer Nachricht,X,
+109,Nachrichten-Endesegment,,UNT,0062,00137,,,Nachrichten-Referenznummer,X,
