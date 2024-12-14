@@ -5,7 +5,7 @@
 3,Nachrichten-Kopfsegment,,UNH,0052,00001,D,,Entwurfs-Version,X,
 4,Nachrichten-Kopfsegment,,UNH,0054,00001,09B,,Ausgabe 2009 - B,X,
 5,Nachrichten-Kopfsegment,,UNH,0051,00001,UN,,UN/CEFACT,X,
-6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.3,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
+6,Nachrichten-Kopfsegment,,UNH,0057,00001,1.4,,Versionsnummer der zugrundeliegenden BDEW- Nachrichtenbeschreibung,X,
 7,Beginn der Nachricht,,BGM,,00002,,,,Muss,
 8,Beginn der Nachricht,,BGM,1001,00002,7,,Prozessdatenbericht,X,
 9,Beginn der Nachricht,,BGM,1001,,Z14,,Stammdaten der Markt- oder Messlokation,X,
@@ -26,43 +26,47 @@
 23,Produkt-/ Leistungsbeschreibung,,IMD,7081,00009,Z11,,Lastgangdaten,X,
 24,Produkt-/ Leistungsbeschreibung,,IMD,7081,,Z12,,Zählerstände,X,
 25,Prüfidentifikator,SG1,,,,,,,Muss,
-26,Prüfidentifikator,SG1,RFF,,00019,,,,Muss,
-27,Prüfidentifikator,SG1,RFF,1153,00019,Z13,,Prüfidentifikator,X,
-28,Prüfidentifikator,SG1,RFF,1154,00019,17301,,Anforderung Abo,X,
+26,Prüfidentifikator,SG1,RFF,,00020,,,,Muss,
+27,Prüfidentifikator,SG1,RFF,1153,00020,Z13,,Prüfidentifikator,X,
+28,Prüfidentifikator,SG1,RFF,1154,00020,17301,,Anforderung Abo,X,
 29,MP-ID Absender,SG2,,,,,,,Muss,
-30,MP-ID Absender,SG2,NAD,,00020,,,,Muss,
-31,MP-ID Absender,SG2,NAD,3035,00020,Nachrichtenaussteller bzw. -absender,,,MS,
-32,MP-ID Absender,SG2,NAD,3039,00020,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-33,MP-ID Absender,SG2,NAD,3055,00020,9,,GS1,X,
+30,MP-ID Absender,SG2,NAD,,00021,,,,Muss,
+31,MP-ID Absender,SG2,NAD,3035,00021,Nachrichtenaussteller bzw. -absender,,,MS,
+32,MP-ID Absender,SG2,NAD,3039,00021,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+33,MP-ID Absender,SG2,NAD,3055,00021,9,,GS1,X,
 34,Ansprechpartner,SG5,,,,,,,Kann,
-35,Ansprechpartner,SG5,CTA,,00021,,,,Muss,
-36,Ansprechpartner,SG5,CTA,3139,00021,,,,IC,
-37,Ansprechpartner,SG5,CTA,3412,00021,,,Kontakt,X,
-38,Kommunikationsverbindung,SG5,COM,,00022,,,,Muss,
-39,Kommunikationsverbindung,SG5,COM,3148,00022,,,"Kommunikationsadresse, Identifikation",X,
-40,Kommunikationsverbindung,SG5,COM,3155,00022,EM,,Elektronische Post,X [1P0..1],
+35,Ansprechpartner,SG5,CTA,,00022,,,,Muss,
+36,Ansprechpartner,SG5,CTA,3139,00022,,,,IC,
+37,Ansprechpartner,SG5,CTA,3412,00022,,,Kontakt,X,
+38,Kommunikationsverbindung,SG5,COM,,00023,,,,Muss,
+39,Kommunikationsverbindung,SG5,COM,3148,00023,,,"Kommunikationsadresse, Identifikation",X (([939] [147]) ∨ ([940] [148])) ∧ [567],"[147] wenn im DE3155 in demselben COM der Code EM vorhanden ist
+[148] wenn im DE3155 in demselben COM der Code TE / FX / AJ / AL vorhanden ist
+[567] Hinweis: Es darf nur eine Information im DE3148 übermittelt werden
+[939] Format: Die Zeichenkette muss die Zeichen @ und . enthalten
+[940] Format: Die Zeichenkette muss mit dem Zeichen + beginnen und danach dürfen nur noch Ziffern folgen"
+40,Kommunikationsverbindung,SG5,COM,3155,00023,EM,,Elektronische Post,X [1P0..1],
 41,Kommunikationsverbindung,SG5,COM,3155,,FX,,Telefax,X [1P0..1],
 42,Kommunikationsverbindung,SG5,COM,3155,,TE,,Telefon,X [1P0..1],
 43,Kommunikationsverbindung,SG5,COM,3155,,AJ,,weiteres Telefon,X [1P0..1],
 44,Kommunikationsverbindung,SG5,COM,3155,,AL,,Handy,X [1P0..1],
 45,MP-ID Empfänger,SG2,,,,,,,Muss,
-46,MP-ID Empfänger,SG2,NAD,,00023,,,,Muss,
-47,MP-ID Empfänger,SG2,NAD,3035,00023,,,,MR,
-48,MP-ID Empfänger,SG2,NAD,3039,00023,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
-49,MP-ID Empfänger,SG2,NAD,3055,00023,9,,GS1,X,
+46,MP-ID Empfänger,SG2,NAD,,00024,,,,Muss,
+47,MP-ID Empfänger,SG2,NAD,3035,00024,,,,MR,
+48,MP-ID Empfänger,SG2,NAD,3039,00024,,,MP-ID,X [61],[61] MP-ID nur aus Sparte Strom
+49,MP-ID Empfänger,SG2,NAD,3055,00024,9,,GS1,X,
 50,MP-ID Empfänger,SG2,NAD,3055,,293,,"DE, BDEW (Bundesverband der Energie- und Wasserwirtschaft e.V.)",X,
 51,Meldepunkt,SG2,,,,,,,Muss,
-52,Meldepunkt,SG2,NAD,,00025,,,,Muss,
-53,Meldepunkt,SG2,NAD,3035,00025,,,,DP,
-54,Meldepunkt,SG2,LOC,,00026,,,,Muss,
-55,Meldepunkt,SG2,LOC,3227,00026,,,,172,
-56,Meldepunkt,SG2,LOC,3225,00026,,,Identifikator,X (([950] [521]) ⊻ ([951] [522]) ⊻ ([950] [523])),"[521] Hinweis: Verwendung der ID der Marktlokation
+52,Meldepunkt,SG2,NAD,,00026,,,,Muss,
+53,Meldepunkt,SG2,NAD,3035,00026,,,,DP,
+54,Meldepunkt,SG2,LOC,,00027,,,,Muss,
+55,Meldepunkt,SG2,LOC,3227,00027,,,,172,
+56,Meldepunkt,SG2,LOC,3225,00027,,,Identifikator,X (([950] [521]) ⊻ ([951] [522]) ⊻ ([950] [523])),"[521] Hinweis: Verwendung der ID der Marktlokation
 [522] Hinweis: Verwendung der ID der Messlokation
 [523] Hinweis: Verwendung der ID der Tranche
 [950] Format: Marktlokations-ID
 [951] Format: Zählpunktbezeichnung"
-57,Abschnitts-Kontrollsegment,,UNS,,00123,,,,Muss,
-58,Abschnitts-Kontrollsegment,,UNS,0081,00123,,,,S,
-59,Nachrichten-Endesegment,,UNT,,00125,,,,Muss,
-60,Nachrichten-Endesegment,,UNT,0074,00125,,,Anzahl der Segmente in einer Nachricht,X,
-61,Nachrichten-Endesegment,,UNT,0062,00125,,,Nachrichten-Referenznummer,X,
+57,Abschnitts-Kontrollsegment,,UNS,,00139,,,,Muss,
+58,Abschnitts-Kontrollsegment,,UNS,0081,00139,und Summenteil,,,S,
+59,Nachrichten-Endesegment,,UNT,,00140,,,,Muss,
+60,Nachrichten-Endesegment,,UNT,0074,00140,,,Anzahl der Segmente in einer Nachricht,X,
+61,Nachrichten-Endesegment,,UNT,0062,00140,,,Nachrichten-Referenznummer,X,
