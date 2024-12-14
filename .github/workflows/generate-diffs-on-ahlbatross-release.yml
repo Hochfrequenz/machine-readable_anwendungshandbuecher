@@ -1,0 +1,70 @@
+name: Create PR to generate and safe AHB diffs to machine-readable-AHBs as soon as ahlbatross has new release.
+# this workflow is activated by `ahlbatross` releases, triggering dependabot to bump the version in requirements.txt.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "requirements.txt" # == dependabot version bump of `ahlbatross`
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Get latest ahlbatross release version tag
+        id: get-release-version-tag
+        run: |
+          VERSION=$(grep "^ahlbatross==" requirements.txt | cut -d'=' -f3)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+  generate-diffs:
+    needs: setup
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        ahlbatross_version: ["${{ needs.setup.outputs.version }}"]
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: write
+      statuses: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install updated package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate content
+        run: |
+          mkdir -p diff
+          ahlbatross -i . -o diff
+
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "Update AHB diffs for ahlbatross release ${{ matrix.ahlbatross_version }}"
+          title: "chore: update AHB diffs for ahlbatross release ${{ matrix.ahlbatross_version }}"
+          branch: "update-diffs-${{ matrix.ahlbatross_version }}"
+          delete-branch: true
+          reviewers: |
+            OLILHR
+            @Hochfrequenz/python-developers-review-team
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-operation == 'created'
+        run: |
+          gh pr merge --auto --merge "${{ steps.create-pr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
