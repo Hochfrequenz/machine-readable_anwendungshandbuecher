@@ -1,5 +1,11 @@
 # machine-readable_anwendungshandbuecher
 
+> [!WARNING]  
+> Dieses Repository wurde bis Ende 2024 [automatisch](https://github.com/Hochfrequenz/edi_energy_mirror/blob/1e42dffe7081d7bc2f0dee93e398300890d0e77c/.github/workflows/kohlrahbi.yml) (mittels [kohlrahbi](https://github.com/Hochfrequenz/kohlrahbi)) mit Informationen aus den `.docx`-Fassungen der Anwendunghandbücher befüllt.
+> Wir sind mittlerweile Hochfrequenz-intern auf die (kostenpflichtigen<!-- 🙄 -->) XML-Versionen der Anwendungshandbücher umgestiegen und laden die Anwendungshandbücher, ihre Bedingungen, Pakete und UB-Bedingungen aus den XMLs in eine Datenbank, die wir dann in unsere Anwendungen einbinden.
+> (Dazu verwenden wir [fundamend](https://github.com/Hochfrequenz/xml-fundamend-python/?tab=readme-ov-file#bef%C3%BCllen-einer-datenbank-mit-ahb-informationen)).
+> Dieses Repository wird daher nicht mehr maintained.
+
 Dieses Repository enthält Anwendungshandbücher (AHB) in einem maschinenlesbaren Format, das deutlich einfacher zu verarbeiten ist als `.docx` oder `.pdf`.
 Wir pflegen analog zu den hier abgelegten Daten auch:
 
