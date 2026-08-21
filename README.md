@@ -6,6 +6,10 @@
 > (Dazu verwenden wir [fundamend](https://github.com/Hochfrequenz/xml-fundamend-python/?tab=readme-ov-file#bef%C3%BCllen-einer-datenbank-mit-ahb-informationen)).
 > Dieses Repository wird daher nicht mehr maintained.
 
+> [!TIP]
+> Wenn Du AHBs besser lesen können und analysieren willst, verwende gerne unsere App [AHB-Tabellen](https://ahb-tabellen.hochfrequenz.de/).
+> Seit 2026 hat diese auch eine [MCP-Schnittstelle](https://ahb-tabellen.hochfrequenz.de/mcp-integration) für deinen KI-Agenten.
+
 Dieses Repository enthält Anwendungshandbücher (AHB) in einem maschinenlesbaren Format, das deutlich einfacher zu verarbeiten ist als `.docx` oder `.pdf`.
 Wir pflegen analog zu den hier abgelegten Daten auch:
 
